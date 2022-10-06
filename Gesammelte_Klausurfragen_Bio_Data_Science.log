@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  6 OCT 2022 16:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  6 OCT 2022 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -808,7 +808,7 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              `\addtokomafont' for the page style elements need
 (scrartcl)              explicite user intervention to work.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `fancyhdr' on input line 104.
+(scrartcl)              package `fancyhdr' on input line 103.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
@@ -949,7 +949,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip89
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 110.
+Package hyperref Info: Option `colorlinks' set `true' on input line 109.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/arevtext.sty
 Package: arevtext 2005/09/01 0.1 Arev Sans Text package
 
@@ -1668,19 +1668,26 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 610.
 
-</Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png, id=103
-, 885.3075pt x 416.55624pt>
-File: /Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png Gr
-aphic file (type png)
-<use /Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/question/img/mc
--modeling-03.png  used on input line 616.
-(pdftex.def)             Requested size: 256.0748pt x 120.48676pt.
-[11 </Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png>]
+
+! LaTeX Error: File `/Users/kruppajo/Documents/GitHub/exam/exam/question/img/mc
+-modeling-03' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.616 ...mainDir/exam/question/img/mc-modeling-03}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 631.
 
+[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 646.
@@ -1698,53 +1705,26 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 697.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.701 \Rlogo
-             auswerten wollen. Welcher folgende Grund ist richtig?
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.706 ...ionen und auch Anwendungen sind in \Rlogo
-                                                   in englischer Sprache. Di...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.708 ... \msquare] Die Spracherkennung von \Rlogo
-                                                   ist nicht in der Lage Deu...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+</Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png, id=118, 2569.6pt x 1991.4
+4pt>
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 701.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 706.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 708.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Overfull \hbox (1.13745pt too wide) in paragraph at lines 709--710
 []\T1/fav/m/n/10 Programmiersprachen können nur eng-li-sche Be-grif-fe ver-ar-b
@@ -1755,57 +1735,29 @@ ei-ten. Zu-sätz-li-che Pa-ke-te können
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 713.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.718 Das \Rlogo
-                 Package \texttt{gtsummary} erlaubt viele Funktionalit{\"a}t...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.729 ...}glich. Deshalb nutzt man dann das \Rlogo
-                                                   Package \texttt{tableone}.
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[13]
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 718.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 729.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 732.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.739 ...sfaktor gemessen. Sie erhalten den \Rlogo
-                                                   Output der Funktion
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 739.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+[13 </Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 767.
@@ -1814,11 +1766,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 783.
 
-[14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 797.
 
+[14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 817.
@@ -1828,16 +1780,16 @@ File: img/mc-regression-05-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-05-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 825.
 (pdftex.def)             Requested size: 216.80946pt x 216.81938pt.
-[15 <./img/mc-regression-05-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 843.
 
-<img/mc-regression-06-a-1.pdf, id=149, 216.81pt x 216.81pt>
+<img/mc-regression-06-a-1.pdf, id=137, 216.81pt x 216.81pt>
 File: img/mc-regression-06-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-06-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-06-a-1.pdf  used on input line 851.
 (pdftex.def)             Requested size: 216.80946pt x 216.81938pt.
+[15 <./img/mc-regression-05-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 869.
@@ -1872,11 +1824,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 981.
 
-[18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 998.
 
+[18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1014.
@@ -1885,11 +1837,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1029.
 
-[19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1043.
 
+[19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1057.
@@ -1927,21 +1879,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1251.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1258 ... Sie erhalten folgenden Output in \Rlogo
-                                                  .
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 1258.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 1
 270.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
@@ -1953,21 +1896,12 @@ File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1289.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1299 in \Rlogo
-                .
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 1299.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [26
 
 ]
@@ -2154,36 +2088,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1808.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1819 ... in der Form $y \sim x$ wie es in \Rlogo
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1821 ... in der Form $y \sim x$ wie es in \Rlogo
-                                                  
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 1819.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 1821.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 <img/modeling-R-01-1.pdf, id=413, 361.35pt x 361.35pt>
 File: img/modeling-R-01-1.pdf Graphic file (type pdf)
 <use img/modeling-R-01-1.pdf>
@@ -2241,22 +2157,12 @@ Package pdftex.def Info: img/regression-01-1.pdf  used on input line 1996.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2006.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2012 den \Rlogo
-                  Output der Funktion \texttt{tidy()} einer simplen Gaussian...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2012.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 2018.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
 (Font)              scaled to size 13.4401pt on input line 2018.
@@ -2317,20 +2223,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2143.
 
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2181.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2181 folgenden \Rlogo
-                        Output.
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (0.78627pt too wide) in paragraph at lines 2180--2182
+[]\T1/fav/m/n/10 Sie rech-nen nun ei-ne Pois-son li-nea-re Re-gres-si-on auf de
+n Da-ten und er-hal-ten fol-gen-den []Output. 
+ []
 
 
 Overfull \hbox (20.17706pt too wide) in paragraph at lines 2188--2188
@@ -2338,37 +2241,18 @@ Overfull \hbox (20.17706pt too wide) in paragraph at lines 2188--2188
 argument 'object' in selecting
  []
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2194 ...\"u}nden Sie Ihre Antwort mit dem \Rlogo
-                                                   Output! \textbf{(2 Punkte)}
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2198 \item Erkl{\"a}ren Sie am \Rlogo
-                                        Output wie sich die \textit{t value}...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2194.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2198.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [52
 
 ]
@@ -2376,42 +2260,24 @@ If that doesn't work, type  X <return>  to quit.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2205.
 
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2235.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2235 folgenden \Rlogo
-                        Output.
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-Overfull \hbox (2.21992pt too wide) in paragraph at lines 2234--2236
+Overfull \hbox (16.44629pt too wide) in paragraph at lines 2234--2236
 []\T1/fav/m/n/10 Sie rech-nen nun ei-ne lo-gis-ti-sche li-nea-re Re-gres-si-on 
-auf den Da-ten und er-hal-ten fol-gen-den Output. 
+auf den Da-ten und er-hal-ten fol-gen-den []Output. 
  []
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2253 ... Spalte \textit{estimate} aus den \Rlogo
-                                                   Output! \textbf{(2 Punkte)}
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2253.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [53
 
 ]
@@ -2419,20 +2285,17 @@ If that doesn't work, type  X <return>  to quit.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2265.
 
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2296.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2296 folgenden \Rlogo
-                        Output.
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (9.20628pt too wide) in paragraph at lines 2295--2297
+[]\T1/fav/m/n/10 Sie rech-nen nun ei-ne Gaus-si-an li-nea-re Re-gres-si-on auf 
+den Da-ten und er-hal-ten fol-gen-den []Output. 
+ []
 
 [54
 
@@ -2441,22 +2304,12 @@ If that doesn't work, type  X <return>  to quit.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2340.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2375 \item Schreiben Sie das Ergebnis der \Rlogo
-                                                   Ausgabe in einen Satz nie...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2375.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [55
 
 ]
@@ -2476,22 +2329,12 @@ Overfull \hbox (15.96222pt too wide) in paragraph at lines 2396--2396
  argument 'object' in
  []
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2411 \item Schreiben Sie das Ergebnis der \Rlogo
-                                                   Ausgabe in einen Satz nie...
-
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2411.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [56
 
 ]
@@ -2544,24 +2387,29 @@ und-ge-samt-heit an ei-nem Schau-
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2536.
 
-</Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-table.png
-, id=604, 810.02625pt x 708.6475pt>
-File: /Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-tabl
-e.png Graphic file (type png)
-<use /Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-table
-.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/question/img/te
-xt-error-cross-table.png  used on input line 2541.
-(pdftex.def)             Requested size: 398.33858pt x 348.49463pt.
+
+! LaTeX Error: File `/Users/kruppajo/Documents/GitHub/exam/exam/question/img/te
+xt-error-cross-table' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2541 ...xam/question/img/text-error-cross-table}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [61
 
- </Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-table.pn
-g>]
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2567.
 
-<img/statistisches-testen-3-1.pdf, id=613, 433.62pt x 433.62pt>
+<img/statistisches-testen-3-1.pdf, id=611, 433.62pt x 433.62pt>
 File: img/statistisches-testen-3-1.pdf Graphic file (type pdf)
 <use img/statistisches-testen-3-1.pdf>
 Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 2
@@ -2574,19 +2422,24 @@ Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 2
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2594.
 
-</Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-04.pn
-g, id=630, 25.59563pt x 206.27063pt>
-File: /Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-
-04.png Graphic file (type png)
-<use /Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-0
-4.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/question/img/st
-atistisches-testen-04.png  used on input line 2617.
-(pdftex.def)             Requested size: 28.24547pt x 227.62204pt.
+
+! LaTeX Error: File `/Users/kruppajo/Documents/GitHub/exam/exam/question/img/st
+atistisches-testen-04' not found.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.2617 ...am/question/img/statistisches-testen-04}
+                                                  
+I could not locate the file with any of these extensions:
+.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
 [63
 
- </Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-04.p
-ng>]
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2625.
@@ -2612,21 +2465,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2759.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2761 Sie erhalten folgende \Rlogo
-                                    Ausgabe der Funktion \texttt{t.test()}.
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2761.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Overfull \hbox (130.34201pt too wide) in paragraph at lines 2771--2771
 []\T1/fvm/m/n/10 ## alternative hypothesis: true difference in means between gr
@@ -2640,21 +2484,12 @@ oup high and group low is not equal to 0[]
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2795.
 
-
-! LaTeX Error: File `/Users/kruppajo/Documents/GitHub//common/img/Rlogo' not fo
-und.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.2797 Sie erhalten folgende \Rlogo
-                                    Ausgabe der Funktion \texttt{t.test()}.
-I could not locate the file with any of these extensions:
-.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+File: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png Graphic file (type pn
+g)
+<use /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/img/Rlogo.png  u
+sed on input line 2797.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Overfull \hbox (130.34201pt too wide) in paragraph at lines 2807--2807
 []\T1/fvm/m/n/10 ## alternative hypothesis: true difference in means between gr
@@ -2731,10 +2566,10 @@ t' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28720 strings out of 478994
- 533876 string characters out of 5858183
- 975879 words of memory out of 5000000
- 45195 multiletter control sequences out of 15000+600000
+ 28735 strings out of 478994
+ 535379 string characters out of 5858183
+ 975837 words of memory out of 5000000
+ 45210 multiletter control sequences out of 15000+600000
  518124 words of font info for 231 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,19n,116p,10719b,703s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2756,11 +2591,11 @@ type1/public/mathdesign/mdbch/md-chbma.pfb></usr/local/texlive/2021/texmf-dist/
 fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/local/texlive/2021/texmf
 -dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (73 pages, 7388
-07 bytes).
+Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (73 pages, 7540
+90 bytes).
 PDF statistics:
- 1153 PDF objects out of 1200 (max. 8388607)
+ 1149 PDF objects out of 1200 (max. 8388607)
  1012 compressed objects within 11 object streams
  357 named destinations out of 1000 (max. 500000)
- 886 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 876 words of extra memory for PDF output out of 10000 (max. 10000000)
 
