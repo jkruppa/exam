@@ -1,0 +1,24 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+In der Statistik werden die Daten D modelliert in dem ein Modell der Form
+$Y \sim X$ aufgestellt wird. Welche statistische Kenngr{\"o}sse wird modelliert? 
+
+<<mc-modeling-04, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Varianzstruktur wird modelliert.',
+                   'Die Mittelwerte werden modelliert.',
+                   'Die X werden modelliert.',
+                   'Die Y werden modelliert.',
+                   'Die Varianz der X unabh{\"a}ngig vom Y wird modelliert.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

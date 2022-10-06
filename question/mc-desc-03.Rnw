@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Eine der g{\"a}ngigsten Methode der Statistik um einen Fehler zu bestimmen ist...
+
+<<mc-desc-03, results='asis', echo = FALSE>>=
+
+questions_vec <- c('... die kleinste Quadrate Methode oder auch least square method genannt.',
+                   '... die Methode des absoluten Abstands.',
+                   '... die Methode des absoluten, quadrierten Abstands.',
+                   '... die Methode der aufaddierten, absoluten Abst{\"a}nde.',
+                   '... das Produkt der kleinsten Quadrate.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

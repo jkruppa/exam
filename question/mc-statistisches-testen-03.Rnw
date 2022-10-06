@@ -1,0 +1,24 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Der Fehler 1. Art oder auch Signifikanzniveau $\alpha$ genannt, liegt bei
+5\%. Welcher der folgenden Gr{\"u}nde f{\"u}r diese Festlegeung auf 5\% ist richtig?
+
+<<mc-statistisches-testen-03, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Festlegung von $\\alpha = 5\\%$ ist eine Kulturkonstante. Wissenschaftler ben{\"o}tigt eine Schwelle f{\"u}r eine statistische Testentscheidung, der Wert von $\\alpha$ wurde aber historisch mehr zuf{\"a}llig gew{\"a}hlt.' ,
+                   'Der Begr{\"u}nder der modernen Statistik, R. Fischer, hat die Grenze simuliert und berechnet. Dadurch ergibt sich dieser optimale Cut-Off.',
+                   'Auf einer Statistikkonferenz in Genf im Jahre 1942 wurde dieser Cut-Off nach langen Diskussionen festgelegt. Bis heute ist der Cut Off aber umstritten, da wegen dem 2. Weltkrieg viele Wissenschaftler nicht teilnehmen konnten.',
+                   'Im Rahmen eines langen Disputs zwischen Neyman und Fischer wurde $\\alpha = 5\\%$ festgelegt. Leider werden die Randbedingungen und Voraussetzungen an statistsiche Modelle heute immer wieder ignoriert.',
+                   'Der Wert ergab sich aus einer Auswertung von 1042 wissenschaftlichen Ver{\"o}ffentlichungen zwischen 1914 und 1948. Der Wert $5\\%$ wurde in $28\\%$ der Ver{\"o}ffentlichungen genutzt. Daher legte man sich auf diese Zahl fest.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

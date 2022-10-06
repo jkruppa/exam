@@ -1,0 +1,27 @@
+\section{Aufgabe \hfill (9 Punkte)}
+
+Nach einem Feldexperiment mit mehreren D{\"u}ngestufen stellt sich die Frage,
+ob die D{\"u}ngestufe \textit{low} im Bezug auf das Trockengewicht
+normalverteilt sei. Sie erhalten folgende Datentabelle.
+
+<<boxplot-02, results='asis', echo = FALSE>>=
+data_tbl <- tibble(low = round(rnorm(n = sample(c(7, 11), 1),
+                                     mean = sample(c(15, 20, 25), 1),
+                                     sd = sample(c(2, 3, 4), 1)))) %>%
+  gather %>% 
+  set_names(c("fertilizer", "drymatter")) %>% 
+  sample_n(size = nrow(.))
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+\begin{enumerate}
+\item Zeichnen Sie eine passende Abbildung in der Sie visuell {\"u}berpr{\"u}fen
+  k{\"o}nnen, ob eine Normalverteilung des Trockengewichts vorliegt! \textbf{(4
+    Punkte)}
+\item Beschriften Sie die Achsen und erg{\"a}nzen Sie die statistischen
+  Ma{\ss}zahlen. \textbf{(3 Punkte)}
+\item Entscheiden Sie, ob eine Normalveteilung vorliegt. Begr{\"u}nden Sie Ihre
+  Antwort. \textbf{(2 Punkte)}
+\end{enumerate}

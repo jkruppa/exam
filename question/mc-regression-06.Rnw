@@ -1,0 +1,41 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Sie rechnen eine linearen Regression und erhalten folgenden Residual
+Plot. Welche Aussage ist richtig?
+
+
+<<mc-regression-06-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+
+n <- rpois(1, 100)
+data_tbl <- tibble(x = 1:n,
+                   y_1 = rnorm(n, 0, 1)) %>%
+  set_names(c("x", "y"))
+
+mod <- lm(y ~ x, data_tbl)
+df <- augment(mod)
+ggplot(df, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  theme_bw()
+
+@ 
+
+
+<<mc-regression-06-b, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.',
+                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil auf der Diagonalen.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Es ist kein Muster zu erkennen.',
+                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Es ist ein Muster zu erkennen.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

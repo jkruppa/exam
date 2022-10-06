@@ -1,0 +1,42 @@
+\section{Aufgabe \hfill (12 Punkte)}
+
+Die Anzahl an Nematoden wurde vor und nach einer Behandlung mit einem
+bioaktiven D{\"u}nger gez{\"a}hlt. Es ergibt sich folgende Datentabelle.
+
+<<utest-01, results='asis', echo = FALSE>>=
+
+data_tbl <- tibble(Vorher = round(rnorm(15, 10, 2)),
+       Nachher = round(rnorm(15, 12, 2)),
+       Differenz = "",
+       Vorzeichen = "",
+       Rang = "",
+       "Positiv Rang" = "",
+       "Negativ Rang" = "")
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+
+diff <- tibble(diff = data_tbl$before - data_tbl$after) %>%
+  filter(diff != 0)
+n_d <- nrow(diff)
+
+sigma_w <- sqrt((n_d * (n_d + 1) * (2 * n_d +1))/24) %>%
+  round(1)
+
+@
+
+\begin{enumerate}
+\item Erg{\"a}nzen Sie die obige Tabelle mit den notwendigen Informationen, die
+  Sie ben{\"o}tigen um einen Wilcoxon-Vorzeichen-Rang-Test zu rechnen!
+  \textbf{(4 Punkte)}
+\item Bestimmen Sie die Teststatistik $W$ mit $W = \min(T_{-}; T_{+})$ und
+  berechnen Sie den erwarteten Wert $\mu_W = \cfrac{n \cdot (n + 1)}{4}$!
+  \textbf{(2 Punkte)}
+\item Berechnen Sie anschlie{\ss}end den $z$-Wert mit $z = \cfrac{W -
+    \mu_W}{\Sexpr{sigma_w}}$! \textbf{(2 Punkte)}
+\item Liegt mit einer Signifikanzschwelle von $z =
+  1.96$ ein Unterschied zwischen den beiden Zeitpunkten vor? Begr{\"u}nden Sie
+  Ihre Antwort! \textbf{(2 Punkte)} 
+\item Berechnen Sie die Effektst{\"a}rke mit $r = |\frac{z}{\sqrt{n}}| $ und
+  interpretieren Sie die Effektst{\"a}rke! \textbf{(2 Punkte)} 
+\end{enumerate}

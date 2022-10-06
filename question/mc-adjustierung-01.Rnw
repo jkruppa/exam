@@ -1,0 +1,30 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+var_vec <- c("\\alpha", "confounder") %>%
+  sample(1)
+
+@ 
+
+Welche Aussage {\"u}ber die \textbf{$\Sexpr{var_vec}$} Adjustierung ist richtig?
+
+<<mc-adjustierung-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c('Die $', var_vec,'$ Adjustierung wird durchgef{\"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\\alpha$-Niveau.'),
+                   str_c('Die $', var_vec,'$ Adjustierung wird durchgef{\"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\\beta$-Werten einer Regression.'),
+                   str_c('Die $', var_vec,'$ Adjustierung wird durchgef{\"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{\"u}rde der Fehler 2. Art nicht bei 80\\% liegen sondern sehr schnell gegen 0 laufen.'),
+                   str_c('Die $', var_vec,'$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{\"u}rde der eigentliche Effekt nicht richtig gesch{\"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.'),
+                   str_c('Die $', var_vec,'$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.')) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

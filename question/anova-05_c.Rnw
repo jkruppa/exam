@@ -1,0 +1,41 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+<<>>=
+data_tbl <- ToothGrowth %>%
+  sample_n(rpois(1, 70), replace = TRUE)
+
+@ 
+
+Der Datensatz \textit{PigGain} enth{\"a}lt Daten aus einer Studie zur Bewertung
+der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der Versuch
+wurde an \Sexpr{nrow(data_tbl)} Mastschweinen durchgef{\"u}hrt, wobei jedes Tier
+eine von drei Selen-Dosen (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag) {\"u}ber eine von zwei
+Verabreichungsmethoden erhielt (Wasser oder Festnahrung). Das Gewicht
+wurde als normalverteiltes Outcome gemessen. Sie erhalten folgenden Output
+in \Rlogo.
+
+<<anova-R-05-a,  echo = FALSE>>=
+data_tbl <- data_tbl %>%
+  as_tibble %>%
+  mutate(dose = factor(dose, 
+                       levels = c(0.5, 1, 2),
+                       labels = c("D0.5", "D1", "D5")),
+         weight = len + rnorm(n = nrow(.), 0, 0.1)) 
+
+anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
+  anova 
+
+anova_mdl
+
+@
+
+\begin{enumerate}
+\item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
+  zweifaktorielle ANOVA f{\"u}r den Faktor \Sexpr{sample(c("supp", "dose"), 1)}
+  auf! \textbf{(2 Punkte)}
+\item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
+  im besonderen auf den Term $supp:dose$ ein! \textbf{(3 Punkte)}
+\item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
+  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(3 Punkte)}
+\end{enumerate}
+

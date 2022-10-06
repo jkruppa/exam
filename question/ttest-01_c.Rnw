@@ -1,0 +1,35 @@
+\section{Aufgabe \hfill (12 Punkte)}
+
+Nach einem Experiment mit zwei Pestiziden (\textit{RoundUp} und
+\textit{GoneEx}) ergibt sich die folgende Datentabelle mit dem gemessenen
+Trockengewicht (\textit{drymatter}) von Weizen.
+
+<<ttest-01, results='asis', echo = FALSE>>=
+data_tbl <- rbind(tibble(RoundUp = round(rnorm(n = sample(c(5,6,7), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(1, 2, 3), 1)))) %>%
+                  gather,
+                  tibble(GoneEx = round(rnorm(n = sample(c(5,6,7), 1),
+                                         mean = sample(c(16, 18, 14), 1),
+                                         sd = sample(c(1, 2, 3), 1)))) %>%
+                  gather) %>%
+  set_names(c("pesticide", "drymatter")) %>% 
+  sample_n(size = nrow(.))
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+\begin{enumerate}
+  \item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+      Punkte)}
+  \item Bestimmen Sie die Teststatistik $T_c$ eines Student t-Tests f{\"u}r den
+  Vergleich der beiden Pestizide. Geben Sie den Rechenweg und die Formeln
+  mit an! \textbf{(5 Punkte)}
+\item Treffen Sie mit $T_k = 2.04$ und dem berechneten $T_c$ eine Aussage
+  zur Nullhypothese! \textbf{(2 Punkte)}
+\item Wenn Sie keinen Unterschied zwischen den beiden Pestiziden erwarten
+  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_c$? Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(2 Punkte)}
+\end{enumerate}

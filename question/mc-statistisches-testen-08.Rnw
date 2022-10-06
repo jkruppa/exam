@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+In der Bio Data Science wird h{\"a}ufig mit sehr gro{\ss}en Datens{\"a}tzen
+gerechnet. Historisch ergibt sich nun ein Problem bei der Auswertung der
+Daten und deren Bewertung hinsichtlich der Signifikanz. Welche Aussage ist richtig?
+
+<<mc-statistisches-testen-08, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Aktuell werden immer gr{\"o}ssere Datens{\"a}tze erhoben. Eine erh{\"o}hte Fallzahl f{\"u}hrt automatisch auch zu mehr signifikanten Ergebnissen, selbst wenn die eigentlichen Effekte nicht relevant sind.',
+                   'Aktuell werden immer gr{\"o}ssere Datens{\"a}tze erhoben. Dadurch wird auch die Varianz immer h{\"o}her was automatisch zu mehr signifikanten Ergebnissen f{\"u}hrt.',
+                   'Big Data ist ein Problem der parametrischen Statistik. Parameter lassen sich nur auf kleinen Datens{\"a}tzen berechnen, da es sich sonst nicht mehr um eine Stichprobe im engen Sinne der Statistik handelt.',
+                   'Relevanz und Signifikanz haben nichts miteinander zu tun. Daher gibt es auch keinen Zusammenhang zwischen hoher Fahlzahl (n > 10000) und einem signifikanten Test. Ein Effekt ist immer relevant und somit signifikant.',
+                   'Aktuell werden zu grosse Datens{\"a}tze f{\"u}r die g{\"a}nigige Statistik gemessen. Daher wendet man maschinelle Lernverfahren f{\"u}r kausale Modelle an. Hier ist die Relevanz gleich Signifikanz.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

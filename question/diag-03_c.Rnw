@@ -1,0 +1,41 @@
+\section{Aufgabe \hfill (12 Punkte)}
+
+<<>>=
+
+a <- c(180, 160, 200) %>% sample(1)
+b <- c(560, 850, 750) %>% sample(1)
+c <- c(40, 60, 20) %>% sample(1)
+d <- c(1800, 1450, 1600) %>% sample(1)
+  
+@ 
+
+Folgender diagnostischer Doppelbaum nach der Testung auf Klauenseuche bei
+Fleckvieh ist gegeben.
+
+\begin{enumerate}
+\item F{\"u}llen und beschriften Sie den untenstehenden Doppelbaum! \textbf{(4
+    Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
+\item Berechnen Sie die Pr{\"a}valenz f{\"u}r Klauenseuche! \textbf{(2 Punkte)}
+\item Berechnen Sie die Sensifit{\"a}t und Spezifit{\"a}t des diagnostischen Tests
+  f{\"u}r Klauenseuche! Erstellen Sie daf{\"u}r zun{\"a}chst eine 2x2 Kreuztabelle aus
+  dem ausgef{\"u}llten Doppelbaum!
+  \textbf{(4 Punkte)}
+\end{enumerate}
+
+\vspace{1cm}
+ 
+\begin{tikzpicture}
+  \node (image) at (0,0) {
+    \includegraphics[width=\textwidth]{C:/Users/jokruppa/lehre/intern/exam/question/img/diag-doppelbaum}
+  };
+  \node[] at (-4.8,0) {\huge \Sexpr{a}};
+  \node[] at (-1.7,0) {\huge \Sexpr{c}};
+  \node[] at (1.7,0) {\huge \Sexpr{b}};
+  \node[] at (4.75,0) {\huge \Sexpr{d}};
+\end{tikzpicture}
+
+
+
+
+

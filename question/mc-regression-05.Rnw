@@ -1,0 +1,42 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Sie rechnen in eine linearen Regression und erhalten folgenden QQ
+Plot. Welche Aussage ist richtig?
+
+
+<<mc-regression-05-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+
+
+data_tbl <- tibble(y_1 = rt(500, df = 5),
+                   y_2 = rnorm(500, mean = 0, sd = 1)) %>%
+  select(sample(c("y_1", "y_2"), 1)) %>%
+  set_names("y")
+
+
+ggplot(data_tbl, aes(sample = y)) +
+  stat_qq() + stat_qq_line(color = "red") +
+  theme_bw()
+
+
+@ 
+
+
+<<mc-regression-05-b, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil nicht auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil nicht auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil nicht auf der Geraden und Korrelation ist negativ.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

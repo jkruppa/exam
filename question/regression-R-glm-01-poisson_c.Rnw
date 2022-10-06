@@ -1,0 +1,54 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+<<>>=
+
+data_tbl <- read_csv2(file.path("C:/Users/jokruppa/lehre/intern/data",
+                                "longnose.csv")) %>%
+  clean_names %>%
+  sample_frac(0.8)
+
+wanted_vec <- names(data_tbl)[-c(1:2)] %>%
+  sample(4)
+
+data_tbl <- data_tbl %>%
+  select(stream, longnose, all_of(wanted_vec))
+
+@
+
+In verschiedenen Fl{\"u}{\ss}en (\textit{stream}) wurde die Anzahl an
+Knochenhechten (\textit{longnose}) gez{\"a}hlt. Daneben wurden noch andere
+Eigenschaften der entspechenden Fl{\"u}sse gemessen. Es ergibt sich folgender
+Auszug aus den Daten. 
+
+
+<<>>=
+kable(data_tbl[1:4,], booktabs = TRUE, align = "lrrrrr") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+
+Sie rechnen nun eine Poisson lineare Regression auf den Daten und erhalten
+folgenden \Rlogo Output.
+
+{\small
+<<>>=
+
+glm(reformulate(response = "longnose",
+                termlabels = wanted_vec),
+    family = quasipoisson, data = data_tbl) %>%
+  summary
+
+@
+}
+
+\begin{enumerate}
+\item Warum wurde hier eine Poisson bzw. Quasipoisson-Verteilung gew{\"a}hlt?
+  Begr{\"u}nden Sie Ihre Antwort mit dem \Rlogo Output! \textbf{(2 Punkte)}
+\item K{\"o}nnen Sie die \textit{Estimate} der einzelnen Einflussvariablen
+  direkt interpretieren? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Interpretieren Sie die \textit{\Sexpr{sample(c("signifikanten", "nicht
+      signifikanten"), 1)}} Effekte auf die Anzahl an Knochenhechten! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie am \Rlogo Output wie sich die \textit{t value} Spalte
+  errechnet! \textbf{(2 Punkte)}
+\end{enumerate}
+

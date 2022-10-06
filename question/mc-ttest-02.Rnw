@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage {\"u}ber den Welch t-Test ist richtig?
+
+<<mc-ttest-02, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Der Welch t-Test wird angewendet, wenn Varianzheterogenit{\"a}t zwischen den beiden zu vergleichenden Gruppen vorliegt.',
+                   'Der Welch t-Test ist die veraltete Form des Student t-Test und wird somit nicht mehr verwendet.',
+                   'Der Welch t-Test vergleicht die Varianz von zwei Gruppen.',
+                   'Der Welch t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{\"a}t.',
+                   'Der Welch t-Test ist ein Post-hoc Test der ANOVA und basiert daher auf dem Vergleich der Varianz.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

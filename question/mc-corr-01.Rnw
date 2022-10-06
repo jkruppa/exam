@@ -1,0 +1,37 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+<<mc-corr-01a, results='markup', echo = FALSE>>=
+x <- round(rnorm(5, 10, 4))
+y <- round(rnorm(5, 10, 4))
+@
+
+Berechnen Sie die Korrelation \textit{r} zwischen $x$ mit \Sexpr{pander::p(x, wrap =
+  "", copula = " und ")} sowie $y$ mit \Sexpr{pander::p(y, wrap =
+  "", copula = " und ")}.  Nutzen Sie folgende Formel:
+
+\begin{equation*}
+  r_{x,y} = \cfrac{s_{x,y}}{s_x \cdot s_y}
+\end{equation*}
+
+<<mc-corr-01b, results='asis', echo = FALSE>>=
+
+corr_x <- round(cor(x, y), 2)
+
+questions_vec <- c(str_c('Es ergibt sich eine Korrelation von ', corr_x),
+                   str_c('Es ergibt sich eine Korrelation von ', round(corr_x^2, 2)),
+                   str_c('Es ergibt sich eine Korrelation von ', -corr_x),
+                   str_c('Es ergibt sich eine Korrelation von ', round(corr_x^3, 2)),
+                   str_c('Es ergibt sich eine Korrelation von ', corr_x + 1)) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

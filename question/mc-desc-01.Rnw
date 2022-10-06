@@ -1,0 +1,32 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+<<mc-desc-01a, results='markup', echo = FALSE>>=
+x <- round(rnorm(5, 10, 4))
+@
+
+Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit \Sexpr{pander::p(x, wrap = "", copula = " und ")}.
+
+<<mc-desc-01b, results='asis', echo = FALSE>>=
+
+mean_x <- round(mean(x), 2)
+sd_x <- round(sd(x), 2)
+var_x <- round(var(x), 2)
+
+questions_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
+                   str_c('Es ergibt sich ', mean_x, ' +/- ', var_x),
+                   str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x/2),
+                   str_c('Es ergibt sich ', mean_x+1, ' +/- ', sd_x/2),
+                   str_c('Es ergibt sich ', mean_x-1, ' +/- ', var_x/2)) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

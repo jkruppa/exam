@@ -1,0 +1,30 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
+Regression und der ANOVA skizziert.
+
+\begin{center}
+  \includegraphics[width = 9cm]{\mainDir/exam/question/img/mc-modeling-03}
+\end{center}
+
+Welche der folgenden Aussagen ist richtig?
+
+<<mc-modeling-03, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Effektsch{\"a}tzer aus einem Modell, in diesem Fall ein lineares Modell, erlauben es sowohl eine ANOVA zurechnen sowie auch eine Zusammenfassung der Mittelwerte zu betrachten.',
+                   'Die Effektsch{\"a}tzer aus einem Modell, in diesem Fall ein polynomes Modell, erlauben es sowohl eine ANOVA zurechnen sowie auch eine Zusammenfassung der Mittelwerte zu betrachten.',
+                   'Die Effektsch{\"a}tzer aus einem Modell, in diesem Fall ein lineares Modell, erlauben es nur eine ANOVA zurechnen oder eine Zusammenfassung der Mittelwerte zu betrachten. Beides ist nicht m{\"o}glich.',
+                   'Die Effektsch{\"a}tzer aus einem Modell, erlauben es nur eine ANOVA zu rechnen. ',
+                   'Die Effektsch{\"a}tzer aus einem Modell, erlauben es nur einen Mittelwertsvergleich zu rechnen.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

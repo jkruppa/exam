@@ -1,0 +1,75 @@
+\section{Aufgabe \hfill (14 Punkte)}
+
+
+Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht der Pflanzen
+(\textit{weight}), die unter einer Kontrolle und zwei verschiedenen
+Behandlungsbedingungen erzielt wurden -- dem Faktor \textit{group} mit den
+Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.
+
+<<anova-R-01-a,  echo = FALSE>>=
+data_tbl <- PlantGrowth %>%
+  as_tibble %>%
+  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
+         weight = weight + rnorm(n = nrow(.), 0, 0.1))
+
+anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
+  anova
+
+@
+
+\begin{enumerate}
+\item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
+  mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
+  \textbf{(4 Punkte)}
+\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
+  $F_k = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
+    anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(2 Punkte)}
+\end{enumerate}
+
+\vspace{1Ex}
+
+\begin{center}
+  \Large
+  \begin{tabular}{l|c|c|c|c|c}
+     & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
+    \hline
+   \textbf{group}  & 2 & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
+    \hline
+   \textbf{Residuals}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
+  \end{tabular}
+\end{center}
+
+\vspace{1Ex}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen
+  ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen?
+  \textbf{(2 Punkte)}
+\item Berechnen Sie \textit{einen} Student t-Test mit $T = \tfrac{\bar{x}_1
+  - \bar{x}_2}{s_p \cdot \sqrt{2/n_g}}$ f{\"u}r den \textit{vermutlich}
+  signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit
+  $T_k = 2.03$. Begr{\"u}nden Sie Ihre Auswahl! \textbf{(4 Punkte)}
+\end{enumerate}
+
+<<anova-R-01-b,  echo = FALSE>>=
+
+group_by(data_tbl, group) %>%
+  dplyr::summarise(
+           n = n(),
+    mean = round(mean(weight, na.rm = TRUE), 2),
+    sd = round(sd(weight, na.rm = TRUE), 2),
+    ) %>%
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+
+@
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Gegebenen der ANOVA Tabelle war das Ergebnis des t-Tests zu erwarten?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\end{enumerate}
+
+

@@ -1,0 +1,33 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+variable_vec <- c("n_1 = n_2", "n_1 < n_2",
+                  "s^2_1 = s^2_2", "s^2_1 \\neq s^2_2") %>%
+  sample(1)
+
+@
+
+
+Sie haben das abstrakte Modell $Y \sim X$ mit $X$ als Faktor mit zwei
+Leveln vorliegen. Welche Aussage {\"u}ber $\Sexpr{variable_vec}$ ist richtig?
+
+<<mc-balance-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c("Es handelt sich um ein balanciertes Design.",
+                   "Es handelt sich um ein unbalanciertes Design",
+                   "Es liegt Varianzhetrogenit{\"a}t vor.",
+                   "Es liegt Varianzhomogenit{\"a}t vor.",
+                   "Es handelt sich um abh{\"a}ngige Beobachtungen.") %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

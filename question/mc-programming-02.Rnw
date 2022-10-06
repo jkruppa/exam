@@ -1,0 +1,32 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+var_vec <- c("tbl\\_summary()", "tbl\\_regression()") %>% sample(1)
+
+@
+
+
+Das \Rlogo Package \texttt{gtsummary} erlaubt viele Funktionalit{\"a}ten auf
+einem Datensatz und deren Analyse. Welche Aussage zu der Funktion
+\texttt{\Sexpr{var_vec}} ist richtig?
+
+<<mc-programming-02, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c('Die Funktion ', var_vec,' erlaubt einen Datensatz schnell in eine {\"U}bersichtstabelle umzuwandeln. Insbesondere die Einteilung der Spalten nach dem Strata der Behandlung macht die Funktion sehr n{\"u}tzlich.'),
+                   str_c('Die Funktion ', var_vec,' erlaubt das Ergebnis einer Regressionsanalyse schnell in eine {\"U}bersichtstabelle umzuwandeln. Insbesondere die Zusammenfassung der Sch{\"a}tzwerte in eine Zeile macht die Analyse sehr praktisch.'),
+                   str_c('Die Funktion ', var_vec,' erlaubt das Ergebnis einer Regressionsanalyse schnell in eine {\"U}bersichtstabelle umzuwandeln. Dies funktioniert jedoch nur f{\"u}r simple lineare Regressionen. Multiple Regression sind nicht m{\"o}glich.'),
+                   str_c('Die Funktion ', var_vec,' erlaubt einen Datensatz in eine Tabelle zusammenzufassen. Leider ist eine Stratifizierung nach der Behandlung nicht m{\"o}glich. Deshalb nutzt man dann das \\Rlogo Package \\texttt{tableone}.'),
+                   str_c('Die Funktion ', var_vec,' erlaubt in einem Setting in dem kein signifikantes Ergebnis vorliegt Daten in Form einer explorativen Datenanalyse darzustellen. Da dies ein komplizierter Schritt ist, wird von der Verwendung abgeraten.')) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

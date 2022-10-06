@@ -1,0 +1,50 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+<<>>=
+n <- rpois(1, 100)
+@ 
+
+In einem Stallexperiment mit $n = \Sexpr{n}$ Ferkeln wurde der
+Gewichtszuwachs unter bestimmten Lichtverh{\"a}ltnissen gemessen. Sie erhalten
+den \Rlogo Output der Funktion \texttt{tidy()} einer simplen Gaussian linearen
+Regression sieben Wochen nach der ersten Messung.
+
+<<regression-02-a, results='asis', echo = FALSE>>=
+
+def <- defData(varname = "light", dist = "normal", formula = 10,
+    variance = 2)
+def <- defData(def, varname = "weight", dist = "normal",
+    formula = "25 + light * 1.5", variance = 2)
+dd <- genData(n, def) 
+
+lm(weight ~ light, data = dd) %>% tidy %>%
+  select(-p.value, -statistic) %>%
+  mutate("t statistic" = "",
+         "p-value" = "") %>% 
+  mutate(across(where(is.numeric), round, 2)) %>%   
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position", font_size = 14)
+
+@
+
+\begin{enumerate}
+\item Berechnen Sie die t Statistik f{\"u}r \textit{(Intercept)} und
+  \textit{light}! \textbf{(2 Punkte)}
+\item Sch{\"a}tzen Sie den p-Wert f{\"u}r \textit{(Intercept)} und
+  \textit{light} mit $T_k = 1.96$ ab. Was sagt Ihnen der p-Wert aus?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
+\item Zeichnen Sie die Gerade aus der obigen Tabelle in die untenstehende
+  Abbildung! \textbf{(1 Punkt)}
+\item Beschriften Sie die Abbildung und die Gerade mit den statistischen
+  Kenngr{\"o}{\ss}en! \textbf{(2 Punkte)}
+\item Formulieren Sie die Regressionsgleichung! \textbf{(2 Punkte)}
+\end{enumerate}
+
+<<regression-02-b, results='asis', echo = FALSE, fig.height = 5, fig.width = 5, fig.align = "center", message = FALSE>>=
+df <- data.frame()
+ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("") + ylab("") +
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+@

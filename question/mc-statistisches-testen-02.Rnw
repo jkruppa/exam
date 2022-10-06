@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Das Falsifikationsprinzip besagt... 
+
+<<mc-statistisches-testen-02, results='asis', echo = FALSE>>=
+
+questions_vec <- c('... dass ein schlechtes Modell durch ein weniger schlechtes Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.',
+                   '... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.',
+                   '... dass Modelle meist falsch sind und selten richtig.',
+                   '... dass Annahmen an statistische Modelle meist falsch sind.',
+                   '... dass Fehlerterme in statistischen Modellen nicht verifiziert werden k{\"o}nnen.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

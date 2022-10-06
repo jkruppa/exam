@@ -1,0 +1,43 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+In dem folgenden Histogramm von $n = 200$ Pflanzen ist welche Verteilung
+mit welchen korrekten Verteilungsparametern dargestellt?
+
+<<mc-distribution-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 5, fig.align = "center", message = FALSE>>=
+
+mean_vec <- sample(c(10,15,20), 1)
+data_vec <- list(pois = rpois(n = 200, mean_vec),
+                 norm = rnorm(n = 200, mean = mean_vec, sd = 5))[sample(1:2, 1)]
+data_tbl <- tibble(x = data_vec[[1]])
+ggplot(data_tbl, aes(x)) + geom_histogram() + 
+  xlab("X") + ylab("Count") +
+  scale_x_continuous(breaks = c(0,5,10,15,20,25,30,35,40)) +
+  theme_bw()
+
+norm_str <- str_c("N(", mean_vec, ", 5)")
+pois_str <- str_c("Pois(", mean_vec, ")")
+
+@
+
+
+<<mc-distribution-02-b, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c('Es handelt sich um eine Normalverteilung mit ',
+                         norm_str, "."),
+                   str_c('Es handelt sich um eine Poisson-Verteilung mit ',
+                         pois_str, "."),
+                   'Es handelt sich um eine Binomial-Verteilung mit Binom(10).',
+                   'Eine Standardnormalverteilung mit N(0,1).',
+                   'Eine rechtsschiefe, multivariate Normalverteilung.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

@@ -1,0 +1,24 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+<<>>=
+
+n <- c(2,3,4) %>%
+  sample(1)
+
+sd_vec <- str_c(rep("s_", times = n), 1:n, collapse = sample(c(" = ", " \\neq "), 1))
+
+mu_vec <- str_c(rep("\\mu_", times = n), 1:n, collapse = " \\neq ")
+
+
+@
+
+\begin{enumerate}
+\item Skizieren Sie $\Sexpr{n}$ Normalverteilungen \textit{in einer
+    Abbildung} mit $\Sexpr{mu_vec}$ und $\Sexpr{sd_vec}$! \textbf{(2 Punkte)}
+\item Beschriften Sie die Normalverteilungen mit den entsprechenden
+  Parametern! \textbf{(2 Punkte)}
+\item Liegt Varianzhomogenit{\"a}t oder Varianzheterogenit{\"a}t vor? Begr{\"u}nden Sie
+  Ihre Antwort! \textbf{(2 Punkte)}
+\end{enumerate}
+
+

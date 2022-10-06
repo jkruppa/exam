@@ -1,0 +1,31 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+variable_vec <- c("parametrische", "nicht-parametrische") %>%
+  sample(1)
+
+@
+
+
+Welche Aussage {\"u}ber die \Sexpr{variable_vec} Statistik ist richtig?
+
+<<mc-parametrik-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c("Die ", variable_vec, " Statistik basiert auf R{\"a}ngen. Daher wird jeder Zahl ein Rang zugeteilt. Nur auf den R{\"a}ngen wird die Auswertung gerechnet. Daher gibt es auch keinen direkt zu interpretierenden Effektsch{\"a}tzer."),
+                   str_c("Die ", variable_vec, " Statistik basiert auf dem Sch{\"a}tzen von Parametern aus einer festgelegten Verteilung. Daher gibt es auch direkt zu interpretierenden Effektsch{\"a}tzer."),
+                   str_c("Die ", variable_vec, " Statistik basiert auf R{\"a}ngen. Daher gibt es auch direkt zu interpretierenden Effektsch{\"a}tzer."),
+                   str_c("Die ", variable_vec, " Statistik basiert auf dem Sch{\"a}tzen von Parametern aus einer a priori festgelegten Verteilung. Daher gibt es auch direkt zu interpretierenden Effektsch{\"a}tzer."),
+                   "Die nicht-parametrische Statistik ist ein Vorg{\"a}nger der parametrischen Statistik und wurde wegen dem Mangel an Effektsch{\"a}tzern nicht mehr ab 1960 genutzt.") %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

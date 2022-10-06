@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage {\"u}ber \textit{ordinary mean} und \textit{marginal mean} ist richtig? 
+
+<<mc-desc-04, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Der Begriff \\textit{ordinary mean} beschreibt die einzelnen Mittelwerte der Level eines Faktors wohingegen der \\textit{marginal mean} den Mittelwert {\"u}ber alle Level des Faktors wiedergibt.',
+                   'Der Begriff \\textit{ordinary mean} beschreibt einen einzelnen Mittelwert eines Levels eines Faktors wohingegen der \\textit{marginal mean} die unbedeutenden Mittelwerte beschreibt.',
+                   'Der Begriff \\textit{ordinary mean} beschreibt einen unbedeutenden Mittelwert und \\textit{marginal mean} einen Randmittelwert.',
+                   'Der Begriff \\textit{ordinary mean} beschreibt die Mittelwerte eines Faktors wohingegen der \\textit{marginal mean} die einzelnen Level betrachtet.',
+                   'Der Begriff \\textit{ordinary mean} beschreibt gew{\"o}hnliche Mittelwerte und wohingegen \\textit{marginal mean} kleine Mittelwerte beschreibt.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

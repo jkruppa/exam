@@ -1,0 +1,36 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+<<>>=
+
+effect_vec <- sample(c("no effect of X", "effect of X"), 1)
+
+@
+
+\begin{enumerate}
+\item Skizieren Sie in die unten stehenden, freien Abbildungen ein kausales
+  und ein pr{\"a}diktives Modell mit $n = \Sexpr{sample(c(5,7,9), 1)}$
+  Beobachtungen! \textbf{(4 Punkte)}
+\item Beachten Sie bei der Erstellung der Skizze, ob ein Effekt von X
+  vorliegt oder nicht! \textbf{(2 Punkte)}
+\end{enumerate}
+
+<<modeling-01, results='asis', echo = FALSE, fig.height = 8, fig.width = 5, fig.align = "center", message = FALSE>>=
+
+df <- data.frame()
+p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("X") + ylab("Y") +
+  ggtitle(str_c("Causal model with ", effect_vec)) + 
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("X") + ylab("Y") +
+  ggtitle(str_c("Predictive model with ", effect_vec)) + 
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+##
+grid.arrange(p1, p2, ncol = 1)
+
+@
+

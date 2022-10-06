@@ -1,0 +1,56 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+Im folgenden sehen Sie vier Scatterplots. Erg{\"a}nzen Sie die {\"U}berschriften
+der jeweiligen Scatterplots.
+
+
+\begin{enumerate}
+\item Sch{\"a}tzen Sie die $\rho$-Werte in der entsprechenden
+  Abbildung! \textbf{(4 Punkte)}
+\item Sch{\"a}tzen Sie die $R^2$-Werte in der entsprechenden
+  Punktewolke um die Gerade! \textbf{(4 Punkte)}
+\item Sie rechnen ein statistisches Modell. Was sagen Ihnen die $R^2$-Werte
+  {\"u}ber das jeweilige Modell? \textbf{(2 Punkte)}
+\end{enumerate}
+
+
+<<correlation-02, results='asis', echo = FALSE, fig.height = 7, fig.width =7, fig.align = "center", message = FALSE>>=
+
+corr_vec <- c(-1, -0.5, 0, 0.5, 1) %>%
+  sample(size = 4)
+r2_vec <- c(0, 0.1, 0.2, 0.3) %>%
+  sample(size = 4, replace = FALSE)
+
+df <- tibble(x = rnorm(1000, 0.5, 0.5), #seq(0, 1, length.out = 1000),
+             y_1 = 0 + corr_vec[1] * x + rnorm(length(x), 0, r2_vec[1]),
+             y_2 = 0 + corr_vec[2] * x + rnorm(length(x), 0, r2_vec[2]),
+             y_3 = 0 + corr_vec[3] * x + rnorm(length(x), 0, r2_vec[3]),
+             y_4 = 0 + corr_vec[4] * x + rnorm(length(x), 0, r2_vec[4]))
+p1 <- ggplot(df, aes(x, y_1)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
+  theme_bw()
+p2 <- ggplot(df, aes(x, y_2)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
+  theme_bw()
+p3 <- ggplot(df, aes(x, y_3)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
+  theme_bw()
+p4 <- ggplot(df, aes(x, y_4)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
+  theme_bw()
+grid.arrange(p1, p2, p3, p4, ncol = 2)
+
+@
+

@@ -1,0 +1,33 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+
+<<ttest-R-01-a,  echo = FALSE>>=
+data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                  gather,
+                  tibble(high = round(rnorm(n = sample(c(5,7,9), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                  gather) %>%
+  set_names(c("N", "freshweight")) %>%
+  sample_n(size = nrow(.))
+
+t.test(freshweight ~ N, data_tbl, var.equal = TRUE) 
+
+ttest <- t.test(freshweight ~ N, data_tbl, var.equal = TRUE)
+tk <- qt(0.975, df=ttest$parameter)
+@
+
+
+\begin{enumerate}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizieren Sie eine Abbildung in der Sie $T_c$, $Pr(D|H_0)$, $A=1$,
+  sowie $T_k = |\Sexpr{round(tk, 2)}|$ einzeichnen! \textbf{(4 Punkte)}
+\item Beschriften Sie die Abbildung und
+  den Graphen entsprechend! \textbf{(2 Punkte)}  
+\end{enumerate}

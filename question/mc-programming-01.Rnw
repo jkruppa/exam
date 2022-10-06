@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Wenn Sie einen Datensatz erstellen, dann ist es ratsam die Spalten und die
+Eintr{\"a}ge in englischer Sprache zu verfassen, wenn Sie sp{\"a}ter die Daten in
+\Rlogo auswerten wollen. Welcher folgende Grund ist richtig?
+
+<<mc-programming-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Im Allgemeinen haben Programmiersprachen Probleme mit Umlauten und Sonderzeichen, die in der deutschen Sprache vorkommen. Eine Nutzung der englischen Sprache umgeht dieses Problem auf einfache Art.',
+                   'Die Spracherkennung von \\Rlogo ist nicht in der Lage Deutsch zu verstehen.',
+                   'Alle Funktionen und auch Anwendungen sind in \\Rlogo in englischer Sprache. Die Nutzung von deutschen W{\"o}rtern ist nicht schick und das ist zu vermeiden.',
+                   'Es gibt keinen Grund nicht auch deutsche W{\"o}rter zu verwenden. Es ist ein Stilmittel.',
+                   'Programmiersprachen k{\"o}nnen nur englische Begriffe verarbeiten. Zus{\"a}tzliche Pakete k{\"o}nnen zwar geladen werden, aber meist funktionieren diese Pakete nicht richtig. Deutsch ist International nicht bedeutend genug.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

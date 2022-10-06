@@ -1,0 +1,27 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Beim statistischen Testen wird \texttt{signal} mit \texttt{noise} zur
+Teststatistik T verrechnet. Welche der Formel berechnet korrekt die
+Teststatistik T?
+
+<<mc-statistisches-testen-05, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Es gilt $T = \\cfrac{signal}{noise}$' ,
+                   'Es gilt $T = signal \\cdot noise$',
+                   'Es gilt $T = \\cfrac{noise}{signal}$',
+                   'Es gilt $T = \\cfrac{signal}{noise^2}$',
+                   'Es gilt $T = (signal \\cdot noise)^2$') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}
+
+%% ------------------------------------------------------------

@@ -1,0 +1,32 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+Nach einem Feldexperiment mit zwei Pestiziden (\textit{RoundUp} und
+\textit{OutEx}) ergibt sich die folgende Datentabelle mit dem jeweiligen
+beobachteten Infektionsstatus.
+
+<<mosaic-01, results='asis', echo = FALSE>>=
+data_tbl <- rbind(tibble(RoundUp = round(rnorm(n = sample(c(9, 11), 1),
+                                         mean = sample(c(19, 20, 21), 1),
+                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                  gather,
+                  tibble(OutEx = round(rnorm(n = sample(c(9, 11), 1),
+                                         mean = sample(c(19, 20, 21), 1),
+                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                  gather) %>%
+  set_names(c("pesticide", "rsp")) %>%
+  mutate(infected = ifelse(rsp >= 20, "yes", "no")) %>%
+  select(-rsp) %>% 
+  sample_n(size = nrow(.))
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+\begin{enumerate}
+\item Stellen Sie in einer 2x2 Tafel den Zusammenhang zwischen dem
+  Pesizid und dem Infektionsstatus dar! \textbf{(4 Punkte)}
+\item Zeichnen Sie den zugeh{\"o}rigen Mosaic-Plot. Berechnen Sie das
+  Verh{\"a}ltnis pro Spalte! \textbf{(2 Punkte)}
+\item Wenn das Pesizid keine Auswirkung auf den Infektionsstatus h{\"a}tte, wie
+  sehe dann der Mosaic-Plot aus? \textbf{(2 Punkte)}
+\end{enumerate}

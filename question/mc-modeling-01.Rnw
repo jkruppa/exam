@@ -1,0 +1,32 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+variable_vec <- c("Y", "X") %>%
+  sample(1)
+
+@
+
+
+Sie haben das abstarkte Modell $Y \sim X$ vorliegen. Welche Aussage {\"u}ber
+\Sexpr{variable_vec} ist richtig?
+
+<<mc-modelling-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c(variable_vec, " beinhaltet mehrere Spalten. Die Spalten geben die Verteilungsfamilie vor."),
+                   str_c(variable_vec, " beinhaltet eine Spalte. Die Spalte gibt die Verteilungsfamilie vor."),
+                   str_c(variable_vec, " beinhaltet mehrere Spalten. Die Spalten enthalten die Behandlung und weitere potenzielle Einflussvariablen"),
+                   str_c(variable_vec, " beinhaltet eine Spalte. Die Spalte gibt nicht die Verteilungsfamilie vor."),
+                   str_c(variable_vec, " beinhaltet die Zeilen. Die Zeilen geben die Verteilungsfamilie vor.")) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

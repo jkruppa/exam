@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage zum mathematische Ausdruck $Pr(D|H_0)$ ist richtig? 
+
+<<mc-statistisches-testen-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c('$Pr(D|H_0)$ ist die Wahrscheinlichkeit die Daten D zu beobachten wenn die Nullhypothese wahr ist.',
+                   'Die Wahrscheinlichkeit der Daten unter der Nullhypothese in der Grundgesamtheit.',
+                   'Die Wahrscheinlichkeit f{\"u}r die Nullhypothese, wenn die Daten wahr sind.',
+                   'Die Inverse der Wahrscheinlichkeit unter der die Nullhypothese nicht mehr die Alternativehypothese {\"u}berdeckt.',
+                   '$Pr(D|H_0)$ ist die Wahrscheinlichkeit der Alternativehypothese und somit $1 - Pr(H_A)$') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

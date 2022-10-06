@@ -1,0 +1,32 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+variable_vec <- c("pr{\"a}diktives", "kausales") %>%
+  sample(1)
+
+@
+
+
+Sie haben das Modell $Y \sim X$ vorliegen und wollen nun ein
+\Sexpr{variable_vec} Modell rechnen. Welche Aussage ist richtig?
+
+<<mc-modelling-02, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c("Ein ", variable_vec, " Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert."),
+                   str_c("Ein ", variable_vec, " Modell m{\"o}chte die Zusammenh{\"a}nge von X auf Y modellieren. Hierbei geht es um die Effekte von X auf Y. Man sagt, wenn X um 1 ansteigt {\"a}ndert sich Y um einen Betrag $\\beta$."),
+                   str_c("Ein ", variable_vec, " Modell ben{\"o}tigt mindestens eine Fallzahl von {\"u}ber 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten m{\"u}ssen homogen sein."),
+                   str_c("Ein ", variable_vec, " Modell schliesst grunds{\"a}tzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden." ),
+                   str_c("Ein ", variable_vec, " Modell wird auf einem Trainingsdatensatz trainiert und anschliessend {\"u}ber eine explorative Datenanalyse validiert. Signifikanzen {\"u}ber $\\beta_i$ k{\"o}nnen hier nicht festgestellt werden.")) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

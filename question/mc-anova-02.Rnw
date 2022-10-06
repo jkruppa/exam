@@ -1,0 +1,56 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur
+Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
+Meerschweinchen. Der Versuch wurde an 60 Schweinen durchgef{\"u}hrt, wobei
+jedes Tier eine von drei Vitamin-C-Dosen (0.5, 1 und 2 mg/Tag) {\"u}ber eine
+von zwei Verabreichungsmethoden erhielt (Orangensaft oder Ascorbins{\"a}ure
+(eine Form von Vitamin C und als VC codiert). Die Zahnl{\"a}nge wurde gemessen,
+und eine Auswahl der Daten ist unten dargestellt.
+
+<<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 4, fig.width = 4, fig.align = "center", message = FALSE>>=
+data_tbl <- ToothGrowth %>%
+  as_tibble %>%
+  mutate(dose = factor(dose, 
+                       levels = c(0.5, 1, 2),
+                       labels = c("D0.5", "D1", "D2")),
+         len = len + rnorm(n = nrow(.), 0, 0.1),
+         supp = as.factor(supp))
+
+library("ggpubr")
+
+## ggplot(data_tbl, aes(dose, len, fill = supp)) +
+##   geom_boxplot() +
+##   stat_summary(fun=mean, geom="line", aes(group = supp, color = supp),
+##                size = 1) 
+
+##   geom_line() 
+
+ggline(data_tbl, x = "dose", y = "len", color = "supp", size = 2,
+       add = c("mean_se", "dotplot")## ,
+       ## palette = c("#00AFBB", "#E7B800")
+       )
+
+@
+
+Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
+
+<<mc-anova-02-b, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Ein signifikanter Effekt ist zwischen mindestens einer \\texttt{dose} Faktorstufen zu erwarten. Durch das Kreuzen der OJ und VC Geraden an der \\texttt{dose} Faktorstufe D2 ist mit einem signifkanten Interaktionsterm zu rechnen.',
+                   'Ein signifikanter Effekt ist zwischen allen \\texttt{dose} Faktorstufen zu erwarten. Durch das Kreuzen der OJ und VC Geraden an der \\texttt{dose} Faktorstufe D2 ist keine Interaktion vorhanden.',
+                   'Ein signifikanter Effekt ist nicht zu erwarten. Durch das Kreuzen der OJ und VC Geraden an der \\texttt{dose} Faktorstufe D2 ist eine Interaktion vorhanden.',
+                   'Ein signifikanter Effekt ist zwischen allen \\texttt{dose} Faktorstufen nicht zu erwarten. Eine Interaktion liegt nicht vor. Der $\\eta^2$-Wert sollte bei ca. 0 liegen.',
+                   'Der $\\eta^2$-Wert sollte liegt bei 1, da eine Gerade zu beobachten ist. Dadurch ist die Interaktion zwischen den \\texttt{dose} Faktorstufen nicht mehr signifikant. Der Faktor \\texttt{supp} hat keinen Einfluss.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

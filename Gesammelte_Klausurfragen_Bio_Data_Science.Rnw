@@ -1,0 +1,454 @@
+\documentclass[a4paper, 10pt]{scrartcl}
+\usepackage[ngerman]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage[margin=2cm, includefoot]{geometry}
+\setlength{\parindent}{0cm}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{scalerel,amssymb}
+\usepackage{setspace}
+\def\csquare{{\Large $\boxtimes$}}
+\def\msquare{{\Large $\square$}}
+\usepackage[normalem]{ulem}
+\usepackage{ifthen}
+\newboolean{boolvar} %Deklaration
+\setboolean{boolvar}{false} %Zuweisung
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{currfile}
+\usepackage{tikz}
+\input{../init}
+\usepackage[nomessages]{fp}
+\def\textpoints{60}
+\FPeval{\overallpoints}{clip(\textpoints + 20)}
+%% https://www.overleaf.com/learn/latex/Typesetting_exams_in_LaTeX
+
+% -----------------------------------------------------------------------
+<<randomizer, echo = FALSE>>=
+pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
+               gridExtra, broom, effectsize, gtsummary, glmmTMB, performance,
+               janitor, pander, lme4, corpcor)
+##
+opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
+               echo=FALSE, warning=FALSE, message=FALSE, 
+               cache.path='cache/', fig.pos='H')
+
+## randomize the questions once a semester
+## if(force_random_flag & !file.exists(force_random_file)) {
+## questions_vec <- list.files("c:/Users/jokruppa/lehre/intern/exam/question",
+##                             full.names = TRUE, pattern = "Rnw")
+## questions_vec %>%
+##   sample %>%
+##   write_rds(file = force_random_file)
+## } else {
+##   questions_vec <- read_rds(force_random_file)
+## }
+
+questions_vec <- list.files("question",
+                            full.names = TRUE, pattern = "Rnw")
+
+text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE)
+mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
+@
+
+% -----------------------------------------------------------------------
+\begin{document}
+
+\begin{graybox}{Checkbox für die Version vom \today}
+  \Large Die gesamte Klausur beinhaltet aktuell in Summe
+  \textbf{\Sexpr{length(text_questions_vec) + length(mc_questions_vec)}}
+  Fragen.\\[1Ex]
+  Davon sind \textbf{\Sexpr{length(mc_questions_vec)}} Multiple
+  Choice Fragen sowie \textbf{\Sexpr{length(text_questions_vec)}} Rechen- und
+  Textaufgaben.
+\end{graybox}
+
+\vfill
+
+\begin{takehomebox}{Frequently asked questions (FAQ)}
+  \paragraph{Was ist das hier?} Im Folgenden findet sich die Sammlung
+  \textit{aller} Klausurfragen der Bio Data Science über \textit{alle}
+  Veranstaltungen, die ich an der Fakultät für Agrarwissenschaften und
+  Landschaftsarchitektur anbiete.
+  \vspace{1Ex}
+  \paragraph{Sind aber ein bisschen \textit{viele} Fragen...} Ja, das
+  stimmt. Die Sortierung und Überlegung welche Fragen zur Veranstaltung
+  passen obliegt dem Studierenden. Gerne stehe ich für Rückfragen
+  bereit. Teilweise sind Fragen auch ähnlich.
+  \vspace{1Ex}
+  \paragraph{Sind die Fragen fix?} Ein klares Jein. Die Zahlen und die
+  \textit{Reihenfolge} der Aufgaben - auch im Multiple Choice Teil - werden
+  sich ändern, da die Klausurfragen zufällig erstellt werden. Die
+  Aufgaben\textit{fragen} hindoch werden die gleichen Fragen bleiben.
+  \vspace{1Ex}
+  \paragraph{Okay, aber woher wei{\ss} ich jetzt welche Fragen zu meiner
+    Veranstaltung gehören?} Das ist der Trick. Durch das Durchlesen und das
+  selbstständige Sortieren der Fragen zu Themen und Inhalten merkt man
+  ziemlich schnell, welche Inhalte zu der Veranstaltung gehören und welche
+  nicht. Ist also alles Teil des Lernprozesses. \textit{Und} wenn
+  Unsicherheiten da sind, gerne in der Wiederholungsveranstaltung - letzte
+  Vorlesung - einfach mich fragen.
+  \vspace{1Ex}
+  \paragraph{Wie sieht denn die finale Klausur aus?} Die Klausur hat am
+  Ende 10 Multiple Choice Fragen mit jeweils 2 Punkten sowie Rechen- und
+  Textaufgaben mit in Summe ca. 60 Punkten. Ich peile daher eine Klausur
+  mit 80 Punkten an, wobei 40 Punkte zum Bestehen der Klausur notwendig
+  sind. \textcolor{red}{Bei geteilten Veranstaltungen
+    mit mehr als einem Dozenten ändert sich die Zusammensetzung der
+    endgültigen Punkteanzahl!}
+  \vspace{1Ex}
+  \paragraph{Sind aber mehr als \textit{zehn} Multiple Choice Fragen...} Ja,
+  aber es werden in der finalen Klausur nur zehn Multiple Choice Fragen
+  sein. Ich wähle die Fragen dann zufällig aus. Ich berücksichtige
+  natürlich die Veranstaltung und das Lernniveau.
+  \vspace{1Ex}
+  \paragraph{Solange kann ich nicht warten...} Dann einfach eine Mail an
+  mich schreiben:
+  \begin{center}
+    \url{j.kruppa@hs-onsabrueck.de}
+  \end{center}
+  Ich versuche dann die Frage kurzfristig zu beantworten oder
+  aber in der Vorlesung nochmal (anonym) aufzugreifen.
+\end{takehomebox}
+
+
+\maketitle
+\thispagestyle{empty}
+\clearpage
+
+\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item Normaler, nicht-programmierbarer Taschenrechner (kein Handy!)
+  \item Eine DIN A4-Seite \textbf{einseitig} als selbstgeschriebene,
+    handschriftliche
+    Formelsammlung. % ausschließlich mit Formeln und ohne erklärende Sätze;
+    % keine Beispielrechnungen
+  \end{itemize}
+\end{graybox}
+\vfill
+
+\begin{graybox}{Ergebnis der Klausur}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus dem Multiple
+    Choice Teil erreicht.
+  \item[] \rule[0ex]{3em}{.4pt}\, von \textpoints\, Punkten sind aus dem Rechen- und
+    Textteil erreicht. 
+  \item[] \rule[0ex]{3em}{.4pt}\, von \overallpoints\, Punkten in Summe.
+  \item[] Es wird folgender Notenschlüssel angewendet.   
+  \end{itemize}
+  \vspace{1ex}
+\begin{center}
+  \begin{tabular}[c]{cc}
+    \toprule
+    \textbf{Punkte}	&	\textbf{Note}	\\
+    \midrule
+    78 - \overallpoints	&	1,0	\\
+    75 - 77	&	1,3	\\
+    70 - 74	&	1,7	\\
+    65 - 69	&	2,0	\\
+    59 - 64	&	2,3	\\
+    54 - 58	&	2,7	\\
+    49 - 53	&	3,0	\\
+    44 - 48	&	3,3	\\
+    41 - 43	&	3,7	\\
+    40	&	4,0	\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+  \vspace{1ex}
+\begin{itemize}
+\item[] Es ergibt sich eine Endnote von \rule[0ex]{4em}{.4pt}.
+\end{itemize}
+  \vspace{1Ex}
+\end{graybox}
+
+
+\newpage
+
+
+\begin{graybox}{Multiple Choice Aufgaben}
+  \begin{itemize}
+  \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
+  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+      dieser Seite.}
+  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+    angekreuzt sind!
+  \end{itemize}
+
+\begin{center}
+  \large
+  \begin{tabular}{|r|c|c|c|c|c||c|}
+    \hline
+    & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & $\boldsymbol{\checkmark}$\strut\\
+    \hline
+    1 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    2 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    3 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    4 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    5 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    6 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    7 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    8 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    9 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    10 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Es sind \rule[0ex]{2em}{.4pt}\, von 20 Punkten erreicht worden.
+\end{itemize}
+\end{graybox}
+
+\vfill
+
+\begin{graybox}{Rechen- und Textaufgaben}
+  \begin{itemize}
+  \item Die Tabelle wird vom Dozenten ausgefüllt.
+  \end{itemize}
+  \begin{center}
+    \large
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+      \hline
+      \textbf{Aufgabe} & 11 & 12 & 13 & 14 & 15 & 16 & 17 \strut\\
+      \hline
+      \textbf{Punkte} & \phantom{1111}  & \phantom{1212}  & \phantom{1313}  & \phantom{1414}  & \phantom{1515}  & \phantom{1616}  & \phantom{1717}
+                                                                                                                                    \strut\\
+      \hline
+  \end{tabular}
+\end{center}
+\begin{itemize}
+\item Es sind \rule[0ex]{2em}{.4pt}\, von \textpoints\, Punkten erreicht worden.
+\end{itemize}
+\end{graybox}
+
+\clearpage
+
+\Sexpr{knit_child(mc_questions_vec[1])} 
+\Sexpr{knit_child(mc_questions_vec[2])} 
+\Sexpr{knit_child(mc_questions_vec[3])} 
+\Sexpr{knit_child(mc_questions_vec[4])} 
+\Sexpr{knit_child(mc_questions_vec[5])} 
+\Sexpr{knit_child(mc_questions_vec[6])} 
+\Sexpr{knit_child(mc_questions_vec[7])} 
+\Sexpr{knit_child(mc_questions_vec[8])} 
+\Sexpr{knit_child(mc_questions_vec[9])} 
+\Sexpr{knit_child(mc_questions_vec[10])}
+\Sexpr{knit_child(mc_questions_vec[11])} 
+\Sexpr{knit_child(mc_questions_vec[12])} 
+\Sexpr{knit_child(mc_questions_vec[13])} 
+\Sexpr{knit_child(mc_questions_vec[14])} 
+\Sexpr{knit_child(mc_questions_vec[15])}
+\Sexpr{knit_child(mc_questions_vec[16])}
+\Sexpr{knit_child(mc_questions_vec[17])}
+\Sexpr{knit_child(mc_questions_vec[18])}
+\Sexpr{knit_child(mc_questions_vec[19])}
+\Sexpr{knit_child(mc_questions_vec[20])}
+\Sexpr{knit_child(mc_questions_vec[21])}
+\Sexpr{knit_child(mc_questions_vec[22])}
+\Sexpr{knit_child(mc_questions_vec[23])}
+\Sexpr{knit_child(mc_questions_vec[24])}
+\Sexpr{knit_child(mc_questions_vec[25])}
+\Sexpr{knit_child(mc_questions_vec[26])}
+\Sexpr{knit_child(mc_questions_vec[27])}
+\Sexpr{knit_child(mc_questions_vec[28])}
+\Sexpr{knit_child(mc_questions_vec[29])}
+\Sexpr{knit_child(mc_questions_vec[30])}
+\Sexpr{knit_child(mc_questions_vec[31])}
+\Sexpr{knit_child(mc_questions_vec[32])}
+\Sexpr{knit_child(mc_questions_vec[33])}
+\Sexpr{knit_child(mc_questions_vec[34])}
+\Sexpr{knit_child(mc_questions_vec[35])}
+\Sexpr{knit_child(mc_questions_vec[36])}
+\Sexpr{knit_child(mc_questions_vec[37])}
+\Sexpr{knit_child(mc_questions_vec[38])}
+\Sexpr{knit_child(mc_questions_vec[39])}
+\Sexpr{knit_child(mc_questions_vec[40])}
+\Sexpr{knit_child(mc_questions_vec[41])}
+\Sexpr{knit_child(mc_questions_vec[42])}
+\Sexpr{knit_child(mc_questions_vec[43])}
+\Sexpr{knit_child(mc_questions_vec[44])}
+
+% -----------------------------------------------------------------------
+\clearpage
+\begin{graybox}{Rechen- und Textaufgaben}
+  \begin{itemize}
+  \item Die Zahlen und Abbildungen werden in \textit{jeder} Version dieses
+    Dokuments neu erstellt.
+  \item Es kann daher sein, dass \textit{seltsame} Ergebnisse oder
+    Abbildungen entstehen. Im Falle der Klausur werde ich das nochmal
+    korrigieren --- hier lasse ich es so stehen.  
+  \end{itemize}
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[1])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[2])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[3])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[4])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[5])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[6])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[7])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[8])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[9])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[10])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[11])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[12])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[13])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[14])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[15])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[16])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[17])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[18])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[19])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[20])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[21])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[22])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[23])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[24])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[25])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[26])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[27])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[28])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[29])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[30])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[31])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[32])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[33])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[34])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[35])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[36])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[37])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[38])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[39])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[40])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[41])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[42])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[43])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[44])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[45])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[46])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[47])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[48])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[49])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[50])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[51])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[52])} 
+\clearpage
+% -----------------------------------------------------------------------
+\end{document}
+% -----------------------------------------------------------------------

@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage {\"u}ber das \textit{generalisierte lineare Modell (GLM)} ist richtig?  
+
+<<mc-regression-03, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Das GLM erlaubt auch weitere Verteilungsfamilien f{\"u}r das Y bzw. das Outcome in einer linearen Regression zu w{\"a}hlen.',
+                   'Das GLM ist eine allgemeine Erweiterung der linearen Regression auf die Normalverteilung.',
+                   'Das GLM erlaubt auch nicht normalverteilte Residuen in der Sch{\"a}tzung der Regressionsgrade.',
+                   'Das GLM ist eine Vereinfachung des LM in R. Mit dem GLM lassen polygonale Regressionen rechnen.',
+                   'Das GLM ist ein faktisch maschineller Lernalgorithmus, der selstst{\"a}ndig die Verteilungsfamilie f{\"u}r Y w{\"a}hlt.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

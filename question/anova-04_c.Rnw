@@ -1,0 +1,34 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+
+Der Datensatz \textit{Crop} enth{\"a}lt das Trockengewicht der
+Maispflanzen (\textit{drymatter}), die unter drei 
+verschiedenen D{\"u}ngerbedingungen erzielt wurden -- dem Faktor
+\textit{trt} mit den Faktorstufen \textit{dose1}, \textit{dose2},
+\textit{dose3}. Sie erhalten folgenden Output in \Rlogo.
+
+<<anova-R-04-a,  echo = FALSE>>=
+data_tbl <- PlantGrowth %>%
+  as_tibble %>%
+  mutate(trt = ordered(group, levels = c("ctrl", "trt1", "trt2"),
+                       labels = c("dose1", "dose2", "dose3")),
+         drymatter = weight + rnorm(n = nrow(.), 0, 0.2)) 
+
+anova_mdl <- lm(drymatter ~ trt, data = data_tbl) %>%
+  anova
+
+anova_mdl
+
+@
+
+\begin{enumerate}
+\item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
+  einfaktorielle ANOVA auf! \textbf{(2 Punkte)}
+\item Interpretieren Sie das Ergebnis der einfaktoriellen ANOVA! \textbf{(1 Punkt)} 
+\item Berechen Sie den Effektsch{\"a}tzer $\eta^2$. Was sagt Ihnen der Wert von
+  $\eta^2$ aus? \textbf{(2 Punkte)}
+\item Skizieren Sie eine Abbildung, der dem obigen Ergebnis der
+  einfaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(3 Punkte)}
+\end{enumerate}
+
+

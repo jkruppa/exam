@@ -1,0 +1,29 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Nach einem Experiment mit f{\"u}nf Weizensorten ergibt eine ANOVA ($p = 0.041$)
+einen signifikanten Unterschied f{\"u}r den Ertrag. Sie f{\"u}hren anschlie{\ss}end die
+paarweisen t-Tests f{\"u}r alle Vergleiche der verschiedenen Weizensorten
+durch. Nach der Adjustierung f{\"u}r multiples Testen ist kein p-Wert unter der
+$\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte
+an und finden hier als niedrigsten p-Wert $p_{3-2} = 0.053$. Welche Aussage
+ist richtig? 
+
+<<mc-ttest-03, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.',
+                   'Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.',
+                   'Die ANOVA testet auf der gesamten Fallzahl. Es w{\"a}re besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.',
+                   'Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.',
+                   'Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

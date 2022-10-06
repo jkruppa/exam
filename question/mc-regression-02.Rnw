@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+In einer linearen Regression werden die $\epsilon$ oder Residuen
+gesch{\"a}tzt. Welcher Verteilung folgen die Residuen bei einer optimalen
+Modellierung? 
+
+<<mc-regression-02, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(0, s^2)$.',
+                   'Die Residuen sind normalverteilt mit $\\mathcal{N}(\\bar{y}, s^2)$.',
+                   'Die Residuen sind normalverteilt mit $\\mathcal{N}(0, 1)$.',
+                   'Die Residuen sind binomialverteilt.',
+                   'Die Residuen folgen einer Poissonverteilung mit Pois(0).') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

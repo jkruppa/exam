@@ -1,0 +1,72 @@
+\section{Aufgabe \hfill (7 Punkte)}
+
+<<chisquare-02-a, echo = FALSE>>=
+
+a <- round(rnorm(n = 1,
+                  mean = sample(c(30, 40, 50), 1),
+                  sd = sample(c(2, 4, 5), 1))) 
+
+b <-  round(rnorm(n = 1,
+                   mean = sample(c(20, 30, 40), 1),
+                   sd = sample(c(2, 4, 5), 1))) 
+
+c <-  round(rnorm(n = 1,
+                   mean = sample(c(30, 40, 50), 1),
+                   sd = sample(c(2, 4, 5), 1)))
+
+d <-  round(rnorm(n = 1,
+                   mean = sample(c(20, 30, 40), 1),
+                   sd = sample(c(2, 4, 5), 1))) 
+
+abcd <- a + b + c +d
+ac <- a+c
+bd <- b+d
+ab <- a+b
+cd <- c+d
+
+@
+
+Gegeben sind folgende Randsummen in einer 2x2 Kreuztabelle aus einem
+Experiment mit $n = \Sexpr{abcd}$ Sauen. In dem Experiment wurde gemessen,
+ob eine Sau nach einer Behandlung mit einem Medikament (ja/nein)
+mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).
+
+\vspace{5Ex}
+
+\begin{center}
+  \Large
+  \begin{tabular}{c|c|c|c}
+     & \textbf{>30 Ferkel (ja)} & \textbf{$\leq$30 Ferkel (nein)} &  \strut\\
+    \hline
+    \textbf{Medikament (ja)} & \phantom{100}  & \phantom{100}  &   \Sexpr{ab}  \strut\\
+    \hline
+    \textbf{Medikament (nein)} & \phantom{100}  & \phantom{100}  &   \Sexpr{cd}   \strut\\
+    \hline
+     &  \Sexpr{ac} &  \Sexpr{bd} &  \Sexpr{abcd}  \strut\\
+  \end{tabular}
+\end{center}
+
+<<chisquare-02-b, results='asis', echo = FALSE>>=
+
+effect_vec <- sample(c("ein", "kein"), 1)
+
+@
+
+\vspace{5Ex}
+
+\begin{enumerate}
+\item Erg{\"a}nzen Sie die Felder innerhalb der 2x2 Kreuztabelle in dem Sinne,
+  dass \textit{\Sexpr{effect_vec}} signifikanter Effekt zu erwarten w{\"a}re!
+  \textbf{(2 Punkte)}
+\item Erkl{\"a}ren und Begr{\"u}nden Sie Ihr Vorgehen an der Formel des
+  Chi-Quadrat-Tests mit
+  \begin{equation*}
+  \mathcal{X}^2 = \sum\tfrac{(O - E)^2}{E}.  
+  \end{equation*}
+  Sie k{\"o}nnen dies an einem Beispiel erkl{\"a}ren! \textbf{(2 Punkte)}
+\item Was ist die Mindestanzahl an Beobachtungen je Zelle? Wenn in einer
+  der Zellen weniger Beobachtungen auftreten, welchen Test k{\"o}nnen Sie
+  anstatt des "`normalen"' Chi-Quadrat-Tests anwenden? \textbf{(2 Punkte)}
+\item Warum hat die obige Vierfeldertafel einen Freiheitsgrad von $df=1$?
+  \textbf{(1 Punkt)}
+\end{enumerate}

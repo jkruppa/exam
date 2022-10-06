@@ -1,0 +1,37 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+Gegeben ist die vereinfachte Formel f{\"u}r den Zweistichproben t-Test mit der
+gepoolten Standardabweichung $s_p$ und gleicher Gruppengr{\"o}sse $n_g$ der
+beiden Sample.
+
+\begin{equation*}
+  \label{eq:1}
+  T = \cfrac{\bar{x}_1 - \bar{x}_2}{s_p \cdot \sqrt{\tfrac{2}{n_g}}}
+\end{equation*}
+
+Welche Auswirkung hat die {\"A}nderungen der jeweiligen statistischen Masszahl
+auf den T-Wert und damit auf die \textit{vermutliche} Signifikanz? F{\"u}llen
+Sie hierzu die untenstehende Tabelle aus! \textbf{(6 Punkte)}
+
+\begin{center}
+  \Large
+  \begin{tabular}[c]{l|l|l|l|l|l}
+    & T Statistik & $Pr(D|H_0)$ & & T Statistik & $Pr(D|H_0)$ \strut\\ 
+    \hline
+    \textbf{$\Delta\; \uparrow$} & \hspace{2cm} & \hspace{2cm} & \textbf{
+                                                          $\Delta\; \downarrow$} &
+                                                                          \hspace{2cm} & \hspace{2cm}\strut\\
+    \hline
+        \textbf{$s\; \uparrow$} & \hspace{2cm} & \hspace{2cm} & \textbf{
+                                                          $s\; \downarrow$} &
+                                                                          \hspace{2cm}
+                                                & \hspace{2cm}\strut\\
+    \hline
+        \textbf{$n\; \uparrow$} & \hspace{2cm} & \hspace{2cm} & \textbf{
+                                                          $n\; \downarrow$} &
+                                                                          \hspace{2cm}
+                                                & \hspace{2cm}\strut\\
+    \hline
+  \end{tabular}
+\end{center}
+

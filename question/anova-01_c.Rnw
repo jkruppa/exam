@@ -1,0 +1,48 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+In einem Experiment wurde der Ertrag von Erbsen unter drei verschiedenen
+Pestizid-Dosen 0.5 g/l, 1.5 g/l und 2.5 g/l gemessen. Unten stehenden sehen
+Sie die Visualisierung des Datensatzes.
+
+<<anova-01-a,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
+data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(5,7,9), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(1, 1, 2), 1)))) %>%
+                  gather,
+                  tibble(dose2 = round(rnorm(n = sample(c(5,7,9), 1),
+                                         mean = sample(c(18, 19, 20), 1),
+                                         sd = sample(c(1, 2, 1), 1)))) %>%
+                  gather,
+                  tibble(dose3 = round(rnorm(n = sample(c(5,7,9), 1),
+                                         mean = sample(c(19, 21, 23), 1),
+                                         sd = sample(c(2, 2, 2), 1)))) %>%
+                  gather) %>%
+  set_names(c("dose", "activity")) %>%
+  sample_n(size = nrow(.)) %>%
+  mutate(dose = revalue(dose, c("dose1" = "0.5",
+                                "dose2" = "1.5",
+                                "dose3" = "2.5")))
+
+ggplot(data_tbl, aes(dose, activity, shape = dose)) +
+  geom_point() +
+  labs(x = "Dosisstufen", y = "Trockengewicht") +
+  ylim(min(data_tbl$activity - 2), max(data_tbl$activity + 2)) +
+  scale_shape_discrete(name = "Dosis") +
+  theme_bw()
+
+@
+
+\begin{enumerate}
+\item Zeichnen Sie folgende statistischen Masszahlen in die Abildung ein! \textbf{(6 Punkte)}
+  \begin{itemize}
+  \item Total (grand) mean: $\beta_0$
+  \item Mittelwerte der Dosen: $\bar{x}_{0.5}$, $\bar{x}_{1.5}$ und $\bar{x}_{2.5}$
+  \item Effekt der einzelnen Level der Dosen: $\beta_{0.5}$, $\beta_{1.5}$,
+    und $\beta_{2.5}$
+  \item Residuen oder Fehler: $\epsilon$
+  \end{itemize}
+\item Sch{\"a}tzen Sie den p-Wert einer einfaktoriellen ANOVA ab. Liegt ein
+  \textit{vermutlicher} signifikanter Unterschied zwischen den Dosisstufen
+  vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\end{enumerate}
+

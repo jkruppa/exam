@@ -1,0 +1,34 @@
+\section{Aufgabe \hfill (11 Punkte)}
+
+Die Pr{\"a}valenz von Klauenseuche bei Wollschweinen wird mit
+\Sexpr{sample(c(2,3,4), 1)}\% angenommen. In \Sexpr{sample(c(75,80,85),
+  1)}\% der F{\"a}lle ist ein Test positiv, wenn das Wollschwein erkrankt
+ist. In \Sexpr{sample(c(7.5,8.0,8.5), 1)}\% der F{\"a}lle ist ein Test positiv,
+wenn das Wollschwein \textit{nicht} erkrankt ist und somit gesund ist. Sie
+werten \Sexpr{sample(c(1000,2000,4000), 1)} Wollschweine mit einem
+diagnostischen Test auf Klauenseuche aus.
+
+<<>>=
+
+files <- dir("C:/Users/jokruppa/lehre/intern/exam/question/img",
+             pattern = "diag-doppelbaum", full.names = TRUE)
+
+@ 
+
+\begin{enumerate}
+\item F{\"u}llen und beschriften Sie den untenstehenden Doppelbaum! Beschriften
+  Sie auch die {\"A}ste des Doppelbaumes, mit denen Ihnen bekannten
+  Informationen!  \textbf{(8 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
+\item Was sagt Ihnen die Wahrscheinlichkeit $Pr(K^+|T^+)$ aus? \textbf{(1 Punkt)}
+\end{enumerate}
+
+\vspace{1cm}
+
+\begin{center}
+  \includegraphics[width=17cm]{\Sexpr{files[1]}}
+\end{center}
+
+
+
+

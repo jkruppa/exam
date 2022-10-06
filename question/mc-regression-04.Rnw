@@ -1,0 +1,35 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+aic1 <- sample(c(125, 653, 254), 1)
+aic2 <- sample(c(435, 287, 89), 1)
+
+
+@ 
+
+Sie rechnen in einer linearen Regression das Modell A und das Modell B. Nun
+stellt sich die Frage, welches der beiden Modelle das bessere Modell
+ist. Um die Modelle bewerten zu k{\"o}nnen berechnen Sie daf{\"u}r das AIC$_A$ f{\"u}r
+Modell A mit \Sexpr{aic1} und f{\"u}r das Modell B das AIC$_B$ von
+\Sexpr{aic2}. Welche Aussage {\"u}ber die beiden Modelle ist richtig?
+
+<<mc-regression-04, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Da AIC$_A$ < AIC$_B$ ist das Modell A das bessere Modell.',
+                   'Da AIC$_A$ > AIC$_B$ ist das Modell A das bessere Modell.',
+                   'Da AIC$_A$ < AIC$_B$ ist das Modell B das bessere Modell.',
+                   'Da AIC$_A$ > AIC$_B$ ist das Modell B das bessere Modell.',
+                   'Da AIC$_A$ > 0 ist das Modell A das bessere Modell. Der AIC Wert f{\"u}r B wird verworfen.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

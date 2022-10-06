@@ -1,0 +1,42 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+<<>>=
+
+mean_vec <- c(0, 1, 2, 3, 4) %>%
+  sample(2)
+
+sd_vec <- c(1, 2, 3) %>%
+  sample(2, replace = TRUE)
+
+lambda_vec <- c(5, 10, 15) %>%
+  sample(1)
+
+@
+
+\begin{enumerate}
+\item Skizieren Sie in die unten stehenden, freien Abbildungen die
+  Verteilungen, die sich nach der Abbilungs{\"u}berschrift ergeben! \textbf{(4
+    Punkte)}
+\item Achten Sie auf die entsprechende Skalierung der beiden Verteilungen
+  in der ersten Abbildung! \textbf{(2 Punkte)}
+\end{enumerate}
+
+<<histogram-01, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+
+df <- data.frame()
+p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("X") + ylab("Y") +
+  ggtitle(str_c("N(", mean_vec[1], ", ", sd_vec[1], ") und ",
+                "N(", mean_vec[2], ", ", sd_vec[2], ")")) + 
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("X") + ylab("Y") +
+  ggtitle(str_c("Pois(", lambda_vec[1], ")")) + 
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+grid.arrange(p1, p3, nrow = 2)
+@
+

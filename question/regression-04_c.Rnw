@@ -1,0 +1,28 @@
+\section{Aufgabe \hfill (4 Punkte)}
+
+<<>>=
+
+norm_vec <- sample(c("fullfiling", "validating"), 1)
+text_qq_vec <- str_c("QQ plot with residuals ", norm_vec, " the normality assumption.")
+
+
+@ 
+
+\begin{enumerate}
+\item Skizieren Sie in die unten stehende, freie Abbildung die
+  Abbildung, die sich nach der {\"U}berschrift ergibt! \textbf{(2 Punkte)}
+\item Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)}
+\end{enumerate}
+
+<<regression-04, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+
+df <- data.frame()
+ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("") + ylab("") +
+  ggtitle(text_qq_vec) + 
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+
+@
+

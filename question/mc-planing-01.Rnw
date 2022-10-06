@@ -1,0 +1,24 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Die Randomisierung von Beobachtungen bzw. Samples zu den Versuchseinheiten
+ist bedeutend in der Versuchsplanung. Welche der folgenden Aussagen ist richtig?
+
+<<mc-planing-01, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Randomisierung sorgt f{\"u}r Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{\"u}ckzuschliessen.',
+                   'Randomisierung bringt starke Unstrukturiertheit in das Experiment und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{\"u}ckzuschliessen.',
+                   'Randomisierung erlaubt erst die Varianzen zu sch{\"a}tzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht m{\"o}glich.',
+                   'Randomisierung war bis 1952 bedeutend, wurde dann aber in Folge besserer Rechnerleistung nicht mehr verwendet. Aktuelle Statistik nutzt keine Randomisierung mehr.',
+                   'Randomisierung erlaubt erst die Mittelwerte zu sch{\"a}tzen. Ohne Randomisierung keine Mittelwerte.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

@@ -1,0 +1,37 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+n <- c(4,5,6) %>% sample(1)
+x <- c(0.001, 0.01, 0.02, 0.03, 0.21, 0.34, 0.42, 0.89) %>%
+  sample(n)
+
+p1 <- round(ifelse(x * n > 1, 1, x * n), 4) 
+p2 <- round(x * n, 4)
+p3 <- round(x/n, 4)
+
+@ 
+
+Sie haben folgende unadjustierten p-Werte gegeben: \Sexpr{pander::p(x, wrap
+  = "", copula = " und ")}. Sie adjustieren die p-Werte nach
+Bonferroni. Welche Aussage ist richtig?
+
+<<mc-adjustierung-02, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c('Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von ', pander::p(p1, wrap = "", copula = " und ") ,'. Die adjustierten p-Werte werden zu einem $\\alpha$-Niveau von 5\\% verglichen.'),
+                   str_c('Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von ', pander::p(p2, wrap = "", copula = " und ") ,'. Die adjustierten p-Werte werden zu einem $\\alpha$-Niveau von 5\\% verglichen.'),
+                   str_c('Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von ', pander::p(p3, wrap = "", copula = " und ") ,'. Die adjustierten p-Werte werden zu einem $\\alpha$-Niveau von 5\\% verglichen.'),
+                   str_c('Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von ', pander::p(p1, wrap = "", copula = " und ") ,'. Die adjustierten p-Werte werden zu einem $\\alpha$-Niveau von ', round(5/n, 2),'\\% verglichen.'),
+                   str_c('Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von ', pander::p(p3, wrap = "", copula = " und ") ,'. Die adjustierten p-Werte werden zu einem $\\alpha$-Niveau von ', round(5/n, 2),'\\% verglichen.')) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

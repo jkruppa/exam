@@ -1,0 +1,32 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+<<utest-02, results='asis', echo = FALSE>>=
+
+data_tbl <- tibble(RootsGoneX = round(rnorm(7, 10, 3), 1),
+                   Kontrolle = round(rnorm(7, 13, 3), 1)) %>%
+  gather(Treatment, Count) 
+
+@
+
+Nach einer Behandlung mit RootsGoneX wurde die mittelere Anzahl an Wurzeln
+an der invasiven Lupine (\textit{Lupinus polyphyllus}) gez{\"a}hlt. Es ergab sich
+folgender Datensatz an mittleren Wurzelanzahl.
+
+<<>>=
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+
+@ 
+
+Rechnen Sie einen Mann-Whitney-U-Test auf den obigen Daten.
+
+\begin{enumerate}
+\item Bestimmen Sie hierf{\"u}r $U_c$ mit $U_c = n_1n_2 +
+  \cfrac{n_1(n_1+1)}{2}-R_1$! \textbf{(4 Punkte)} 
+\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_c$ durch $z =
+  \cfrac{U_c - \cfrac{n_1n_2}{2}}{\sqrt{\cfrac{n_1n_2(n_1+n_2+1)}{12}}}$ und
+  dem kritischen Wert von $z = 1.96$. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Berechnen Sie die Effektst{\"a}rke mit $r = |\frac{z}{\sqrt{n}}| $ und
+  interpretieren Sie die Effektst{\"a}rke! \textbf{(2 Punkte)} 
+\end{enumerate}

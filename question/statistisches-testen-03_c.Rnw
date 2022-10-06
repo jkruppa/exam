@@ -1,0 +1,36 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+<<>>=
+
+sig_vec <- c("signifikant", "nicht signifikant") %>%
+  sample(1)
+
+df_vec <- c(5, 30, 100) %>%
+  sample(1)
+
+side_vec <- c("einseitige", "zweiseitige") %>%
+  sample(1)
+
+@ 
+
+Im folgenden ist eine t-Verteilung mit 10 Freiheitsgraden
+abgebildet. Erg{\"a}nzen Sie die Abbidlung wie folgt.
+
+\begin{enumerate}
+\item Zeichnen Sie das \Sexpr{side_vec} $\alpha$ Niveau in die Abbildung! \textbf{(2 Punkte)} 
+\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! \textbf{(1 Punkt)} 
+\item Erg{\"a}nzen Sie "`$\bar{x}_1 = \bar{x}_2$"'! \textbf{(1 Punkt)} 
+\item Erg{\"a}nzen Sie "`H$_0$ ist wahr"'! \textbf{(1 Punkt)} 
+\item Erg{\"a}nzen Sie eine t-Verteilung mit \Sexpr{df_vec}
+  Freiheitsgraden. Zeichnen Sie im Zweifel {\"u}ber den Rand der Abbildung! \textbf{(1 Punkte)} 
+\end{enumerate}
+
+<<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+
+curve(dt(x, df=10), from=-4, to=4, 
+    main = 't Distribution (df = 10)', #add title
+    ylab = 'Density', #change y-axis label
+    xlab = "",
+    lwd = 2, #increase line width to 2
+    col = 'steelblue') #change line color to steelblue 
+@

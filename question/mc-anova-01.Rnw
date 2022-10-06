@@ -1,0 +1,40 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<mc-anova-01-a,  echo = FALSE>>=
+data_tbl <- PlantGrowth %>%
+  as_tibble %>%
+  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
+         weight = weight + rnorm(n = nrow(.), 0, 0.25))
+
+anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
+  anova %>%
+  eta_squared(partial = FALSE)
+
+eta2_val <- round(anova_mdl$Eta2, 2)
+
+@
+
+Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
+unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
+wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
+$\eta^2 = \Sexpr{eta2_val}$. Welche Aussage ist richtig?
+
+<<mc-anova-01-b, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{\"a}rt wird. Das $\\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.',
+                   'Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{\"a}rt wird. Somit der Rest an nicht erkl{\"a}rbarer Varianz.',
+                   'Das $\\eta^2$ ist ein Wert f{\"u}r die G{\"u}te der ANOVA. Je kleiner desto besser. Ein $\\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.',
+                   'Das $\\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.',
+                   'Die Berechnung von $\\eta^2$ ist ein Wert f{\"u}r die Interaktion.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

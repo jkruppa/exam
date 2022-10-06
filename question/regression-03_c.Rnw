@@ -1,0 +1,28 @@
+\section{Aufgabe \hfill (4 Punkte)}
+
+<<>>=
+
+outlier_vec <- sample(c(1,2,3), 1)
+text_rr_vec <- str_c("Residual plot with ", outlier_vec, " outlier fullfiling the normality assumption.")
+
+
+@ 
+
+\begin{enumerate}
+\item Skizieren Sie in die unten stehende, freie Abbildung die
+  Abbildung, die sich nach der {\"U}berschrift ergibt! \textbf{(2 Punkte)}
+\item Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)}
+\end{enumerate}
+
+<<regression-03, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+
+df <- data.frame()
+ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("") + ylab("") +
+  ggtitle(text_rr_vec) + 
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+
+@
+

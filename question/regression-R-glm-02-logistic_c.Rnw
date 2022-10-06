@@ -1,0 +1,58 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+<<>>=
+
+def <- defData(varname = "water", dist = "normal", formula = 10,
+    variance = 2)
+def <- defData(def, varname = "light", dist = "binary",
+    formula = "-2 + water * 0.1", link = "logit")
+def <- defData(def, varname = "infected", dist = "poisson",
+               formula = "1.5 - 0.2 * water + 0.5 * light", link = "log")
+def <- defData(def, varname = "nematodes", dist = "poisson", formula = 2)
+dd <- genData(rpois(1, 100), def) %>%
+  mutate(infected = ifelse(infected > 0, 1, infected),
+         water = round(water, 2))
+
+data_tbl <- dd %>%
+  select(infected, water, light, nematodes)
+
+@
+
+Auf einer Erdbeerplantage treten unerwartet h{\"a}ufig infizierte
+Erdbeerpflanzen auf. In einem Versuch sollen verschiedende Einflussfaktoren
+auf den Infektionsstatus betrachtet werden. Daf{\"u}r wurde f{\"u}r jede
+Erdbeerpflanze gemessen, wieviel Wasser die Pflanze erhalten hat oder ob
+die Pflanze ein neuartiges Lichtregime erhalten hatte. Zus{\"a}tzlich wurde die
+Anzahl an Nematoden im Boden bestimmt. Es ergibt sich folgender Auszug aus
+den Daten.
+
+<<>>=
+kable(data_tbl[1:4,], booktabs = TRUE, align = "lrrrrr") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+Sie rechnen nun eine logistische lineare Regression auf den Daten und erhalten
+folgenden \Rlogo Output.
+
+<<>>=
+wanted_vec <- sample(c("water", "light", "nematodes"), 2)
+glm(reformulate(response = "infected",
+                termlabels = wanted_vec),
+    family = binomial, data = data_tbl) %>%
+  tidy %>%
+  select(-estimate)
+
+@
+
+
+\begin{enumerate}
+\item Die Spalte \textit{estimate} wurde gel{\"o}scht. Berechnen Sie die Werte
+  der Spalte \textit{estimate} aus den \Rlogo Output! \textbf{(2 Punkte)}
+\item Welche Einflussfaktoren sind protektiv, welche ein Risiko? Berechnen
+  Sie hierf{\"u}r zun{\"a}chst das OR aus der Spalte \textit{estimate}! \textbf{(4 Punkte)}
+\item Interpretieren Sie die Spalte \textit{estimate} im Bezug auf den
+  Infektionsstatus der Erdbeerpflanzen! \textbf{(2 Punkte)}
+\item Was ist der Unterschied zwischen einem OR und einem RR? Geben Sie ein
+  numerisches Beispiel! \textbf{(2 Punkte)}
+\end{enumerate}
+

@@ -1,0 +1,46 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+data(Salamanders)
+salamanders_tbl <- Salamanders %>%
+  as_tibble %>% 
+  sample_frac(.6)
+
+fit <- glm(count ~ spp + mined, family = poisson,
+           data = salamanders_tbl) %>% check_overdispersion
+variable_vec <- round(fit[[2]], 2)
+
+@
+
+
+Price et al. (2016) untersuchte die Auswirkungen des Bergbaus und der
+Talauff{\"u}llung auf den Bestand und die H{\"a}ufigkeit von Bachsalamandern. Um
+den Effekt zu Berechnen nutze Price et al. (2016) eine Possion-Regression
+auf die Anzahl an aufgefundenen Bachsalamandern an den jeweiligen
+Suchorten. Nach einer statistischen Beratung wurde Ihm nahegelegt auf
+Overdispersion zu achten, wenn er statistische Aussagen zur Signifikanz
+treffen will. Price et al. (2016) sch{\"a}tzt zwei Modelle. Modell 1 mit einer
+Possion Verteilung und Modell 2 mit einer Quasi-Poisson Verteilung. Welche
+Aussage zu einer gesch{\"a}tzen Overdispersion von \Sexpr{variable_vec} ist
+richtig?
+
+
+<<mc-distribution-03-c, results='asis', echo = FALSE>>=
+
+questions_vec <- c("Bei einer gesch{\"a}tzen Overdispersion h{\"o}her als 1.5 ist von Overdispersion in den Daten auszugehen. Daher wird die Varianz systematisch untersch{\"a}tzt, was zu kleineren p-Werten f{\"u}hrt. Daher gibt es mehr signifikante Ergebnisse als es in Wirklichkeit gibt. Daher ist das Modell 2 die bessere Wahl.",
+                   "Bei einer gesch{\"a}tzen Overdispersion h{\"o}her als 1.5 ist von Overdispersion in den Daten auszugehen. Daher wird die Varianz systematisch {\"u}bersch{\"a}tzt, was zu h{\"o}heren p-Werten f{\"u}hrt. Daher gibt es mehr signifikante Ergebnisse als es in Wirklichkeit gibt. Daher ist das Modell 1 die bessere Wahl",
+                   "Bei einer gesch{\"a}tzen Overdispersion h{\"o}her als 1.5 ist von keiner Overdispersion in den Daten auszugehen. Dennoch sind die p-Werte zu klein, dass diese p-Werte nat{\"u}rlich entstanden sein k{\"o}nnten. Die p-Werte m{\"u}ssen adjustiert werden.",
+                   "Bei einer gesch{\"a}tzen Overdispersion h{\"o}her als 1.5 ist von Overdispersion in den Daten auszugehen. Daher wird die Varianz systematisch untersch{\"a}tzt, was zu h{\"o}heren p-Werten f{\"u}hrt. Daher gibt es weniger signifikante Ergebnisse als es in Wirklichkeit gibt. Daher ist das Modell 1 die bessere Wahl.",
+                   "Das vergleichen von verschiedenen Modellen muss erst {\"u}ber ein AIC Kriterium erfolgen. Die Absch{\"a}tzung {\"u}ber die Overdispersion ist nicht notwendig. Die Varianzen werden sp{\"a}ter in einer ANOVA adjustiert. Die Confounder Adjustierung.") %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

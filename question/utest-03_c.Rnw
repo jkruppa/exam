@@ -1,0 +1,41 @@
+\section{Aufgabe \hfill (9 Punkte)}
+
+<<utest-03, results='asis', echo = FALSE>>=
+
+data_tbl <- tibble(Kontrolle = round(rnorm(7, 10, 3), 1),
+                   "Dosis 20" = round(c(NA, rnorm(6, 11, 3)), 1),
+                   "Dosis 40" = round(c(NA, NA, rnorm(5, 14, 3)), 1)) %>%
+  gather(Treatment, Count) %>%
+  na.omit %>% 
+  mutate("Rang Kontrolle" = "",
+         "Rang Dosis 20" = "",
+         "Rang Dosis 40" = "") %>% 
+  arrange(Count)
+
+@
+
+Die Anzahl an Bl{\"u}ten der Vanilleplanze pro Box wurde nach der Gabe von
+zus{\"a}tzlichen Phosporl{\"o}sung (Kontrolle, Dosis 20 und Dosis 40) bestimmt. Es
+ergeben sich folgende nach der Anzahl der Bl{\"u}ten geordnete Daten.
+
+<<>>=
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+
+@ 
+
+Rechnen Sie einen Kruskal-Wallis-Test auf den obigen Daten.
+
+\begin{enumerate}
+\item Bestimmen Sie hierf{\"u}r $H_c$ mit $H_c =
+  \cfrac{12}{n(n+1)}\left(\cfrac{R_1^2}{n_1}+\cfrac{R_2^2}{n_2}
+    + \cfrac{R_3^2}{n_3}\right)
+  - 3(n+1)$! \textbf{(6 Punkte)} 
+\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $H_c$ durch
+  den kritischen Wert von $H = 5.99$! \textbf{(1 Punkt)}
+\item Wie lautet die Nullhypothese die Sie mit dem Kruskal-Wallis-Test
+  {\"u}berpr{\"u}fen? \textbf{(1 Punkt)}
+\item Was sagt ein signifikantes Ergebnis des Kruskal-Wallis-Test in Bezug
+  auf die einzelnen Gruppenvergleiche aus? \textbf{(1 Punkt)}
+\end{enumerate}

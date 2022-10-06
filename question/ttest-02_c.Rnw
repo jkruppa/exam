@@ -1,0 +1,34 @@
+\section{Aufgabe \hfill (13 Punkte)}
+
+Das Gewicht von K{\"u}ken wurde vor der Behandlung mit STARTex und 1 Woche nach
+der Behandlung gemessen. Es ergibt sich die folgende Datentabelle.
+
+<<ttest-02, results='asis', echo = FALSE>>=
+n <- sample(c(7,8,9), 1)
+cbind(tibble(before = round(rnorm(n = n,
+                                  mean = sample(c(12, 14, 16), 1),
+                                  sd = sample(c(2, 4, 6), 1)))),
+      tibble(after = round(rnorm(n = n,
+                                 mean = sample(c(12, 16, 25), 1),
+                                 sd = sample(c(2, 4, 6), 1))))) %>%
+  mutate(animal_id = 1:nrow(.)) %>%
+  select(animal_id, everything()) %>% 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+\begin{enumerate}
+\item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
+\item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+    Punkte)}
+\item Bestimmen Sie die Teststatistik $T_c$ eines gepaarten t-Tests f{\"u}r den
+  Vergleich der beiden Zeitpunkte. Geben Sie den Rechenweg und die Formeln
+  mit an! \textbf{(4 Punkte)}
+\item Treffen Sie mit $T_k = 2.04$ und dem berechneten $T_c$ eine Aussage
+  zur Nullhypothese! \textbf{(2 Punkte)}
+\item Wenn Sie keinen Unterschied zwischen den beiden Zeitpunkten erwarten
+  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_c$? Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(2 Punkte)}
+\item Sch{\"a}tzen Sie $Pr(D|H_0)$ ab. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2
+    Punkte)}
+\end{enumerate}
