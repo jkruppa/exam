@@ -1,6 +1,6 @@
 \documentclass[a4paper, 10pt]{scrartcl}
 \usepackage[ngerman]{babel}
-\usepackage[latin1]{inputenc}
+%%\usepackage[latin1]{inputenc}
 \usepackage[margin=2cm, includefoot]{geometry}
 \setlength{\parindent}{0cm}
 \usepackage{booktabs}
@@ -18,7 +18,7 @@
 \usepackage{float}
 \usepackage{currfile}
 \usepackage{tikz}
-\input{../init}
+\input{/Users/kruppajo/Documents/GitHub/exam/init}
 \usepackage[nomessages]{fp}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
@@ -45,7 +45,9 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
 ##   questions_vec <- read_rds(force_random_file)
 ## }
 
-questions_vec <- list.files("question",
+question_path <- "/Users/kruppajo/Documents/GitHub/exam/question"
+
+questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
 text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE)
