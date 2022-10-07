@@ -1,0 +1,39 @@
+\section{Aufgabe \hfill (7 Punkte)}
+
+Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctrl, pest1, pest2, pest3) ergibt sich die folgende Datentabelle mit den Boniturnoten (\textit{grade}). 
+
+<<dotplot-01, results='asis', echo = FALSE>>=
+data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(3, 4), 1),
+                                         mean = sample(c(5, 6, 7), 1),
+                                         sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather,
+                  tibble(pest1 = round(rnorm(n = sample(c(3, 4), 1),
+                                             mean = sample(c(2, 3, 4), 1),
+                                             sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather,
+                  tibble(pest2 = round(rnorm(n = sample(c(3, 4), 1),
+                                             mean = sample(c(4, 5, 6), 1),
+                                             sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather,
+                  tibble(pest3 = round(rnorm(n = sample(c(3, 4), 1),
+                                             mean = sample(c(1, 2, 3), 1),
+                                             sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather) %>%
+  set_names(c("pesticie", "grade")) %>%
+#  mutate(gain = ifelse(rsp >= 20, "high", "low"),
+#         water = round(rnorm(nrow(.), 10, 1), 1)) %>%
+  sample_n(size = nrow(.))
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+\begin{enumerate}
+\item Zeichnen Sie in \textit{einer} Abbildung die Dotplots für die
+  vier Pestizidlevel! Beschriften Sie die Achsen entsprechend!
+  \textbf{(4 Punkte)}
+\item Ergänzen Sie die Dotplots mit einer gängigen
+  statistischen Maßzahl. \textbf{(2 Punkte)}
+\item Wenn Sie \textit{keinen Effekt} zwischen den Pestizidlevel erwarten
+  würden, wie sehen dann die Dotplots aus? \textbf{(1 Punkt)}
+\end{enumerate}

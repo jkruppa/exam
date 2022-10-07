@@ -2,12 +2,12 @@
 ## by J.Kruppa on Wednesday, June 24, 2020 (10:45)
 pacman::p_load(tidyverse, readxl, plyr, stringi, magrittr)
 ## small script to compile all rnw or tex files
-source(file.path("C:/Users/jokruppa/source/runKnitr/runKnitr.R"))
+source(file.path("/Users/kruppajo/Documents/GitHub/exam/question/source/runKnitr.R"))
 ## number of versions
 n_version <- 4
 semester <- "year/2022_SoSe"
 
-## loop over the students
+## loop over the versions
 l_ply(1:n_version, function(i) {
   ## get the files for the exercieses...
   exam_file <- list.files(getwd(), pattern = "Rnw", full.names =TRUE)

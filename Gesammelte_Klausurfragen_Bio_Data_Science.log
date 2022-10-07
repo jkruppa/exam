@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  7 OCT 2022 09:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  7 OCT 2022 09:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -440,9 +440,6 @@ Package: setspace 2011/12/19 v6.7a set line spacing
 Package: ulem 2019/11/18
 \ULdepth=\dimen180
 )
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
-)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tools/array.sty
 Package: array 2020/10/01 v2.5c Tabular extension package (FMi)
 \col@sep=\dimen181
@@ -808,7 +805,7 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              `\addtokomafont' for the page style elements need
 (scrartcl)              explicite user intervention to work.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `fancyhdr' on input line 85.
+(scrartcl)              package `fancyhdr' on input line 79.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
@@ -949,7 +946,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip89
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 91.
+Package hyperref Info: Option `colorlinks' set `true' on input line 85.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/arevtext.sty
 Package: arevtext 2005/09/01 0.1 Arev Sans Text package
 
@@ -1219,6 +1216,9 @@ LaTeX Font Info:    Redeclaring math symbol \circledcirc on input line 313.
 LaTeX Font Info:    Redeclaring math symbol \circledast on input line 314.
 LaTeX Font Info:    Redeclaring math symbol \circleddash on input line 315.
 )
+(/usr/local/texlive/2021/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/zavm/m/n on input line 71.
 LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
@@ -1321,7 +1321,7 @@ Package: fp-eval 1995/04/03
 Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
 tim
 )
-LaTeX Font Info:    Trying to load font information for T1+fav on input line 82
+LaTeX Font Info:    Trying to load font information for T1+fav on input line 77
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/t1fav.fd
@@ -1335,32 +1335,32 @@ File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
 (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
 \openout1 = `Gesammelte_Klausurfragen_Bio_Data_Science.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 82.
-LaTeX Font Info:    ... okay on input line 82.
-LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 82.
-LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 8
-2.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 77.
+LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 7
+7.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
-LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    ... okay on input line 77.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1420,8 +1420,8 @@ e
 
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 82.
-Package hyperref Info: Link coloring ON on input line 82.
+(lastpage)             ! on input line 77.
+Package hyperref Info: Link coloring ON on input line 77.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 
@@ -1434,9 +1434,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count334
 )
-LaTeX Info: Redefining \ref on input line 82.
-LaTeX Info: Redefining \pageref on input line 82.
-LaTeX Info: Redefining \nameref on input line 82.
+LaTeX Info: Redefining \ref on input line 77.
+LaTeX Info: Redefining \pageref on input line 77.
+LaTeX Info: Redefining \nameref on input line 77.
  (./Gesammelte_Klausurfragen_Bio_Data_Science.out)
 (./Gesammelte_Klausurfragen_Bio_Data_Science.out)
 \@outlinefile=\write6
@@ -1449,7 +1449,7 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           `bookmarkpackage=false' before \begin{document} and
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
-(scrartcl)           before \begin{document} on input line 82.
+(scrartcl)           before \begin{document} on input line 77.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1459,67 +1459,67 @@ File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
 \BKM@id=\count335
 ))
 LaTeX Font Info:    Trying to load font information for T1+fvm on input line 13
-5.
+0.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Trying to load font information for OT1+zavm on input line 
-135.
+130.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/ot1zavm.fd
 File: ot1zavm.fd 2006/05/30 Fontinst v1.929 font definitions for OT1/zavm.
 )
 LaTeX Font Info:    Trying to load font information for OML+zavm on input line 
-135.
+130.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/omlzavm.fd
 File: omlzavm.fd 2006/05/30 Fontinst v1.929 font definitions for OML/zavm.
 )
 LaTeX Font Info:    Trying to load font information for OMS+zavm on input line 
-135.
+130.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/omszavm.fd
 File: omszavm.fd 2006/05/30 Fontinst v1.929 font definitions for OMS/zavm.
 )
 LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line
- 135.
+ 130.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 135.
+(Font)              scaled to size 11.52008pt on input line 130.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.64006pt on input line 135.
+(Font)              scaled to size 8.64006pt on input line 130.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.72005pt on input line 135.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 135
+(Font)              scaled to size 6.72005pt on input line 130.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 130
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 135
+LaTeX Font Info:    Trying to load font information for U+msb on input line 130
 .
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line
- 135.
+ 130.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 11.52008pt on input line 135.
+(Font)              scaled to size 11.52008pt on input line 130.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 8.64006pt on input line 135.
+(Font)              scaled to size 8.64006pt on input line 130.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 135.
+(Font)              scaled to size 6.72005pt on input line 130.
 LaTeX Font Info:    Trying to load font information for U+zavm on input line 13
-5.
+0.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/uzavm.fd
 File: uzavm.fd 2006/05/30 Fontinst v1.929 font definitions for U/zavm.
@@ -1527,66 +1527,66 @@ File: uzavm.fd 2006/05/30 Fontinst v1.929 font definitions for U/zavm.
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 143.
+(Font)              scaled to size 13.82408pt on input line 138.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 9.60007pt on input line 143.
+(Font)              scaled to size 9.60007pt on input line 138.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.68005pt on input line 143.
+(Font)              scaled to size 7.68005pt on input line 138.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 13.82408pt on input line 143.
+(Font)              scaled to size 13.82408pt on input line 138.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 143.
+(Font)              scaled to size 9.60007pt on input line 138.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 143.
+(Font)              scaled to size 7.68005pt on input line 138.
  [2
 
 ]
 LaTeX Font Info:    Trying to load font information for TS1+fav on input line 1
-49.
-LaTeX Font Info:    No file TS1fav.fd. on input line 149.
+44.
+LaTeX Font Info:    No file TS1fav.fd. on input line 144.
 
 
 LaTeX Font Warning: Font shape `TS1/fav/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textbullet' on input line 149.
+(Font)              for symbol `textbullet' on input line 144.
 
 [3
 
 ]
 
 LaTeX Font Warning: Font shape `OMS/zavm/b/n' undefined
-(Font)              using `OMS/zavm/m/n' instead on input line 211.
+(Font)              using `OMS/zavm/m/n' instead on input line 206.
 
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 11.52008pt on input line 211.
+(Font)              scaled to size 11.52008pt on input line 206.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 8.64006pt on input line 211.
+(Font)              scaled to size 8.64006pt on input line 206.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 6.72005pt on input line 211.
+(Font)              scaled to size 6.72005pt on input line 206.
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 266.
+(hyperref)                removing `\hfill' on input line 261.
 
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 7.29605pt on input line 270.
+(Font)              scaled to size 7.29605pt on input line 265.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 5.76004pt on input line 270.
+(Font)              scaled to size 5.76004pt on input line 265.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 7.29605pt on input line 270.
+(Font)              scaled to size 7.29605pt on input line 265.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 5.76004pt on input line 270.
+(Font)              scaled to size 5.76004pt on input line 265.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 282.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 299.
+(hyperref)                removing `\hfill' on input line 277.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 318.
+(hyperref)                removing `\hfill' on input line 294.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 313.
 
 [5
 
@@ -1594,79 +1594,79 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <img/mc-anova-02-a-1.pdf, id=56, 289.08pt x 289.08pt>
 File: img/mc-anova-02-a-1.pdf Graphic file (type pdf)
 <use img/mc-anova-02-a-1.pdf>
-Package pdftex.def Info: img/mc-anova-02-a-1.pdf  used on input line 330.
+Package pdftex.def Info: img/mc-anova-02-a-1.pdf  used on input line 325.
 (pdftex.def)             Requested size: 289.07928pt x 289.09251pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 349.
+(hyperref)                removing `\hfill' on input line 344.
 
 [6 <./img/mc-anova-02-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 367.
+(hyperref)                removing `\hfill' on input line 362.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 382.
+(hyperref)                removing `\hfill' on input line 377.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 403.
+(hyperref)                removing `\hfill' on input line 398.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 424.
+(hyperref)                removing `\hfill' on input line 419.
 
 [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 441.
+(hyperref)                removing `\hfill' on input line 436.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 458.
+(hyperref)                removing `\hfill' on input line 453.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 472.
+(hyperref)                removing `\hfill' on input line 467.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 486.
+(hyperref)                removing `\hfill' on input line 481.
 
 [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 507.
+(hyperref)                removing `\hfill' on input line 502.
 
 <img/mc-distribution-02-a-1.pdf, id=85, 361.35pt x 216.81pt>
 File: img/mc-distribution-02-a-1.pdf Graphic file (type pdf)
 <use img/mc-distribution-02-a-1.pdf>
-Package pdftex.def Info: img/mc-distribution-02-a-1.pdf  used on input line 514
+Package pdftex.def Info: img/mc-distribution-02-a-1.pdf  used on input line 509
 .
 (pdftex.def)             Requested size: 361.34912pt x 216.80946pt.
 [9 <./img/mc-distribution-02-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 532.
+(hyperref)                removing `\hfill' on input line 527.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 559.
+(hyperref)                removing `\hfill' on input line 554.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 574.
+(hyperref)                removing `\hfill' on input line 569.
 
 [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 592.
+(hyperref)                removing `\hfill' on input line 587.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 610.
+(hyperref)                removing `\hfill' on input line 605.
 
 </Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png, id=103
 , 885.3075pt x 416.55624pt>
@@ -1674,32 +1674,38 @@ File: /Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png Gr
 aphic file (type png)
 <use /Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/question/img/mc
--modeling-03.png  used on input line 616.
+-modeling-03.png  used on input line 611.
 (pdftex.def)             Requested size: 256.0748pt x 120.48676pt.
 [11 </Users/kruppajo/Documents/GitHub//exam/question/img/mc-modeling-03.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 631.
+(hyperref)                removing `\hfill' on input line 626.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 646.
+(hyperref)                removing `\hfill' on input line 641.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 665.
+(hyperref)                removing `\hfill' on input line 660.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 682.
+(hyperref)                removing `\hfill' on input line 677.
 
 [12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 697.
+(hyperref)                removing `\hfill' on input line 692.
 
 </Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png, id=120, 2569.6pt x 1991.
 44pt>
+File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
+ng)
+<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
+used on input line 696.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
@@ -1710,176 +1716,170 @@ File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 706.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
-ng)
-<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 708.
+used on input line 703.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Overfull \hbox (1.13745pt too wide) in paragraph at lines 709--710
+Overfull \hbox (1.13745pt too wide) in paragraph at lines 704--705
 []\T1/fav/m/n/10 Programmiersprachen können nur eng-li-sche Be-grif-fe ver-ar-b
 ei-ten. Zu-sätz-li-che Pa-ke-te können
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 713.
+(hyperref)                removing `\hfill' on input line 708.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 718.
+used on input line 713.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 729.
+used on input line 724.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [13 </Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 732.
+(hyperref)                removing `\hfill' on input line 727.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 739.
+used on input line 734.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 767.
+(hyperref)                removing `\hfill' on input line 762.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 783.
+(hyperref)                removing `\hfill' on input line 778.
 
 [14]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 797.
+(hyperref)                removing `\hfill' on input line 792.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 817.
+(hyperref)                removing `\hfill' on input line 812.
 
 <img/mc-regression-05-a-1.pdf, id=138, 216.81pt x 216.81pt>
 File: img/mc-regression-05-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-05-a-1.pdf>
-Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 825.
+Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 820.
 (pdftex.def)             Requested size: 216.80946pt x 216.81938pt.
 [15 <./img/mc-regression-05-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 843.
+(hyperref)                removing `\hfill' on input line 838.
 
 <img/mc-regression-06-a-1.pdf, id=151, 216.81pt x 216.81pt>
 File: img/mc-regression-06-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-06-a-1.pdf>
-Package pdftex.def Info: img/mc-regression-06-a-1.pdf  used on input line 851.
+Package pdftex.def Info: img/mc-regression-06-a-1.pdf  used on input line 846.
 (pdftex.def)             Requested size: 216.80946pt x 216.81938pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 869.
+(hyperref)                removing `\hfill' on input line 864.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 889.
+(hyperref)                removing `\hfill' on input line 884.
 
 [16 <./img/mc-regression-06-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 903.
+(hyperref)                removing `\hfill' on input line 898.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 917.
+(hyperref)                removing `\hfill' on input line 912.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 932.
+(hyperref)                removing `\hfill' on input line 927.
 
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 946.
+(hyperref)                removing `\hfill' on input line 941.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 964.
+(hyperref)                removing `\hfill' on input line 959.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 981.
+(hyperref)                removing `\hfill' on input line 976.
 
 [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 998.
+(hyperref)                removing `\hfill' on input line 993.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1014.
+(hyperref)                removing `\hfill' on input line 1009.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1029.
+(hyperref)                removing `\hfill' on input line 1024.
 
 [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1043.
+(hyperref)                removing `\hfill' on input line 1038.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1057.
+(hyperref)                removing `\hfill' on input line 1052.
 
 [20] [21
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1091.
+(hyperref)                removing `\hfill' on input line 1086.
 
 <img/anova-01-a-1.pdf, id=196, 578.16pt x 433.62pt>
 File: img/anova-01-a-1.pdf Graphic file (type pdf)
 <use img/anova-01-a-1.pdf>
-Package pdftex.def Info: img/anova-01-a-1.pdf  used on input line 1100.
+Package pdftex.def Info: img/anova-01-a-1.pdf  used on input line 1095.
 (pdftex.def)             Requested size: 483.69687pt x 362.76945pt.
 [22
 
  <./img/anova-01-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1124.
+(hyperref)                removing `\hfill' on input line 1119.
 
 [23
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1195.
+(hyperref)                removing `\hfill' on input line 1190.
 
 [24
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1251.
+(hyperref)                removing `\hfill' on input line 1246.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 1258.
+used on input line 1253.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 1
-270.
+265.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
 File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 ) [25
@@ -1887,34 +1887,34 @@ File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1289.
+(hyperref)                removing `\hfill' on input line 1284.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 1299.
+used on input line 1294.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [26
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1331.
+(hyperref)                removing `\hfill' on input line 1326.
 
 [27
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1376.
+(hyperref)                removing `\hfill' on input line 1371.
 
 [28
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1414.
+(hyperref)                removing `\hfill' on input line 1409.
 
 </Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-c.png, id=263, 3
 18.18875pt x 80.3pt>
@@ -1922,24 +1922,24 @@ File: /Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-c.png Graph
 ic file (type png)
 <use /Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-c.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub/exam/question/img/box
-plot-03-c.png  used on input line 1428.
+plot-03-c.png  used on input line 1423.
 (pdftex.def)             Requested size: 284.52756pt x 71.80493pt.
 [29
 
  </Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-c.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1437.
+(hyperref)                removing `\hfill' on input line 1432.
 
 [30
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1477.
+(hyperref)                removing `\hfill' on input line 1472.
 
 
-Overfull \hbox (11.2545pt too wide) in paragraph at lines 1490--1499
+Overfull \hbox (11.2545pt too wide) in paragraph at lines 1485--1494
  [] 
  []
 
@@ -1948,50 +1948,50 @@ Overfull \hbox (11.2545pt too wide) in paragraph at lines 1490--1499
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1524.
+(hyperref)                removing `\hfill' on input line 1519.
 
 <img/correlation-01-1.pdf, id=295, 505.89pt x 505.89pt>
 File: img/correlation-01-1.pdf Graphic file (type pdf)
 <use img/correlation-01-1.pdf>
-Package pdftex.def Info: img/correlation-01-1.pdf  used on input line 1541.
+Package pdftex.def Info: img/correlation-01-1.pdf  used on input line 1536.
 (pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
 [32
 
  <./img/correlation-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1551.
+(hyperref)                removing `\hfill' on input line 1546.
 
 <img/correlation-02-1.pdf, id=310, 505.89pt x 505.89pt>
 File: img/correlation-02-1.pdf Graphic file (type pdf)
 <use img/correlation-02-1.pdf>
-Package pdftex.def Info: img/correlation-02-1.pdf  used on input line 1569.
+Package pdftex.def Info: img/correlation-02-1.pdf  used on input line 1564.
 (pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
 [33
 
  <./img/correlation-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1579.
+(hyperref)                removing `\hfill' on input line 1574.
 
 <img/desc-01-1.pdf, id=325, 433.62pt x 433.62pt>
 File: img/desc-01-1.pdf Graphic file (type pdf)
 <use img/desc-01-1.pdf>
-Package pdftex.def Info: img/desc-01-1.pdf  used on input line 1597.
+Package pdftex.def Info: img/desc-01-1.pdf  used on input line 1592.
 (pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
 [34
 
  <./img/desc-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1606.
+(hyperref)                removing `\hfill' on input line 1601.
 
 [35
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1625.
+(hyperref)                removing `\hfill' on input line 1620.
 
 
 ! LaTeX Error: File `NA' not found.
@@ -2000,7 +2000,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1647   \includegraphics[width=17cm]{NA}
+l.1642   \includegraphics[width=17cm]{NA}
                                          
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -2012,14 +2012,14 @@ If that doesn't work, type  X <return>  to quit.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1656.
+(hyperref)                removing `\hfill' on input line 1651.
 
 [37
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1679.
+(hyperref)                removing `\hfill' on input line 1674.
 
 
 ! LaTeX Error: File `C:/Users/jokruppa/lehre/intern/exam/question/img/diag-dopp
@@ -2029,7 +2029,7 @@ See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.1701 ...ntern/exam/question/img/diag-doppelbaum}
+l.1696 ...ntern/exam/question/img/diag-doppelbaum}
                                                   
 I could not locate the file with any of these extensions:
 .pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps
@@ -2041,96 +2041,90 @@ If that doesn't work, type  X <return>  to quit.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1716.
+(hyperref)                removing `\hfill' on input line 1711.
 
-<img/histogram-01-1.pdf, id=373, 433.62pt x 433.62pt>
+[39
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 1755.
+
+<img/histogram-01-1.pdf, id=381, 433.62pt x 433.62pt>
 File: img/histogram-01-1.pdf Graphic file (type pdf)
 <use img/histogram-01-1.pdf>
-Package pdftex.def Info: img/histogram-01-1.pdf  used on input line 1730.
+Package pdftex.def Info: img/histogram-01-1.pdf  used on input line 1769.
 (pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
-[39
+[40
 
  <./img/histogram-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1740.
+(hyperref)                removing `\hfill' on input line 1779.
 
-[40
+[41
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1757.
+(hyperref)                removing `\hfill' on input line 1796.
 
-<img/modeling-01-1.pdf, id=395, 361.35pt x 578.16pt>
+<img/modeling-01-1.pdf, id=403, 361.35pt x 578.16pt>
 File: img/modeling-01-1.pdf Graphic file (type pdf)
 <use img/modeling-01-1.pdf>
-Package pdftex.def Info: img/modeling-01-1.pdf  used on input line 1771.
+Package pdftex.def Info: img/modeling-01-1.pdf  used on input line 1810.
 (pdftex.def)             Requested size: 361.34912pt x 578.15858pt.
-[41
+[42
 
  <./img/modeling-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1781.
+(hyperref)                removing `\hfill' on input line 1820.
 
-[42
+[43
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1808.
+(hyperref)                removing `\hfill' on input line 1847.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 1819.
+used on input line 1858.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 1821.
+used on input line 1860.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-<img/modeling-R-01-1.pdf, id=415, 361.35pt x 361.35pt>
+<img/modeling-R-01-1.pdf, id=424, 361.35pt x 361.35pt>
 File: img/modeling-R-01-1.pdf Graphic file (type pdf)
 <use img/modeling-R-01-1.pdf>
-Package pdftex.def Info: img/modeling-R-01-1.pdf  used on input line 1831.
+Package pdftex.def Info: img/modeling-R-01-1.pdf  used on input line 1870.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[43
+[44
 
  <./img/modeling-R-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1840.
-
-[44
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1883.
-
-
-Overfull \hbox (1.9637pt too wide) in paragraph at lines 1929--1931
-[]\T1/fav/m/n/10 Wenn das Pe-si-zid kei-ne Aus-wir-kung auf den In-fek-ti-ons-s
-ta-tus hät-te, wie se-he dann der Mosaic-
- []
+(hyperref)                removing `\hfill' on input line 1879.
 
 [45
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1935.
+(hyperref)                removing `\hfill' on input line 1922.
 
-LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 13.82408pt on input line 1948.
-LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 1948.
-LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 1948.
+
+Overfull \hbox (1.9637pt too wide) in paragraph at lines 1968--1970
+[]\T1/fav/m/n/10 Wenn das Pe-si-zid kei-ne Aus-wir-kung auf den In-fek-ti-ons-s
+ta-tus hät-te, wie se-he dann der Mosaic-
+ []
+
 [46
 
 ]
@@ -2138,92 +2132,105 @@ LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1974.
 
-<img/regression-01-1.pdf, id=455, 650.43pt x 216.81pt>
-File: img/regression-01-1.pdf Graphic file (type pdf)
-<use img/regression-01-1.pdf>
-Package pdftex.def Info: img/regression-01-1.pdf  used on input line 1990.
-(pdftex.def)             Requested size: 483.69687pt x 161.23747pt.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 13.82408pt on input line 1987.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 9.60007pt on input line 1987.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 7.68005pt on input line 1987.
 [47
-
- <./img/regression-01-1.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2000.
-
-File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
-ng)
-<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2006.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-LaTeX Font Info:    Calculating math sizes for size <14> on input line 2012.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 13.4401pt on input line 2012.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 10.21439pt on input line 2012.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.06413pt on input line 2012.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 13.4401pt on input line 2012.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 10.21439pt on input line 2012.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 8.06413pt on input line 2012.
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.40009> not available
-(Font)              size <8> substituted on input line 2012.
-
-<img/regression-02-b-1.pdf, id=467, 361.35pt x 361.35pt>
-File: img/regression-02-b-1.pdf Graphic file (type pdf)
-<use img/regression-02-b-1.pdf>
-Package pdftex.def Info: img/regression-02-b-1.pdf  used on input line 2040.
-(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-[48
-
- <./img/regression-02-b-1.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2049.
-
-<img/regression-03-1.pdf, id=481, 433.62pt x 433.62pt>
-File: img/regression-03-1.pdf Graphic file (type pdf)
-<use img/regression-03-1.pdf>
-Package pdftex.def Info: img/regression-03-1.pdf  used on input line 2061.
-(pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
-[49
-
- <./img/regression-03-1.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2071.
-
-<img/regression-04-1.pdf, id=495, 433.62pt x 433.62pt>
-File: img/regression-04-1.pdf Graphic file (type pdf)
-<use img/regression-04-1.pdf>
-Package pdftex.def Info: img/regression-04-1.pdf  used on input line 2083.
-(pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
-[50
-
- <./img/regression-04-1.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2093.
-
-[51
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2137.
+(hyperref)                removing `\hfill' on input line 2013.
+
+<img/regression-01-1.pdf, id=463, 650.43pt x 216.81pt>
+File: img/regression-01-1.pdf Graphic file (type pdf)
+<use img/regression-01-1.pdf>
+Package pdftex.def Info: img/regression-01-1.pdf  used on input line 2029.
+(pdftex.def)             Requested size: 483.69687pt x 161.23747pt.
+[48
+
+ <./img/regression-01-1.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2039.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2166.
+used on input line 2045.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+LaTeX Font Info:    Calculating math sizes for size <14> on input line 2051.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 13.4401pt on input line 2051.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 10.21439pt on input line 2051.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 8.06413pt on input line 2051.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 13.4401pt on input line 2051.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 10.21439pt on input line 2051.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 8.06413pt on input line 2051.
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <8.40009> not available
+(Font)              size <8> substituted on input line 2051.
+
+<img/regression-02-b-1.pdf, id=475, 361.35pt x 361.35pt>
+File: img/regression-02-b-1.pdf Graphic file (type pdf)
+<use img/regression-02-b-1.pdf>
+Package pdftex.def Info: img/regression-02-b-1.pdf  used on input line 2079.
+(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
+[49
+
+ <./img/regression-02-b-1.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2088.
+
+<img/regression-03-1.pdf, id=490, 433.62pt x 433.62pt>
+File: img/regression-03-1.pdf Graphic file (type pdf)
+<use img/regression-03-1.pdf>
+Package pdftex.def Info: img/regression-03-1.pdf  used on input line 2100.
+(pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
+[50
+
+ <./img/regression-03-1.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2110.
+
+<img/regression-04-1.pdf, id=503, 433.62pt x 433.62pt>
+File: img/regression-04-1.pdf Graphic file (type pdf)
+<use img/regression-04-1.pdf>
+Package pdftex.def Info: img/regression-04-1.pdf  used on input line 2122.
+(pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
+[51
+
+ <./img/regression-04-1.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2132.
+
+[52
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2181.
+
+File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
+ng)
+<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
+used on input line 2210.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Overfull \hbox (0.78627pt too wide) in paragraph at lines 2165--2167
+Overfull \hbox (0.78627pt too wide) in paragraph at lines 2209--2211
 []\T1/fav/m/n/10 Sie rech-nen nun ei-ne Pois-son li-nea-re Re-gres-si-on auf de
 n Da-ten und er-hal-ten fol-gen-den []Output. 
  []
@@ -2232,29 +2239,29 @@ File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2205.
+used on input line 2249.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2210.
+used on input line 2254.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[52
+[53
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2217.
+(hyperref)                removing `\hfill' on input line 2261.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2247.
+used on input line 2291.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Overfull \hbox (16.44629pt too wide) in paragraph at lines 2246--2248
+Overfull \hbox (16.44629pt too wide) in paragraph at lines 2290--2292
 []\T1/fav/m/n/10 Sie rech-nen nun ei-ne lo-gis-ti-sche li-nea-re Re-gres-si-on 
 auf den Da-ten und er-hal-ten fol-gen-den []Output. 
  []
@@ -2263,200 +2270,181 @@ File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2265.
+used on input line 2309.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[53
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2277.
-
-File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
-ng)
-<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2308.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-
-Overfull \hbox (9.20628pt too wide) in paragraph at lines 2307--2309
-[]\T1/fav/m/n/10 Sie rech-nen nun ei-ne Gaus-si-an li-nea-re Re-gres-si-on auf 
-den Da-ten und er-hal-ten fol-gen-den []Output. 
- []
-
 [54
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2352.
+(hyperref)                removing `\hfill' on input line 2321.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2387.
+used on input line 2352.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+
+Overfull \hbox (9.20628pt too wide) in paragraph at lines 2351--2353
+[]\T1/fav/m/n/10 Sie rech-nen nun ei-ne Gaus-si-an li-nea-re Re-gres-si-on auf 
+den Da-ten und er-hal-ten fol-gen-den []Output. 
+ []
+
 [55
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2394.
+(hyperref)                removing `\hfill' on input line 2396.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2446.
+used on input line 2431.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [56
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2453.
+(hyperref)                removing `\hfill' on input line 2438.
 
+File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
+ng)
+<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
+used on input line 2490.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [57
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2491.
+(hyperref)                removing `\hfill' on input line 2497.
 
 [58
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2529.
-
-<img/scatter-02-1.pdf, id=579, 361.35pt x 361.35pt>
-File: img/scatter-02-1.pdf Graphic file (type pdf)
-<use img/scatter-02-1.pdf>
-Package pdftex.def Info: img/scatter-02-1.pdf  used on input line 2537.
-(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
-
-Overfull \hbox (1.21745pt too wide) in paragraph at lines 2551--2552
-[]\T1/fav/m/n/10 Wenn kein Zu-sam-men-hang zu be-ob-ach-ten wä-re, wie wür-de d
-ie Ge-ra-de aus-se-hen? \T1/fav/b/n/10 (1 Punkt) 
- []
+(hyperref)                removing `\hfill' on input line 2535.
 
 [59
-
- <./img/scatter-02-1.pdf>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2556.
-
-
-Overfull \hbox (6.18295pt too wide) in paragraph at lines 2559--2561
-[]\T1/fav/m/n/10 Erklären Sie den Zu-sam-men-hang zwi-schen Stich-pro-be und Gr
-und-ge-samt-heit an ei-nem Schau-
- []
-
-[60
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2569.
+(hyperref)                removing `\hfill' on input line 2573.
+
+<img/scatter-02-1.pdf, id=587, 361.35pt x 361.35pt>
+File: img/scatter-02-1.pdf Graphic file (type pdf)
+<use img/scatter-02-1.pdf>
+Package pdftex.def Info: img/scatter-02-1.pdf  used on input line 2581.
+(pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
+
+Overfull \hbox (1.21745pt too wide) in paragraph at lines 2595--2596
+[]\T1/fav/m/n/10 Wenn kein Zu-sam-men-hang zu be-ob-ach-ten wä-re, wie wür-de d
+ie Ge-ra-de aus-se-hen? \T1/fav/b/n/10 (1 Punkt) 
+ []
+
+[60
+
+ <./img/scatter-02-1.pdf>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2600.
+
+
+Overfull \hbox (6.18295pt too wide) in paragraph at lines 2603--2605
+[]\T1/fav/m/n/10 Erklären Sie den Zu-sam-men-hang zwi-schen Stich-pro-be und Gr
+und-ge-samt-heit an ei-nem Schau-
+ []
+
+[61
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2613.
 
 </Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-table.png
-, id=605, 810.02625pt x 708.6475pt>
+, id=614, 810.02625pt x 708.6475pt>
 File: /Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-tabl
 e.png Graphic file (type png)
 <use /Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-table
 .png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/question/img/te
-xt-error-cross-table.png  used on input line 2574.
+xt-error-cross-table.png  used on input line 2618.
 (pdftex.def)             Requested size: 398.33858pt x 348.49463pt.
-[61
+[62
 
  </Users/kruppajo/Documents/GitHub//exam/question/img/text-error-cross-table.pn
 g>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2600.
+(hyperref)                removing `\hfill' on input line 2644.
 
-<img/statistisches-testen-3-1.pdf, id=614, 433.62pt x 433.62pt>
+<img/statistisches-testen-3-1.pdf, id=622, 433.62pt x 433.62pt>
 File: img/statistisches-testen-3-1.pdf Graphic file (type pdf)
 <use img/statistisches-testen-3-1.pdf>
 Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 2
-618.
+662.
 (pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
-[62
+[63
 
  <./img/statistisches-testen-3-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2627.
+(hyperref)                removing `\hfill' on input line 2671.
 
 </Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-04.pn
-g, id=631, 25.59563pt x 206.27063pt>
+g, id=639, 25.59563pt x 206.27063pt>
 File: /Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-
 04.png Graphic file (type png)
 <use /Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-0
 4.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/question/img/st
-atistisches-testen-04.png  used on input line 2650.
+atistisches-testen-04.png  used on input line 2694.
 (pdftex.def)             Requested size: 28.24547pt x 227.62204pt.
-[63
+[64
 
  </Users/kruppajo/Documents/GitHub//exam/question/img/statistisches-testen-04.p
 ng>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2658.
-
-[64
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2698.
+(hyperref)                removing `\hfill' on input line 2702.
 
 [65
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2745.
+(hyperref)                removing `\hfill' on input line 2742.
 
 [66
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2788.
-
-File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
-ng)
-<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
-Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2790.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-
-Overfull \hbox (130.34201pt too wide) in paragraph at lines 2800--2800
-[]\T1/fvm/m/n/10 ## alternative hypothesis: true difference in means between gr
-oup high and group low is not equal to 0[] 
- []
+(hyperref)                removing `\hfill' on input line 2790.
 
 [67
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2824.
+(hyperref)                removing `\hfill' on input line 2835.
 
 File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
 ng)
 <use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
 Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
-used on input line 2826.
+used on input line 2837.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Overfull \hbox (130.34201pt too wide) in paragraph at lines 2836--2836
+Overfull \hbox (130.34201pt too wide) in paragraph at lines 2847--2847
 []\T1/fvm/m/n/10 ## alternative hypothesis: true difference in means between gr
 oup high and group low is not equal to 0[] 
  []
@@ -2466,57 +2454,76 @@ oup high and group low is not equal to 0[]
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2859.
+(hyperref)                removing `\hfill' on input line 2871.
+
+File: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png Graphic file (type p
+ng)
+<use /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png>
+Package pdftex.def Info: /Users/kruppajo/Documents/GitHub//exam/img/Rlogo.png  
+used on input line 2873.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+
+Overfull \hbox (130.34201pt too wide) in paragraph at lines 2883--2883
+[]\T1/fvm/m/n/10 ## alternative hypothesis: true difference in means between gr
+oup high and group low is not equal to 0[] 
+ []
 
 [69
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2911.
+(hyperref)                removing `\hfill' on input line 2906.
 
 [70
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2962.
+(hyperref)                removing `\hfill' on input line 2958.
 
 [71
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3021.
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 3040--3041
-[] 
- []
-
-
-Overfull \hbox (0.4pt too wide) in paragraph at lines 3044--3045
-[] 
- []
+(hyperref)                removing `\hfill' on input line 3009.
 
 [72
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3048.
+(hyperref)                removing `\hfill' on input line 3068.
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 3087--3088
+[] 
+ []
+
+
+Overfull \hbox (0.4pt too wide) in paragraph at lines 3091--3092
+[] 
+ []
 
 [73
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 3095.
+
+[74
 
 ] 
 AED: lastpage setting LastPage
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     3085.
+(LaTeX3)     3132.
 
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     3085.
+(LaTeX3)     3132.
 
 (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
 
@@ -2531,10 +2538,10 @@ t' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28700 strings out of 478994
- 533331 string characters out of 5858183
- 975485 words of memory out of 5000000
- 45178 multiletter control sequences out of 15000+600000
+ 28703 strings out of 478994
+ 533346 string characters out of 5858183
+ 975408 words of memory out of 5000000
+ 45176 multiletter control sequences out of 15000+600000
  516884 words of font info for 227 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,19n,116p,10719b,703s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2555,11 +2562,11 @@ t/fonts/type1/public/mathdesign/mdbch/md-chbma.pfb></usr/local/texlive/2021/tex
 mf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2021
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (73 pages, 9081
-08 bytes).
+Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (74 pages, 9097
+69 bytes).
 PDF statistics:
- 1151 PDF objects out of 1200 (max. 8388607)
- 1009 compressed objects within 11 object streams
- 357 named destinations out of 1000 (max. 500000)
- 891 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1164 PDF objects out of 1200 (max. 8388607)
+ 1021 compressed objects within 11 object streams
+ 362 named destinations out of 1000 (max. 500000)
+ 899 words of extra memory for PDF output out of 10000 (max. 10000000)
 
