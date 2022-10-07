@@ -1,7 +1,13 @@
 # Gesammelten Klausurfragen zur Bio Data Science
 
-Die gesammelten Klausurfragen für meine Vorlesungen an der Hochschule Osnabrück. Du findest eine aktuelle Version auch immer auf ILIAS in deinem Modulordner. Hier liegt mein Backup und auch die aktuelleste Arbeitsversion.
+Die gesammelten Klausurfragen für meine Vorlesungen an der Hochschule Osnabrück. Hier liegt die aktuelle *Arbeitsversion*. Das heißt, ich probiere hier die Fragen aus und arbeite an den Aufgaben. Daher wird sich diese Version auch nach dem 31. Mai oder den 30. November immer wieder ändern.
 
-Aktuelle Arbeitsversion: https://github.com/jkruppa/exam/blob/main/Gesammelte_Klausurfragen_Bio_Data_Science.pdf
+Du findest eine aktuelle Version immer auf ILIAS in deinem Modulordner. Diese Version ist dann auch wichtig für die Klausur.
 
-Link zum Skript: https://jkruppa.github.io/
+## Aktuelle Arbeitsversion
+
+https://github.com/jkruppa/exam/blob/main/Gesammelte_Klausurfragen_Bio_Data_Science.pdf
+
+## Link zum Skript Bio Data Science
+
+https://jkruppa.github.io/
