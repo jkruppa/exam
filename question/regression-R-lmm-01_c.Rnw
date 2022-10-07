@@ -7,8 +7,7 @@ wurden an jeder Kuh (\textit{subject}) wiederholt durchgef{\"u}hrt. Dar{\"u}ber
 hinaus wurden verschiedene St{\"a}lle (\textit{barn}) mit der Musik bespielt.
 
 <<regression-lmm-01,  echo = FALSE>>=
-data_tbl <- read_csv2(file.path("C:/Users/jokruppa/lehre/intern/exam/question/data",
-                                "politeness_data.csv")) %>%
+data_tbl <- read_csv2(file.path(question_path, "data/milk.csv")) %>%
   mutate(subject = as.factor(subject),
          gender = factor(gender, labels = c("female", "male")),
          barn = as.factor(scenario),

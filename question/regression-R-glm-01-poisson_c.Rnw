@@ -2,8 +2,7 @@
 
 <<>>=
 
-data_tbl <- read_csv2(file.path("C:/Users/jokruppa/lehre/intern/data",
-                                "longnose.csv")) %>%
+data_tbl <- read_csv2(file.path(question_path, "data/longnose.csv")) %>%
   clean_names %>%
   sample_frac(0.8)
 
