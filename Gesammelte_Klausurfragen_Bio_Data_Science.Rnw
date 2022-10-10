@@ -14,7 +14,6 @@ exam_path <- file.path(path_home(), "Documents/GitHub/exam")
 init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
-
 @ 
 % -----------------------------------------------------------------------
 \input{\Sexpr{init_path}}
