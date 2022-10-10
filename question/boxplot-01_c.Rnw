@@ -5,12 +5,12 @@ folgende Datentabelle mit dem gemessenen Trockengewicht (\textit{drymatter}).
 
 <<boxplot-01, results='asis', echo = FALSE>>=
 data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(7, 11), 1),
-                                         mean = sample(c(15, 20, 25), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                                         mean = sample(c(12, 18), 1),
+                                         sd = sample(c(3, 4), 1)), 1)) %>%
                   gather,
                   tibble(B = round(rnorm(n = sample(c(7, 11), 1),
-                                         mean = sample(c(15, 20, 25), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                                         mean = sample(c(14, 16), 1),
+                                         sd = sample(c(3, 4), 1)), 1)) %>%
                   gather) %>%
   set_names(c("trt", "drymatter")) %>%
 #  mutate(gain = ifelse(rsp >= 20, "high", "low"),
@@ -26,7 +26,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
   zwei D{\"u}ngestufen A und B! Beschriften Sie die Achsen entsprechend!
   \textbf{(6 Punkte)}
 \item Beschriften Sie \textit{einen} der beiden Boxplots mit den g{\"a}ngigen
-  statistischen Ma{\ss}zahlen. Beschriften Sie auch die Achsen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen de D{\"u}ngestufen erwarten
+  statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
+\item Wenn Sie \textit{keinen Effekt} zwischen den D{\"u}ngestufen erwarten
   w{\"u}rden, wie sehen dann die beiden Boxplots aus? \textbf{(1 Punkt)}
 \end{enumerate}

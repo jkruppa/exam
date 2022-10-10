@@ -1,0 +1,22 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+<<>>=
+
+season_vec <- c("Herbst", "Fr{\"u}hling", "Sommer", "Winter") %>%
+  sample(1)
+
+@ 
+
+Sie haben folgende Aussage gegeben.
+
+\begin{center}
+  \Large\textbf{Ich  bin im \Sexpr{season_vec}!}
+\end{center}
+
+\begin{itemize}
+\item Erkl{\"a}ren Sie den Gedankengang der Testtheorie sowie des Falsifikationsprinzips an der Aussage! \textbf{(4 Punkte)}
+\item Erkl{\"a}ren Sie Ihre Entscheidung zu der Aussage! \textbf{(3 Punkte)}
+\item Sch{\"a}tzen Sie den p-Wert zu der Aussage ab! \textbf{(1 Punkt)}
+\end{itemize}
+
+

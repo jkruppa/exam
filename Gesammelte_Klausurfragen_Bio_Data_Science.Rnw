@@ -38,8 +38,6 @@ img_path <- file.path(question_path, "img")
 
 % -----------------------------------------------------------------------
 <<randomizer, echo = FALSE>>=
-
-
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
@@ -115,11 +113,10 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
   \begin{itemize}
-  \item Normaler, nicht-programmierbarer Taschenrechner (kein Handy!)
-  \item Eine DIN A4-Seite \textbf{einseitig} als selbstgeschriebene,
-    handschriftliche
-    Formelsammlung. % ausschlie{\ss}lich mit Formeln und ohne erkl{\"a}rende S{\"a}tze;
-    % keine Beispielrechnungen
+  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
+    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
+  \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
+    handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
   \end{itemize}
 \end{graybox}
 \vfill
@@ -446,6 +443,12 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[53])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[54])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[55])} 
 \clearpage
 % -----------------------------------------------------------------------
 \end{document}

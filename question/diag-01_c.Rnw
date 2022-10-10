@@ -10,8 +10,7 @@ diagnostischen Test auf Klauenseuche aus.
 
 <<>>=
 
-files <- dir(file.path(question_path, "img",
-             pattern = "diag-doppelbaum", full.names = TRUE)
+diag_doppelbaum_file <- file.path(img_path, "diag-doppelbaum")
 
 @ 
 
@@ -26,7 +25,7 @@ files <- dir(file.path(question_path, "img",
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{\Sexpr{files[1]}}
+  \includegraphics[width=17cm]{\Sexpr{diag_doppelbaum_file}}
 \end{center}
 
 
