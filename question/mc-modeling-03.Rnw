@@ -1,10 +1,14 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+<<>>=
+mc_modeling_03_file <- file.path(img_path, "mc-modeling-03")
+@ 
+
 In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
 Regression und der ANOVA skizziert.
 
 \begin{center}
-  \includegraphics[width = 9cm]{\mainDir/exam/question/img/mc-modeling-03}
+  \includegraphics[width = 9cm]{\Sexpr{mc_modeling_03_file}}
 \end{center}
 
 Welche der folgenden Aussagen ist richtig?

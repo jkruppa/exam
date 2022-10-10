@@ -2,6 +2,8 @@
 
 <<>>=
 
+diag_doppelbaum_file <- file.path(img_path, "diag-doppelbaum")
+
 a <- c(180, 160, 200) %>% sample(1)
 b <- c(560, 850, 750) %>% sample(1)
 c <- c(40, 60, 20) %>% sample(1)
@@ -27,7 +29,7 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{C:/Users/jokruppa/lehre/intern/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{\Sexpr{diag_doppelbaum_file}}
   };
   \node[] at (-4.8,0) {\huge \Sexpr{a}};
   \node[] at (-1.7,0) {\huge \Sexpr{c}};

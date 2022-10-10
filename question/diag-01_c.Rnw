@@ -10,7 +10,7 @@ diagnostischen Test auf Klauenseuche aus.
 
 <<>>=
 
-files <- dir("C:/Users/jokruppa/lehre/intern/exam/question/img",
+files <- dir(file.path(question_path, "img",
              pattern = "diag-doppelbaum", full.names = TRUE)
 
 @ 

@@ -1,9 +1,14 @@
 \section{Aufgabe \hfill (6 Punkte)}
 
+<<>>=
+img_file <- file.path(img_path, "text-error-cross-table")
+
+@ 
+
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{\mainDir/exam/question/img/text-error-cross-table}
+  \includegraphics[width = 14cm]{\Sexpr{img_file}}
 \end{center}
 
 \begin{enumerate}

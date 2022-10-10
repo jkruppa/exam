@@ -2,10 +2,11 @@
 
 <<>>=
 
-var_vec <- c(##"logistische Regression. Sie sch{\"a}tzen ein OR",
-             "Gaussian Regression. Sie sch{\"a}tzen einen Mittelwertsunterschied"
-  ##"Poisson Regression. Sie sch{\"a}tzen ein RR"
-  ) %>%
+img_file <- file.path(img_path, "statistisches-testen-04")
+
+var_vec <- c("logistische Regression. Sie sch{\"a}tzen ein OR",
+             "Gaussian Regression. Sie sch{\"a}tzen einen Mittelwertsunterschied",
+             "Poisson Regression. Sie sch{\"a}tzen ein RR") %>%
   sample(1)
 
 s_or_n <- sample(c("Varianz $s_p$", "Fallzahl $n$", "Delta $\\Delta$"), 1)
@@ -39,7 +40,7 @@ Sie rechnen eine simple \Sexpr{var_vec}.
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 8cm]{\mainDir/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 8cm]{\Sexpr{img_file}}
 \end{center}
 
 

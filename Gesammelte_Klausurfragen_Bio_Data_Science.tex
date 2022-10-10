@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
+\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{color}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,6 +12,9 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
+\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
@@ -46,10 +49,38 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
 \usepackage[ngerman]{babel}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{pacman}\hlopt{::}\hlkwd{p_load}\hlstd{(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,}
+               \hlstd{gridExtra, broom, effectsize, gtsummary, glmmTMB, performance,}
+               \hlstd{janitor, pander, lme4, corpcor, fs)}
+\hlcom{##}
+\hlstd{opts_chunk}\hlopt{$}\hlkwd{set}\hlstd{(}\hlkwc{fig.width}\hlstd{=}\hlnum{7}\hlstd{,} \hlkwc{fig.height}\hlstd{=}\hlnum{7}\hlstd{,} \hlkwc{fig.path}\hlstd{=}\hlstr{'img/'}\hlstd{,}
+               \hlkwc{echo}\hlstd{=}\hlnum{FALSE}\hlstd{,} \hlkwc{warning}\hlstd{=}\hlnum{FALSE}\hlstd{,} \hlkwc{message}\hlstd{=}\hlnum{FALSE}\hlstd{,}
+               \hlkwc{cache.path}\hlstd{=}\hlstr{'cache/'}\hlstd{,} \hlkwc{fig.pos}\hlstd{=}\hlstr{'H'}\hlstd{)}
+
+\hlstd{exam_path} \hlkwb{<-} \hlkwd{file.path}\hlstd{(}\hlkwd{path_home}\hlstd{(),} \hlstr{"Documents/GitHub/exam"}\hlstd{)}
+\hlstd{init_path} \hlkwb{<-} \hlkwd{file.path}\hlstd{(exam_path,} \hlstr{"init"}\hlstd{)}
+\hlstd{question_path} \hlkwb{<-} \hlkwd{file.path}\hlstd{(exam_path,} \hlstr{"question"}\hlstd{)}
+\hlstd{img_path} \hlkwb{<-} \hlkwd{file.path}\hlstd{(question_path,} \hlstr{"img"}\hlstd{)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
 \usepackage[margin=2cm, includefoot]{geometry}
 \setlength{\parindent}{0cm}
 \usepackage{booktabs}
@@ -64,7 +95,7 @@
 \usepackage{float}
 \usepackage{currfile}
 \usepackage{tikz}
-\input{/Users/kruppajo/Documents/GitHub/exam/init}
+\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
 \usepackage[nomessages]{fp}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
@@ -76,7 +107,7 @@
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
 
-\begin{graybox}{Checkbox für die Version vom \today}
+\begin{graybox}{Checkbox f{\"u}r die Version vom \today}
   \Large Die gesamte Klausur beinhaltet aktuell in Summe
   \textbf{97}
   Fragen.\\[1Ex]
@@ -89,24 +120,24 @@
 
 \begin{takehomebox}{Frequently asked questions (FAQ)}
   \paragraph{Was ist das hier?} Im Folgenden findet sich die Sammlung
-  \textit{aller} Klausurfragen der Bio Data Science über \textit{alle}
-  Veranstaltungen, die ich an der Fakultät für Agrarwissenschaften und
+  \textit{aller} Klausurfragen der Bio Data Science {\"u}ber \textit{alle}
+  Veranstaltungen, die ich an der Fakult{\"a}t f{\"u}r Agrarwissenschaften und
   Landschaftsarchitektur anbiete.
   \vspace{1Ex}
   \paragraph{Sind aber ein bisschen \textit{viele} Fragen...} Ja, das
-  stimmt. Die Sortierung und Überlegung welche Fragen zur Veranstaltung
-  passen obliegt dem Studierenden. Gerne stehe ich für Rückfragen
-  bereit. Teilweise sind Fragen auch ähnlich.
+  stimmt. Die Sortierung und {\"U}berlegung welche Fragen zur Veranstaltung
+  passen obliegt dem Studierenden. Gerne stehe ich f{\"u}r R{\"u}ckfragen
+  bereit. Teilweise sind Fragen auch {\"a}hnlich.
   \vspace{1Ex}
   \paragraph{Sind die Fragen fix?} Ein klares Jein. Die Zahlen und die
   \textit{Reihenfolge} der Aufgaben - auch im Multiple Choice Teil - werden
-  sich ändern, da die Klausurfragen zufällig erstellt werden. Die
+  sich {\"a}ndern, da die Klausurfragen zuf{\"a}llig erstellt werden. Die
   Aufgaben\textit{fragen} hindoch werden die gleichen Fragen bleiben.
   \vspace{1Ex}
   \paragraph{Okay, aber woher wei{\ss} ich jetzt welche Fragen zu meiner
-    Veranstaltung gehören?} Das ist der Trick. Durch das Durchlesen und das
-  selbstständige Sortieren der Fragen zu Themen und Inhalten merkt man
-  ziemlich schnell, welche Inhalte zu der Veranstaltung gehören und welche
+    Veranstaltung geh{\"o}ren?} Das ist der Trick. Durch das Durchlesen und das
+  selbstst{\"a}ndige Sortieren der Fragen zu Themen und Inhalten merkt man
+  ziemlich schnell, welche Inhalte zu der Veranstaltung geh{\"o}ren und welche
   nicht. Ist also alles Teil des Lernprozesses. \textit{Und} wenn
   Unsicherheiten da sind, gerne in der Wiederholungsveranstaltung - letzte
   Vorlesung - einfach mich fragen.
@@ -116,13 +147,13 @@
   Textaufgaben mit in Summe ca. 60 Punkten. Ich peile daher eine Klausur
   mit 80 Punkten an, wobei 40 Punkte zum Bestehen der Klausur notwendig
   sind. \textcolor{red}{Bei geteilten Veranstaltungen
-    mit mehr als einem Dozenten ändert sich die Zusammensetzung der
-    endgültigen Punkteanzahl!}
+    mit mehr als einem Dozenten {\"a}ndert sich die Zusammensetzung der
+    endg{\"u}ltigen Punkteanzahl!}
   \vspace{1Ex}
   \paragraph{Sind aber mehr als \textit{zehn} Multiple Choice Fragen...} Ja,
   aber es werden in der finalen Klausur nur zehn Multiple Choice Fragen
-  sein. Ich wähle die Fragen dann zufällig aus. Ich berücksichtige
-  natürlich die Veranstaltung und das Lernniveau.
+  sein. Ich w{\"a}hle die Fragen dann zuf{\"a}llig aus. Ich ber{\"u}cksichtige
+  nat{\"u}rlich die Veranstaltung und das Lernniveau.
   \vspace{1Ex}
   \paragraph{Solange kann ich nicht warten...} Dann einfach eine Mail an
   mich schreiben:
@@ -138,13 +169,13 @@
 \thispagestyle{empty}
 \clearpage
 
-\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
   \begin{itemize}
   \item Normaler, nicht-programmierbarer Taschenrechner (kein Handy!)
   \item Eine DIN A4-Seite \textbf{einseitig} als selbstgeschriebene,
     handschriftliche
-    Formelsammlung. % ausschließlich mit Formeln und ohne erklärende Sätze;
+    Formelsammlung. % ausschlie{\ss}lich mit Formeln und ohne erkl{\"a}rende S{\"a}tze;
     % keine Beispielrechnungen
   \end{itemize}
 \end{graybox}
@@ -158,7 +189,7 @@
   \item[] \rule[0ex]{3em}{.4pt}\, von \textpoints\, Punkten sind aus dem Rechen- und
     Textteil erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \overallpoints\, Punkten in Summe.
-  \item[] Es wird folgender Notenschlüssel angewendet.   
+  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
   \end{itemize}
   \vspace{1ex}
 \begin{center}
@@ -193,9 +224,9 @@
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
   \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
-  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+  \item \textbf{{\"U}bertragen Sie Ihre Kreuze in die Tabelle auf
       dieser Seite.}
-  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+  \item Es werden nur Antworten ber{\"u}cksichtigt, die in dieser Tabelle
     angekreuzt sind!
   \end{itemize}
 
@@ -237,7 +268,7 @@
 
 \begin{graybox}{Rechen- und Textaufgaben}
   \begin{itemize}
-  \item Die Tabelle wird vom Dozenten ausgefüllt.
+  \item Die Tabelle wird vom Dozenten ausgef{\"u}llt.
   \end{itemize}
   \begin{center}
     \large
@@ -278,17 +309,17 @@ Welche Aussage {\"u}ber die \textbf{$confounder$} Adjustierung ist richtig?
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.21, 0.02, 0.89, 0.03 und 0.42. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.001, 0.42, 0.34, 0.21 und 0.02. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1, 0.1, 1, 0.15 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1, 0.1, 1, 0.15 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.042, 0.004, 0.178, 0.006 und 0.084. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1.05, 0.1, 4.45, 0.15 und 2.1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.042, 0.004, 0.178, 0.006 und 0.084. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 1, 1, 1 und 0.1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 1, 1, 1 und 0.1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0002, 0.084, 0.068, 0.042 und 0.004. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 2.1, 1.7, 1.05 und 0.1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0002, 0.084, 0.068, 0.042 und 0.004. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -298,16 +329,16 @@ Bonferroni. Welche Aussage ist richtig?
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
 unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
 wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = 0.33$. Welche Aussage ist richtig?
+$\eta^2 = 0.2$. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
-\item [\textbf{B} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
+\item [\textbf{A} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{B} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
 \item [\textbf{C} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
-\item [\textbf{D} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
-\item [\textbf{E} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{D} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
+\item [\textbf{E} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -604,11 +635,13 @@ kausales Modell rechnen. Welche Aussage ist richtig?
 
 \section{Aufgabe \hfill (2 Punkte)}
 
+
+
 In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
 Regression und der ANOVA skizziert.
 
 \begin{center}
-  \includegraphics[width = 9cm]{\mainDir/exam/question/img/mc-modeling-03}
+  \includegraphics[width = 9cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/mc-modeling-03}
 \end{center}
 
 Welche der folgenden Aussagen ist richtig?
@@ -1420,7 +1453,7 @@ low & 23\\
 \vspace*{8cm}
 
 \begin{center}
-  \includegraphics[width=10cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-c.png}
+  \includegraphics[width=10cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/boxplot-03-c.png}
 \end{center}
 
 
@@ -1626,7 +1659,12 @@ wenn das Wollschwein \textit{nicht} erkrankt ist und somit gesund ist. Sie
 werten 4000 Wollschweine mit einem
 diagnostischen Test auf Klauenseuche aus.
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: <text>:5:0: unexpected end of input\\\#\# 3: \ \ \ \ \ \ \ \ \ \ \ \ \ pattern = "{}diag-doppelbaum"{}, full.names = TRUE)\\\#\# 4: \\\#\# \ \ \textasciicircum{}}}\end{kframe}
+\end{knitrout}
 
 \begin{enumerate}
 \item F{\"u}llen und beschriften Sie den untenstehenden Doppelbaum! Beschriften
@@ -1639,7 +1677,7 @@ diagnostischen Test auf Klauenseuche aus.
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{NA}
+  \includegraphics[width=17cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/boxplot-03-c.png}
 \end{center}
 
 
@@ -1693,7 +1731,7 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{C:/Users/jokruppa/lehre/intern/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
   };
   \node[] at (-4.8,0) {\huge 200};
   \node[] at (-1.7,0) {\huge 40};
@@ -2612,10 +2650,12 @@ einzunicken. Es ergab sich folgende Abbildung.
 
 \section{Aufgabe \hfill (6 Punkte)}
 
+
+
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{\mainDir/exam/question/img/text-error-cross-table}
+  \includegraphics[width = 14cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/text-error-cross-table}
 \end{center}
 
 \begin{enumerate}
@@ -2682,16 +2722,16 @@ Sie rechnen eine simple Gaussian Regression. Sie sch{"a}tzen einen Mittelwertsun
   untenstehende Abbildung f{\"u}nf einzelne Konfidenzintervalle (a-e) mit den
   jeweiligen Eigenschaften! \textbf{(6 Punkte)}
   \begin{itemize}
-  \item[(a)] Ein nicht signifikantes, relevantes Konfidenzintervall 	
-  \item[(b)] Ein Konfidenzintervall mit h{"o}herer Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
+  \item[(a)] Ein Konfidenzintervall mit h{"o}herer Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
+  \item[(b)] Ein Konfidenzintervall mit niedriger Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
   \item[(c)] Ein signifikantes, relevantes Konfidenzintervall 	
   \item[(d)] Ein signifikantes, nicht relevantes Konfidenzintervall 
-  \item[(e)] Ein Konfidenzintervall mit niedriger Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle
+  \item[(e)] Ein nicht signifikantes, relevantes Konfidenzintervall
   \end{itemize}
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 8cm]{\mainDir/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 8cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/statistisches-testen-04}
 \end{center}
 
 
