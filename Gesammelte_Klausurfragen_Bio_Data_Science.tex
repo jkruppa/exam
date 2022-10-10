@@ -61,35 +61,18 @@
 
 \usepackage{alltt}
 \usepackage[ngerman]{babel}
-
-
-
-\usepackage[margin=2cm, includefoot]{geometry}
-\setlength{\parindent}{0cm}
-\usepackage{booktabs}
-\usepackage{amsmath}
-\usepackage{scalerel,amssymb}
-\usepackage{setspace}
-\def\csquare{{\Large $\boxtimes$}}
-\def\msquare{{\Large $\square$}}
-\usepackage[normalem]{ulem}
-\usepackage{array}
-\usepackage{xcolor}
-\usepackage{float}
-\usepackage{currfile}
-\usepackage{tikz}
-\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
-\usepackage[nomessages]{fp}
-\def\textpoints{60}
-\FPeval{\overallpoints}{clip(\textpoints + 20)}
-
 % -----------------------------------------------------------------------
 
+% -----------------------------------------------------------------------
+\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
+\def\textpoints{60}
+\FPeval{\overallpoints}{clip(\textpoints + 20)}
+% -----------------------------------------------------------------------
 
 % -----------------------------------------------------------------------
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
-
+% -----------------------------------------------------------------------
 \begin{graybox}{Checkbox f{\"u}r die Version vom \today}
   \Large Die gesamte Klausur beinhaltet aktuell in Summe
   \textbf{99}
@@ -147,10 +130,11 @@
   aber in der Vorlesung nochmal (anonym) aufzugreifen.
 \end{takehomebox}
 
-
+% -----------------------------------------------------------------------
 \maketitle
 \thispagestyle{empty}
 \clearpage
+% -----------------------------------------------------------------------
 
 \begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
@@ -199,9 +183,9 @@
   \vspace{1Ex}
 \end{graybox}
 
-
+% -----------------------------------------------------------------------
 \newpage
-
+% -----------------------------------------------------------------------
 
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
@@ -268,7 +252,9 @@
 \end{itemize}
 \end{graybox}
 
+% -----------------------------------------------------------------------
 \clearpage
+% -----------------------------------------------------------------------
 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -280,10 +266,10 @@ Welche Aussage {\"u}ber die \textbf{$\alpha$} Adjustierung ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
-\item [\textbf{B} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
-\item [\textbf{C} \msquare] Die $\alpha$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
-\item [\textbf{D} \msquare] Die $\alpha$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
+\item [\textbf{A} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
+\item [\textbf{B} \msquare] Die $\alpha$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
+\item [\textbf{C} \msquare] Die $\alpha$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
+\item [\textbf{D} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
 \item [\textbf{E} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
 \end{enumerate} 
 
@@ -291,17 +277,17 @@ Welche Aussage {\"u}ber die \textbf{$\alpha$} Adjustierung ist richtig?
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.03, 0.21, 0.89, 0.001, 0.42 und 0.02. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.02, 0.89, 0.34 und 0.21. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.035, 0.1483, 0.0002, 0.07 und 0.0033. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.035, 0.1483, 0.0002, 0.07 und 0.0033. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.18, 1, 1, 0.006, 1 und 0.12. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.18, 1, 1, 0.006, 1 und 0.12. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.18, 1.26, 5.34, 0.006, 2.52 und 0.12. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.2225, 0.085 und 0.0525. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.08, 1, 1 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.08, 1, 1 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.08, 3.56, 1.36 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.2225, 0.085 und 0.0525. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -311,7 +297,7 @@ Bonferroni. Welche Aussage ist richtig?
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
 unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
 wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = 0.2$. Welche Aussage ist richtig?
+$\eta^2 = 0.24$. Welche Aussage ist richtig?
 
 
 
@@ -1349,25 +1335,20 @@ folgende Datentabelle mit dem gemessenen Frischgewicht (\textit{freshmatter}).
 \toprule
 water\_type & freshmatter\\
 \midrule
-B & 32\\
-B & 26\\
-C & 19\\
-A & 22\\
-B & 26\\
-\addlinespace
-B & 35\\
-C & 18\\
-A & 17\\
-C & 14\\
-A & 15\\
-\addlinespace
-C & 19\\
-A & 21\\
-B & 12\\
-B & 31\\
 A & 14\\
+C & 14\\
+C & 15\\
+A & 15\\
+B & 12\\
 \addlinespace
-C & 19\\
+B & 26\\
+C & 14\\
+B & 26\\
+B & 31\\
+A & 22\\
+\addlinespace
+A & 21\\
+A & 17\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1397,27 +1378,32 @@ folgende Datentabelle mit dem gemessenen Trockengewicht (\textit{drymatter}).
 \toprule
 trt & drymatter\\
 \midrule
-B & 11.8\\
-B & 9.8\\
-A & 16.9\\
-A & 19.6\\
-A & 17.4\\
+A & 6.0\\
+B & 7.7\\
+B & 15.7\\
+B & 13.0\\
+B & 17.1\\
 \addlinespace
-B & 10.9\\
-B & 11.5\\
-A & 18.2\\
-A & 13.3\\
-A & 16.1\\
+B & 12.5\\
+A & 12.3\\
+A & 14.2\\
+A & 9.4\\
+B & 16.1\\
 \addlinespace
-A & 19.3\\
-B & 18.9\\
-A & 21.7\\
-B & 20.4\\
-A & 20.3\\
+B & 20.9\\
+A & 10.1\\
+A & 14.9\\
+A & 8.2\\
+A & 7.8\\
 \addlinespace
-B & 15.3\\
-A & 17.4\\
-A & 17.9\\
+B & 14.1\\
+B & 21.4\\
+B & 19.6\\
+A & 14.0\\
+B & 10.1\\
+\addlinespace
+A & 11.8\\
+A & 14.4\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1791,20 +1777,20 @@ Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctr
 \toprule
 pesticie & grade\\
 \midrule
-pest1 & 6\\
+pestKill & 6\\
 ctrl & 7\\
 ctrl & 6\\
-pest1 & 5\\
-pest1 & 4\\
+pestKill & 5\\
+pestKill & 4\\
 \addlinespace
-pest3 & 3\\
-pest3 & 0\\
+zeroX & 3\\
+zeroX & 0\\
 ctrl & 7\\
-pest2 & 6\\
-pest2 & 4\\
+roundUp & 6\\
+roundUp & 4\\
 \addlinespace
-pest3 & 2\\
-pest2 & 4\\
+zeroX & 2\\
+roundUp & 4\\
 ctrl & 8\\
 \bottomrule
 \end{tabular}
@@ -1813,13 +1799,13 @@ ctrl & 8\\
 
 
 \begin{enumerate}
-\item Zeichnen Sie in \textit{einer} Abbildung die Dotplots für die
+\item Zeichnen Sie in \textit{einer} Abbildung die Dotplots f{\"u}r die
   vier Pestizidlevel! Beschriften Sie die Achsen entsprechend!
   \textbf{(4 Punkte)}
-\item Ergänzen Sie die Dotplots mit einer gängigen
-  statistischen Maßzahl. \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie die Dotplots mit einer g{\"a}ngigen
+  statistischen Ma{\ss}zahl. \textbf{(2 Punkte)}
 \item Wenn Sie \textit{keinen Effekt} zwischen den Pestizidlevel erwarten
-  würden, wie sehen dann die Dotplots aus? \textbf{(1 Punkt)}
+  w{\"u}rden, wie sehen dann die Dotplots aus? \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
 % -----------------------------------------------------------------------

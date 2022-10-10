@@ -1,6 +1,6 @@
 \documentclass[a4paper, 10pt]{scrartcl}
 \usepackage[ngerman]{babel}
-
+% -----------------------------------------------------------------------
 <<init, echo = FALSE>>=
 pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
                gridExtra, broom, effectsize, gtsummary, glmmTMB, performance,
@@ -16,38 +16,21 @@ question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
 
 @ 
-
-\usepackage[margin=2cm, includefoot]{geometry}
-\setlength{\parindent}{0cm}
-\usepackage{booktabs}
-\usepackage{amsmath}
-\usepackage{scalerel,amssymb}
-\usepackage{setspace}
-\def\csquare{{\Large $\boxtimes$}}
-\def\msquare{{\Large $\square$}}
-\usepackage[normalem]{ulem}
-\usepackage{array}
-\usepackage{xcolor}
-\usepackage{float}
-\usepackage{currfile}
-\usepackage{tikz}
+% -----------------------------------------------------------------------
 \input{\Sexpr{init_path}}
-\usepackage[nomessages]{fp}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
-
 % -----------------------------------------------------------------------
-<<randomizer, echo = FALSE>>=
+<<questions, echo = FALSE>>=
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
 text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 @
-
 % -----------------------------------------------------------------------
 \begin{document}
-
+% -----------------------------------------------------------------------
 \begin{graybox}{Checkbox f{\"u}r die Version vom \today}
   \Large Die gesamte Klausur beinhaltet aktuell in Summe
   \textbf{\Sexpr{length(text_questions_vec) + length(mc_questions_vec)}}
@@ -105,10 +88,11 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
   aber in der Vorlesung nochmal (anonym) aufzugreifen.
 \end{takehomebox}
 
-
+% -----------------------------------------------------------------------
 \maketitle
 \thispagestyle{empty}
 \clearpage
+% -----------------------------------------------------------------------
 
 \begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
@@ -157,9 +141,9 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
   \vspace{1Ex}
 \end{graybox}
 
-
+% -----------------------------------------------------------------------
 \newpage
-
+% -----------------------------------------------------------------------
 
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
@@ -226,7 +210,9 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \end{itemize}
 \end{graybox}
 
+% -----------------------------------------------------------------------
 \clearpage
+% -----------------------------------------------------------------------
 
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 

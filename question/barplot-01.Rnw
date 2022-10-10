@@ -6,15 +6,15 @@ folgende Datentabelle mit dem gemessenen Frischgewicht (\textit{freshmatter}).
 <<barplot-01, results='asis', echo = FALSE>>=
 
 
-data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5, 6), 1),
+data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5, 4), 1),
                                          mean = sample(c(15, 20, 25), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather,
-                  tibble(B = round(rnorm(n = sample(c(5, 6), 1),
+                  tibble(B = round(rnorm(n = sample(c(3, 4), 1),
                                          mean = sample(c(20, 25, 30), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather,
-                  tibble(C = round(rnorm(n = sample(c(5, 6), 1),
+                  tibble(C = round(rnorm(n = sample(c(4, 3), 1),
                                          mean = sample(c(10, 15, 20), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%
