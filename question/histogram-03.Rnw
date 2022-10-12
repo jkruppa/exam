@@ -1,0 +1,21 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+<<>>=
+
+count_vec <- rpois(sample(c(12, 14, 15), 1), 4)
+
+@
+
+Nach einem Experiment zählen Sie folgende Anzahl an Läsionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
+
+\begin{center}
+$\Sexpr{count_vec}$
+\end{center}
+
+\begin{enumerate}
+\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualiseren. (\textbf{3 Punkte})
+\item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
+\item Wie unterscheidet sich eine Poissonverteilung von einer Normalverteilung dargestellt in einem Histogramm? (\textbf{1 Punkt})
+\end{enumerate}
+
+
