@@ -1,7 +1,7 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
 In einem Feldexperiment f{\"u}r die Bodendurchl{\"a}ssigkeit wurde der Niederschlag
-pro Parzelle sowie der durschschnittliche Ertrag gemessen. Es ergibt sich
+pro Parzelle sowie der durchschnittliche Ertrag gemessen. Es ergibt sich
 folgende Datentabelle. 
 
 <<scatter-01, results='asis', echo = FALSE>>=
@@ -22,8 +22,8 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 \item Erstellen Sie den Scatter-Plot f{\"u}r die Datentabelle. Beschriften Sie
   die Achsen entsprechend! \textbf{(4 Punkte)}
 \item Zeichnen Sie eine Gerade durch die Punkte! \textbf{(1 Punkt)}
-\item Beschriften Sie die Gerade mit den g{\"a}ngigen statistischen Ma{\ss}zahlen! \textbf{(4 Punkte)}
+\item Beschriften Sie die Gerade mit den g{\"a}ngigen statistischen Ma{\ss}zahlen! \textbf{(3 Punkte)}
 \item Wenn kein Effekt von dem Niederschlag auf das Trockengewicht
   vorhanden w{\"a}re, wie w{\"u}rde die Gerade verlaufen und welche Werte w{\"u}rden die
-  statistischen Ma{\ss}zahlen annehmen? \textbf{(1 Punkt)}
+  statistischen Ma{\ss}zahlen annehmen? \textbf{(2 Punkt)}
 \end{enumerate}

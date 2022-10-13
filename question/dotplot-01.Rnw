@@ -1,6 +1,6 @@
 \section{Aufgabe \hfill (7 Punkte)}
 
-Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctrl, pest1, pest2, pest3) ergibt sich die folgende Datentabelle mit den Boniturnoten (\textit{grade}). 
+Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctrl, pestKill, roundUp, zeroX) ergibt sich die folgende Datentabelle mit den Boniturnoten (\textit{grade}). 
 
 <<dotplot-01, results='asis', echo = FALSE>>=
 data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(3, 4), 1),
