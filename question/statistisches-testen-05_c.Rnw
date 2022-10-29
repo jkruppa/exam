@@ -14,23 +14,23 @@ auf den T-Wert und damit auf die \textit{vermutliche} Signifikanz? F{\"u}llen
 Sie hierzu die untenstehende Tabelle aus! \textbf{(6 Punkte)}
 
 \begin{center}
-  \Large
-  \begin{tabular}[c]{l|l|l|l|l|l}
-    & T Statistik & $Pr(D|H_0)$ & & T Statistik & $Pr(D|H_0)$ \strut\\ 
+  \large
+  \begin{tabular}[c]{l|l|l|l|l|l|l|l}
+    & T Statistik & $Pr(D|H_0)$ & $KI_{1-\alpha}$ & & T Statistik & $Pr(D|H_0)$ & $KI_{1-\alpha}$\strut\\ 
     \hline
-    \textbf{$\Delta\; \uparrow$} & \hspace{2cm} & \hspace{2cm} & \textbf{
+    \textbf{$\Delta\; \uparrow$} & \hspace{2cm} & \hspace{2cm}  & \hspace{2cm} & \textbf{
                                                           $\Delta\; \downarrow$} &
-                                                                          \hspace{2cm} & \hspace{2cm}\strut\\
+                                                                          \hspace{2cm} & \hspace{2cm}  & \hspace{2cm}\strut\\
     \hline
-        \textbf{$s\; \uparrow$} & \hspace{2cm} & \hspace{2cm} & \textbf{
+        \textbf{$s\; \uparrow$} & \hspace{2cm} & \hspace{2cm}  & \hspace{2cm} & \textbf{
                                                           $s\; \downarrow$} &
                                                                           \hspace{2cm}
-                                                & \hspace{2cm}\strut\\
+                                                & \hspace{2cm}  & \hspace{2cm}\strut\\
     \hline
-        \textbf{$n\; \uparrow$} & \hspace{2cm} & \hspace{2cm} & \textbf{
+        \textbf{$n\; \uparrow$} & \hspace{2cm} & \hspace{2cm}  & \hspace{2cm} & \textbf{
                                                           $n\; \downarrow$} &
                                                                           \hspace{2cm}
-                                                & \hspace{2cm}\strut\\
+                                                & \hspace{2cm}  & \hspace{2cm}\strut\\
     \hline
   \end{tabular}
 \end{center}
