@@ -1,0 +1,28 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+var_vec <- sample(c("Wir machen Aussagen über Wahrscheinlichkeiten!",
+                  "Wir machen Aussagen über Populationen!",
+                  "Wir machen Aussagen über den Nicht-Zustand/Keinen Effekt!"), 1)
+@
+
+Welche Aussage über die frequentistischen Testtheorie ist richtig?
+
+<<mc-statistisches-testen-10, results='asis', echo = FALSE>>=
+
+questions_vec <- c(str_c(var_vec),
+                   'Wir machen keine Aussagen über Wahrscheinlichkeiten!',
+                   'Wir machen Aussagen über Individuen!',
+                   'Wir machen Aussagen über den Effekt!',
+                   'Wir machen Aussagen über die individuelle Wahrscheinlichkeit eines Effektes!') %>%
+  sample
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

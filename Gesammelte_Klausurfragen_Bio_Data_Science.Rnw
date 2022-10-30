@@ -257,7 +257,10 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \Sexpr{knit_child(mc_questions_vec[42])}
 \Sexpr{knit_child(mc_questions_vec[43])}
 \Sexpr{knit_child(mc_questions_vec[44])}
-
+\Sexpr{knit_child(mc_questions_vec[45])}
+\Sexpr{knit_child(mc_questions_vec[46])}
+\Sexpr{knit_child(mc_questions_vec[47])}    
+    
 % -----------------------------------------------------------------------
 \clearpage
 \begin{graybox}{Rechen- und Textaufgaben}

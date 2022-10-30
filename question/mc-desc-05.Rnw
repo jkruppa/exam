@@ -1,0 +1,27 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+var_vec <- c("einen Boxplot", "ein Histogramm", "einen Dotplot") %>% sample(1)
+@
+
+Die empfohlene Mindestanzahl an Beobachtungen f{\"u}r \Sexpr{var_vec} sind...
+
+<<mc-desc-05, results='asis', echo = FALSE>>=
+
+questions_vec <- c('5 und mehr Beobachtungen.',
+                   '2-5 Beobachtungen.',
+                   'mindestens 20 Beobachtungen.',
+                   '1 Beobachtung.',
+                   '10 Beobachtungen.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}
