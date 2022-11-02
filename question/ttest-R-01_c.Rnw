@@ -3,6 +3,10 @@
 Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 
 <<ttest-R-01-a,  echo = FALSE>>=
+
+question_vec <- c("das statistische Hypothesenpaar",
+                  "die wissenschaftliche Fragestellung") %>% sample(1)
+
 data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
                                          mean = sample(c(15, 17, 19), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
@@ -22,7 +26,7 @@ tk <- qt(0.975, df=ttest$parameter)
 
 
 \begin{enumerate}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(2
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}

@@ -9,12 +9,12 @@ var_vec <- c("logistische Regression. Sie sch{\"a}tzen ein OR",
              "Poisson Regression. Sie sch{\"a}tzen ein RR") %>%
   sample(1)
 
-s_or_n <- sample(c("Varianz $s_p$", "Fallzahl $n$", "Delta $\\Delta$"), 1)
+s_or_n <- sample(c("Varianz $s_p$", "Fallzahl $n$"), 1)
 
 ki_sample <- c("Ein signifikantes, relevantes Konfidenzintervall",
                "Ein nicht signifikantes, relevantes Konfidenzintervall",
                "Ein signifikantes, nicht relevantes Konfidenzintervall",
-               str_c("Ein Konfidenzintervall mit h{\"o}herer ", s_or_n, " in der Stichprobe als der Rest der Konfidenzintervalle"),
+               str_c("Ein Konfidenzintervall mit h{\"o}herer", s_or_n, " in der Stichprobe als der Rest der Konfidenzintervalle"),
                str_c("Ein Konfidenzintervall mit niedriger ", s_or_n, " in der Stichprobe als der Rest der Konfidenzintervalle")) %>%
   sample
 

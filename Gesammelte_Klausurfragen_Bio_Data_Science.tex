@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
+\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{color}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,6 +12,9 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
+\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
@@ -46,6 +49,14 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -53,7 +64,7 @@
 % -----------------------------------------------------------------------
 
 % -----------------------------------------------------------------------
-\input{/Users/kruppajo/Documents/GitHub/exam/init}
+\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
 % -----------------------------------------------------------------------
@@ -255,28 +266,28 @@ Welche Aussage {\"u}ber die \textbf{$confounder$} Adjustierung ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
-\item [\textbf{B} \msquare] Die $confounder$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
-\item [\textbf{C} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
+\item [\textbf{A} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
+\item [\textbf{B} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
+\item [\textbf{C} \msquare] Die $confounder$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
 \item [\textbf{D} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
-\item [\textbf{E} \msquare] Die $confounder$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
+\item [\textbf{E} \msquare] Die $confounder$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.02, 0.42, 0.03 und 0.01. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.21, 0.03, 0.001, 0.34 und 0.42. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.08, 1, 0.12 und 0.04. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.08, 1.68, 0.12 und 0.04. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.08, 1, 0.12 und 0.04. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.105, 0.0075 und 0.0025. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.105, 0.0075 und 0.0025. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1.05, 0.15, 0.005, 1.7 und 2.1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.042, 0.006, 0.0002, 0.068 und 0.084. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.042, 0.006, 0.0002, 0.068 und 0.084. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1, 0.15, 0.005, 1 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1, 0.15, 0.005, 1 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -286,16 +297,16 @@ Bonferroni. Welche Aussage ist richtig?
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
 unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
 wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = 0.21$. Welche Aussage ist richtig?
+$\eta^2 = 0.25$. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
 \item [\textbf{B} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
 \item [\textbf{C} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
 \item [\textbf{D} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
-\item [\textbf{E} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
+\item [\textbf{E} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -630,7 +641,7 @@ In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
 Regression und der ANOVA skizziert.
 
 \begin{center}
-  \includegraphics[width = 9cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/mc-modeling-03}
+  \includegraphics[width = 9cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/mc-modeling-03}
 \end{center}
 
 Welche der folgenden Aussagen ist richtig?
@@ -1511,7 +1522,7 @@ low & 21\\
 \vspace*{8cm}
 
 \begin{center}
-  \includegraphics[width=10cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-a.png}
+  \includegraphics[width=10cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/boxplot-03-a.png}
 \end{center}
 
 
@@ -1730,7 +1741,7 @@ diagnostischen Test auf Klauenseuche aus.
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
+  \includegraphics[width=17cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
 \end{center}
 
 
@@ -1784,7 +1795,7 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
   };
   \node[] at (-4.8,0) {\huge 180};
   \node[] at (-1.7,0) {\huge 60};
@@ -2727,7 +2738,7 @@ einzunicken. Es ergab sich folgende Abbildung.
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/text-error-cross-table}
+  \includegraphics[width = 14cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/text-error-cross-table}
 \end{center}
 
 \begin{enumerate}
@@ -2798,12 +2809,12 @@ Sie rechnen eine simple Gaussian Regression. Sie sch{"a}tzen einen Mittelwertsun
   \item[(b)] Ein Konfidenzintervall mit niedriger Varianz $s_p$ in der Stichprobe als der Rest der Konfidenzintervalle 	
   \item[(c)] Ein signifikantes, relevantes Konfidenzintervall 	
   \item[(d)] Ein nicht signifikantes, relevantes Konfidenzintervall 
-  \item[(e)] Ein Konfidenzintervall mit h{"o}herer Varianz $s_p$ in der Stichprobe als der Rest der Konfidenzintervalle
+  \item[(e)] Ein Konfidenzintervall mit h{"o}hererVarianz $s_p$ in der Stichprobe als der Rest der Konfidenzintervalle
   \end{itemize}
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 8cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 8cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/statistisches-testen-04}
 \end{center}
 
 
@@ -3036,25 +3047,25 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 	Two Sample t-test
 ## 
 ## data:  freshweight by N
-## t = 0.938211, df = 12, p-value = 0.36664
+## t = 0.848528, df = 16, p-value = 0.40866
 ## alternative hypothesis: true difference in means between group high and group low is not equal to 0
 ## 95 percent confidence interval:
-##  -1.3223063  3.3223063
+##  -0.99888824  2.33222157
 ## sample estimates:
 ## mean in group high  mean in group low 
-##          19.142857          18.142857
+##          16.888889          16.222222
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
 \begin{enumerate}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Skizieren Sie eine Abbildung in der Sie $T_c$, $Pr(D|H_0)$, $A=1$,
-  sowie $T_k = |2.18|$ einzeichnen! \textbf{(4 Punkte)}
+  sowie $T_k = |2.12|$ einzeichnen! \textbf{(4 Punkte)}
 \item Beschriften Sie die Abbildung und
   den Graphen entsprechend! \textbf{(2 Punkte)}  
 \end{enumerate} 
@@ -3072,13 +3083,13 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 	Two Sample t-test
 ## 
 ## data:  drymatter by P
-## t = 0.0737878, df = 12, p-value = 0.94239
+## t = 2.34438, df = 12, p-value = 0.037089
 ## alternative hypothesis: true difference in means between group high and group low is not equal to 0
 ## 95 percent confidence interval:
-##  -4.4377001  4.7488113
+##   0.37038617 10.11850272
 ## sample estimates:
 ## mean in group high  mean in group low 
-##          16.600000          16.444444
+##          18.444444          13.200000
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -3107,23 +3118,23 @@ bioaktiven D{\"u}nger gez{\"a}hlt. Es ergibt sich folgende Datentabelle.
 \toprule
 Vorher & Nachher & Differenz & Vorzeichen & Rang & Positiv Rang & Negativ Rang\\
 \midrule
-9 & 9 &  &  &  &  & \\
-9 & 11 &  &  &  &  & \\
-12 & 10 &  &  &  &  & \\
-10 & 13 &  &  &  &  & \\
-11 & 12 &  &  &  &  & \\
-\addlinespace
-12 & 11 &  &  &  &  & \\
-9 & 13 &  &  &  &  & \\
 9 & 15 &  &  &  &  & \\
 12 & 11 &  &  &  &  & \\
 7 & 13 &  &  &  &  & \\
-\addlinespace
 11 & 12 &  &  &  &  & \\
 10 & 10 &  &  &  &  & \\
+\addlinespace
 13 & 9 &  &  &  &  & \\
 10 & 15 &  &  &  &  & \\
 10 & 15 &  &  &  &  & \\
+7 & 14 &  &  &  &  & \\
+9 & 10 &  &  &  &  & \\
+\addlinespace
+8 & 11 &  &  &  &  & \\
+11 & 16 &  &  &  &  & \\
+10 & 14 &  &  &  &  & \\
+9 & 13 &  &  &  &  & \\
+11 & 16 &  &  &  &  & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3163,22 +3174,22 @@ folgender Datensatz an mittleren Wurzelanzahl.
 \toprule
 Treatment & Count\\
 \midrule
-RootsGoneX & 13.7\\
-RootsGoneX & 7.1\\
-RootsGoneX & 8.9\\
-RootsGoneX & 15.8\\
-RootsGoneX & 12.3\\
+RootsGoneX & 6.6\\
+RootsGoneX & 8.6\\
+RootsGoneX & 8.4\\
+RootsGoneX & 8.8\\
+RootsGoneX & 6.7\\
 \addlinespace
-RootsGoneX & 12.0\\
-RootsGoneX & 15.5\\
-Kontrolle & 9.6\\
-Kontrolle & 11.6\\
-Kontrolle & 11.4\\
+RootsGoneX & 10.3\\
+RootsGoneX & 9.4\\
+Kontrolle & 10.2\\
+Kontrolle & 18.6\\
+Kontrolle & 13.2\\
 \addlinespace
-Kontrolle & 11.8\\
-Kontrolle & 9.7\\
-Kontrolle & 13.3\\
-Kontrolle & 12.4\\
+Kontrolle & 5.8\\
+Kontrolle & 12.0\\
+Kontrolle & 5.3\\
+Kontrolle & 12.3\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3214,27 +3225,27 @@ ergeben sich folgende nach der Anzahl der Bl{\"u}ten geordnete Daten.
 \toprule
 Treatment & Count & Rang Kontrolle & Rang Dosis 20 & Rang Dosis 40\\
 \midrule
-Kontrolle & 2.3 &  &  & \\
-Kontrolle & 2.8 &  &  & \\
-Kontrolle & 7.2 &  &  & \\
-Kontrolle & 9.0 &  &  & \\
-Kontrolle & 9.3 &  &  & \\
+Dosis 20 & 6.3 &  &  & \\
+Kontrolle & 8.3 &  &  & \\
+Kontrolle & 8.8 &  &  & \\
+Kontrolle & 9.9 &  &  & \\
+Dosis 20 & 10.6 &  &  & \\
 \addlinespace
-Dosis 20 & 9.3 &  &  & \\
-Dosis 20 & 9.8 &  &  & \\
-Kontrolle & 10.2 &  &  & \\
-Dosis 20 & 10.9 &  &  & \\
-Dosis 20 & 12.0 &  &  & \\
+Kontrolle & 11.0 &  &  & \\
+Kontrolle & 11.1 &  &  & \\
+Dosis 20 & 11.5 &  &  & \\
+Dosis 40 & 12.4 &  &  & \\
+Dosis 20 & 13.4 &  &  & \\
 \addlinespace
-Dosis 20 & 12.1 &  &  & \\
 Dosis 40 & 13.6 &  &  & \\
-Dosis 20 & 15.1 &  &  & \\
-Kontrolle & 15.6 &  &  & \\
-Dosis 40 & 16.4 &  &  & \\
+Dosis 40 & 13.6 &  &  & \\
+Dosis 40 & 13.8 &  &  & \\
+Dosis 20 & 13.9 &  &  & \\
+Kontrolle & 14.1 &  &  & \\
 \addlinespace
-Dosis 40 & 16.9 &  &  & \\
-Dosis 40 & 19.6 &  &  & \\
-Dosis 40 & 21.0 &  &  & \\
+Dosis 40 & 14.4 &  &  & \\
+Kontrolle & 15.6 &  &  & \\
+Dosis 20 & 18.0 &  &  & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3265,7 +3276,7 @@ Rechnen Sie einen Kruskal-Wallis-Test auf den obigen Daten.
 \begin{enumerate}
 \item Folgende statistische Fachbegriffe bzw. Methoden sind gegeben:
   \begin{itemize}
-  \item[] Simple Gaussian linear Regression, Pearson Korrelation, Mann-Whitney-U-Test, Paired t-Test, ANOVA, Wilcoxon-Test, Spearman Korrelation, t-Test und Kruskal-Wallis-Test.
+  \item[] t-Test, Pearson Korrelation, Paired t-Test, Wilcoxon-Test, ANOVA, Spearman Korrelation, Simple Gaussian linear Regression, Kruskal-Wallis-Test und Mann-Whitney-U-Test.
   \end{itemize}
 \item Ordnen Sie die Begriffe den untenstehenden Boxen,
   \textit{Parametrische Methoden} und \textit{Nicht-parametrische
