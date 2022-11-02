@@ -24,12 +24,12 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
   \item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
       Punkte)}
-  \item Bestimmen Sie die Teststatistik $T_c$ eines Student t-Tests f{\"u}r den
+  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Student t-Tests f{\"u}r den
   Vergleich der beiden Pestizide. Geben Sie den Rechenweg und die Formeln
   mit an! \textbf{(5 Punkte)}
-\item Treffen Sie mit $T_k = 2.04$ und dem berechneten $T_c$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{calc}$ eine Aussage
   zur Nullhypothese! \textbf{(2 Punkte)}
 \item Wenn Sie keinen Unterschied zwischen den beiden Pestiziden erwarten
-  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_c$? Begr{\"u}nden Sie Ihre
+  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_{calc}$? Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
