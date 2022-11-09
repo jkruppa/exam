@@ -11,7 +11,18 @@ Berechnen Sie den Median und das IQR von $x$ mit \Sexpr{pander::p(x, wrap = "", 
 
 mean_x <- round(mean(x))
 median_x <- round(median(x), 2)
-quant_x <- quantile(x, probs = c(0.25, 0.75))
+
+## sort(x)
+
+if(length(x) == 7) {
+  quant_x <- sort(x)[c(2, 6)]
+}
+
+if(length(x) == 11) {
+  quant_x <- sort(x)[c(3, 7)]
+}
+
+## quant_x <- quantile(x, probs = c(0.25, 0.75))
 
 questions_vec <- c(str_c('Es ergibt sich ', median_x, ' [', quant_x[1], ", ",
                          quant_x[2], "]"),
