@@ -36,7 +36,7 @@ ggplot(data_tbl, aes(dose, activity, shape = dose)) +
 \item Zeichnen Sie folgende statistischen Masszahlen in die Abildung ein! \textbf{(6 Punkte)}
   \begin{itemize}
   \item Total (grand) mean: $\beta_0$
-  \item Mittelwerte der Dosen: $\bar{x}_{0.5}$, $\bar{x}_{1.5}$ und $\bar{x}_{2.5}$
+  \item Mittelwerte der Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$
   \item Effekt der einzelnen Level der Dosen: $\beta_{0.5}$, $\beta_{1.5}$,
     und $\beta_{2.5}$
   \item Residuen oder Fehler: $\epsilon$
