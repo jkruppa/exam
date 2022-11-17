@@ -4,11 +4,6 @@
 
 img_file <- file.path(img_path, "statistisches-testen-04")
 
-var_vec <- c("logistische Regression. Sie sch{\"a}tzen ein OR",
-             "Gaussian Regression. Sie sch{\"a}tzen einen Mittelwertsunterschied",
-             "Poisson Regression. Sie sch{\"a}tzen ein RR") %>%
-  sample(1)
-
 s_or_n <- sample(c("Varianz $s_p$", "Fallzahl $n$"), 1)
 
 ki_sample <- c("Ein signifikantes, relevantes Konfidenzintervall",
@@ -21,7 +16,7 @@ ki_sample <- c("Ein signifikantes, relevantes Konfidenzintervall",
 
 @ 
 
-Sie rechnen eine simple \Sexpr{var_vec}. 
+Sie rechnen einen t-Test. Sie schätzen einen Mittelwertsunterschied. 
 
 \begin{enumerate}
 \item Beschriften Sie die untenstehende Abbildung mit der
