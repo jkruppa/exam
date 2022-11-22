@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
+\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{color}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,6 +12,9 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
+\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
@@ -46,6 +49,14 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -53,7 +64,7 @@
 % -----------------------------------------------------------------------
 
 % -----------------------------------------------------------------------
-\input{/Users/kruppajo/Documents/GitHub/exam/init}
+\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
 % -----------------------------------------------------------------------
@@ -64,10 +75,10 @@
 % -----------------------------------------------------------------------
 \begin{graybox}{Checkbox für die Version vom \today}
   \Large Die gesamte Klausur beinhaltet aktuell in Summe
-  \textbf{108}
+  \textbf{109}
   Fragen.\\[1Ex]
   Davon sind \textbf{47} Multiple
-  Choice Fragen sowie \textbf{61} Rechen- und
+  Choice Fragen sowie \textbf{62} Rechen- und
   Textaufgaben.
 \end{graybox}
 
@@ -250,33 +261,33 @@
 
 
 
-Welche Aussage {\"u}ber die \textbf{$confounder$} Adjustierung ist richtig?
+Welche Aussage {\"u}ber die \textbf{$\alpha$} Adjustierung ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die $confounder$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
-\item [\textbf{B} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
-\item [\textbf{C} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
-\item [\textbf{D} \msquare] Die $confounder$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
-\item [\textbf{E} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
+\item [\textbf{A} \msquare] Die $\alpha$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
+\item [\textbf{B} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
+\item [\textbf{C} \msquare] Die $\alpha$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
+\item [\textbf{D} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
+\item [\textbf{E} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.03, 0.001, 0.42, 0.89 und 0.01. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.03, 0.42, 0.001, 0.02, 0.34 und 0.89. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.006, 0.0002, 0.084, 0.178 und 0.002. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.15, 0.005, 2.1, 4.45 und 0.05. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.15, 0.005, 1, 1 und 0.05. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.15, 0.005, 1, 1 und 0.05. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.006, 0.0002, 0.084, 0.178 und 0.002. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.07, 0.0002, 0.0033, 0.0567 und 0.1483. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.18, 1, 0.006, 0.12, 1 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.18, 1, 0.006, 0.12, 1 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.005, 0.07, 0.0002, 0.0033, 0.0567 und 0.1483. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.18, 2.52, 0.006, 0.12, 2.04 und 5.34. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -286,16 +297,16 @@ Bonferroni. Welche Aussage ist richtig?
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
 unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
 wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = 0.29$. Welche Aussage ist richtig?
+$\eta^2 = 0.2$. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
-\item [\textbf{B} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
-\item [\textbf{C} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
-\item [\textbf{D} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
-\item [\textbf{E} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\item [\textbf{A} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
+\item [\textbf{B} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
+\item [\textbf{C} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\item [\textbf{D} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{E} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -630,7 +641,7 @@ In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
 Regression und der ANOVA skizziert.
 
 \begin{center}
-  \includegraphics[width = 9cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/mc-modeling-03}
+  \includegraphics[width = 9cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/mc-modeling-03}
 \end{center}
 
 Welche der folgenden Aussagen ist richtig?
@@ -1393,6 +1404,23 @@ Sie rechnen eine zweifaktorielle ANOVA und erhalten einen signifikanten Interakt
 \clearpage
 % -----------------------------------------------------------------------
 
+\section{Aufgabe \hfill (8 Punkte)}
+
+
+
+Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit fünf Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet haben, erhalten Sie einen p-Wert von $0.078$ und eine F Statistik mit $F_{calc} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen, stellen Sie fest, dass es eigentlich einen Mittelwertsunterschied zwischen dem dritten und ersten Level geben müsste. Die $IQR$-Bereiche überlappen sich nicht und die Mediane liegen auch weit vom globalen Mittel entfernt.
+
+
+\begin{enumerate}
+\item Erklären Sie die Annahme der Normalverteilung und die Annahme der Varianzhomogenität an einer passenden Abbildung! \textbf{(2 Punkte)}
+\item Visualisieren Sie die Berechnung von $F_{calc}$ am obigen Beispiel! \textbf{(2 Punkte)}
+\item Erklären Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der Berücksichtigung der Annahmen an eine ANOVA! Geben Sie ein numerisches Beispiel! \textbf{(4 Punkte)}
+\end{enumerate}
+
+ 
+\clearpage
+% -----------------------------------------------------------------------
+
 \section{Aufgabe \hfill (9 Punkte)}
 
 Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C) ergibt sich die
@@ -1404,19 +1432,21 @@ folgende Datentabelle mit dem gemessenen Frischgewicht (\textit{freshmatter}).
 \toprule
 water\_type & freshmatter\\
 \midrule
-C & 17\\
-A & 26\\
-A & 24\\
-A & 27\\
-B & 19\\
+A & 17\\
+A & 20\\
+B & 34\\
+B & 30\\
+C & 12\\
 \addlinespace
-A & 23\\
-B & 21\\
-A & 28\\
-B & 27\\
-C & 20\\
+A & 17\\
+C & 7\\
+C & 11\\
+A & 12\\
+C & 12\\
 \addlinespace
-C & 19\\
+B & 30\\
+A & 18\\
+B & 32\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1446,32 +1476,27 @@ folgende Datentabelle mit dem gemessenen Trockengewicht (\textit{drymatter}).
 \toprule
 trt & drymatter\\
 \midrule
-B & 15.4\\
+B & 12.7\\
 B & 10.1\\
-A & 21.7\\
-A & 8.3\\
+B & 13.9\\
+A & 18.5\\
 B & 12.3\\
 \addlinespace
-A & 20.1\\
-A & 18.6\\
-B & 15.5\\
-B & 12.2\\
-A & 18.6\\
-\addlinespace
-A & 20.0\\
-B & 13.9\\
-B & 16.8\\
-B & 12.6\\
-B & 12.7\\
-\addlinespace
-A & 17.0\\
-A & 23.6\\
-A & 22.0\\
-B & 9.7\\
 B & 13.6\\
+A & 18.5\\
+B & 15.4\\
+B & 9.7\\
+B & 15.5\\
 \addlinespace
+A & 21.0\\
 A & 18.0\\
-A & 25.4\\
+B & 12.6\\
+B & 16.8\\
+B & 12.2\\
+\addlinespace
+A & 19.6\\
+A & 19.5\\
+A & 20.8\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1502,14 +1527,19 @@ normalverteilt sei. Sie erhalten folgende Datentabelle.
 \toprule
 fertilizer & drymatter\\
 \midrule
-low & 25\\
-low & 19\\
-low & 13\\
-low & 21\\
-low & 21\\
+low & 12\\
+low & 18\\
+low & 18\\
+low & 16\\
+low & 16\\
 \addlinespace
-low & 20\\
-low & 21\\
+low & 16\\
+low & 15\\
+low & 16\\
+low & 12\\
+low & 18\\
+\addlinespace
+low & 15\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1542,7 +1572,7 @@ low & 21\\
 \vspace*{8cm}
 
 \begin{center}
-  \includegraphics[width=10cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-b.png}
+  \includegraphics[width=10cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/boxplot-03-b.png}
 \end{center}
 
 
@@ -1558,7 +1588,7 @@ low & 21\\
 Nach einem Experiment ergibt sich die folgende 2x2 Datentabelle mit einem
 Pestizid (ja/nein), dargestellt in den Zeilen. Im Weiteren mit dem
 infizierten Pflanzenstatus (ja/nein) in den Spalten. Insgesamt wurden
-$n = 132$ Pflanzen untersucht.
+$n = 152$ Pflanzen untersucht.
 \vspace{5Ex}
 
 \begin{center}
@@ -1566,9 +1596,9 @@ $n = 132$ Pflanzen untersucht.
   \begin{tabular}{c|c|c|c}
      & \textbf{Erkrankt (ja)} & \textbf{Erkrankt (nein)} &  \strut\\
     \hline
-    \textbf{Pestizid (ja)} & 56  & 11  &     \strut\\
+    \textbf{Pestizid (ja)} & 56  & 21  &     \strut\\
     \hline
-    \textbf{Pestizid (nein)} & 13  & 52  &      \strut\\
+    \textbf{Pestizid (nein)} & 23  & 52  &      \strut\\
     \hline
      \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
   \end{tabular}
@@ -1585,7 +1615,7 @@ $n = 132$ Pflanzen untersucht.
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
   einem $T_k = 3.841$! \textbf{(1 Punkt)}
 \item Skizzieren Sie eine 2x2 Tabelle mit
-  $n = 34$ Pflanzen in dem \textit{vermutlich}
+  $n = 26$ Pflanzen in dem \textit{vermutlich}
   die Nullhypothese nicht abgelehnt werden kann! \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
@@ -1596,7 +1626,7 @@ $n = 132$ Pflanzen untersucht.
 
 
 Gegeben sind folgende Randsummen in einer 2x2 Kreuztabelle aus einem
-Experiment mit $n = 142$ Sauen. In dem Experiment wurde gemessen,
+Experiment mit $n = 120$ Sauen. In dem Experiment wurde gemessen,
 ob eine Sau nach einer Behandlung mit einem Medikament (ja/nein)
 mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).
 
@@ -1607,11 +1637,11 @@ mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).
   \begin{tabular}{c|c|c|c}
      & \textbf{>30 Ferkel (ja)} & \textbf{$\leq$30 Ferkel (nein)} &  \strut\\
     \hline
-    \textbf{Medikament (ja)} & \phantom{100}  & \phantom{100}  &   80  \strut\\
+    \textbf{Medikament (ja)} & \phantom{100}  & \phantom{100}  &   62  \strut\\
     \hline
-    \textbf{Medikament (nein)} & \phantom{100}  & \phantom{100}  &   62   \strut\\
+    \textbf{Medikament (nein)} & \phantom{100}  & \phantom{100}  &   58   \strut\\
     \hline
-     &  77 &  65 &  142  \strut\\
+     &  57 &  63 &  120  \strut\\
   \end{tabular}
 \end{center}
 
@@ -1696,7 +1726,7 @@ der jeweiligen Scatterplots.
 \section{Aufgabe \hfill (8 Punkte)}
 
 Sie haben folgende Zahlenreihe $y$ vorliegen
-$y = \{13, 13, 14, 14, 13, 17, 13\}$.
+$y = \{18, 11, 15, 18, 17, 16\}$.
 
 \begin{enumerate}
 \item Visualisieren Sie den Mittelwert von $y$ in der untenstehenden
@@ -1723,17 +1753,17 @@ $y = \{13, 13, 14, 14, 13, 17, 13\}$.
 \section{Aufgabe \hfill (10 Punkte)}
 
 Sie haben folgende Zahlenreihe $y$ vorliegen
-$y = \{16, 18, 11, 13, 15, 13, 18\}$. Berechnen Sie folgende
+$y = \{17, 19, 17, 22, 19, 25, 21, 16, 22, 19, 13\}$. Berechnen Sie folgende
 deskriptive Ma{\ss}zahlen. Geben Sie Formeln und Rechenwege mit an!
 
 
 
 \begin{enumerate}
-\item Die Varianz \textbf{(2 Punkte)}
-\item Die Range oder Spannweite \textbf{(2 Punkte)}
-\item Den Interquartileabstand \textbf{(2 Punkte)}
-\item Die Standardabweichung \textbf{(2 Punkte)}
 \item Den Mittelwert \textbf{(2 Punkte)}
+\item Die Standardabweichung \textbf{(2 Punkte)}
+\item Den Interquartileabstand \textbf{(2 Punkte)}
+\item Das 3rd Quartile \textbf{(2 Punkte)}
+\item Das 1st Quartile \textbf{(2 Punkte)}
 \end{enumerate}
  
 \clearpage
@@ -1742,10 +1772,10 @@ deskriptive Ma{\ss}zahlen. Geben Sie Formeln und Rechenwege mit an!
 \section{Aufgabe \hfill (11 Punkte)}
 
 Die Pr{\"a}valenz von Klauenseuche bei Wollschweinen wird mit
-2\% angenommen. In 75\% der F{\"a}lle ist ein Test positiv, wenn das Wollschwein erkrankt
-ist. In 8.5\% der F{\"a}lle ist ein Test positiv,
+2\% angenommen. In 80\% der F{\"a}lle ist ein Test positiv, wenn das Wollschwein erkrankt
+ist. In 8\% der F{\"a}lle ist ein Test positiv,
 wenn das Wollschwein \textit{nicht} erkrankt ist und somit gesund ist. Sie
-werten 2000 Wollschweine mit einem
+werten 1000 Wollschweine mit einem
 diagnostischen Test auf Klauenseuche aus.
 
 
@@ -1761,7 +1791,7 @@ diagnostischen Test auf Klauenseuche aus.
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
+  \includegraphics[width=17cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
 \end{center}
 
 
@@ -1815,12 +1845,12 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
   };
-  \node[] at (-4.8,0) {\huge 180};
+  \node[] at (-4.8,0) {\huge 200};
   \node[] at (-1.7,0) {\huge 40};
-  \node[] at (1.7,0) {\huge 560};
-  \node[] at (4.75,0) {\huge 1800};
+  \node[] at (1.7,0) {\huge 850};
+  \node[] at (4.75,0) {\huge 1600};
 \end{tikzpicture}
 
 
@@ -1840,22 +1870,25 @@ Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctr
 \toprule
 pesticide & grade\\
 \midrule
-roundUp & 6\\
-zeroX & 1\\
 pestKill & 2\\
-roundUp & 4\\
-zeroX & 3\\
-\addlinespace
-roundUp & 6\\
-pestKill & 2\\
-pestKill & 1\\
-ctrl & 6\\
-zeroX & 0\\
-\addlinespace
-ctrl & 5\\
-zeroX & 2\\
-ctrl & 8\\
 pestKill & 3\\
+pestKill & 2\\
+ctrl & 4\\
+ctrl & 6\\
+\addlinespace
+roundUp & 5\\
+zeroX & 1\\
+zeroX & 2\\
+zeroX & 4\\
+roundUp & 0\\
+\addlinespace
+roundUp & 9\\
+roundUp & 3\\
+ctrl & 5\\
+zeroX & 0\\
+pestKill & 0\\
+\addlinespace
+ctrl & 4\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1903,8 +1936,8 @@ pestKill & 3\\
 
 
 \begin{enumerate}
-\item Skizieren Sie $3$ Normalverteilungen \textit{in einer
-    Abbildung} mit $\mu_1 \neq \mu_2 \neq \mu_3$ und $s_1 \neq s_2 \neq s_3$! \textbf{(2 Punkte)}
+\item Skizieren Sie $4$ Normalverteilungen \textit{in einer
+    Abbildung} mit $\mu_1 \neq \mu_2 \neq \mu_3 \neq \mu_4$ und $s_1 = s_2 = s_3 = s_4$! \textbf{(2 Punkte)}
 \item Beschriften Sie die Normalverteilungen mit den entsprechenden
   Parametern! \textbf{(2 Punkte)}
 \item Liegt Varianzhomogenit{\"a}t oder Varianzheterogenit{\"a}t vor? Begr{\"u}nden Sie
@@ -1922,7 +1955,7 @@ pestKill & 3\\
 Nach einem Experiment zählen Sie folgende Anzahl an Läsionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
 
 \begin{center}
-$4, 6, 4, 1, 1, 3, 4, 4, 3, 1, 1, 5$
+$6, 5, 4, 6, 3, 2, 2, 4, 3, 6, 5, 1$
 \end{center}
 
 \begin{enumerate}
@@ -1968,15 +2001,15 @@ $4, 6, 4, 1, 1, 3, 4, 4, 3, 1, 1, 5$
   \textit{Y} oder ein \textit{X}, je nachdem welchen der beiden Teile eines
    statistischen Modells $Y \sim X$ das Wort zugeordnet ist! \textbf{(5 Punkte)}
   \begin{itemize}
-  \item [(\phantom{xx})] endpoint
-  \item [(\phantom{xx})] risk factor
-  \item [(\phantom{xx})] Effektsch{"a}tzer
-  \item [(\phantom{xx})] mehrere Spalten
-  \item [(\phantom{xx})] Verteilungsfamilie
-  \item [(\phantom{xx})] multiple
-  \item [(\phantom{xx})] outcome
   \item [(\phantom{xx})] simple
-  \item [(\phantom{xx})] response
+  \item [(\phantom{xx})] mehrere Spalten
+  \item [(\phantom{xx})] Effektsch{"a}tzer
+  \item [(\phantom{xx})] multiple
+  \item [(\phantom{xx})] eine Spalte
+  \item [(\phantom{xx})] risk factor
+  \item [(\phantom{xx})] outcome
+  \item [(\phantom{xx})] endpoint
+  \item [(\phantom{xx})] Verteilungsfamilie
   \item [(\phantom{xx})] variable
   \end{itemize} 
 \item Skizieren Sie ein simples und ein multiples lineares Regressions
@@ -1991,7 +2024,7 @@ $4, 6, 4, 1, 1, 3, 4, 4, 3, 1, 1, 5$
 
 
 Ein Feldexperiment wurde mit $n = 200$ Pflanzen durchgef{\"u}hrt. Folgende
-Einflussvariablen ($x$) wurden erhoben: S, height und fertilizier. Als m{\"o}gliche Outcomevariablen stehen Ihnen nun
+Einflussvariablen ($x$) wurden erhoben: S, dry und rainfall. Als m{\"o}gliche Outcomevariablen stehen Ihnen nun
 folgende gemessene Endpunkte zu Verf{\"u}gung: drymatter, yield, count, quality\_score und dead.
 
 \begin{enumerate}
@@ -2001,7 +2034,7 @@ folgende gemessene Endpunkte zu Verf{\"u}gung: drymatter, yield, count, quality\
   {\"u}blich ist \textit{ohne Interaktionsterm}! \textbf{(2 Punkte)}
 \item Schreiben Sie das Modell in der Form $y \sim x$ wie es in \Rlogo
   {\"u}blich ist und erg{\"a}nzen Sie \textit{einen} Interaktionsterm nach Wahl! \textbf{(2 Punkte)} 
-\item Zeichen Sie eine \textit{starke}
+\item Zeichen Sie eine \textit{schwache}
   Interaktion in die Abbildung unten f{\"u}r den Endpunkt
   \textit{yield}. Erg{\"a}nzen Sie eine aussagekr{\"a}ftige Legende. Wie erkennen
   Sie eine Interaktion? Begr{\"u}nden Sie Ihre Antwort! \textbf{(4 Punkte)}
@@ -2033,15 +2066,15 @@ Datentabelle gegeben:
 \centering
 \begin{tabular}{ccc}
 \toprule
-mass & hab & region\\
+mass & region & hab\\
 \midrule
 6 & 1 & 1\\
-8 & 2 & 1\\
-5 & 3 & 1\\
+8 & 1 & 2\\
+5 & 1 & 3\\
 7 & 1 & 1\\
 9 & 2 & 2\\
 \addlinespace
-11 & 3 & 2\\
+11 & 2 & 3\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2073,29 +2106,32 @@ beobachteten Infektionsstatus.
 \toprule
 pesticide & infected\\
 \midrule
+OutEx & no\\
 OutEx & yes\\
-RoundUp & yes\\
-OutEx & yes\\
-RoundUp & yes\\
+OutEx & no\\
+RoundUp & no\\
 RoundUp & no\\
 \addlinespace
-OutEx & yes\\
-RoundUp & no\\
+RoundUp & yes\\
 OutEx & no\\
-OutEx & yes\\
-OutEx & yes\\
+OutEx & no\\
+RoundUp & no\\
+RoundUp & yes\\
 \addlinespace
-RoundUp & no\\
 OutEx & no\\
-OutEx & no\\
+OutEx & yes\\
 RoundUp & no\\
+RoundUp & yes\\
 OutEx & no\\
 \addlinespace
 RoundUp & no\\
 RoundUp & yes\\
-OutEx & yes\\
 OutEx & no\\
-RoundUp & no\\
+OutEx & yes\\
+OutEx & yes\\
+\addlinespace
+RoundUp & yes\\
+RoundUp & yes\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2128,13 +2164,13 @@ rohen p-Werten.
     \textbf{Vergleich} & \textbf{Raw p-val} & \textbf{Adjusted p-val} &
                                                                         \textbf{Reject $\boldsymbol{H_0}$} \strut\\
     \hline
-    dose 10 - ctrl  & 0.020 &  &\strut\\
+    dose 10 - ctrl  & 0.030 &  &\strut\\
     \hline
-    dose 15 - ctrl  & 0.001 & &\strut\\
+    dose 15 - ctrl  & 0.340 & &\strut\\
     \hline
-    dose 20 - ctrl  & 0.060 & &\strut\\
+    dose 20 - ctrl  & 0.020 & &\strut\\
     \hline
-    dose 40 - ctrl  & 0.012 & &\strut\\
+    dose 40 - ctrl  & 0.001 & &\strut\\
   \end{tabular}
 \end{center}
 
@@ -2182,7 +2218,7 @@ rohen p-Werten.
 
 
 
-In einem Stallexperiment mit $n = 107$ Ferkeln wurde der
+In einem Stallexperiment mit $n = 94$ Ferkeln wurde der
 Gewichtszuwachs unter bestimmten Lichtverh{\"a}ltnissen gemessen. Sie erhalten
 den \Rlogo Output der Funktion \texttt{tidy()} einer simplen Gaussian linearen
 Regression sieben Wochen nach der ersten Messung.
@@ -2194,8 +2230,8 @@ Regression sieben Wochen nach der ersten Messung.
 \toprule
 term & estimate & std.error & t statistic & p-value\\
 \midrule
-(Intercept) & 26.26 & 1.20 &  & \\
-light & 1.37 & 0.12 &  & \\
+(Intercept) & 25.92 & 1.17 &  & \\
+light & 1.40 & 0.12 &  & \\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -2286,21 +2322,19 @@ folgende Datentabelle.
 \toprule
 .id & drymatter & water & .fitted & .resid\\
 \midrule
-1 & 26.5 & 10.0 & 24.7 & \\
-2 & 13.9 & 2.5 & 14.7 & \\
-3 & 25.6 & 10.3 & 25.2 & \\
-4 & 21.7 & 8.6 & 22.9 & \\
-5 & 30.9 & 16.9 & 34.0 & \\
+1 & 29.3 & 11.3 & 27.2 & \\
+2 & 26.0 & 8.7 & 24.2 & \\
+3 & 30.5 & 14.3 & 30.7 & \\
+4 & 28.0 & 12.0 & 28.0 & \\
+5 & 31.3 & 16.7 & 33.4 & \\
 \addlinespace
-6 & 25.8 & 12.1 & 27.6 & \\
-7 & 34.3 & 16.3 & 33.2 & \\
-8 & 24.4 & 11.1 & 26.2 & \\
-9 & 27.8 & 12.8 & 28.5 & \\
-10 & 31.2 & 13.2 & 29.0 & \\
+6 & 16.7 & 4.4 & 19.2 & \\
+7 & 27.9 & 12.4 & 28.4 & \\
+8 & 25.5 & 8.0 & 23.4 & \\
+9 & 27.3 & 10.9 & 26.7 & \\
+10 & 19.1 & 4.0 & 18.8 & \\
 \addlinespace
-11 & 13.8 & 1.7 & 13.6 & \\
-12 & 30.2 & 13.5 & 29.4 & \\
-13 & 30.4 & 12.1 & 27.5 & \\
+11 & 19.3 & 5.8 & 20.9 & \\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -2335,12 +2369,12 @@ Auszug aus den Daten.
 \centering
 \begin{tabular}{lrrrrr}
 \toprule
-stream & longnose & so4 & acerage & do2 & temp\\
+stream & longnose & no3 & temp & so4 & do2\\
 \midrule
-SOUTH\_BR\_PATAPSCO & 26 & 8.84 & 1450 & 7.9 & 18.6\\
-ISRAEL\_CR & 30 & 13.77 & 6260 & 9.5 & 21.0\\
-LITTLE\_FALLS & 84 & 5.69 & 1600 & 10.2 & 19.5\\
-BIG\_BR & 72 & 5.65 & 4790 & 9.4 & 16.7\\
+LITTLE\_BEAR\_CR & 6 & 0.81 & 14.9 & 8.16 & 9.1\\
+BEAVER\_DAM\_CR & 19 & 5.44 & 17.0 & 16.53 & 9.2\\
+PRETTYBOY\_BR & 19 & 6.81 & 19.2 & 9.20 & 9.8\\
+NORTH\_BR\_CASSELMAN\_R & 16 & 0.29 & 18.0 & 2.50 & 7.4\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2361,23 +2395,21 @@ folgenden \Rlogo Output.
 ##     family = quasipoisson, data = data_tbl)
 ## 
 ## Deviance Residuals: 
-##     Min       1Q   Median       3Q      Max  
-## -9.4672  -4.5010  -1.6149   1.6564  22.1664  
+##      Min        1Q    Median        3Q       Max  
+## -7.72688  -3.95349  -1.99173   0.19015  22.82786  
 ## 
 ## Coefficients:
-##                 Estimate   Std. Error t value Pr(>|t|)  
-## (Intercept) -0.332449369  2.167537336 -0.1534  0.87873  
-## so4         -0.030176846  0.029613304 -1.0190  0.31319  
-## acerage      0.000031534  0.000019609  1.6081  0.11423  
-## do2          0.178528420  0.178605407  0.9996  0.32243  
-## temp         0.129392583  0.059241749  2.1841  0.03377 *
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+##               Estimate Std. Error t value Pr(>|t|)
+## (Intercept)  1.7655407  2.5784819  0.6847   0.4967
+## no3          0.1498918  0.0929390  1.6128   0.1132
+## temp         0.0451759  0.0703941  0.6418   0.5240
+## so4         -0.0074486  0.0262792 -0.2834   0.7780
+## do2          0.0587911  0.2070569  0.2839   0.7777
 ## 
-## (Dispersion parameter for quasipoisson family taken to be 47.523519)
+## (Dispersion parameter for quasipoisson family taken to be 47.41686)
 ## 
-##     Null deviance: 2221.85  on 53  degrees of freedom
-## Residual deviance: 1710.03  on 49  degrees of freedom
+##     Null deviance: 1722.18  on 53  degrees of freedom
+## Residual deviance: 1567.15  on 49  degrees of freedom
 ## AIC: NA
 ## 
 ## Number of Fisher Scoring iterations: 6
@@ -2418,10 +2450,10 @@ den Daten.
 \toprule
 infected & water & light & nematodes\\
 \midrule
-0 & 11.31 & 0 & 2\\
-0 & 11.59 & 0 & 2\\
-1 & 9.06 & 0 & 1\\
-1 & 8.88 & 0 & 5\\
+1 & 11.69 & 1 & 7\\
+1 & 9.84 & 1 & 2\\
+0 & 9.11 & 0 & 4\\
+1 & 8.32 & 1 & 1\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2435,11 +2467,11 @@ folgenden \Rlogo Output.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## # A tibble: 3 x 4
-##   term        std.error statistic  p.value
-##   <chr>           <dbl>     <dbl>    <dbl>
-## 1 (Intercept)     0.398     -2.39 0.0168  
-## 2 nematodes       0.141      1.52 0.128   
-## 3 light           0.503      3.31 0.000926
+##   term        std.error statistic p.value
+##   <chr>           <dbl>     <dbl>   <dbl>
+## 1 (Intercept)     1.51      1.18    0.237
+## 2 nematodes       0.132    -0.498   0.618
+## 3 water           0.143    -0.942   0.346
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2479,10 +2511,10 @@ den Daten.
 \toprule
 water & light & P & Fe & drymatter & nematodes\\
 \midrule
-7.20 & 1 & 10.97 & 99.35 & 71.77 & 9\\
-7.36 & 0 & 9.06 & 98.44 & 69.27 & 12\\
-11.11 & 0 & 10.55 & 95.24 & 65.77 & 11\\
-7.95 & 0 & 8.92 & 90.42 & 58.68 & 12\\
+10.75 & 0 & 10.03 & 99.97 & 69.80 & 11\\
+7.95 & 1 & 8.24 & 97.44 & 69.68 & 9\\
+11.77 & 0 & 8.93 & 101.46 & 73.32 & 7\\
+11.23 & 0 & 8.46 & 99.96 & 69.19 & 9\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2503,20 +2535,20 @@ folgenden \Rlogo Output.
 ## 
 ## Residuals:
 ##      Min       1Q   Median       3Q      Max 
-## -4.65189 -1.77484  0.13412  1.58568  5.28048 
+## -6.79850 -1.23246 -0.07872  1.25436  5.09928 
 ## 
 ## Coefficients:
-##              Estimate Std. Error t value             Pr(>|t|)    
-## (Intercept) -2.038554   6.912039 -0.2949              0.76869    
-## light        0.855780   0.470879  1.8174              0.07227 .  
-## water       -0.113182   0.155429 -0.7282              0.46827    
-## Fe           0.727002   0.071598 10.1539 < 0.0000000000000002 ***
+##              Estimate Std. Error t value        Pr(>|t|)    
+## (Intercept)  4.690538   9.234814  0.5079         0.61306    
+## P           -0.373458   0.183418 -2.0361         0.04542 *  
+## Fe           0.684522   0.093861  7.2929 0.0000000003176 ***
+## light        1.415222   0.602241  2.3499         0.02152 *  
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 2.2204 on 96 degrees of freedom
-## Multiple R-squared:  0.54021,	Adjusted R-squared:  0.52585 
-## F-statistic: 37.598 on 3 and 96 DF,  p-value: 0.00000000000000037079
+## Residual standard error: 2.3252 on 72 degrees of freedom
+## Multiple R-squared:  0.47122,	Adjusted R-squared:  0.44919 
+## F-statistic: 21.388 on 3 and 72 DF,  p-value: 0.00000000052002
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2546,19 +2578,19 @@ Sie erhalten folgende R Ausgabe der Funktion lm().
 ## lm(formula = rsp ~ trt, data = data_tbl)
 ## 
 ## Residuals:
-##      Min       1Q   Median       3Q      Max 
-## -7.14286 -2.43571 -0.67143  1.05000 10.85714 
+##    Min     1Q Median     3Q    Max 
+##  -6.40  -2.55   1.40   2.35   4.60 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value    Pr(>|t|)    
-## (Intercept)  17.1429     1.8580  9.2264 0.000003308 ***
-## trtB         -1.9429     2.8784 -0.6750       0.515    
+## (Intercept)  18.6000     1.6763  11.096 0.000003886 ***
+## trtB         -2.2000     2.3707  -0.928      0.3805    
 ## ---
 ## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 ## 
-## Residual standard error: 4.9159 on 10 degrees of freedom
-## Multiple R-squared:  0.043573,	Adjusted R-squared:  -0.052069 
-## F-statistic: 0.45558 on 1 and 10 DF,  p-value: 0.515
+## Residual standard error: 3.7483 on 8 degrees of freedom
+## Multiple R-squared:  0.097189,	Adjusted R-squared:  -0.015663 
+## F-statistic: 0.86121 on 1 and 8 DF,  p-value: 0.38055
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2591,27 +2623,27 @@ hinaus wurden verschiedene St{\"a}lle (\textit{barn}) mit der Musik bespielt.
 ## Formula: gain ~ attitude + (1 | subject) + (1 | barn)
 ##    Data: data_tbl
 ## 
-## REML criterion at convergence: 788.9
+## REML criterion at convergence: 793.2
 ## 
 ## Scaled residuals: 
 ##      Min       1Q   Median       3Q      Max 
-## -2.35349 -0.59602 -0.06886  0.64480  3.29450 
+## -1.92778 -0.60744 -0.07438  0.59675  3.34077 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  barn     (Intercept)  214.48  14.645  
-##  subject  (Intercept) 3923.88  62.641  
-##  Residual              608.09  24.659  
+##  barn     (Intercept)  225.19  15.006  
+##  subject  (Intercept) 3956.81  62.903  
+##  Residual              642.72  25.352  
 ## Number of obs: 83, groups:  barn, 7; subject, 6
 ## 
 ## Fixed effects:
 ##             Estimate Std. Error t value
-## (Intercept) 201.2647    26.4405  7.6120
-## attitudepop -17.8568     5.4183 -3.2957
+## (Intercept) 202.7895    26.5884  7.6270
+## attitudepop -21.0583     5.5704 -3.7804
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## attitudepop -0.101
+## attitudepop -0.103
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2653,10 +2685,10 @@ Fallzahl absch{\"a}tzen.
 \toprule
 treatment & mean & median & min & max & quartile\_1st & quartile\_3rd & var\\
 \midrule
-A & 17.11 & 17 & 16 & 19 & 17 & 17 & 0.86\\
-B & 19.00 & 20 & 11 & 24 & 18 & 21 & 15.25\\
-C & 13.44 & 14 & 9 & 17 & 12 & 15 & 7.28\\
-D & 4.67 & 5 & -1 & 10 & 3 & 7 & 11.75\\
+A & 11.29 & 11 & 9 & 15 & 9.5 & 12.5 & 4.90\\
+B & 15.71 & 17 & 10 & 17 & 16.0 & 17.0 & 6.90\\
+C & 11.86 & 12 & 8 & 18 & 8.0 & 14.5 & 16.14\\
+D & 11.71 & 12 & 9 & 14 & 11.0 & 12.5 & 2.57\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2685,16 +2717,11 @@ folgende Datentabelle.
 \toprule
 water & drymatter\\
 \midrule
-21 & 17\\
-19 & 19\\
-18 & 17\\
-20 & 28\\
-18 & 20\\
-\addlinespace
-20 & 15\\
-19 & 16\\
-19 & 16\\
-16 & 15\\
+19 & 23\\
+22 & 24\\
+21 & 26\\
+22 & 17\\
+16 & 26\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2760,7 +2787,7 @@ einzunicken. Es ergab sich folgende Abbildung.
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/text-error-cross-table}
+  \includegraphics[width = 14cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/text-error-cross-table}
 \end{center}
 
 \begin{enumerate}
@@ -2795,10 +2822,10 @@ abgebildet. Erg{\"a}nzen Sie die Abbidlung wie folgt.
 
 \begin{enumerate}
 \item Zeichnen Sie das zweiseitige $\alpha$ Niveau in die Abbildung! \textbf{(2 Punkte)} 
-\item Zeichnen Sie einen nicht signifikant p-Wert in die Abbildung! \textbf{(1 Punkt)} 
+\item Zeichnen Sie einen signifikant p-Wert in die Abbildung! \textbf{(1 Punkt)} 
 \item Erg{\"a}nzen Sie "`$\bar{x}_1 = \bar{x}_2$"'! \textbf{(1 Punkt)} 
 \item Erg{\"a}nzen Sie "`H$_0$ ist wahr"'! \textbf{(1 Punkt)} 
-\item Erg{\"a}nzen Sie eine t-Verteilung mit 30
+\item Erg{\"a}nzen Sie eine t-Verteilung mit 5
   Freiheitsgraden. Zeichnen Sie im Zweifel {\"u}ber den Rand der Abbildung! \textbf{(1 Punkte)} 
 \end{enumerate}
 
@@ -2827,16 +2854,16 @@ Sie rechnen einen t-Test. Sie schätzen einen Mittelwertsunterschied.
   untenstehende Abbildung f{\"u}nf einzelne Konfidenzintervalle (a-e) mit den
   jeweiligen Eigenschaften! \textbf{(6 Punkte)}
   \begin{itemize}
-  \item[(a)] Ein signifikantes, relevantes Konfidenzintervall 	
-  \item[(b)] Ein signifikantes, nicht relevantes Konfidenzintervall 	
-  \item[(c)] Ein Konfidenzintervall mit h{"o}hererFallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
-  \item[(d)] Ein Konfidenzintervall mit niedriger Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 
-  \item[(e)] Ein nicht signifikantes, relevantes Konfidenzintervall
+  \item[(a)] Ein Konfidenzintervall mit niedriger Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
+  \item[(b)] Ein nicht signifikantes, relevantes Konfidenzintervall 	
+  \item[(c)] Ein signifikantes, relevantes Konfidenzintervall 	
+  \item[(d)] Ein Konfidenzintervall mit h{"o}hererFallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 
+  \item[(e)] Ein signifikantes, nicht relevantes Konfidenzintervall
   \end{itemize}
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 8cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 8cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/statistisches-testen-04}
 \end{center}
 
 
@@ -2891,7 +2918,7 @@ Sie hierzu die untenstehende Tabelle aus! \textbf{(6 Punkte)}
 Sie haben folgende Aussage gegeben.
 
 \begin{center}
-  \Large\textbf{Bin ich im Fr{"u}hling?}
+  \Large\textbf{Bin ich im Herbst?}
 \end{center}
 
 \begin{enumerate}
@@ -2909,8 +2936,8 @@ Sie haben folgende Aussage gegeben.
 
 
 \begin{quote}
-  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach 67 Tagen die
-  ersten Symptome ein; die ersten Toten sind nach 84 Tagen zu beklagen;
+  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach 73 Tagen die
+  ersten Symptome ein; die ersten Toten sind nach 101 Tagen zu beklagen;
   nach 116 Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin.<<
 \end{quote}
 
@@ -2977,19 +3004,21 @@ Trockengewicht (\textit{drymatter}) von Weizen.
 \toprule
 pesticide & drymatter\\
 \midrule
+RoundUp & 20\\
+GoneEx & 7\\
+RoundUp & 19\\
 GoneEx & 14\\
-RoundUp & 21\\
-RoundUp & 16\\
-GoneEx & 11\\
-RoundUp & 21\\
+RoundUp & 19\\
 \addlinespace
-RoundUp & 18\\
+GoneEx & 14\\
+GoneEx & 14\\
 GoneEx & 12\\
 RoundUp & 19\\
-RoundUp & 20\\
-GoneEx & 12\\
+RoundUp & 18\\
 \addlinespace
-GoneEx & 14\\
+GoneEx & 18\\
+RoundUp & 20\\
+GoneEx & 15\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3023,16 +3052,14 @@ der Behandlung gemessen. Es ergibt sich die folgende Datentabelle.
 \toprule
 animal\_id & before & after\\
 \midrule
-1 & 6 & 16\\
-2 & 13 & 16\\
-3 & 5 & 15\\
-4 & 10 & 11\\
-5 & 6 & 17\\
+1 & 12 & 22\\
+2 & 14 & 22\\
+3 & 15 & 26\\
+4 & 6 & 32\\
+5 & 11 & 23\\
 \addlinespace
-6 & 14 & 12\\
-7 & 16 & 16\\
-8 & 18 & 15\\
-9 & 10 & 8\\
+6 & 13 & 38\\
+7 & 7 & 25\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3068,25 +3095,25 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 	Two Sample t-test
 ## 
 ## data:  freshmatter by N
-## t = -1.53485, df = 10, p-value = 0.15583
+## t = -1.71884, df = 12, p-value = 0.11131
 ## alternative hypothesis: true difference in means between group high and group low is not equal to 0
 ## 95 percent confidence interval:
-##  -6.2343233  1.1486091
+##  -8.16338637  0.96338637
 ## sample estimates:
 ## mean in group high  mean in group low 
-##          17.600000          20.142857
+##               14.4               18.0
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
 \begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Skizieren Sie eine Abbildung in der Sie $T_{calc}$, $Pr(D|H_0)$, $A=0.95$,
-  sowie $T_{\alpha=5\%} = |2.23|$ einzeichnen! \textbf{(4 Punkte)}
+  sowie $T_{\alpha=5\%} = |2.18|$ einzeichnen! \textbf{(4 Punkte)}
 \item Beschriften Sie die Abbildung und
   den Graphen entsprechend! \textbf{(2 Punkte)}  
 \end{enumerate} 
@@ -3103,21 +3130,21 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 
 ## 	Two Sample t-test
 ## 
-## data:  weight by group
-## t = 2.01866, df = 10, p-value = 0.071139
+## data:  freshmatter by N
+## t = -0.797347, df = 12, p-value = 0.44074
 ## alternative hypothesis: true difference in means between group high and group low is not equal to 0
 ## 95 percent confidence interval:
-##  -0.19864945  4.02722088
+##  -4.2658050  1.9800907
 ## sample estimates:
 ## mean in group high  mean in group low 
-##          15.200000          13.285714
+##          13.714286          14.857143
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
 \begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
@@ -3126,7 +3153,7 @@ Punkte)}
   den Graphen entsprechend! \textbf{(2 Punkte)}  
 \end{enumerate} 
 \clearpage
-% -----------------------------------------------------------------------
+% ----------------------------------------------------------------------- 
 
 \section{Aufgabe \hfill (8 Punkte)}
 
@@ -3136,16 +3163,16 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## 
-## 	Welch t-Test
+## 	Two Sample t-test
 ## 
 ## data:  freshmatter by N
-## t = 1.73143, df = 14, p-value = 0.10534
+## t = -1.87356, df = 10, p-value = 0.090476
 ## alternative hypothesis: true difference in means between group high and group low is not equal to 0
 ## 95 percent confidence interval:
-##  -0.60631198  5.68567705
+##  -6.69285555  0.57856984
 ## sample estimates:
 ## mean in group high  mean in group low 
-##          19.428571          16.888889
+##          14.142857          17.200000
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -3160,7 +3187,7 @@ Punkte)}
 \end{enumerate}
  
 \clearpage
-% ----------------------------------------------------------------------- 
+% -----------------------------------------------------------------------  
 
 \section{Aufgabe \hfill (12 Punkte)}
 
@@ -3173,23 +3200,23 @@ bioaktiven D{\"u}nger gez{\"a}hlt. Es ergibt sich folgende Datentabelle.
 \toprule
 Vorher & Nachher & Differenz & Vorzeichen & Rang & Positiv Rang & Negativ Rang\\
 \midrule
-11 & 12 &  &  &  &  & \\
 9 & 14 &  &  &  &  & \\
-10 & 13 &  &  &  &  & \\
-12 & 14 &  &  &  &  & \\
-8 & 13 &  &  &  &  & \\
+7 & 13 &  &  &  &  & \\
+9 & 10 &  &  &  &  & \\
+11 & 12 &  &  &  &  & \\
+8 & 12 &  &  &  &  & \\
 \addlinespace
-7 & 14 &  &  &  &  & \\
-12 & 11 &  &  &  &  & \\
-10 & 16 &  &  &  &  & \\
-12 & 17 &  &  &  &  & \\
-9 & 15 &  &  &  &  & \\
+11 & 9 &  &  &  &  & \\
+10 & 14 &  &  &  &  & \\
+9 & 12 &  &  &  &  & \\
+8 & 10 &  &  &  &  & \\
+12 & 13 &  &  &  &  & \\
 \addlinespace
-12 & 10 &  &  &  &  & \\
-8 & 15 &  &  &  &  & \\
-10 & 9 &  &  &  &  & \\
-11 & 10 &  &  &  &  & \\
-14 & 9 &  &  &  &  & \\
+8 & 11 &  &  &  &  & \\
+10 & 10 &  &  &  &  & \\
+9 & 12 &  &  &  &  & \\
+10 & 10 &  &  &  &  & \\
+11 & 12 &  &  &  &  & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3229,22 +3256,22 @@ folgender Datensatz an mittleren Wurzelanzahl.
 \toprule
 Treatment & Count\\
 \midrule
-RootsGoneX & 8.7\\
-RootsGoneX & 11.6\\
-RootsGoneX & 9.7\\
-RootsGoneX & 6.2\\
-RootsGoneX & 6.4\\
+RootsGoneX & 8.5\\
+RootsGoneX & 8.5\\
+RootsGoneX & 4.0\\
+RootsGoneX & 9.5\\
+RootsGoneX & 7.5\\
 \addlinespace
-RootsGoneX & 13.7\\
-RootsGoneX & 7.2\\
-Kontrolle & 9.7\\
-Kontrolle & 15.2\\
-Kontrolle & 14.1\\
+RootsGoneX & 9.5\\
+RootsGoneX & 8.0\\
+Kontrolle & 19.3\\
+Kontrolle & 12.8\\
+Kontrolle & 8.9\\
 \addlinespace
-Kontrolle & 15.1\\
-Kontrolle & 9.4\\
-Kontrolle & 7.6\\
-Kontrolle & 13.2\\
+Kontrolle & 10.3\\
+Kontrolle & 10.4\\
+Kontrolle & 9.6\\
+Kontrolle & 6.2\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3263,7 +3290,7 @@ Rechnen Sie einen Mann-Whitney-U-Test auf den obigen Daten.
   interpretieren Sie die Effektst{\"a}rke! \textbf{(2 Punkte)} 
 \end{enumerate} 
 \clearpage
-% -----------------------------------------------------------------------  
+% ----------------------------------------------------------------------- 
 
 \section{Aufgabe \hfill (9 Punkte)}
 
@@ -3280,27 +3307,27 @@ ergeben sich folgende nach der Anzahl der Bl{\"u}ten geordnete Daten.
 \toprule
 Treatment & Count & Rang Kontrolle & Rang Dosis 20 & Rang Dosis 40\\
 \midrule
-Kontrolle & 4.2 &  &  & \\
-Kontrolle & 6.0 &  &  & \\
-Dosis 40 & 7.9 &  &  & \\
-Kontrolle & 8.3 &  &  & \\
-Kontrolle & 9.1 &  &  & \\
+Kontrolle & 7.6 &  &  & \\
+Kontrolle & 8.4 &  &  & \\
+Kontrolle & 9.9 &  &  & \\
+Kontrolle & 10.0 &  &  & \\
+Kontrolle & 10.5 &  &  & \\
 \addlinespace
-Kontrolle & 9.3 &  &  & \\
-Kontrolle & 9.4 &  &  & \\
-Dosis 20 & 9.4 &  &  & \\
-Dosis 20 & 9.8 &  &  & \\
-Dosis 20 & 9.8 &  &  & \\
+Dosis 20 & 10.6 &  &  & \\
+Dosis 20 & 11.0 &  &  & \\
+Kontrolle & 11.4 &  &  & \\
+Dosis 20 & 11.8 &  &  & \\
+Kontrolle & 11.9 &  &  & \\
 \addlinespace
-Dosis 20 & 12.0 &  &  & \\
-Dosis 20 & 12.1 &  &  & \\
-Dosis 20 & 13.1 &  &  & \\
-Dosis 40 & 14.4 &  &  & \\
-Kontrolle & 15.8 &  &  & \\
+Dosis 40 & 12.0 &  &  & \\
+Dosis 20 & 12.5 &  &  & \\
+Dosis 40 & 12.9 &  &  & \\
+Dosis 20 & 14.2 &  &  & \\
+Dosis 20 & 14.3 &  &  & \\
 \addlinespace
-Dosis 40 & 16.0 &  &  & \\
-Dosis 40 & 16.8 &  &  & \\
-Dosis 40 & 17.0 &  &  & \\
+Dosis 40 & 15.1 &  &  & \\
+Dosis 40 & 15.4 &  &  & \\
+Dosis 40 & 20.9 &  &  & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3331,7 +3358,7 @@ Rechnen Sie einen Kruskal-Wallis-Test auf den obigen Daten.
 \begin{enumerate}
 \item Folgende statistische Fachbegriffe bzw. Methoden sind gegeben:
   \begin{itemize}
-  \item[] Mann-Whitney-U-Test, Spearman Korrelation, Wilcoxon-Test, Pearson Korrelation, t-Test, Paired t-Test, Simple Gaussian linear Regression, Kruskal-Wallis-Test und ANOVA.
+  \item[] Kruskal-Wallis-Test, Simple Gaussian linear Regression, t-Test, Mann-Whitney-U-Test, Wilcoxon-Test, Paired t-Test, Pearson Korrelation, ANOVA und Spearman Korrelation.
   \end{itemize}
 \item Ordnen Sie die Begriffe den untenstehenden Boxen,
   \textit{Parametrische Methoden} und \textit{Nicht-parametrische
