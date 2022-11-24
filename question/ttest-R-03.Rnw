@@ -21,8 +21,15 @@ data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
 
 preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE) 
 
-preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% sample(1)
+preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
+  sample(1)
 preprint$method <- c("Two Sample t-test", "Welch t-Test") %>% sample(1)
+
+first_vec <- c("high", "ctrl", "mid") %>% sample(1)
+second_vec <- c("low", "trt1", "trt2") %>% sample(1)
+
+names(preprint$estimate) <- c(str_c("mean in group ", first_vec),
+                              str_c("mean in group ", second_vec))
 
 preprint
 
