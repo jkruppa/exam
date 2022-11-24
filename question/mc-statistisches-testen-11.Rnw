@@ -1,0 +1,22 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage über den $p$-Wert und dem Signifikanzniveau $\alpha$ gleich 5\% ist richtig?
+
+<<mc-statistisches-testen-11, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.',
+                   'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.',
+                   'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.',
+                   'Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$.',
+                   'Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifiaknzschwelle unter der Annahme der Nullhypothese.') %>%
+  sample
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}
