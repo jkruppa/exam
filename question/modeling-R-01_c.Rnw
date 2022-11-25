@@ -41,7 +41,7 @@ p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   theme_bw() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank()) +
-  ylab("Yield in tons/hectare")
+  ylab("")
 ##
 grid.arrange(p1, nrow = 1)
 
