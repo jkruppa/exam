@@ -50,7 +50,7 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
 \item Berechnen Sie \textit{einen} Student t-Test mit $T = \tfrac{\bar{x}_1
   - \bar{x}_2}{s_p \cdot \sqrt{2/n_g}}$ für den \textit{vermutlich}
   signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit
-  $T_k = 2.03$. Begründen Sie Ihre Auswahl! \textbf{(4 Punkte)}
+  $T_{\alpha = 5\%} = 2.03$. Begründen Sie Ihre Auswahl! \textbf{(4 Punkte)}
 \end{enumerate}
 
 <<anova-R-01-b,  echo = FALSE>>=
