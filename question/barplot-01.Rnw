@@ -1,7 +1,8 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C) ergibt sich die
-folgende Datentabelle mit dem gemessenen Frischgewicht (\textit{freshmatter}). 
+Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C)
+ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
+(\textit{freshmatter}).
 
 <<barplot-01, results='asis', echo = FALSE>>=
 
@@ -29,10 +30,10 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Barplots f{\"u}r die
-  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!
-  \textbf{(6 Punkte)}
+  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!  \textbf{(6
+    Punkte)}
 \item Beschriften Sie \textit{einen} Barplot mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen der Bew{\"a}sserungstypen erwarten
-  w{\"u}rden, wie sehen dann die Barplots aus? \textbf{(1 Punkt)}
+\item Wenn Sie \textit{keinen Effekt} zwischen der Bew{\"a}sserungstypen
+  erwarten w{\"u}rden, wie sehen dann die Barplots aus? \textbf{(1 Punkt)}
 \end{enumerate}

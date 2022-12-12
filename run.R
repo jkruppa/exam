@@ -1,10 +1,11 @@
 ## ------------------------------------------------------------
 ## by J.Kruppa on Wednesday, June 24, 2020 (10:45)
-pacman::p_load(tidyverse, readxl, plyr, stringi, magrittr)
+pacman::p_load(tidyverse, readxl, plyr, stringi, magrittr, fs)
 ## small script to compile all rnw or tex files
-source(file.path("/Users/kruppajo/Documents/GitHub/exam/question/source/runKnitr.R"))
+exam_path <- file.path(path_home(), "Documents/GitHub/exam")
+source(file.path(exam_path, "source/runKnitr.R"))
 ## number of versions
-n_version <- 4
+n_version <- 1
 semester <- "year/2022_SoSe"
 
 ## loop over the versions

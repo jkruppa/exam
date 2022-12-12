@@ -6,7 +6,7 @@ count_vec <- rpois(sample(c(12, 14, 15), 1), 4)
 
 @
 
-Nach einem Experiment zählen Sie folgende Anzahl an Läsionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
+Nach einem Experiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
 
 \begin{center}
 $\Sexpr{count_vec}$
