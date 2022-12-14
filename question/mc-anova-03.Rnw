@@ -1,12 +1,12 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese abzulehnen. Welche Aussage über die Teststatistik der ANOVA ist richtig?
+Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese abzulehnen. Welche Aussage {\"u}ber die Teststatistik der ANOVA ist richtig?
 
 <<mc-anova-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 annähert kann die Nullhypothese nicht abgelehnt werden.',
-                   'Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 annähert kann die Nullhypothese nicht abgelehnt werden.',
-                   'Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik größer als 1.96 ist, kann die Nullhypothese abgelehnt werden.',
+questions_vec <- c('Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 ann{\"a}hert kann die Nullhypothese nicht abgelehnt werden.',
+                   'Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 ann{\"a}hert kann die Nullhypothese nicht abgelehnt werden.',
+                   'Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik gr{\"o}{\ss}er als 1.96 ist, kann die Nullhypothese abgelehnt werden.',
                    'Die ANOVA berechnt die F-Statistik aus den SS Behandlung geteilt durch die SS Fehler.',
                    'Die ANOVA berechnet die T-Statistik aus der Multiplikation der MS Behandlung mit der MS der Fehler. Wenn die F-Statistik 0 ist, kann die Nullhypothese abgelehnt werden.') %>%
   sample

@@ -1,14 +1,14 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Bei der explorativen Datenanalyse (EDA) in \Rlogo gibt es eine richtige Abfolge von Prozessschritten, auch \textit{Circle of life} genannt. Wie lautet die richtige Reihenfolge für die Erstellung einer EDA?
+Bei der explorativen Datenanalyse (EDA) in \Rlogo gibt es eine richtige Abfolge von Prozessschritten, auch \textit{Circle of life} genannt. Wie lautet die richtige Reihenfolge f{\"u}r die Erstellung einer EDA?
 
 <<mc-programming-02, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Wir lesen als erstes die Daten über \\texttt{read\\_excel()} ein, transformieren die Spalten über \\texttt{mutate()} in die richtige Form und können dann abschließend über \\text{ggplot()} uns die Abbildungen erstellen lassen.',
-                   'Wir transformieren die Spalten über \\texttt{mutate()} in ein \\texttt{tibble} und können dann abschließend über \\text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.',
-                   'Wir lesen als erstes die Daten über \\texttt{read\\_excel()} ein, transformieren die Spalten über \\texttt{mutate()} in die richtige Form und können dann abschließend über \\text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.',
-                   'Wir lesen die Daten über eine generische Funktion \\texttt{read()} ein und müssen dann die Funktion \\texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \\texttt{*.png} vorliegen.',
-                   'Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \\texttt{tidyverse} nutzen, da dieses Paket veraltet ist. Über die Funktion \\texttt{library(tidyverse)} schließen wir das Paket von der Analyse aus.') %>%
+questions_vec <- c('Wir lesen als erstes die Daten {\"u}ber \\texttt{read\\_excel()} ein, transformieren die Spalten {\"u}ber \\texttt{mutate()} in die richtige Form und k{\"o}nnen dann abschlie{\ss}end {\"u}ber \\text{ggplot()} uns die Abbildungen erstellen lassen.',
+                   'Wir transformieren die Spalten {\"u}ber \\texttt{mutate()} in ein \\texttt{tibble} und k{\"o}nnen dann abschlie{\ss}end {\"u}ber \\text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.',
+                   'Wir lesen als erstes die Daten {\"u}ber \\texttt{read\\_excel()} ein, transformieren die Spalten {\"u}ber \\texttt{mutate()} in die richtige Form und k{\"o}nnen dann abschlie{\ss}end {\"u}ber \\text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.',
+                   'Wir lesen die Daten {\"u}ber eine generische Funktion \\texttt{read()} ein und m{\"u}ssen dann die Funktion \\texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \\texttt{*.png} vorliegen.',
+                   'Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \\texttt{tidyverse} nutzen, da dieses Paket veraltet ist. {\"U}ber die Funktion \\texttt{library(tidyverse)} schlie{\ss}en wir das Paket von der Analyse aus.') %>%
   sample
 
 
