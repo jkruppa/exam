@@ -8,7 +8,7 @@ variable_vec <- c("Y", "X") %>%
 @
 
 
-Sie haben das abstarkte Modell $Y \sim X$ vorliegen. Welche Aussage {\"u}ber
+Sie haben das abstrakte Modell $y \sim x_1 + x_2$ vorliegen. Welche Aussage {\"u}ber
 \Sexpr{variable_vec} ist richtig?
 
 <<mc-modelling-01, results='asis', echo = FALSE>>=
