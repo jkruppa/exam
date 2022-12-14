@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (4 Punkte)}
 
 <<>>=
 
@@ -11,7 +11,7 @@ sig_vec <- c("signifikant", "nicht signifikant") %>%
 Im folgenden ist eine t-Verteilung abgebildet. Erg{\"a}nzen Sie die Abbidlung wie folgt.
 
 \begin{enumerate}
-\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! \textbf{(2 Punkte)} 
+\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! \textbf{(1 Punkte)} 
 \item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! \textbf{(1 Punkt)} 
 \item Erg{\"a}nzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
 \item Erg{\"a}nzen Sie "`$A = 0.95$"'! \textbf{(1 Punkt)} 
