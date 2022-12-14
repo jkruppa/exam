@@ -1,14 +1,14 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage über den gepaarten t-Test für verbundene Stichproben ist richtig?
+Welche Aussage {\"u}ber den gepaarten t-Test f{\"u}r verbundene Stichproben ist richtig?
 
 <<mc-ttest-04, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabhängig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu können.',
-                   'Der gepaarte t-Test wird gerehnet, wenn die Beobachtungen abhängig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
-                   'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test für Varianzhomogenität mit den Vorteilen des Welch t-Test für Varianzheterogenität. Wir bilden dafür die Differenz der Einzelbeobachtungen.',
-                   'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet dafür eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
-                   'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabhängigkeit nicht mehr vorliegen haben.') %>%
+questions_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{\"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{\"o}nnen.',
+                   'Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abh{\"a}ngig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
+                   'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{\"u}r Varianzhomogenit{\"a}t mit den Vorteilen des Welch t-Test f{\"u}r Varianzheterogenit{\"a}t. Wir bilden daf{\"u}r die Differenz der Einzelbeobachtungen.',
+                   'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{\"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
+                   'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{\"a}{\"a}ngigkeit nicht mehr vorliegen haben.') %>%
   sample
 
 @
