@@ -24,7 +24,7 @@ data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(5,7,9), 1),
                                 "dose3" = "2.5")))
 
 ggplot(data_tbl, aes(dose, activity, shape = dose)) +
-  geom_point() +
+  geom_point(size = 2) +
   labs(x = "Dosisstufen", y = "Trockengewicht") +
   ylim(min(data_tbl$activity - 2), max(data_tbl$activity + 2)) +
   scale_shape_discrete(name = "Dosis") +

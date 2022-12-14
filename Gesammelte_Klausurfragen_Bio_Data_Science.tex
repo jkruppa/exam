@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,9 +12,6 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\makeatletter
-\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
-\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
@@ -49,14 +46,6 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
-\makeatletter
-\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-}}
-\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -64,7 +53,7 @@
 % -----------------------------------------------------------------------
 
 % -----------------------------------------------------------------------
-\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
+\input{/Users/kruppajo/Documents/GitHub/exam/init}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
 % -----------------------------------------------------------------------
@@ -267,33 +256,33 @@
 
 
 
-Welche Aussage {\"u}ber die \textbf{$confounder$} Adjustierung ist richtig?
+Welche Aussage {\"u}ber die \textbf{$\alpha$} Adjustierung ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
-\item [\textbf{B} \msquare] Die $confounder$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
-\item [\textbf{C} \msquare] Die $confounder$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
-\item [\textbf{D} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
-\item [\textbf{E} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
+\item [\textbf{A} \msquare] Die $\alpha$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
+\item [\textbf{B} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
+\item [\textbf{C} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
+\item [\textbf{D} \msquare] Die $\alpha$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
+\item [\textbf{E} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.02, 0.21, 0.42, 0.03, 0.34 und 0.001. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.01, 0.42, 0.89 und 0.21. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.12, 1, 1, 0.18, 1 und 0.006. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.12, 1.26, 2.52, 0.18, 2.04 und 0.006. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0033, 0.035, 0.07, 0.005, 0.0567 und 0.0002. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.12, 1, 1, 0.18, 1 und 0.006. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0033, 0.035, 0.07, 0.005, 0.0567 und 0.0002. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.04, 1, 1 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.04, 1, 1 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.04, 1.68, 3.56 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0025, 0.105, 0.2225 und 0.0525. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0025, 0.105, 0.2225 und 0.0525. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -303,16 +292,16 @@ Bonferroni. Welche Aussage ist richtig?
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
 unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
 wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = 0.21$. Welche Aussage ist richtig?
+$\eta^2 = 0.34$. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
-\item [\textbf{B} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
-\item [\textbf{C} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
-\item [\textbf{D} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
-\item [\textbf{E} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
+\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
+\item [\textbf{B} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
+\item [\textbf{C} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\item [\textbf{D} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{E} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -348,14 +337,14 @@ Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
 
 \section{Aufgabe \hfill (2 Punkte)}
 
-Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese abzulehnen. Welche Aussage über die Teststatistik der ANOVA ist richtig?
+Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese abzulehnen. Welche Aussage {\"u}ber die Teststatistik der ANOVA ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik größer als 1.96 ist, kann die Nullhypothese abgelehnt werden.
-\item [\textbf{B} \msquare] Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 annähert kann die Nullhypothese nicht abgelehnt werden.
-\item [\textbf{C} \msquare] Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 annähert kann die Nullhypothese nicht abgelehnt werden.
+\item [\textbf{A} \msquare] Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik h{"o}her als 1.96 ist, kann die Nullhypothese abgelehnt werden.
+\item [\textbf{B} \msquare] Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 ann{"a}hert kann die Nullhypothese nicht abgelehnt werden.
+\item [\textbf{C} \msquare] Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 ann{"a}hert kann die Nullhypothese nicht abgelehnt werden.
 \item [\textbf{D} \msquare] Die ANOVA berechnet die T-Statistik aus der Multiplikation der MS Behandlung mit der MS der Fehler. Wenn die F-Statistik 0 ist, kann die Nullhypothese abgelehnt werden.
 \item [\textbf{E} \msquare] Die ANOVA berechnt die F-Statistik aus den SS Behandlung geteilt durch die SS Fehler.
 \end{enumerate} 
@@ -463,9 +452,9 @@ Berechnen Sie den Median und das IQR von $x$ mit 13, 9, 20, 17, 34, 30, 22, 12, 
 
 \begin{enumerate}
 \item [\textbf{A} \msquare] Es ergibt sich 20 +/- 13
-\item [\textbf{B} \msquare] Es ergibt sich 23 [13, 22]
-\item [\textbf{C} \msquare] Es ergibt sich 20 [13, 22]
-\item [\textbf{D} \msquare] Es ergibt sich 20 +/- 22
+\item [\textbf{B} \msquare] Es ergibt sich 23 [13, 33]
+\item [\textbf{C} \msquare] Es ergibt sich 20 [13, 33]
+\item [\textbf{D} \msquare] Es ergibt sich 20 +/- 33
 \item [\textbf{E} \msquare] Es ergibt sich 23 +/- 13
 \end{enumerate} 
 
@@ -517,15 +506,15 @@ Die empfohlene Mindestanzahl an Beobachtungen f{\"u}r ein Histogramm sind...
 
 
 
-Mit einem Histogramm wird Folgendes in der Statistik und der explorativen Datenanalyse hauptsächlich dargestellt.
+Mit einem Histogramm wird Folgendes in der Statistik und der explorativen Datenanalyse haupts{\"a}chlich dargestellt.
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Hierbei ist eine große Fallzahl notwendig.
-\item [\textbf{B} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Die Darstellung ist auch mit einer kleinen Fallzahl möglich.
+\item [\textbf{A} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Hierbei ist eine hohe Fallzahl notwendig.
+\item [\textbf{B} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Die Darstellung ist auch mit einer kleinen Fallzahl m{"o}glich.
 \item [\textbf{C} \msquare] Die Eigenschaften von Daten aufgeteilt nach zwei Gruppen eines Faktors $x$.
-\item [\textbf{D} \msquare] Die Verteilung von Daten. Auch 2 bis 5 Beonachtungen können noch dargestellt werden. Auch wenn es sich streng genommen um keine Darstellugn einer Verteilung handelt.
+\item [\textbf{D} \msquare] Die Verteilung von Daten. Auch 2 bis 5 Beonachtungen k{"o}nnen noch dargestellt werden. Auch wenn es sich streng genommen um keine Darstellug einer Verteilung handelt.
 \item [\textbf{E} \msquare] Die Eigenschaften von Daten anhand der fehlenden Werte und den Leveln eines Faktors $x$.
 \end{enumerate}
 
@@ -622,7 +611,7 @@ Ferkel einer Muttersau sind daher im statistischen Sinne...
 
 
 
-Sie haben das abstarkte Modell $Y \sim X$ vorliegen. Welche Aussage {\"u}ber
+Sie haben das abstrakte Modell $y \sim x_1 + x_2$ vorliegen. Welche Aussage {\"u}ber
 Y ist richtig?
 
 
@@ -661,7 +650,7 @@ In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
 Regression und der ANOVA skizziert.
 
 \begin{center}
-  \includegraphics[width = 9cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/mc-modeling-03}
+  \includegraphics[width = 9cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/mc-modeling-03}
 \end{center}
 
 Welche der folgenden Aussagen ist richtig?
@@ -760,16 +749,16 @@ Eintr{\"a}ge in englischer Sprache zu verfassen, wenn Sie sp{\"a}ter die Daten i
 
 \section{Aufgabe \hfill (2 Punkte)}
 
-Bei der explorativen Datenanalyse (EDA) in \Rlogo gibt es eine richtige Abfolge von Prozessschritten, auch \textit{Circle of life} genannt. Wie lautet die richtige Reihenfolge für die Erstellung einer EDA?
+Bei der explorativen Datenanalyse (EDA) in \Rlogo gibt es eine richtige Abfolge von Prozessschritten, auch \textit{Circle of life} genannt. Wie lautet die richtige Reihenfolge f{\"u}r die Erstellung einer EDA?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Wir lesen als erstes die Daten über \texttt{read\_excel()} ein, transformieren die Spalten über \texttt{mutate()} in die richtige Form und können dann abschließend über \text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.
-\item [\textbf{B} \msquare] Wir lesen die Daten über eine generische Funktion \texttt{read()} ein und müssen dann die Funktion \texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \texttt{*.png} vorliegen.
-\item [\textbf{C} \msquare] Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \texttt{tidyverse} nutzen, da dieses Paket veraltet ist. Über die Funktion \texttt{library(tidyverse)} schließen wir das Paket von der Analyse aus.
-\item [\textbf{D} \msquare] Wir lesen als erstes die Daten über \texttt{read\_excel()} ein, transformieren die Spalten über \texttt{mutate()} in die richtige Form und können dann abschließend über \text{ggplot()} uns die Abbildungen erstellen lassen.
-\item [\textbf{E} \msquare] Wir transformieren die Spalten über \texttt{mutate()} in ein \texttt{tibble} und können dann abschließend über \text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.
+\item [\textbf{A} \msquare] Wir lesen als erstes die Daten {"u}ber \texttt{read\_excel()} ein, transformieren die Spalten {"u}ber \texttt{mutate()} in die richtige Form und k{"o}nnen dann  {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.
+\item [\textbf{B} \msquare] Wir lesen die Daten {"u}ber eine generische Funktion \texttt{read()} ein und m{"u}ssen dann die Funktion \texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \texttt{*.png} vorliegen.
+\item [\textbf{C} \msquare] Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \texttt{tidyverse} nutzen, da dieses Paket veraltet ist. {"U}ber die Funktion \texttt{library(tidyverse)} entfernen wir das Paket von der Analyse.
+\item [\textbf{D} \msquare] Wir lesen als erstes die Daten {"u}ber \texttt{read\_excel()} ein, transformieren die Spalten {"u}ber \texttt{mutate()} in die richtige Form und k{"o}nnen dann {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen.
+\item [\textbf{E} \msquare] Wir transformieren die Spalten {"u}ber \texttt{mutate()} in ein \texttt{tibble} und k{"o}nnen dann {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -1149,16 +1138,16 @@ ist richtig?
 
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage über den gepaarten t-Test für verbundene Stichproben ist richtig?
+Welche Aussage {\"u}ber den gepaarten t-Test f{\"u}r verbundene Stichproben ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet dafür eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.
-\item [\textbf{B} \msquare] Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabhängigkeit nicht mehr vorliegen haben.
-\item [\textbf{C} \msquare] Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test für Varianzhomogenität mit den Vorteilen des Welch t-Test für Varianzheterogenität. Wir bilden dafür die Differenz der Einzelbeobachtungen.
-\item [\textbf{D} \msquare] Der gepaarte t-Test wird gerehnet, wenn die Beobachtungen abhängig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.
-\item [\textbf{E} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabhängig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu können.
+\item [\textbf{A} \msquare] Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.
+\item [\textbf{B} \msquare] Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{"a}{"a}ngigkeit nicht mehr vorliegen haben.
+\item [\textbf{C} \msquare] Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{"u}r Varianzhomogenit{"a}t mit den Vorteilen des Welch t-Test f{"u}r Varianzheterogenit{"a}t. Wir bilden daf{"u}r die Differenz der Einzelbeobachtungen.
+\item [\textbf{D} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abh{"a}ngig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.
+\item [\textbf{E} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{"o}nnen.
 \end{enumerate}   
 % -----------------------------------------------------------------------
 \clearpage
@@ -1207,7 +1196,7 @@ Sie die Visualisierung des Datensatzes.
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (14 Punkte)}
+\section{Aufgabe \hfill (13 Punkte)}
 
 
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht der Pflanzen
@@ -1218,11 +1207,11 @@ Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.
 
 
 \begin{enumerate}
-\item Füllen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
+\item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
   mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
   \textbf{(4 Punkte)}
-\item Schätzen Sie den p-Wert der Tabelle mit der Information von
-  $F_{\alpha = 5\%} = 3.35$ ab. Begründen Sie Ihre
+\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
+  $F_{\alpha = 5\%} = 3.35$ ab. Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -1244,12 +1233,11 @@ Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen
-  ANOVA im Bezug auf die möglichen Unterschiede zwischen den Gruppen? Beziehen Sie sich auf den obigen Fragetext bei Ihrer Antwort!
+  ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen? Beziehen Sie sich auf den obigen Fragetext bei Ihrer Antwort!
   \textbf{(2 Punkte)}
-\item Berechnen Sie \textit{einen} Student t-Test mit $T = \tfrac{\bar{x}_1
-  - \bar{x}_2}{s_p \cdot \sqrt{2/n_g}}$ für den \textit{vermutlich}
+\item Berechnen Sie \textit{einen} Student t-Test mit f{\"u}r den \textit{vermutlich}
   signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit
-  $T_{\alpha = 5\%} = 2.03$. Begründen Sie Ihre Auswahl! \textbf{(4 Punkte)}
+  $T_{\alpha = 5\%} = 2.03$. Begr{\"u}nden Sie Ihre Auswahl! \textbf{(3 Punkte)}
 \end{enumerate}
 
 \begin{knitrout}
@@ -1416,13 +1404,21 @@ in \Rlogo.
 
 \section{Aufgabe \hfill (8 Punkte)}
 
-In einer ANOVA wird die F Statistik nach der Formel $F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ berechnet. In einem t-test berechnen wir die T Statistik nach der Formel $T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$.
+In einer ANOVA wird die F Statistik nach der Formel
+$F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ berechnet. In einem t-Test
+berechnen wir die T Statistik nach der Formel
+$T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$.
 
 \begin{enumerate}
-\item Erklären Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$ Statistik und $T_{calc}$ Statistik! \textbf{(2 Punkte)}
-\item Visualisieren Sie eine nicht signifikante $F_{calc}$ Statistik sowie eine signifikante $F_{calc}$ Statistik anhand von $MS_{treatment}$ und $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
-\item Erklären Sie an der Formel des F-Tests sowie an der Abbildung warum das Minimum der F-Statistik 0 ist! \textbf{(2 Punkte)}
-\item Wenn die  F-Statistik 0 ist, spricht dies eher für oder gegen die Nullhypothese? Begünden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$
+  Statistik und $T_{calc}$ Statistik! \textbf{(2 Punkte)}
+\item Visualisieren Sie eine nicht signifikante $F_{calc}$ Statistik sowie
+  eine signifikante $F_{calc}$ Statistik anhand von $MS_{treatment}$ und
+  $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie an der Formel des F-Tests sowie an der Abbildung warum
+  das Minimum der F-Statistik 0 ist! \textbf{(2 Punkte)}
+\item Wenn die F-Statistik 0 ist, spricht dies eher f{\"u}r oder gegen die
+  Nullhypothese? Beg{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
  
@@ -1431,15 +1427,22 @@ In einer ANOVA wird die F Statistik nach der Formel $F_{calc} = \cfrac{MS_{treat
 
 \section{Aufgabe \hfill (6 Punkte)}
 
-Sie rechnen eine zweifaktorielle ANOVA und erhalten einen signifikanten Interaktionseffekt zwischen den beiden Faktoren $f_1$ und $f_2$. Der Faktor $f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
+Sie rechnen eine zweifaktorielle ANOVA und erhalten einen signifikanten
+Interaktionseffekt zwischen den beiden Faktoren $f_1$ und $f_2$. Der Faktor
+$f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
 
 
 
 
 \begin{enumerate}
-\item Visualisieren Sie in zwei getrennten Abbildungen eine keine und eine schwache Interaktion zwischen den Faktoren $f_1$ und $f_2$! \textbf{(2 Punkte)}
-\item Erklären Sie den Unterschied zwischen Ihren beiden Zeichnungen! \textbf{(2 Punkte)}
-\item Wenn Sie eine signifikante Interaktion in Ihren Daten vorliegen haben, wie ist dann Ihr weiteres Vorgehen bei dem Posthoc-Tests? \textbf{(2 Punkte)}
+\item Visualisieren Sie in zwei getrennten Abbildungen eine
+  keine und eine schwache Interaktion zwischen
+  den Faktoren $f_1$ und $f_2$! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie den Unterschied zwischen Ihren beiden Zeichnungen!
+  \textbf{(2 Punkte)}
+\item Wenn Sie eine signifikante Interaktion in Ihren Daten vorliegen
+  haben, wie ist dann Ihr weiteres Vorgehen bei dem Posthoc-Tests?
+  \textbf{(2 Punkte)}
 \end{enumerate}
 
  
@@ -1450,13 +1453,24 @@ Sie rechnen eine zweifaktorielle ANOVA und erhalten einen signifikanten Interakt
 
 
 
-Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit fünf Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet haben, erhalten Sie einen p-Wert von $0.078$ und eine F Statistik mit $F_{calc} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen, stellen Sie fest, dass es eigentlich einen Mittelwertsunterschied zwischen dem dritten und zweiten Level geben müsste. Die $IQR$-Bereiche überlappen sich nicht und die Mediane liegen auch weit vom globalen Mittel entfernt.
+Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit
+f{"u}nf Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet
+haben, erhalten Sie einen p-Wert von $0.078$ und eine F Statistik mit
+$F_{calc} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen,
+stellen Sie fest, dass es eigentlich einen Mittelwertsunterschied zwischen
+dem dritten und zweiten Level geben m{\"u}sste. Die
+$IQR$-Bereiche {\"u}berlappen sich nicht und die Mediane liegen auch weit vom
+globalen Mittel entfernt.
 
 
 \begin{enumerate}
-\item Erklären Sie die Annahme der Normalverteilung und die Annahme der Varianzhomogenität an einer passenden Abbildung! \textbf{(2 Punkte)}
-\item Visualisieren Sie die Berechnung von $F_{calc}$ am obigen Beispiel! \textbf{(2 Punkte)}
-\item Erklären Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der Berücksichtigung der Annahmen an eine ANOVA! Geben Sie ein numerisches Beispiel! \textbf{(4 Punkte)}
+\item Erkl{\"a}ren Sie die Annahme der Normalverteilung und die Annahme der
+  Varianzhomogenit{\"a}t an einer passenden Abbildung! \textbf{(2 Punkte)}
+\item Visualisieren Sie die Berechnung von $F_{calc}$ am obigen Beispiel!
+  \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der
+  Ber{\"u}cksichtigung der Annahmen an eine ANOVA! Geben Sie ein numerisches
+  Beispiel! \textbf{(4 Punkte)}
 \end{enumerate}
 
  
@@ -1465,8 +1479,9 @@ Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit fünf Leveln. N
 
 \section{Aufgabe \hfill (9 Punkte)}
 
-Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C) ergibt sich die
-folgende Datentabelle mit dem gemessenen Frischgewicht (\textit{freshmatter}). 
+Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C)
+ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
+(\textit{freshmatter}).
 
 \begin{table}[!h]
 \centering
@@ -1493,12 +1508,12 @@ B & 23\\
 
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Barplots f{\"u}r die
-  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!
-  \textbf{(6 Punkte)}
+  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!  \textbf{(6
+    Punkte)}
 \item Beschriften Sie \textit{einen} Barplot mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen der Bew{\"a}sserungstypen erwarten
-  w{\"u}rden, wie sehen dann die Barplots aus? \textbf{(1 Punkt)}
+\item Wenn Sie \textit{keinen Effekt} zwischen der Bew{\"a}sserungstypen
+  erwarten w{\"u}rden, wie sehen dann die Barplots aus? \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -1610,7 +1625,7 @@ low & 20\\
 \vspace*{8cm}
 
 \begin{center}
-  \includegraphics[width=10cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/boxplot-03-a.png}
+  \includegraphics[width=10cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-a.png}
 \end{center}
 
 
@@ -1829,7 +1844,7 @@ diagnostischen Test auf Klauenseuche aus.
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
+  \includegraphics[width=17cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
 \end{center}
 
 
@@ -1883,7 +1898,7 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
   };
   \node[] at (-4.8,0) {\huge 160};
   \node[] at (-1.7,0) {\huge 60};
@@ -1987,7 +2002,7 @@ pestKill & 2\\
 
 
 
-Nach einem Experiment zählen Sie folgende Anzahl an Läsionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
+Nach einem Experiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
 
 \begin{center}
 $5, 4, 5, 4, 6, 7, 3, 3, 2, 1, 5, 1, 5, 4, 6$
@@ -2589,18 +2604,18 @@ hinaus wurden verschiedene St{\"a}lle (\textit{barn}) mit der Musik bespielt.
 ## 
 ## Scaled residuals: 
 ##      Min       1Q   Median       3Q      Max 
-## -2.34674 -0.59678 -0.02361  0.59131  3.33404 
+## -2.34675 -0.59678 -0.02361  0.59132  3.33404 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  barn     (Intercept)  266.16  16.314  
-##  subject  (Intercept) 4022.24  63.421  
-##  Residual              705.27  26.557  
+##  barn     (Intercept)  266.15  16.314  
+##  subject  (Intercept) 4022.42  63.423  
+##  Residual              705.26  26.557  
 ## Number of obs: 83, groups:  barn, 7; subject, 6
 ## 
 ## Fixed effects:
 ##             Estimate Std. Error t value
-## (Intercept) 201.6852    26.9293  7.4894
+## (Intercept) 201.6852    26.9298  7.4893
 ## attitudepop -18.3270     5.8352 -3.1408
 ## 
 ## Correlation of Fixed Effects:
@@ -2752,7 +2767,7 @@ einzunicken. Es ergab sich folgende Abbildung.
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/text-error-cross-table}
+  \includegraphics[width = 14cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/text-error-cross-table}
 \end{center}
 
 \begin{enumerate}
@@ -2778,20 +2793,17 @@ Geben ist folgende 2x2 Kreuztabelle.
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (4 Punkte)}
 
 
 
-Im folgenden ist eine t-Verteilung mit 10 Freiheitsgraden
-abgebildet. Erg{\"a}nzen Sie die Abbidlung wie folgt.
+Im folgenden ist eine t-Verteilung abgebildet. Erg{\"a}nzen Sie die Abbidlung wie folgt.
 
 \begin{enumerate}
-\item Zeichnen Sie das einseitige $\alpha$ Niveau in die Abbildung! \textbf{(2 Punkte)} 
+\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! \textbf{(1 Punkte)} 
 \item Zeichnen Sie einen nicht signifikant p-Wert in die Abbildung! \textbf{(1 Punkt)} 
-\item Erg{\"a}nzen Sie "`$\bar{x}_1 = \bar{x}_2$"'! \textbf{(1 Punkt)} 
-\item Erg{\"a}nzen Sie "`H$_0$ ist wahr"'! \textbf{(1 Punkt)} 
-\item Erg{\"a}nzen Sie eine t-Verteilung mit 5
-  Freiheitsgraden. Zeichnen Sie im Zweifel {\"u}ber den Rand der Abbildung! \textbf{(1 Punkte)} 
+\item Erg{\"a}nzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
+\item Erg{\"a}nzen Sie "`$A = 0.95$"'! \textbf{(1 Punkt)} 
 \end{enumerate}
 
 
@@ -2819,8 +2831,8 @@ Sie rechnen einen t-Test. Sie schätzen einen Mittelwertsunterschied.
   untenstehende Abbildung f{\"u}nf einzelne Konfidenzintervalle (a-e) mit den
   jeweiligen Eigenschaften! \textbf{(6 Punkte)}
   \begin{itemize}
-  \item[(a)] Ein Konfidenzintervall mit niedriger Fallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
-  \item[(b)] Ein Konfidenzintervall mit h{"o}hererFallzahl $n$ in der Stichprobe als der Rest der Konfidenzintervalle 	
+  \item[(a)] Ein Konfidenzintervall mit niedriger Varianz $s_p$ in der Stichprobe als der Rest der Konfidenzintervalle 	
+  \item[(b)] Ein Konfidenzintervall mit h{"o}hererVarianz $s_p$ in der Stichprobe als der Rest der Konfidenzintervalle 	
   \item[(c)] Ein signifikantes, nicht relevantes Konfidenzintervall 	
   \item[(d)] Ein signifikantes, relevantes Konfidenzintervall 
   \item[(e)] Ein nicht signifikantes, relevantes Konfidenzintervall
@@ -2828,7 +2840,7 @@ Sie rechnen einen t-Test. Sie schätzen einen Mittelwertsunterschied.
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 8cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 8cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/statistisches-testen-04}
 \end{center}
 
 
@@ -2994,13 +3006,13 @@ GoneEx & 13\\
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
       Punkte)}
-  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Student t-Tests für den
+  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Student t-Tests f{\"u}r den
   Vergleich der beiden Pestizide. Geben Sie den Rechenweg und die Formeln
   mit an! \textbf{(5 Punkte)}
 \item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{calc}$ eine Aussage
   zur Nullhypothese! \textbf{(2 Punkte)}
 \item Wenn Sie keinen Unterschied zwischen den beiden Pestiziden erwarten
-  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_{calc}$? Begründen Sie Ihre
+  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_{calc}$? Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}
 \end{enumerate} 
 \clearpage

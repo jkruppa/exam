@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (16 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 Der Datensatz \textit{ToothGrowth} enth{\"a}lt Daten aus einer Studie zur
 Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
@@ -24,7 +24,7 @@ anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
 \begin{enumerate}
 \item F{\"u}llen Sie die unterstehende zweifaktorielle ANOVA Ergebnistabelle aus
   mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
-  \textbf{(6 Punkte)}
+  \textbf{(4 Punkte)}
 \item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von den
   kritischen F-Werten mit
   $F_{supp} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
@@ -60,7 +60,7 @@ anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
 \item Was bedeutet ein signifikantes Ergebnis in einer zweifaktoriellen
   ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen?
   Beziehen Sie sich dabei einmal auf den Faktor \textit{supp} und einmal
-  auf den Faktor \textit{dose}! \textbf{(4 Punkte)}
+  auf den Faktor \textit{dose}! \textbf{(2 Punkte)}
 \item Was sagt der Term \textit{supp:dose} aus? Interpretieren Sie das
   Ergebnis des abgesch{\"a}tzten p-Wertes! \textbf{(2 Punkte)}
 \end{enumerate}

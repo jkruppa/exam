@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (14 Punkte)}
+\section{Aufgabe \hfill (13 Punkte)}
 
 
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht der Pflanzen
@@ -18,12 +18,12 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
 @
 
 \begin{enumerate}
-\item Füllen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
+\item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
   mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
   \textbf{(4 Punkte)}
-\item Schätzen Sie den p-Wert der Tabelle mit der Information von
+\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
   $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
-    anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begründen Sie Ihre
+    anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -45,12 +45,11 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen
-  ANOVA im Bezug auf die möglichen Unterschiede zwischen den Gruppen? Beziehen Sie sich auf den obigen Fragetext bei Ihrer Antwort!
+  ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen? Beziehen Sie sich auf den obigen Fragetext bei Ihrer Antwort!
   \textbf{(2 Punkte)}
-\item Berechnen Sie \textit{einen} Student t-Test mit $T = \tfrac{\bar{x}_1
-  - \bar{x}_2}{s_p \cdot \sqrt{2/n_g}}$ für den \textit{vermutlich}
+\item Berechnen Sie \textit{einen} Student t-Test mit f{\"u}r den \textit{vermutlich}
   signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit
-  $T_{\alpha = 5\%} = 2.03$. Begründen Sie Ihre Auswahl! \textbf{(4 Punkte)}
+  $T_{\alpha = 5\%} = 2.03$. Begr{\"u}nden Sie Ihre Auswahl! \textbf{(3 Punkte)}
 \end{enumerate}
 
 <<anova-R-01-b,  echo = FALSE>>=
