@@ -7,12 +7,11 @@ data_tbl <- ToothGrowth %>%
 @ 
 
 Der Datensatz \textit{PigGain} enth{\"a}lt Daten aus einer Studie zur Bewertung
-der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der Versuch
-wurde an \Sexpr{nrow(data_tbl)} Mastschweinen durchgef{\"u}hrt, wobei jedes Tier
-eine von drei Selen-Dosen (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag) {\"u}ber eine von zwei
-Verabreichungsmethoden erhielt (Wasser oder Festnahrung). Das Gewicht
-wurde als normalverteiltes Outcome gemessen. Sie erhalten folgenden Output
-in \Rlogo.
+der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der
+Versuch wurde an \Sexpr{nrow(data_tbl)} Mastschweinen durchgef{\"u}hrt, wobei
+jedes Tier eine von drei Selen-Dosen (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag)
+{\"u}ber eine von zwei Verabreichungsmethoden erhielt (Wasser oder
+Festnahrung). Sie erhalten folgenden Output in \Rlogo.
 
 <<anova-R-05-a,  echo = FALSE>>=
 data_tbl <- data_tbl %>%
@@ -34,8 +33,8 @@ anova_mdl
   zweifaktorielle ANOVA f{\"u}r den Faktor \Sexpr{sample(c("supp", "dose"), 1)}
   auf! \textbf{(2 Punkte)}
 \item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
-  im besonderen auf den Term $supp:dose$ ein! \textbf{(3 Punkte)}
+  im besonderen auf den Term $supp:dose$ ein! \textbf{(2 Punkte)}
 \item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
-  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(3 Punkte)}
+  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
 \end{enumerate}
 

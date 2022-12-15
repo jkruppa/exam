@@ -1,21 +1,21 @@
 \section{Aufgabe \hfill (7 Punkte)}
 
-Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C)
-ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
-(\textit{freshmatter}).
+Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen ($low$, $mid$
+und $high$) ergibt sich die folgende Datentabelle mit dem gemessenen
+Frischgewicht (\textit{freshmatter}).
 
 <<barplot-01, results='asis', echo = FALSE>>=
 
 
-data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5, 4), 1),
+data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5, 4), 1),
                                          mean = sample(c(15, 20, 25), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather,
-                  tibble(B = round(rnorm(n = sample(c(3, 4), 1),
+                  tibble(mid = round(rnorm(n = sample(c(3, 4), 1),
                                          mean = sample(c(20, 25, 30), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather,
-                  tibble(C = round(rnorm(n = sample(c(4, 3), 1),
+                  tibble(high = round(rnorm(n = sample(c(4, 3), 1),
                                          mean = sample(c(10, 15, 20), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%

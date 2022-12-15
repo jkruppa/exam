@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (6 Punkte)}
 
 Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctrl, pestKill, roundUp, zeroX) ergibt sich die folgende Datentabelle mit den Boniturnoten (\textit{grade}). 
 
@@ -31,9 +31,9 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Dotplots f{\"u}r die
   vier Pestizidlevel! Beschriften Sie die Achsen entsprechend!
-  \textbf{(4 Punkte)}
-\item Erg{\"a}nzen Sie die Dotplots mit einer g{\"a}ngigen
-  statistischen Ma{\ss}zahl. \textbf{(2 Punkte)}
+  \textbf{(3 Punkte)}
+\item Erg{\"a}nzen Sie die Dotplots mit den g{\"a}ngigen
+  statistischen Ma{\ss}zahlen. \textbf{(2 Punkte)}
 \item Wenn Sie \textit{keinen Effekt} zwischen den Pestizidlevel erwarten
   w{\"u}rden, wie sehen dann die Dotplots aus? \textbf{(1 Punkt)}
 \end{enumerate}
