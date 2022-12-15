@@ -8,9 +8,9 @@ Mit \Sexpr{var_vec} wird Folgendes in der Statistik und der explorativen Datenan
 
 <<mc-desc-06, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Hierbei ist eine hohe Fallzahl notwendig.',
-                   'Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Die Darstellung ist auch mit einer kleinen Fallzahl m{\"o}glich.',
-                   'Die Verteilung von Daten. Auch 2 bis 5 Beonachtungen k{\"o}nnen noch dargestellt werden. Auch wenn es sich streng genommen um keine Darstellug einer Verteilung handelt.',
+questions_vec <- c('Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Hierbei ist eine hohe Fallzahl notwendig mit mehr als 20 Beoabchtungen.',
+                   'Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Die Darstellung ist auch mit einer kleinen Fallzahl von Minimum 5 Beoabchtungen m{\"o}glich.',
+                   'Die Verteilung von Daten. Auch 2 bis 5 Beonachtungen k{\"o}nnen noch dargestellt werden.',
                    'Die Eigenschaften von Daten aufgeteilt nach zwei Gruppen eines Faktors $x$.',
                    'Die Eigenschaften von Daten anhand der fehlenden Werte und den Leveln eines Faktors $x$.') %>%
   sample
