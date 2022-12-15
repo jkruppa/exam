@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
+\documentclass[a4paper, 10pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{color}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,6 +12,9 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
+\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
@@ -46,6 +49,14 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
+\makeatletter
+\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+}}
+\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -53,7 +64,7 @@
 % -----------------------------------------------------------------------
 
 % -----------------------------------------------------------------------
-\input{/Users/kruppajo/Documents/GitHub/exam/init}
+\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
 \def\textpoints{60}
 \FPeval{\overallpoints}{clip(\textpoints + 20)}
 % -----------------------------------------------------------------------
@@ -256,33 +267,33 @@
 
 
 
-Welche Aussage {\"u}ber die \textbf{$\alpha$} Adjustierung ist richtig?
+Welche Aussage {\"u}ber die \textbf{$confounder$} Adjustierung ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die $\alpha$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
-\item [\textbf{B} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
-\item [\textbf{C} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
-\item [\textbf{D} \msquare] Die $\alpha$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
-\item [\textbf{E} \msquare] Die $\alpha$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
+\item [\textbf{A} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Fehler 2. Art zu kontrollieren. Ohne diese Adjustierung w{"u}rde der Fehler 2. Art nicht bei 80\% liegen sondern sehr schnell gegen 0 laufen.
+\item [\textbf{B} \msquare] Die $confounder$ ist notwendig um Effekte gegeneinander aufzurechnen. Ohne diese Adjustierung w{"u}rde der eigentliche Effekt nicht richtig gesch{"a}tzt. Daher handelt es sich um eine Adjustierung der Fehlerwahrscheinlichkeiten.
+\item [\textbf{C} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um bei multiplen Vergleichen den Fehler 1. Art zu kontrollieren. Es wird die Irrtumswahrscheinlichkeit adjustiert, daher das $\alpha$-Niveau.
+\item [\textbf{D} \msquare] Die $confounder$ Adjustierung wird durchgef{"u}hrt um den Effekt von Interesse, meist die Behandlung, von anderen Effekten zu trennen. Daher eine Adjustierung auf den $\beta$-Werten einer Regression.
+\item [\textbf{E} \msquare] Die $confounder$ Adjustierung wird meist ignoriert. Wenn die Annahmen an den statistischen Test richtig sind, kann auf eine Adjustierung verzichtet werden.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.01, 0.42, 0.89 und 0.21. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.01, 0.001, 0.42, 0.02, 0.03 und 0.21. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.04, 1, 1 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.04, 1, 1 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.04, 1.68, 3.56 und 0.84. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0025, 0.105, 0.2225 und 0.0525. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0025, 0.105, 0.2225 und 0.0525. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0017, 0.0002, 0.07, 0.0033, 0.005 und 0.035. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.06, 0.006, 2.52, 0.12, 0.18 und 1.26. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.06, 0.006, 1, 0.12, 0.18 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.06, 0.006, 1, 0.12, 0.18 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.0017, 0.0002, 0.07, 0.0033, 0.005 und 0.035. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 0.83\% verglichen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -292,16 +303,16 @@ Bonferroni. Welche Aussage ist richtig?
 Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
 unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
 wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = 0.34$. Welche Aussage ist richtig?
+$\eta^2 = 0.17$. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
-\item [\textbf{B} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
-\item [\textbf{C} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\item [\textbf{A} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\item [\textbf{B} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
+\item [\textbf{C} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
 \item [\textbf{D} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
-\item [\textbf{E} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
+\item [\textbf{E} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -511,10 +522,10 @@ Mit einem Histogramm wird Folgendes in der Statistik und der explorativen Datena
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Hierbei ist eine hohe Fallzahl notwendig.
-\item [\textbf{B} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Die Darstellung ist auch mit einer kleinen Fallzahl m{"o}glich.
+\item [\textbf{A} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Hierbei ist eine hohe Fallzahl notwendig mit mehr als 20 Beoabchtungen.
+\item [\textbf{B} \msquare] Die Verteilung von Daten. Meistens dem Outcome oder auch $y$ genannt. Die Darstellung ist auch mit einer kleinen Fallzahl von Minimum 5 Beoabchtungen m{"o}glich.
 \item [\textbf{C} \msquare] Die Eigenschaften von Daten aufgeteilt nach zwei Gruppen eines Faktors $x$.
-\item [\textbf{D} \msquare] Die Verteilung von Daten. Auch 2 bis 5 Beonachtungen k{"o}nnen noch dargestellt werden. Auch wenn es sich streng genommen um keine Darstellug einer Verteilung handelt.
+\item [\textbf{D} \msquare] Die Verteilung von Daten. Auch 2 bis 5 Beonachtungen k{"o}nnen noch dargestellt werden.
 \item [\textbf{E} \msquare] Die Eigenschaften von Daten anhand der fehlenden Werte und den Leveln eines Faktors $x$.
 \end{enumerate}
 
@@ -650,7 +661,7 @@ In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
 Regression und der ANOVA skizziert.
 
 \begin{center}
-  \includegraphics[width = 9cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/mc-modeling-03}
+  \includegraphics[width = 9cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/mc-modeling-03}
 \end{center}
 
 Welche der folgenden Aussagen ist richtig?
@@ -1266,7 +1277,7 @@ trt2 & 10 & 5.52 & 0.46\\
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (16 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 Der Datensatz \textit{ToothGrowth} enth{\"a}lt Daten aus einer Studie zur
 Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
@@ -1281,7 +1292,7 @@ als normalverteiltes Outcome gemessen.
 \begin{enumerate}
 \item F{\"u}llen Sie die unterstehende zweifaktorielle ANOVA Ergebnistabelle aus
   mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
-  \textbf{(6 Punkte)}
+  \textbf{(4 Punkte)}
 \item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von den
   kritischen F-Werten mit
   $F_{supp} = 4.02$ und
@@ -1314,7 +1325,7 @@ als normalverteiltes Outcome gemessen.
 \item Was bedeutet ein signifikantes Ergebnis in einer zweifaktoriellen
   ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen?
   Beziehen Sie sich dabei einmal auf den Faktor \textit{supp} und einmal
-  auf den Faktor \textit{dose}! \textbf{(4 Punkte)}
+  auf den Faktor \textit{dose}! \textbf{(2 Punkte)}
 \item Was sagt der Term \textit{supp:dose} aus? Interpretieren Sie das
   Ergebnis des abgesch{\"a}tzten p-Wertes! \textbf{(2 Punkte)}
 \end{enumerate}
@@ -1365,12 +1376,11 @@ verschiedenen D{\"u}ngerbedingungen erzielt wurden -- dem Faktor
 
 
 Der Datensatz \textit{PigGain} enth{\"a}lt Daten aus einer Studie zur Bewertung
-der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der Versuch
-wurde an 75 Mastschweinen durchgef{\"u}hrt, wobei jedes Tier
-eine von drei Selen-Dosen (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag) {\"u}ber eine von zwei
-Verabreichungsmethoden erhielt (Wasser oder Festnahrung). Das Gewicht
-wurde als normalverteiltes Outcome gemessen. Sie erhalten folgenden Output
-in \Rlogo.
+der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der
+Versuch wurde an 75 Mastschweinen durchgef{\"u}hrt, wobei
+jedes Tier eine von drei Selen-Dosen (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag)
+{\"u}ber eine von zwei Verabreichungsmethoden erhielt (Wasser oder
+Festnahrung). Sie erhalten folgenden Output in \Rlogo.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -1394,9 +1404,9 @@ in \Rlogo.
   zweifaktorielle ANOVA f{\"u}r den Faktor dose
   auf! \textbf{(2 Punkte)}
 \item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
-  im besonderen auf den Term $supp:dose$ ein! \textbf{(3 Punkte)}
+  im besonderen auf den Term $supp:dose$ ein! \textbf{(2 Punkte)}
 \item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
-  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(3 Punkte)}
+  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
 \end{enumerate}
  
 \clearpage
@@ -1404,10 +1414,16 @@ in \Rlogo.
 
 \section{Aufgabe \hfill (8 Punkte)}
 
-In einer ANOVA wird die F Statistik nach der Formel
-$F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ berechnet. In einem t-Test
-berechnen wir die T Statistik nach der Formel
-$T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$.
+In der untenstehenden Tabelle ist die Formel f{\"u}r den F-Test aus der ANOVA
+und die Formel f{\"u}r den t-Test dargestellt. In der ANOVA berechnen Sie die
+F-Statistik  $F_{calc}$ und in dem t-Test die T-Statistik  $T_{calc}$.
+
+\begin{center}
+  \begin{tabular}{cc}
+    $F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
+  \end{tabular}
+\end{center}
+
 
 \begin{enumerate}
 \item Erkl{\"a}ren Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$
@@ -1438,10 +1454,10 @@ $f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
 \item Visualisieren Sie in zwei getrennten Abbildungen eine
   keine und eine schwache Interaktion zwischen
   den Faktoren $f_1$ und $f_2$! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie den Unterschied zwischen Ihren beiden Zeichnungen!
+\item Erkl{\"a}ren Sie den Unterschied zwischen den beiden St{\"a}rken der Interaktion!
   \textbf{(2 Punkte)}
-\item Wenn Sie eine signifikante Interaktion in Ihren Daten vorliegen
-  haben, wie ist dann Ihr weiteres Vorgehen bei dem Posthoc-Tests?
+\item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist
+  dann das weitere Vorgehen bei einem Posthoc-Test?
   \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -1449,7 +1465,7 @@ $f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (7 Punkte)}
 
 
 
@@ -1465,23 +1481,22 @@ globalen Mittel entfernt.
 
 \begin{enumerate}
 \item Erkl{\"a}ren Sie die Annahme der Normalverteilung und die Annahme der
-  Varianzhomogenit{\"a}t an einer passenden Abbildung! \textbf{(2 Punkte)}
+  Varianzhomogenit{\"a}t f{\"u}r eine ANOVA an einer passenden Abbildung! \textbf{(2 Punkte)}
 \item Visualisieren Sie die Berechnung von $F_{calc}$ am obigen Beispiel!
   \textbf{(2 Punkte)}
 \item Erkl{\"a}ren Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der
-  Ber{\"u}cksichtigung der Annahmen an eine ANOVA! Geben Sie ein numerisches
-  Beispiel! \textbf{(4 Punkte)}
+  Ber{\"u}cksichtigung der Annahmen an eine ANOVA! \textbf{(3 Punkte)}
 \end{enumerate}
 
  
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (7 Punkte)}
 
-Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen (A, B und C)
-ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
-(\textit{freshmatter}).
+Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen ($low$, $mid$
+und $high$) ergibt sich die folgende Datentabelle mit dem gemessenen
+Frischgewicht (\textit{freshmatter}).
 
 \begin{table}[!h]
 \centering
@@ -1489,17 +1504,17 @@ ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
 \toprule
 water\_type & freshmatter\\
 \midrule
-B & 31\\
-A & 12\\
-A & 11\\
-A & 16\\
-C & 6\\
+mid & 31\\
+low & 12\\
+low & 11\\
+low & 16\\
+high & 6\\
 \addlinespace
-A & 13\\
-C & 11\\
-C & 5\\
-B & 30\\
-B & 23\\
+low & 13\\
+high & 11\\
+high & 5\\
+mid & 30\\
+mid & 23\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1508,7 +1523,7 @@ B & 23\\
 
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Barplots f{\"u}r die
-  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!  \textbf{(6
+  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!  \textbf{(4
     Punkte)}
 \item Beschriften Sie \textit{einen} Barplot mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
@@ -1625,7 +1640,7 @@ low & 20\\
 \vspace*{8cm}
 
 \begin{center}
-  \includegraphics[width=10cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/boxplot-03-a.png}
+  \includegraphics[width=10cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/boxplot-03-a.png}
 \end{center}
 
 
@@ -1844,7 +1859,7 @@ diagnostischen Test auf Klauenseuche aus.
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
+  \includegraphics[width=17cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
 \end{center}
 
 
@@ -1898,7 +1913,7 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{/Users/kruppajo/Documents/GitHub/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
   };
   \node[] at (-4.8,0) {\huge 160};
   \node[] at (-1.7,0) {\huge 60};
@@ -1913,7 +1928,7 @@ Fleckvieh ist gegeben.
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (6 Punkte)}
 
 Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden (ctrl, pestKill, roundUp, zeroX) ergibt sich die folgende Datentabelle mit den Boniturnoten (\textit{grade}). 
 
@@ -1948,9 +1963,9 @@ pestKill & 2\\
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Dotplots f{\"u}r die
   vier Pestizidlevel! Beschriften Sie die Achsen entsprechend!
-  \textbf{(4 Punkte)}
-\item Erg{\"a}nzen Sie die Dotplots mit einer g{\"a}ngigen
-  statistischen Ma{\ss}zahl. \textbf{(2 Punkte)}
+  \textbf{(3 Punkte)}
+\item Erg{\"a}nzen Sie die Dotplots mit den g{\"a}ngigen
+  statistischen Ma{\ss}zahlen. \textbf{(2 Punkte)}
 \item Wenn Sie \textit{keinen Effekt} zwischen den Pestizidlevel erwarten
   w{\"u}rden, wie sehen dann die Dotplots aus? \textbf{(1 Punkt)}
 \end{enumerate} 
@@ -2002,7 +2017,8 @@ pestKill & 2\\
 
 
 
-Nach einem Experiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den Beobachtungen nach einer durchgestandenen Infektion. 
+Nach einem Experiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den
+Bl{\"a}ttern von Sonnenblumen nach einer durchgestandenen Infektion. 
 
 \begin{center}
 $5, 4, 5, 4, 6, 7, 3, 3, 2, 1, 5, 1, 5, 4, 6$
@@ -2011,7 +2027,7 @@ $5, 4, 5, 4, 6, 7, 3, 3, 2, 1, 5, 1, 5, 4, 6$
 \begin{enumerate}
 \item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualiseren. (\textbf{3 Punkte})
 \item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
-\item Wie unterscheidet sich eine Poissonverteilung von einer Normalverteilung dargestellt in einem Histogramm? (\textbf{1 Punkt})
+\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten in der Abbildung! \textbf{1 Punkt}
 \end{enumerate}
 
  
@@ -2074,7 +2090,7 @@ folgende gemessene Endpunkte zu Verf{\"u}gung: drymatter, yield, count, quality\
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (6 Punkte)}
 
 Nach einem Feldexperiment mit zwei Pestiziden (\textit{RoundUp} und
 \textit{OutEx}) ergibt sich die folgende Datentabelle mit dem jeweiligen
@@ -2115,7 +2131,7 @@ RoundUp & yes\\
 
 \begin{enumerate}
 \item Stellen Sie in einer 2x2 Tafel den Zusammenhang zwischen dem
-  Pesizid und dem Infektionsstatus dar! \textbf{(4 Punkte)}
+  Pesizid und dem Infektionsstatus dar! \textbf{(2 Punkte)}
 \item Zeichnen Sie den zugeh{\"o}rigen Mosaic-Plot. Berechnen Sie das
   Verh{\"a}ltnis pro Spalte! \textbf{(2 Punkte)}
 \item Wenn das Pesizid keine Auswirkung auf den Infektionsstatus h{\"a}tte, wie
@@ -2154,7 +2170,9 @@ rohen p-Werten.
   p-Werten nach Bonferoni aus! \textbf{(2 Punkte)}
 \item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese weiter
   abglehnt werden kann. Tragen Sie Ihre Entscheidung in die obige Tabelle
-  ein. Begr{\"u}nden Sie Ihre Antwort! \textbf{(4 Punkte)}
+  ein. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie warum die p-Werte bei multiplen Vergleichen
+  adjustiert werden m{\"u}ssen? \textbf{(2 Punkte)}
 \end{enumerate}
 
 \vspace{1Ex}
@@ -2604,18 +2622,18 @@ hinaus wurden verschiedene St{\"a}lle (\textit{barn}) mit der Musik bespielt.
 ## 
 ## Scaled residuals: 
 ##      Min       1Q   Median       3Q      Max 
-## -2.34675 -0.59678 -0.02361  0.59132  3.33404 
+## -2.34674 -0.59678 -0.02361  0.59131  3.33404 
 ## 
 ## Random effects:
 ##  Groups   Name        Variance Std.Dev.
-##  barn     (Intercept)  266.15  16.314  
-##  subject  (Intercept) 4022.42  63.423  
-##  Residual              705.26  26.557  
+##  barn     (Intercept)  266.16  16.314  
+##  subject  (Intercept) 4022.24  63.421  
+##  Residual              705.27  26.557  
 ## Number of obs: 83, groups:  barn, 7; subject, 6
 ## 
 ## Fixed effects:
 ##             Estimate Std. Error t value
-## (Intercept) 201.6852    26.9298  7.4893
+## (Intercept) 201.6852    26.9293  7.4894
 ## attitudepop -18.3270     5.8352 -3.1408
 ## 
 ## Correlation of Fixed Effects:
@@ -2767,7 +2785,7 @@ einzunicken. Es ergab sich folgende Abbildung.
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/text-error-cross-table}
+  \includegraphics[width = 14cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/text-error-cross-table}
 \end{center}
 
 \begin{enumerate}
@@ -2821,7 +2839,7 @@ Im folgenden ist eine t-Verteilung abgebildet. Erg{\"a}nzen Sie die Abbidlung wi
 
 
 
-Sie rechnen einen t-Test. Sie schätzen einen Mittelwertsunterschied. 
+Sie rechnen einen t-Test. Sie sch{\"a}tzen einen Mittelwertsunterschied. 
 
 \begin{enumerate}
 \item Beschriften Sie die untenstehende Abbildung mit der
@@ -2840,7 +2858,7 @@ Sie rechnen einen t-Test. Sie schätzen einen Mittelwertsunterschied.
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 8cm]{/Users/kruppajo/Documents/GitHub/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 8cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/statistisches-testen-04}
 \end{center}
 
 
@@ -3020,8 +3038,9 @@ GoneEx & 13\\
 
 \section{Aufgabe \hfill (13 Punkte)}
 
-Das Gewicht von K{\"u}ken wurde vor der Behandlung mit STARTex und 1 Woche nach
-der Behandlung gemessen. Es ergibt sich die folgende Datentabelle.
+Das Gewicht von K{\"u}ken wurde \textit{vor} der Behandlung mit STARTex und 1
+Woche \textit{nach} der Behandlung gemessen. Es ergibt sich die folgende
+Datentabelle.
 
 \begin{table}[!h]
 \centering
@@ -3092,8 +3111,7 @@ Punkte)}
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Skizieren Sie eine Abbildung in der Sie $T_{calc}$, $Pr(D|H_0)$, $A=0.95$,
   sowie $T_{\alpha=5\%} = |2.14|$ einzeichnen! \textbf{(4 Punkte)}
-\item Beschriften Sie die Abbildung und
-  den Graphen entsprechend! \textbf{(2 Punkte)}  
+\item Beschriften Sie die Abbildung entsprechend! \textbf{(2 Punkte)}  
 \end{enumerate} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -3126,9 +3144,9 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie das sich ergebende Konifidenzintervall! \textbf{(2 Punkte)}
+\item Skizieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
 \item Beschriften Sie die Abbildung und
-  den Graphen entsprechend! \textbf{(2 Punkte)}  
+  das 95\% Konfidenzintervall entsprechend! \textbf{(2 Punkte)}  
 \end{enumerate} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -3161,7 +3179,7 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie die sich ergebenden Boxplots! Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre Antwort! \textbf{(4 Punkte)} 
+\item Skizieren Sie die sich ergebenden Boxplots! Welche Annahmen an die Daten haben Sie getroffen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(4 Punkte)} 
 \end{enumerate}
  
 \clearpage
