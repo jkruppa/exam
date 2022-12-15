@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (7 Punkte)}
 
 <<>>=
 level_num <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
@@ -17,12 +17,11 @@ globalen Mittel entfernt.
 
 \begin{enumerate}
 \item Erkl{\"a}ren Sie die Annahme der Normalverteilung und die Annahme der
-  Varianzhomogenit{\"a}t an einer passenden Abbildung! \textbf{(2 Punkte)}
+  Varianzhomogenit{\"a}t f{\"u}r eine ANOVA an einer passenden Abbildung! \textbf{(2 Punkte)}
 \item Visualisieren Sie die Berechnung von $F_{calc}$ am obigen Beispiel!
   \textbf{(2 Punkte)}
 \item Erkl{\"a}ren Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der
-  Ber{\"u}cksichtigung der Annahmen an eine ANOVA! Geben Sie ein numerisches
-  Beispiel! \textbf{(4 Punkte)}
+  Ber{\"u}cksichtigung der Annahmen an eine ANOVA! \textbf{(3 Punkte)}
 \end{enumerate}
 
 

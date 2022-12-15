@@ -1,9 +1,12 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
-In einer ANOVA wird die F Statistik nach der Formel
-$F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ berechnet. In einem t-Test
-berechnen wir die T Statistik nach der Formel
-$T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$.
+In der untenstehenden Tabelle ist die Formel f{\"u}r den F-Test aus der ANOVA
+und die Formel f{\"u}r den t-Test dargestellt. In der ANOVA berechnen Sie die
+F-Statistik  $F_{calc}$ und in dem t-Test die T-Statistik  $T_{calc}$.
+
+\begin{tabular*}{cc}
+$F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
+\end{tabular*}
 
 \begin{enumerate}
 \item Erkl{\"a}ren Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$

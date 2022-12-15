@@ -13,10 +13,10 @@ inter_vec <- c("schwache", "mittelere", "starke", "keine") %>% sample(2)
 \item Visualisieren Sie in zwei getrennten Abbildungen eine
   \Sexpr{inter_vec[1]} und eine \Sexpr{inter_vec[2]} Interaktion zwischen
   den Faktoren $f_1$ und $f_2$! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie den Unterschied zwischen Ihren beiden Zeichnungen!
+\item Erkl{\"a}ren Sie den Unterschied zwischen den beiden St{\"a}rken der Interaktion!
   \textbf{(2 Punkte)}
-\item Wenn Sie eine signifikante Interaktion in Ihren Daten vorliegen
-  haben, wie ist dann Ihr weiteres Vorgehen bei dem Posthoc-Tests?
+\item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist
+  dann das weitere Vorgehen bei einem Posthoc-Test?
   \textbf{(2 Punkte)}
 \end{enumerate}
 

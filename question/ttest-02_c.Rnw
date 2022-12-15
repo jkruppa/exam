@@ -1,7 +1,8 @@
 \section{Aufgabe \hfill (13 Punkte)}
 
-Das Gewicht von K{\"u}ken wurde vor der Behandlung mit STARTex und 1 Woche nach
-der Behandlung gemessen. Es ergibt sich die folgende Datentabelle.
+Das Gewicht von K{\"u}ken wurde \textit{vor} der Behandlung mit STARTex und 1
+Woche \textit{nach} der Behandlung gemessen. Es ergibt sich die folgende
+Datentabelle.
 
 <<ttest-02, results='asis', echo = FALSE>>=
 n <- sample(c(7,8,9), 1)
