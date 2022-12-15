@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (6 Punkte)}
 
 Nach einem Feldexperiment mit zwei Pestiziden (\textit{RoundUp} und
 \textit{OutEx}) ergibt sich die folgende Datentabelle mit dem jeweiligen
@@ -24,7 +24,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 
 \begin{enumerate}
 \item Stellen Sie in einer 2x2 Tafel den Zusammenhang zwischen dem
-  Pesizid und dem Infektionsstatus dar! \textbf{(4 Punkte)}
+  Pesizid und dem Infektionsstatus dar! \textbf{(2 Punkte)}
 \item Zeichnen Sie den zugeh{\"o}rigen Mosaic-Plot. Berechnen Sie das
   Verh{\"a}ltnis pro Spalte! \textbf{(2 Punkte)}
 \item Wenn das Pesizid keine Auswirkung auf den Infektionsstatus h{\"a}tte, wie
