@@ -1,0 +1,46 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+
+<<ttest-R-04-a,  echo = FALSE>>=
+
+question_vec <- c("das statistische Hypothesenpaar",
+                  "die wissenschaftliche Fragestellung") %>% sample(1)
+
+n_vec <- sample(c(5,7,9), 1)
+
+data_tbl <- rbind(tibble(low = round(rnorm(n = n_vec,
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                  gather,
+                  tibble(high = round(rnorm(n = n_vec,
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(2, 3, 4), 1)))) %>%
+                  gather) %>%
+  set_names(c("P", "drymatter")) %>%
+  sample_n(size = nrow(.))
+
+
+preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE,
+                   paired = TRUE) 
+
+preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
+  sample(1)
+
+
+preprint
+
+ttest <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
+tk <- qt(0.975, df=ttest$parameter)
+@
+
+
+\begin{enumerate}
+  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(2
+Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizzieren Sie den sich ergebenden Datensatz mit $n = 4$! Beobachtungen! \textbf{(2 Punkte)} 
+\item Skizieren Sie die sich ergebenden Boxplots! Welche Annahmen an die Daten haben Sie getroffen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\end{enumerate}
+

@@ -456,5 +456,8 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \Sexpr{knit_child(text_questions_vec[58])} 
 \clearpage
 % ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[59])} 
+\clearpage
+% ----------------------------------------------------------------------- 
 \end{document}
 % -----------------------------------------------------------------------
