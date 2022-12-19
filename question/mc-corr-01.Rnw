@@ -2,27 +2,25 @@
 
 
 <<mc-corr-01a, results='markup', echo = FALSE>>=
-x <- round(rnorm(5, 10, 4))
-y <- round(rnorm(5, 10, 4))
+corr_type <- c("Pearson", "Kendall", "Spearman") %>% sample(1)
 @
 
-Berechnen Sie die Korrelation \textit{r} zwischen $x$ mit \Sexpr{pander::p(x, wrap =
-  "", copula = " und ")} sowie $y$ mit \Sexpr{pander::p(y, wrap =
-  "", copula = " und ")}.  Nutzen Sie folgende Formel:
-
-\begin{equation*}
-  r_{x,y} = \cfrac{s_{x,y}}{s_x \cdot s_y}
-\end{equation*}
+Welche Aussage {\"u}ber den Korrelationskoeffizienten nach \Sexpr{corr_type}
+ist richtig?
 
 <<mc-corr-01b, results='asis', echo = FALSE>>=
 
-corr_x <- round(cor(x, y), 2)
-
-questions_vec <- c(str_c('Es ergibt sich eine Korrelation von ', corr_x),
-                   str_c('Es ergibt sich eine Korrelation von ', round(corr_x^2, 2)),
-                   str_c('Es ergibt sich eine Korrelation von ', -corr_x),
-                   str_c('Es ergibt sich eine Korrelation von ', round(corr_x^3, 2)),
-                   str_c('Es ergibt sich eine Korrelation von ', corr_x + 1)) %>%
+questions_vec <- c(str_c('Der Korrelationskoeffizienten nach ', corr_type,
+                         ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
+                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
+                         ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
+                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
+                         ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
+                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
+                         ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
+                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
+                         ' wird genutzt, wenn der Korrelationskoeffizienten zwischen -1 und 1 liegt. Dann sind die Residuen normalverteilt.')
+                   ) %>%
   sample
 
 
