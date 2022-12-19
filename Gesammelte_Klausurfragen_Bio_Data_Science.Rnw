@@ -271,16 +271,13 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \Sexpr{knit_child(mc_questions_vec[50])}   
 % -----------------------------------------------------------------------
 \clearpage
-\begin{graybox}{Rechen- und Textaufgaben}
+% -----------------------------------------------------------------------
+\begin{graybox}{Deskriptive Statistik \& Explorative Datenanalyse}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item Die Zahlen und Abbildungen werden in \textit{jeder} Version dieses
-    Dokuments neu erstellt.
-  \item Es kann daher sein, dass \textit{seltsame} Ergebnisse oder
-    Abbildungen entstehen. Im Falle der Klausur werde ich das nochmal
-    korrigieren --- hier lasse ich es so stehen.  
+  \item foo  \href{http://www.overleaf.com}{Something Linky}
   \end{itemize}
 \end{graybox}
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[1])} 
 \clearpage
