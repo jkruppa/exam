@@ -275,9 +275,12 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \begin{graybox}{Deskriptive Statistik \& Explorative Datenanalyse}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item foo  \href{http://www.overleaf.com}{Something Linky}
+  \item \href{https://jkruppa.github.io/eda-descriptive.html}{Kapitel 15 - Deskriptive Statistik}
+  \item \href{https://jkruppa.github.io/eda-ggplot.html}{Kapitel 16 - Visualisierung von Daten}
+  \item \href{https://jkruppa.github.io/eda-distribution.html}{Kapitel 18 - Verteilung von Daten}
   \end{itemize}
 \end{graybox}
+\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[1])} 
 \clearpage
@@ -315,6 +318,16 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Statistisches Testen}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/preface.html#lernziel-3-falsifikationsprinzip}{Kapitel 3 - Falsifikationsprinzip}
+  \item \href{https://jkruppa.github.io/stat-tests-basic.html}{Kapitel 19 - Die Testentscheidung}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel 20 - Die Testtheorie}
+  \end{itemize}
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------  
 \Sexpr{knit_child(text_questions_vec[13])} 
 \clearpage
 % -----------------------------------------------------------------------
