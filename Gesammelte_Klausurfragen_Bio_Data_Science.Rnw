@@ -463,15 +463,19 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[47])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[48])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Multiple lineare Regression}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
   \item \href{https://jkruppa.github.io/stat-modeling-basic.html}{Kapitel 35 - Multiple lineare Regression}
+  \item \href{https://jkruppa.github.io/stat-modeling-gaussian.html}{Kapitel 40 - Gaussian Regression}
+  \item \href{https://jkruppa.github.io/stat-modeling-poisson.html}{Kapitel 41 - Poisson Regression}
+  \item \href{https://jkruppa.github.io/stat-modeling-logistic.html}{Kapitel 43 - Logistische Regression}
+  \item \href{https://jkruppa.github.io/stat-modeling-mixed.html}{Kapitel 44 - Lineare gemischte Modelle}
   \end{itemize}
 \end{graybox}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[48])} 
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[49])} 
 \clearpage
