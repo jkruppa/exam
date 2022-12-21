@@ -280,7 +280,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \item \href{https://jkruppa.github.io/eda-distribution.html}{Kapitel 18 - Verteilung von Daten}
   \end{itemize}
 \end{graybox}
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[1])} 
 \clearpage
@@ -326,7 +325,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel 20 - Die Testtheorie}
   \end{itemize}
 \end{graybox}
-\clearpage
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(text_questions_vec[13])} 
 \clearpage
@@ -352,6 +350,13 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[20])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Der t-Test}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-ttest.html}{Kapitel 22 - Der t-Test}
+  \end{itemize}
+\end{graybox}
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[21])} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -369,6 +374,13 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[26])} 
 \clearpage
+% -----------------------------------------------------------------------
+\begin{graybox}{Die ANOVA}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-anova.html}{Kapitel 23 - Die ANOVA}
+  \end{itemize}
+\end{graybox}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[27])} 
 \clearpage
@@ -394,6 +406,14 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[34])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-chi-test.html}{Kapitel 28 - Der $\mathcal{X}^2$-Test}
+  \item \href{https://jkruppa.github.io/stat-tests-diagnostic.html}{Kapitel 29 - Der diagnostische Test}
+  \end{itemize}
+\end{graybox}
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[35])} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -407,6 +427,16 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[39])} 
+\clearpage
+% -----------------------------------------------------------------------
+\begin{graybox}{Simple lineare Regression}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-basic.html}{Kapitel 32 - Simple lineare Regression}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel 33 - Maßzahlen der Modelgüte}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel 34 - Korrelation}
+  \end{itemize}
+\end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[40])} 
@@ -433,6 +463,14 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[47])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Multiple lineare Regression}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-modeling-basic.html}{Kapitel 35 - Multiple lineare Regression}
+  \end{itemize}
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[48])} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -454,7 +492,24 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[54])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Fallzahlplanung}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/experimental-design-samplesize.html}{Kapitel 48  Fallzahlplanung}
+  \end{itemize}
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[55])} 
+\clearpage
+% -----------------------------------------------------------------------
+\begin{graybox}{Nicht parametrische Tests}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-utest.html}{Kapitel 25 - Der Wilcoxon-Mann-Whitney-Test}
+  \item \href{https://jkruppa.github.io/stat-tests-kruskal.html}{Kapitel 26 - Der Kruskal-Wallis-Test}
+  \end{itemize}
+\end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[56])} 
@@ -464,6 +519,14 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \clearpage
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(text_questions_vec[58])} 
+\clearpage
+% -----------------------------------------------------------------------
+\begin{graybox}{Multiple Gruppenvergleiche}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung für multiple Vergleiche}
+  \end{itemize}
+\end{graybox}
 \clearpage
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[59])} 

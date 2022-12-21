@@ -1,20 +1,25 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 Sie haben folgende Zahlenreihe $y$ vorliegen
-$y = \{\Sexpr{round(rnorm(n = sample(c(7,11), 1), mean = sample(c(15, 17,
-  19), 1), sd = sample(c(2, 3, 4), 1)))}\}$. Berechnen Sie folgende
-deskriptive Ma{\ss}zahlen. Geben Sie Formeln und Rechenwege mit an!
-
-<<>>=
-wanted_vec <- c("Den Mittelwert", "Die Varianz", "Den Median", "Die Range oder Spannweite", "Das 1st Quartile", "Das 3rd Quartile", "Den Interquartileabstand", "Die Standardabweichung") %>%
-  sample(6)
-@ 
+$y = \{\Sexpr{round(rnorm(n = sample(c(5,6,7), 1), mean = sample(c(15, 17,
+  19), 1), sd = sample(c(2, 3, 4), 1)))}\}$.
 
 \begin{enumerate}
-\item \Sexpr{wanted_vec[1]} \textbf{(2 Punkte)}
-\item \Sexpr{wanted_vec[2]} \textbf{(2 Punkte)}
-\item \Sexpr{wanted_vec[3]} \textbf{(2 Punkte)}
-\item \Sexpr{wanted_vec[4]} \textbf{(2 Punkte)}
-\item \Sexpr{wanted_vec[5]} \textbf{(2 Punkte)}
+\item Visualisieren Sie den Mittelwert von $y$ in der untenstehenden
+  Abbildung! \textbf{(4 Punkte)}
+\item Beschriften Sie die $Y$ und $X$-Achse entsprechend! \textbf{(2 Punkte)}
+\item F{\"u}r die Berechnung der Varianz wird der Abstand der einzelnen Werte $x_i$
+  zum Mittelwert $\bar{x}$ quadriert. Warum muss der Abstand, $x_i -
+  \bar{x}$, in der Varianzformel quadriert werden?
+  Erkl{\"a}ren Sie den Zusammenhang unter Ber{\"u}cksichtigung der Abbildung!
+  \textbf{(2 Punkte)}  
 \end{enumerate}
 
+<<desc-01, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+df <- data.frame()
+ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("") + ylab("") +
+  theme_bw() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+@
