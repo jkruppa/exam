@@ -495,16 +495,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[54])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Fallzahlplanung}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/experimental-design-samplesize.html}{Kapitel 48  Fallzahlplanung}
-  \end{itemize}
-\end{graybox}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[55])} 
-\clearpage
-% -----------------------------------------------------------------------
 \begin{graybox}{Nicht parametrische Tests}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -513,13 +503,13 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \end{itemize}
 \end{graybox}
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[56])} 
+\Sexpr{knit_child(text_questions_vec[55])} 
 \clearpage
 % ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[57])} 
+\Sexpr{knit_child(text_questions_vec[56])} 
 \clearpage
 % -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[58])} 
+\Sexpr{knit_child(text_questions_vec[57])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Multiple Gruppenvergleiche}
@@ -529,7 +519,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \end{itemize}
 \end{graybox}
 % ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[59])} 
+\Sexpr{knit_child(text_questions_vec[58])} 
 \clearpage
 % ----------------------------------------------------------------------- 
 \end{document}
