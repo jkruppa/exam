@@ -1,0 +1,50 @@
+\section{Aufgabe \hfill (9 Punkte)}
+
+In einem Experiment mit vier Dosisstufen (A, B, C und D) erhalten Sie
+folgende Matrix als \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten. 
+
+<<multcomp-02-a, echo = FALSE>>=
+
+data_tbl <- tibble(A = rnorm(9, sample(c(5, 12), 1), 2),
+                   B = rnorm(9, sample(c(7, 15), 1), 2),
+                   C = rnorm(9, sample(c(10, 6), 1), 2),
+                   D = rnorm(9, sample(c(4, 8), 1), 2)) %>%
+  gather(key = "trt", value = "rsp")
+
+@
+
+<<multcomp-02-b,  echo = FALSE>>=
+pacman::p_load(rcompanion, magrittr)
+pairwise.t.test(data_tbl$rsp, data_tbl$trt,
+                p.adjust.method = "none") %>% 
+  extract2("p.value") %>% 
+  fullPTable() %>%
+  round(7)
+@
+
+Im Weiteren erhalten Sie folgende Informationen {\"u}ber die Fallzahl $n$, den
+Mittelwert $mean$ und die Standardabweichung $sd$ in den jeweiligen Dosisstufen.
+
+<<multcomp-03-b,  echo = FALSE>>=
+
+group_by(data_tbl, trt) %>%
+  dplyr::summarise(
+           n = n(),
+           mean = round(mean(rsp, na.rm = TRUE), 2),
+           sd = round(sd(rsp, na.rm = TRUE), 2),
+           ) %>%
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+
+@
+
+
+\begin{enumerate}
+\item Zeichnen Sie in eine Abbildung, die sich ergebenden Barplots! \textbf{(2 Punkte)}
+\item Adjustieren Sie die rohen $p$-Werte nach Bonferroni. Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
+\item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
+  Abbildung! \textbf{(2 Punkte)}
+\item Interpretieren Sie das \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)} 
+\end{enumerate}
+
+
