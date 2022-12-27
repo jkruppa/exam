@@ -25,7 +25,7 @@ pairwise.t.test(data_tbl$rsp, data_tbl$trt,
 Im Weiteren erhalten Sie folgende Informationen {\"u}ber die Fallzahl $n$, den
 Mittelwert $mean$ und die Standardabweichung $sd$ in den jeweiligen Dosisstufen.
 
-<<multcomp-03-b,  echo = FALSE>>=
+<<multcomp-02-c,  echo = FALSE>>=
 
 group_by(data_tbl, trt) %>%
   dplyr::summarise(
