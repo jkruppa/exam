@@ -1,0 +1,30 @@
+\section{Aufgabe \hfill (6 Punkte)}
+
+Sie haben ein Experiment mit drei Behandlungen (A, B und C) und vier
+Bl{\"o}cken (I, II, III und IV) durchgef{\"u}hrt. Insgesamt haben Sie die Wuchsh{\"o}he
+von zw{\"o}lf Sonnenblumen bestimmt. Im Folgenden sehen Sie die Wuchsh{\"o}hen in
+[cm] aus dem Experiment.
+
+
+<<anova-020-a,  echo = FALSE>>=
+
+round(c(rnorm(3, 120, 10), rnorm(3, 100, 10), rnorm(3, 140, 10), rnorm(3, 150, 10)))
+
+@
+
+Erstellen Sie vier Zeichnungen des experimentellen Designs und beachten
+Sie folgende Angaben zu der Quelle der erkl{\"a}rten Varianz. 
+
+\begin{enumerate}
+\item Ordnen Sie die Pflanzen so in den vier Bl{\"o}cken und drei Behandlungen an,
+  \begin{enumerate}
+  \item[(1)] dass die Bl{\"o}cke \textit{kaum} Varianz erkl{\"a}ren. \textbf{(1 Punkt)}
+  \item[(2)] dass die Bl{\"o}cke \textit{viel} Varianz erkl{\"a}ren. \textbf{(1 Punkt)}  
+  \item[(3)] dass die Behandlungen \textit{kaum} Varianz erkl{\"a}ren. \textbf{(1 Punkt)}
+  \item[(4)] dass die Behandlungen \textit{viel} Varianz erkl{\"a}ren. \textbf{(1 Punkt)}
+  \end{enumerate}
+\item Wenn Sie ein geplantes Experiment durchf{\"u}hren, wie viel Varianz soll dann von
+  den Bl{\"o}cken und den Behandlungen jeweils erkl{\"a}rt werden? Begr{\"u}nden Sie
+  Ihre Antwort! \textbf{(2 Punkte)}
+\end{enumerate}
+
