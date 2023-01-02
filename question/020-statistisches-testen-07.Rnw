@@ -1,11 +1,5 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
-<<>>=
-day1 <- sample(c(60, 67, 68, 73), 1)
-day2 <- sample(c(84, 91, 98, 101), 1)
-day3 <- sample(c(116, 123, 121, 111), 1)
-@
-
 \begin{quote}
   >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach \Sexpr{day1} Tagen die
   ersten Symptome ein; die ersten Toten sind nach \Sexpr{day2} Tagen zu beklagen;
@@ -20,5 +14,6 @@ day3 <- sample(c(116, 123, 121, 111), 1)
   \textbf{(4 Punkte)}
 \item Schiffarzt James Lind (1716-1794) ist dem Ph{\"a}nomen Skorbut
   systematisch nachgegangen. Wie w{\"u}rden Sie solch ein Experiment planen und
-  welche (ethischen) Probleme sehen Sie? \textbf{(4 Punkte)}
+  welche (ethischen) Probleme sehen Sie? \textbf{(2 Punkte)}
+\item Welche Variablen w{\"u}rden Sie erfassen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
