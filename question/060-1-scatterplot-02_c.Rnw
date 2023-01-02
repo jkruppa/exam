@@ -8,8 +8,8 @@ einzunicken. Es ergab sich folgende Abbildung.
 intercept_vec <- c(1, 1.5, 2, 2.5) %>% sample(1)
 slope_vec <- c(0.5, 1, 1.5, 2) %>% sample(1)
 n <- sample(c(5,7,9), 1)
-data_tbl <- tibble(x = sample(c(1, 2.5, 3.5, 2, 3)),
-                   y = intercept_vec + slope_vec * x + rnorm(length(x), 0, 1)) %>%
+data_tbl <- tibble(x = c(1, 1.25, 1.5, 2, 2.25, 2.5, 3, 3.25, 3.5, 4),
+                   y = intercept_vec + slope_vec * x + rnorm(length(x), 0, 0.5)) %>%
   set_names(c("rounds", "doze")) 
 ##
 ggplot(data_tbl, aes(rounds, doze)) +
