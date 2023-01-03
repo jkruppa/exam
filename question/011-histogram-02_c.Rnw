@@ -7,7 +7,7 @@ n <- c(2,3,4) %>%
 
 sd_vec <- str_c(rep("s_", times = n), 1:n, collapse = sample(c(" = ", " \\neq "), 1))
 
-mu_vec <- str_c(rep("\\mu_", times = n), 1:n, collapse = " \\neq ")
+mu_vec <- str_c(rep("\\bar{y}_", times = n), 1:n, collapse = " \\neq ")
 
 
 @
