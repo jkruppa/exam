@@ -20,6 +20,7 @@ data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(3, 4), 1),
                                              sd = sample(c(1, 2, 1), 1)))) %>%
                     gather) %>%
   set_names(c("pesticide", "grade")) %>%
+  mutate(grade = ifelse(grade <= 0, 0, grade)) %>% 
 #  mutate(gain = ifelse(rsp >= 20, "high", "low"),
 #         water = round(rnorm(nrow(.), 10, 1), 1)) %>%
   sample_n(size = nrow(.))
