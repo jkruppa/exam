@@ -1,7 +1,8 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 <<>>=
 img_file <- file.path(img_path, "text-error-cross-table")
+time_vec <- sample(c("Monat", "Jahr", "halbes Jahr"), 1)
 
 @ 
 
@@ -12,7 +13,7 @@ Geben ist folgende 2x2 Kreuztabelle.
 \end{center}
 
 \begin{enumerate}
-\item Tragen Sie folgende Fachbegriffe korrekt in die 2x2 Kreuztabelle ein! \textbf{(6 Punkte)}
+\item Tragen Sie folgende Fachbegriffe korrekt in die 2x2 Kreuztabelle ein! \textbf{(4 Punkte)}
   \begin{itemize}
   \item (Unbekannte) Wahrheit	
   \item H$_0$ wahr
@@ -26,6 +27,11 @@ Geben ist folgende 2x2 Kreuztabelle.
   \item 5\%
   \item 20\%
   \end{itemize}
+\item In der Analogie des Feuermelders, wie lauetet der $\alpha$-Fehler? \textbf{(1 Punkt)}
+\item In der Analogie des Feuermelders, wie lauetet der $\beta$-Fehler? \textbf{(1 Punkt)}
+\item Wenn der Feuermelder einmal pro Tag messen w{\"u}rde, wie oft w{\"u}rde der
+  Feuermelder mit einem $\alpha$ von 5\% in einem \Sexpr{time_vec} Alarm schlagen?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 
