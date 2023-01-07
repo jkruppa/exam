@@ -513,6 +513,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
   \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung für multiple Vergleiche}
+  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{31.7 Compact letter display}
   \end{itemize}
 \end{graybox}
 % ----------------------------------------------------------------------- 
@@ -524,6 +525,16 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[59])} 
 \clearpage
-% -----------------------------------------------------------------------       
+% -----------------------------------------------------------------------
+\begin{graybox}{R Programmierung}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/programing-preface.html}{Programmieren in R}
+  \end{itemize}
+\end{graybox}
+% -----------------------------------------------------------------------  
+\Sexpr{knit_child(text_questions_vec[60])} 
+\clearpage
+% -----------------------------------------------------------------------
 \end{document}
 % -----------------------------------------------------------------------
