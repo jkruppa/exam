@@ -317,6 +317,9 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[13])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Statistisches Testen}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -326,9 +329,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \end{itemize}
 \end{graybox}
 % -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[13])} 
-\clearpage
-% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[14])} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -344,15 +344,15 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[18])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[19])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Der t-Test}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
   \item \href{https://jkruppa.github.io/stat-tests-ttest.html}{Kapitel 22 - Der t-Test}
   \end{itemize}
 \end{graybox}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[19])} 
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[20])} 
 \clearpage
@@ -369,15 +369,15 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[24])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[25])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Die ANOVA}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
   \item \href{https://jkruppa.github.io/stat-tests-anova.html}{Kapitel 23 - Die ANOVA}
   \end{itemize}
 \end{graybox}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[25])} 
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[26])} 
 \clearpage
@@ -403,6 +403,9 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[33])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[34])} 
+\clearpage
+% -----------------------------------------------------------------------
   \begin{graybox}{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -410,9 +413,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \item \href{https://jkruppa.github.io/stat-tests-diagnostic.html}{Kapitel 29 - Der diagnostische Test}
   \end{itemize}
 \end{graybox}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[34])} 
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[35])} 
 \clearpage
@@ -426,6 +426,9 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[38])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[39])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Simple lineare Regression}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -434,9 +437,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel 34 - Korrelation}
   \end{itemize}
 \end{graybox}
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[39])} 
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[40])} 
@@ -463,6 +463,9 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[47])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[48])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Multiple lineare Regression}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -473,9 +476,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \item \href{https://jkruppa.github.io/stat-modeling-mixed.html}{Kapitel 44 - Lineare gemischte Modelle}
   \end{itemize}
 \end{graybox}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[48])} 
-\clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[49])} 
 \clearpage
@@ -492,6 +492,9 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[53])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[54])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Nicht parametrische Tests}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -500,13 +503,13 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \end{itemize}
 \end{graybox}
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[54])} 
-\clearpage
-% ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[55])} 
 \clearpage
-% -----------------------------------------------------------------------  
+% ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[56])} 
+\clearpage
+% -----------------------------------------------------------------------  
+\Sexpr{knit_child(text_questions_vec[57])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Multiple Gruppenvergleiche}
@@ -517,13 +520,13 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \end{itemize}
 \end{graybox}
 % ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[57])} 
-\clearpage
-% ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[58])} 
 \clearpage
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[59])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[60])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{R Programmierung}
@@ -533,7 +536,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \end{itemize}
 \end{graybox}
 % -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[60])} 
+\Sexpr{knit_child(text_questions_vec[61])} 
 \clearpage
 % -----------------------------------------------------------------------
 \end{document}

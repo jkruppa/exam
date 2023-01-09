@@ -1,0 +1,49 @@
+\section{Aufgabe \hfill (9 Punkte)}
+
+In einem Experiment mit vier Dosisstufen (A, B, C und D) erhalten Sie
+folgende Matrix als \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten. 
+
+<<boxplot-04a, results='asis', echo = FALSE>>=
+n_vec <-  sample(c(7, 11), 1)
+data_tbl <- tibble(low = round(rnorm(n = n_vec,
+                                     mean = sample(c(15, 20, 25), 1),
+                                     sd = sample(c(2, 3, 4), 1)), 1),
+                   high = round(c(rnorm(n = n_vec-1, mean = 15, sd = 3), sample(c(15, 35), 1)), 1)) %>%
+  gather %>%
+  mutate(key = as_factor(key))  %>% 
+  set_names(c("fertilizer", "drymatter")) %>% 
+  sample_n(size = nrow(.))
+@
+
+Mittelwert und Median f{\"u}r Fertilizer high einzeichnen
+
+<<boxplot-4b, results='asis', echo = FALSE, fig.height = 3, fig.width = 4, fig.align = "center", message = FALSE>>=
+
+
+ggplot(data_tbl, aes(fertilizer, drymatter)) +
+  geom_boxplot() +
+  theme_bw() +
+  theme(legend.position = "none")
+
+@
+
+\begin{enumerate}
+\item Erkl{\"a}ren Sie den Pipe-Operator am Beispiel der Berechnung des Mittelwertes
+mit der Funktion \textbf{(2 Punkte)} 
+\end{enumerate}
+
+p-Werte f{\"u}r Shapiro und Varianz test f{\"u}r D{\"u}nger low
+
+\begin{center}
+  \large
+  \begin{tabular}[c]{l|l|l}
+  Fallzahl  & p Saphiro & p Varianz \strut\\ 
+    \hline
+    \textbf{$n = 5$} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hline
+    \textbf{$n = 20$} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hline
+    \textbf{$n = 50$} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hline
+  \end{tabular}
+\end{center}
