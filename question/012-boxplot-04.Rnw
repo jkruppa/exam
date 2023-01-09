@@ -1,13 +1,13 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-In einem Experiment mit vier Dosisstufen (A, B, C und D) erhalten Sie
-folgende Matrix als \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten. 
+In einem Experiment mit zwei D{\"u}ngestufen f{\"u}r den Ertrag von Kichererbsen
+ergibt sich folgende Abbildung. 
 
 <<boxplot-04a, results='asis', echo = FALSE>>=
 n_vec <-  sample(c(7, 11), 1)
 data_tbl <- tibble(low = round(rnorm(n = n_vec,
                                      mean = sample(c(15, 20, 25), 1),
-                                     sd = sample(c(2, 3, 4), 1)), 1),
+                                     sd = sample(c(1, 3, 5), 1)), 1),
                    high = round(c(rnorm(n = n_vec-1, mean = 15, sd = 3), sample(c(15, 35), 1)), 1)) %>%
   gather %>%
   mutate(key = as_factor(key))  %>% 
@@ -15,9 +15,7 @@ data_tbl <- tibble(low = round(rnorm(n = n_vec,
   sample_n(size = nrow(.))
 @
 
-Mittelwert und Median f{\"u}r Fertilizer high einzeichnen
-
-<<boxplot-4b, results='asis', echo = FALSE, fig.height = 3, fig.width = 4, fig.align = "center", message = FALSE>>=
+<<boxplot-4b, results='asis', echo = FALSE, fig.height = 2.5, fig.width = 4, fig.align = "center", message = FALSE>>=
 
 
 ggplot(data_tbl, aes(fertilizer, drymatter)) +
@@ -28,22 +26,50 @@ ggplot(data_tbl, aes(fertilizer, drymatter)) +
 @
 
 \begin{enumerate}
-\item Erkl{\"a}ren Sie den Pipe-Operator am Beispiel der Berechnung des Mittelwertes
-mit der Funktion \textbf{(2 Punkte)} 
+\item Tragen Sie in die untenstehende Tabelle die g{\"a}ngigen Ma{\ss}zahlen des
+  Boxplots und die abgesch{\"a}tzen Werte aus den obigen Boxplots ein! \textbf{(4 Punkte)}
 \end{enumerate}
-
-p-Werte f{\"u}r Shapiro und Varianz test f{\"u}r D{\"u}nger low
 
 \begin{center}
   \large
-  \begin{tabular}[c]{l|l|l}
-  Fallzahl  & p Saphiro & p Varianz \strut\\ 
+  \begin{tabular}[c]{c|c|c}
+    Statistische Ma{\ss}zahl  & \multicolumn{2}{c}{Abgesch{\"a}tzter Wert}  \strut\\
+    & low & high \\
     \hline
-    \textbf{$n = 5$} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hspace{2cm} & \hspace{2cm} & \hspace{2cm} \strut\\
     \hline
-    \textbf{$n = 20$} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hspace{2cm} & \hspace{2cm} & \hspace{2cm} \strut\\
     \hline
-    \textbf{$n = 50$} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hspace{2cm} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hline
+    \hspace{2cm} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hline
+    \hspace{2cm} & \hspace{2cm} & \hspace{2cm} \strut\\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+\item Erg{\"a}nzen Sie den Mittelwert f{\"u}r beide Level des D{\"u}ngers in die
+  Abbildung der Boxplots! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie in der untenstehenden Tabelle die $p$-Werte f{\"u}r den
+  Shapiro-Wilk-Test auf Normalverteilung und den Levene-Test auf
+  Varianzhomogenit{\"a}t. Beachten Sie die unterschiedliche, angenommene
+  Fallzahl $n_g$ der beiden Level des D{\"u}ngers! \textbf{(3 Punkte)}
+\end{enumerate}
+
+\begin{center}
+  \large
+  \begin{tabular}[c]{l|c|c}
+  Fallzahl  & Shapiro-Wilk-Test & Levene-Test \strut\\ 
+    \hline
+    \textbf{$n_g = 5$} & \hspace{4cm} & \hspace{4cm} \strut\\
+    \hline
+    \textbf{$n_g = 20$} & \hspace{4cm} & \hspace{4cm} \strut\\
+    \hline
+    \textbf{$n_g > 50$} & \hspace{4cm} & \hspace{4cm} \strut\\
     \hline
   \end{tabular}
 \end{center}
