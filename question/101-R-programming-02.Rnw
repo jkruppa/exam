@@ -1,0 +1,18 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+Bearbeiten Sie folgenden Aufgaben mit Bezug zu \Rlogo! 
+
+\begin{enumerate}
+  \item Erkl{\"a}ren Sie den Pfeil-Operator am Beispiel eines Zahlenvektors mit der
+Funktion \texttt{c()} und den Zahlen \Sexpr{pander::p(x, wrap = "", copula
+  = " und ")}! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie den Nutzen des R Paketes \texttt{conflicted} am Beispiel der
+  Funktion \texttt{select()}! \textbf{(2 Punkte)} 
+\item Erkl{\"a}ren Sie den Unterschied zwischen einer \texttt{library} und
+  einem \texttt{package} in R an einem Beispiel! \textbf{(2 Punkte)} 
+\item Erkl{\"a}ren Sie den Unterschied zwischen \texttt{"mean"}, \texttt{mean}
+  und \texttt{mean()}! \textbf{(2 Punkte)} 
+\end{enumerate}
+
+
+

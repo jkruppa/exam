@@ -1,5 +1,10 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
 <<>>=
 
 count_vec <- rpois(sample(c(12, 14, 15), 1), 4)

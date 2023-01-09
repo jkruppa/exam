@@ -1,5 +1,10 @@
 \section{Aufgabe \hfill (4 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/Op-gjzASH9I}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
 <<>>=
 
 files <- dir(file.path(question_path, "img"),

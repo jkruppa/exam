@@ -1,0 +1,30 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+Sie wollen eine explorative Datenananalyse auf dem folgenden, in \Rlogo schon geladenen, Datensatz \texttt{leaf\_tbl} durchf{\"u}hren.
+
+<<echo = FALSE>>=
+method_vec <- c("Boxplots", "Dotplots", "Barplots")  %>% sample(1)
+
+leaf_tbl <- tibble(treatment = rep(c(1, 2), each = 5),
+                   block = rep(1:5, times = 2),
+                   leaf = round(rnorm(10, 10, 2))) 
+@ 
+
+<<results='markup', echo = TRUE>>=
+leaf_tbl
+@
+
+\begin{enumerate}
+\item Welche \Rlogo Pakete ben{\"o}tigen Sie f{\"u}r die explorative Datenanalyse?
+  \textbf{(2 Punkte)} 
+\item Skizzieren Sie den \Rlogo Code f{\"u}r die Erstellung eines
+  \Sexpr{method_vec} unter der Verwendung des Pipe-Operators! \textbf{(4 Punkte)}
+\item Nehmen Sie an, dass Sie die Funktion \texttt{as\_factor()}
+  verwenden. Wozu ben{\"o}tigen Sie die Funktion? Begr{\"u}nden Sie Ihre Antwort!
+  \textbf{(2 Punkte)}
+\item Erl{\"a}utern Sie Ihr weiteres Vorgehen nachdem Sie eine explorative
+  Datenanalyse durchgef{\"u}hrt haben! \textbf{(2 Punkte)}
+\end{enumerate}
+
+
+

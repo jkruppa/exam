@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/3DfWs9NNrCk}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 <<>>=
 img_file <- file.path(img_path, "text-error-cross-table")
 time_vec <- sample(c("Monat", "Jahr", "halbes Jahr"), 1)
@@ -9,7 +15,7 @@ time_vec <- sample(c("Monat", "Jahr", "halbes Jahr"), 1)
 Geben ist folgende 2x2 Kreuztabelle. 
 
 \begin{center}
-  \includegraphics[width = 14cm]{\Sexpr{img_file}}
+  \includegraphics[width = 13cm]{\Sexpr{img_file}}
 \end{center}
 
 \begin{enumerate}
