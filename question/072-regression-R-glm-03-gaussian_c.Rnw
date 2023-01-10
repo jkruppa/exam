@@ -1,4 +1,9 @@
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/NSMrpAYzOcs}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
 
 <<>>=
 
@@ -53,10 +58,10 @@ lm(reformulate(response = "drymatter",
 
 
 \begin{enumerate}
+\item Sind die Residuals approximativ Normalverteilt? Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}  
 \item Welche der Einflussfaktoren sind signifikant? Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(3 Punkte)}
 \item Interpretieren Sie die Spalte \textit{estimate} im Bezug auf den
-  Ertrag in Trockenmasse der Maispflanzen! \textbf{(2 Punkte)}
-\item Sind die Residuals approximativ Normalverteilt? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+  Ertrag in Trockenmasse der Maispflanzen! \textbf{(3 Punkte)}
 \end{enumerate}
 

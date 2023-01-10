@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (7 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/M9Uhm67ndxM}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 <<>>=
 level_num <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
 which_one <- c("ersten", "zweiten", "dritten") %>% sample(2)

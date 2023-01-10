@@ -1,4 +1,9 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/C_a8aOMI7GE}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
 
 <<>>=
 
@@ -12,9 +17,10 @@ effect_vec <- sample(c("no effect of X", "effect of X"), 1)
   Beobachtungen! \textbf{(4 Punkte)}
 \item Beachten Sie bei der Erstellung der Skizze, ob ein Effekt von X
   vorliegt oder nicht! \textbf{(2 Punkte)}
+\item Beschriften Sie die Abbildung mit "`Trainingsdaten"' und "`Testdaten"'!  \textbf{(2 Punkte)}
 \end{enumerate}
 
-<<modeling-01, results='asis', echo = FALSE, fig.height = 8, fig.width = 5, fig.align = "center", message = FALSE>>=
+<<modeling-01, results='asis', echo = FALSE, fig.height = 7, fig.width = 5, fig.align = "center", message = FALSE>>=
 
 df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
