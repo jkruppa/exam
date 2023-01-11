@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (7 Punkte)}
 
 <<>>=
 
@@ -11,7 +11,7 @@ text_qq_vec <- str_c("QQ plot ", norm_vec, " the normality assumption.")
 \begin{enumerate}
 \item Skizieren Sie in die unten stehende, freie Abbildung die
   Abbildung, die sich nach der {\"U}berschrift ergibt! \textbf{(4 Punkte)}
-\item Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)}
+\item Beschriften Sie die Achsen entsprechend! \textbf{(3 Punkte)}
 \end{enumerate}
 
 <<regression-04, results='asis', echo = FALSE, fig.height = 8, fig.width = 5.5, fig.align = "center", message = FALSE>>=

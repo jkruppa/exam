@@ -1,0 +1,38 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/rWTyHXXlYjY}{\includegraphics[width =
+  2cm]{img/youtube}}
+\hspace{2Ex}
+\href{https://youtu.be/_EGebjrOCUQ}{\includegraphics[width =
+  2cm]{img/youtube_R}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
+Sie wollen einen multiplen, paarweisen Gruppenvergleich auf dem folgenden, in \Rlogo schon geladenen, Datensatz \texttt{leaf\_tbl} durchf{\"u}hren.
+
+<<echo = FALSE>>=
+leaf_tbl <- tibble(treatment = as_factor(rep(c(1, 2, 3, 4, 5), each = 5)),
+                   block = as_factor(rep(1:5, times = 5)),
+                   leaf = round(rnorm(25, 10, 2))) 
+@ 
+
+<<results='markup', echo = TRUE>>=
+leaf_tbl
+@
+
+\begin{enumerate}
+\item Welche \Rlogo Pakete ben{\"o}tigen Sie f{\"u}r den multipen Vergleich?
+  \textbf{(2 Punkte)} 
+\item Skizzieren Sie den \Rlogo Code f{\"u}r die Erstellung einer
+  Berechnung eines multiplen Vergleiches unter der Verwendung des
+  Pipe-Operators! Nutzen Sie hierf{\"u}r folgende Funktionen in der passenden
+  Reihenfolge: \texttt{emmeans()},  \texttt{cld()},
+  \texttt{lm()},  \texttt{anova()},  \texttt{ggplot()}!  \textbf{(4 Punkte)}
+\item Erkl{\"a}ren Sie den Unterschied zwischen der Funktion
+  \texttt{contrast()} und \texttt{cld()}!
+  \textbf{(2 Punkte)}
+\end{enumerate}
+
+
+

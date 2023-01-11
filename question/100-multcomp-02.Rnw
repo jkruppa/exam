@@ -1,14 +1,14 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-In einem Experiment mit vier Dosisstufen (A, B, C und D) erhalten Sie
+In einem Experiment mit vier Dosisstufen (ctrl, low, mid und high) erhalten Sie
 folgende Matrix als \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten. 
 
 <<multcomp-02-a, echo = FALSE>>=
 
-data_tbl <- tibble(A = rnorm(9, sample(c(5, 12), 1), 2),
-                   B = rnorm(9, sample(c(7, 15), 1), 2),
-                   C = rnorm(9, sample(c(10, 6), 1), 2),
-                   D = rnorm(9, sample(c(4, 8), 1), 2)) %>%
+data_tbl <- tibble(ctrl = rnorm(9, sample(c(5, 12), 1), 2),
+                   low = rnorm(9, sample(c(7, 15), 1), 2),
+                   mid = rnorm(9, sample(c(10, 6), 1), 2),
+                   high = rnorm(9, sample(c(4, 8), 1), 2)) %>%
   gather(key = "trt", value = "rsp")
 
 @
