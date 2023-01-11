@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (7 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/cYyvOXR4qa8}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 <<>>=
 
 norm_vec <- sample(c("fullfiling", "validating"), 1)
@@ -9,12 +15,12 @@ text_qq_vec <- str_c("QQ plot ", norm_vec, " the normality assumption.")
 @ 
 
 \begin{enumerate}
-\item Skizieren Sie in die unten stehende, freie Abbildung die
+\item Skizieren Sie in die unten stehenden, freien Abbildungen die
   Abbildung, die sich nach der {\"U}berschrift ergibt! \textbf{(4 Punkte)}
 \item Beschriften Sie die Achsen entsprechend! \textbf{(3 Punkte)}
 \end{enumerate}
 
-<<regression-04, results='asis', echo = FALSE, fig.height = 8, fig.width = 5.5, fig.align = "center", message = FALSE>>=
+<<regression-04, results='asis', echo = FALSE, fig.height = 7.5, fig.width = 5.5, fig.align = "center", message = FALSE>>=
 
 df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +

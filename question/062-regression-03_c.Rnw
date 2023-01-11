@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (6 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/EK7JEtdZbnw}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 <<>>=
 
 outlier_vec <- sample(c(1,2,3), 1)
@@ -9,12 +15,12 @@ text_rr_vec <- str_c("Residual plot with ", outlier_vec, " outlier fullfiling th
 @ 
 
 \begin{enumerate}
-\item Skizieren Sie in die unten stehende, freie Abbildung die
+\item Skizieren Sie in die unten stehenden, freien Abbildungen die
   Abbildung, die sich nach der {\"U}berschrift ergibt! \textbf{(4 Punkte)}
 \item Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)}
 \end{enumerate}
 
-<<regression-03, results='asis', echo = FALSE, fig.height = 8, fig.width = 5.5, fig.align = "center", message = FALSE>>=
+<<regression-03, results='asis', echo = FALSE, fig.height = 7.5, fig.width = 5.5, fig.align = "center", message = FALSE>>=
 
 df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
