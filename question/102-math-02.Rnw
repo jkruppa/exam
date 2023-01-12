@@ -24,13 +24,17 @@ torf_cost <- c(280, 290, 310) %>% sample(1)
 @
 
 Sie wollen \Sexpr{n_plant} Sonnenblumen pflanzen und auswerten. Die T{\"o}pfe
-haben einen Radius von \Sexpr{topf_r} und eine H{\"o}he von \Sexpr{topf_h}. Der
+haben einen Radius von \Sexpr{topf_r}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
 Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
 
-
 \begin{enumerate}
-\item foo
-  \textbf{(2 Punkte)} 
+\item Welche Fl{\"a}che ben{\"o}tigen Sie am Anfang der Keimungsphase?
+  \textbf{(2 Punkte)}
+\item Berechnen Sie die ben{\"o}tigte Menge an Torf und die Kosten f{\"u}r Ihre
+  Pflanzung! \textit{Gehen Sie von einem Zylinder aus!}
+\item Nach dem Bef{\"u}llen der T{\"o}pfe haben Sie noch Torf {\"u}brig. Erkl{\"a}ren Sie
+  den Sachstand!
+\item Berechnen Sie die ben{\"o}tigte Fl{\"a}che im Gew{\"a}chshaus!
 \end{enumerate}
 
 
