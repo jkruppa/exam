@@ -50,7 +50,7 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
   Landschaftsarchitektur anbiete.
   \vspace{1Ex}
   \paragraph{Sind aber ein bisschen \textit{viele} Fragen...} Ja, das
-  stimmt. Die Sortierung und Überlegung welche Fragen zur Veranstaltung
+  stimmt. Die Überlegung welche Fragen zur Veranstaltung
   passen obliegt dem Studierenden. Gerne stehe ich für Rückfragen
   bereit. Teilweise sind Fragen auch ähnlich.
   \vspace{1Ex}
@@ -61,7 +61,7 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
   \vspace{1Ex}
   \paragraph{Okay, aber woher weiß ich jetzt welche Fragen zu meiner
     Veranstaltung gehören?} Das ist der Trick. Durch das Durchlesen und das
-  selbstständige Sortieren der Fragen zu Themen und Inhalten merkt man
+  selbstständige Sortieren der Fragen merkt man
   ziemlich schnell, welche Inhalte zu der Veranstaltung gehören und welche
   nicht. Ist also alles Teil des Lernprozesses. \textit{Und} wenn
   Unsicherheiten da sind, gerne in der Wiederholungsveranstaltung - letzte
@@ -547,6 +547,16 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \begin{itemize}
   \item \href{https://jkruppa.github.io/programing-preface.html}{Programmieren in R}
   \end{itemize}
+In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt. \\
+
+In der Klausur zu dem Modul \textbf{Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+
+In der Klausur zu dem Modul \textbf{Angewandte Statistik für Bioverfahrenstechnik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+
+In der Klausur zu dem Modul \textbf{Angewandte Statistik und Versuchswesen} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+
+In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------  
@@ -562,5 +572,29 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[65])} 
 \clearpage
 % -----------------------------------------------------------------------  
+\begin{graybox}{Aufgaben zur Mathematik}
+Mehr Informationen zu den Aufgaben in den \href{https://jkruppa.github.io/math/}{Skript Mathematik} und folgenden Kapiteln.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/programing-preface.html}{Programmieren in R}
+  \end{itemize}
+In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden \textit{zwei Aufgaben} aus den folgenden Aufgaben zur Mathematik von mir ausgewählt. \\
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------  
+\Sexpr{knit_child(text_questions_vec[66])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[67])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[68])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(text_questions_vec[69])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[70])} 
+\clearpage
+% ----------------------------------------------------------------------- 
 \end{document}
 % -----------------------------------------------------------------------

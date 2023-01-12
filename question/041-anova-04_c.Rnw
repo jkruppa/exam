@@ -5,7 +5,7 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Der Datensatz \textit{Crop} enth{\"a}lt das Trockengewicht der
+Der Datensatz \textit{crop\_tbl} enth{\"a}lt das Trockengewicht der
 Maispflanzen (\textit{drymatter}), die unter drei 
 verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen sind in dem Faktor
 \textit{trt} mit den Faktorstufen \textit{\Sexpr{sample(c("low", "ctrl", "A"),
@@ -13,11 +13,21 @@ verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen si
  \textit{\Sexpr{sample(c("high", "trt2", "C"), 1)}} codiert. Sie erhalten folgenden Output in \Rlogo.
 
 <<anova-R-04-a,  echo = FALSE>>=
-data_tbl <- PlantGrowth %>%
-  as_tibble %>%
-  mutate(trt = ordered(group, levels = c("ctrl", "trt1", "trt2"),
-                       labels = c("low", "mid", "high")),
-         drymatter = weight + rnorm(n = nrow(.), 0, 0.2)) 
+
+data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(7,9), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(1, 1, 2), 1)))) %>%
+                  gather,
+                  tibble(dose2 = round(rnorm(n = sample(c(7,9), 1),
+                                         mean = sample(c(18, 19, 20), 1),
+                                         sd = sample(c(1, 2, 1), 1)))) %>%
+                  gather,
+                  tibble(dose3 = round(rnorm(n = sample(c(7,9), 1),
+                                         mean = sample(c(19, 20, 21), 1),
+                                         sd = sample(c(2, 2, 2), 1)))) %>%
+                  gather) %>%
+  set_names(c("trt", "drymatter")) %>%
+  sample_n(size = nrow(.))
 
 anova_mdl <- lm(drymatter ~ trt, data = data_tbl) %>%
   anova

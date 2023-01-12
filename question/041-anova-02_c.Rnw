@@ -6,16 +6,32 @@
 %% --------------------------------------------------------------------
 
 
-Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht der Pflanzen
+Der Datensatz \texttt{plant\_growth\_tbl} enth{\"a}lt das Gewicht der Kohlk{\"o}pfe
 (\textit{weight}), die unter einer Kontrolle und zwei verschiedenen
 Behandlungsbedingungen erzielt wurden -- dem Faktor \textit{group} mit den
 Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.
 
 <<anova-R-01-a,  echo = FALSE>>=
-data_tbl <- PlantGrowth %>%
-  as_tibble %>%
-  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
-         weight = weight + rnorm(n = nrow(.), 0, 0.1))
+
+data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(7,9), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(1, 1, 2), 1)))) %>%
+                  gather,
+                  tibble(dose2 = round(rnorm(n = sample(c(7,9), 1),
+                                         mean = sample(c(18, 19, 20), 1),
+                                         sd = sample(c(1, 2, 1), 1)))) %>%
+                  gather,
+                  tibble(dose3 = round(rnorm(n = sample(c(7,9), 1),
+                                         mean = sample(c(19, 20, 21), 1),
+                                         sd = sample(c(2, 2, 2), 1)))) %>%
+                  gather) %>%
+  set_names(c("group", "weight")) %>%
+  sample_n(size = nrow(.))
+
+#data_tbl <- PlantGrowth %>%
+#  as_tibble %>%
+#  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
+#         weight = weight + rnorm(n = nrow(.), 0, 0.1))
 
 anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
   anova
