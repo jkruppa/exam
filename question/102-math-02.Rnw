@@ -6,6 +6,26 @@
 %\hspace{2Ex}\\[1Ex]
 %% --------------------------------------------------------------------
 
+In einem Experiment wollen Sie die Wuchsh{\"o}he von Sonnenblumen
+bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen k{\"o}nnen, gibt es
+aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den Aufwand zu treffen. Zum
+einen m{\"u}ssen Sie die Sonnenblumen einpflanzen und m{\"u}ssen daf{\"u}r Substrat
+bestellen. Zum anderen m{\"u}ssen Sie die Sonnenblumen auch bewegen und in ein
+Gew{\"a}chshaus platzieren. Beantworten Sie folgende Fragen mit den gegebenen
+Bedingungen.
+
+<<>>=
+n_plant <- c(120, 60, 80) %>% sample(1)
+topf_r <- c(4, 4.5, 5) %>% sample(1)
+topf_h <- c(7, 8, 9) %>% sample(1)
+
+torf_cost <- c(280, 290, 310) %>% sample(1)
+
+@
+
+Sie wollen \Sexpr{n_plant} Sonnenblumen pflanzen und auswerten. Die T{\"o}pfe
+haben einen Radius von \Sexpr{topf_r} und eine H{\"o}he von \Sexpr{topf_h}. Der
+Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
 
 
 \begin{enumerate}
