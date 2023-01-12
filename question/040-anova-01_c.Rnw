@@ -1,5 +1,10 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/Q7xtQJoOmQI}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
 In einem Experiment wurde der Ertrag von Erbsen unter drei verschiedenen
 Pestizid-Dosen 0.5 g/l, 1.5 g/l und 2.5 g/l gemessen. Unten stehenden sehen
 Sie die Visualisierung des Datensatzes.
@@ -41,8 +46,7 @@ ggplot(data_tbl, aes(dose, activity, shape = dose)) +
     und $\beta_{2.5}$
   \item Residuen oder Fehler: $\epsilon$
   \end{itemize}
-\item Sch{\"a}tzen Sie den p-Wert einer einfaktoriellen ANOVA ab. Liegt ein
-  \textit{vermutlicher} signifikanter Unterschied zwischen den Dosisstufen
-  vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Liegt ein \textit{vermutlicher} signifikanter Unterschied zwischen
+  den Dosisstufen vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
