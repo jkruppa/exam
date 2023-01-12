@@ -1,0 +1,46 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+%% --------------------------------------------------------------------
+% \hfill\href{https://youtu.be/2QJa19ZwLls}{\includegraphics[width =
+%   2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{cor.test()}.
+
+<<correlation-03,  echo = FALSE>>=
+
+
+question_vec <- c("das statistische Hypothesenpaar",
+                  "die wissenschaftliche Fragestellung") %>% sample(1)
+
+visual_vec <- c("das 95\\% Konfidenzintervall!",
+                "die Teststatistik und den p-Wert!") %>% sample(1)
+
+cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
+
+data_tbl <- tibble(x = rnorm(10, 5, 2),
+                   y = cor_vec * x + rnorm(10, 0, 1))
+
+print_obj <- cor.test(~ y + x, data_tbl)
+
+print_obj$method  <- c("Pearson's correlation", "Spearman's correlation", "Kendall's correlation") %>% sample(1)
+
+print_obj$data.name  <- c("weight and fertilizer",
+                          "drymatter and water",
+                          "weight_gain and food") %>% sample(1)
+
+print_obj
+
+@
+
+
+\begin{enumerate}
+  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(1
+Punkt)}
+\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten!
+  Erkl{\"a}ren Sie die beiden Eigenschaften an einem Beispiel! \textbf{(3 Punkte)}
+\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
+  Effekts und der Signifikanz! Begr{\"u}nden Sie
+  Ihre Antwort! \textbf{(3 Punkte)}
+\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(3 Punkte)} 
+\end{enumerate}
