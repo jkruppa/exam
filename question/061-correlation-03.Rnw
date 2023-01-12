@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 %% --------------------------------------------------------------------
 % \hfill\href{https://youtu.be/2QJa19ZwLls}{\includegraphics[width =
@@ -27,7 +27,9 @@ print_obj$method  <- c("Pearson's correlation", "Spearman's correlation", "Kenda
 
 print_obj$data.name  <- c("weight and fertilizer",
                           "drymatter and water",
-                          "weight_gain and food") %>% sample(1)
+                          "height and food") %>% sample(1)
+
+store_vec <- print_obj$data.name 
 
 print_obj
 
@@ -38,7 +40,10 @@ print_obj
   \item Formulieren Sie \Sexpr{question_vec}! \textbf{(1
 Punkt)}
 \item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten!
-  Erkl{\"a}ren Sie die beiden Eigenschaften an einem Beispiel! \textbf{(3 Punkte)}
+  Erkl{\"a}ren Sie \textit{eine} der Eigenschaften an einem Beispiel! \textbf{(3
+    Punkte)}
+\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
   Effekts und der Signifikanz! Begr{\"u}nden Sie
   Ihre Antwort! \textbf{(3 Punkte)}
