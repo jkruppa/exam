@@ -1,5 +1,15 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/xP9xjcLIbDE}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
+<<>>=
+x <- round(rnorm(5, 10, 4))
+@
+
 Bearbeiten Sie folgenden Aufgaben mit Bezug zu \Rlogo! 
 
 \begin{enumerate}
