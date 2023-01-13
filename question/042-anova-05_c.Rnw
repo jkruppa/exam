@@ -6,28 +6,42 @@
 %% --------------------------------------------------------------------
 
 
-<<>>=
-data_tbl <- ToothGrowth %>%
-  sample_n(rpois(1, 70), replace = TRUE)
-
-@ 
-
-Der Datensatz \textit{PigGain} enth{\"a}lt Daten aus einer Studie zur Bewertung
+Der Datensatz \textit{pig\_gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
 der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der
 Versuch wurde an \Sexpr{nrow(data_tbl)} Mastschweinen durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Selen-Dosen (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag)
-{\"u}ber eine von zwei Verabreichungsmethoden erhielt (Wasser oder
+jedes Tier eine von drei Selen-Dosen $dose$ (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag)
+{\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
 Festnahrung). Sie erhalten folgenden Output in \Rlogo.
 
 <<anova-R-05-a,  echo = FALSE>>=
-data_tbl <- data_tbl %>%
-  as_tibble %>%
-  mutate(dose = factor(dose, 
-                       levels = c(0.5, 1, 2),
-                       labels = c("D0.5", "D1", "D5")),
-         weight = len + rnorm(n = nrow(.), 0, 0.1)) 
 
-anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
+
+data_tbl <- tibble(mean = sample(c(12, 15, 17, 20, 22, 25)),
+                   dose = rep(c(0.5, 1, 1.5), each = 2),
+                   form = rep(c("OJ", "VC"), times = 3),
+                   id = 1:6)
+
+data_pre_tbl <- data_tbl %>%
+  expand_grid(rep = 1:4)
+
+rsp_tbl <- data_tbl %>%
+  split(.$id) %>%
+  map(~rnorm(4, mean = .x$mean, sd = 4))  %>%
+  reduce(c) %>%
+  as_tibble()
+
+data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
+  dplyr::rename(gain = value) %>%
+  mutate(dose = as_factor(dose))
+
+## data_tbl <- data_tbl %>%
+##  as_tibble %>%
+##  mutate(dose = factor(dose, 
+##                       levels = c(0.5, 1, 2),
+##                       labels = c("D0.5", "D1", "D5")),
+##         weight = len + rnorm(n = nrow(.), 0, 0.1)) 
+
+anova_mdl <- lm(gain ~ dose + form + dose:form, data = data_tbl) %>%
   anova 
 
 anova_mdl
@@ -36,10 +50,10 @@ anova_mdl
 
 \begin{enumerate}
 \item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
-  zweifaktorielle ANOVA f{\"u}r den Faktor \Sexpr{sample(c("supp", "dose"), 1)}
+  zweifaktorielle ANOVA f{\"u}r den Faktor \Sexpr{sample(c("form", "dose"), 1)}
   auf! \textbf{(2 Punkte)}
 \item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
-  im besonderen auf den Term $supp:dose$ ein! \textbf{(2 Punkte)}
+  im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}
 \item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
   zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
 \end{enumerate}

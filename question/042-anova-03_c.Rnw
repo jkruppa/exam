@@ -5,21 +5,49 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Der Datensatz \textit{ToothGrowth} enth{\"a}lt Daten aus einer Studie zur
+<<>>=
+dose_num <- c(3, 4, 5) %>% sample(1)
+supp_num <- c(2, 3) %>% sample(1)
+@ 
+
+Der Datensatz \textit{tooth\_tbl} enth{\"a}lt Daten aus einer Studie zur
 Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
-Meerschweinchen. Der Versuch wurde an 60 Schweinen durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Vitamin-C-Dosen \textit{dose} (0.5 mg/Tag, 1
-mg/Tag und 2 mg/Tag) {\"u}ber eine von zwei Verabreichungsmethoden
-\textit{supp} erhielt (Orangensaft oder Ascorbins{\"a}ure). Die Zahnl{\"a}nge wurde
-als normalverteiltes Outcome gemessen.
+Meerschweinchen. Der Versuch wurde an verschiedenen Schweinen durchgef{\"u}hrt,
+wobei jedes Tier eine von \Sexpr{dose_num} Vitamin-C-Dosen \textit{dose}
+{\"u}ber eine von \Sexpr{supp_num} Verabreichungsmethoden \textit{supp}
+erhielt. Die Zahnl{\"a}nge wurde als normalverteiltes Outcome gemessen.
 
 <<anova-R-02-a,  echo = FALSE>>=
-data_tbl <- ToothGrowth %>%
-  as_tibble %>%
-  mutate(dose = factor(dose, 
-                       levels = c(0.5, 1, 2),
-                       labels = c("D0.5", "D1", "D2")),
-         len = len + rnorm(n = nrow(.), 0, 0.1))
+
+row_num <- dose_num * supp_num
+
+data_tbl <- tibble(mean = sample(c(14, 15, 16, 18, 22, 23), row_num,
+                                 replace = TRUE),
+                   dose = rep(1:dose_num, each = supp_num),
+                   supp = rep(1:supp_num, times = dose_num),
+                   id = 1:row_num)
+
+data_pre_tbl <- data_tbl %>%
+  expand_grid(rep = 1:4)
+
+rsp_tbl <- data_tbl %>%
+  split(.$id) %>%
+  map(~rnorm(4, mean = .x$mean, sd = 5))  %>%
+  reduce(c) %>%
+  as_tibble()
+
+data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
+  dplyr::rename(len = value) %>%
+  mutate(dose = as_factor(dose))
+
+
+
+# data_tbl <- ToothGrowth %>%
+#  as_tibble %>%
+#  mutate(dose = factor(dose, 
+#                       levels = c(0.5, 1, 2),
+#                       labels = c("D0.5", "D1", "D2")),
+#         len = len + rnorm(n = nrow(.), 0, 0.1))
 
 anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
   anova 

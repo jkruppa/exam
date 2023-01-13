@@ -2,7 +2,7 @@
 
 <<>>=
 
-reg_row <- sample(c("Normalverteilung", "Poissonverteilung", "Binomialverteilung"), 1)
+reg_row <- sample(c("Normalverteilung"), 1)
 
 @
 
