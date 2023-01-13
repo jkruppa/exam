@@ -1,5 +1,10 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
+%% --------------------------------------------------------------------
+%\hfill\href{https://youtu.be/SYWw33dNz7k}{\includegraphics[width =
+%  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
 <<>>=
 
 variable_vec <- c("P", "S", "N", "fertilizier", "weight", "height",
@@ -24,10 +29,11 @@ folgende gemessene Endpunkte zu Verf{\"u}gung: \Sexpr{pander::p(outcome_vec, wra
 \begin{enumerate}
 \item W{\"a}hlen Sie ein Outcome was zu der Verteilungsfamilie
   \textit{\Sexpr{model_vec}} geh{\"o}rt! \textbf{(1 Punkt)}
+\item Schreiben Sie das Modell in der Form $y \sim x$ wie es in \Rlogo in
+  der Funktion \texttt{glm()}
+  {\"u}blich ist \textit{ohne Interaktionsterm}! \textbf{(3 Punkte)}
 \item Schreiben Sie das Modell in der Form $y \sim x$ wie es in \Rlogo
-  {\"u}blich ist \textit{ohne Interaktionsterm}! \textbf{(2 Punkte)}
-\item Schreiben Sie das Modell in der Form $y \sim x$ wie es in \Rlogo
-  {\"u}blich ist und erg{\"a}nzen Sie \textit{einen} Interaktionsterm nach Wahl! \textbf{(2 Punkte)} 
+  {\"u}blich ist und erg{\"a}nzen Sie \textit{einen} Interaktionsterm nach Wahl! \textbf{(1 Punkt)} 
 \item Zeichen Sie eine \textit{\Sexpr{sample(c("schwache","starke"), 1)}}
   Interaktion in die Abbildung unten f{\"u}r den Endpunkt
   \textit{yield}. Erg{\"a}nzen Sie eine aussagekr{\"a}ftige Legende. Wie erkennen

@@ -1,8 +1,13 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/Nre6kTd39dQ}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
 
 <<>>=
 
-reg_row <- sample(c("Normalverteilung"), 1)
+reg_row <- sample(c("Normalverteilung", "Poissonverteilung", "Binomialverteilung"), 1)
 
 @
 
@@ -10,8 +15,9 @@ reg_row <- sample(c("Normalverteilung"), 1)
 \item Zeichen Sie in die drei untenstehenden, leeren Abbilungen die Zeile des
   Regressionskreuzes der \Sexpr{reg_row}. W{\"a}hlen Sie die Beschriftung der
   y-Achse sowie der x-Achse entsprechend aus! \textbf{(6 Punkte)}
+\item Erg{\"a}nzen Sie die jeweiligen statistischen Methoden zu der Abbildung! \textbf{(2 Punkte)}
 \item Welchen Effektsch{\"a}tzer erhalten Sie aus der entsprechend linearen
-  Regression? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
+  Regression bzw. den Gruppenvergleich? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
 \item Wenn Sie keinen Effekt erwarten, welchen \textit{Zahlenraum} nimmt dann
   der Effektsch{\"a}tzer ein? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
 \end{enumerate}

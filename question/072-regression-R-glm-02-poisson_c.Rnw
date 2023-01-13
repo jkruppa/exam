@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 <<>>=
 
@@ -21,7 +21,7 @@ Auszug aus den Daten.
 
 
 <<>>=
-kable(data_tbl[1:4,], booktabs = TRUE, align = "lrrrrr") %>% 
+kable(data_tbl[1:3,], booktabs = TRUE, align = "lrrrrr") %>% 
   kable_styling(latex_options = "hold_position")
 @
 
@@ -41,13 +41,13 @@ glm(reformulate(response = "longnose",
 }
 
 \begin{enumerate}
-\item Warum wurde hier eine Poisson bzw. Quasipoisson-Verteilung gew{\"a}hlt?
-  Begr{\"u}nden Sie Ihre Antwort mit dem \Rlogo Output! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie warum eine Quasipoisson-Regression gerechnet wurde! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie den Effekt der alternativen Verwendung einer Poisson-Regression auf
+  den obigen \Rlogo Output!  \textbf{(2 Punkte)}
 \item K{\"o}nnen Sie die \textit{Estimate} der einzelnen Einflussvariablen
   direkt interpretieren? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Interpretieren Sie die \textit{\Sexpr{sample(c("signifikanten", "nicht
-      signifikanten"), 1)}} Effekte auf die Anzahl an Knochenhechten! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie am \Rlogo Output wie sich die \textit{t value} Spalte
-  errechnet! \textbf{(2 Punkte)}
+\item Interpretieren Sie den Effekt von \textit{\Sexpr{sample(c("maxdepth", "temp",
+      "do2", "no3"), 1)}} auf die Anzahl an Knochenhechten! Liegt ein
+  signifikanter Effekt vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(4 Punkte)}
 \end{enumerate}
 
