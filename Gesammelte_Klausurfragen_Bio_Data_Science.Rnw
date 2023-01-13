@@ -32,6 +32,7 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 % -----------------------------------------------------------------------
 \begin{document}
 % -----------------------------------------------------------------------
+
 \begin{graybox}{Checkbox für die Version vom \today}
   \Large Die gesamte Klausur beinhaltet aktuell in Summe
   \textbf{\Sexpr{length(text_questions_vec) + length(mc_questions_vec)}}
