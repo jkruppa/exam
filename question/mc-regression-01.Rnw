@@ -58,9 +58,9 @@ fit_tidy %>%
 
 <<mc-regression-01-b, results='asis', echo = FALSE>>=
 
-questions_vec <- c(str_c('In einer ', var_vec,' Regression muss f{\"u}r die Interpretation des Effektes das $\\beta_1$ quadriert werden. Somit liegt das OR bei ', round(fit_tidy$estimate[2]^2, 2)),
+questions_vec <- c(str_c('In einer ', var_vec,' Regression muss f{\"u}r die Interpretation des Effektes das $\\beta_1$ exponiert werden. Somit liegt das OR bei ', round(fit_tidy$estimate[2]^2, 2)),
                    str_c('In einer ', var_vec,' Regression wird die Mittelwertsdifferenz betrachtet. Daher ist der Effekt zwischen den beiden Lichtregimen eine Gewichts{\"a}nderung von ', round(fit_tidy$estimate[2], 2)),
-                   str_c('In einer ', var_vec,' Regression berechnet man das RR. Daher muss der Sch{\"a}tzer des Effektes $\\beta_1$ noch quadriert werden. Somit liegt das RR bei ', round(fit_tidy$estimate[2]^2, 2)),
+                   str_c('In einer ', var_vec,' Regression berechnet man das RR. Daher muss der Sch{\"a}tzer des Effektes $\\beta_1$ noch exponiert werden. Somit liegt das RR bei ', round(fit_tidy$estimate[2]^2, 2)),
                    str_c('In einer ', var_vec,' Regression kann kein Effekt roh interpretiert werden. Es muss erst eine Confounderadjustierung durchgef{\"u}hrt werden.'),
                    str_c('Eine ', var_vec,' Regression basiert auf dem maximum Likelihood Prinzip. Hierbei kann kein Effekt beschrieben werden. Im Zweifel hilft aber eine Quadrierung der Fehlerqudrate $\\epsilon$.')) %>%
   sample

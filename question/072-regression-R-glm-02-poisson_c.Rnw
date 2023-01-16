@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/K_28Ne6ladI}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 <<>>=
 
 data_tbl <- read_csv2(file.path(question_path, "data/longnose.csv")) %>%

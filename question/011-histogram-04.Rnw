@@ -1,0 +1,30 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/ORHSPTCdfeY}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+<<>>=
+
+cont_vec <- round(rnorm(sample(c(12, 14, 15), 1), 10, 2), 1)
+
+@
+
+Nach einem Experiment z{\"a}hlen Sie folgende Trockengewichte von Sonnenblumen nach einer durchgestandenen Infektion. 
+
+\begin{center}
+$\Sexpr{cont_vec}$
+\end{center}
+
+\begin{enumerate}
+\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu
+  visualiseren! (\textbf{3 Punkte})
+ \item Erl{\"a}utern Sie Ihr Vorgehen um ein Histogramm f{\"u}r kontinuierliche
+  Daten zu zeichnen!  (\textbf{2 Punkte})
+\item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
+\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten in der Abbildung! \textbf{(1
+    Punkt)}  
+\end{enumerate}
+
+

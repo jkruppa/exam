@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (6 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width =
@@ -9,7 +9,6 @@
 
 count_vec <- rpois(sample(c(12, 14, 15), 1), 4)
 
-cont_vec <- round(rnorm(sample(c(12, 14, 15), 1), 10, 2), 1)
 
 @
 
@@ -27,16 +26,4 @@ $\Sexpr{count_vec}$
     Punkt)}  
 \end{enumerate}
 
-Sie messen ebenfalls die Gewichte der Sonnenblumen und erhalten folgende Datentabelle.
 
-\begin{center}
-$\Sexpr{cont_vec}$
-\end{center}
-
-\begin{enumerate}
-  \setcounter{enumi}{3}
-\item Zeichen Sie ein Histogramm um die Verteilung der Gewichte der
-  Sonnenblumen zu visualiseren! (\textbf{2 Punkte})
-\item Erl{\"a}utern Sie Ihr Vorgehen um ein Histogramm f{\"u}r kontinuierliche
-  Daten zu zeichnen!  (\textbf{2 Punkte})
- \end{enumerate}
