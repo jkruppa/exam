@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/sBlSc_eJbnw}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 Sie haben folgende Zahlenreihe $y$ vorliegen
 $y = \{\Sexpr{round(rnorm(n = sample(c(7,11), 1), mean = sample(c(15, 17,
   19), 1), sd = sample(c(2, 3, 4), 1)))}\}$. Berechnen Sie folgende

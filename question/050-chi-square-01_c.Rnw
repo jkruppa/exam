@@ -1,5 +1,11 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/PVUK0zdkZkk}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
 <<chisquare-01-a, echo = FALSE>>=
 
 a <- c(24, 38, 56) %>% sample(1)
@@ -37,7 +43,7 @@ $n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
 \item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test auf der 2x2
   Tafel. Geben Sie Formeln und Rechenweg mit an! \textbf{(4 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $T_k = 3.841$! \textbf{(1 Punkt)}
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! \textbf{(1 Punkt)}
 \item Skizzieren Sie eine 2x2 Tabelle mit
   $n = \Sexpr{sample(c(6,7,8), 1) * 4 + 2}$ Pflanzen in dem \textit{vermutlich}
   die Nullhypothese nicht abgelehnt werden kann! \textbf{(1 Punkt)}
