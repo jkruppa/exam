@@ -1,42 +1,43 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-%\hfill\href{https://youtu.be/f5fHm_jCHe4}{\includegraphics[width =
-%  2cm]{img/youtube}}
-%\hspace{2Ex}\\[1Ex]
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
+\hspace{2Ex}
 %% --------------------------------------------------------------------
 
-In einem Experiment wollen Sie die Wuchsh{\"o}he von Sonnenblumen
-bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen k{\"o}nnen, gibt es
-aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den Aufwand zu treffen. Zum
-einen m{\"u}ssen Sie die Sonnenblumen einpflanzen und m{\"u}ssen daf{\"u}r Substrat
-bestellen. Zum anderen m{\"u}ssen Sie die Sonnenblumen auch bewegen und in ein
-Gew{\"a}chshaus platzieren. Beantworten Sie folgende Fragen mit den gegebenen
-Bedingungen.
+\paragraph{Von T{\"o}pfen auf Tischen}
 
 <<>>=
 n_plant <- c(120, 60, 80) %>% sample(1)
 topf_r <- c(4, 4.5, 5) %>% sample(1)
 topf_h <- c(7, 8, 9) %>% sample(1)
-
 torf_cost <- c(280, 290, 310) %>% sample(1)
-
 @
 
-Sie wollen \Sexpr{n_plant} Sonnenblumen pflanzen und auswerten. Die T{\"o}pfe
-haben einen Radius von \Sexpr{topf_r}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
+In einem Experiment wollen Sie die Wuchsh{\"o}he von \Sexpr{n_plant}
+Sonnenblumen bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen
+k{\"o}nnen, gibt es aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den Aufwand
+zu treffen. Zum einen m{\"u}ssen Sie die Sonnenblumen einpflanzen und m{\"u}ssen
+daf{\"u}r Substrat bestellen. Zum anderen m{\"u}ssen Sie die Sonnenblumen auch
+bewegen und in ein Gew{\"a}chshaus platzieren. Die T{\"o}pfe f{\"u}r die Keimung haben
+einen Radius von \Sexpr{topf_r}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
 Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
 
 \begin{enumerate}
-\item Skizzieren Sie den Versuchsplan auf \textit{einem} Tisch im Gew{\"a}chshaus!
+\item Skizzieren Sie den Versuchsplan auf \textit{einem} Tisch im
+  Gew{\"a}chshaus! \textbf{(2 Punkte)}
 \item Berechnen Sie die ben{\"o}tigten T{\"o}pfe, wenn Sie Randpflanzen mit
-  ber{\"u}cksichtigen wollen. 
-\item Welche Fl{\"a}che ben{\"o}tigen Sie im Gew{\"a}chshaus am Anfang der Keimungsphase?
-  \textbf{(2 Punkte)}
+  ber{\"u}cksichtigen wollen! \textbf{(1 Punkt)}
+\item Welche Fl{\"a}che gegeben der Anzahl an T{\"o}pfen ben{\"o}tigen Sie im
+  Gew{\"a}chshaus am Anfang der Keimungsphase? \textbf{(3 Punkte)}
 \item Berechnen Sie die ben{\"o}tigte Menge an Torf und die Kosten f{\"u}r Ihre
-  Pflanzung! \textit{Gehen Sie von einem Zylinder aus!}
+  Pflanzung! Gehen Sie von einem Zylinder aus! \textbf{(2 Punkte)}
 \item Nach dem Bef{\"u}llen der T{\"o}pfe haben Sie noch Torf {\"u}brig. Erkl{\"a}ren Sie
-  den Sachstand!
+  den Sachstand! Wie gehen Sie zuk{\"u}nftig vor? \textbf{(2 Punkte)}
 \end{enumerate}
 
 

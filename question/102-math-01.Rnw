@@ -1,33 +1,73 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-%\hfill\href{https://youtu.be/f5fHm_jCHe4}{\includegraphics[width =
-%  2cm]{img/youtube}}
-%\hspace{2Ex}\\[1Ex]
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
+\hspace{2Ex}
 %% --------------------------------------------------------------------
 
 \paragraph{Herodot – der Schimmel aus Ivenack}
 
 W{\"a}hrend der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die
 Geschichten des ber{\"u}hmten Apfelschimmels Herodot aus Ivenack zu
-Geh{\"o}r. Herodot lief zwar niemals Rennen, war aber einer der ber{\"u}hmtesten
-Pferde dieser Zeit. Napoleon selbst soll den Auftrag gegeben haben, diesen
+Geh{\"o}r. Herodot lief zwar niemals Rennen, war aber eines der ber{\"u}hmtesten
+Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen
 Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach
-sollen Arbeiter den Schimmel im hohlen Stamm einer Eiche aus Ivenack vor
+sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-j{\"a}hrigen Eiche aus Ivenack vor
 den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch
-lautes wiehern, woraufhin die franz{\"o}sische Armee den Schimmel
-beschlagnahmte und nach Frankreich f{\"u}hrte.
+lautes Wiehern, woraufhin die franz{\"o}sische Armee den Schimmel
+beschlagnahmte und nach Frankreich f{\"u}hrte. \\
 
-<<echo = FALSE>>=
-foo  <- 1 + 1
-@ 
+<<>>=
+mm_wachstum <- c(0.75, 1, 1.2, 1.3) %>% sample(1)
+brust_umfang <- c(10.5, 11, 12, 12.5) %>% sample(1)
+year_stolen <- c(1805, 1810, 1815) %>% sample(1)
+horse_h <- c(180, 185, 190) %>% sample(1)
+horse_b <- c(85, 90, 95) %>% sample(1)
+horse_l <- c(230, 240, 250) %>% sample(1)
+crit_width <- c(10, 15, 20) %>% sample(1)
+fitting <- c("m{\"u}hsam", "bequem") %>% sample(1)
 
+@
 
+\textit{Forschungsfrage: "Konnten die Ivenacker den Apfelschimmel Herodot
+  vor dem Zugriff von Napoleon in der 1000-j{\"a}hrigen Eiche verstecken?"} \\
+
+Gehen Sie von einem radialen Wachstum der 1000-j{\"a}hrigen Eiche von
+$\Sexpr{mm_wachstum}mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im
+Jahr 2022 einen Umfang von $\Sexpr{brust_umfang}m$ in Brusth{\"o}he hatte.
 
 \begin{enumerate}
-\item foo
-  \textbf{(2 Punkte)} 
+\item Wie gro{\ss} war der Durchmesser der Eiche im Jahr $\Sexpr{year_stolen}$ als
+  Herodot in der Eiche versteckt werden sollte?
+  \textbf{(2 Punkte)}
+\item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen
+exponentiellen Zusammenhang f{\"u}r das Wachstum der 1000-j{\"a}hrigen Eiche. Erkl{\"a}ren Sie die
+Auswirkungen der Entscheidung f{\"u}r linear oder exponentiell auf Ihre
+Berechnungen! \textbf{(3 Punkte)}
+\end{enumerate}
+ 
+Herodot hatte eine Schulterh{\"o}he von $\Sexpr{horse_h}$cm, eine Breite von
+$\Sexpr{horse_b}$cm sowie eine L{\"a}nge von  $\Sexpr{horse_l}$cm.
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Berechnen Sie das effektive Volumen von Herodot, welches Herodot in
+  der 1000-j{\"a}hrigen Eiche einnehmen w{\"u}rde! \textbf{(2 Punkte)} 
 \end{enumerate}
 
+Gehen Sie davon aus, dass sich Herodot in der 1000-j{\"a}hrigen Eiche $\Sexpr{fitting}$ um
+die eigene Achse drehen konnte.
 
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Berechnen Sie die Dicke der Eichenwand in cm! Verdeutlichen Sie Ihre
+  Berechnungen an einer aussagekr{\"a}ftigen Skizze f{\"u}r Pferd und Eiche! \textbf{(3 Punkte)} 
+\item Unter einer Dicke der Eichenwand von $\Sexpr{crit_width}cm$ bricht
+  die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begr{\"u}nden Sie
+  Ihre Antwort! \textbf{(2 Punkte)} 
+\end{enumerate}
 
