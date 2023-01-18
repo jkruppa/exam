@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -30,13 +30,13 @@ extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine
 Zivilisation ben{\"o}tigen um die gesamte Milchstra{\ss}e zu
 besuchen?\\[-1ex]
 
-Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$ Sonden mit
+Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$ Sonden mit
 $\Sexpr{c_perc}$\%iger Lichtgeschwindigkeit los um sich auf den erreichten
 Planeten selbst zu replizieren. Nach $\Sexpr{build_time}$ Jahren ist die
 Replikation abgeschlossen und wiederum $\Sexpr{n_sonde}$ Sonden werden
 ausgesendet. Gehen Sie von $\Sexpr{dist_stars}$ Lichtjahren als mittlerer
 Abstand der Sterne in der Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$
-Sternen in der Milchstra{\ss}e.
+Sterne in der Milchstra{\ss}e.
 
 \begin{enumerate}
 \item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
@@ -47,12 +47,12 @@ Sternen in der Milchstra{\ss}e.
 \item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
   wie oft war dann eine Sonde schon zu Besuch? Korrigieren Sie Ihre Antwort
   mit dem Wissen, dass sich die Kontinentalplatten einmal alle
-  $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig umgewandelt haben! \textbf{(2
+  $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im Erdinneren umgewandelt haben! \textbf{(2
     Punkte)}
 \item Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit $t$
   und Raum $r$. Erg{\"a}nzen Sie den Geschwindigkeitsvektor $\vec{v_t}$ und
-  $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtegschwindigkeit und
-  mit 99\% Lichtegeschwindigkeit fliegendes Raumschiff! \textbf{(3 Punkte)}
+  $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtgeschwindigkeit und
+  mit 99\% Lichtgeschwindigkeit fliegender Sonde! \textbf{(3 Punkte)}
 \item Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
 Begr{\"u}nden Sie Ihre Antwort anhand der Abbildung!  \textbf{(2 Punkte)}
 \end{enumerate}
