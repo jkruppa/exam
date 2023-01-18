@@ -1,19 +1,68 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-%\hfill\href{https://youtu.be/f5fHm_jCHe4}{\includegraphics[width =
-%  2cm]{img/youtube}}
-%\hspace{2Ex}\\[1Ex]
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
+\hspace{2Ex}
 %% --------------------------------------------------------------------
 
-Vektoren oder Matrizen
+\paragraph{Event Horizon -- Am Rande des Universums}
 
-Das Ganze dann auch in R
+<<>>=
+m_sun <- c(2e30, 2e28, 2e31, 2e29) %>% sample(1)
+m_perc <- c(30, 35, 40, 45) %>% sample(1)
+r_black <- c(4000, 3000, 5000) %>% sample(1)
+word <- c("Ereignishorizont", "Singularit{\"a}t")  %>% sample(1)
+@
 
+Die Sonne hat eine aktuelle, angenommene Masse von
+$\Sexpr{m_sun}$kg. Wenn die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem Radius
+von $\Sexpr{r_black}$m kollabiert, wird
+die Sonne $\Sexpr{m_perc}$\% der aktuellen Masse verloren haben. Ein
+Lichtteilchen mit der Masse $m_f$ und der Fluchtgeschwindigkeit $v_f$ will
+dem schwarzen Loch entkommen.  Sie haben folgende Formeln f{\"u}r die
+kinetische Energie des Lichtteilchens $E_{kin}$ und der Graviationsenergie des
+schwarzen Lochs $E_{grav}$ gegeben.
+
+\begin{center}
+  \begin{tabular}{cc}
+    $E_{kin} = \cfrac{1}{2}m_fv_f^2$ & $E_{grav} = \cfrac{Gm_sm_f}{r_s}$\\
+  \end{tabular}
+\end{center}
+
+mit
+
+\begin{itemize}
+\item $m_f$, gleich der Masse [kg] des fliehenden Objektes
+\item $m_s$, gleich der Masse [kg] des station{\"a}ren Objekts
+\item $r_s$, gleich dem Radius [m] des station{\"a}ren Objekts  
+\item $G$, gleich der Gravitationskonstante mit $6.674 \cdot 10^{-11}
+  \tfrac{m^3}{kg \cdot s^2}$ 
+\end{itemize}
+
+Im Folgenden wollen wir uns mit der Frage besch{\"a}ftigen, ob das
+Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
 
 \begin{enumerate}
-\item foo
+\item Geben Sie die Formel f{\"u}r die Fluchtgeschwindigkeit $v_f$ an! 
+  \textbf{(2 Punkte)}
+\item {\"U}berpr{\"u}fen Sie Ihre umgestellte Formel nach $v_f$ anhand der Einheiten!
   \textbf{(2 Punkte)} 
+\item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
+  Lichtteilchens mit den angegebenen Informationen! Begr{\"u}nden Sie Ihr
+  Vorgehen! \textbf{(2 Punkte)}
+\item Die Lichtgeschwindigkeit ist mit $2.9e+08$ angegeben. Kann das
+  Lichtteilchen der Gravitation des schwarzen Lochs entkommen? Begr{\"u}nden
+  Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
+  $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
+  und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
+  \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie in diesem Zusammenhang den Begriff
+  \textit{\Sexpr{word}}! \textbf{(2 Punkte)} 
 \end{enumerate}
 
 

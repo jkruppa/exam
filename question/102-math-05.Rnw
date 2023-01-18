@@ -1,20 +1,63 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-%\hfill\href{https://youtu.be/f5fHm_jCHe4}{\includegraphics[width =
-%  2cm]{img/youtube}}
-%\hspace{2Ex}\\[1Ex]
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
+\hspace{2Ex}
 %% --------------------------------------------------------------------
 
-Wahrscheinlichkeitsaufgabe
+\paragraph{Das Fermi Paradoxon}
 
-Einmal Wahrscheinlichkeitsbaum zeichnen
+<<>>=
+n_sonde <- c(2, 3, 4) %>% sample(1)
+build_time <- c(1000, 500, 750, 250) %>% sample(1)
+c_perc <- c(5, 10, 20, 30) %>% sample(1)
+n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
+dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
+steps <- c("drei", "vier")  %>% sample(1)
+age_earth <- c(4.1, 4.5, 4.6, 4.3) %>% sample(1)
+@
 
-Einmal Wahrscheinlichkeiten berechen
+Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
+im Los Alamos National Laboratory mit seinen Kollegen angebliche
+UFO-Sichtungen und fragte schlie{\ss}lich: "`Where is everybody?"'. Warum seien
+weder Raumschiffe anderer Weltraumbewohner noch andere Spuren
+extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine
+Zivilisation ben{\"o}tigen um die gesamte Milchstra{\ss}e zu
+besuchen?\\[-1ex]
 
-Verteilungen von Wahrscheinlichkeiten 
+Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$ Sonden mit
+$\Sexpr{c_perc}$\%iger Lichtgeschwindigkeit los um sich auf den erreichten
+Planeten selbst zu replizieren. Nach $\Sexpr{build_time}$ Jahren ist die
+Replikation abgeschlossen und wiederum $\Sexpr{n_sonde}$ Sonden werden
+ausgesendet. Gehen Sie von $\Sexpr{dist_stars}$ Lichtjahren als mittlerer
+Abstand der Sterne in der Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$
+Sternen in der Milchstra{\ss}e.
 
-Kniffel oder Dungeon \& Dragons
+\begin{enumerate}
+\item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
+  Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
+  mit der Dauer jedes Schrittes!
+  \textbf{(2 Punkte)}
+\item Berechnen Sie die Dauer, die eine Zivilisation ben{\"o}tigt, um die ganze
+  Milchstra{\ss}e zu besuchen! \textbf{(3 Punkte)} 
+\item  $\Sexpr{age_earth}e+09$ Jahre Alter der Erde
+\end{enumerate}
+
+
+Skizzieren Sie den Zusammenhang zwischen Zeit und Raum.
+
+ODER
+
+Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit, Raum und
+Geschwindigkeit. Zeichnen Sie ein ruhendes Raumschiff, ein mit 50\%
+Lichtegschwindigkeit und mit Lichtegeschwindigkeit fliegendes Raumschiff.
+
+Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
+Begr{\"u}nden Sie Ihre Antwort anhand der Abbilung!
 
 \begin{enumerate}
 \item foo
