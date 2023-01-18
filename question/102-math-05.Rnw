@@ -18,7 +18,8 @@ c_perc <- c(5, 10, 20, 30) %>% sample(1)
 n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
 dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
 steps <- c("drei", "vier")  %>% sample(1)
-age_earth <- c(4.1, 4.5, 4.6, 4.3) %>% sample(1)
+age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
+age_plates <- c(1000e+06, 1200e+06, 800e+06, 900e+06) %>% sample(1)
 @
 
 Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
@@ -40,29 +41,22 @@ Sternen in der Milchstra{\ss}e.
 \begin{enumerate}
 \item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
   Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
-  mit der Dauer jedes Schrittes!
-  \textbf{(2 Punkte)}
+  mit der Dauer jedes Schrittes! \textbf{(2 Punkte)}
 \item Berechnen Sie die Dauer, die eine Zivilisation ben{\"o}tigt, um die ganze
   Milchstra{\ss}e zu besuchen! \textbf{(3 Punkte)} 
-\item  $\Sexpr{age_earth}e+09$ Jahre Alter der Erde
+\item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
+  wie oft war dann eine Sonde schon zu Besuch? Korrigieren Sie Ihre Antwort
+  mit dem Wissen, dass sich die Kontinentalplatten einmal alle
+  $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig umgewandelt haben! \textbf{(2
+    Punkte)}
+\item Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit $t$
+  und Raum $r$. Erg{\"a}nzen Sie den Geschwindigkeitsvektor $\vec{v_t}$ und
+  $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtegschwindigkeit und
+  mit 99\% Lichtegeschwindigkeit fliegendes Raumschiff! \textbf{(3 Punkte)}
+\item Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
+Begr{\"u}nden Sie Ihre Antwort anhand der Abbildung!  \textbf{(2 Punkte)}
 \end{enumerate}
 
-
-Skizzieren Sie den Zusammenhang zwischen Zeit und Raum.
-
-ODER
-
-Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit, Raum und
-Geschwindigkeit. Zeichnen Sie ein ruhendes Raumschiff, ein mit 50\%
-Lichtegschwindigkeit und mit Lichtegeschwindigkeit fliegendes Raumschiff.
-
-Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
-Begr{\"u}nden Sie Ihre Antwort anhand der Abbilung!
-
-\begin{enumerate}
-\item foo
-  \textbf{(2 Punkte)} 
-\end{enumerate}
 
 
 
