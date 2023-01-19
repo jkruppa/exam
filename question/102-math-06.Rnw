@@ -45,5 +45,40 @@ Kniffel oder Dungeon \& Dragons
   \Sexpr{lower} zu w{\"u}rfeln! \textbf{(1 Punkt)}  
 \end{enumerate}
 
+<<>>=
+mat_type <- c("Diagonalmatrix", "Einheitsmatrix", "stochastische Matrix")
+line_1 <- str_c(sample(c(2, 4, 5), 1), " + ",
+                sample(c(6, 7, 8), 1), " + ",
+                sample(c(2, 10, 9), 1), " = ",
+                sample(c(1, 2, 3), 1))
+@ 
+
+Sie haben den Vektor $A = \Sexpr{round(rnorm(3, 5, 1))}$ und den Vektor $B = \Sexpr{round(rnorm(3, 5, 1))}$ gegeben.
+
+\begin{enumerate}
+\item Multiplizieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$ mit
+  $\Sexpr{round(rnorm(1, 10, 1))}$! \textbf{(1 Punkt)}
+\item Transponieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
+  \textbf{(1 Punkt)}
+\item Addieren Sie die Vektoren $A$ und $B$! \textbf{(1 Punkt)}
+\item Erstellen Sie eine \Sexpr{mat_type} mit $m \times n$ Dimensionen!
+  Legen Sie $m$ und $n$ vorher sinnvoll fest! \textbf{(1 Punkt)}  
+\item Multiplizieren Sie folgende gegebene Matrix mit dem Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
+  \textbf{(2 Punkte)}
+  <<>>=
+  mat <- matrix(rnorm(12, 5, 2), ncol = 3, nrow =
+  4) %>% round
+  mat
+  @
+\item Skizzieren Sie den entsprechenden \Rlogo Code f{\"u}r die
+  Matrixmultiplikation! \textbf{(2 Punkte)}
+\item
+  <<>>=
+line_1
+@ 
+\end{enumerate}
+
+
+
 
 
