@@ -13,7 +13,7 @@
 
 <<>>=
 type_d <- c("vierseitigen", "sechsseitigen") %>% sample(1)
-build_time <- c(1000, 500, 750, 250) %>% sample(1)
+lower <- c(3, 4, 5) %>% sample(1)
 c_perc <- c(5, 10, 20, 30) %>% sample(1)
 n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
 dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
@@ -39,7 +39,10 @@ Kniffel oder Dungeon \& Dragons
 \begin{enumerate}
 \item Stellen Sie alle m{\"o}glichen Ergebnisse von zwei \Sexpr{type_d} W{\"u}rfel
   als Diagramm dar! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten der einzelnen Ergebnisse! \textbf{(1 Punkt)}  
+\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten der einzelnen Ergebnisse!
+  \textbf{(1 Punkt)}  
+\item Berechnen Sie die Wahrscheinlichkeit in Summe gleich oder weniger als
+  \Sexpr{lower} zu w{\"u}rfeln! \textbf{(1 Punkt)}  
 \end{enumerate}
 
 
