@@ -1,20 +1,65 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
 %% --------------------------------------------------------------------
-%\hfill\href{https://youtu.be/f5fHm_jCHe4}{\includegraphics[width =
-%  2cm]{img/youtube}}
-%\hspace{2Ex}\\[1Ex]
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
+\hspace{2Ex}
 %% --------------------------------------------------------------------
 
-Vektoren oder Matrizen
+\paragraph{Foo Theme}
 
-Das Ganze dann auch in R
+<<>>=
+type_d <- c("vierseitigen", "sechsseitigen") %>% sample(1)
+lower <- c(3, 4, 5) %>% sample(1)
+c_perc <- c(5, 10, 20, 30) %>% sample(1)
+n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
+dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
+steps <- c("drei", "vier")  %>% sample(1)
+age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
+age_plates <- c(1000e+06, 1200e+06, 800e+06, 900e+06) %>% sample(1)
+@
 
+Regenwahrscheinlichkeit
+
+Venn Diagramme
+
+Wahrscheinlichkeitsaufgabe
+
+Einmal Wahrscheinlichkeitsbaum zeichnen
+
+Einmal Wahrscheinlichkeiten berechen
+
+Verteilungen von Wahrscheinlichkeiten 
+
+Kniffel oder Dungeon \& Dragons
 
 \begin{enumerate}
-\item foo
-  \textbf{(2 Punkte)} 
+\item Stellen Sie alle m{\"o}glichen Ergebnisse von zwei \Sexpr{type_d} W{\"u}rfel
+  als Diagramm dar! \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten der einzelnen Ergebnisse!
+  \textbf{(1 Punkt)}  
+\item Berechnen Sie die Wahrscheinlichkeit in Summe gleich oder weniger als
+  \Sexpr{lower} zu w{\"u}rfeln! \textbf{(1 Punkt)}  
 \end{enumerate}
 
 
+<<>>=
 
+logic_table <- c("A tritt ein oder B tritt ein",
+                 "A tritt ein und B tritt ein",
+                 "A tritt ein, aber B tritt nicht ein",
+                 "A tritt nicht ein",
+                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
+                 "B ist Teilmenge von A") %>%
+  sample(4)
+@ 
+
+Visualisieren Sie folgende logischen Aussagen und erg{\"a}nzen Sie die
+mathematische Notation!
+
+<<>>=
+logic_table
+@ 
