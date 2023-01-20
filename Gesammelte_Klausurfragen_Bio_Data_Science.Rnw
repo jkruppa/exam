@@ -551,15 +551,15 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \begin{itemize}
   \item \href{https://jkruppa.github.io/programing-preface.html}{Kapitel 9ff. Programmieren in R}
   \end{itemize}
-In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt. \\
+In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt. \\
 
-In der Klausur zu dem Modul \textbf{Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
 
-In der Klausur zu dem Modul \textbf{Angewandte Statistik für Bioverfahrenstechnik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Angewandte Statistik für Bioverfahrenstechnik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
 
-In der Klausur zu dem Modul \textbf{Angewandte Statistik und Versuchswesen} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Angewandte Statistik und Versuchswesen} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
 
-In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung von mir ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
 
 \end{graybox}
 \clearpage
@@ -576,25 +576,25 @@ In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus
 \Sexpr{knit_child(text_questions_vec[66])} 
 \clearpage
 % -----------------------------------------------------------------------  
-\begin{graybox}{Mathematik}
-Mehr Informationen zu den Aufgaben in den \href{https://jkruppa.github.io/math/}{Skript Mathematik} und den entsprechenden Kapiteln.\\
-
-In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden \textit{zwei Aufgaben} aus den folgenden Aufgaben zur Mathematik von mir ausgewählt. \\
-\end{graybox}
-\clearpage
-% -----------------------------------------------------------------------  
 \Sexpr{knit_child(text_questions_vec[67])} 
 \clearpage
 % ----------------------------------------------------------------------- 
+\begin{graybox}{Mathematik}
+Mehr Informationen zu den Aufgaben in den \href{https://jkruppa.github.io/math/}{Skript Mathematik} und den entsprechenden Kapiteln.\\
+
+In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden \textit{zwei Aufgaben} aus den folgenden Aufgaben zur Mathematik ausgewählt. \\
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------  
 \Sexpr{knit_child(text_questions_vec[68])} 
 \clearpage
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[69])} 
 \clearpage
-% -----------------------------------------------------------------------
+% ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[70])} 
 \clearpage
-% ----------------------------------------------------------------------- 
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[71])} 
 \clearpage
 % ----------------------------------------------------------------------- 
@@ -605,6 +605,9 @@ In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden \textit{zwei
 \clearpage
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(text_questions_vec[74])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[75])} 
 \clearpage
 % -----------------------------------------------------------------------
 \end{document}
