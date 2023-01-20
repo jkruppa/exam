@@ -9,22 +9,33 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Foo Theme}
+
 
 <<>>=
-type_d <- c("vierseitigen", "sechsseitigen") %>% sample(1)
-lower <- c(3, 4, 5) %>% sample(1)
-c_perc <- c(5, 10, 20, 30) %>% sample(1)
-n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
-dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
-steps <- c("drei", "vier")  %>% sample(1)
-age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
-age_plates <- c(1000e+06, 1200e+06, 800e+06, 900e+06) %>% sample(1)
+pr_a <- c(0.1, 0.2, 0.3) %>% sample(1)
+pr_b <- c(0.15, 0.25, 0.35) %>% sample(1)
+pr_ab <- c(0.05, 0.1, 0.15) %>% sample(1)
+type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
+ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
+
 @
 
-Regenwahrscheinlichkeit
+Sie haben die Wahrscheinlichkeit $Pr(A) = \Sexpr{pr_a}$ f{\"u}r das Ereignis
+$A$, die Wahrscheinlichkeit $Pr(B) = \Sexpr{pr_b}$ f{\"u}r das Ereignis $B$ und
+die Wahrscheinlichkeit $Pr(A \land B) = \Sexpr{pr_ab}$ f{\"u}r das Ereignis
+$A \land B$ gegeben.
 
-Venn Diagramme
+
+
+Erkl{\"a}ren Sie das Konzept der bedingten Wahrscheinlichkeit \Sexpr{ab_ba} an \Sexpr{pander::p(type_draw, wrap = "", copula = " und ")}.
+
+\Sexpr{pr_a}
+
+\Sexpr{pr_b}
+
+\Sexpr{pr_ab}
+
+Regenwahrscheinlichkeit
 
 Wahrscheinlichkeitsaufgabe
 
@@ -36,13 +47,17 @@ Verteilungen von Wahrscheinlichkeiten
 
 Kniffel oder Dungeon \& Dragons
 
+Binomial Formel
+
+
+
+
 \begin{enumerate}
-\item Stellen Sie alle m{\"o}glichen Ergebnisse von zwei \Sexpr{type_d} W{\"u}rfel
+\item Stellen Sie alle m{\"o}glichen Ergebnisse von zwei W{\"u}rfel
   als Diagramm dar! \textbf{(2 Punkte)}
 \item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten der einzelnen Ergebnisse!
-  \textbf{(1 Punkt)}  
-\item Berechnen Sie die Wahrscheinlichkeit in Summe gleich oder weniger als
-  \Sexpr{lower} zu w{\"u}rfeln! \textbf{(1 Punkt)}  
+  \textbf{(1 Punkt)}   
+\item Visualisieren Sie die 
 \end{enumerate}
 
 

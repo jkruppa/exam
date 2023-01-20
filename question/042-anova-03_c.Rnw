@@ -1,7 +1,7 @@
 \section{Aufgabe \hfill (12 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/lWxJ5M9-Id8}{\includegraphics[width =
+\hfill\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
@@ -28,11 +28,11 @@ data_tbl <- tibble(mean = sample(c(14, 15, 16, 18, 22, 23), row_num,
                    id = 1:row_num)
 
 data_pre_tbl <- data_tbl %>%
-  expand_grid(rep = 1:4)
+  expand_grid(rep = 1:5)
 
 rsp_tbl <- data_tbl %>%
   split(.$id) %>%
-  map(~rnorm(4, mean = .x$mean, sd = 5))  %>%
+  map(~rnorm(5, mean = .x$mean, sd = 3))  %>%
   reduce(c) %>%
   as_tibble()
 

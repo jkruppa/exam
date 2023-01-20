@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -8,8 +8,6 @@
   2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
-
-\paragraph{Foo Theme}
 
 <<>>=
 
@@ -31,13 +29,24 @@ dna_seq <- c("ACACACAC",
              "ACTGGTAA") %>%
   sample(4)
 A <- rnorm(1, 10, 2) %>% round()
+log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
+                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
 @ 
 
 \begin{enumerate}
-\item Nennen Sie die logischen Operatoren f{\"u}r UND sowie ODER in \Rlogo!
-  \textbf{(1 Punkt)}
-\item Visualisieren Sie folgende logischen Aussagen zu der Menge $A$ und
-  $B$ als Venn-Diagramme. Erg{\"a}nzen Sie die mathematische Notation!
+\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
+  \textbf{(2 Punkte)}
+  \begin{center}
+    \begin{tabular}{c|c}
+      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
+      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
+      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
+      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
+      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
+    \end{tabular}
+  \end{center}  
+\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
+  $B$ als Mengendiagramme bzw. Venndiagramme!
   \textbf{(2 Punkte)}
   \begin{itemize}
   \item \Sexpr{logic_table[1]}
@@ -45,9 +54,9 @@ A <- rnorm(1, 10, 2) %>% round()
   \item \Sexpr{logic_table[3]}
   \item \Sexpr{logic_table[4]}
   \end{itemize}
-\item Erg{\"a}nzen Sie zu den Venn-Diagrammen die mathematische Notation!
+\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
   \textbf{(2 Punkte)}
-\item Erstellen Sie den \texttt{\Sexpr{logical_r}} \Rlogo Output f{\"u}r die
+\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
   Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
   Sequenzen! \textbf{(2 Punkte)}
   \begin{itemize}
@@ -56,9 +65,10 @@ A <- rnorm(1, 10, 2) %>% round()
   \item \Sexpr{dna_seq[3]}
   \item \Sexpr{dna_seq[4]}
   \end{itemize}
-\item Geben ist A mit \Sexpr{A}. Erkl{\"a}ren Sie den
-  Unterschied zwischen \texttt{A == \Sexpr{A}} und \texttt{A != \Sexpr{A}}
-  in \Rlogo!  \textbf{(1 Punkt)}
+\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
+  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
+  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
+  in beiden F{\"a}llen? \textbf{(2 Punkte)}
 \end{enumerate}
 
 
