@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -9,59 +9,86 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-
+\paragraph{H{\"o}hlen \& Drachen}
 
 <<>>=
-pr_a <- c(0.1, 0.2, 0.3) %>% sample(1)
-pr_b <- c(0.15, 0.25, 0.35) %>% sample(1)
-pr_ab <- c(0.05, 0.1, 0.15) %>% sample(1)
+gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
+pr_a <- c(0.6, 0.65, 0.7) %>% sample(1)
+pr_b <- c(0.7, 0.75, 0.9) %>% sample(1)
+pr_ab <- c(40, 45, 50) %>% sample(1)
 type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
 ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
 
+num_dice <- c(4:7) %>% sample(1)
+
+type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
+                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
+                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
+                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
+
+type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
+                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
+
+add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
+
+type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
+                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
+                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
+                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
+
+num_erfolge <- num_dice - sample(c(1,2), 1)
+
 @
 
-Sie haben die Wahrscheinlichkeit $Pr(A) = \Sexpr{pr_a}$ f{\"u}r das Ereignis
-$A$, die Wahrscheinlichkeit $Pr(B) = \Sexpr{pr_b}$ f{\"u}r das Ereignis $B$ und
-die Wahrscheinlichkeit $Pr(A \land B) = \Sexpr{pr_ab}$ f{\"u}r das Ereignis
-$A \land B$ gegeben.
+Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
+haben, wollen Sie bei \Sexpr{gender} einmal \textit{H{\"o}hlen \& Drachen}
+ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
+Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz sch{\"o}n viele
+unterschiedliche W{\"u}rfel durch die Gegend fliegen. Daher m{\"u}ssen Sie sich
+jetzt einiges an Fragen stellen. \\%[-1ex]
 
-
-
-Erkl{\"a}ren Sie das Konzept der bedingten Wahrscheinlichkeit \Sexpr{ab_ba} an \Sexpr{pander::p(type_draw, wrap = "", copula = " und ")}.
-
-\Sexpr{pr_a}
-
-\Sexpr{pr_b}
-
-\Sexpr{pr_ab}
-
-Regenwahrscheinlichkeit
-
-Wahrscheinlichkeitsaufgabe
-
-Einmal Wahrscheinlichkeitsbaum zeichnen
-
-Einmal Wahrscheinlichkeiten berechen
-
-Verteilungen von Wahrscheinlichkeiten 
-
-Kniffel oder Dungeon \& Dragons
-
-Binomial Formel
-
-
-
+In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1,
+  1)} zum w{\"u}rfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} w{\"u}rfeln,
+haben Sie einen Erfolg.
 
 \begin{enumerate}
-\item Stellen Sie alle m{\"o}glichen Ergebnisse von zwei W{\"u}rfel
-  als Diagramm dar! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten der einzelnen Ergebnisse!
-  \textbf{(1 Punkt)}   
-\item Visualisieren Sie die 
+\item Berechnen Sie die Wahrscheinlichkeit \textit{genau}
+  \Sexpr{num_erfolge} Erfolge zu erzielen!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
+  \textbf{(1 Punkt)}
 \end{enumerate}
 
+Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
+wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
+Schwert entscheiden.
 
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
+  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
+  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+\end{enumerate}
 
+Jetzt wird es immer wilder, da Sie sich jetzt {\"u}berlegen m{\"u}ssen, wie
+wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
+funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
+Wahrscheinlichkeit f{\"u}r das Ereignis $A$, der Rettungswurf ist erfolgreich,
+ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
+der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie
+haben mitgez{\"a}hlt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 F{\"a}llen
+Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
+  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
+  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
+  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+\item Bestimmen Sie $Pr(A \cap B)$! \textbf{(1 Punkt)}
+\item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2
+  Kreuztabelle! \textbf{(2 Punkte)}
+\item Bestimmen Sie Wahrscheinlichkeit $Pr(A|B)$, dass Ihr Rettungswurf gelingt, wenn
+  der Hexer erfolgreich gezaubert hat! \textbf{(1 Punkt)}
+\end{enumerate}
 
  
