@@ -4,17 +4,18 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/-b4IRu2-EJo}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
 \paragraph{Das Fermi Paradoxon}
 
 <<>>=
-n_sonde <- c(2, 3, 4) %>% sample(1)
+n_sonde <- c("zwei", "drei", "vier") %>% sample(1)
+c_voyager <- c(60523, 61198, 62587) %>% sample(1)
 build_time <- c(1000, 500, 750, 250) %>% sample(1)
-c_perc <- c(5, 10, 20, 30) %>% sample(1)
+ziv_y <- c(11000, 10000, 12000) %>% sample(1)
 n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
 dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
 steps <- c("drei", "vier")  %>% sample(1)
@@ -26,35 +27,39 @@ Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
 im Los Alamos National Laboratory mit seinen Kollegen angebliche
 UFO-Sichtungen und fragte schlie{\ss}lich: "`Where is everybody?"'. Warum seien
 weder Raumschiffe anderer Weltraumbewohner noch andere Spuren
-extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine
+extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine au{\ss}erirdische
 Zivilisation ben{\"o}tigen um die gesamte Milchstra{\ss}e zu
-besuchen?\\[-1ex]
+besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde w{\"a}re?\\[-1ex]
 
-Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$ Sonden mit
-$\Sexpr{c_perc}$\%iger Lichtgeschwindigkeit los um sich auf den erreichten
-Planeten selbst zu replizieren. Nach $\Sexpr{build_time}$ Jahren ist die
-Replikation abgeschlossen und wiederum $\Sexpr{n_sonde}$ Sonden werden
-ausgesendet. Gehen Sie von $\Sexpr{dist_stars}$ Lichtjahren als mittlerer
-Abstand der Sterne in der Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$
-Sterne in der Milchstra{\ss}e.
+Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$
+Voyager 1 {\"a}hnliche Sonden mit der Geschwindigkeit von $\Sexpr{c_voyager}km/h$
+los um sich auf den erreichten Planeten selbst zu replizieren. Nach
+$\Sexpr{build_time}$ Jahren ist die Replikation abgeschlossen und wiederum
+$\Sexpr{n_sonde}$ Sonden werden ausgesendet. Gehen Sie von
+$\Sexpr{dist_stars}$ Lichtjahren als mittlerer Abstand der Sterne in der
+Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$ Sterne in der Milchstra{\ss}e. Die
+Lichtgeschwindigkeit betr{\"a}gt $2.9e+08m/s$.
 
 \begin{enumerate}
 \item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
   Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
   mit der Dauer jedes Schrittes! \textbf{(2 Punkte)}
-\item Berechnen Sie die Dauer, die eine Zivilisation ben{\"o}tigt, um die ganze
-  Milchstra{\ss}e zu besuchen! \textbf{(2 Punkte)} 
+\item Berechnen Sie die Dauer, die eine au{\ss}erirdische Zivilisation
+  ben{\"o}tigt, um die ganze Milchstra{\ss}e zu besuchen! \textbf{(3 Punkte)}
 \item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
-  wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu Besuch? Korrigieren Sie Ihre Antwort
-  mit dem Wissen, dass sich die Kontinentalplatten einmal alle
-  $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im Erdinneren umgewandelt haben! \textbf{(2
-    Punkte)}
+  wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu
+  Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die
+  Kontinentalplatten einmal alle $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im
+  Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
+\item Mit welcher Wahrscheinlichkeit wurde die Menschheit schon von der
+  Au{\ss}erirdischen besucht, wenn wir von einem Zivilisationsbeginn der
+  Menschheit von vor $\Sexpr{ziv_y}$ Jahren ausgehen? \textbf{(1 Punkt)}
 \item Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit $t$
   und Raum $r$. Erg{\"a}nzen Sie den Geschwindigkeitsvektor $\vec{v_t}$ und
   $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtgeschwindigkeit und
-  mit 99\% Lichtgeschwindigkeit fliegender Sonde! \textbf{(2 Punkte)}
+  mit 99\% Lichtgeschwindigkeit fliegender Sonde! \textbf{(1 Punkt)}
 \item Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
-Begr{\"u}nden Sie Ihre Antwort anhand der Abbildung!  \textbf{(2 Punkte)}
+Begr{\"u}nden Sie Ihre Antwort anhand der Abbildung!  \textbf{(1 Punkt)}
 \end{enumerate}
 
 

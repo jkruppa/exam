@@ -25,7 +25,7 @@ line_3 <- str_c(sample(c(2, 4, 5), 1), " + ",
                 sample(c(1, 2, 3), 1))
 @ 
 
-Sie haben den Vektor $A = \Sexpr{round(rnorm(3, 6, 8))}$ und den Vektor $B = \Sexpr{round(rnorm(3, 2, 4))}$ gegeben.
+Sie haben den Vektor $A = \{\Sexpr{round(rnorm(3, 6, 8))}\}$ und den Vektor $B = \{\Sexpr{round(rnorm(3, 2, 4))}\}$ gegeben.
 
 \begin{enumerate}
 \item Addieren Sie die Vektoren $A$ und $B$! \textbf{(1 Punkt)}
