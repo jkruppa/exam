@@ -1,5 +1,12 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
+%% --------------------------------------------------------------------
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
+\hspace{2Ex}
+%% --------------------------------------------------------------------
+
+
 <<utest-02, results='asis', echo = FALSE>>=
 
 data_tbl <- tibble(RootsGoneX = round(rnorm(7, 10, 3), 1),

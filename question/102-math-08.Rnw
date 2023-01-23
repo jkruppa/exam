@@ -4,24 +4,24 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/x_MwWJoEsME}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
 <<>>=
 mat_type <- c("Diagonalmatrix", "Einheitsmatrix", "stochastische Matrix") %>% sample(1)
-line_1 <- str_c(sample(c(2, 4, 5), 1), " + ",
-                sample(c(6, 7, 8), 1), " + ",
-                sample(c(2, 10, 9), 1), " = ",
+line_1 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
+                sample(c(6, 7, 8), 1), "x2 + ",
+                sample(c(2, 10, 9), 1), "x3 = ",
                 sample(c(1, 2, 3), 1))
-line_2 <- str_c(sample(c(2, 4, 5), 1), " + ",
-                sample(c(6, 7, 8), 1), " + ",
-                sample(c(2, 10, 9), 1), " = ",
+line_2 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
+                sample(c(6, 7, 8), 1), "x2 + ",
+                sample(c(2, 10, 9), 1), "x3 = ",
                 sample(c(1, 2, 3), 1))
-line_3 <- str_c(sample(c(2, 4, 5), 1), " + ",
-                sample(c(6, 7, 8), 1), " + ",
-                sample(c(2, 10, 9), 1), " = ",
+line_3 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
+                sample(c(6, 7, 8), 1), "x2 + ",
+                sample(c(2, 10, 9), 1), "x3 = ",
                 sample(c(1, 2, 3), 1))
 @ 
 
