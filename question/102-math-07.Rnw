@@ -9,71 +9,60 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\vspace{1Ex}
+\paragraph{Solar- \& Biogasanlagen}
 
 <<>>=
+type <- c("Schweinestall", "H{\"u}hnerstall", "Rinderstall") %>% sample(1)
+h_vorne <- c(6, 5, 7) %>% sample(1)
+h_hinten <- c(8, 9, 11) %>% sample(1)
+tiefe <- c(12, 13, 14) %>% sample(1)
+breite <- c(30, 40, 50) %>% sample(1)
 
-logic_table <- c("A tritt ein oder B tritt ein",
-                 "A tritt ein und B tritt ein",
-                 "A tritt ein, aber B tritt nicht ein",
-                 "A tritt nicht ein",
-                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
-                 "B ist Teilmenge von A") %>%
-  sample(4)
-temp <- c("AT", "GT", "CC") %>% sample(1)
-logical_r <- c("numeric", "logical") %>% sample(1)
-dna_seq <- c("ACACACAC",
-             "ATATACAC",
-             "AAATTTAT",
-             "ATGTGTAT",
-             "TCTCTCTC",
-             "AACCAACC",
-             "ACTGGTAA") %>%
-  sample(4)
-A <- rnorm(1, 10, 2) %>% round()
-log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
-                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
-@ 
+beton_m <- c(5, 10, 15) %>% sample(1)
+save_m <- c(10, 15, 20) %>% sample(1)
+dichte_l <- c(220, 235, 240) %>% sample(1)
+dichte_h <- c(270, 280, 290) %>% sample(1)
+radius <- c(1, 1.2, 1.5) %>% sample(1)
+grad <- c(85, 90, 95) %>% sample(1)
+@
+
+Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
+auf den \Sexpr{type} montieren lassen. Sie messen Ihren Stall und finden
+folgende Ma{\ss}e wieder. Die vordere Seite des \Sexpr{type} hat eine H{\"o}he
+$h_v$ von $\Sexpr{h_vorne}m$. Die hintere Seite des \Sexpr{type} hat eine
+H{\"o}he $h_b$ von $\Sexpr{h_hinten}m$. Der \Sexpr{type} hat eine Tiefe $t$ von
+$\Sexpr{tiefe}m$ und eine Breite $b$ von $\Sexpr{breite}m$.
 
 \begin{enumerate}
-\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
-  \textbf{(2 Punkte)}
-  \begin{center}
-    \begin{tabular}{c|c}
-      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
-      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
-      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
-      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
-      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
-    \end{tabular}
-  \end{center}  
-\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
-  $B$ als Mengendiagramme bzw. Venndiagramme!
-  \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{logic_table[1]}
-  \item \Sexpr{logic_table[2]}
-  \item \Sexpr{logic_table[3]}
-  \item \Sexpr{logic_table[4]}
-  \end{itemize}
-\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
-  \textbf{(2 Punkte)}
-\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
-  Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
-  Sequenzen! \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{dna_seq[1]}
-  \item \Sexpr{dna_seq[2]}
-  \item \Sexpr{dna_seq[3]}
-  \item \Sexpr{dna_seq[4]}
-  \end{itemize}
-\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
-  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
-  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
-  in beiden F{\"a}llen? \textbf{(2 Punkte)}
+\item Skizzieren Sie den \Sexpr{type} auf dem die Solaranlage montiert
+  werden soll! Erg{\"a}nzen Sie die Angaben f{\"u}r die H{\"o}hen $h_v$, $h_b$, die
+  Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che der schr{\"a}gen, neuen Solaranlage auf dem
+  \Sexpr{type}! \textbf{(3 Punkte)}
+\end{enumerate}
+
+Ebenfalls planen Sie eine neue Biogasanlage f{\"u}r Ihren Betrieb. Der neue
+Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein
+paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
+zylindrischen Methantanks kann nur ein Gewicht von maximal
+$\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
+Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein. In fl{\"u}ssiger Form hat
+Methan bei $-80^\circ\text{C}$ eine Dichte von
+$\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
+von $\Sexpr{dichte_h}kg/m^3$. Sie betrieben Ihre Anlage bei
+$-\Sexpr{grad}^\circ\text{C}$.
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Extrapolieren Sie die effektive Dichte des Methans in Ihrem
+  Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
+\item Berechnen Sie wie viel Kubikmeter $m^3$ Sie in den Methantank f{\"u}llen
+  k{\"o}nnen, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
+\item Berechnen Sie die maximale H{\"o}he $h_{max}$ f{\"u}r den gef{\"u}llten
+  Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2
+    Punkte)}
 \end{enumerate}
 
 
 
 
- 

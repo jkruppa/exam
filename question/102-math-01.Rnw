@@ -22,7 +22,7 @@ lautes Wiehern, woraufhin die franz{\"o}sische Armee den Schimmel
 beschlagnahmte und nach Frankreich f{\"u}hrte. \\
 
 <<>>=
-mm_wachstum <- c(0.75, 1, 1.2, 1.3) %>% sample(1)
+mm_wachstum <- c(0.8, 0.9, 1.0, 1.1) %>% sample(1)
 brust_umfang <- c(10.5, 11, 12, 12.5) %>% sample(1)
 year_stolen <- c(1805, 1810, 1815) %>% sample(1)
 horse_h <- c(180, 185, 190) %>% sample(1)
@@ -43,11 +43,11 @@ Jahr 2022 einen Umfang von $\Sexpr{brust_umfang}m$ in Brusth{\"o}he hatte.
 \begin{enumerate}
 \item Wie gro{\ss} war der Durchmesser der Eiche im Jahr $\Sexpr{year_stolen}$ als
   Herodot in der Eiche versteckt werden sollte?
-  \textbf{(2 Punkte)}
+  \textbf{(3 Punkte)}
 \item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen
 exponentiellen Zusammenhang f{\"u}r das Wachstum der 1000-j{\"a}hrigen Eiche. Erkl{\"a}ren Sie die
 Auswirkungen der Entscheidung f{\"u}r linear oder exponentiell auf Ihre
-Berechnungen! \textbf{(3 Punkte)}
+Berechnungen! \textbf{(2 Punkte)}
 \end{enumerate}
  
 Herodot hatte eine Schulterh{\"o}he von $\Sexpr{horse_h}$cm, eine Breite von
@@ -55,12 +55,12 @@ $\Sexpr{horse_b}$cm sowie eine L{\"a}nge von  $\Sexpr{horse_l}$cm.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie das effektive Volumen von Herodot, welches Herodot in
-  der 1000-j{\"a}hrigen Eiche einnehmen w{\"u}rde! \textbf{(2 Punkte)} 
+\item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches
+  Herodot in der 1000-j{\"a}hrigen Eiche einnehmen w{\"u}rde! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Gehen Sie davon aus, dass sich Herodot in der 1000-j{\"a}hrigen Eiche $\Sexpr{fitting}$ um
-die eigene Achse drehen konnte.
+Es wurde berichtet, dass sich Herodot in der 1000-j{\"a}hrigen Eiche
+$\Sexpr{fitting}$ um die eigene Achse drehen konnte.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
