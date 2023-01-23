@@ -12,9 +12,9 @@
 \paragraph{Nelken von den Molukken}
 
 <<>>=
-day1 <- c(50, 55, 65, 70) %>% sample(1)
-day2 <- c(80, 83, 86, 88) %>% sample(1)
-day3 <- c(105, 110, 112, 115) %>% sample(1)
+day1 <- c(40, 45, 50) %>% sample(1)
+day2 <- c(60, 65, 70) %>% sample(1)
+day3 <- c(100, 105, 110, 115) %>% sample(1)
 people <- c(218, 222, 237, 245) %>% sample(1)
 vit_c_sellerie <- c(7000, 8000, 6000) %>% sample(1)
 vit_c_bedarf <- c(105, 110, 115) %>% sample(1)
