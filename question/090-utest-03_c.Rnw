@@ -1,23 +1,34 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/gC0SXiIG2wQ}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
 
 <<utest-03, results='asis', echo = FALSE>>=
 
-data_tbl <- tibble(Kontrolle = round(rnorm(7, 10, 3), 1),
-                   "Dosis 20" = round(c(NA, rnorm(6, 11, 3)), 1),
-                   "Dosis 40" = round(c(NA, NA, rnorm(5, 14, 3)), 1)) %>%
-  gather(Treatment, Count) %>%
+
+
+data_tbl <- rbind(tibble(Kontrolle = round(rnorm(n = sample(c(5,6,7), 1),
+                                                 mean = sample(10, 1),
+                                                 sd = sample(c(1, 1, 2), 1)), 1)) %>%
+                  gather,
+                  tibble("Dosis 20" = round(rnorm(n = sample(c(5,4,6), 1),
+                                                  mean = sample(c(11, 12), 1),
+                                                  sd = sample(c(1, 2, 1), 1)), 1)) %>%
+                  gather,
+                  tibble("Dosis 40" = round(rnorm(n = sample(c(5,7,6), 1),
+                                                  mean = sample(c(9, 11, 13), 1),
+                                                  sd = sample(c(2, 2, 2), 1)), 1)) %>%
+                  gather) %>%
+  set_names(c("Treatment", "Count")) %>%
   na.omit %>% 
   mutate("Rang Kontrolle" = "",
          "Rang Dosis 20" = "",
          "Rang Dosis 40" = "") %>% 
-  arrange(Count)
+  sample_n(size = nrow(.))
 
 @
 
@@ -40,9 +51,11 @@ Rechnen Sie einen Kruskal-Wallis-Test auf den obigen Daten.
     + \cfrac{R_3^2}{n_3}\right)
   - 3(n+1)$! \textbf{(6 Punkte)} 
 \item Geben Sie eine Aussage {\"u}ber die Signifikanz von $H_c$ durch
-  den kritischen Wert von $H = 5.99$! \textbf{(1 Punkt)}
-\item Wie lautet die Nullhypothese die Sie mit dem Kruskal-Wallis-Test
+  den kritischen Wert von $H_{\alpha = 5\%} = 5.99$! \textbf{(1 Punkt)}
+\item Wie lautet die statistische Nullhypothese die Sie mit dem Kruskal-Wallis-Test
   {\"u}berpr{\"u}fen? \textbf{(1 Punkt)}
 \item Was sagt ein signifikantes Ergebnis des Kruskal-Wallis-Test in Bezug
   auf die einzelnen Gruppenvergleiche aus? \textbf{(1 Punkt)}
+\item Nennen Sie das statistische Verfahren, welches Sie als Posthoc Test
+  nach einem signifikanten Kruskal-Wallis-Test durchf{\"u}hren w{\"u}rden! \textbf{(1 Punkt)}
 \end{enumerate}

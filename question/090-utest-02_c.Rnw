@@ -1,17 +1,24 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/5tiJFxuZcco}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
 
 <<utest-02, results='asis', echo = FALSE>>=
 
-data_tbl <- tibble(RootsGoneX = round(rnorm(7, 10, 3), 1),
-                   Kontrolle = round(rnorm(7, 13, 3), 1)) %>%
-  gather(Treatment, Count) 
+data_tbl <- rbind(tibble(Kontrolle = round(rnorm(n = sample(c(5,6,7), 1),
+                                                 mean = sample(11, 1),
+                                                 sd = sample(c(1, 1, 2), 1)), 1)) %>%
+                  gather,
+                  tibble(RootsGoneX = round(rnorm(n = sample(c(5,4,6), 1),
+                                                  mean = sample(c(12, 14), 1),
+                                                  sd = sample(c(1, 2, 1), 1)), 1)) %>%
+                  gather) %>%
+  set_names(c("Treatment", "Count")) %>%
+  sample_n(size = nrow(.))
 
 @
 
@@ -31,9 +38,11 @@ Rechnen Sie einen Mann-Whitney-U-Test auf den obigen Daten.
 \begin{enumerate}
 \item Bestimmen Sie hierf{\"u}r $U_c$ mit $U_c = n_1n_2 +
   \cfrac{n_1(n_1+1)}{2}-R_1$! \textbf{(4 Punkte)} 
-\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_c$ durch $z =
-  \cfrac{U_c - \cfrac{n_1n_2}{2}}{\sqrt{\cfrac{n_1n_2(n_1+n_2+1)}{12}}}$ und
-  dem kritischen Wert von $z = 1.96$. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_c$ durch
+  $z = \cfrac{U_c -
+    \cfrac{n_1n_2}{2}}{\sqrt{\cfrac{n_1n_2(n_1+n_2+1)}{12}}}$ und dem
+  kritischen Wert von $z_{\alpha = 5\%} = 1.96$. Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie die Effektst{\"a}rke mit $r = |\frac{z}{\sqrt{n}}| $ und
   interpretieren Sie die Effektst{\"a}rke! \textbf{(2 Punkte)} 
 \end{enumerate}
