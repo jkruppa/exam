@@ -1,23 +1,12 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/Oxa97uqNyCQ}{\includegraphics[width =
+  2cm]{img/youtube}}
 \hspace{2Ex}
+\href{https://youtu.be/ymFfBkWyb8s}{\includegraphics[width =
+  2cm]{img/youtube_R}}\\[1Ex]
 %% --------------------------------------------------------------------
-
-
-%% --------------------------------------------------------------------
-%\hfill\href{https://youtu.be/f5fHm_jCHe4}{\includegraphics[width =
-%  2cm]{img/youtube}}
-%\hspace{2Ex}
-%\href{https://youtu.be/_EGebjrOCUQ}{\includegraphics[width =
-%  2cm]{img/youtube_R}}\\[1Ex]
-%% --------------------------------------------------------------------
-
-
-
 
 <<echo = FALSE>>=
 trt_name <- c("Behandlungen", "D{\"u}nger", "Sorten", "Futterzus{\"a}tze") %>% sample(1)

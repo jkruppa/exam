@@ -26,8 +26,8 @@ if(length(x) == 11) {
 
 questions_vec <- c(str_c('Es ergibt sich ', median_x, ' [', quant_x[1], ", ",
                          quant_x[2], "]"),
-                   str_c('Es ergibt sich ', mean_x, ' [', quant_x[1], ", ",
-                         quant_x[2], "]"),
+                   str_c('Es ergibt sich ', mean_x, ' [', quant_x[1]+1, ", ",
+                         quant_x[2]+1, "]"),
                    str_c('Es ergibt sich ', median_x, ' +/- ', quant_x[1]),
                    str_c('Es ergibt sich ', median_x, ' +/- ', quant_x[2]),
                    str_c('Es ergibt sich ', mean_x, ' +/- ', quant_x[1])) %>%
