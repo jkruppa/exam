@@ -1,7 +1,7 @@
 \section{Aufgabe \hfill (13 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/qfoDKS2HNxw}{\includegraphics[width =
+\hfill\href{https://youtu.be/49hvImMwVyE}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
@@ -13,15 +13,15 @@ Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.
 
 <<anova-R-01-a,  echo = FALSE>>=
 
-data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(7,9), 1),
+data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(7,9), 1),
                                          mean = sample(c(15, 17, 19), 1),
                                          sd = sample(c(1, 1, 2), 1)))) %>%
                   gather,
-                  tibble(dose2 = round(rnorm(n = sample(c(7,9), 1),
+                  tibble(trt1 = round(rnorm(n = sample(c(7,9), 1),
                                          mean = sample(c(18, 19, 20), 1),
                                          sd = sample(c(1, 2, 1), 1)))) %>%
                   gather,
-                  tibble(dose3 = round(rnorm(n = sample(c(7,9), 1),
+                  tibble(trt2 = round(rnorm(n = sample(c(7,9), 1),
                                          mean = sample(c(19, 20, 21), 1),
                                          sd = sample(c(2, 2, 2), 1)))) %>%
                   gather) %>%
