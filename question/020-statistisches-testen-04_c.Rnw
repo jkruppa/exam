@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/2Hr_3Ck629U}{\includegraphics[width =
@@ -11,24 +11,32 @@ img_file <- file.path(img_path, "statistisches-testen-04")
 
 s_or_n <- sample(c("Varianz $s_p$", "Fallzahl $n$"), 1)
 
-ki_sample <- c("Ein signifikantes, relevantes Konfidenzintervall",
-               "Ein nicht signifikantes, relevantes Konfidenzintervall",
-               "Ein signifikantes, nicht relevantes Konfidenzintervall",
-               str_c("Ein Konfidenzintervall mit h{\"o}herer", s_or_n, " in der Stichprobe als der Rest der Konfidenzintervalle"),
-               str_c("Ein Konfidenzintervall mit niedriger ", s_or_n, " in der Stichprobe als der Rest der Konfidenzintervalle")) %>%
+alpha <- c(90, 99) %>% sample(1)
+
+ki_sample <- c("Ein signifikantes, relevantes 95\\%-Konfidenzintervall",
+               "Ein signifikantes, nicht relevantes 95\\%-Konfidenzintervall",
+               "Ein nicht signifikantes, nicht relevantes 95\\%-Konfidenzintervall",
+               str_c("Ein 95\\%-Konfidenzintervall mit h{\"o}herer", s_or_n, " in der Stichprobe als der Rest der 95\\%-Konfidenzintervalle"),
+               str_c("Ein 95\\%-Konfidenzintervall mit niedriger ", s_or_n, " in der Stichprobe als der Rest 95\\%-der Konfidenzintervalle"),
+               str_c("Ein signifikantes, relevantes ", alpha,"\\%-Konfidenzintervall.")) %>%
   sample
 
+effect <- c("dem mittleren Trockengewicht nach D{\"u}ngergabe",
+            "dem mittleren Befall mit Parasiten") %>%
+  sample(1)
 
 @ 
 
-Sie rechnen einen t-Test. Sie sch{\"a}tzen einen Mittelwertsunterschied. 
+Sie rechnen einen t-Test f{\"u}r Gruppenvergleiche. Sie sch{\"a}tzen den Unterschied
+zwischen \Sexpr{effect}. 
 
 \begin{enumerate}
 \item Beschriften Sie die untenstehende Abbildung mit der
-  Signifikanzschwelle! \textbf{(1 Punkt)}
-\item Erg{\"a}nzen Sie eine Relevanzschwelle! \textbf{(1 Punkt)} 
+  Signifikanzschwelle! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie eine \textit{in den Kontext passende} Relevanzschwelle!
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \item Skizieren Sie in die
-  untenstehende Abbildung f{\"u}nf einzelne Konfidenzintervalle (a-e) mit den
+  untenstehende Abbildung sechs einzelne Konfidenzintervalle (a-f) mit den
   jeweiligen Eigenschaften! \textbf{(6 Punkte)}
   \begin{itemize}
   \item[(a)] \Sexpr{ki_sample[1]} 	
@@ -36,6 +44,7 @@ Sie rechnen einen t-Test. Sie sch{\"a}tzen einen Mittelwertsunterschied.
   \item[(c)] \Sexpr{ki_sample[3]} 	
   \item[(d)] \Sexpr{ki_sample[4]} 
   \item[(e)] \Sexpr{ki_sample[5]}
+  \item[(f)] \Sexpr{ki_sample[6]}
   \end{itemize}
 \end{enumerate}
 
