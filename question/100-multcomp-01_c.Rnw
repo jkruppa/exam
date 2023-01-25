@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 
 %% --------------------------------------------------------------------
@@ -38,7 +38,7 @@ pval_vec <- c(0.001, 0.02, 0.012, 0.03, 0.34, 0.76, 0.06) %>%
 
 \begin{enumerate}
 \item F{\"u}llen Sie die Spalte "`adjustierte p-Werte"' mit den adjustierten
-  p-Werten nach Bonferoni aus! \textbf{(2 Punkte)}
+  p-Werten nach Bonferoni aus! \textbf{(4 Punkte)}
 \item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese weiter
   abglehnt werden kann. Tragen Sie Ihre Entscheidung in die obige Tabelle
   ein. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
