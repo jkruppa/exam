@@ -38,7 +38,8 @@ ggplot(data_tbl, aes(dose, activity, shape = dose)) +
 @
 
 \begin{enumerate}
-\item Zeichnen Sie folgende statistischen Masszahlen in die Abildung ein! \textbf{(6 Punkte)}
+\item Zeichnen Sie folgende statistischen Masszahlen in die Abildung ein!
+  Beschriften Sie die statistischen Ma{\ss}zahlen! \textbf{(6 Punkte)}
   \begin{itemize}
   \item Total (grand) mean: $\beta_0$
   \item Mittelwerte der Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$
