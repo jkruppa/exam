@@ -4,7 +4,7 @@ Eine der g{\"a}ngigsten Methode der Statistik um einen Fehler zu bestimmen ist..
 
 <<mc-desc-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('... die kleinste Quadrate Methode oder auch least square method genannt.',
+questions_vec <- c('... die Methode der aufaddierten, quadrierten Abst{\"a}nde.',
                    '... die Methode des absoluten Abstands.',
                    '... die Methode des absoluten, quadrierten Abstands.',
                    '... die Methode der aufaddierten, absoluten Abst{\"a}nde.',
