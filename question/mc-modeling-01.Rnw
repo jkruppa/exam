@@ -2,13 +2,13 @@
 
 <<>>=
 
-variable_vec <- c("Y", "X") %>%
+variable_vec <- c("Y", "$\\mathbf{X}$") %>%
   sample(1)
 
 @
 
 
-Sie haben das abstrakte Modell $y \sim x_1 + x_2$ vorliegen. Welche Aussage {\"u}ber
+Sie haben das abstrakte Modell $Y \sim \mathbf{X}$ vorliegen. Welche Aussage {\"u}ber
 \Sexpr{variable_vec} ist richtig?
 
 <<mc-modelling-01, results='asis', echo = FALSE>>=
