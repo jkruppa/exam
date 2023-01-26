@@ -217,7 +217,7 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 % -----------------------------------------------------------------------
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
-  \item Es wird nie mehr als fünfzig Multiple Choice Fragen geben.
+  \item Es wird nie mehr als vierzig Multiple Choice Fragen geben.
   \item Im Laufe der Zeit werden einzelne Fragen durch andere Fragen \textit{ersetzt}, bitte beachten Sie diesen Sachstand, wenn Sie eine \textit{Wiederholungsklausur} im nächsten Semester schreiben. 
   \end{itemize}
 \end{graybox}
@@ -262,16 +262,6 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
 \Sexpr{knit_child(mc_questions_vec[38])}
 \Sexpr{knit_child(mc_questions_vec[39])}
 \Sexpr{knit_child(mc_questions_vec[40])}
-\Sexpr{knit_child(mc_questions_vec[41])}
-\Sexpr{knit_child(mc_questions_vec[42])}
-\Sexpr{knit_child(mc_questions_vec[43])}
-\Sexpr{knit_child(mc_questions_vec[44])}
-\Sexpr{knit_child(mc_questions_vec[45])}
-\Sexpr{knit_child(mc_questions_vec[46])}
-\Sexpr{knit_child(mc_questions_vec[47])}    
-\Sexpr{knit_child(mc_questions_vec[48])}  
-\Sexpr{knit_child(mc_questions_vec[49])} 
-\Sexpr{knit_child(mc_questions_vec[50])}   
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
