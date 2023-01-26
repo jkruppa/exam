@@ -1,32 +1,19 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Price et al. (2016) untersuchte die Auswirkungen des Bergbaus und der
-Talauff{\"u}llung auf den Bestand und die H{\"a}ufigkeit von Bachsalamandern. Um
-den Effekt zu Berechnen nutze Price et al. (2016) eine Possion-Regression
-auf die Anzahl an aufgefundenen Bachsalamandern an den jeweiligen
-Suchorten. Welche Aussage zur Possion-Regression auf Z{\"a}hldaten ist richtig?
-
-<<>>=
-data(Salamanders)
-salamanders_tbl <- Salamanders %>%
-  as_tibble %>% 
-  sample_frac(.8)
-
-fit <- glm(count ~ spp + mined, family = poisson, data = salamanders_tbl) %>% 
-  check_overdispersion
-
-variable_vec <- round(fit[[2]], 2)
-
-@
+Nach einer simplen linearen Regression zur Untersuchung vom Einfluss der
+$CO_2$-Konzentration [$\mu g$] im Wasser auf das Wachstum von Wasserlinsen
+[$kg$] erhalten Sie einen $\beta_1$ Koeffizienten von $0.00001$ und einen
+hoch signifikanten $p$-Wert mit $2.3\cdot 10^{-9}$. Warum sehen Sie so einen kleinen
+Effekt bei einer so deutlichen Signifikanz? 
 
 
 <<mc-distribution-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c(str_c("Die Possion-Regression sch{\"a}tzt nur einen Verteilungsparameter. Deshalb muss {\"u}berpr{\"u}ft werden, ob Overdispersion vorliegt. Mit einer gesch{\"a}tzen Overdispersion von ", variable_vec, " liegt Overdispersion vor. Die L{\"o}sung ist die Nutzung einer anderen Verteilungsfamilie wie die Quasipossion Verteilung."),
-                   str_c("Die Possion-Regression sch{\"a}tzt zwei Verteilungsparameter. Deshalb muss {\"u}berpr{\"u}ft werden, ob Overdispersion vorliegt. Mit einer gesch{\"a}tzen Overdispersion von ", variable_vec, " liegt keine Overdispersion vor."),
-                   str_c("Die Possion-Regression sch{\"a}tzt nur einen Verteilungsparameter. Deshalb muss {\"u}berpr{\"u}ft werden, ob Overdispersion vorliegt. Mit einer gesch{\"a}tzen Overdispersion von ", variable_vec, " liegt keine Overdispersion vor. Overdispersion liegt vor, wenn die gesch{\"a}tzte Overdispersion unter 1 liegt."),
-                   str_c("Die Possion-Regression sch{\"a}tzt nur einen Verteilungsparameter. Deshalb muss {\"u}berpr{\"u}ft werden, ob Overdispersion vorliegt. Mit einer gesch{\"a}tzen Overdispersion von ", variable_vec, " liegt Overdispersion vor. Damit kann keine Possion-Regression gerechnet werden. Die L{\"o}sung ist eine Gaussian Regression mit Nullanpassung."),
-                   str_c("Die Possion-Regression sch{\"a}tzt drei Verteilungsparameter. Deshalb muss {\"u}berpr{\"u}ft werden, ob Overdispersion vorliegt. Mit einer gesch{\"a}tzen Overdispersion von ", variable_vec, " liegt Overdispersion vor. Die L{\"o}sung ist die Nutzung von nur zwei der drei Verteilungsparameter: $\\gamma_1$ und $\\gamma_3$.")) %>%
+questions_vec <- c("Die Einheit der $CO_2$-Konzentration ist zu klein gew{\"a}hlt. Die Erh{\"o}hung der $CO_2$-Konzentration um 1 f{\"u}hrt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gew{\"a}hlt werden.",
+                   "Die Einheit der $CO_2$-Konzentration ist zu klein gew{\"a}hlt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration h{\"a}ngen zusammen.",
+                   "Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h{\"o}her ist die Teststatsitik und damit auch der $p$-Wert kleiner. ",
+                   "Die Fallzahl ist zu hoch angesetzt. Je h{\"o}her die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.",
+                   "Das Gewicht und die $CO_2$-Konzentration korrelieren sehr stark, deshalb wird der $\\beta_1$ Koeffizient sehr klein.") %>%
   sample
 
 

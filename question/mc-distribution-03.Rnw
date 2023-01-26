@@ -12,17 +12,10 @@ variable_vec <- round(fit[[2]], 2)
 
 @
 
-
-Price et al. (2016) untersuchte die Auswirkungen des Bergbaus und der
-Talauff{\"u}llung auf den Bestand und die H{\"a}ufigkeit von Bachsalamandern. Um
-den Effekt zu Berechnen nutze Price et al. (2016) eine Possion-Regression
-auf die Anzahl an aufgefundenen Bachsalamandern an den jeweiligen
-Suchorten. Nach einer statistischen Beratung wurde Ihm nahegelegt auf
-Overdispersion zu achten, wenn er statistische Aussagen zur Signifikanz
-treffen will. Price et al. (2016) sch{\"a}tzt zwei Modelle. Modell 1 mit einer
-Possion Verteilung und Modell 2 mit einer Quasi-Poisson Verteilung. Welche
-Aussage zu einer gesch{\"a}tzen Overdispersion von \Sexpr{variable_vec} ist
-richtig?
+Sie sch{\"a}tzen zwei lineare Regressionsmodelle zur Analyse von
+Z{\"a}hldaten. Modell 1 mit einer Possion Verteilung und Modell 2 mit einer
+Quasi-Poisson Verteilung. Welche Aussage zu einer gesch{\"a}tzen Overdispersion
+von \Sexpr{variable_vec} ist richtig?
 
 
 <<mc-distribution-03-c, results='asis', echo = FALSE>>=

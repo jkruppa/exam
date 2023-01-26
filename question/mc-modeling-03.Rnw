@@ -1,25 +1,16 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-<<>>=
-mc_modeling_03_file <- file.path(img_path, "mc-modeling-03")
-@ 
-
-In der folgenden Abbildung ist der Zusammenhang vom Modell zu der linearen
-Regression und der ANOVA skizziert.
-
-\begin{center}
-  \includegraphics[width = 9cm]{\Sexpr{mc_modeling_03_file}}
-\end{center}
-
-Welche der folgenden Aussagen ist richtig?
+Sie rechnen in \Rlogo eine ANOVA mit der Funktion \texttt{aov()} sowie einmal
+mit den Funktionen und dem Pipe-Operator \texttt{lm() \%>\%
+  anova()}. Welche der folgenden Aussagen ist richtig?
 
 <<mc-modeling-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die Effektsch{\"a}tzer aus einem Modell, in diesem Fall ein lineares Modell, erlauben es sowohl eine ANOVA zurechnen sowie auch eine Zusammenfassung der Mittelwerte zu betrachten.',
-                   'Die Effektsch{\"a}tzer aus einem Modell, in diesem Fall ein polynomes Modell, erlauben es sowohl eine ANOVA zurechnen sowie auch eine Zusammenfassung der Mittelwerte zu betrachten.',
-                   'Die Effektsch{\"a}tzer aus einem Modell, in diesem Fall ein lineares Modell, erlauben es nur eine ANOVA zurechnen oder eine Zusammenfassung der Mittelwerte zu betrachten. Beides ist nicht m{\"o}glich.',
-                   'Die Effektsch{\"a}tzer aus einem Modell, erlauben es nur eine ANOVA zu rechnen. ',
-                   'Die Effektsch{\"a}tzer aus einem Modell, erlauben es nur einen Mittelwertsvergleich zu rechnen.') %>%
+questions_vec <- c("Die Funktion \\texttt{aov()} kombiniert die Funktionen \\texttt{lm() \\%>\\% anova()} in einer Funktion. Nur wenige, alte \\Rlogo Funktionen k{\"o}nnen mit einem \\texttt{aov()}-Objekt weiterechnen." ,
+                   "Die Funktion \\texttt{aov()} rechnet die echte ANOVA in R. Die Verbindung von Funktion \\texttt{lm()} mit Funktion \\texttt{anova()} ist nicht sinnf{\"u}hrend.",
+                   "Die Funktion \\texttt{aov()} ist eine neue Entwicklung aus dem \\Rlogo Paket \\texttt{tidyverse}.",
+                   "Die Funktion \\texttt{anova()} rechnet nur einfaktorielle ANOVAs die Funktion \\texttt{aov()} kann hingegen auch zweifaktorielle ANOVAs rechnen.",
+                   "Die Funktion \\texttt{aov()} wird genutzt, wenn wir in der Funktion \\texttt{anova()} einen signifikanten Interaktionsterm vorfinden.") %>%
   sample
 
 
