@@ -11,24 +11,55 @@ options(show.signif.stars = FALSE)
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
                cache.path='cache/', fig.pos='H')
-
+## get the paths
 exam_path <- file.path(path_home(), "Documents/GitHub/exam")
 init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
-@ 
-% -----------------------------------------------------------------------
-\input{\Sexpr{init_path}}
-\def\textpoints{60}
-\FPeval{\overallpoints}{clip(\textpoints + 20)}
-% -----------------------------------------------------------------------
-<<questions, echo = FALSE>>=
+
+## get the question files
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
 text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
-@
+
+## get the points per question
+points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
+
+## dummy select function
+wanted_questions <- text_questions_vec %>% sample(7)
+
+ques_points_tbl <- points_tbl %>% 
+  filter(file_name %in% basename(wanted_questions))
+
+points_vec <- ques_points_tbl %>% pull(points) 
+textpoints <- sum(points_vec) 
+overallpoints <- textpoints + 20
+
+## Build up the grade table  
+pre_grade_tbl <- unique(cut(overallpoints:(overallpoints/2), 10)) %>% 
+  as_tibble() %>% 
+  separate(value, into = c("low", "high"), sep = ",") %>% 
+  mutate(low = str_replace_all(low, "\\(", ""),
+         high = str_replace_all(high, "\\]", "")) %>% 
+  mutate_if(is.character, as.numeric) %>% 
+  mutate(low = round(low/0.5) * 0.5 + 0.5,
+         high = round(high/0.5) * 0.5)
+
+## be sure the lowest grade at half points
+pre_grade_tbl$low[10] <- overallpoints/2
+
+## final grade table
+grade_tbl <- pre_grade_tbl %>% 
+  mutate(Punkte = str_c(low, " - ", high),
+         Note = c("1.0", "1.3", "1.7", "2.0", "2.3", 
+                 "2.7", "3.0", "3.3", "3.7", "4.0")) %>% 
+  select(Punkte, Note)
+
+@ 
+% -----------------------------------------------------------------------
+\input{\Sexpr{init_path}}
 % -----------------------------------------------------------------------
 \begin{document}
 % -----------------------------------------------------------------------
@@ -112,9 +143,9 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
   \begin{itemize}
   \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus dem Multiple
     Choice Teil erreicht.
-  \item[] \rule[0ex]{3em}{.4pt}\, von \textpoints\, Punkten sind aus dem Rechen- und
+  \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
     Textteil erreicht. 
-  \item[] \rule[0ex]{3em}{.4pt}\, von \overallpoints\, Punkten in Summe.
+  \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
   \item[] Es wird folgender Notenschlüssel angewendet.   
   \end{itemize}
   \vspace{1ex}
@@ -123,16 +154,16 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
     \toprule
     \textbf{Punkte}	&	\textbf{Note}	\\
     \midrule
-    78 - \overallpoints	&	1,0	\\
-    75 - 77	&	1,3	\\
-    70 - 74	&	1,7	\\
-    65 - 69	&	2,0	\\
-    59 - 64	&	2,3	\\
-    54 - 58	&	2,7	\\
-    49 - 53	&	3,0	\\
-    44 - 48	&	3,3	\\
-    41 - 43	&	3,7	\\
-    40	&	4,0	\\
+    \Sexpr{grade_tbl$Punkte[1]}	&	1,0	\\
+    \Sexpr{grade_tbl$Punkte[2]}	&	1,3	\\
+    \Sexpr{grade_tbl$Punkte[3]}	&	1,7	\\
+    \Sexpr{grade_tbl$Punkte[4]}	&	2,0	\\
+    \Sexpr{grade_tbl$Punkte[5]}	&	2,3	\\
+    \Sexpr{grade_tbl$Punkte[6]}	&	2,7	\\
+    \Sexpr{grade_tbl$Punkte[7]}	&	3,0	\\
+    \Sexpr{grade_tbl$Punkte[8]}	&	3,3	\\
+    \Sexpr{grade_tbl$Punkte[9]}	&	3,7	\\
+    \Sexpr{grade_tbl$Punkte[10]}	&	4,0	\\
     \bottomrule
   \end{tabular}
 \end{center}
@@ -202,13 +233,19 @@ mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
       \hline
       \textbf{Aufgabe} & 11 & 12 & 13 & 14 & 15 & 16 & 17 \strut\\
       \hline
-      \textbf{Punkte} & \phantom{1111}  & \phantom{1212}  & \phantom{1313}  & \phantom{1414}  & \phantom{1515}  & \phantom{1616}  & \phantom{1717}
-                                                                                                                                    \strut\\
+      \textbf{Punkte} & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[2]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[3]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[4]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[5]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[7]}}\hspace{1Ex} \strut\\
       \hline
   \end{tabular}
 \end{center}
 \begin{itemize}
-\item Es sind \rule[0ex]{2em}{.4pt}\, von \textpoints\, Punkten erreicht worden.
+\item Es sind \rule[0ex]{2em}{.4pt}\, von \Sexpr{textpoints} Punkten erreicht worden.
 \end{itemize}
 \end{graybox}
 
@@ -606,5 +643,46 @@ In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden \textit{zwei
 \end{document}
 % -----------------------------------------------------------------------
 
+<<eval=FALSE>>=
+
+b <- c(14,13,16,14,17,15,17)
+a <- c(19,18,25,20,20,14,17)
+d <- a-b
+mean(d)
+sd(d)
+
+t.test(a, b, paired = TRUE)
+
+h <- c(17,16, 20,25)
+m <- c(32, 30,31,28)
+l <- c(24,23,27,22)
+mean(h)
+mean(m)
+mean(l)
+sd(h)
+sd(m)
+sd(l)
+
+
+b <- c(13,21,4,12,21,13,-1,6)
+a <- c(20,9,11,17,17,9,25,23)
+d <- a-b
+mean(d)
+sd(d)
+
+t.test(a, b, paired = TRUE)
+
+h <- c(15,8,10,14)
+m <- c(28,29,29)
+l <- c(13,13,10,14,11)
+mean(h)
+mean(m)
+mean(l)
+sd(h)
+sd(m)
+sd(l)
+
+@
+  
 
   
