@@ -15,7 +15,7 @@ mod <- lm(y ~ x, data_tbl)
 df <- augment(mod)
 ggplot(df, aes(x = .fitted, y = .resid)) +
   geom_point() +
-  theme_bw()
+    theme_minimal() 
 
 @ 
 

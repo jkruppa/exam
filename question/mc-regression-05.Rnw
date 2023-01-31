@@ -15,7 +15,7 @@ data_tbl <- tibble(y_1 = rt(500, df = 5),
 
 ggplot(data_tbl, aes(sample = y)) +
   stat_qq() + stat_qq_line(color = "red") +
-  theme_bw()
+    theme_minimal() 
 
 
 @ 

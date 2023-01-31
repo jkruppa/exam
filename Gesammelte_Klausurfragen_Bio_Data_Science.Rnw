@@ -51,12 +51,12 @@ pre_grade_tbl <- unique(cut(overallpoints:(overallpoints/2), 10)) %>%
 ## be sure the lowest grade at half points
 pre_grade_tbl$low[10] <- overallpoints/2
 
-if((overallpoints/2)%%1 != 0) {
-  pre_grade_tbl$low <- str_pad(pre_grade_tbl$low, 3, "right", "0") %>% 
-    str_replace_all("0$", ".0")
-  pre_grade_tbl$high <- str_pad(pre_grade_tbl$high, 3, "right", "0") %>% 
-    str_replace_all("0$", ".0")
-}
+#if((overallpoints/2)%%1 != 0) {
+pre_grade_tbl$low <- str_pad(pre_grade_tbl$low, 3, "right", "0") %>% 
+  str_replace_all("0$", ".0")
+pre_grade_tbl$high <- str_pad(pre_grade_tbl$high, 3, "right", "0") %>% 
+  str_replace_all("0$", ".0")
+#}
 
 ## final grade table
 grade_tbl <- pre_grade_tbl %>% 

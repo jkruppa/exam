@@ -12,7 +12,8 @@ data_tbl <- tibble(x = data_vec[[1]])
 ggplot(data_tbl, aes(x)) + geom_histogram() + 
   xlab("X") + ylab("Count") +
   scale_x_continuous(breaks = c(0,5,10,15,20,25,30,35,40)) +
-  theme_bw()
+  theme_minimal() 
+
 
 norm_str <- str_c("N(", mean_vec, ", 5)")
 pois_str <- str_c("Pois(", mean_vec, ")")
