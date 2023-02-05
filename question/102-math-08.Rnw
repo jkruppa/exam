@@ -16,6 +16,7 @@ land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
           "oldenburgischen") %>% sample(1)
 land_e <- str_replace(land, "n$", "")
 m_grad <- c(70, 71, 72, 73) %>% sample(1)
+dick_torf <- c(3, 4, 5, 6) %>% sample(1)
 a_grad <- c(54, 53, 52, 51) %>% sample(1)
 elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
 side <- round(c(18, 19, 20, 21)*100/elle) %>% sample(1)
@@ -27,6 +28,7 @@ krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
 effizienz <- c(80, 90, 70) %>% sample(1)
 schubkarre <- c(90, 100, 110) %>% sample(1)
 winkel_rampe <- c(9, 10, 11) %>% sample(1)
+winkel_neu <- c(5, 6, 7) %>% sample(1)
 @
 
 Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
@@ -36,27 +38,27 @@ Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
 Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
 Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
 fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
-den {\"a}gyptischen Pyramiden \Sexpr{a_grad} Grad auf. Die durchschnittliche
-Seitenl{\"a}nge einer Pyramide ist \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
-misst \Sexpr{elle}cm.
+den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
+Seitenl{\"a}nge einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
+misst \Sexpr{elle}cm.\\
 
 \textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
   Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
 \item Die K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge von \Sexpr{side}
-  K{\"o}nigsellen haben. Wie hoch wird die K{\"o}nigspyramide werden? \textbf{(1
+  K{\"o}nigsellen haben. Wie hoch wird die K{\"o}nigspyramide sein? \textbf{(1
     Punkt)}
 \item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
-  Bepflanzung muss eine 5cm dicke Torfschicht auf die Pyramide aufgebracht
-  werden. Berechnen Sie die ungef{\"a}hre Menge an ben{\"o}tigten Torf! \textbf{(2
-    Punkte)}
+  Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
+  Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
+  ben{\"o}tigten Torf in m$^3$! \textbf{(2 Punkte)}
 \end{enumerate}
 
 Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
 \Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
 zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
-chronische \Sexpr{krank}schmerzen entwickelt, als die Sklaven von der
+chronische \Sexpr{krank}schmerzen entwickelt, als sie von der
 anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
 Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
 \Sexpr{schubkarre} Liter.
@@ -77,11 +79,10 @@ Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
 w{\"u}rde. Sie m{\"u}ssen nochmal ran.
 
 \begin{enumerate}
-  \setcounter{enumi}{3}
-\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
-  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
-  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
-  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+  \setcounter{enumi}{5}
+\item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
+  {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
+  Pyramide um $\Sexpr{winkel_neu}^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
 \end{enumerate}
 
 
