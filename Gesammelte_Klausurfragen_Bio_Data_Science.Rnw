@@ -85,7 +85,8 @@ grade_tbl <- pre_grade_tbl %>%
 \newpage  
     
 \begin{graybox}{Inhalte der Klausur nach Modul}  
-  \textit{Mathematik \& Statistik mit insgesamt 7 Rechen \& Textaufgaben} 
+  \small
+  \textit{Mathematik \& Statistik} 
   \begin{itemize}
   \item 1 Frage zur Deskriptiven Statistik
   \item 1 Frage zum t-Test
@@ -93,25 +94,44 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zur R Programmierung
   \item 3 Fragen zur Mathematik
   \end{itemize} 
-  \textit{Statistik mit insgesamt 7 Rechen \& Textaufgaben} 
+  \textit{Statistik} 
   \begin{itemize}
-  \item Test
+  \item 1 Frage zur Deskriptiven Statistik
+  \item 1 Frage zum statistischen Testen
+  \item 1 Frage zum t-Test
+  \item 1 Frage zur einfaktoriellen ANOVA
+  \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
+  \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder diagnostischen Testen
+  \item 1 Frage zur R Programmierung
   \end{itemize} 
-  \textit{Angewandte Statistik für Bioverfahrenstechnik mit insgesamt 7 Rechen \& Textaufgaben} 
+  \textit{Angewandte Statistik für Bioverfahrenstechnik } 
   \begin{itemize}
-  \item Test
+  \item 1 Frage zur Deskriptiven Statistik
+  \item 1 Frage zum statistischen Testen
+  \item 1 Frage zum t-Test
+  \item 1 Frage zur einfaktoriellen ANOVA
+  \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
+  \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder diagnostischen Testen
+  \item 1 Frage zur R Programmierung
   \end{itemize} 
-  \textit{Angewandte Statistik und Versuchswesen mit insgesamt 7 Rechen \& Textaufgaben} 
+  \textit{Angewandte Statistik und Versuchswesen} 
   \begin{itemize}
-  \item Test
+  \item 1 Frage zur Deskriptiven Statistik
+  \item 1 Frage zu statistischen Verteilungen
+  \item 1 Frage zum statistischen Testen
+  \item 1 Frage zur zweifaktoriellen ANOVA
+  \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
+  \item 1 Frage zu multiplen Gruppenvergleichen
+  \item 1 Frage zur R Programmierung
   \end{itemize} 
-  \textit{Biostatistik mit insgesamt 7 Rechen \& Textaufgaben}
+  \textit{Biostatistik}
   \begin{itemize}
   \item 1 Frage zu der Deskriptiven Statistik
+  \item 1 Frage zu statistischen Verteilungen
   \item 1 Frage zu der zweifaktoriellen ANOVA
   \item 1 Frage zu der multiplen Regression
   \item 1 Frage zu der R Programmierung
-  \item 3 Fragen abhängig von der Vertiefung (Pflanze oder Nutztier)
+  \item 2 Fragen abhängig von der Vertiefung (Pflanze oder Nutztier)
   \end{itemize} 
 \end{graybox}
   

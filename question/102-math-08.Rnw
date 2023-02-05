@@ -4,55 +4,67 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/x_MwWJoEsME}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-<<>>=
-mat_type <- c("Diagonalmatrix", "Einheitsmatrix", "stochastische Matrix") %>% sample(1)
-line_1 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-line_2 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-line_3 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-@ 
+\paragraph{Pyramiden bauen}
 
-Sie haben den Vektor $A = \{\Sexpr{round(rnorm(3, 6, 8))}\}$ und den Vektor $B = \{\Sexpr{round(rnorm(3, 2, 4))}\}$ gegeben.
+<<>>=
+gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
+pr_a <- c(0.6, 0.65, 0.7) %>% sample(1)
+pr_b <- c(0.7, 0.75, 0.9) %>% sample(1)
+pr_ab <- c(40, 45, 50) %>% sample(1)
+type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
+ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
+
+num_dice <- c(4:7) %>% sample(1)
+
+type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
+                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
+                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
+                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
+
+type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
+                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
+
+add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
+
+type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
+                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
+                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
+                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
+
+num_erfolge <- num_dice - sample(c(1,2), 1)
+
+@
+
+Nachdem Sie sich begeistert in der 
 
 \begin{enumerate}
-\item Addieren Sie die Vektoren $A$ und $B$! \textbf{(1 Punkt)}
-\item Transponieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
-  \textbf{(1 Punkt)} 
-\item Multiplizieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$ mit
-  $\Sexpr{round(rnorm(1, 10, 1))}$! \textbf{(1 Punkt)}
-\item Erstellen Sie eine \Sexpr{mat_type} mit $m \times n$ Dimensionen!
-  Legen Sie $m$ und $n$ vorher sinnvoll fest! \textbf{(1 Punkt)}
-\item {\"U}bersetzen Sie folgendes linearen Gleichungssystem bestehend aus drei
-  Gleichungen in die Matrixschreibweise! \textbf{(2 Punkte)}
-  <<>>=
-  line_1
-  line_2
-  line_3
-  @ 
-\item Multiplizieren Sie folgende gegebene Matrix mit dem Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
-  \textbf{(2 Punkte)}
-  <<>>=
-  mat <- matrix(rnorm(12, 5, 2), ncol = 3, nrow =
-  4) %>% round
-  mat
-  @
-\item Skizzieren Sie den entsprechenden \Rlogo Code f{\"u}r die
-  Matrixmultiplikation! \textbf{(2 Punkte)}
+
+\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
+  \textbf{(1 Punkt)}
 \end{enumerate}
 
+Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
+wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
+Schwert entscheiden.
 
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
+  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
+  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+\end{enumerate}
 
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
+  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
+  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
+  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+\end{enumerate}
 
+ 
