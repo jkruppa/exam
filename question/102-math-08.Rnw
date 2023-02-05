@@ -12,52 +12,69 @@
 \paragraph{Pyramiden bauen}
 
 <<>>=
-gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
-pr_a <- c(0.6, 0.65, 0.7) %>% sample(1)
-pr_b <- c(0.7, 0.75, 0.9) %>% sample(1)
-pr_ab <- c(40, 45, 50) %>% sample(1)
-type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
-ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
-
-num_dice <- c(4:7) %>% sample(1)
-
-type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
-                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
-                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
-                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
-
-type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
-                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
-
-add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
-
-type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
-                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
-                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
-                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
-
-num_erfolge <- num_dice - sample(c(1,2), 1)
-
+land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
+          "oldenburgischen") %>% sample(1)
+land_e <- str_replace(land, "n$", "")
+m_grad <- c(70, 71, 72, 73) %>% sample(1)
+a_grad <- c(54, 53, 52, 51) %>% sample(1)
+elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
+side <- round(c(18, 19, 20, 21)*100/elle) %>% sample(1)
+beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
+           "Finanzbeamter") %>% sample(1)
+winkel <- c("steil", "flach") %>% sample(1)
+n_slave <- c(2,3,4) %>% sample(1)
+krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
+effizienz <- c(80, 90, 70) %>% sample(1)
+schubkarre <- c(90, 100, 110) %>% sample(1)
+winkel_rampe <- c(9, 10, 11) %>% sample(1)
 @
 
-Nachdem Sie sich begeistert in der 
+Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
+abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
+{\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
+Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
+Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
+Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
+fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
+den {\"a}gyptischen Pyramiden \Sexpr{a_grad} Grad auf. Die durchschnittliche
+Seitenl{\"a}nge einer Pyramide ist \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
+misst \Sexpr{elle}cm.
+
+\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
+  Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
-
-\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
-  \textbf{(1 Punkt)}
+\item Die K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge von \Sexpr{side}
+  K{\"o}nigsellen haben. Wie hoch wird die K{\"o}nigspyramide werden? \textbf{(1
+    Punkt)}
+\item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
+  Bepflanzung muss eine 5cm dicke Torfschicht auf die Pyramide aufgebracht
+  werden. Berechnen Sie die ungef{\"a}hre Menge an ben{\"o}tigten Torf! \textbf{(2
+    Punkte)}
 \end{enumerate}
 
-Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
-wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
-Schwert entscheiden.
+Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
+\Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
+zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
+chronische \Sexpr{krank}schmerzen entwickelt, als die Sklaven von der
+anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
+Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
+\Sexpr{schubkarre} Liter.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
-  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
-  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+\item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
+  hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
+\item Berechnen Sie die L{\"a}nge der Rampe mit einem Anstellwinkel von
+  $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
+\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die \Sexpr{land_e}
+  Landschaft?  \textbf{(2 Punkte)}
 \end{enumerate}
+
+Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
+Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
+\Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen
+w{\"u}rde. Sie m{\"u}ssen nochmal ran.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -67,4 +84,11 @@ Schwert entscheiden.
   Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
 \end{enumerate}
 
- 
+
+
+% https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck
+% https://www.matheretter.de/wiki/pyramide
+% https://de.wikipedia.org/wiki/Knickpyramide
+%% -------------------
+%% add additional page
+\clearpage\null
