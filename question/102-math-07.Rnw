@@ -46,7 +46,8 @@ Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein
 paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
 zylindrischen Methantanks kann nur ein Gewicht von maximal
 $\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
-Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein. In fl{\"u}ssiger Form hat
+Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des
+Methantanks. In fl{\"u}ssiger Form hat
 Methan bei $-80^\circ\text{C}$ eine Dichte von
 $\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
 von $\Sexpr{dichte_h}kg/m^3$. Sie betrieben Ihre Anlage bei
