@@ -36,13 +36,13 @@ p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   xlab("X") + ylab("Y") +
   ggtitle(str_c("N(", mean_vec[1], ", ", sd_vec[1], ") und ",
                 "N(", mean_vec[2], ", ", sd_vec[2], ")")) + 
-  theme_bw() + theme(
+  theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   xlab("X") + ylab("Y") +
   ggtitle(str_c("Pois(", lambda_vec[1], ")")) + 
-  theme_bw() + theme(
+  theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 grid.arrange(p1, p3, nrow = 2)

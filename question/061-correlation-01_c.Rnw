@@ -29,16 +29,16 @@ df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   ggtitle(bquote(Pearsons~rho ==.(corr_vec[1])), 
           bquote(R^{2}==.(r2_vec[1]))) +
-          theme_bw() ## +
+          theme_minimal() ## +
   ## xlab( bquote(Value~is~sigma~R^{2}==.(r2.value)))
 p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   ggtitle(bquote(Pearsons~rho ==.(corr_vec[2])), 
           bquote(R^{2}==.(r2_vec[2]))) +
-  theme_bw()
+  theme_minimal()
 p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   ggtitle(bquote(Pearsons~rho ==.(corr_vec[3])), 
           bquote(R^{2}==.(r2_vec[3]))) +
-  theme_bw()
+  theme_minimal()
 ##
 grid.arrange(p1, p2, p3, ncol = 2)
 

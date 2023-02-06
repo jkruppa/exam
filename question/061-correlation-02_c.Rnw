@@ -36,25 +36,25 @@ p1 <- ggplot(df, aes(x, y_1)) + geom_point() +# xlim(0, 1) +
   ggtitle(bquote(Pearsons~rho == ""), 
           bquote(R^{2}== "")) +
   labs(x = "", y = "") +
-  theme_bw()
+  theme_minimal()
 p2 <- ggplot(df, aes(x, y_2)) + geom_point() +# xlim(0, 1) +
   ylim(-2, 2) + xlim(-2,2) +
   ggtitle(bquote(Pearsons~rho == ""), 
           bquote(R^{2}== "")) +
   labs(x = "", y = "") +
-  theme_bw()
+  theme_minimal()
 p3 <- ggplot(df, aes(x, y_3)) + geom_point() +# xlim(0, 1) +
   ylim(-2, 2) + xlim(-2,2) +
   ggtitle(bquote(Pearsons~rho == ""), 
           bquote(R^{2}== "")) +
   labs(x = "", y = "") +
-  theme_bw()
+  theme_minimal()
 p4 <- ggplot(df, aes(x, y_4)) + geom_point() +# xlim(0, 1) +
   ylim(-2, 2) + xlim(-2,2) +
   ggtitle(bquote(Pearsons~rho == ""), 
           bquote(R^{2}== "")) +
   labs(x = "", y = "") +
-  theme_bw()
+  theme_minimal()
 grid.arrange(p1, p2, p3, p4, ncol = 2)
 
 @

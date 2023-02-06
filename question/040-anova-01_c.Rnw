@@ -33,7 +33,7 @@ ggplot(data_tbl, aes(dose, activity, shape = dose)) +
   labs(x = "Dosisstufen", y = "Trockengewicht") +
   ylim(min(data_tbl$activity - 2), max(data_tbl$activity + 2)) +
   scale_shape_discrete(name = "Dosis") +
-  theme_bw()
+  theme_minimal()
 
 @
 

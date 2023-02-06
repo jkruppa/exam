@@ -44,7 +44,7 @@ folgende gemessene Endpunkte zu Verf{\"u}gung: \Sexpr{pander::p(outcome_vec, wra
 
 df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  theme_bw() + theme(
+  theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank()) +
   ylab("")

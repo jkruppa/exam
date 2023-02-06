@@ -27,7 +27,7 @@ $y = \{\Sexpr{round(rnorm(n = sample(c(5,6,7), 1), mean = sample(c(15, 17,
 df <- data.frame()
 ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   xlab("") + ylab("") +
-  theme_bw() + theme(
+  theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 @

@@ -26,13 +26,13 @@ df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   xlab("") + ylab("") +
   ggtitle(str_c("QQ plot fullfiling the normality assumption.")) + 
-  theme_bw() + theme(
+  theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   xlab("") + ylab("") +
   ggtitle(str_c("QQ plot violating the normality assumption.")) + 
-  theme_bw() + theme(
+  theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 ##
