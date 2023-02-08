@@ -24,6 +24,14 @@ data_tbl <- rbind(tibble(RoundUp = round(rnorm(n = sample(c(5,6,7), 1),
   set_names(c("pesticide", "drymatter")) %>% 
   sample_n(size = nrow(.))
 
+t_calc <- t.test(drymatter ~ pesticide, data = data_tbl)$statistic
+
+if(t_calc >= 2.04){
+  textsig <- "keinen"
+} else {
+  textsig <- "einen"
+}
+
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 @
@@ -36,7 +44,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
   Vergleich der beiden Pestizide! \textbf{(5 Punkte)}
 \item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{calc}$ eine Aussage
   zur Nullhypothese! \textbf{(2 Punkte)}
-\item Wenn Sie keinen Unterschied zwischen den beiden Pestiziden erwarten
-  w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik $T_{calc}$? Begr{\"u}nden Sie Ihre
-  Antwort! \textbf{(2 Punkte)}
+\item Wenn Sie \textit{\Sexpr{textsig}} Unterschied zwischen den beiden
+  Pestiziden erwarten w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik
+  $T_{calc}$? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
