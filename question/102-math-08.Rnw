@@ -19,7 +19,7 @@ m_grad <- c(70, 71, 72, 73) %>% sample(1)
 dick_torf <- c(3, 4, 5, 6) %>% sample(1)
 a_grad <- c(54, 53, 52, 51) %>% sample(1)
 elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
-side <- round(c(18, 19, 20, 21)*100/elle) %>% sample(1)
+side <- round(c(17, 20, 23)*100/elle) %>% sample(1)
 beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
            "Finanzbeamter") %>% sample(1)
 winkel <- c("steil", "flach") %>% sample(1)
