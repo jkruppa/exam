@@ -39,8 +39,8 @@ Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung.
 <<math-10,  echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(time = as_factor(1:3),
                    rsp = c(sample(c(15, 20, 25), 1),
-                           sample(c(55, 60, 65), 1),
-                           sample(c(85, 90, 95), 1)))
+                           sample(c(45, 60, 75), 1),
+                           sample(c(85, 90, 115), 1)))
 
 ggplot(plot_tbl, aes(time, rsp)) +
   geom_point() +
@@ -107,8 +107,9 @@ Volumen von 22.4 Liter. Ein Mol enth{\"a}lt $6 \cdot 10^{23}$ Teilchen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Welche Masse in Kilogramm $kg$ k{\"o}nnen Sie aus einem Kubikmeter $m^3$
-  Luft unter normalen Umweltbedingungen gewinnen? \textbf{(3 Punkte)}
+\item Welche Masse an Ammoniak in Kilogramm $kg$ k{\"o}nnen Sie aus einem
+  Kubikmeter $m^3$ Luft unter normalen Umweltbedingungen gewinnen?
+  \textbf{(3 Punkte)}
 \end{enumerate}
 
 

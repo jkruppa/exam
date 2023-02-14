@@ -35,6 +35,7 @@ alpha_grad <- c(20, 30, 40) %>% sample(1)
 north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
 intercept <- c(0.05, 0.1, 0.2) %>% sample(1)
 slope <- c(0.15, 0.25, 0.13) %>% sample(1)
+start <- c("A", "B", "C", "D", "E") %>% sample(1)
 @
 
 Es ist Wochenende und das Wetter ist \textit{sweet}. Sie schwingen sich auf
@@ -44,7 +45,8 @@ H{\"a}nden, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Sie
 wollen diesmal endlich die \Sexpr{direct} \Sexpr{type}challenge durchf{\"u}hren. Die
 Reihenfolge der Caches nach \Sexpr{type}wertung gibt daher die von Ihnen
 abzufahrenden Orte vor. Folgende Informationen zu den Orten und den
-entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route zu Verf{\"u}gung.
+entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route zu
+Verf{\"u}gung. Sie starten an dem Ort \Sexpr{start}.
 
 \begin{center}
   \begin{tabular}{ ccc }
@@ -84,20 +86,21 @@ Terrain- und Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis
   Angelh{\"o}he! \textbf{(1 Punkt)}
 \item Erstellen Sie eine Matrix $M$ der Terrain- und Schwierigkeitswertungen
   der Caches! \textbf{(1 Punkt)}  
-\item Wie viele Wochenenden ben{\"o}tigen Sie, um die Matrix $M$ zu f{\"u}llen, wenn Sie
-  jeden Tag \Sexpr{n_matrix} schaffen? \textbf{(1 Punkt)} 
+\item Wie viele Wochenenden ben{\"o}tigen Sie, um die Matrix $M$ mit mindestens
+  einem gefundenen Cache zu f{\"u}llen, wenn Sie
+  pro Tag \Sexpr{n_matrix} schaffen? \textbf{(1 Punkt)} 
 \item Welche Strecke in $km$ legen Sie bei der Bew{\"a}ltigung der
   \Sexpr{direct} \Sexpr{type}challenge zur{\"u}ck? Geben Sie
   \textit{ausdr{\"u}cklich} auch die Entfernungsvektoren mit an! \textbf{(6
     Punkte)}
-\item Gehen Sie von einer zus{\"a}tzlichen Suchzeit in Stunden $h$ f{\"u}r die
+\item Gehen Sie von einer zus{\"a}tzlichen Suchzeit in Stunden f{\"u}r die
   Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil
-  aus. Die Suchzeit f{\"u}r \textit{jeden einzelnen} Cache wird durch die
+  aus. Die Suchzeit in Stunden f{\"u}r \textit{jeden einzelnen} Cache wird durch die
   Funktion
   \begin{equation*}
     Suchzeit = \Sexpr{intercept} + \Sexpr{slope} \cdot Schwierigkeit
   \end{equation*}  
-  beschreiben.  Wie lange in Stunden $h$ ben{\"o}tigen Sie um die
+  beschreiben.  Wie lange in Stunden ben{\"o}tigen Sie um die
   \Sexpr{direct} \Sexpr{type}challenge zu erf{\"u}llen? \textbf{(3 Punkte)} 
 \end{enumerate}
 
