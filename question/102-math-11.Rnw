@@ -1,0 +1,81 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/paXxVmyfDPs}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
+\hspace{2Ex}
+%% --------------------------------------------------------------------
+
+\vspace{1Ex}
+
+<<>>=
+
+logic_table <- c("A tritt ein oder B tritt ein",
+                 "A tritt ein und B tritt ein",
+                 "A tritt ein, aber B tritt nicht ein",
+                 "A tritt nicht ein",
+                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
+                 "B ist Teilmenge von A") %>%
+  sample(4)
+temp <- c("AT", "GT", "CC") %>% sample(1)
+logical_r <- c("numeric", "logical") %>% sample(1)
+dna_seq <- c("ACACACAC",
+             "ATATACAC",
+             "AAATTTAT",
+             "ATGTGTAT",
+             "TCTCTCTC",
+             "AACCAACC",
+             "ACTGGTAA") %>%
+  sample(4)
+A <- rnorm(1, 10, 2) %>% round()
+log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
+                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
+@ 
+
+\begin{enumerate}
+\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
+  \textbf{(2 Punkte)}
+  \begin{center}
+    \begin{tabular}{c|c}
+      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
+      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
+      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
+      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
+      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
+    \end{tabular}
+  \end{center}  
+\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
+  $B$ als Mengendiagramme bzw. Venndiagramme!
+  \textbf{(2 Punkte)}
+  \begin{itemize}
+  \item \Sexpr{logic_table[1]}
+  \item \Sexpr{logic_table[2]}
+  \item \Sexpr{logic_table[3]}
+  \item \Sexpr{logic_table[4]}
+  \end{itemize}
+\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
+  \textbf{(2 Punkte)}
+\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
+  Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
+  Sequenzen! \textbf{(2 Punkte)}
+  \begin{itemize}
+  \item \Sexpr{dna_seq[1]}
+  \item \Sexpr{dna_seq[2]}
+  \item \Sexpr{dna_seq[3]}
+  \item \Sexpr{dna_seq[4]}
+  \end{itemize}
+\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
+  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
+  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
+  in beiden F{\"a}llen? \textbf{(2 Punkte)}
+\end{enumerate}
+
+%% -------------------
+%% add additional page
+\clearpage\null
+
+
+ 

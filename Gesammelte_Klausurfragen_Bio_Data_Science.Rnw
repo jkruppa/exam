@@ -664,6 +664,12 @@ In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei Aufgabe
 \Sexpr{knit_child(math_questions_vec[10])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(math_questions_vec[11])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(math_questions_vec[12])} 
+\clearpage
+% -----------------------------------------------------------------------
 \end{document}
 % -----------------------------------------------------------------------
 
