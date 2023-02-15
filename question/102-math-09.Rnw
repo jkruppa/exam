@@ -23,6 +23,8 @@ type <- c("Terrain", "Schwierigkeits")  %>% sample(1)
 GC_pre <- stri_rand_strings(5, 5) %>% toupper()
 GC <- str_c("GC", GC_pre)
 wertung <- seq(1, 5, by = 0.5)
+wertung <- str_pad(wertung, 2, "right", "0") %>%
+  str_replace("0$", ".0")
 wert_str <- str_c(sample(wertung), " | ", sample(wertung), " | ",
                   sample(c("Mikro", "Klein", "Normal"), size = length(wertung),
                          replace = TRUE)) %>%
