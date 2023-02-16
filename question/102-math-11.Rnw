@@ -4,78 +4,101 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/paXxVmyfDPs}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\vspace{1Ex}
+\paragraph{Armee der Finsternis}
 
 <<>>=
+job <- c("Aldi", "IKEA", "Kaufland", "Penny") %>% sample(1)
+mage <- c("ein Magier", "eine Magierin") %>% sample(1)
+year <- sample(1201, 1145, 976)  %>%  sample(1)
+lehnsherr <- c("F{\"u}rsten Arthur", "Henry dem Roten")  %>%  sample(1)
+v_blei <- c(10, 12, 13) %>% sample(1)
+l_tropf <- c(3.2, 3.5, 3.1) %>% sample(1)
+d_tropf <- c(2, 1.8, 1.7) %>% sample(1)
+n_blei <- c(1.2e6, 2.3e5, 6.1e4) %>% sample(1)
+d_blei <- c(11.34, 10.32, 12.63) %>% sample(1)
+n_prod <- c(700, 900, 1100) %>% sample(1)
+dist <- c(0.5, 0.8, 1.2) %>% sample(1)
+@
 
-logic_table <- c("A tritt ein oder B tritt ein",
-                 "A tritt ein und B tritt ein",
-                 "A tritt ein, aber B tritt nicht ein",
-                 "A tritt nicht ein",
-                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
-                 "B ist Teilmenge von A") %>%
-  sample(4)
-temp <- c("AT", "GT", "CC") %>% sample(1)
-logical_r <- c("numeric", "logical") %>% sample(1)
-dna_seq <- c("ACACACAC",
-             "ATATACAC",
-             "AAATTTAT",
-             "ATGTGTAT",
-             "TCTCTCTC",
-             "AACCAACC",
-             "ACTGGTAA") %>%
-  sample(4)
-A <- rnorm(1, 10, 2) %>% round()
-log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
-                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
-@ 
+Ihr Studentenjob war nach Ladenschluss bei \Sexpr{job} die Regale
+einzur{\"a}umen. Dabei ist Ihnen in der Auslage der Sonderangebote das
+Necronomicon\footnote{Ein wirklich gef{\"a}hrliches Buch ist:
+  \textit{Du bist genug: Vom Mut, gl{\"u}cklich zu sein} von Fumitake Koga und
+  Ichiro Kishimi} in die H{\"a}nde gefallen. Nun sind Sie \Sexpr{mage} der
+Zeichen geworden! Also eigentlich k{\"o}nnen Sie nur Mathe und das d{\"a}mliche
+Necronomicon hat Sie in die Vergangenheit geschleudert... aber gut, was tut
+man nicht alles im Jahr \Sexpr{year} n. Chr. f{\"u}r den neuen Lehnsherren
+\Sexpr{lehnsherr}. Sie bauen nat{\"u}rlich einen Schrottkugelturm um sich den
+Horden der Finsternis mit genug Schrott erwehren zu k{\"o}nnen! Ihnen stehen
+zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
+
+\begin{center}
+  \begin{tabular}{cc}
+    $E_{kin} = \cfrac{1}{2}\cdot m \cdot v^2$ & $E_{pot} = m \cdot g \cdot h$\\
+  \end{tabular}
+\end{center}
+
+mit
+
+\begin{itemize}
+\item $m$, gleich der Masse [kg] des Objekts
+\item $h$, gleich der H{\"o}he [m] des ruhenden Objekts
+\item $v$, gleich der Geschwindigkeit [m/s] des Objekts
+\item $g$, gleich der Erdbeschleunigung mit $9.81 \tfrac{m}{s^2}$ 
+\end{itemize}
+
+Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
+bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
+Blei\textit{tropfen} zu gleichf{\"o}rmigen Blei\textit{kugeln} bei einer
+Geschwindigkeit von $\Sexpr{v_blei}m/s$ bilden. 
 
 \begin{enumerate}
-\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
+\item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
+  runde Bleikugeln durch die Fallgeschwindigkeit von $\Sexpr{v_blei}m/s$ bilden?
+  \textbf{(3 Punkte)}
+\end{enumerate}
+
+Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige
+Schrottkugeln in einer Ladung. Damit k{\"o}nnen Sie die Armee der Finsternis
+nicht aufhalten. Die Sachlage m{\"u}ssen Sie einmal mathematisch untersuchen.
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+\item Nennen Sie die beiden geometrischen Formen aus denen sich
+  n{\"a}herungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete 
+  Skizze des Tropfens!
   \textbf{(2 Punkte)}
-  \begin{center}
-    \begin{tabular}{c|c}
-      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
-      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
-      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
-      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
-      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
-    \end{tabular}
-  \end{center}  
-\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
-  $B$ als Mengendiagramme bzw. Venndiagramme!
-  \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{logic_table[1]}
-  \item \Sexpr{logic_table[2]}
-  \item \Sexpr{logic_table[3]}
-  \item \Sexpr{logic_table[4]}
-  \end{itemize}
-\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
-  \textbf{(2 Punkte)}
-\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
-  Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
-  Sequenzen! \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{dna_seq[1]}
-  \item \Sexpr{dna_seq[2]}
-  \item \Sexpr{dna_seq[3]}
-  \item \Sexpr{dna_seq[4]}
-  \end{itemize}
-\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
-  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
-  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
-  in beiden F{\"a}llen? \textbf{(2 Punkte)}
+\item Sie messen eine L{\"a}nge des Tropfens von \Sexpr{l_tropf}mm. Die L{\"o}cher
+  im Sieb erlauben ein Tropfendurchmesser von \Sexpr{d_tropf}mm. Welchen
+  Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
+\end{enumerate}
+
+Sie haben jetzt die \Sexpr{n_blei} Bleikugeln zusammen. Blei hat eine Dichte
+von $\Sexpr{d_blei}g/cm^3$.
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Wie schwer sind die \Sexpr{n_blei} Bleikugeln, die Sie jetzt auf die
+  Burgmauer transportieren m{\"u}ssen?
+  \textbf{(1 Punkt)}
+\end{enumerate}
+
+Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Wie gro{\ss} in cm ist Ihr quadratisches Sieb am oberen Ende des Turms,
+  wenn Sie pro Fall ca. \Sexpr{n_prod} Bleikugeln produzieren wollen und
+  die Bleikugel im Fall \Sexpr{dist}cm Abstand haben m{\"u}ssen?  \textbf{(1
+    Punkt)}
 \end{enumerate}
 
 %% -------------------
 %% add additional page
 \clearpage\null
-
-
- 
+\clearpage\null
