@@ -6,7 +6,7 @@ Du findest eine aktuelle Version immer auf ILIAS in deinem Modulordner. Diese Ve
 
 ## Aktuelle Arbeitsversion
 
-https://github.com/jkruppa/exam/blob/main/Gesammelte_Klausurfragen_Bio_Data_Science.pdf
+[Gesammelte Klausurfragen in der Bio Data Science](https://github.com/jkruppa/exam/blob/main/Gesammelte_Klausurfragen_Bio_Data_Science.pdf)
 
 ## Link zum Skript Bio Data Science
 
