@@ -39,16 +39,16 @@ Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch
 Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
 fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
 den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
-Seitenl{\"a}nge einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
+Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
 misst \Sexpr{elle}cm.\\
 
 \textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
   Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
-\item Die K{\"o}nigspyramide von Meroe soll eine Breite sowie Tiefe von \Sexpr{side}
-  K{\"o}nigsellen haben. Wie hoch wird die K{\"o}nigspyramide sein? \textbf{(1
-    Punkt)}
+\item Die K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che‚
+  von \Sexpr{side} K{\"o}nigsellen haben. Wie hoch wird die K{\"o}nigspyramide
+  sein? \textbf{(1 Punkt)}
 \item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
   Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
   Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
