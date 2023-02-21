@@ -21,6 +21,7 @@ dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
 steps <- c("drei", "vier")  %>% sample(1)
 age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
 age_plates <- c(1000e+05, 1200e+05, 800e+05, 900e+05) %>% sample(1)
+c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
 @
 
 Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
@@ -37,8 +38,8 @@ los um sich auf den erreichten Planeten selbst zu replizieren. Nach
 $\Sexpr{build_time}$ Jahren ist die Replikation abgeschlossen und wiederum
 $\Sexpr{n_sonde}$ Sonden werden ausgesendet. Gehen Sie von
 $\Sexpr{dist_stars}$ Lichtjahren als mittlerer Abstand der Sterne in der
-Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$ Sterne in der Milchstra{\ss}e. Die
-Lichtgeschwindigkeit betr{\"a}gt $2.9e+08m/s$.
+Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$ Sterne in der Milchstra{\ss}e. Gehen
+Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$ aus.
 
 \begin{enumerate}
 \item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der

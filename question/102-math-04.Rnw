@@ -16,16 +16,17 @@ m_sun <- c(2e30, 2e28, 2e31, 2e29) %>% sample(1)
 m_perc <- c(30, 35, 40, 45) %>% sample(1)
 r_black <- c(4000, 3000, 5000) %>% sample(1)
 word <- c("Ereignishorizont", "Singularit{\"a}t")  %>% sample(1)
+c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
 @
 
-Die Sonne hat eine aktuelle, angenommene Masse von
-$\Sexpr{m_sun}$kg. Wenn die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem Radius
-von $\Sexpr{r_black}$m kollabiert, wird
-die Sonne $\Sexpr{m_perc}$\% der aktuellen Masse verloren haben. Ein
-Lichtteilchen mit der Masse $m_f$ und der Fluchtgeschwindigkeit $v_f$ will
-dem schwarzen Loch entkommen.  Sie haben folgende Formeln f{\"u}r die
-kinetische Energie des Lichtteilchens $E_{kin}$ und der Graviationsenergie des
-schwarzen Lochs $E_{grav}$ gegeben.
+Die Sonne hat eine aktuelle, angenommene Masse von $\Sexpr{m_sun}$kg. Wenn
+die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem
+Radius von $\Sexpr{r_black}$m kollabiert, wird die Sonne $\Sexpr{m_perc}$\%
+der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$
+und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen.  Sie
+haben folgende Formeln f{\"u}r die kinetische Energie des Lichtteilchens
+$E_{kin}$ und der Graviationsenergie des schwarzen Lochs $E_{grav}$
+gegeben.
 
 \begin{center}
   \begin{tabular}{cc}
@@ -53,9 +54,9 @@ Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
   \textbf{(2 Punkte)} 
 \item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
   Lichtteilchens mit den angegebenen Informationen! \textbf{(2 Punkte)}
-\item Die Lichtgeschwindigkeit ist mit $2.9e+08m/s$ angegeben. Kann das
-  Lichtteilchen der Gravitation des schwarzen Lochs entkommen? Begr{\"u}nden
-  Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Gehen Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$
+  aus. Kann das Lichtteilchen der Gravitation des schwarzen Lochs
+  entkommen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
   $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
   und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
