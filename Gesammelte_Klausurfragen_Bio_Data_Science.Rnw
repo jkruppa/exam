@@ -72,20 +72,11 @@ grade_tbl <- pre_grade_tbl %>%
 % -----------------------------------------------------------------------
 \begin{document}
 % -----------------------------------------------------------------------
+\maketitle
+\thispagestyle{empty}
+\clearpage
+% -----------------------------------------------------------------------
 
-\begin{graybox}{Checkbox für die Version vom \today}
-  \Large Die gesamte Klausur beinhaltet aktuell in Summe
-  \textbf{\Sexpr{length(text_questions_vec) + length(mc_questions_vec) +
-      length(math_questions_vec)}}
-  Fragen.\\[1Ex]
-  Davon sind \textbf{\Sexpr{length(mc_questions_vec)}} Multiple
-  Choice Fragen sowie \textbf{\Sexpr{length(text_questions_vec)}} Rechen- und
-  Textaufgaben. Somit \textbf{\Sexpr{length(text_questions_vec) + length(mc_questions_vec)}} Aufgaben zur Statistik.\\[1Ex]
-  Im Weiteren finden sich \textbf{\Sexpr{length(math_questions_vec)}} Aufgaben zur Mathematik.
-\end{graybox}
-
-\newpage  
-    
 \begin{graybox}{Inhalte der Klausur nach Modul}  
   \small
   \textcolor{red}{\textit{Die folgende Einordnung der Themenkomplexe zu den Modulen dient zur Orientierung. Einzelne Klausuren können und werden davon abweichen. Die Angaben hier sind daher ohne Gewähr.}}\\[1Ex]
@@ -138,11 +129,6 @@ grade_tbl <- pre_grade_tbl %>%
   \end{itemize} 
 \end{graybox}
   
-  
-% -----------------------------------------------------------------------
-\maketitle
-\thispagestyle{empty}
-\clearpage
 % -----------------------------------------------------------------------
 
 \begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
@@ -270,13 +256,6 @@ grade_tbl <- pre_grade_tbl %>%
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Multiple Choice Aufgaben}
-  \begin{itemize}
-  \item Es wird nie mehr als vierzig Multiple Choice Fragen geben.
-  \item Im Laufe der Zeit werden einzelne Fragen durch andere Fragen \textit{ersetzt}, bitte beachten Sie diesen Sachstand, wenn Sie eine \textit{Wiederholungsklausur} im nächsten Semester schreiben. 
-  \end{itemize}
-\end{graybox}
-    
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 
 \Sexpr{knit_child(mc_questions_vec[3])} 
