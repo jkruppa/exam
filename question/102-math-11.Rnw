@@ -4,8 +4,8 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/Bbu6n8MXxQk}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
@@ -23,6 +23,7 @@ n_blei <- c(1.2e6, 2.3e5, 6.1e4) %>% sample(1)
 d_blei <- c(11.34, 10.32, 12.63) %>% sample(1)
 n_prod <- c(700, 900, 1100) %>% sample(1)
 dist <- c(0.5, 0.8, 1.2) %>% sample(1)
+g_schrott <- c(10, 20, 30) %>% sample(1)
 @
 
 Ihr Studentenjob war nach Ladenschluss bei \Sexpr{job} die Regale
@@ -54,8 +55,9 @@ mit
 
 Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
 bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
-Blei\textit{tropfen} zu gleichf{\"o}rmigen Blei\textit{kugeln} bei einer
-Geschwindigkeit von $\Sexpr{v_blei}m/s$ bilden. 
+Blei\textit{tropfen} mit einem Gewicht von $\Sexpr{g_schrott}mg$ zu
+gleichf{\"o}rmigen Blei\textit{kugeln} bei einer Geschwindigkeit von
+$\Sexpr{v_blei}m/s$ bilden.
 
 \begin{enumerate}
 \item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
@@ -83,8 +85,8 @@ von $\Sexpr{d_blei}g/cm^3$.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie schwer sind die \Sexpr{n_blei} Bleikugeln, die Sie jetzt auf die
-  Burgmauer transportieren m{\"u}ssen?
+\item Wie schwer in Kilogramm $kg$ sind die \Sexpr{n_blei} produzierten
+  Bleikugeln, die Sie jetzt auf die Burgmauer transportieren m{\"u}ssen?
   \textbf{(1 Punkt)}
 \end{enumerate}
 
@@ -92,7 +94,7 @@ Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimiere
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Wie gro{\ss} in cm ist Ihr quadratisches Sieb am oberen Ende des Turms,
+\item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
   wenn Sie pro Fall ca. \Sexpr{n_prod} Bleikugeln produzieren wollen und
   die Bleikugel im Fall \Sexpr{dist}cm Abstand haben m{\"u}ssen?  \textbf{(1
     Punkt)}

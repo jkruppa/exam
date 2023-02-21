@@ -4,8 +4,8 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{foo}{\includegraphics[width =
-  2cm]{img/caution}}\\[1Ex]
+\hfill\href{https://youtu.be/TbSEOMCQYl4}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 Nach einem Experiment mit zwei Futtermitteln (\textit{FatDown} und
@@ -43,7 +43,8 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
   Vergleich der beiden Futtermittel! \textbf{(4 Punkte)}
 \item Treffen Sie mit $T_{\alpha = \Sexpr{alpha}\%} = \Sexpr{quantile}$ und dem berechneten $T_{calc}$ eine Aussage
   zur Nullhypothese! \textbf{(1 Punkt)}
-\item Berechnen Sie das \Sexpr{conf_inter}\% Konfidentintervall! \textbf{(3 Punkte)}
+\item Berechnen Sie das \Sexpr{conf_inter}\% Konfidentintervall unter der
+  Verwendung von $s_p$ und der gemittelten Fallzahl {\"u}ber die beiden Gruppen! \textbf{(3 Punkte)}
 \item Nennen Sie statistischen Grund, warum Sie sich zwischen einem Student t-Test und einem
   Welch t-Test entscheiden m{\"u}ssen! \textbf{(1 Punk)}
 \end{enumerate}
