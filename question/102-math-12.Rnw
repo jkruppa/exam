@@ -4,78 +4,116 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/paXxVmyfDPs}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+\hfill\href{foo}{\includegraphics[width =
+  2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\vspace{1Ex}
+\paragraph{Armee der Kaninchen}
 
 <<>>=
+job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
+         "Ihrer Koalakuschelnschule", "Ihrer Faultierpension") %>% sample(1)
+year_out <- c(1859, 1860, 1875) %>% sample(1)
+release <- c(22, 24, 26) %>% sample(1)
+release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
+westost <- c(4000, 4100, 4200) %>% sample(1)
+nordsued <- c(3600, 3700, 3800) %>% sample(1)
+wuerfe <- c(8, 12, 11) %>% sample(1)
+year <- c("zw{\"o}lften", "neunten", "elften") %>% sample(1)
+unit_1 <- c("Milliarden", "Millionen") %>% sample(1)
+mort <- c(30, 35, 40) %>% sample(1)
+age <- c(7, 8, 9) %>% sample(1)
+A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
+a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
+satt_year <- c(20, 30, 40)  %>% sample(1)
+percent <- c(99.7, 99.9, 98.5) %>% sample(1)
+recover <- c(40, 50, 60) %>% sample(1)
+v_rabbit <- c(8.8, 9.8, 11.5) %>% sample(1)
+impf_cost <- c(9, 10, 11) %>% sample(1)
+dr_cost <- c(35, 45, 40) %>% sample(1)
+pop <- c(900, 1100, 1200) %>% sample(1)
+@
 
-logic_table <- c("A tritt ein oder B tritt ein",
-                 "A tritt ein und B tritt ein",
-                 "A tritt ein, aber B tritt nicht ein",
-                 "A tritt nicht ein",
-                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
-                 "B ist Teilmenge von A") %>%
-  sample(4)
-temp <- c("AT", "GT", "CC") %>% sample(1)
-logical_r <- c("numeric", "logical") %>% sample(1)
-dna_seq <- c("ACACACAC",
-             "ATATACAC",
-             "AAATTTAT",
-             "ATGTGTAT",
-             "TCTCTCTC",
-             "AACCAACC",
-             "ACTGGTAA") %>%
-  sample(4)
-A <- rnorm(1, 10, 2) %>% round()
-log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
-                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
-@ 
+Leider hat es mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht
+auch nicht \textit{so} die beste Idee.. aber daf{\"u}r haben Sie eine Neue!
+Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
+niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
+einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
+Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
+\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat, Millionen
+von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? Dem
+wollen wir mal mathematisch nachgehen... \\
+
+Unter australischen Bedingungen liegt die Zahl der Jungen eines
+Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Jungtieren. Trotz
+fehlender Fressfeinde liegt die Mortalit{\"a}t der S{\"a}uglinge bei
+ca. \Sexpr{mort}\%. Ein Weibchen erreicht nach einem halben Jahr die
+Geschlechtsreife.
 
 \begin{enumerate}
-\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
+\item Wie viele \Sexpr{unit_1} Kaninchen w{\"u}rden bei einem ungebremsten
+  Wachstum \textit{im \Sexpr{year} Jahr geboren}? \textbf{(2 Punkte)}
+\item Die durchschnittliche, australische Lebenserwartung eines Kaninchens
+  liegt bei \Sexpr{age} Jahren. Folgende Formel f{\"u}r eine geometrische Serie
+  ist gegeben.
+  \begin{equation*}
+  \sum_{n=0}^N a \cdot r^n = a\left(\cfrac{r^{N + 1} -1}{r - 1}\right)
+\end{equation*}
+Wie viele Kaninchen bev{\"o}lkern bei einem ungebremsten Wachstum den
+australischen Kontinent bevor die ersten, australischen Kaninchen an
+Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2 Punkte)}
+\end{enumerate}
+
+Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der
+Kaninchenpopulation.
+\begin{equation*}
+  f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot 2^{-0.1 \cdot t + 3.4}
+\end{equation*}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Wie viele \Sexpr{unit_1} Kaninchen leben nach der S{\"a}ttigungsfunktion
+  nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1
+    Punkt)}
+\end{enumerate}
+
+Das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV),
+transmittiert von Stechm{\"u}cken, t{\"o}ten \Sexpr{percent}\% der
+Kaninchenpopulation innerhalb weniger Wochen. 
+
+\begin{enumerate}
+  \setcounter{enumi}{3}  
+\item Wie lange dauert es in Jahren, unter Verwendung der
+  S{\"a}ttigungsfunktion, bis die Kaninchenpopulation nach einer Viruspandemie
+  wieder auf \Sexpr{recover}\% der maximal Population angewachsen ist?
   \textbf{(2 Punkte)}
-  \begin{center}
-    \begin{tabular}{c|c}
-      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
-      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
-      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
-      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
-      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
-    \end{tabular}
-  \end{center}  
-\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
-  $B$ als Mengendiagramme bzw. Venndiagramme!
-  \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{logic_table[1]}
-  \item \Sexpr{logic_table[2]}
-  \item \Sexpr{logic_table[3]}
-  \item \Sexpr{logic_table[4]}
-  \end{itemize}
-\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
-  \textbf{(2 Punkte)}
-\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
-  Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
-  Sequenzen! \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{dna_seq[1]}
-  \item \Sexpr{dna_seq[2]}
-  \item \Sexpr{dna_seq[3]}
-  \item \Sexpr{dna_seq[4]}
-  \end{itemize}
-\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
-  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
-  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
-  in beiden F{\"a}llen? \textbf{(2 Punkte)}
+\end{enumerate}
+
+Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten \Sexpr{release_point} von
+Australien. Australien hat eine West-Ost-Ausdehnung von \Sexpr{westost}km
+und eine Nord-S{\"u}d-Ausdehnung von knapp \Sexpr{nordsued}km. Die Kaninchen
+breiten sich radial mit einer Geschwindigkeit von \Sexpr{v_rabbit}km pro
+Jahr aus.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort
+  in Australien erreicht haben? \textit{L{\"o}sen Sie die Aufgabe unter der
+    Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
+\end{enumerate}
+
+Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
+Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ und der durchf{\"u}hrende Arzt
+verlangt ca. \Sexpr{dr_cost}\$.
+
+\begin{enumerate}
+  \setcounter{enumi}{5}
+\item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen
+  j{\"a}hrlichen Zusatzkosten m{\"u}ssen Sie daher kalkulieren? \textbf{(1 Punkt)}
 \end{enumerate}
 
 %% -------------------
 %% add additional page
 \clearpage\null
-
-
- 
+\clearpage\null

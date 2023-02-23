@@ -4,53 +4,73 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/x_MwWJoEsME}{\includegraphics[width =
+\hfill\href{https://youtu.be/paXxVmyfDPs}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
+\vspace{1Ex}
+
 <<>>=
-mat_type <- c("Diagonalmatrix", "Einheitsmatrix", "stochastische Matrix") %>% sample(1)
-line_1 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-line_2 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-line_3 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
+
+logic_table <- c("A tritt ein oder B tritt ein",
+                 "A tritt ein und B tritt ein",
+                 "A tritt ein, aber B tritt nicht ein",
+                 "A tritt nicht ein",
+                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
+                 "B ist Teilmenge von A") %>%
+  sample(4)
+temp <- c("AT", "GT", "CC") %>% sample(1)
+logical_r <- c("numeric", "logical") %>% sample(1)
+dna_seq <- c("ACACACAC",
+             "ATATACAC",
+             "AAATTTAT",
+             "ATGTGTAT",
+             "TCTCTCTC",
+             "AACCAACC",
+             "ACTGGTAA") %>%
+  sample(4)
+A <- rnorm(1, 10, 2) %>% round()
+log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
+                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
 @ 
 
-Sie haben den Vektor $A = \{\Sexpr{round(rnorm(3, 6, 8))}\}$ und den Vektor $B = \{\Sexpr{round(rnorm(3, 2, 4))}\}$ gegeben.
-
 \begin{enumerate}
-\item Addieren Sie die Vektoren $A$ und $B$! \textbf{(1 Punkt)}
-\item Transponieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
-  \textbf{(1 Punkt)} 
-\item Multiplizieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$ mit
-  $\Sexpr{round(rnorm(1, 10, 1))}$! \textbf{(1 Punkt)}
-\item Erstellen Sie eine \Sexpr{mat_type} mit $m \times n$ Dimensionen!
-  Legen Sie $m$ und $n$ vorher sinnvoll fest! \textbf{(1 Punkt)}
-\item {\"U}bersetzen Sie folgendes linearen Gleichungssystem bestehend aus drei
-  Gleichungen in die Matrixschreibweise! \textbf{(2 Punkte)}
-  <<>>=
-  line_1
-  line_2
-  line_3
-  @ 
-\item Multiplizieren Sie folgende gegebene Matrix mit dem Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
+\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
   \textbf{(2 Punkte)}
-  <<>>=
-  mat <- matrix(rnorm(12, 5, 2), ncol = 3, nrow =
-  4) %>% round
-  mat
-  @
-\item Skizzieren Sie den entsprechenden \Rlogo Code f{\"u}r die
-  Matrixmultiplikation! \textbf{(2 Punkte)}
+  \begin{center}
+    \begin{tabular}{c|c}
+      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
+      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
+      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
+      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
+      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
+    \end{tabular}
+  \end{center}  
+\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
+  $B$ als Mengendiagramme bzw. Venndiagramme!
+  \textbf{(2 Punkte)}
+  \begin{itemize}
+  \item \Sexpr{logic_table[1]}
+  \item \Sexpr{logic_table[2]}
+  \item \Sexpr{logic_table[3]}
+  \item \Sexpr{logic_table[4]}
+  \end{itemize}
+\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
+  \textbf{(2 Punkte)}
+\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
+  Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
+  Sequenzen! \textbf{(2 Punkte)}
+  \begin{itemize}
+  \item \Sexpr{dna_seq[1]}
+  \item \Sexpr{dna_seq[2]}
+  \item \Sexpr{dna_seq[3]}
+  \item \Sexpr{dna_seq[4]}
+  \end{itemize}
+\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
+  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
+  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
+  in beiden F{\"a}llen? \textbf{(2 Punkte)}
 \end{enumerate}
 
 %% -------------------
@@ -58,3 +78,4 @@ Sie haben den Vektor $A = \{\Sexpr{round(rnorm(3, 6, 8))}\}$ und den Vektor $B =
 \clearpage\null
 
 
+ 

@@ -45,16 +45,21 @@ Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$ aus.
 \item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
   Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
   mit der Dauer jedes Schrittes! \textbf{(2 Punkte)}
-\item Berechnen Sie die Dauer, die eine au{\ss}erirdische Zivilisation
-  ben{\"o}tigt, um die ganze Milchstra{\ss}e zu besuchen! \textbf{(3 Punkte)}
+\item Berechnen Sie die theoretische Anzahl an Replikationsschritten die
+  ben{\"o}tigt werden um mit \textit{einem einzigen Replikationsschritt} die
+  gesamten Sterne der Milchstra{\ss}e zu besuchen! \textbf{(1 Punkt)}
+\item Folgende Formel f{\"u}r eine geometrische Serie ist gegeben.
+  \begin{equation*}
+    \sum_{n=0}^N a \cdot r^n = a\left(\cfrac{r^{N + 1} -1}{r - 1}\right)
+\end{equation*}
+Berechnen Sie die Dauer, die eine au{\ss}erirdische Zivilisation
+ann{\"a}hrungsweise ben{\"o}tigt um die gesamten Sterne der Milchstra{\ss}e mit Sonden
+zu besuchen! \textbf{(3 Punkte)}
 \item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
   wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu
   Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die
   Kontinentalplatten einmal alle $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im
   Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
-\item Mit welcher Wahrscheinlichkeit wurde die Menschheit schon von der
-  Au{\ss}erirdischen besucht, wenn wir von einem Zivilisationsbeginn der
-  Menschheit von vor $\Sexpr{ziv_y}$ Jahren ausgehen? \textbf{(1 Punkt)}
 \item Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit $t$
   und Raum $r$. Erg{\"a}nzen Sie den Geschwindigkeitsvektor $\vec{v_t}$ und
   $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtgeschwindigkeit und
