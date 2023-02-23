@@ -13,7 +13,7 @@
 
 <<>>=
 job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
-         "Ihrer Koalakuschelnschule", "Ihrer Faultierpension") %>% sample(1)
+         "Ihrer Koalakuschelschule", "Ihrer Faultierpension") %>% sample(1)
 year_out <- c(1859, 1860, 1875) %>% sample(1)
 release <- c(22, 24, 26) %>% sample(1)
 release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
@@ -53,16 +53,12 @@ Geschlechtsreife.
 
 \begin{enumerate}
 \item Wie viele \Sexpr{unit_1} Kaninchen w{\"u}rden bei einem ungebremsten
-  Wachstum \textit{im \Sexpr{year} Jahr geboren}? \textbf{(2 Punkte)}
+  Wachstum \textit{im \Sexpr{year} Jahr} geboren? \textbf{(2 Punkte)}
 \item Die durchschnittliche, australische Lebenserwartung eines Kaninchens
-  liegt bei \Sexpr{age} Jahren. Folgende Formel f{\"u}r eine geometrische Serie
-  ist gegeben.
-  \begin{equation*}
-  \sum_{n=0}^N a \cdot r^n = a\left(\cfrac{r^{N + 1} -1}{r - 1}\right)
-\end{equation*}
-Wie viele Kaninchen bev{\"o}lkern bei einem ungebremsten Wachstum den
-australischen Kontinent bevor die ersten, australischen Kaninchen an
-Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2 Punkte)}
+  liegt bei \Sexpr{age} Jahren. Wie viele Kaninchen bev{\"o}lkern bei einem
+  ungebremsten Wachstum den australischen Kontinent bevor die ersten,
+  australischen Kaninchen an Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2
+    Punkte)}
 \end{enumerate}
 
 Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der
@@ -84,10 +80,9 @@ Kaninchenpopulation innerhalb weniger Wochen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}  
-\item Wie lange dauert es in Jahren, unter Verwendung der
-  S{\"a}ttigungsfunktion, bis die Kaninchenpopulation nach einer Viruspandemie
-  wieder auf \Sexpr{recover}\% der maximal Population angewachsen ist?
-  \textbf{(2 Punkte)}
+\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer
+  Viruspandemie wieder auf \Sexpr{recover}\% der ges{\"a}ttigten
+  Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
 \end{enumerate}
 
 Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten \Sexpr{release_point} von
@@ -110,7 +105,8 @@ verlangt ca. \Sexpr{dr_cost}\$.
 \begin{enumerate}
   \setcounter{enumi}{5}
 \item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen
-  j{\"a}hrlichen Zusatzkosten m{\"u}ssen Sie daher kalkulieren? \textbf{(1 Punkt)}
+  j{\"a}hrlichen Zusatzkosten f{\"u}r die Impfungen der Kaninchen m{\"u}ssen Sie daher
+  kalkulieren? \textbf{(1 Punkt)}
 \end{enumerate}
 
 %% -------------------
