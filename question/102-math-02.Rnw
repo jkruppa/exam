@@ -15,7 +15,7 @@
 n_plant <- c(120, 180, 240) %>% sample(1)
 n_tisch <- c("zwei", "drei", "vier") %>% sample(1)
 type_plant <- c("Sonnenblumen", "Maispflanzen", "Stockrosen") %>% sample(1)
-topf_r <- c(4, 4.5, 5) %>% sample(1)
+topf_d <- (c(4, 4.5, 5) * 2) %>% sample(1)
 topf_h <- c(7, 8, 9) %>% sample(1)
 torf_cost <- c(280, 290, 310) %>% sample(1)
 @
@@ -26,7 +26,7 @@ k{\"o}nnen, gibt es aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den 
 zu treffen. Zum einen m{\"u}ssen Sie die \Sexpr{type_plant} einpflanzen und m{\"u}ssen
 daf{\"u}r Substrat bestellen. Zum anderen m{\"u}ssen Sie die \Sexpr{type_plant} auch
 bewegen und in ein Gew{\"a}chshaus platzieren. Die T{\"o}pfe f{\"u}r die Keimung haben
-einen Radius von \Sexpr{topf_r}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
+einen Durchmesser von \Sexpr{topf_d}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
 Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
 
 \begin{enumerate}
