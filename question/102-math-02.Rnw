@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -12,33 +12,41 @@
 \paragraph{Von T{\"o}pfen auf Tischen}
 
 <<>>=
-n_plant <- c(120, 60, 80) %>% sample(1)
+n_plant <- c(120, 180, 240) %>% sample(1)
+n_tisch <- c("zwei", "drei", "vier") %>% sample(1)
+type_plant <- c("Sonnenblumen", "Maispflanzen", "Stockrosen") %>% sample(1)
 topf_r <- c(4, 4.5, 5) %>% sample(1)
 topf_h <- c(7, 8, 9) %>% sample(1)
 torf_cost <- c(280, 290, 310) %>% sample(1)
 @
 
 In einem Experiment wollen Sie die Wuchsh{\"o}he von \Sexpr{n_plant}
-Sonnenblumen bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen
+\Sexpr{type_plant} bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen
 k{\"o}nnen, gibt es aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den Aufwand
-zu treffen. Zum einen m{\"u}ssen Sie die Sonnenblumen einpflanzen und m{\"u}ssen
-daf{\"u}r Substrat bestellen. Zum anderen m{\"u}ssen Sie die Sonnenblumen auch
+zu treffen. Zum einen m{\"u}ssen Sie die \Sexpr{type_plant} einpflanzen und m{\"u}ssen
+daf{\"u}r Substrat bestellen. Zum anderen m{\"u}ssen Sie die \Sexpr{type_plant} auch
 bewegen und in ein Gew{\"a}chshaus platzieren. Die T{\"o}pfe f{\"u}r die Keimung haben
 einen Radius von \Sexpr{topf_r}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
 Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
 
 \begin{enumerate}
-\item Skizzieren Sie den Versuchsplan auf \textit{einem} Tisch im
+\item Skizzieren Sie den Versuchsplan auf \textit{\Sexpr{n_tisch}} Tischen im
   Gew{\"a}chshaus! \textbf{(2 Punkte)}
-\item Berechnen Sie die ben{\"o}tigten T{\"o}pfe, wenn Sie Randpflanzen mit
+\item Berechnen Sie die ben{\"o}tigten Pflanzt{\"o}pfe, wenn Sie Randpflanzen mit
   ber{\"u}cksichtigen wollen! \textbf{(1 Punkt)}
-\item Welche Fl{\"a}che in $m^2$ gegeben der Anzahl an T{\"o}pfen ben{\"o}tigen Sie im
+\item Welche Fl{\"a}che in $m^2$ gegeben der Anzahl an Pflanzt{\"o}pfen ben{\"o}tigen Sie im
   Gew{\"a}chshaus am Anfang der Keimungsphase? \textbf{(2 Punkte)}
-\item Berechnen Sie die ben{\"o}tigte Menge an Torf und die Kosten f{\"u}r Ihre
-  Pflanzung! Gehen Sie von einem Zylinder aus! \textbf{(2 Punkte)}
-\item Nach dem Bef{\"u}llen der T{\"o}pfe haben Sie noch Torf {\"u}brig. Erkl{\"a}ren Sie
-  den Sachstand! Wie gehen Sie zuk{\"u}nftig vor? \textbf{(1 Punkt)}
+\item Berechnen Sie die ben{\"o}tigte Menge an Torf, die Sie f{\"u}r das Bef{\"u}llen
+  der Pflanzt{\"o}pfe ben{\"o}tigen! Gehen Sie von \textit{einem Zylinder} f{\"u}r die
+  Pflanzt{\"o}pfe aus!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Kosten in EUR f{\"u}r Ihre Torfbestellung! \textbf{(1
+    Punkt)}
+\item Nach dem Bef{\"u}llen der Pflanzt{\"o}pfe haben Sie noch Torf {\"u}brig. Welche Menge
+  an Torf h{\"a}tten Sie ben{\"o}tigt, wenn Sie mit einem \textit{halbierten Kegel}
+  gerechnet h{\"a}tten? \textbf{(2 Punkte)}
 \end{enumerate}
+
+
 
 
 %% -------------------
