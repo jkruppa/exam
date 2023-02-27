@@ -20,28 +20,56 @@ today_year <- lubridate::year(Sys.Date())
 name <- c("Frida", "Fridolin") %>% sample(1)
 animal <- c("des Esels", " des Schafs", "des H{\"a}ngebauchschweins", "der Kuh") %>% sample(1)
 apfel <- c("Jonagoldp", "Boskoopp", "Pink Lady P") %>% sample(1)
-jan <- c(0.4, 0.5, 0.6)  %>% sample(1)
-feb <- c(0.75, 0.7, 0.8)  %>% sample(1)
-mrz <- c(1.1, 1.2, 1.05)  %>% sample(1)
-gamma <- c(70, 80, 110)  %>% sample(1)
-n_frid  <- c(120, 230, 180)  %>% sample(1)
-n_rent  <- c(140, 210, 190)  %>% sample(1)
+jan <- c(0.4, 0.5, 0.6) %>% sample(1)
+feb <- c(0.75, 0.7, 0.8) %>% sample(1)
+mrz <- c(1.1, 1.2, 1.05) %>% sample(1)
+gamma <- c(70, 80, 110) %>% sample(1)
+n_frid  <- c(120, 230, 180) %>% sample(1)
+n_rent  <- c(140, 210, 190) %>% sample(1)
+jan_temp <- c(0.1, 0.4, 0.3) %>% sample(1)
+feb_temp <- c(1.1, 1.5, 1.2) %>% sample(1)
+mrz_temp <- c(3.1, 2.7, 3.5) %>% sample(1)
+apr_temp <- c(6.1, 5.8, 4.3) %>% sample(1)
+weight <- c(1.2, 1.3, 1.5) %>% sample(1)
 @
 
 Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer
-\Sexpr{animal} \Sexpr{name} und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und ein
-strammer Wind im Gesicht, egal wohin man schaut. Ein schmatzendes Ger{\"a}usch
-unter Ihnen. Sollten Sie Ihre weiten Graslandschaften d{\"u}ngen? Daf{\"u}r
-ben{\"o}tigen Sie die \textit{Gr{\"u}nlandtemperatur}!
+\Sexpr{animal} \Sexpr{name} und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und
+ein strammer Wind im Gesicht, egal wohin man schaut. Ein schmatzendes
+Ger{\"a}usch ert{\"o}nt unter Ihnen. Sie sinnieren, sollten Sie Ihre weiten
+Graslandschaften jetzt schon d{\"u}ngen?  Daf{\"u}r ben{\"o}tigen Sie die
+\textit{Gr{\"u}nlandtemperatur}! Die Gr{\"u}nlandtemperatur ist die Summe aller
+positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von
+200$^\circ$ kann mit der Stickstoffd{\"u}ngung begonnen werden. Sie sehen nicht
+ein, Geld f{\"u}r einen Agrarmetrologen zu bezahlen. Also rechnen Sie mit
+folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit
+$\Sexpr{jan}\times$, Februar mit $\Sexpr{feb}\times$ und M{\"a}rz mit
+$\Sexpr{mrz}\times$. Sie haben noch im letzten Jahr folgende Temperaturen
+gemessen.
 
-Sie sehen nicht ein, Geld f{\"u}r einen Agrarmetrologen zu bezahlen. Also
-rechnen Sie mit folgenden Informationen 
-
-\Sexpr{jan} \Sexpr{feb} \Sexpr{mrz}
+\begin{center}
+\begin{tabular}{cc}
+  \toprule
+  Datum & C$^\circ$ \\
+  \midrule
+  01. Jan \Sexpr{today_year -1} & \Sexpr{jan_temp}\\
+  01. Feb \Sexpr{today_year -1} & \Sexpr{feb_temp}\\
+  01. Mrz \Sexpr{today_year -1} & \Sexpr{mrz_temp}\\
+  01. Apr \Sexpr{today_year -1} & \Sexpr{apr_temp}\\
+  \bottomrule
+\end{tabular}
+\end{center}
 
 \begin{enumerate}
-\item Skizzieren Sie den Versuchsplan auf Tischen im Gew{\"a}chshaus!
-  \textbf{(2 Punkte)}
+\item Erstellen Sie eine Skizze aus den Informationen aus der
+  Temperaturtabelle!  \textbf{(1 Punkt)}
+\item Stellen Sie das lineare Gleichungssystem aus der Temperaturtabelle
+  auf!  \textbf{(1 Punkt)}
+\item Bestimmen Sie die Stammfunktionen f{\"u}r Ihr lineares Gleichungsystem!
+  \textbf{(1 Punkt)}
+\item Osterglocken beginnen ab einer GLT von 200$^\circ C$ zu bl{\"u}hen. An
+  welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der
+  Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(2 Punkte)}
 \end{enumerate}
 
 Auf dem Weg zu Ihrer \Sexpr{apfel}lantage wurden Sie mit Ihrem Trecker von
@@ -55,7 +83,7 @@ elektrifizierter Renter  bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
   Skizze entsprechend!}
 
 \begin{enumerate}
-  \setcounter{enumi}{3}  
+  \setcounter{enumi}{4}  
 \item Im ersten Versuch legen Sie das Seil f{\"u}r \Sexpr{name} lotrecht {\"u}ber einen
   Ast oberhalb des Traktors. Die Rentner ziehen in einer geraden Linie {\"u}ber
   die B{\"o}schung hinweg am anderen Seil. Welche Kraft wird aufgebracht?
@@ -63,12 +91,13 @@ elektrifizierter Renter  bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
 \item Im zweiten Versuch ziehen \Sexpr{name} und die Rentner mit einem
   $\Sexpr{gamma}^\circ$ Winkel mit ihrem Seil an dem Traktor. Welche Kraft
   wird aufgebracht? \textbf{(2 Punkte)}
+\item Mit welcher Beschleunigung ziehen Sie den $\Sexpr{weight}t$ schweren
+  Trecker \textit{jeweils} aus dem Graben, wenn $F = m \cdot a$ gilt?
+  \textbf{(1 Punkt)}
 \end{enumerate}
-
-https://www.matheretter.de/rechner/parallelogramm
-
-resultierende kraft berechnen 3 kr{\"a}fte
 
 %% -------------------
 %% add additional page
 \clearpage\null
+\clearpage\null
+
