@@ -137,6 +137,7 @@ grade_tbl <- pre_grade_tbl %>%
     Geräten - also ausdrücklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
+  \item \textbf{You can answer the questions in English without any consequences.}  
   \end{itemize}
 \end{graybox}
 \vfill
@@ -655,6 +656,12 @@ In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei Aufgabe
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(math_questions_vec[15])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(math_questions_vec[16])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(math_questions_vec[17])} 
 \clearpage
 % -----------------------------------------------------------------------
 \end{document}
