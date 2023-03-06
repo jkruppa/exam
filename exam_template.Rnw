@@ -76,13 +76,15 @@ grade_tbl <- pre_grade_tbl %>%
 \thispagestyle{empty}
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
   \begin{itemize}
-  \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
-    Geräten - also ausdrücklich kein Handy!
+  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
+    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
+  \item \textbf{You can answer the questions in English without any
+      consequences.}
   \end{itemize}
 \end{graybox}
 \vfill
@@ -95,7 +97,7 @@ grade_tbl <- pre_grade_tbl %>%
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
     Textteil erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
-  \item[] Es wird folgender Notenschlüssel angewendet.   
+  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
   \end{itemize}
   \vspace{1ex}
 \begin{center}
@@ -130,9 +132,9 @@ grade_tbl <- pre_grade_tbl %>%
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
   \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
-  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+  \item \textbf{{\"U}bertragen Sie Ihre Kreuze in die Tabelle auf
       dieser Seite.}
-  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+  \item Es werden nur Antworten ber{\"u}cksichtigt, die in dieser Tabelle
     angekreuzt sind!
   \end{itemize}
 
@@ -174,7 +176,7 @@ grade_tbl <- pre_grade_tbl %>%
 
 \begin{graybox}{Rechen- und Textaufgaben}
   \begin{itemize}
-  \item Die Tabelle wird vom Dozenten ausgefüllt.
+  \item Die Tabelle wird vom Dozenten ausgef{\"u}llt.
   \end{itemize}
   \begin{center}
     \large
