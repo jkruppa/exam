@@ -9,12 +9,12 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Der Preis ist hei{\ss}!}
+\paragraph{Retrocheck im TV}
 
 <<>>=
 names <- c("Helmut", "Frida", "Elke", "Annegret", "G{\"u}nther", "Thorsten") %>% sample(2)
 p_gewinn <- c(0.2, 0.1, 0.3, 0.4) %>% sample(2, replace = TRUE)
-p_{\"u}ber <- c(0.05, 0.01, 0.1, 0.12, 0.076)  %>% sample(3, replace = TRUE)
+p_uber <- c(0.05, 0.01, 0.1, 0.12, 0.076)  %>% sample(3, replace = TRUE)
 
 @
 
@@ -22,20 +22,20 @@ p_{\"u}ber <- c(0.05, 0.01, 0.1, 0.12, 0.076)  %>% sample(3, replace = TRUE)
 dabei, wenn es wieder hei{\ss}t: Der Preis ist hei{\ss}!"', ert{\"o}nt es und Sie
 fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch
 h{\"a}tten sein sollten. Aber Sie brauchen das Geld und jetzt hei{\ss}t es
-Spielschows farmen! \\
+Spielschows farmen! 
 
-Jetzt hei{\ss}t es erstmal Preise raten bei \textit{Der Preis ist hei{\ss}!} und
-eine Kaffemaschine von Mitropa gewinnen. Jemand gewinnt die Kaffeemaschine
-von Mitropa, wenn nicht alle Kandidat*innen {\"u}berbieten. Mit Ihnen bieten
+Jetzt hei{\ss}t es erstmal Preise und eine Kaffemaschine von Mitropa
+gewinnen. Jemand gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
+Kandidat*innen {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bieten
 \Sexpr{names[1]} und \Sexpr{names[2]}.
 
 \begin{center}
-\begin{tabular}{cc}
+\begin{tabular}{ccc}
   \toprule
-  Name & $P(Gewinn)$ & $P({\"U}berbieten)$\\
+  Name & $P(win)$ & $P(outbid)$\\
   \midrule
-  \Sexpr{names[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_{\"u}ber[1]}\\
-  \Sexpr{names[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_{\"u}ber[2]} \\
+  \Sexpr{names[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_uber[1]}\\
+  \Sexpr{names[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_uber[2]} \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -43,9 +43,9 @@ von Mitropa, wenn nicht alle Kandidat*innen {\"u}berbieten. Mit Ihnen bieten
 \begin{enumerate}
 \item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
   Mitropa, wenn keiner der Kandidat*innen {\"u}berbietet? \textbf{(1 Punkt)}
-\item Wenn Ihre {\"U}berbietungswahrscheinlichkeit bei \Sexpr{p_{\"u}ber[3]}
-  liegt, mit welcher Wahrscheinlichkeit gewinnt keiner die Kaffeemaschine
-  von Mitropa? \textbf{(1 Punkt)}
+\item Wenn Ihre {\"U}berbietungswahrscheinlichkeit $P(outbid)$ bei
+  \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt \textit{keiner}
+  die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
 
