@@ -12,11 +12,9 @@
 \paragraph{Der Preis ist hei{\ss}!}
 
 <<>>=
-today_year <- lubridate::year(Sys.Date())
-name <- c("Frida", "Fridolin") %>% sample(1)
-animal <- c("des Esels", " des Schafs", "des H{\"a}ngebauchschweins", "der Kuh") %>% sample(1)
-apfel <- c("Jonagoldp", "Boskoopp", "Pink Lady P") %>% sample(1)
-jan <- c(0.4, 0.5, 0.6) %>% sample(1)
+names <- c("Helmut", "Frida", "Elke", "Annegret", "G{\"u}nther", "Thorsten") %>% sample(2)
+p_gewinn <- c(0.2, 0.1, 0.3, 0.4) %>% sample(2, replace = TRUE)
+p_{\"u}ber <- c(0.05, 0.01, 0.1, 0.12, 0.076)  %>% sample(3, replace = TRUE)
 
 @
 
@@ -24,14 +22,30 @@ jan <- c(0.4, 0.5, 0.6) %>% sample(1)
 dabei, wenn es wieder hei{\ss}t: Der Preis ist hei{\ss}!"', ert{\"o}nt es und Sie
 fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch
 h{\"a}tten sein sollten. Aber Sie brauchen das Geld und jetzt hei{\ss}t es
-Spielschows farmen! 
+Spielschows farmen! \\
 
+Jetzt hei{\ss}t es erstmal Preise raten bei \textit{Der Preis ist hei{\ss}!} und
+eine Kaffemaschine von Mitropa gewinnen. Jemand gewinnt die Kaffeemaschine
+von Mitropa, wenn nicht alle Kandidat*innen {\"u}berbieten. Mit Ihnen bieten
+\Sexpr{names[1]} und \Sexpr{names[2]}.
 
+\begin{center}
+\begin{tabular}{cc}
+  \toprule
+  Name & $P(Gewinn)$ & $P({\"U}berbieten)$\\
+  \midrule
+  \Sexpr{names[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_{\"u}ber[1]}\\
+  \Sexpr{names[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_{\"u}ber[2]} \\
+  \bottomrule
+\end{tabular}
+\end{center}
 
 \begin{enumerate}
-\item Erstellen Sie eine Skizze aus den Informationen aus der
-  Temperaturtabelle!  \textbf{(1 Punkt)}
-\item Stellen Sie die
+\item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
+  Mitropa, wenn keiner der Kandidat*innen {\"u}berbietet? \textbf{(1 Punkt)}
+\item Wenn Ihre {\"U}berbietungswahrscheinlichkeit bei \Sexpr{p_{\"u}ber[3]}
+  liegt, mit welcher Wahrscheinlichkeit gewinnt keiner die Kaffeemaschine
+  von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
 
