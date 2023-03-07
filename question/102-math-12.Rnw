@@ -26,7 +26,7 @@ mort <- c(30, 35, 40) %>% sample(1)
 age <- c(7, 8, 9) %>% sample(1)
 A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
 a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
-satt_year <- c(20, 30, 40)  %>% sample(1)
+satt_year <- c(9, 14, 18)  %>% sample(1)
 percent <- c(99.7, 99.9, 98.5) %>% sample(1)
 recover <- c(40, 50, 60) %>% sample(1)
 v_rabbit <- c(8.8, 9.8, 11.5) %>% sample(1)
@@ -99,8 +99,8 @@ Jahr aus.
 \end{enumerate}
 
 Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
-Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ und der durchf{\"u}hrende Arzt
-verlangt ca. \Sexpr{dr_cost}\$.
+Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ pro Tier und der
+durchf{\"u}hrende Arzt verlangt ca. \Sexpr{dr_cost}\$ pro Tier.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
