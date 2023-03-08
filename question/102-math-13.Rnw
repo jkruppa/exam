@@ -31,14 +31,15 @@ feb_temp <- c(1.1, 1.5, 1.2) %>% sample(1)
 mrz_temp <- c(3.1, 2.7, 3.5) %>% sample(1)
 apr_temp <- c(6.1, 5.8, 4.3) %>% sample(1)
 weight <- c(1.2, 1.3, 1.5) %>% sample(1)
+glt <- c(190, 200, 210) %>% sample(1)
 @
 
 Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer
 \Sexpr{animal} \Sexpr{name} und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und
-ein strammer Wind im Gesicht, egal wohin man schaut. Ein schmatzendes
+ein strammer Wind im Gesicht, egal wohin Sie schauen. Ein schmatzendes
 Ger{\"a}usch ert{\"o}nt unter Ihnen. Sie sinnieren, sollten Sie Ihre weiten
 Graslandschaften jetzt schon d{\"u}ngen?  Daf{\"u}r ben{\"o}tigen Sie die
-\textit{Gr{\"u}nlandtemperatur}! Die Gr{\"u}nlandtemperatur ist die Summe aller
+\textit{Gr{\"u}nlandtemperatur}! Die Gr{\"u}nlandtemperatur (GLT) ist die Summe aller
 positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von
 200$^\circ$ kann mit der Stickstoffd{\"u}ngung begonnen werden. Sie sehen nicht
 ein, Geld f{\"u}r einen Agrarmetrologen zu bezahlen. Also rechnen Sie mit
@@ -68,14 +69,14 @@ gemessen.
 \item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ f{\"u}r
   Ihre linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(1
     Punkt)}
-\item Osterglocken beginnen ab einer GLT von 200$^\circ C$ zu bl{\"u}hen. An
+\item Osterglocken beginnen ab einer GLT von \Sexpr{glt}$^\circ C$ zu bl{\"u}hen. An
   welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der
   Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(2 Punkte)}
 \end{enumerate}
 
 Auf dem Weg zu Ihrer \Sexpr{apfel}lantage wurden Sie mit Ihrem Trecker von
 einer Gruppe elektrifizierter Renter abgedr{\"a}ngt. Der Trecker muss wieder
-aus dem Graben. \Sexpr{name} und die elektrifizierten Rentner ziehen an zwei,
+aus dem Graben! \Sexpr{name} und die elektrifizierten Rentner ziehen an zwei,
 separaten Seilen. Dabei zieht \Sexpr{name} mit $\Sexpr{n_frid}N$. Die
 elektrifizierter Renter  bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
 

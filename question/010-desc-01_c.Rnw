@@ -12,7 +12,7 @@
 Sie haben folgende Zahlenreihe $y$ vorliegen
 $y = \{\Sexpr{round(rnorm(n = sample(c(7,11), 1), mean = sample(c(15, 17,
   19), 1), sd = sample(c(2, 3, 4), 1)))}\}$. Berechnen Sie folgende
-deskriptive Ma{\ss}zahlen. Geben Sie Formeln und Rechenwege mit an!
+deskriptive Ma{\ss}zahlen. 
 
 <<>>=
 wanted_vec <- c("Den Mittelwert", "Die Varianz", "Den Median", "Die Range oder Spannweite", "Das 1st Quartile", "Das 3rd Quartile", "Den Interquartileabstand", "Die Standardabweichung") %>%

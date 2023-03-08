@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -14,7 +14,13 @@
 <<>>=
 names <- c("Helmut", "Frida", "Elke", "Annegret", "G{\"u}nther", "Thorsten") %>% sample(2)
 p_gewinn <- c(0.2, 0.1, 0.3, 0.4) %>% sample(2, replace = TRUE)
-p_uber <- c(0.05, 0.01, 0.1, 0.12, 0.076)  %>% sample(3, replace = TRUE)
+p_uber <- c(0.05, 0.02, 0.11, 0.12, 0.076, 0.08, 0.043)  %>% sample(3, replace = FALSE)
+feld_rad <- c(20, 22, 24) %>% sample(1)
+enough <- c(6, 8, 10) %>% sample(1)
+win_1 <- c(3000, 4000, 5000) %>% sample(1)
+win_2 <- c(1000, 1500, 2000) %>% sample(1)
+win_3 <- win_1 + win_2
+spieler <- c("einem ein{\"a}ugen Piraten", "einem Typen in einem Tentakelkost{\"u}m", "Catwoman") %>% sample(1) 
 
 @
 
@@ -22,12 +28,10 @@ p_uber <- c(0.05, 0.01, 0.1, 0.12, 0.076)  %>% sample(3, replace = TRUE)
 dabei, wenn es wieder hei{\ss}t: Der Preis ist hei{\ss}!"', ert{\"o}nt es und Sie
 fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch
 h{\"a}tten sein sollten. Aber Sie brauchen das Geld und jetzt hei{\ss}t es
-Spielschows farmen! 
-
-Jetzt hei{\ss}t es erstmal Preise und eine Kaffemaschine von Mitropa
-gewinnen. Jemand gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
-Kandidat*innen {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bieten
-\Sexpr{names[1]} und \Sexpr{names[2]}.
+Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa
+gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
+Kandidaten {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bilden
+\Sexpr{names[1]} und \Sexpr{names[2]} das Team der drei Kandidaten.
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -42,24 +46,65 @@ Kandidat*innen {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bieten
 
 \begin{enumerate}
 \item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
-  Mitropa, wenn keiner der Kandidat*innen {\"u}berbietet? \textbf{(1 Punkt)}
+  Mitropa, wenn keiner der Kandidaten {\"u}berbietet? \textbf{(1 Punkt)}
 \item Wenn Ihre {\"U}berbietungswahrscheinlichkeit $P(outbid)$ bei
-  \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt \textit{keiner}
-  die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
+  \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt
+  \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
+Gl{\"u}cksrad f{\"u}r Arme auf der Kirmes! Leider hat es f{\"u}r Maren Gilzer nicht
+gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit
+\Sexpr{spieler} um das gro{\ss}e Geld. Das Gl{\"u}cksrad hat \Sexpr{feld_rad}
+Felder. Sie drehen das Gl{\"u}cksrad zweimal. Auf \Sexpr{enough} Feldern
+gewinnen Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz sch{\"o}n viel Geld
+und ganz sch{\"o}n zwielichtig hier...
 
 \begin{enumerate}
-  \setcounter{enumi}{4}  
-\item Im ersten 
+  \setcounter{enumi}{2}  
+\item Skizzieren Sie das Gl{\"u}cksrad und erg{\"a}nzen Sie die
+  Wahrscheinlichkeiten! \textbf{(1 Punkt)}
+\item Zeichnen Sie das zugeh{\"o}rige Baumdiagramm f{\"u}r das zweimalige Drehen!
+  Erg{\"a}nzen Sie die Wahrscheinlichkeiten und die entsprechenden Ereignisse
+  \textbf{(2 Punkte)}
+\item Mir welcher Wahrscheinlichkeit gewinnen Sie \Sexpr{win_3}EUR? \textbf{(1
+    Punkt)}
 \end{enumerate}
 
-Buchstabenh{\"a}ufigkeit im Deutschen
+Nach Ihrem Fiebertraum reisen Sie im Zug nach K{\"o}ln um bei "`Geh aufs
+Ganze!"' mitzuspielen. Sie schaffen es tats{\"a}chlich ins Finale und k{\"o}nnen
+als Hauptgewinn ein Auto hinter einer der drei T{\"u}ren gewinnen. 
+
+\begin{enumerate}
+  \setcounter{enumi}{5}  
+\item Bevor die Show beginnt, wird das Auto hinter eine zuf{\"a}llig bestimmte
+  T{\"u}r gestellt. Mit welcher Wahrscheinlichkeit wird jeweils eine der drei
+  T{\"u}ren ausgew{\"a}hlt? Zeichnen Sie ein Baumdiagramm! \textbf{(1 Punkt)}
+\item Mit welcher Wahrscheinlichkeit w{\"a}hlen Sie sofort die T{\"u}r mit
+  dem Auto? Erweitere Sie das Baumdiagramm entsprechend! \textbf{(1
+    Punkt)}
+\item Der Moderator {\"o}ffnet nun eine der nicht gew{\"a}hlten T{\"u}ren, aber
+  nat{\"u}rlich nicht die mit dem Auto. Mit welcher Wahrscheinlichkeit steht
+  das Auto hinter der anderen T{\"u}r? Erweitern Sie das Baumdiagramm
+  entsprechend! \textbf{(2 Punkte)}
+\item L{\"o}sen Sie nun das "`Ziegenproblem"'! Berechne Sie dazu die
+  Wahrscheinlichkeiten der einzelnen Pfade. Lohnt sich ein Wechsel der
+  anfangs gew{\"a}hlte T{\"u}r? Begr{\"u}nden Sie Ihre Antwort mathematisch!
+  \textbf{(2 Punkte)}
+\end{enumerate}
+ 
+
+%https://unterrichten.zum.de/wiki/Laplace-Wahrscheinlichkeit_wiederholen_und_vertiefen/Ziegen
+
+%Buchstabenh{\"a}ufigkeit im Deutschen
+
+%%https://www.mathelike.de/abiturloesungen-mathematik-bayern/mathematik-abitur-bayern-2020/pruefungsteil-a/stochastik-2/teilaufgabe-a.html
 
 %%https://de.wikipedia.org/wiki/Buchstabenh%C3%A4ufigkeit
 
+
 %% -------------------
 %% add additional page
+\clearpage\null
 \clearpage\null
 \clearpage\null
 
