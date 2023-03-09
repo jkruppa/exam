@@ -16,6 +16,7 @@ fold <- c(4, 6, 8) %>% sample(1)
 karton <- c(30, 40, 50) %>% sample(1)
 mm <- c(0.6, 0.7, 0.8) %>% sample(1)
 sb <- c(18, 21, 23) %>% sample(1)
+zaun <- c(100, 120, 130) %>% sample(1)
 
 @
 
@@ -25,9 +26,10 @@ schon im vorherigen Semester... In der Kartonagenfabrik erfahren Sie, dass
 die Kartons zum Versand von N{\"a}geln hier nicht zusammengebaut werden, die
 Endfertigung befindet sich in Flint, Michigan. Unter anderem wird dort der
 ber{\"u}hmte \textit{Doppelt gewellte, \Sexpr{fold}-mal-gefaltete,
-  \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} hergestellt. Beim letzten Mal war
-Rektor Skinner die Stimmung zu schlecht und deshalb geht es erst nach
-Hause, wenn ein paar Aufgaben gel{\"o}st sind. Martin freut das. An dem Vorrat
+  \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch Falzung hergestellt. Beim
+letzten Mal war Rektor Skinner die Stimmung zu schlecht und deshalb geht es
+erst nach Hause, wenn ein paar Aufgaben gel{\"o}st sind. Martin freut das. An
+dem Vorrat
 an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
 Der nun zu optimierende Karton hat eine L{\"a}nge von \Sexpr{karton}cm und eine
@@ -47,10 +49,20 @@ quadratischen Eckenausschnitt der L{\"a}nge $x$ falzen.
   Kartondeckel\textit{blatt}rohlings? \textbf{(2 Punkte)}
 \end{enumerate}
 
+Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
+nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
+er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
+Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
+Rektor Skinner nur \Sexpr{zaun}m Zaun zu Verf{\"u}gung. Sie wollen nun die
+maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
+Seitenl{\"a}ngen $a$ und $b$ bei der Verwendung von \Sexpr{zaun}m Zaun bestimmen!
 
 \begin{enumerate}
   \setcounter{enumi}{4}  
-\item Im ersten 
+\item  Welche Seitenl{\"a}ngen f{\"u}r $a$ und $b$ ergeben sich f{\"u}r die
+  maximale Fl{\"a}che des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che des abgeschirmten Vorgartens! \textbf{(1
+    Punkt)}
 \end{enumerate}
 
 %% -------------------
