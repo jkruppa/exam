@@ -12,22 +12,39 @@
 \paragraph{In der Kartonagenfabrik}
 
 <<>>=
-today_year <- lubridate::year(Sys.Date())
-name <- c("Frida", "Fridolin") %>% sample(1)
-animal <- c("des Esels", " des Schafs", "des H{\"a}ngebauchschweins", "der Kuh") %>% sample(1)
-apfel <- c("Jonagoldp", "Boskoopp", "Pink Lady P") %>% sample(1)
-jan <- c(0.4, 0.5, 0.6) %>% sample(1)
+fold <- c(4, 6, 8) %>% sample(1)
+karton <- c(30, 40, 50) %>% sample(1)
+mm <- c(0.6, 0.7, 0.8) %>% sample(1)
+sb <- c(18, 21, 23) %>% sample(1)
 
 @
 
-Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll.
+Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
+geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
+schon im vorherigen Semester... In der Kartonagenfabrik erfahren Sie, dass
+die Kartons zum Versand von N{\"a}geln hier nicht zusammengebaut werden, die
+Endfertigung befindet sich in Flint, Michigan. Unter anderem wird dort der
+ber{\"u}hmte \textit{Doppelt gewellte, \Sexpr{fold}-mal-gefaltete,
+  \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} hergestellt. Beim letzten Mal war
+Rektor Skinner die Stimmung zu schlecht und deshalb geht es erst nach
+Hause, wenn ein paar Aufgaben gel{\"o}st sind. Martin freut das. An dem Vorrat
+an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
-
+Der nun zu optimierende Karton hat eine L{\"a}nge von \Sexpr{karton}cm und eine
+Breite von \Sexpr{sb}cm. Die Kartonagenmaschine in Flint soll dann einen
+quadratischen Eckenausschnitt der L{\"a}nge $x$ falzen.
 
 \begin{enumerate}
-\item Erstellen Sie eine Skizze aus den Informationen aus der
-  Temperaturtabelle!  \textbf{(1 Punkt)}
-\item Stellen Sie die
+\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
+  Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
+  \textbf{(1 Punkt)}
+\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des
+  Kartons! \textbf{(3 Punkte)}
+\item Welches Volumen ergibt sich mit der von Ihnen berechneten Falztiefe
+  $x$?  \textbf{(1 Punkt)}
+\item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
+  den Karton stanzen lassen. Wie gro{\ss} ist die L{\"a}nge und Breite des
+  Kartondeckel\textit{blatt}rohlings? \textbf{(2 Punkte)}
 \end{enumerate}
 
 
