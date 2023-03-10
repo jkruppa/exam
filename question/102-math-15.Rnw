@@ -22,19 +22,20 @@ zaun <- c(100, 120, 130) %>% sample(1)
 
 Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
 geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
-schon im vorherigen Semester... In der Kartonagenfabrik erfahren Sie, dass
-die Kartons zum Versand von N{\"a}geln hier nicht zusammengebaut werden, die
-Endfertigung befindet sich in Flint, Michigan. Unter anderem wird dort der
-ber{\"u}hmte \textit{Doppelt gewellte, \Sexpr{fold}-mal-gefaltete,
-  \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch Falzung hergestellt. Beim
-letzten Mal war Rektor Skinner die Stimmung zu schlecht und deshalb geht es
-erst nach Hause, wenn ein paar Aufgaben gel{\"o}st sind. Martin freut das. An
-dem Vorrat
+schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
+Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
+werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
+anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
+  \Sexpr{fold}-mal-gefaltete, \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch
+Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
+schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
+sind. Martin gef{\"a}llt das. An dem Vorrat
 an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
-Der nun zu optimierende Karton hat eine L{\"a}nge von \Sexpr{karton}cm und eine
-Breite von \Sexpr{sb}cm. Die Kartonagenmaschine in Flint soll dann einen
-quadratischen Eckenausschnitt der L{\"a}nge $x$ falzen.
+Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende Karton hat eine
+L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
+Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
+der L{\"a}nge $x$ falzen.
 
 \begin{enumerate}
 \item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!

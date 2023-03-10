@@ -38,7 +38,7 @@ gamma_grad <- c(35, 50, 60) %>% sample(1)
 north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
 intercept <- c(0.05, 0.1, 0.2) %>% sample(1)
 slope <- c(0.15, 0.25, 0.13) %>% sample(1)
-start <- c("A", "B", "C", "D", "E") %>% sample(1)
+start <- c("B", "C", "D", "E") %>% sample(1)
 @
 
 Es ist Wochenende und das Wetter ist \textit{sweet}. Sie schwingen sich auf
@@ -51,7 +51,7 @@ die von Ihnen abzufahrenden Orte vor. Die Terrain- und
 Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5
 (schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den
 Orten und den entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route
-zu Verf{\"u}gung. Sie starten an dem Ort \Sexpr{start}.
+zu Verf{\"u}gung.
 
 \begin{center}
   \begin{tabular}{ ccc }
@@ -74,12 +74,12 @@ $\overrightarrow{CB}$ mit $\Sexpr{vec_2_l}$km bekannt. Der
 Entfernungsvektor $\overrightarrow{BE}$ ist das $\Sexpr{vec_fach}$-fache
 des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort
 C anpeilen, so liegt der Ort B ungef{\"a}hr $\Sexpr{alpha_grad}^\circ$
-\Sexpr{north_south}. Wenn Sie von dem Ort C den Ort
-B anpeilen, so liegt der Ort D ungef{\"a}hr $\Sexpr{gamma_grad}^\circ$
-{\"o}stlich. Vom Ort B betrachtet, bilden die Orte C und D einen
-rechten Winkel am Ort B. Der Ort B liegt auf gerader Linie zwischen den
-Orten C und E. Somit liegt der Ort E \Sexpr{north_south} von B. Die Strecke
-zwischen A und E ist nicht passierbar.\\
+\Sexpr{north_south}. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt
+der Ort D ungef{\"a}hr $\Sexpr{gamma_grad}^\circ$ {\"o}stlich. Vom Ort B
+betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort
+B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E
+\Sexpr{north_south} von B. Die Strecke zwischen A und E ist nicht
+passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
 
 \textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
   Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze
