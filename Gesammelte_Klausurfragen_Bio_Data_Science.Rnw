@@ -7,6 +7,7 @@ pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
                janitor, pander, lme4, corpcor, fs)
 ##
 options(show.signif.stars = FALSE)
+options(scipen = 0, digits = 7)
 ##
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
