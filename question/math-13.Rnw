@@ -32,8 +32,8 @@ schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
 sind. Martin gef{\"a}llt das. An dem Vorrat
 an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
-Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende Karton hat eine
-L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
+Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
+hat eine L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
 Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
 der L{\"a}nge $x$ falzen.
 
@@ -41,13 +41,13 @@ der L{\"a}nge $x$ falzen.
 \item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
   Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
   \textbf{(1 Punkt)}
-\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des
+\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des flachen
   Kartons! \textbf{(3 Punkte)}
-\item Welches Volumen ergibt sich mit der von Ihnen berechneten Falztiefe
-  $x$?  \textbf{(1 Punkt)}
+\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten
+  Falztiefe $x$?  \textbf{(1 Punkt)}
 \item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
-  den Karton stanzen lassen. Wie gro{\ss} ist die L{\"a}nge und Breite des
-  Kartondeckel\textit{blatt}rohlings? \textbf{(2 Punkte)}
+  den Karton stanzen lassen. Wie gro{\ss} ist die Fl{\"a}che des
+  Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
 \end{enumerate}
 
 Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
