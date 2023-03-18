@@ -35,8 +35,8 @@ wanted_questions <- c(text_questions_vec, math_questions_vec) %>% sample(7)
 ## get the points done
 ques_points_tbl <- points_tbl %>% 
   filter(file_name %in% basename(wanted_questions))
-
 points_vec <- ques_points_tbl %>% pull(points) 
+
 textpoints <- sum(points_vec) 
 overallpoints <- textpoints + 20
 
