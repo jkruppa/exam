@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (4 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -12,21 +12,27 @@
 
 files <- dir(file.path(question_path, "img"),
              pattern = "boxplot-03", full.names = TRUE) %>%
-  sample(1)
+  sample(2)
 @ 
 
 \begin{enumerate}
-\item Zeichnen Sie {\"u}ber den untenstehenden Boxplot die entsprechende
-  zugeh{\"o}rige Verteilung! \textbf{(2 Punkte)} 
-\item Zeichnen Sie unter den untenstehenden Boxplot die entsprechende
-  zugeh{\"o}rige Beobachtungen! \textbf{(2 Punkte)}
+\item Zeichnen Sie {\"u}ber die untenstehenden Boxplots die entsprechende
+  zugeh{\"o}rige Verteilung! \textbf{(3 Punkte)} 
+\item Zeichnen Sie unter die untenstehenden Boxplots die entsprechende
+  zugeh{\"o}rige Beobachtungen! \textbf{(3 Punkte)}
+\item Erg{\"a}nzen Sie die statistischen Ma{\ss}zahlen zu einer Verteilung und
+  einem Boxplot! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \vspace*{8cm}
 
-\begin{center}
-  \includegraphics[width=10cm]{\Sexpr{files[1]}}
-\end{center}
+\begin{minipage}[c]{.4\linewidth} % [b] => Ausrichtung an \caption
+  \includegraphics[width=\linewidth]{\Sexpr{files[1]}}
+\end{minipage}
+\hspace{.1\linewidth}% Abstand zwischen Bilder
+\begin{minipage}[c]{.4\linewidth} % [b] => Ausrichtung an \caption
+  \includegraphics[width=\linewidth]{\Sexpr{files[2]}}
+\end{minipage}
 
 
 
