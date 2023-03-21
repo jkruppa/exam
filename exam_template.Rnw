@@ -4,7 +4,10 @@
 <<init, echo = FALSE>>=
 pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
                gridExtra, broom, effectsize, gtsummary, glmmTMB, performance,
-               janitor, pander, lme4, corpcor, fs)
+               janitor, pander, lme4, corpcor, fs, conflicted)
+conflict_prefer("select", "dplyr")
+conflict_prefer("filter", "dplyr")
+conflict_prefer("mutate", "dplyr")
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
