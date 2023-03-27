@@ -222,6 +222,8 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[9])} 
 \Sexpr{knit_child(mc_questions_vec[10])}
 % -----------------------------------------------------------------------
+\clearpage
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(text_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
