@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/tNNzcndrpSk}{\includegraphics[width =
@@ -14,13 +14,18 @@ data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5,7,9), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather,
                   tibble(B = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 15, 27), 1),
+                                         mean = sample(c(12, 24, 27), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%
   set_names(c("trt", "weight")) %>%
   sample_n(size = nrow(.))
 
-summary(lm(weight ~ trt, data_tbl))
+sum_lm <- summary(lm(weight ~ trt, data_tbl))
+
+r2 <- sum_lm$r.squared %>% round(4)
+
+sum_lm
+
 @
 
 
@@ -29,6 +34,8 @@ summary(lm(weight ~ trt, data_tbl))
   Begr{\"u}nden Sie die Antwort! \textbf{(2 Punkte)}
 \item Wie gro{\ss} ist der Effekt des \textit{Trt}? Liegt ein signifikanter
   Effekt vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie \textit{kurz} den Begriff \texttt{Multiple R-squared}!
+  Was sagt Ihnen der Wert $\Sexpr{r2}$ aus? \textbf{(2 Punkte)}
 \item Schreiben Sie das Ergebnis der \Rlogo Ausgabe in einen Satz nieder, der die
   Information zum Effekt und der Signifikanz enth{\"a}lt! \textbf{(2 Punkte)} 
 \end{enumerate}
