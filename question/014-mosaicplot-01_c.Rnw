@@ -10,7 +10,7 @@
 
 Nach einem Feldexperiment mit zwei Pestiziden (\textit{RoundUp} und
 \textit{OutEx}) ergibt sich die folgende Datentabelle mit dem jeweiligen
-beobachteten Infektionsstatus.
+beobachteten Infektionsstatus bei Spargel.
 
 <<mosaic-01, results='asis', echo = FALSE>>=
 data_tbl <- rbind(tibble(RoundUp = round(rnorm(n = sample(c(9, 11), 1),
@@ -32,9 +32,9 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 
 \begin{enumerate}
 \item Stellen Sie in einer 2x2 Tafel den Zusammenhang zwischen dem
-  Pesizid und dem Infektionsstatus dar! \textbf{(4 Punkte)}
+  Pestizid und dem Infektionsstatus dar! \textbf{(4 Punkte)}
 \item Zeichnen Sie den zugeh{\"o}rigen Mosaic-Plot. Berechnen Sie das
   Verh{\"a}ltnis pro Spalte! \textbf{(2 Punkte)}
-\item Wenn das Pesizid keine Auswirkung auf den Infektionsstatus h{\"a}tte, wie
+\item Wenn das Pestizid keine Auswirkung auf den Infektionsstatus h{\"a}tte, wie
   sehe dann der Mosaic-Plot aus? \textbf{(2 Punkte)}
 \end{enumerate}
