@@ -23,19 +23,21 @@ init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
 
+## get the wanted questions for the exam
+source("questions_vec.R")
+wanted_questions <- wanted_questions_lst %>% unlist()
+
 ## get the question files
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
-text_questions_vec <- str_subset(questions_vec, "mc|math", negate = TRUE)
-mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
-math_questions_vec <- str_subset(questions_vec, "math", negate = FALSE)
+text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE) %>%
+  magrittr::extract(wanted_questions_lst$text - 40) 
+mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)  %>%
+  magrittr::extract(wanted_questions_lst$mc)
 
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
-
-## dummy select function
-wanted_questions <- c(text_questions_vec, math_questions_vec) %>% sample(7)
 
 ## get the points done
 ques_points_tbl <- points_tbl %>% 
