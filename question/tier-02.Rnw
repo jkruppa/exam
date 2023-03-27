@@ -1,0 +1,30 @@
+\section{Aufgabe \hfill (8 Punkte)}
+Ihnen liegt folgendes Varianzanalysemodell mit der {\"u}blichen Beschreibung
+zur Auswertung des Merkmals fett- und eiwei{\ss}korrigierte Milchleistung pro
+Kuh und Jahr in kg vor:
+
+\begin{equation*}
+  Y_{ijkl} = \mu + Var_i + EKA_j + VarEKA_{ij} + V_k + b(L_{ij} - L) + e_{ijkl}
+\end{equation*}
+
+mit
+
+\begin{itemize}
+\item $Y_{ijkl}$: l-te Beobachtung
+\item $\mu$: Populationsmittel 
+\item $Var_i$: fixer Effekt der i-ten Variante (i: Kontrolle,
+  Versuchsgruppe 1, Versuchsgruppe 2)
+\item $EKA_j$: fixer Effekt der j-ten Erstkalbealtergruppe (j: EKA $\leq$ 25
+  Monate, EKA > 25 Monate)
+\item $VarEKA_{ij}$: fixer Effekt der Interaktion Variante x
+  Erstkalbealtergruppe 
+\item $V_k$: zuf{\"a}lliger Effekt des Vaters 
+\item $b(L_{ij} - L)$: lineare Kovariable Laktationsnummer 
+\item $e_{ijkl}$: zuf{\"a}lliger
+  Restfehler
+\end{itemize}
+Erl{\"a}utern Sie anhand dieses Beispiels die Begriffe fixer Effekt,
+Interaktion, zuf{\"a}lliger Effekt und Kovariable und grenzen Sie diese
+Begriffe voneinander ab.
+
+

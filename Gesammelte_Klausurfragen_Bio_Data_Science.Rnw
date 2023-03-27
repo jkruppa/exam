@@ -22,9 +22,10 @@ img_path <- file.path(question_path, "img")
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
-text_questions_vec <- str_subset(questions_vec, "mc|math", negate = TRUE)
-mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)
-math_questions_vec <- str_subset(questions_vec, "math", negate = FALSE)
+text_questions_vec <- str_subset(questions_vec, "mc|math|tier", negate = TRUE)
+mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
+math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
+tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
 
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
@@ -79,7 +80,7 @@ grade_tbl <- pre_grade_tbl %>%
 
 \begin{graybox}{Inhalte der Klausur nach Modul}  
   \small
-  \textcolor{red}{\textit{Die folgende Einordnung der Themenkomplexe zu den Modulen dient zur Orientierung. Einzelne Klausuren können und werden davon abweichen. Die Angaben hier sind daher ohne Gewähr.}}\\[1Ex]
+  \textcolor{red}{\textit{Die folgende Einordnung der Themenkomplexe zu den Modulen dient zur Orientierung. Einzelne Klausuren k{\"o}nnen und werden davon abweichen. Die Angaben hier sind daher ohne Gew{\"a}hr.}}\\[1Ex]
   \textit{Mathematik \& Statistik} 
   \begin{itemize}
   \item 1 Frage zur deskriptiven Statistik
@@ -98,7 +99,7 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder diagnostischen Testen
   \item 1 Frage zur R Programmierung
   \end{itemize} 
-  \textit{Angewandte Statistik für Bioverfahrenstechnik } 
+  \textit{Angewandte Statistik f{\"u}r Bioverfahrenstechnik } 
   \begin{itemize}
   \item 1 Frage zur deskriptiven Statistik
   \item 1 Frage zum statistischen Testen
@@ -125,17 +126,17 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zu der zweifaktoriellen ANOVA
   \item 1 Frage zu der multiplen Regression
   \item 1 Frage zu der R Programmierung
-  \item 2 Fragen abhängig von der Vertiefung (Pflanze- oder Nutztierwissenschaften)
+  \item 2 Fragen abh{\"a}ngig von der Vertiefung (Pflanze- oder Nutztierwissenschaften)
   \end{itemize} 
 \end{graybox}
   
 % -----------------------------------------------------------------------
 
-\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
   \begin{itemize}
-  \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
-    Geräten - also ausdrücklich kein Handy!
+  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
+    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
   \item \textbf{You can answer the questions in English without any consequences.}  
@@ -151,7 +152,7 @@ grade_tbl <- pre_grade_tbl %>%
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
     Textteil erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
-  \item[] Es wird folgender Notenschlüssel angewendet.   
+  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
   \end{itemize}
   \vspace{1ex}
 \begin{center}
@@ -186,9 +187,9 @@ grade_tbl <- pre_grade_tbl %>%
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
   \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
-  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+  \item \textbf{{\"U}bertragen Sie Ihre Kreuze in die Tabelle auf
       dieser Seite.}
-  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+  \item Es werden nur Antworten ber{\"u}cksichtigt, die in dieser Tabelle
     angekreuzt sind!
   \end{itemize}
 
@@ -230,7 +231,7 @@ grade_tbl <- pre_grade_tbl %>%
 
 \begin{graybox}{Rechen- und Textaufgaben}
   \begin{itemize}
-  \item Die Tabelle wird vom Dozenten ausgefüllt.
+  \item Die Tabelle wird vom Dozenten ausgef{\"u}llt.
   \end{itemize}
   \begin{center}
     \large
@@ -472,7 +473,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
   \item \href{https://jkruppa.github.io/stat-linear-reg-basic.html}{Kapitel 32 - Simple lineare Regression}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel 33 - Maßzahlen der Modelgüte}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel 33 - Ma{\ss}zahlen der Modelg{\"u}te}
   \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel 34 - Korrelation}
   \end{itemize}
 \end{graybox}
@@ -559,7 +560,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \begin{graybox}{Multiple Gruppenvergleiche}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung für multiple Vergleiche}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung f{\"u}r multiple Vergleiche}
   \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{Kapitel 31.7 Compact letter display}
   \end{itemize}
 \end{graybox}
@@ -579,15 +580,15 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
   \begin{itemize}
   \item \href{https://jkruppa.github.io/programing-preface.html}{Kapitel 9ff. Programmieren in R}
   \end{itemize}
-In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt. \\
+In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt. \\
 
-In der Klausur zu dem Modul \textbf{Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
 
-In der Klausur zu dem Modul \textbf{Angewandte Statistik für Bioverfahrenstechnik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Angewandte Statistik f{\"u}r Bioverfahrenstechnik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
 
-In der Klausur zu dem Modul \textbf{Angewandte Statistik und Versuchswesen} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Angewandte Statistik und Versuchswesen} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
 
-In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgewählt.  \\
+In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
 
 \end{graybox}
 \clearpage
@@ -610,7 +611,7 @@ In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus
 \begin{graybox}{Mathematik}
 Mehr Informationen zu den Aufgaben in den \href{https://jkruppa.github.io/math/}{Skript Mathematik} und den entsprechenden Kapiteln.\\
 
-In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei Aufgaben aus den folgenden Aufgaben zur Mathematik ausgewählt. \\
+In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei Aufgaben aus den folgenden Aufgaben zur Mathematik ausgew{\"a}hlt. \\
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------  
@@ -665,6 +666,17 @@ In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei Aufgabe
 \Sexpr{knit_child(math_questions_vec[17])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Angewandte Nutztier- und Pflanzenwissenschaften (M.Sc.)}
+  Im Rahmen der Klausur zu dem Modul "`Biostatistik"' werden auch Fragen
+  nur f{\"u}r die Studierenden des Schwerpunktes Nutztierwissenschaften
+  gestellt. Im Folgenden daher eine lose Sammlung von m{\"o}glichen Fragen zu
+  diesem Themenkomplex.
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------  
+\Sexpr{knit_child(tier_questions_vec[1])}
+\Sexpr{knit_child(tier_questions_vec[2])}
+\Sexpr{knit_child(tier_questions_vec[3])} 
 \end{document}
 % -----------------------------------------------------------------------
 
