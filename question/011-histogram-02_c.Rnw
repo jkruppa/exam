@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -25,6 +25,8 @@ mu_vec <- str_c(rep("\\bar{y}_", times = n), 1:n, collapse = " \\neq ")
     Abbildung} mit $\Sexpr{mu_vec}$ und $\Sexpr{sd_vec}$! \textbf{(3 Punkte)}
 \item Beschriften Sie die Normalverteilungen mit den entsprechenden
   Parametern! \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie die Bereiche in der 68\% und 95\% der Beobachtungen
+  fallen! Beschriften Sie die Grenzen der Bereiche mit der statistischen Ma{\ss}zahl! \textbf{(2 Punkte)}
 \item Liegt Varianzhomogenit{\"a}t oder Varianzheterogenit{\"a}t vor? Begr{\"u}nden Sie
   Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
