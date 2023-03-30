@@ -45,6 +45,6 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 \item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{calc}$ eine Aussage
   zur Nullhypothese! \textbf{(2 Punkte)}
 \item Wenn Sie \textit{\Sexpr{textsig}} Unterschied zwischen den beiden
-  Pestiziden erwarten w{\"u}rden, wie gro{\ss}e w{\"a}re dann die Teststatistik
+  Pestiziden erwarten w{\"u}rden, wie gro{\ss} w{\"a}re dann die Teststatistik
   $T_{calc}$? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
