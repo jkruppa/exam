@@ -1,42 +1,56 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/bc1m7rkXld4}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Gegeben ist die vereinfachte Formel f{\"u}r den Zweistichproben t-Test mit der
+<<>>=
+d_vec <- c("\\Delta\\uparrow", "\\Delta\\downarrow") %>% sample(1)
+s_vec <- c("s\\uparrow", "s\\downarrow") %>% sample(1)
+@ 
+
+Gegeben ist die vereinfachte Formel f{\"u}r den Student t-Test mit der
 gepoolten Standardabweichung $s_p$ und gleicher Gruppengr{\"o}sse $n_g$ der
-beiden Sample.
+beiden Gruppen.
 
 \begin{equation*}
   \label{eq:1}
-  T = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{\tfrac{2}{n_g}}}
+  T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{\tfrac{2}{n_g}}}
 \end{equation*}
 
-Welche Auswirkung hat die {\"A}nderungen der jeweiligen statistischen Masszahl
-auf den T-Wert und damit auf die \textit{vermutliche} Signifikanz? F{\"u}llen
+\begin{enumerate}
+\item Welche Auswirkung hat die {\"A}nderungen der jeweiligen statistischen
+  Masszahl $\Delta$, $s$ und $n$ auf die Teststistik $T_{calc}$, den p-Wert
+  $Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\alpha}$? F{\"u}llen
 Sie hierzu die untenstehende Tabelle aus! \textbf{(6 Punkte)}
-
 \begin{center}
   \large
-  \begin{tabular}[c]{l|l|l|l|l|l|l|l}
-    & T Statistik & $Pr(D|H_0)$ & $KI_{1-\alpha}$ & & T Statistik & $Pr(D|H_0)$ & $KI_{1-\alpha}$\strut\\ 
+  \begin{tabular}[c]{l|c|c|c|l|c|c|c}
+    & $T_{calc}$ & $Pr(D|H_0)$ & $KI_{1-\alpha}$ & & $T_{calc}$ & $Pr(D|H_0)$ & $KI_{1-\alpha}$\strut\\ 
     \hline
-    \textbf{$\Delta\; \uparrow$} & \hspace{2cm} & \hspace{2cm}  & \hspace{2cm} & \textbf{
+    \textbf{$\Delta\; \uparrow$} & \hspace{1.8cm} & \hspace{1.8cm}  & \hspace{1.8cm} & \textbf{
                                                           $\Delta\; \downarrow$} &
-                                                                          \hspace{2cm} & \hspace{2cm}  & \hspace{2cm}\strut\\
+                                                                          \hspace{1.8cm} & \hspace{1.8cm}  & \hspace{1.8cm}\strut\\
     \hline
-        \textbf{$s\; \uparrow$} & \hspace{2cm} & \hspace{2cm}  & \hspace{2cm} & \textbf{
+        \textbf{$s\; \uparrow$} & \hspace{1.8cm} & \hspace{1.8cm}  & \hspace{1.8cm} & \textbf{
                                                           $s\; \downarrow$} &
-                                                                          \hspace{2cm}
-                                                & \hspace{2cm}  & \hspace{2cm}\strut\\
+                                                                          \hspace{1.8cm}
+                                                & \hspace{1.8cm}  & \hspace{1.8cm}\strut\\
     \hline
-        \textbf{$n\; \uparrow$} & \hspace{2cm} & \hspace{2cm}  & \hspace{2cm} & \textbf{
+        \textbf{$n\; \uparrow$} & \hspace{1.8cm} & \hspace{1.8cm}  & \hspace{1.8cm} & \textbf{
                                                           $n\; \downarrow$} &
-                                                                          \hspace{2cm}
-                                                & \hspace{2cm}  & \hspace{2cm}\strut\\
+                                                                          \hspace{1.8cm}
+                                                & \hspace{1.8cm}  & \hspace{1.8cm}\strut\\
     \hline
   \end{tabular}
 \end{center}
-
+\item Visualisieren Sie anhand von Densityplots einer Normalverteilung folgende {\"A}nderung in den
+  Daten.  
+  \begin{enumerate}
+  \item In einer Abbildung f{\"u}r den Fall $\Sexpr{d_vec[1]}$. Beschriften Sie
+    $\Sexpr{d_vec[1]}$ in der Abbildung! \textbf{(2 Punkte)}
+  \item In einer Abbildung f{\"u}r den Fall $\Sexpr{s_vec[1]}$. Beschriften Sie
+    $\Sexpr{s_vec[1]}$ in der Abbildung! \textbf{(2 Punkte)}
+  \end{enumerate}
+\end{enumerate}
