@@ -43,8 +43,8 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
   Vergleich der beiden Futtermittel! \textbf{(4 Punkte)}
 \item Treffen Sie mit $T_{\alpha = \Sexpr{alpha}\%} = \Sexpr{quantile}$ und dem berechneten $T_{calc}$ eine Aussage
   zur Nullhypothese! \textbf{(1 Punkt)}
-\item Berechnen Sie das \Sexpr{conf_inter}\% Konfidentintervall unter der
+\item Berechnen Sie das \Sexpr{conf_inter}\% Konfidenzintervall unter der
   Verwendung von $s_p$ und der gemittelten Fallzahl {\"u}ber die beiden Gruppen! \textbf{(3 Punkte)}
-\item Nennen Sie statistischen Grund, warum Sie sich zwischen einem Student t-Test und einem
+\item Nennen Sie den statistischen Grund, warum Sie sich zwischen einem Student t-Test und einem
   Welch t-Test entscheiden m{\"u}ssen! \textbf{(1 Punk)}
 \end{enumerate}
