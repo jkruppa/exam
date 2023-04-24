@@ -30,7 +30,7 @@ data_tbl <- rbind(tibble(low = round(rnorm(n = n_vec,
 preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE,
                    paired = TRUE) 
 
-preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
+preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "pigweight by group", "chickenweight by infusion") %>% 
   sample(1)
 
 
