@@ -19,7 +19,7 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                cache.path='cache/', fig.pos='H')
 ## get the paths
 exam_path <- file.path(path_home(), "Documents/GitHub/exam")
-init_path <- file.path(exam_path, "init")
+#init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
 
@@ -32,9 +32,11 @@ questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
 text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE) %>%
-  magrittr::extract(wanted_questions_lst$text - 40) 
+  magrittr::extract(wanted_questions_lst$text - 40) %>%
+  sample()
 mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)  %>%
-  magrittr::extract(wanted_questions_lst$mc)
+  magrittr::extract(wanted_questions_lst$mc) %>%
+  sample()
 
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
@@ -76,7 +78,7 @@ grade_tbl <- pre_grade_tbl %>%
 
 @ 
 % -----------------------------------------------------------------------
-\input{\Sexpr{init_path}}
+\input{init}
 % -----------------------------------------------------------------------
 \begin{document}
 % -----------------------------------------------------------------------
