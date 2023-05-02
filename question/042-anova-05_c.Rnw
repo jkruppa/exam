@@ -9,7 +9,10 @@
 Der Datensatz \textit{pig\_gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
 der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der
 Versuch wurde an \Sexpr{nrow(data_tbl)} Mastschweinen durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Selen-Dosen $dose$ (0.5 ng/Tag, 1 ng/Tag und 5 ng/Tag)
+jedes Tier eine von drei Selen-Dosen $dose$ ($\Sexpr{sample(c("0.1", "0.2",
+  "0.5"), 1)}$ ng/Tag, $\Sexpr{sample(c("1", "2",
+  "3"), 1)}$ ng/Tag und $\Sexpr{sample(c("10", "15",
+  "20"), 1)}$ ng/Tag)
 {\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
 Festnahrung). Sie erhalten folgenden Output in \Rlogo.
 
@@ -34,15 +37,12 @@ data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
   dplyr::rename(gain = value) %>%
   mutate(dose = as_factor(dose))
 
-## data_tbl <- data_tbl %>%
-##  as_tibble %>%
-##  mutate(dose = factor(dose, 
-##                       levels = c(0.5, 1, 2),
-##                       labels = c("D0.5", "D1", "D5")),
-##         weight = len + rnorm(n = nrow(.), 0, 0.1)) 
-
 anova_mdl <- lm(gain ~ dose + form + dose:form, data = data_tbl) %>%
   anova 
+
+attr(anova_mdl, "heading")[2] <- c("Response: gain",
+                                   "Response: weight",
+                                   "Response: fat_perc") %>% sample(1)
 
 anova_mdl
 
@@ -50,7 +50,7 @@ anova_mdl
 
 \begin{enumerate}
 \item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
-  zweifaktorielle ANOVA f{\"u}r den Faktor \Sexpr{sample(c("form", "dose"), 1)}
+  zweifaktorielle ANOVA f{\"u}r den Faktor $\Sexpr{sample(c("form", "dose"), 1)}$
   auf! \textbf{(2 Punkte)}
 \item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
   im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}

@@ -59,7 +59,7 @@ anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
   mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
   \textbf{(4 Punkte)}
 \item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von den
-  kritischen F-Werten mit
+  $F_{\alpha = 5\%}$-Werten mit
   $F_{supp} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
     anova_mdl[[1]][4], lower.tail = TRUE), 2)}$ und
   $F_{dose} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][2], df2 =
