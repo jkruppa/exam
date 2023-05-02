@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/rWTyHXXlYjY}{\includegraphics[width =
@@ -14,7 +14,7 @@ jedes Tier eine von drei Selen-Dosen $dose$ ($\Sexpr{sample(c("0.1", "0.2",
   "3"), 1)}$ ng/Tag und $\Sexpr{sample(c("10", "15",
   "20"), 1)}$ ng/Tag)
 {\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
-Festnahrung). Sie erhalten folgenden Output in \Rlogo.
+Festnahrung). Sie erhalten folgende Ausgabe in \Rlogo.
 
 <<anova-R-05-a,  echo = FALSE>>=
 
@@ -56,5 +56,6 @@ anova_mdl
   im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}
 \item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
   zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
+\item Beschriften Sie die Abbildung entsprechend der \Rlogo Ausgabe! \textbf{(2 Punkte)}
 \end{enumerate}
 

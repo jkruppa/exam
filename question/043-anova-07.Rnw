@@ -11,7 +11,7 @@ Interaktionseffekt zwischen den beiden Faktoren $f_1$ und $f_2$. Der Faktor
 $f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
 
 <<>>=
-inter_vec <- c("eine schwache", "eine mittelere", " eine starke", "keine") %>% sample(2)
+inter_vec <- c("eine schwache", "eine starke", "keine") %>% sample(2)
 @
 
 
