@@ -19,7 +19,7 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                cache.path='cache/', fig.pos='H')
 ## get the paths
 exam_path <- file.path(path_home(), "Documents/GitHub/exam")
-#init_path <- file.path(exam_path, "init")
+init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
 
@@ -78,7 +78,7 @@ grade_tbl <- pre_grade_tbl %>%
 
 @ 
 % -----------------------------------------------------------------------
-\input{init}
+\input{\Sexpr{init_path}}
 % -----------------------------------------------------------------------
 \begin{document}
 % -----------------------------------------------------------------------
