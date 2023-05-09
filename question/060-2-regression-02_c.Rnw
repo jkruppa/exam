@@ -13,13 +13,13 @@ n <- sample(c(40, 60, 120), 1)
 @ 
 
 In einem Stallexperiment mit $n = \Sexpr{n}$ Ferkeln wurde der
-Gewichtszuwachs unter bestimmten Lichtverh{\"a}ltnissen gemessen. Sie erhalten
-den \Rlogo Output der Funktion \texttt{tidy()} einer simplen Gaussian linearen
-Regression sieben Wochen nach der ersten Messung.
+Gewichtszuwachs in kg unter ansteigender Lichteinstrahlung in nm
+gemessen. Sie erhalten den \Rlogo Output der Funktion \texttt{tidy()} einer
+simplen Gaussian linearen Regression sieben Wochen nach der ersten Messung.
 
 <<regression-02-a, results='asis', echo = FALSE>>=
 
-eff_vec <- sample(c(0.1, 0.5, 1.0, 1.5), 1)
+eff_vec <- sample(c(0.1, 0.5, 1.0, 1.5, 2), 1)
 
 def <- defData(varname = "light", dist = "normal", formula = 10,
     variance = 2)

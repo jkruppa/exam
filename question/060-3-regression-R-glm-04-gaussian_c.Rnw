@@ -1,12 +1,14 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/tNNzcndrpSk}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende R Ausgabe der Funktion lm() nach einem Experiment mit
-zwei Behandlungen (A und B) sowie dem Ertragsgewicht von Weizen.
+Sie rechnen eine lineare Regression um nach einem Feldexperiment den
+Zusammenhang zwischen Trockengewicht kg/m$^2$ (\textit{drymatter}) und
+Wassergabe l/m$^2$ (\textit{water}) bei Erdbeerpflanzen zu bestimmen. Sie
+erhalten folgende \Rlogo Ausgabe.
 
 <<regression-R-01,  echo = FALSE>>=
 data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5,7,9), 1),
@@ -17,10 +19,10 @@ data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5,7,9), 1),
                                          mean = sample(c(12, 24, 27), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%
-  set_names(c("trt", "weight")) %>%
+  set_names(c("water", "weight")) %>%
   sample_n(size = nrow(.))
 
-sum_lm <- summary(lm(weight ~ trt, data_tbl))
+sum_lm <- summary(lm(weight ~ water, data_tbl))
 
 r2 <- sum_lm$r.squared %>% round(4)
 
@@ -30,11 +32,12 @@ sum_lm
 
 
 \begin{enumerate}
-\item Ist die Annahme der Normalverteilung an das Outcome \textit{rsp} erf{\"u}llt?
-  Begr{\"u}nden Sie die Antwort! \textbf{(2 Punkte)}
-\item Wie gro{\ss} ist der Effekt des \textit{Trt}? Liegt ein signifikanter
+\item Ist die Annahme der Normalverteilung an das Outcome \textit{water}
+  erf{\"u}llt?  Begr{\"u}nden Sie die Antwort! \textbf{(2 Punkte)}
+\item Wie gro{\ss} ist der Effekt der Wassergabe?  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Liegt ein signifikanter
   Effekt vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie \textit{kurz} den Begriff \texttt{Multiple R-squared}!
+\item Erkl{\"a}ren Sie \textit{kurz} den Begriff \texttt{R-squared}!
   Was sagt Ihnen der Wert $\Sexpr{r2}$ aus? \textbf{(2 Punkte)}
 \item Schreiben Sie das Ergebnis der \Rlogo Ausgabe in einen Satz nieder, der die
   Information zum Effekt und der Signifikanz enth{\"a}lt! \textbf{(2 Punkte)} 
