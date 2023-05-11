@@ -6,7 +6,13 @@
 %% --------------------------------------------------------------------
 
 
- In einem Experiment f{\"u}r den Zuckergehalt von Erdbeeren in g/kg mit vier
+<<>>=
+outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
+             "den Ertrag von Weizen in kg/ha",
+             "den Proteingehalt von Wasserlinsen in g/l") %>% sample(1)
+@ 
+ 
+ In einem Experiment f{\"u}r \Sexpr{outcome} mit vier
  Dosisstufen (ctrl, low, mid und high) erhalten Sie folgende Matrix als
  \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten.
 

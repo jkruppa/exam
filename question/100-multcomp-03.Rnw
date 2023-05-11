@@ -6,8 +6,13 @@
    2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-
- In einem Experiment f{\"u}r den Ertrag von Weizen in kg/ha mit f{\"u}nf
+<<>>=
+outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
+             "den Ertrag von Weizen in kg/ha",
+             "den Proteingehalt von Wasserlinsen in g/l") %>% sample(1)
+@ 
+ 
+ In einem Experiment f{\"u}r \Sexpr{outcome} mit f{\"u}nf
  Dosisstufen (A, B, C, D und E) erhalten Sie folgendes \textit{Compact
    letter display (CLD)} als \Rlogo Ausgabe aus den rohen, unadjustierten
  $p$-Werten.
