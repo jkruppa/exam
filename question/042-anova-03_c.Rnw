@@ -8,6 +8,7 @@
 <<>>=
 dose_num <- c(3, 4, 5) %>% sample(1)
 supp_num <- c(2, 3) %>% sample(1)
+int_df <- (dose_num -1)*(supp_num-1)
 @ 
 
 Der Datensatz \textit{tooth\_tbl} enth{\"a}lt Daten aus einer Studie zur
@@ -76,11 +77,11 @@ anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
   \begin{tabular}{l|c|c|c|c|c}
      & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
     \hline
-   \textbf{supp}  & \Sexpr{round(anova_mdl[[1]][1], 2)} & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
+   \textbf{supp}  & \Sexpr{supp_num-1} & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
     \hline
-    \textbf{dose}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
+    \textbf{dose}  & \Sexpr{dose_num-1} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
     \hline
-    \textbf{supp:dose}  & \Sexpr{round(anova_mdl[[1]][3], 2)} & \Sexpr{round(anova_mdl[[2]][3], 2)} &  &  &  \strut\\
+    \textbf{supp:dose}  & \Sexpr{int_num} & \Sexpr{round(anova_mdl[[2]][3], 2)} &  &  &  \strut\\
     \hline
    \textbf{Residuals}  & \Sexpr{round(anova_mdl[[1]][4], 2)} & \Sexpr{round(anova_mdl[[2]][4], 2)} &  &  &  \strut\\
   \end{tabular}
