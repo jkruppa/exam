@@ -7,8 +7,8 @@
 
 <<>>=
 dose_num <- c(3, 4, 5) %>% sample(1)
-supp_num <- c(2, 3) %>% sample(1)
-int_df <- (dose_num -1)*(supp_num-1)
+supp_num <- c(2) %>% sample(1) ## ich m{\"o}chte das hier zwei stehen, dann kein posthoc n{\"o}tig
+int_num <- (dose_num -1)*(supp_num-1)
 @ 
 
 Der Datensatz \textit{tooth\_tbl} enth{\"a}lt Daten aus einer Studie zur
