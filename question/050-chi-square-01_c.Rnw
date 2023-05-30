@@ -11,6 +11,9 @@
 
 <<chisquare-01-a, echo = FALSE>>=
 
+plant <- c("Weizen", "Mais", "Kohl") %>% sample(1)
+pest <- c("RoundUp", "KillAll", "CleanX") %>% sample(1)
+
 a <- c(24, 38, 56) %>% sample(1)
 b <- c(11, 19, 21) %>% sample(1)
 c <- c(13, 23, 27) %>% sample(1)
@@ -18,10 +21,10 @@ d <- c(38, 44, 52) %>% sample(1)
 
 @
 
-Nach einem Experiment ergibt sich die folgende 2x2 Datentabelle mit einem
-Pestizid (ja/nein), dargestellt in den Zeilen. Im Weiteren mit dem
-infizierten Pflanzenstatus (ja/nein) in den Spalten. Insgesamt wurden
-$n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
+Nach einem Feldexperiment ergibt sich die folgende 2x2 Datentabelle mit einem
+Pestizid (ja/nein) der Marke \Sexpr{pest}, dargestellt in den Zeilen, und
+dem infizierten Pflanzenstatus (ja/nein) von \Sexpr{plant}, dargesellt in
+den Spalten. Insgesamt wurden $n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
 \vspace{5Ex}
 
 \begin{center}
@@ -42,12 +45,13 @@ $n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
 \begin{enumerate}
 \item Erg{\"a}nzen Sie die Tabelle um die Randsummen! \textbf{(1 Punkt)} 
 \item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
-\item Formulieren Sie das Hypothesenpaar! \textbf{(2 Punkte)}
+\item Formulieren Sie das Hypothesenpaar! \textbf{(1 Punkt)}
 \item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test auf der 2x2
-  Tafel. Geben Sie Formeln und Rechenweg mit an! \textbf{(4 Punkte)}
+  Tafel! \textbf{(4 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! \textbf{(1 Punkt)}
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! \textbf{(2 Punkte)}
 \item Skizzieren Sie eine 2x2 Tabelle mit
-  $n = \Sexpr{sample(c(6,7,8), 1) * 4 + 2}$ Pflanzen in dem \textit{vermutlich}
-  die Nullhypothese nicht abgelehnt werden kann! \textbf{(1 Punkt)}
+  $n = \Sexpr{sample(c(10,12,15), 1) * 4 + 2}$ Pflanzen in dem
+  \textit{vermutlich} die Nullhypothese nicht abgelehnt werden kann!
+  \textbf{(1 Punkt)}
 \end{enumerate}
