@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -43,15 +43,16 @@ den Spalten. Insgesamt wurden $n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
 \vspace{5Ex}
 
 \begin{enumerate}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
 \item Erg{\"a}nzen Sie die Tabelle um die Randsummen! \textbf{(1 Punkt)} 
-\item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
-\item Formulieren Sie das Hypothesenpaar! \textbf{(1 Punkt)}
 \item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test auf der 2x2
-  Tafel! \textbf{(4 Punkte)}
+  Tafel! \textbf{(3 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! \textbf{(2 Punkte)}
-\item Skizzieren Sie eine 2x2 Tabelle mit
-  $n = \Sexpr{sample(c(10,12,15), 1) * 4 + 2}$ Pflanzen in dem
-  \textit{vermutlich} die Nullhypothese nicht abgelehnt werden kann!
-  \textbf{(1 Punkt)}
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! Begr{\"u}nden Sie Ihre Antwort!
+  \textbf{(2 Punkte)}
+\item Skizzieren Sie die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr
+  ist! Erg{\"a}nzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und
+  $\mathcal{X}^2_{calc}$ in der Abbildung! \textbf{(2 Punkte)}
+\item Berechnen Sie den Effektsch{\"a}tzer $Cramers V$! Interpretieren Sie den
+  Effektsch{\"a}tzer! \textbf{(2 Punkte)}
 \end{enumerate}
