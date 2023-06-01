@@ -1,0 +1,51 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+%% --------------------------------------------------------------------
+%\hfill\href{https://youtu.be/w62HJlbN28U}{\includegraphics[width =
+%  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+Nach einem Experiment erhalten Sie folgende 2x2 Kreuztabelle aus Ihren
+erhobenen Daten.
+
+<<chisquare-R-03-a,  echo = FALSE>>=
+
+mat_fill <- lst(c(13, 3, 2, 18),
+                c(17, 5, 4, 12),
+                c(6, 3, 6, 4),
+                c(4, 12, 10, 3)) %>% sample(1)
+
+mat <- matrix(unlist(mat_fill), 
+              byrow = TRUE, nrow = 2)
+
+col <- lst(c("yes", "no")) %>% sample(1)
+names(col) <- c("Infiziert", "Fehlerhaft", "Verschimmelt") %>% sample(1)
+
+row <- lst(c("Kontrolle", "UV-bestrahlt"),
+           c("Belana", "Goldmarie"),
+           c("Papageien-Tulpe", "Zwerg-Tulpe")) %>% sample(1)
+names(row) <- c("Gruppe") %>% sample(1)
+
+dimnames(mat) <- c(row, col)
+mat
+@
+
+Aus der 2x2 Kreuztabelle erhalten Sie folgende \Rlogo Ausgabe der Funktion
+\texttt{fisher.test()}.
+
+<<chisquare-R-03-b,  echo = FALSE>>=
+fisher.test(mat)
+@
+
+
+\begin{enumerate}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2 Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
+\item Beschriften Sie die Abbildung und
+  das 95\% Konfidenzintervall entsprechend! \textbf{(2 Punkte)} 
+\item Interpretieren Sie das \textit{Odds ratio} im Kontext der
+  wissenschaftlichen Fragestellung! \textbf{(2 Punkte)} 
+\end{enumerate}
+
