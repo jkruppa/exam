@@ -8,9 +8,13 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
+@ 
 
 Nach einem Feldexperiment mit zwei D{\"u}ngestufen (A und B) ergibt sich die
-folgende Datentabelle mit dem gemessenen Trockengewicht (\textit{drymatter}). 
+folgende Datentabelle mit dem gemessenen Trockengewicht
+(\textit{drymatter})  von \Sexpr{plant}. 
 
 <<boxplot-01, results='asis', echo = FALSE>>=
 data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(7, 11), 1),

@@ -8,8 +8,12 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
+@ 
+
 Nach einem Feldexperiment mit mehreren D{\"u}ngestufen stellt sich die Frage,
-ob die D{\"u}ngestufe \textit{low} im Bezug auf das Trockengewicht
+ob die D{\"u}ngestufe \textit{low} im Bezug auf das Trockengewicht von \Sexpr{plant}
 normalverteilt sei. Sie erhalten folgende Datentabelle.
 
 <<boxplot-02, results='asis', echo = FALSE>>=

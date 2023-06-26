@@ -8,9 +8,13 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
+@ 
+
 Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen ($low$, $mid$
 und $high$) ergibt sich die folgende Datentabelle mit dem gemessenen
-Frischgewicht (\textit{freshmatter}).
+Frischgewicht (\textit{freshmatter}) von \Sexpr{plant}.
 
 <<barplot-01, results='asis', echo = FALSE>>=
 
