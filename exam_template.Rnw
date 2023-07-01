@@ -43,7 +43,8 @@ points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
 
 ## get the points done
 ques_points_tbl <- points_tbl %>% 
-  filter(file_name %in% basename(text_questions_vec))
+  filter(file_name %in% basename(text_questions_vec)) %>% 
+  arrange(factor(file_name, levels = basename(text_questions_vec)))
 
 points_vec <- ques_points_tbl %>% pull(points) 
 textpoints <- sum(points_vec) 
