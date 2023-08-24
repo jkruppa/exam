@@ -1,77 +1,105 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/paXxVmyfDPs}{\includegraphics[width =
+\hfill\href{https://youtu.be/9DQKaXdxT_g}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\vspace{1Ex}
+\paragraph{Retrocheck im TV}
 
 <<>>=
+names <- c("Helmut", "Frida", "Elke", "Annegret", "G{\"u}nther", "Thorsten") %>% sample(2)
+p_gewinn <- c(0.2, 0.1, 0.3, 0.4) %>% sample(2, replace = TRUE)
+p_uber <- c(0.05, 0.02, 0.11, 0.12, 0.076, 0.08, 0.043)  %>% sample(3, replace = FALSE)
+feld_rad <- c(20, 22, 24) %>% sample(1)
+enough <- c(6, 8, 10) %>% sample(1)
+win_1 <- c(3000, 4000, 5000) %>% sample(1)
+win_2 <- c(1000, 1500, 2000) %>% sample(1)
+win_3 <- win_1 + win_2
+spieler <- c("einem ein{\"a}ugen Piraten", "einem Typen in einem Tentakelkost{\"u}m", "Catwoman") %>% sample(1) 
 
-logic_table <- c("A tritt ein oder B tritt ein",
-                 "A tritt ein und B tritt ein",
-                 "A tritt ein, aber B tritt nicht ein",
-                 "A tritt nicht ein",
-                 "Entweder A tritt ein oder B tritt ein oder keins von beiden",
-                 "B ist Teilmenge von A") %>%
-  sample(4)
-temp <- c("AT", "GT", "CC") %>% sample(1)
-logical_r <- c("numeric", "logical") %>% sample(1)
-dna_seq <- c("ACACACAC",
-             "ATATACAC",
-             "AAATTTAT",
-             "ATGTGTAT",
-             "TCTCTCTC",
-             "AACCAACC",
-             "ACTGGTAA") %>%
-  sample(4)
-A <- rnorm(1, 10, 2) %>% round()
-log_operator <- c("KLEINER", "GROESSER", "KLEINER GLEICH", "GROESSER GLEICH",
-                  "UND", "ODER", "NICHT", "GLEICH", "UNGLEICH")  %>% sample(4)
-@ 
+@
+
+"`Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit
+dabei, wenn es wieder hei{\ss}t: Der Preis ist hei{\ss}!"', ert{\"o}nt es und Sie
+fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch
+h{\"a}tten sein sollten. Aber Sie brauchen das Geld und jetzt hei{\ss}t es
+Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa
+gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
+Kandidaten {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bilden
+\Sexpr{names[1]} und \Sexpr{names[2]} das Team der drei Kandidaten.
+
+\begin{center}
+\begin{tabular}{ccc}
+  \toprule
+  Name & $P(win)$ & $P(outbid)$\\
+  \midrule
+  \Sexpr{names[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_uber[1]}\\
+  \Sexpr{names[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_uber[2]} \\
+  \bottomrule
+\end{tabular}
+\end{center}
 
 \begin{enumerate}
-\item Erg{\"a}nzen Sie die logischen Operatoren in \Rlogo in die untenstehende Tabelle!
-  \textbf{(2 Punkte)}
-  \begin{center}
-    \begin{tabular}{c|c}
-      \textbf{Ausdruck} & \textbf{Operator} \strut\\ \hline
-      \Sexpr{log_operator[1]}  & \phantom{\Sexpr{log_operator[1]}}\strut\\ \hline
-      \Sexpr{log_operator[2]}  & \phantom{\Sexpr{log_operator[2]}}\strut\\ \hline
-      \Sexpr{log_operator[3]}  & \phantom{\Sexpr{log_operator[3]}}\strut\\ \hline
-      \Sexpr{log_operator[4]}  & \phantom{\Sexpr{log_operator[4]}}\strut\\ 
-    \end{tabular}
-  \end{center}  
-\item Visualisieren Sie folgende logische Aussagen zu der Menge $A$ und der Menge
-  $B$ als Mengendiagramme bzw. Venndiagramme!
-  \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{logic_table[1]}
-  \item \Sexpr{logic_table[2]}
-  \item \Sexpr{logic_table[3]}
-  \item \Sexpr{logic_table[4]}
-  \end{itemize}
-\item Erg{\"a}nzen Sie zu den Venndiagrammen die mathematische Notation!
-  \textbf{(2 Punkte)}
-\item Erstellen Sie die \texttt{\Sexpr{logical_r}} \Rlogo Ausgabe f{\"u}r die
-  Suche nach der Zeichenfolge \texttt{\Sexpr{temp}} in folgenden DNA
-  Sequenzen! \textbf{(2 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{dna_seq[1]}
-  \item \Sexpr{dna_seq[2]}
-  \item \Sexpr{dna_seq[3]}
-  \item \Sexpr{dna_seq[4]}
-  \end{itemize}
-\item Geben ist das \Rlogo Objekt A beinhaltend die Zahl
-  \Sexpr{A}. Erkl{\"a}ren Sie den Unterschied zwischen dem Ausdruck \texttt{A == \Sexpr{A}}
-  und dem Ausdruck \texttt{A != \Sexpr{A}} in \Rlogo! Wie lautet die Ausgabe von \Rlogo
-  in beiden F{\"a}llen? \textbf{(2 Punkte)}
+\item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
+  Mitropa, wenn keiner der Kandidaten {\"u}berbietet? \textbf{(1 Punkt)}
+\item Wenn Ihre {\"U}berbietungswahrscheinlichkeit $P(outbid)$ bei
+  \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt
+  \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
+Gl{\"u}cksrad f{\"u}r Arme auf der Kirmes! Leider hat es f{\"u}r Maren Gilzer nicht
+gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit
+\Sexpr{spieler} um das gro{\ss}e Geld. Das Gl{\"u}cksrad hat \Sexpr{feld_rad}
+Felder. Sie drehen das Gl{\"u}cksrad zweimal. Auf \Sexpr{enough} Feldern
+gewinnen Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz sch{\"o}n viel Geld
+und ganz sch{\"o}n zwielichtig hier...
 
+\begin{enumerate}
+  \setcounter{enumi}{2}  
+\item Skizzieren Sie das Gl{\"u}cksrad und erg{\"a}nzen Sie die
+  Wahrscheinlichkeiten! \textbf{(1 Punkt)}
+\item Zeichnen Sie das zugeh{\"o}rige Baumdiagramm f{\"u}r das zweimalige Drehen!
+  Erg{\"a}nzen Sie die Wahrscheinlichkeiten und die entsprechenden Ereignisse
+  \textbf{(2 Punkte)}
+\item Mir welcher Wahrscheinlichkeit gewinnen Sie \Sexpr{win_3}EUR? \textbf{(1
+    Punkt)}
+\end{enumerate}
+
+Nach Ihrem Fiebertraum reisen Sie im Zug nach K{\"o}ln um bei "`Geh aufs
+Ganze!"' mitzuspielen. Sie schaffen es tats{\"a}chlich ins Finale und k{\"o}nnen
+als Hauptgewinn ein Auto hinter einer der drei T{\"u}ren gewinnen. 
+
+\begin{enumerate}
+  \setcounter{enumi}{5}  
+\item Bevor die Show beginnt, wird das Auto hinter eine zuf{\"a}llig bestimmte
+  T{\"u}r gestellt. Mit welcher Wahrscheinlichkeit wird jeweils eine der drei
+  T{\"u}ren ausgew{\"a}hlt? Zeichnen Sie ein Baumdiagramm! \textbf{(1 Punkt)}
+\item Mit welcher Wahrscheinlichkeit w{\"a}hlen Sie sofort die T{\"u}r mit
+  dem Auto? Erweitere Sie das Baumdiagramm entsprechend! \textbf{(1
+    Punkt)}
+\item Der Moderator {\"o}ffnet nun eine der nicht gew{\"a}hlten T{\"u}ren, aber
+  nat{\"u}rlich nicht die mit dem Auto. Mit welcher Wahrscheinlichkeit steht
+  das Auto hinter der anderen T{\"u}r? Erweitern Sie das Baumdiagramm
+  entsprechend! \textbf{(2 Punkte)}
+\item L{\"o}sen Sie nun das "`Ziegenproblem"'! Berechne Sie dazu die
+  Wahrscheinlichkeiten der einzelnen Pfade. Lohnt sich ein Wechsel der
+  anfangs gew{\"a}hlte T{\"u}r? Begr{\"u}nden Sie Ihre Antwort mathematisch!
+  \textbf{(2 Punkte)}
+\end{enumerate}
  
+
+%https://unterrichten.zum.de/wiki/Laplace-Wahrscheinlichkeit_wiederholen_und_vertiefen/Ziegen
+
+%Buchstabenh{\"a}ufigkeit im Deutschen
+
+%%https://www.mathelike.de/abiturloesungen-mathematik-bayern/mathematik-abitur-bayern-2020/pruefungsteil-a/stochastik-2/teilaufgabe-a.html
+
+%%https://de.wikipedia.org/wiki/Buchstabenh%C3%A4ufigkeit
+
+
+
