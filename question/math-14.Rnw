@@ -8,29 +8,30 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Ein Pfund Insekten, bitte!}
 
 <<>>=
 year <- c(2020, 2023, 2021) %>% sample(1)
 n_germany <- c(80 * 10^6, 84 * 10^6, 82 * 10^6) %>% sample(1)
 n_nigeria <- c(180 * 10^6, 184 * 10^6, 179 * 10^6) %>% sample(1)
 percent <- c(60, 70, 80) %>% sample(1)
-anteil_cow <- c(45, 50, 55) %>% sample(1)
-anteil_insect <- c(75, 80, 85) %>% sample(1)
 
 @
 
-Wenn man n\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
+\paragraph{Ein Pfund Insekten, bitte!} Das wird wohl h{\"a}ufiger geh{\"o}rt 
+werden, wenn wir die Menschheit mit Proteinen ausreichend ern{\"a}hren wollen\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
   Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen
-  auf der Erde?}}
+  auf der Erde?}}. Schauen wir uns dazu einmal den Vergleich Deutschland zu
+Nigeria an. Nigeria hat eine der am schnellsten wachsenden Bev{\"o}lkerungen der
+Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bev{\"o}lkerungsreichsten
+L{\"a}nder z{\"a}hlen. Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in Deutschland und
+ca. \Sexpr{n_nigeria} Menschen in Nigeria. Mit den Informationen wollen wir
+anfangen und dann eine Prognose f{\"u}r 2050 zu treffen. \\  
 
-Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in Deutschland und
-ca. \Sexpr{n_nigeria} Menschen in Nigeria 
 
-\begin{figure}[h]
-\begin{minipage}{.5\textwidth}
-  \centering
-<<math-14-a,  echo = FALSE, fig.height = 2.5, fig.width = 4, fig.align = "center", message = FALSE>>=
+Im folgenden ist Abbildung des Fleischkonsums im Jahr \Sexpr{year} in
+Deutschland und Nigeria einmal dargestellt. 
+
+<<math-14-a,  echo = FALSE, fig.height = 2, fig.width = 5.5, fig.align = "center", message = FALSE>>=
 plot_animal_tbl <- tibble(animal = as_factor(rep(c("pig", "chicken", "cow", "goat"), times = 2)),
                    eaten = c(sample(c(35.9, 36.2, 44.0), 1),
                              sample(c(14.5, 18.3, 21.1), 1),
@@ -55,19 +56,27 @@ ggplot(plot_animal_tbl, aes(animal, eaten, fill = country)) +
   scale_y_continuous(breaks = seq(0, 50, 5))
                                        
 @
-  \captionof{figure}{Fleischkonsum im Jahr \Sexpr{year}}
-\end{minipage}%
-\begin{minipage}{.5\textwidth}
-  \centering
-<<math-14-b,  echo = FALSE, fig.height = 2.5, fig.width = 4, fig.align = "center", message = FALSE>>=
+  
+\begin{enumerate}
+\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
+  \Sexpr{year} in einer aussagekr{\"a}ftigen Tabelle dar! 
+  \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie in der Tabelle den \textit{gesamten} Fleischkonsum in
+  Deutschland und Nigeria im Jahr \Sexpr{year}, der sich aus der Abbildung ergibt! \textbf{(1 Punkt)}
+\end{enumerate}
+
+In der n{\"a}chsten Abbildung finden Sie die CO$_2$-Emission nach Lebensmittel
+abgebildet, die durch die Produktion entsteht.
+
+<<math-14-b,  echo = FALSE, fig.height = 2.2, fig.width = 7, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(animal = c("pig", "chicken", "cow", "goat"),
                    eaten = c(sample(c(12.31, 10.24, 14.48), 1),
                              sample(c(9.87, 8.1, 11.12), 1),
                              sample(c(99.48, 95.14, 91.25), 1),
                              sample(c(39.72, 36.4, 43.2), 1))) %>%
-  filter(animal %in% plot_animal_tbl$animal) %>%
-  bind_rows(tibble(animal = c("insect", "coffee", "egg", "tofu", "rice"),
-                   eaten = c(0.1, 28.41, 4.67, 3.16, 4.45))) %>%
+  #filter(animal %in% plot_animal_tbl$animal) %>%
+  bind_rows(tibble(animal = c("insect", "coffee", "tofu", "rice", "potato", "cheese"),
+                   eaten = c(0.1, 28.41, 3.16, 4.45, 0.46, 23.88))) %>%
   slice_sample(prop = 1) %>%
   mutate(animal = as_factor(animal))
 
@@ -82,59 +91,19 @@ ggplot(plot_tbl, aes(animal, eaten)) +
   scale_y_continuous(breaks = seq(0, 100, 10))
                                        
 @
-  \captionof{figure}{CO$_2$-Emission nach Lebensmittel}
-\end{minipage}
-\end{figure}
 
 \begin{enumerate}
-\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
-  \Sexpr{year} in einer aussagekr{\"a}ftigen Tabelle dar! 
-  \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie in der Tabelle den \textit{gesamten} Fleischkonsum in
-  Deutschland und Nigeria im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
-\item Erg{\"a}nzen Sie in der Tabelle die Treibhausgasemissionen an $CO_2$, die durch den
+  \setcounter{enumi}{2}  
+\item Erg{\"a}nzen Sie Ihre erstellte Tabelle die Treibhausgasemissionen an $CO_2$, die durch den
   Fleischkonsum in Deutschland und Nigeria im Jahr \Sexpr{year} entstehen!
-  \textbf{(1 Punkt)}
+  \textbf{(1 Punkte)}
 \end{enumerate}
 
-In der folgenden Abbildung (\textit{n{\"a}chste Seite}) sehen Sie die
+\newpage
+
+In der folgenden Abbildung sehen Sie die
 Bev{\"o}lkerungsentwicklung in Nigeria von 1950 bis ins Jahr 2030 fortgef{\"u}hrt.
 
-\begin{enumerate}
-  \setcounter{enumi}{4}  
-\item Berechnen Sie zu erwartende Bev{\"o}lkerung in Nigerias im Jahr 2050, die sich
-  anhand der Informationen aus der Abbildung zur "`Bev{\"o}lkerungsentwicklung in
-  Nigeria"' ergibt! \textbf{(2 Punkte)}
-\begin{enumerate}
-\item Ohne die Ber{\"u}cksichtigung der Covid-19 Pandemie! \textbf{(1
-    Punkt)}
-\item Mit der Ber{\"u}cksichtigung der Covid-19 Pandemie! \textbf{(1
-    Punkt)}
-\end{enumerate}
-\item Berechnen Sie den \textit{gesamten} Fleischkonsum von Nigeria im Jahr
-  2050 unter der Annahme \Sexpr{percent}\%-iger Angleichung der Lebensbedingungen zu
-  Deutschland im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr \Sexpr{year}, der sich durch den
-  angeglichenen Fleischkonsum ergibt!
-\item Welche Steigerung der Treibhausgasemissionen
-  an $CO_2$
-\end{enumerate}
-
-Ungef{\"a}hr \Sexpr{anteil_cow}\% sind von einem Rind essbar wohingegen von
-einem Insekt ungef{\"a}hr \Sexpr{anteil_insect}\% essbar sind.
-
-\begin{enumerate}
-  \setcounter{enumi}{4}  
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme durch Fleisch
-  durch Insekten ersetzt w{\"u}rde! \textbf{(1
-    Punkt)}
-\end{enumerate}
-
-
-
-\begin{figure}[h]
 <<math-14-c,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(year = c(1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2022, 2025,
                             2030, 2035, 2040, 2045, 2050),
@@ -164,8 +133,34 @@ ggplot(plot_tbl, aes(year, people)) +
   theme(axis.text.x = element_text(angle = -45, hjust = 0))
                                        
 @
-  \captionof{figure}{Bev{\"o}lkerungsentwicklung in Nigeria}
-\end{figure}
+
+\begin{enumerate}
+  \setcounter{enumi}{3}  
+\item Sch{\"a}tzen Sie graphisch die zu erwartende Bev{\"o}lkerung in Nigeria im Jahr 2050, die sich
+  anhand der Informationen aus der Abbildung ergibt! \textbf{(1
+    Punkt)}
+\begin{enumerate}
+\item Ohne Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
+    Punkt)}
+\item Unter Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
+    Punkt)}
+\end{enumerate}
+\item Berechnen Sie den gesch{\"a}tzten Fleischkonsum von Nigeria im Jahr
+  2050 unter der Annahme \Sexpr{percent}\%-iger Angleichung der Lebensbedingungen zu
+  Deutschland im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
+\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
+  an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr \Sexpr{year}, der sich durch den
+  angeglichenen Fleischkonsum ergibt! \textbf{(1
+    Punkt)}
+\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
+  an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme 
+  durch Insekten ersetzt w{\"u}rde! \textbf{(1
+    Punkt)}
+\end{enumerate}
+
+
+
+
 
 
 
