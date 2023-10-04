@@ -22,13 +22,13 @@ lautes Wiehern, woraufhin die franz{\"o}sische Armee den Schimmel
 beschlagnahmte und nach Frankreich f{\"u}hrte. \\
 
 <<>>=
-mm_wachstum <- c(0.8, 0.9, 1.0, 1.1) %>% sample(1)
-brust_umfang <- c(10.5, 11, 12, 12.5) %>% sample(1)
-year_stolen <- c(1805, 1810, 1815) %>% sample(1)
-horse_h <- c(180, 185, 190) %>% sample(1)
-horse_b <- c(85, 90, 95) %>% sample(1)
-horse_l <- c(230, 240, 250) %>% sample(1)
-crit_width <- c(10, 15, 20) %>% sample(1)
+mm_wachstum <- c(0.8, 0.9, 1.0, 1.1, 1.2) %>% sample(1)
+brust_umfang <- c(10.5, 11, 12, 12.5, 13, 14) %>% sample(1)
+year_stolen <- c(1805, 1810, 1815, 1820, 1840) %>% sample(1)
+horse_h <- c(180, 185, 190, 195) %>% sample(1)
+horse_b <- c(85, 90, 95, 75) %>% sample(1)
+horse_l <- c(230, 240, 250, 220) %>% sample(1)
+crit_width <- c(10, 15, 20, 30) %>% sample(1)
 fitting <- c("m{\"u}hsam", "bequem") %>% sample(1)
 
 @
