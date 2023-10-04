@@ -12,7 +12,7 @@
 \paragraph{Event Horizon -- Am Rande des Universums}
 
 <<>>=
-m_sun <- c(2e30, 2e28, 2e31, 2e29) %>% sample(1)
+m_sun <- c(2e30, 2e28, 2e31, 2e29, 2e27) %>% sample(1)
 m_perc <- c(30, 35, 40, 45) %>% sample(1)
 r_black <- c(4000, 3000, 5000) %>% sample(1)
 word <- c("Ereignishorizont", "Singularit{\"a}t")  %>% sample(1)

@@ -13,7 +13,7 @@
 
 <<>>=
 n_sonde <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
-c_voyager <- c(60523, 61198, 62587) %>% sample(1)
+c_voyager <- c(60523, 61198, 62587, 63587) %>% sample(1)
 build_time <- c(1000, 500, 750, 250) %>% sample(1)
 ziv_y <- c(11000, 10000, 12000) %>% sample(1)
 n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
