@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -18,6 +18,7 @@ type_plant <- c("Sonnenblumen", "Maispflanzen", "Stockrosen") %>% sample(1)
 topf_d <- (c(4, 4.5, 5) * 2) %>% sample(1)
 topf_h <- c(7, 8, 9) %>% sample(1)
 torf_cost <- c(280, 290, 310) %>% sample(1)
+type <- c("Pflanztopf", "Tisch") %>% sample(1)
 @
 
 In einem Experiment wollen Sie die Wuchsh{\"o}he von \Sexpr{n_plant}
@@ -34,11 +35,12 @@ Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
   Gew{\"a}chshaus! \textbf{(2 Punkte)}
 \item Berechnen Sie die ben{\"o}tigten Pflanzt{\"o}pfe, wenn Sie Randpflanzen mit
   ber{\"u}cksichtigen wollen! \textbf{(1 Punkt)}
-\item Welche Fl{\"a}che in $m^2$ gegeben der Anzahl an Pflanzt{\"o}pfen ben{\"o}tigen Sie im
-  Gew{\"a}chshaus am Anfang der Keimungsphase? \textbf{(2 Punkte)}
-\item Berechnen Sie die ben{\"o}tigte Menge an Torf, die Sie f{\"u}r das Bef{\"u}llen
-  der Pflanzt{\"o}pfe ben{\"o}tigen! Gehen Sie von \textit{einem Zylinder} f{\"u}r die
-  Pflanzt{\"o}pfe aus!  \textbf{(2 Punkte)}
+\item Welche $\Sexpr{type}$fl{\"a}che in $m^2$ gegeben der Anzahl an
+  Pflanzt{\"o}pfen inklusive Randpflanzen ben{\"o}tigen Sie im Gew{\"a}chshaus am
+  Anfang der Keimungsphase?  \textbf{(3 Punkte)}
+\item Berechnen Sie die ben{\"o}tigte Menge an Torf in Liter $l$, die Sie f{\"u}r
+  das Bef{\"u}llen der Pflanzt{\"o}pfe ben{\"o}tigen! Gehen Sie von \textit{einem
+    Zylinder} f{\"u}r die Pflanzt{\"o}pfe aus!  \textbf{(3 Punkte)}
 \item Berechnen Sie die Kosten in EUR f{\"u}r Ihre Torfbestellung! \textbf{(1
     Punkt)}
 \end{enumerate}

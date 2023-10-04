@@ -16,11 +16,12 @@ day1 <- c(40, 45, 50) %>% sample(1)
 day2 <- c(60, 65, 70) %>% sample(1)
 day3 <- c(100, 105, 110, 115) %>% sample(1)
 people <- c(218, 222, 237, 245) %>% sample(1)
-vit_c_sellerie <- c(7000, 8000, 6000, 5000) %>% sample(1)
-vit_c_bedarf <- c(105, 110, 115, 110) %>% sample(1)
+vit_c_sellerie <- c(7000, 8000, 6000, 5000, 4000) %>% sample(1)
+vit_c_bedarf <- c(105, 110, 115, 110, 120) %>% sample(1)
 surv_day <- c(90, 95, 100) %>% sample(1)
 day_journey <- c(18, 20, 22, 24) %>% sample(1)
-unit <- c("kg", "t")
+unit <- c("kg", "t") %>% sample(1) 
+gramm <- c(150, 100, 50, 10) %>% sample(1)
 @
 
 In der Ausstellung "`Europa und das Meer"' im Deutschen Historischen Museum in
@@ -40,9 +41,10 @@ Concepci{\'o}n und die Santiago - mit einer Besatzung von insgesamt
 
 \begin{enumerate}
 \item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der
-  Flotte dar! Beschriften Sie die Achsen! \textbf{(4 Punkte)} 
+  Flotte in der Form einer {\"U}berlebenszeitkurve dar! Beschriften Sie die
+  Achsen entsprechend! \textbf{(3 Punkte)} 
 \item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen
-  aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
+  aus Ihrer Abbildung ab! \textbf{(2 Punkte)} 
 \end{enumerate}
 
 
@@ -52,14 +54,15 @@ die gro{\ss}e Rahe zum Schutz der Taue umwunden war."' Insbesondere die
 Mannschaft der Concepci{\'o}n erlitt gro{\ss}e Verluste durch die Skrobut bei der
 {\"U}berquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um
 wilden Sellerie aufzunehmen. Wilder Sellerie enth{\"a}lt
-$\Sexpr{vit_c_sellerie}\mu g/100g$ Vitamin C. Der Bedarf liegt bei
+$\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}mg$ Vitamin C. Der Bedarf liegt bei
 $\Sexpr{vit_c_bedarf}mg$ pro Tag f{\"u}r M{\"a}nner.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie die notwendige Menge an aufzunehmenden wilden Sellerie
-  in $\Sexpr{unit}$ auf die Concepci{\'o}n f{\"u}r die ununterbrochene Fahrt von drei Monate und \Sexpr{day_journey}
-  Tage {\"u}ber den Pazifik! \textbf{(3 Punkte)}
+\item Berechnen Sie die notwendige Menge in $\Sexpr{unit}$ an
+  aufzunehmenden wilden Sellerie auf die Concepci{\'o}n f{\"u}r die ununterbrochene
+  Fahrt von drei Monate und \Sexpr{day_journey} Tage {\"u}ber den Pazifik!
+  \textbf{(3 Punkte)}
 \item Skizzieren Sie die {\"U}berlebenszeitkurve f{\"u}r die Concepci{\'o}n im
   Vergleich zu der {\"U}berlebenszeitkurve der Trinidad! Beschriften Sie die
   Achsen! \textbf{(2 Punkte)}
