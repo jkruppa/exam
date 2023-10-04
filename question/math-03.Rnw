@@ -16,10 +16,11 @@ day1 <- c(40, 45, 50) %>% sample(1)
 day2 <- c(60, 65, 70) %>% sample(1)
 day3 <- c(100, 105, 110, 115) %>% sample(1)
 people <- c(218, 222, 237, 245) %>% sample(1)
-vit_c_sellerie <- c(7000, 8000, 6000) %>% sample(1)
-vit_c_bedarf <- c(105, 110, 115) %>% sample(1)
+vit_c_sellerie <- c(7000, 8000, 6000, 5000) %>% sample(1)
+vit_c_bedarf <- c(105, 110, 115, 110) %>% sample(1)
 surv_day <- c(90, 95, 100) %>% sample(1)
-day_journey <- c(18, 20, 22) %>% sample(1)
+day_journey <- c(18, 20, 22, 24) %>% sample(1)
+unit <- c("kg", "t")
 @
 
 In der Ausstellung "`Europa und das Meer"' im Deutschen Historischen Museum in
@@ -38,7 +39,7 @@ Concepci{\'o}n und die Santiago - mit einer Besatzung von insgesamt
 \Sexpr{people} Mann. 
 
 \begin{enumerate}
-\item Stellen Sie den Verlauf der Skorbuterkrankung auf einem Schiff der
+\item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der
   Flotte dar! Beschriften Sie die Achsen! \textbf{(4 Punkte)} 
 \item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen
   aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
@@ -57,7 +58,7 @@ $\Sexpr{vit_c_bedarf}mg$ pro Tag f{\"u}r M{\"a}nner.
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Berechnen Sie die notwendige Menge an aufzunehmenden wilden Sellerie
-  auf die Concepci{\'o}n f{\"u}r die ununterbrochene Fahrt von drei Monate und \Sexpr{day_journey}
+  in $\Sexpr{unit}$ auf die Concepci{\'o}n f{\"u}r die ununterbrochene Fahrt von drei Monate und \Sexpr{day_journey}
   Tage {\"u}ber den Pazifik! \textbf{(3 Punkte)}
 \item Skizzieren Sie die {\"U}berlebenszeitkurve f{\"u}r die Concepci{\'o}n im
   Vergleich zu der {\"U}berlebenszeitkurve der Trinidad! Beschriften Sie die
