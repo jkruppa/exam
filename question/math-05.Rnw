@@ -13,11 +13,11 @@
 
 <<>>=
 n_sonde <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
-c_voyager <- c(60523, 61198, 62587, 63587) %>% sample(1)
+c_voyager <- c(60523, 61198, 62587, 63587, 59256) %>% sample(1)
 build_time <- c(1000, 500, 750, 250) %>% sample(1)
-ziv_y <- c(11000, 10000, 12000) %>% sample(1)
+ziv_y <- c(11000, 10000, 12000, 10500) %>% sample(1)
 n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
-dist_stars <- c(4.24, 5.16, 6.23, 7.81)  %>% sample(1)
+dist_stars <- c(4.24, 5.16, 6.23, 7.81, 3.57)  %>% sample(1)
 steps <- c("drei", "vier")  %>% sample(1)
 age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
 age_plates <- c(1000e+05, 1200e+05, 800e+05, 900e+05) %>% sample(1)

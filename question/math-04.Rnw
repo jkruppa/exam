@@ -37,12 +37,12 @@ gegeben.
 
 mit
 
-\begin{itemize}
+\begin{itemize}[noitemsep]
 \item $m_f$, gleich der Masse [kg] des fliehenden Objektes
 \item $m_s$, gleich der Masse [kg] des station{\"a}ren Objekts
 \item $r_s$, gleich dem Radius [m] des station{\"a}ren Objekts  
 \item $G$, gleich der Gravitationskonstante mit $\Sexpr{grav} \cdot 10^{-11}
-  \tfrac{m^3}{kg \cdot s^2}$ 
+  m^3(kg \cdot s^2)^{-1}$ 
 \end{itemize}
 
 Im Folgenden wollen wir uns mit der Frage besch{\"a}ftigen, ob das
