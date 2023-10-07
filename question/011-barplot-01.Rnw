@@ -11,11 +11,11 @@
 <<>>=
 plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
-type <- c("Bew{\"a}sserungstypen ($low$, $mid$ und $high$)",
-          "D{\"u}ngestufen ($ctrl$, $low$ und $high$)",
+type <- c("D{\"u}ngestufen ($ctrl$, $low$ und $high$)",
           "Lichtstufen ($none$, $200lm$ und $600lm$)",
           "L{\"u}ftungssystemen ($ctrl$, $storm$ und $tornado$)",
           "Substrattypen ($torf$, $40+60$ und $70+30$)",
+          "Bew{\"a}sserungstypen ($low$, $mid$ und $high$)",
           "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
 level_vec <- str_match(type, "\\$.*\\$") %>% 
   str_replace_all("\\$", "") %>% 
