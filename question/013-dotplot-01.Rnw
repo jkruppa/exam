@@ -9,9 +9,9 @@
 plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
 @ 
 
-Nach einer Bonitur von Schnittlauch mit einer Kontrolle und drei Pestiziden
-(ctrl, pestKill, roundUp, zeroX) ergibt sich die folgende Datentabelle mit
-den Boniturnoten (\textit{grade}) von \Sexpr{plant}.
+Nach einer Bonitur von \Sexpr{plant} mit einer Kontrolle und drei
+Pestiziden ($ctrl$, $pestKill$, $roundUp$ und $zeroX$) ergibt sich die
+folgende Datentabelle mit den Boniturnoten (\textit{grade}).
 
 <<dotplot-01, results='asis', echo = FALSE>>=
 data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(3, 4), 1),

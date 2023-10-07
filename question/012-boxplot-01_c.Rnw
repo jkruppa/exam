@@ -9,10 +9,21 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
+type <- c("Bew{\"a}sserungstypen ($low$ und $high$)",
+          "D{\"u}ngestufen ($ctrl$ und $high$)",
+          "Lichtstufen ($none$ und $600lm$)",
+          "L{\"u}ftungssystemen ($ctrl$ und $wind$)",
+          "Substrattypen ($torf$ und $70+30$)",
+          "Genotypen ($AA$ und $BB$)") %>% sample(1)
+
+level_vec <- str_match(type, "\\$.*\\$") %>% 
+  str_replace_all("\\$", "") %>% 
+  str_split(" und ", simplify = TRUE)
+
 @ 
 
-Nach einem Feldexperiment mit zwei D{\"u}ngestufen (A und B) ergibt sich die
+Nach einem Feldexperiment mit zwei \Sexpr{type} ergibt sich die
 folgende Datentabelle mit dem gemessenen Trockengewicht
 (\textit{drymatter})  von \Sexpr{plant}. 
 
@@ -25,9 +36,8 @@ data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(7, 11), 1),
                                          mean = sample(c(14, 16), 1),
                                          sd = sample(c(3, 4), 1)), 1)) %>%
                   gather) %>%
-  set_names(c("trt", "drymatter")) %>%
-#  mutate(gain = ifelse(rsp >= 20, "high", "low"),
-#         water = round(rnorm(nrow(.), 10, 1), 1)) %>%
+  set_names(c("treatment", "drymatter")) %>%
+  mutate(treatment = factor(treatment, labels = level_vec)) %>% 
   sample_n(size = nrow(.))
 
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
@@ -36,10 +46,11 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots f{\"u}r die
-  zwei D{\"u}ngestufen A und B! Beschriften Sie die Achsen entsprechend!
+  zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
   \textbf{(6 Punkte)}
 \item Beschriften Sie \textit{einen} der beiden Boxplots mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen den D{\"u}ngestufen erwarten
-  w{\"u}rden, wie sehen dann die beiden Boxplots aus? \textbf{(1 Punkt)}
+\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
+  \Sexpr{plant} erwarten w{\"u}rden, wie sehen dann die beiden Boxplots aus?
+  \textbf{(1 Punkt)}
 \end{enumerate}

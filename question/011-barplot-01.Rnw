@@ -9,12 +9,24 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+type <- c("Bew{\"a}sserungstypen ($low$, $mid$ und $high$)",
+          "D{\"u}ngestufen ($ctrl$, $low$ und $high$)",
+          "Lichtstufen ($none$, $200lm$ und $600lm$)",
+          "L{\"u}ftungssystemen ($ctrl$, $storm$ und $tornado$)",
+          "Substrattypen ($torf$, $40+60$ und $70+30$)",
+          "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
+level_vec <- str_match(type, "\\$.*\\$") %>% 
+  str_replace_all("\\$", "") %>% 
+  str_split(" und ", simplify = TRUE) %>% 
+  str_split(", ", simplify = TRUE) 
+
 @ 
 
-Nach einem Gew{\"a}chshausexperiment mit drei Bew{\"a}sserungstypen ($low$, $mid$
-und $high$) ergibt sich die folgende Datentabelle mit dem gemessenen
-Frischgewicht (\textit{freshmatter}) von \Sexpr{plant}.
+Nach einem Gew{\"a}chshausexperiment mit drei \Sexpr{type} als Behandlung 
+ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
+(\textit{freshmatter}) von \Sexpr{plant}.
 
 <<barplot-01, results='asis', echo = FALSE>>=
 
@@ -31,9 +43,8 @@ data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5, 4), 1),
                                          mean = sample(c(10, 15, 20), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%
-  set_names(c("water_type", "freshmatter")) %>%
-#  mutate(gain = ifelse(rsp >= 20, "high", "low"),
-#         water = round(rnorm(nrow(.), 10, 1), 1)) %>%
+  set_names(c("treatment", "freshmatter")) %>%
+  mutate(treatment = factor(treatment, labels = level_vec[1:3])) %>% 
   sample_n(size = nrow(.))
 
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
@@ -42,10 +53,11 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Barplots f{\"u}r die
-  Bew{\"a}sserungstypen! Beschriften Sie die Achsen entsprechend!  \textbf{(4
-    Punkte)}
+  Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
+  \textbf{(4 Punkte)}
 \item Beschriften Sie \textit{einen} Barplot mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen der Bew{\"a}sserungstypen
-  erwarten w{\"u}rden, wie sehen dann die Barplots aus? \textbf{(1 Punkt)}
+\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
+  \Sexpr{plant} erwarten w{\"u}rden, wie sehen dann die Barplots aus?
+  \textbf{(1 Punkt)}
 \end{enumerate}
