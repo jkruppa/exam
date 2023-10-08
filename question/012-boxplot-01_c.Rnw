@@ -10,34 +10,37 @@
 
 <<>>=
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-type <- c("Bew{\"a}sserungstypen ($low$ und $high$)",
-          "D{\"u}ngestufen ($ctrl$ und $high$)",
+type <- c("D{\"u}ngestufen ($ctrl$und $high$)",
           "Lichtstufen ($none$ und $600lm$)",
-          "L{\"u}ftungssystemen ($ctrl$ und $wind$)",
-          "Substrattypen ($torf$ und $70+30$)",
+          "L{\"u}ftungssystemen und Folientunneln ($ctrl$ und $tornado$)",
+          "Substrattypen ($torf$ und $70p30n$)",
+          "Bew{\"a}sserungstypen ($low$ und $high$)",
           "Genotypen ($AA$ und $BB$)") %>% sample(1)
-
-level_vec <- str_match(type, "\\$.*\\$") %>% 
-  str_replace_all("\\$", "") %>% 
-  str_split(" und ", simplify = TRUE)
-
+groups_vec <- type %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  n_vec <- c(7:11) %>% sample(1)
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(4:8) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 1)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather
+  return(temp_tbl)
+}
 @ 
 
-Nach einem Feldexperiment mit zwei \Sexpr{type} ergibt sich die
+Nach einem Experiment mit zwei \Sexpr{type} ergibt sich die
 folgende Datentabelle mit dem gemessenen Trockengewicht
 (\textit{drymatter})  von \Sexpr{plant}. 
 
 <<boxplot-01, results='asis', echo = FALSE>>=
-data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(7, 11), 1),
-                                         mean = sample(c(12, 18), 1),
-                                         sd = sample(c(3, 4), 1)), 1)) %>%
-                  gather,
-                  tibble(B = round(rnorm(n = sample(c(7, 11), 1),
-                                         mean = sample(c(14, 16), 1),
-                                         sd = sample(c(3, 4), 1)), 1)) %>%
-                  gather) %>%
-  set_names(c("treatment", "drymatter")) %>%
-  mutate(treatment = factor(treatment, labels = level_vec)) %>% 
+data_tbl <- map(1:length(groups_vec), gen_data) %>% 
+  list_rbind() %>% 
+  set_names(c("treatment", "freshmatter")) %>%
+  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
