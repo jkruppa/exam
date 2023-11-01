@@ -36,11 +36,6 @@ vec_fach <- c(1.2, 2.1, 1.3) %>% sample(1)
 alpha_grad <- c(20, 30, 40) %>% sample(1)
 gamma_grad <- c(35, 50, 60) %>% sample(1)
 north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
-if(north_south == "n{\"o}rdlich"){
-  south_north <- "s{\"u}dlich"
-} else {
-  south_north <- "n{\"o}rdlich"
-}
 intercept <- c(0.05, 0.1, 0.2) %>% sample(1)
 slope <- c(0.15, 0.25, 0.13) %>% sample(1)
 start <- c("B", "C", "D", "E") %>% sample(1)
@@ -83,7 +78,7 @@ C anpeilen, so liegt der Ort B ungef{\"a}hr $\Sexpr{alpha_grad}^\circ$
 der Ort D ungef{\"a}hr $\Sexpr{gamma_grad}^\circ$ {\"o}stlich. Vom Ort B
 betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort
 B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E
-\Sexpr{south_north} von B. Die Strecke zwischen A und E ist nicht
+\Sexpr{north_south} von B. Die Strecke zwischen A und E ist nicht
 passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
 
 \textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
