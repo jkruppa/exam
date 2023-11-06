@@ -61,8 +61,9 @@ ggplot(plot_animal_tbl, aes(animal, eaten, fill = country)) +
 \item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
   \Sexpr{year} in einer aussagekr{\"a}ftigen Tabelle dar! 
   \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie in der Tabelle den \textit{gesamten} Fleischkonsum in
-  Deutschland und Nigeria im Jahr \Sexpr{year}, der sich aus der Abbildung ergibt! \textbf{(1 Punkt)}
+\item Erg{\"a}nzen Sie in der Tabelle eine Spalte in dem Sie f{\"u}r den
+  Fleischkonsum in Nigeria auf Deutschland normieren d.h. ins Verh{\"a}ltnis
+  setzen! \textbf{(1 Punkt)}
 \end{enumerate}
 
 In der n{\"a}chsten Abbildung finden Sie die CO$_2$-Emission nach Lebensmittel
@@ -137,11 +138,10 @@ ggplot(plot_tbl, aes(year, people)) +
 \begin{enumerate}
   \setcounter{enumi}{3}  
 \item Sch{\"a}tzen Sie graphisch die zu erwartende Bev{\"o}lkerung in Nigeria im Jahr 2050, die sich
-  anhand der Informationen aus der Abbildung ergibt! \textbf{(1
-    Punkt)}
+  anhand der Informationen aus der Abbildung ergibt!
 \begin{enumerate}
-\item Ohne Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
-    Punkt)}
+\item Ohne Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(2
+    Punkte)}
 \item Unter Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
     Punkt)}
 \end{enumerate}
