@@ -61,7 +61,7 @@ ggplot(plot_animal_tbl, aes(animal, eaten, fill = country)) +
 \item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
   \Sexpr{year} in einer aussagekr{\"a}ftigen Tabelle dar! 
   \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie in der Tabelle eine Spalte in dem Sie f{\"u}r den
+\item Erg{\"a}nzen Sie in der Tabelle eine Spalte in der Sie f{\"u}r den
   Fleischkonsum in Nigeria auf Deutschland normieren d.h. ins Verh{\"a}ltnis
   setzen! \textbf{(1 Punkt)}
 \end{enumerate}
