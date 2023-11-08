@@ -92,14 +92,16 @@ mit
   \Sexpr{type_i[3]} und (4) \Sexpr{type_i[4]}.
 \end{itemize}
 
-\vspace{-5Ex}
+Test test hjasjj kaskas lasladlad
+
+\vspace{-4Ex}
 
 {\small
 <<>>=
-data_dfr %>% kable(booktabs = TRUE, align = c("lcccc"),
+data_dfr %>% kable(booktabs = TRUE, align = c("lllll"),
                    caption = "Extract from four publications on the daily percentage of time spent on a behaviour.") %>%
   kable_styling(latex_options = c("hold_position")) %>%  
-  row_spec(0, angle = 45) 
+  row_spec(0, angle = 30) 
 @ 
 }
 
