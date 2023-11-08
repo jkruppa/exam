@@ -1,0 +1,112 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{}{\includegraphics[width = 2cm]{img/caution}} %%youtube
+\hspace{2Ex}
+%% --------------------------------------------------------------------
+
+\paragraph{Entschuldigung -- ist das Ihre Feder in meinem Auge?}
+
+<<>>=
+type_chick <- c("H{\"u}hner", "Puten", "Enten", "G{\"a}nse") %>% sample(1)
+behaviour_vec <-  c("standing", "sitting", "walking",
+                    "foraging including scratching", "dustbathing",
+                    "preening", "wing/leg stretching", "wingflapping",
+                    "drinking/eating")
+type_i <- behaviour_vec %>% sample(4)
+data_dfr <- tibble(behav = behaviour_vec,
+                   "Aldridge et al." = c(sample(c(3.5, 12.1, 8.9), 1),
+                                               sample(c(50.1, 25.4, 64.1), 1),
+                                               sample(c(1.8, 2.1, 4.1), 1),
+                                               sample(c(0.4, 0.8, 0.2), 1),
+                                               sample(c(0.5, 1.2, 8.1), 1),
+                                               sample(c(3.6, 6.3, 8.1), 1),
+                                               sample(c(3.2, 1.2, 5.1), 1),
+                                               sample(c(1.2, 1.0, 0.8), 1),
+                                               sample(c(18.1, 16.4, 12.8), 1)),
+                   "Baxter et al." = c(sample(c(3.5, 12.1, 8.9), 1),
+                                               sample(c(50.1, 25.4, 64.1), 1),
+                                               sample(c(1.8, 2.1, 4.1), 1),
+                                               sample(c(0.4, 0.8, 0.2), 1),
+                                               sample(c(0.5, 1.2, 8.1), 1),
+                                               sample(c(3.6, 6.3, 8.1), 1),
+                                               sample(c(3.2, 1.2, 5.1), 1),
+                                               sample(c(1.2, 1.0, 0.8), 1),
+                                               sample(c(18.1, 16.4, 12.8), 1)),
+                   "Jabcobs et al." = c(sample(c(3.5, 12.1, 8.9), 1),
+                                               sample(c(50.1, 25.4, 64.1), 1),
+                                               sample(c(1.8, 2.1, 4.1), 1),
+                                               sample(c(0.4, 0.8, 0.2), 1),
+                                               sample(c(0.5, 1.2, 8.1), 1),
+                                               sample(c(3.6, 6.3, 8.1), 1),
+                                               sample(c(3.2, 1.2, 5.1), 1),
+                                               sample(c(1.2, 1.0, 0.8), 1),
+                                               sample(c(18.1, 16.4, 12.8), 1)),
+                   "Ma et al." = c(sample(c(3.5, 12.1, 8.9), 1),
+                                               sample(c(50.1, 25.4, 64.1), 1),
+                                               sample(c(1.8, 2.1, 4.1), 1),
+                                               sample(c(0.4, 0.8, 0.2), 1),
+                                               sample(c(0.5, 1.2, 8.1), 1),
+                                               sample(c(3.6, 6.3, 8.1), 1),
+                                               sample(c(3.2, 1.2, 5.1), 1),
+                                               sample(c(1.2, 1.0, 0.8), 1),
+                                   sample(c(18.1, 16.4, 12.8), 1))) %>%
+  filter(behav %in% type_i) %>%
+  select(-behav) %>%
+  as.data.frame()
+row.names(data_dfr) <- type_i
+@
+
+So h{\"o}rt man h{\"a}ufiger h{\"o}fliche \Sexpr{type_chick} in Mastst{\"a}llen sagen. Das
+ist nat{\"u}rlich etwas ung{\"u}nstig, den dann kommt es zu Picken und
+Kannibalismus. Wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen gegriffen
+werden. Kennt jeder aus einer mittelm{\"a}{\ss}igen Wohngemeinschaft. Das wollen
+wir aber als vorsorgliche \Sexpr{type_chick}-Halter:innen aber
+nicht\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
+  Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA
+    Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers
+    on farm. EFSA Journal 21.2}}. Betrachten wir also einmal das
+Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der
+\Sexpr{type_chick} f{\"u}r vier T{\"a}tigkeiten und versuchen die notwendige Fl{\"a}che
+zu optimieren. Wie immer gibt es daf{\"u}r mathematische Formel:
+
+
+\begin{center}
+  \begin{tabular}{cc}
+    $SA = \sum^n_{i = 1} (A_i \times PB_i)$ & $A_i = \pi \times (r_i + R_i)^2$\\
+  \end{tabular}
+\end{center}
+
+mit
+
+\begin{itemize}[noitemsep]
+\item $SA$ dem ben{\"o}tigten Platzangebot aller aufsummierten Verhalten $i$.
+\item $A_i$ dem ben{\"o}tigten Platz f{\"u}r ein Verhalten $i$. 
+\item $PB_i$ dem Anteil des Auftretens eines Verhaltens $i$.
+\item $r_i$ dem ben{\"o}tigten Radius f{\"u}r das Verhalten $i$.
+\item $R_i$ dem notwendigen Abstand zu den Nachbarn f{\"u}r das Verhalten $i$.    
+\item $i$ dem Verhalten: (1) \Sexpr{type_i[1]}, (2) \Sexpr{type_i[2]}, (3)
+  \Sexpr{type_i[3]} und (4) \Sexpr{type_i[4]}.
+\end{itemize}
+
+\vspace{-5Ex}
+
+{\small
+<<>>=
+data_dfr %>% kable(booktabs = TRUE, align = c("lcccc"),
+                   caption = "Extract from four publications on the daily percentage of time spent on a behaviour.") %>%
+  kable_styling(latex_options = c("hold_position")) %>%  
+  row_spec(0, angle = 45) 
+@ 
+}
+
+\begin{enumerate}
+\item Skizzieren S
+\end{enumerate}
+
+
+
+
