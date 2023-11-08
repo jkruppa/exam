@@ -86,15 +86,6 @@ passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
   entsprechend!}
 
 \begin{enumerate}
-\item An der h{\"o}chsten Schwierigkeit m{\"u}ssen Sie angeln. Ihre Angel ist
-  ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der H{\"o}he
-  von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
-  Angelh{\"o}he! \textbf{(1 Punkt)}
-\item Erstellen Sie eine Matrix $M$ der Terrain- und Schwierigkeitswertungen
-  der Caches! \textbf{(1 Punkt)}  
-\item Wie viele Wochenenden ben{\"o}tigen Sie, um die Matrix $M$ mit mindestens
-  einem gefundenen Cache zu f{\"u}llen, wenn Sie
-  pro Tag \Sexpr{n_matrix} schaffen? \textbf{(1 Punkt)} 
 \item Welche Strecke in $km$ legen Sie bei der Bew{\"a}ltigung der
   \Sexpr{direct} \Sexpr{type}challenge zur{\"u}ck? \textbf{(6
     Punkte)}
@@ -106,7 +97,11 @@ passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
     Suchzeit = \Sexpr{intercept} + \Sexpr{slope} \cdot Schwierigkeit
   \end{equation*}  
   beschreiben.  Wie lange in Stunden ben{\"o}tigen Sie um die
-  \Sexpr{direct} \Sexpr{type}challenge zu erf{\"u}llen? \textbf{(3 Punkte)} 
+  \Sexpr{direct} \Sexpr{type}challenge zu erf{\"u}llen? \textbf{(3 Punkte)}
+\item An der h{\"o}chsten Schwierigkeit m{\"u}ssen Sie angeln. Ihre Angel ist
+  ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der H{\"o}he
+  von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
+  Angelh{\"o}he! Welche Annahmen mussten Sie treffen um die Aufgabe zu l{\"o}sen? \textbf{(3 Punkte)} 
 \end{enumerate}
 
 
