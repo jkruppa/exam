@@ -95,12 +95,11 @@ mit
 In der folgenden Tabelle 1 sehen Sie die t{\"a}glichen prozentualen Zeiten f{\"u}r
 ein spezifisches Verhalten aus vier wissenschaftlichen Ver{\"o}ffentlichungen.
 
-\vspace{-3Ex}
+\vspace{-1Ex}
 
 {\small
 <<>>=
-data_dfr %>% kable(booktabs = TRUE, align = c("lllll"),
-                   caption = "Extract from four publications on the daily percentage of time spent on a behaviour.") %>%
+data_dfr %>% kable(booktabs = TRUE, align = c("lllll")) %>%
   kable_styling(latex_options = c("hold_position")) %>%  
   row_spec(0, angle = 30) 
 @ 
