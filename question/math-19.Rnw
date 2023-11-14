@@ -22,42 +22,25 @@ n_animal <- sample(c(10000, 20000, 40000, 30000), 1)
 
 @
 
-Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern
-beiseite. Sie sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen
-lassen. Tja, woanders leider keinen Termin gekriegt... Immerhin denken Sie und
-\Sexpr{partner} {\"u}ber Nachwuchs nach und da geht es eben nur durch
-ungesch{\"u}tzten Sex. Was wissen Sie nun aber {\"u}ber AIDS und dem diagnostischen
-AIDS-Test, den Sie nun machen werden? Die Pr{\"a}valenz von AIDS bei einem
-Menschen in Europa wird mit \Sexpr{praev}\% angenommen. In
-\Sexpr{pos_1_rate}\% der F{\"a}lle ist ein HIV-Test positiv, wenn der Patient
-erkrankt ist. In \Sexpr{pos_2_rate}\% der F{\"a}lle ist ein HIV-Test positiv,
-wenn der Patient \textit{nicht} erkrankt ist und somit gesund ist. Sie
-stutzen. Wie wahrscheinlich ist es denn eigentlich an AIDS erkrankt zu sein
-$(K^+)$, wenn Sie einen positiven AIDS-Test vorliegen haben $(T^+)$? Gehen Sie
-f{\"u}r die folgenden Berechnungen von $n = \Sexpr{n_animal}$ Patienten mit
-einem diagnostischen Test f{\"u}r AIDS aus. Sie nehmen sich also einen Kuli und
-fangen an auf der historischen Ausgabe des Spiegels zu rechnen.
+Irritiert en\footnote{Die Quelle der Inspiration f{\"u}r die
+  Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et
+    al. (2022) Von Baumdiagrammen {\"u}ber Doppelb{\"a}ume zu H{\"a}ufigkeitsnetzen --
+    kognitive {\"U}berlastung oder didaktische Unterst{\"u}tzung? Journal f{\"u}r
+    Mathematik-Didaktik, 1-33}}.
 
 \begin{enumerate}
-\item Welche Wahrscheinlichkeit wollen Sie berechnen? \textbf{(1 Punkt)}
+\item Welche Wahrscheinlichkeit $Pr$ wollen Sie berechnen? \textbf{(1 Punkt)}
 \item Zeichnen Sie einen H{\"a}ufigkeitsdoppelbaum zur Bestimmung der gesuchten
-  Wahrscheinlichkeit! \textbf{(2 Punkte)} 
-\item Beschriften Sie den H{\"a}ufigkeitsdoppelbaum, mit denen Ihnen bekannten
-  Informationen zu der AIDS Erkrankung und dem AIDS-Test! \textbf{(2 Punkte)}
-\item F{\"u}llen Sie den H{\"a}ufigkeitsdoppelbaum mit den sich ergebenden, absoluten
-  Patientenzahlen aus! \textbf{(3 Punkte)}
+  Wahrscheinlichkeit $Pr$! \textbf{(2 Punkte)} 
 \end{enumerate}
 
-Bei dem folgenden Arztgespr{\"a}ch erfahren Sie, dass beim diagnostischen
-Testen \textit{True Positives (TP)}, \textit{True Negatives
-  (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten.
+Bei dem folgend
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Tragen Sie \textit{TP}, \textit{TN}, \textit{FP} und \textit{FN} in
-  eine 2x2 Kreuztablle ein. Beschriften Sie die Tabelle entsprechend!
-  \textbf{(1 Punkt)}
-\item Berechnen Sie die Sensifit{\"a}t und Spezifit{\"a}t des diagnostischen Tests
-  f{\"u}r Klauenseuche! Erstellen Sie daf{\"u}r zun{\"a}chst eine 2x2 Kreuztabelle aus
-  dem ausgef{\"u}llten Doppelbaum!
+\item Tragen 
 \end{enumerate}
+
+
+
+

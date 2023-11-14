@@ -4,164 +4,66 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{}{\includegraphics[width = 2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/RuzMjwvwT-4}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
+\paragraph{In der Kartonagenfabrik}
 
 <<>>=
-year <- c(2020, 2023, 2021) %>% sample(1)
-n_germany <- c(80 * 10^6, 84 * 10^6, 82 * 10^6) %>% sample(1)
-n_nigeria <- c(180 * 10^6, 184 * 10^6, 179 * 10^6) %>% sample(1)
-percent <- c(60, 70, 80) %>% sample(1)
+fold <- c(4, 6, 8) %>% sample(1)
+karton <- c(30, 40, 50) %>% sample(1)
+mm <- c(0.6, 0.7, 0.8) %>% sample(1)
+sb <- c(18, 21, 23) %>% sample(1)
+zaun <- c(100, 120, 130) %>% sample(1)
 
 @
 
-\paragraph{Ein Pfund Insekten, bitte!} Das wird wohl h{\"a}ufiger geh{\"o}rt 
-werden, wenn wir die Menschheit mit Proteinen ausreichend ern{\"a}hren wollen\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
-  Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen
-  auf der Erde?}}. Schauen wir uns dazu einmal den Vergleich Deutschland zu
-Nigeria an. Nigeria hat eine der am schnellsten wachsenden Bev{\"o}lkerungen der
-Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bev{\"o}lkerungsreichsten
-L{\"a}nder z{\"a}hlen. Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in Deutschland und
-ca. \Sexpr{n_nigeria} Menschen in Nigeria. Mit den Informationen wollen wir
-anfangen und dann eine Prognose f{\"u}r 2050 zu treffen. \\  
+Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
+geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
+schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
+Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
+werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
+anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
+  \Sexpr{fold}-mal-gefaltete, \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch
+Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
+schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
+sind. Martin gef{\"a}llt das. An dem Vorrat
+an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
+Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
+hat eine L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
+Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
+der L{\"a}nge $x$ falzen.
 
-Im folgenden ist Abbildung des Fleischkonsums im Jahr \Sexpr{year} in
-Deutschland und Nigeria einmal dargestellt. 
-
-<<math-14-a,  echo = FALSE, fig.height = 2, fig.width = 5.5, fig.align = "center", message = FALSE>>=
-plot_animal_tbl <- tibble(animal = as_factor(rep(c("pig", "chicken", "cow", "goat"), times = 2)),
-                   eaten = c(sample(c(35.9, 36.2, 44.0), 1),
-                             sample(c(14.5, 18.3, 21.1), 1),
-                             sample(c(11.2, 14.4, 17.2), 1),
-                             sample(c(0.5, 1.5, 2.9), 1),
-                             sample(c(0.5, 1.2, 2.3), 1),
-                             sample(c(1.4, 2.5, 4.1), 1),
-                             sample(c(0.4, 1.5, 2.6), 1),
-                             sample(c(2.0, 4.1, 6.3), 1)),
-                   country = as_factor(rep(c("Germany", "Nigeria"), each = 4))) %>%
-  filter(animal %in% sample(c("pig", "chicken", "cow", "goat"), 3))
-
-ggplot(plot_animal_tbl, aes(animal, eaten, fill = country)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  theme_minimal() +
-  labs(y = "Fleischkonsum pro Kopf [kg]",
-       x = "",
-       fill = "Land") +
-  scale_fill_grey(start = 0.4, end = 0.8) +
-  coord_flip() +
-  theme(legend.position = "top") +
-  scale_y_continuous(breaks = seq(0, 50, 5))
-                                       
-@
-  
 \begin{enumerate}
-\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
-  \Sexpr{year} in einer aussagekr{\"a}ftigen Tabelle dar! 
-  \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie in der Tabelle eine Spalte in der Sie f{\"u}r den
-  Fleischkonsum in Nigeria auf Deutschland normieren d.h. ins Verh{\"a}ltnis
-  setzen! \textbf{(1 Punkt)}
+\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
+  Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
+  \textbf{(1 Punkt)}
+\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des flachen
+  Kartons! \textbf{(3 Punkte)}
+\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten
+  Falztiefe $x$?  \textbf{(1 Punkt)}
+\item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
+  den Karton stanzen lassen. Wie gro{\ss} ist die Fl{\"a}che des
+  Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
 \end{enumerate}
 
-In der n{\"a}chsten Abbildung finden Sie die CO$_2$-Emission nach Lebensmittel
-abgebildet, die durch die Produktion entsteht.
-
-<<math-14-b,  echo = FALSE, fig.height = 2.2, fig.width = 7, fig.align = "center", message = FALSE>>=
-plot_tbl <- tibble(animal = c("pig", "chicken", "cow", "goat"),
-                   eaten = c(sample(c(12.31, 10.24, 14.48), 1),
-                             sample(c(9.87, 8.1, 11.12), 1),
-                             sample(c(99.48, 95.14, 91.25), 1),
-                             sample(c(39.72, 36.4, 43.2), 1))) %>%
-  #filter(animal %in% plot_animal_tbl$animal) %>%
-  bind_rows(tibble(animal = c("insect", "coffee", "tofu", "rice", "potato", "cheese"),
-                   eaten = c(0.1, 28.41, 3.16, 4.45, 0.46, 23.88))) %>%
-  slice_sample(prop = 1) %>%
-  mutate(animal = as_factor(animal))
-
-ggplot(plot_tbl, aes(animal, eaten)) +
-  geom_bar(stat = "identity", position = position_dodge()) +
-  theme_minimal() +
-  labs(y = "Treibhausgasemissionen pro [kg]",
-       x = "") +
-  scale_fill_grey(start = 0.4, end = 0.8) +
-  coord_flip() +
-  theme(legend.position = "top") +
-  scale_y_continuous(breaks = seq(0, 100, 10))
-                                       
-@
+Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
+nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
+er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
+Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
+Rektor Skinner nur \Sexpr{zaun}m Zaun zu Verf{\"u}gung. Sie wollen nun die
+maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
+Seitenl{\"a}ngen bei der Verwendung von \Sexpr{zaun}m Zaun bestimmen!
 
 \begin{enumerate}
-  \setcounter{enumi}{2}  
-\item Erg{\"a}nzen Sie Ihre erstellte Tabelle die Treibhausgasemissionen an $CO_2$, die durch den
-  Fleischkonsum in Deutschland und Nigeria im Jahr \Sexpr{year} entstehen!
-  \textbf{(1 Punkte)}
-\end{enumerate}
-
-\newpage
-
-In der folgenden Abbildung sehen Sie die
-Bev{\"o}lkerungsentwicklung in Nigeria von 1950 bis ins Jahr 2030 fortgef{\"u}hrt.
-
-<<math-14-c,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
-plot_tbl <- tibble(year = c(1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2022, 2025,
-                            2030, 2035, 2040, 2045, 2050),
-                   people = c(sample(c(36.0, 37.1, 38.1), 1),
-                              sample(c(42, 44.9, 45.1), 1),
-                              sample(c(54.1, 55.6, 57), 1),
-                              sample(c(70.1, 72.9, 74), 1),
-                              sample(c(91.2, 95.2, 100.1), 1),
-                              sample(c(115.1, 122.8, 125.3), 1),
-                              sample(c(158, 160.8, 163.1), 1),
-                              sample(c(182.1, 184.1, 187.1), 1),
-                              sample(c(208.3, 208.4), 1),
-                              sample(c(212, 214), 1),
-                              sample(c(225.57, 226.6), 1),
-                              sample(c(262.1, 259.6), 1),
-                              NA, NA, NA, NA)) 
-
-ggplot(plot_tbl, aes(year, people)) +
-  geom_point() +
-  theme_minimal() +
-  labs(y = "",
-       x = "") +
-  scale_x_continuous(breaks = c(1950, 1960, 1970, 1980, 1990, 2000,
-                                2010, 2015, 2020, 2022, 2025, 2030,
-                                2035, 2040, 2045, 2050)) +
-  scale_y_continuous(breaks = seq(0, 500, by = 50), limits = c(0, 500)) +
-  theme(axis.text.x = element_text(angle = -45, hjust = 0))
-                                       
-@
-
-\begin{enumerate}
-  \setcounter{enumi}{3}  
-\item Sch{\"a}tzen Sie graphisch die zu erwartende Bev{\"o}lkerung in Nigeria im Jahr 2050, die sich
-  anhand der Informationen aus der Abbildung ergibt!
-\begin{enumerate}
-\item Ohne Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(2
-    Punkte)}
-\item Unter Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
+  \setcounter{enumi}{4}  
+\item  Welche Seitenl{\"a}ngen f{\"u}r den Zaun ergeben sich f{\"u}r die
+  maximale Fl{\"a}che des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che des abgeschirmten Vorgartens! \textbf{(1
     Punkt)}
 \end{enumerate}
-\item Berechnen Sie den gesch{\"a}tzten Fleischkonsum von Nigeria im Jahr
-  2050 unter der Annahme \Sexpr{percent}\%-iger Angleichung der Lebensbedingungen zu
-  Deutschland im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr \Sexpr{year}, der sich durch den
-  angeglichenen Fleischkonsum ergibt! \textbf{(1
-    Punkt)}
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme 
-  durch Insekten ersetzt w{\"u}rde! \textbf{(1
-    Punkt)}
-\end{enumerate}
-
-
-
-
-
-
 
 

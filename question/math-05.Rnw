@@ -1,68 +1,69 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/iCQogS6KhPM}{\includegraphics[width =
+\hfill\href{https://youtu.be/q-qYK4Chslg}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Das Fermi Paradoxon}
+\paragraph{Event Horizon -- Am Rande des Universums}
 
 <<>>=
-n_sonde <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
-c_voyager <- c(60523, 61198, 62587, 63587, 59256) %>% sample(1)
-build_time <- c(1000, 500, 750, 250) %>% sample(1)
-ziv_y <- c(11000, 10000, 12000, 10500) %>% sample(1)
-n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
-dist_stars <- c(4.24, 5.16, 6.23, 7.81, 3.57)  %>% sample(1)
-steps <- c("drei", "vier")  %>% sample(1)
-age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
-age_plates <- c(1000e+05, 1200e+05, 800e+05, 900e+05) %>% sample(1)
+m_sun <- c(2e30, 2e28, 2e31, 2e29, 2e27) %>% sample(1)
+m_perc <- c(30, 35, 40, 45, 20) %>% sample(1)
+r_black <- c(4000, 3000, 5000, 2500, 3500) %>% sample(1)
+word <- c("Ereignishorizont", "Singularit{\"a}t")  %>% sample(1)
 c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
+grav <- c(6.674, 5.974, 6.274, 6.165) %>% sample(1)
 @
 
-Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
-im Los Alamos National Laboratory mit seinen Kollegen angebliche
-UFO-Sichtungen und fragte schlie{\ss}lich: "`Where is everybody?"'. Warum seien
-weder Raumschiffe anderer Weltraumbewohner noch andere Spuren
-extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine au{\ss}erirdische
-Zivilisation ben{\"o}tigen um die gesamte Milchstra{\ss}e zu
-besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde w{\"a}re?\\[-1ex]
+Die Sonne hat eine aktuelle, angenommene Masse von $\Sexpr{m_sun}$kg. Wenn
+die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem
+Radius von $\Sexpr{r_black}$m kollabiert, wird die Sonne $\Sexpr{m_perc}$\%
+der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$
+und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen.  Sie
+haben folgende Formeln f{\"u}r die kinetische Energie des Lichtteilchens
+$E_{kin}$ und der Graviationsenergie des schwarzen Lochs $E_{grav}$
+gegeben.
 
-Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$
-Voyager 1 {\"a}hnliche Sonden mit der Geschwindigkeit von $\Sexpr{c_voyager}km/h$
-los um sich auf den erreichten Planeten selbst zu replizieren. Nach
-$\Sexpr{build_time}$ Jahren ist die Replikation abgeschlossen und wiederum
-$\Sexpr{n_sonde}$ Sonden werden ausgesendet. Gehen Sie von
-$\Sexpr{dist_stars}$ Lichtjahren als mittlerer Abstand der Sterne in der
-Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$ Sterne in der Milchstra{\ss}e. Nehmen
-Sie eine Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$ an.
+\begin{center}
+  \begin{tabular}{cc}
+    $E_{kin} = \cfrac{1}{2}m_fv_f^2$ & $E_{grav} = \cfrac{Gm_sm_f}{r_s}$\\
+  \end{tabular}
+\end{center}
+
+mit
+
+\begin{itemize}[noitemsep]
+\item $m_f$, gleich der Masse [kg] des fliehenden Objektes
+\item $m_s$, gleich der Masse [kg] des station{\"a}ren Objekts
+\item $r_s$, gleich dem Radius [m] des station{\"a}ren Objekts  
+\item $G$, gleich der Gravitationskonstante mit $\Sexpr{grav} \cdot 10^{-11}
+  m^3(kg \cdot s^2)^{-1}$ 
+\end{itemize}
+
+Im Folgenden wollen wir uns mit der Frage besch{\"a}ftigen, ob das
+Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
 
 \begin{enumerate}
-\item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
-  Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
-  mit der Dauer und der Anzahl an Sonden f{\"u}r jeden Schritt der Vervielf{\"a}ltigung! \textbf{(2 Punkte)}
-\item Berechnen Sie die theoretische Anzahl an Vervielf{\"a}ltigungsschritten die
-  ben{\"o}tigt werden um mit \textit{einem einzigen Vervielf{\"a}ltigungsschritt} die
-  gesamten Sterne der Milchstra{\ss}e mit Sonden zu besuchen! \textbf{(1 Punkt)}
-\item Berechnen Sie die Dauer, die eine au{\ss}erirdische Zivilisation
-  ann{\"a}hrungsweise ben{\"o}tigt um die gesamten Sterne der Milchstra{\ss}e mit
-  Sonden zu besuchen! \textbf{(3 Punkte)}
-\item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
-  wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu
-  Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die
-  Kontinentalplatten einmal alle $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im
-  Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
-\item Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit $t$
-  und Raum $r$. Erg{\"a}nzen Sie den Geschwindigkeitsvektor $\vec{v_t}$ und
-  $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtgeschwindigkeit und
-  mit 99\% Lichtgeschwindigkeit fliegender Sonde! \textbf{(1 Punkt)}
-\item Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
-Begr{\"u}nden Sie Ihre Antwort anhand der Abbildung!  \textbf{(1 Punkt)}
+\item Geben Sie die Formel f{\"u}r die Fluchtgeschwindigkeit $v_f$ an! 
+  \textbf{(2 Punkte)}
+\item {\"U}berpr{\"u}fen Sie Ihre umgestellte Formel nach $v_f$ anhand der Einheiten!
+  \textbf{(2 Punkte)} 
+\item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
+  Lichtteilchens mit den angegebenen Informationen! \textbf{(2 Punkte)}
+\item Gehen Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$
+  aus. Kann das Lichtteilchen der Gravitation des schwarzen Lochs
+  entkommen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
+  $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
+  und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
+  \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie in diesem Zusammenhang den Begriff
+  \textit{\Sexpr{word}}! \textbf{(2 Punkte)} 
 \end{enumerate}
-
 
 

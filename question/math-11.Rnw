@@ -4,108 +4,99 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/iErlRMwQ2RE}{\includegraphics[width =
+\hfill\href{https://youtu.be/Bbu6n8MXxQk}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Armee der Kaninchen}
+\paragraph{Armee der Finsternis}
 
 <<>>=
-job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
-         "Ihrer Koalakuschelschule", "Ihrer Faultierpension") %>% sample(1)
-year_out <- c(1859, 1860, 1875) %>% sample(1)
-release <- c(22, 24, 26) %>% sample(1)
-release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
-westost <- c(4000, 4100, 4200) %>% sample(1)
-nordsued <- c(3600, 3700, 3800) %>% sample(1)
-wuerfe <- c(8, 12, 11) %>% sample(1)
-year <- c("zw{\"o}lften", "neunten", "elften") %>% sample(1)
-unit_1 <- c("Milliarden", "Millionen") %>% sample(1)
-mort <- c(30, 35, 40) %>% sample(1)
-age <- c(7, 8, 9) %>% sample(1)
-A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
-a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
-satt_year <- c(9, 14, 18)  %>% sample(1)
-percent <- c(99.7, 99.9, 98.5) %>% sample(1)
-recover <- c(40, 50, 60) %>% sample(1)
-v_rabbit <- c(8.8, 9.8, 11.5) %>% sample(1)
-impf_cost <- c(9, 10, 11) %>% sample(1)
-dr_cost <- c(35, 45, 40) %>% sample(1)
-pop <- c(900, 1100, 1200) %>% sample(1)
+job <- c("Aldi", "IKEA", "Kaufland", "Penny") %>% sample(1)
+mage <- c("ein Magier", "eine Magierin") %>% sample(1)
+year <- sample(1201, 1145, 976)  %>%  sample(1)
+lehnsherr <- c("F{\"u}rsten Arthur", "Henry dem Roten")  %>%  sample(1)
+v_blei <- c(10, 12, 13) %>% sample(1)
+l_tropf <- c(3.2, 3.5, 3.1) %>% sample(1)
+d_tropf <- c(2, 1.8, 1.7) %>% sample(1)
+n_blei <- c(1.2e6, 2.3e5, 6.1e4) %>% sample(1)
+d_blei <- c(11.34, 10.32, 12.63) %>% sample(1)
+n_prod <- c(700, 900, 1100) %>% sample(1)
+dist <- c(0.5, 0.8, 1.2) %>% sample(1)
+g_schrott <- c(10, 20, 30) %>% sample(1)
 @
 
-Leider hat es mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht
-auch nicht \textit{so} die beste Idee... aber daf{\"u}r haben Sie eine Neue!
-Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
-niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
-einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
-Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
-\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat, Millionen
-von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? Dem
-wollen wir mal mathematisch nachgehen... \\
+Ihr Studentenjob war nach Ladenschluss bei \Sexpr{job} die Regale
+einzur{\"a}umen. Dabei ist Ihnen in der Auslage der Sonderangebote das
+Necronomicon\footnote{Ein wirklich gef{\"a}hrliches Buch ist:
+  \textit{Du bist genug: Vom Mut, gl{\"u}cklich zu sein} von Fumitake Koga und
+  Ichiro Kishimi} in die H{\"a}nde gefallen. Nun sind Sie \Sexpr{mage} der
+Zeichen geworden! Also eigentlich k{\"o}nnen Sie nur Mathe und das d{\"a}mliche
+Necronomicon hat Sie in die Vergangenheit geschleudert... aber gut, was tut
+man nicht alles im Jahr \Sexpr{year} n. Chr. f{\"u}r den neuen Lehnsherren
+\Sexpr{lehnsherr}. Sie bauen nat{\"u}rlich einen Schrottkugelturm um sich den
+Horden der Finsternis mit genug Schrott erwehren zu k{\"o}nnen! Ihnen stehen
+zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
 
-Unter australischen Bedingungen liegt die Zahl der Jungen eines
-Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Jungtieren. Trotz
-fehlender Fressfeinde liegt die Mortalit{\"a}t der S{\"a}uglinge bei
-ca. \Sexpr{mort}\%. Ein Weibchen erreicht nach einem halben Jahr die
-Geschlechtsreife.
+\begin{center}
+  \begin{tabular}{cc}
+    $E_{kin} = \cfrac{1}{2}\cdot m \cdot v^2$ & $E_{pot} = m \cdot g \cdot h$\\
+  \end{tabular}
+\end{center}
 
-\begin{enumerate}
-\item Wie viele \Sexpr{unit_1} Kaninchen w{\"u}rden bei einem ungebremsten
-  Wachstum \textit{im \Sexpr{year} Jahr} geboren? \textbf{(2 Punkte)}
-\item Die durchschnittliche, australische Lebenserwartung eines Kaninchens
-  liegt bei \Sexpr{age} Jahren. Wie viele Kaninchen bev{\"o}lkern bei einem
-  ungebremsten Wachstum den australischen Kontinent bevor die ersten,
-  australischen Kaninchen an Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2
-    Punkte)}
-\end{enumerate}
+mit
 
-Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der
-Kaninchenpopulation.
-\begin{equation*}
-  f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot 2^{-0.1 \cdot t + 3.4}
-\end{equation*}
+\begin{itemize}
+\item $m$, gleich der Masse [kg] des Objekts
+\item $h$, gleich der H{\"o}he [m] des ruhenden Objekts
+\item $v$, gleich der Geschwindigkeit [m/s] des Objekts
+\item $g$, gleich der Erdbeschleunigung mit $9.81 \tfrac{m}{s^2}$ 
+\end{itemize}
 
-\begin{enumerate}
-  \setcounter{enumi}{2}
-\item Wie viele \Sexpr{unit_1} Kaninchen leben nach der S{\"a}ttigungsfunktion
-  nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1
-    Punkt)}
-\end{enumerate}
-
-Das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV),
-transmittiert von Stechm{\"u}cken, t{\"o}ten \Sexpr{percent}\% der
-Kaninchenpopulation innerhalb weniger Wochen. 
+Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
+bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
+Blei\textit{tropfen} mit einem Gewicht von $\Sexpr{g_schrott}mg$ zu
+gleichf{\"o}rmigen Blei\textit{kugeln} bei einer Geschwindigkeit von
+$\Sexpr{v_blei}m/s$ bilden.
 
 \begin{enumerate}
-  \setcounter{enumi}{3}  
-\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer
-  Viruspandemie wieder auf \Sexpr{recover}\% der ges{\"a}ttigten
-  Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
+\item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
+  runde Bleikugeln durch die Fallgeschwindigkeit von $\Sexpr{v_blei}m/s$ bilden?
+  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten \Sexpr{release_point} von
-Australien. Australien hat eine West-Ost-Ausdehnung von \Sexpr{westost}km
-und eine Nord-S{\"u}d-Ausdehnung von knapp \Sexpr{nordsued}km. Die Kaninchen
-breiten sich radial mit einer Geschwindigkeit von \Sexpr{v_rabbit}km pro
-Jahr aus.
+Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige
+Schrottkugeln in einer Ladung. Damit k{\"o}nnen Sie die Armee der Finsternis
+nicht aufhalten. Die Sachlage m{\"u}ssen Sie einmal mathematisch untersuchen.
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+\item Nennen Sie die beiden geometrischen Formen aus denen sich
+  n{\"a}herungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete 
+  Skizze des Tropfens!
+  \textbf{(2 Punkte)}
+\item Sie messen eine L{\"a}nge des Tropfens von \Sexpr{l_tropf}mm. Die L{\"o}cher
+  im Sieb erlauben ein Tropfendurchmesser von \Sexpr{d_tropf}mm. Welchen
+  Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
+\end{enumerate}
+
+Sie haben jetzt die \Sexpr{n_blei} Bleikugeln zusammen. Blei hat eine Dichte
+von $\Sexpr{d_blei}g/cm^3$.
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Wie schwer in Kilogramm $kg$ sind die \Sexpr{n_blei} produzierten
+  Bleikugeln, die Sie jetzt auf die Burgmauer transportieren m{\"u}ssen?
+  \textbf{(1 Punkt)}
+\end{enumerate}
+
+Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort
-  in Australien erreicht haben? \textit{L{\"o}sen Sie die Aufgabe unter der
-    Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
-\end{enumerate}
-
-Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
-Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ pro Tier und der
-durchf{\"u}hrende Arzt verlangt ca. \Sexpr{dr_cost}\$ pro Tier.
-
-\begin{enumerate}
-  \setcounter{enumi}{5}
-\item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen
-  j{\"a}hrlichen Zusatzkosten f{\"u}r die Impfungen der Kaninchen m{\"u}ssen Sie daher
-  kalkulieren? \textbf{(1 Punkt)}
+\item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
+  wenn Sie pro Fall ca. \Sexpr{n_prod} Bleikugeln produzieren wollen und
+  die Bleikugel im Fall \Sexpr{dist}cm Abstand haben m{\"u}ssen?  \textbf{(1
+    Punkt)}
 \end{enumerate}
 

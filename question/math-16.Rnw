@@ -1,105 +1,94 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/9DQKaXdxT_g}{\includegraphics[width =
+\hfill\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Retrocheck im TV}
+\paragraph{H{\"o}hlen \& Drachen}
 
 <<>>=
-names <- c("Helmut", "Frida", "Elke", "Annegret", "G{\"u}nther", "Thorsten") %>% sample(2)
-p_gewinn <- c(0.2, 0.1, 0.3, 0.4) %>% sample(2, replace = TRUE)
-p_uber <- c(0.05, 0.02, 0.11, 0.12, 0.076, 0.08, 0.043)  %>% sample(3, replace = FALSE)
-feld_rad <- c(20, 22, 24) %>% sample(1)
-enough <- c(6, 8, 10) %>% sample(1)
-win_1 <- c(3000, 4000, 5000) %>% sample(1)
-win_2 <- c(1000, 1500, 2000) %>% sample(1)
-win_3 <- win_1 + win_2
-spieler <- c("einem ein{\"a}ugen Piraten", "einem Typen in einem Tentakelkost{\"u}m", "Catwoman") %>% sample(1) 
+gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
+pr_a <- c(0.6, 0.65, 0.7) %>% sample(1)
+pr_b <- c(0.7, 0.75, 0.9) %>% sample(1)
+pr_ab <- c(40, 45, 50) %>% sample(1)
+type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
+ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
+
+num_dice <- c(4:7) %>% sample(1)
+
+type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
+                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
+                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
+                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
+
+type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
+                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
+
+add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
+
+type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
+                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
+                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
+                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
+
+num_erfolge <- num_dice - sample(c(1,2), 1)
 
 @
 
-"`Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit
-dabei, wenn es wieder hei{\ss}t: Der Preis ist hei{\ss}!"', ert{\"o}nt es und Sie
-fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch
-h{\"a}tten sein sollten. Aber Sie brauchen das Geld und jetzt hei{\ss}t es
-Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa
-gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
-Kandidaten {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bilden
-\Sexpr{names[1]} und \Sexpr{names[2]} das Team der drei Kandidaten.
+Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
+haben, wollen Sie bei \Sexpr{gender} einmal \textit{H{\"o}hlen \& Drachen}
+ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
+Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz sch{\"o}n viele
+unterschiedliche W{\"u}rfel durch die Gegend fliegen. Daher m{\"u}ssen Sie sich
+jetzt einiges an Fragen stellen. \\%[-1ex]
 
-\begin{center}
-\begin{tabular}{ccc}
-  \toprule
-  Name & $P(win)$ & $P(outbid)$\\
-  \midrule
-  \Sexpr{names[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_uber[1]}\\
-  \Sexpr{names[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_uber[2]} \\
-  \bottomrule
-\end{tabular}
-\end{center}
+In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1,
+  1)} zum w{\"u}rfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} w{\"u}rfeln,
+haben Sie einen Erfolg.
 
 \begin{enumerate}
-\item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
-  Mitropa, wenn keiner der Kandidaten {\"u}berbietet? \textbf{(1 Punkt)}
-\item Wenn Ihre {\"U}berbietungswahrscheinlichkeit $P(outbid)$ bei
-  \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt
-  \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
+\item Berechnen Sie die Wahrscheinlichkeit \textit{genau}
+  \Sexpr{num_erfolge} Erfolge zu erzielen!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
+  \textbf{(1 Punkt)}
 \end{enumerate}
 
-Gl{\"u}cksrad f{\"u}r Arme auf der Kirmes! Leider hat es f{\"u}r Maren Gilzer nicht
-gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit
-\Sexpr{spieler} um das gro{\ss}e Geld. Das Gl{\"u}cksrad hat \Sexpr{feld_rad}
-Felder. Sie drehen das Gl{\"u}cksrad zweimal. Auf \Sexpr{enough} Feldern
-gewinnen Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz sch{\"o}n viel Geld
-und ganz sch{\"o}n zwielichtig hier...
+Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
+wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
+Schwert entscheiden.
 
 \begin{enumerate}
-  \setcounter{enumi}{2}  
-\item Skizzieren Sie das Gl{\"u}cksrad und erg{\"a}nzen Sie die
-  Wahrscheinlichkeiten! \textbf{(1 Punkt)}
-\item Zeichnen Sie das zugeh{\"o}rige Baumdiagramm f{\"u}r das zweimalige Drehen!
-  Erg{\"a}nzen Sie die Wahrscheinlichkeiten und die entsprechenden Ereignisse
-  \textbf{(2 Punkte)}
-\item Mir welcher Wahrscheinlichkeit gewinnen Sie \Sexpr{win_3}EUR? \textbf{(1
-    Punkt)}
+  \setcounter{enumi}{2}
+\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
+  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
+  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Nach Ihrem Fiebertraum reisen Sie im Zug nach K{\"o}ln um bei "`Geh aufs
-Ganze!"' mitzuspielen. Sie schaffen es tats{\"a}chlich ins Finale und k{\"o}nnen
-als Hauptgewinn ein Auto hinter einer der drei T{\"u}ren gewinnen. 
+Jetzt wird es immer wilder, da Sie sich jetzt {\"u}berlegen m{\"u}ssen, wie
+wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
+funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
+Wahrscheinlichkeit f{\"u}r das Ereignis $A$, der Rettungswurf ist erfolgreich,
+ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
+der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie
+haben mitgez{\"a}hlt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 F{\"a}llen
+Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
 \begin{enumerate}
-  \setcounter{enumi}{5}  
-\item Bevor die Show beginnt, wird das Auto hinter eine zuf{\"a}llig bestimmte
-  T{\"u}r gestellt. Mit welcher Wahrscheinlichkeit wird jeweils eine der drei
-  T{\"u}ren ausgew{\"a}hlt? Zeichnen Sie ein Baumdiagramm! \textbf{(1 Punkt)}
-\item Mit welcher Wahrscheinlichkeit w{\"a}hlen Sie sofort die T{\"u}r mit
-  dem Auto? Erweitere Sie das Baumdiagramm entsprechend! \textbf{(1
-    Punkt)}
-\item Der Moderator {\"o}ffnet nun eine der nicht gew{\"a}hlten T{\"u}ren, aber
-  nat{\"u}rlich nicht die mit dem Auto. Mit welcher Wahrscheinlichkeit steht
-  das Auto hinter der anderen T{\"u}r? Erweitern Sie das Baumdiagramm
-  entsprechend! \textbf{(2 Punkte)}
-\item L{\"o}sen Sie nun das "`Ziegenproblem"'! Berechne Sie dazu die
-  Wahrscheinlichkeiten der einzelnen Pfade. Lohnt sich ein Wechsel der
-  anfangs gew{\"a}hlte T{\"u}r? Begr{\"u}nden Sie Ihre Antwort mathematisch!
-  \textbf{(2 Punkte)}
+  \setcounter{enumi}{3}
+\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
+  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
+  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
+  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+\item Bestimmen Sie $Pr(A \cap B)$! \textbf{(1 Punkt)}
+\item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2
+  Kreuztabelle! \textbf{(2 Punkte)}
+\item Bestimmen Sie Wahrscheinlichkeit $Pr(A|B)$, dass Ihr Rettungswurf gelingt, wenn
+  der Hexer erfolgreich gezaubert hat! \textbf{(1 Punkt)}
 \end{enumerate}
+
  
-
-%https://unterrichten.zum.de/wiki/Laplace-Wahrscheinlichkeit_wiederholen_und_vertiefen/Ziegen
-
-%Buchstabenh{\"a}ufigkeit im Deutschen
-
-%%https://www.mathelike.de/abiturloesungen-mathematik-bayern/mathematik-abitur-bayern-2020/pruefungsteil-a/stochastik-2/teilaufgabe-a.html
-
-%%https://de.wikipedia.org/wiki/Buchstabenh%C3%A4ufigkeit
-
-
-

@@ -1,55 +1,78 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/x_MwWJoEsME}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+\hfill\href{}{\includegraphics[width = 2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-<<>>=
-mat_type <- c("Diagonalmatrix", "Einheitsmatrix", "stochastische Matrix") %>% sample(1)
-line_1 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-line_2 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-line_3 <- str_c(sample(c(2, 4, 5), 1), "x1 + ",
-                sample(c(6, 7, 8), 1), "x2 + ",
-                sample(c(2, 10, 9), 1), "x3 = ",
-                sample(c(1, 2, 3), 1))
-@ 
+\paragraph{T{\"o}dliche Seuche AIDS -- Die r{\"a}tselhafte Krankheit}
 
-Sie haben den Vektor $A = \{\Sexpr{round(rnorm(3, 6, 8))}\}$ und den Vektor $B = \{\Sexpr{round(rnorm(3, 2, 4))}\}$ gegeben.
+
+<<>>=
+arzt <- c("Ihrem Hautarzt", "Ihrem Hausarzt", "Ihrem Augenarzt",
+          "Ihrem HNO-Arzt", "Ihrem Orthop{\"a}den") %>% sample(1)
+partner <- c("Ihre Partnerin", "Ihr Partner") %>% sample(1)
+praev <- sample(c(0.01, 0.1, 0.5, 0.75, 0.8), 1)
+pos_1_rate <- sample(c(90, 92, 95, 96), 1)
+pos_2_rate <- sample(c(0.5, 2.5, 1, 3, 4), 1)
+n_animal <- sample(c(10000, 20000, 40000, 30000), 1)
+
+@
+
+Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern
+beiseite. Sie sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen
+lassen. Woanders leider keinen Termin gekriegt... Immerhin denken Sie und
+\Sexpr{partner} {\"u}ber Nachwuchs nach und da geht es eben nur durch
+ungesch{\"u}tzten Sex. Was wissen Sie nun aber {\"u}ber AIDS und dem diagnostischen
+AIDS-Test, den Sie nun machen werden?
+
+Die Pr{\"a}valenz von AIDS bei einem Menschen in Europa wird mit
+\Sexpr{praev}\% angenommen. In \Sexpr{pos_1_rate}\% der F{\"a}lle ist ein
+HIV-Test positiv, wenn der Patient erkrankt ist. In \Sexpr{pos_2_rate}\%
+der F{\"a}lle ist ein HIV-Test positiv, wenn der Patient \textit{nicht}
+erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es
+denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven
+AIDS-Test vorliegen haben $(T^+)$? Gehen Sie f{\"u}r die folgenden Berechnungen
+von $n = \Sexpr{n_animal}$ Patienten mit einem diagnostischen Test f{\"u}r AIDS
+aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen
+Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration f{\"u}r die
+  Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et
+    al. (2022) Von Baumdiagrammen {\"u}ber Doppelb{\"a}ume zu H{\"a}ufigkeitsnetzen --
+    kognitive {\"U}berlastung oder didaktische Unterst{\"u}tzung? Journal f{\"u}r
+    Mathematik-Didaktik, 1-33}}.
 
 \begin{enumerate}
-\item Addieren Sie die Vektoren $A$ und $B$! \textbf{(1 Punkt)}
-\item Transponieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
-  \textbf{(1 Punkt)} 
-\item Multiplizieren Sie den Vektor $\Sexpr{sample(c("A", "B"), 1)}$ mit
-  $\Sexpr{round(rnorm(1, 10, 1))}$! \textbf{(1 Punkt)}
-\item Erstellen Sie eine \Sexpr{mat_type} mit $m \times n$ Dimensionen!
-  Legen Sie $m$ und $n$ vorher sinnvoll fest! \textbf{(1 Punkt)}
-\item {\"U}bersetzen Sie folgendes linearen Gleichungssystem bestehend aus drei
-  Gleichungen in die Matrixschreibweise! \textbf{(2 Punkte)}
-  <<>>=
-  line_1
-  line_2
-  line_3
-  @ 
-\item Multiplizieren Sie folgende gegebene Matrix mit dem Vektor $\Sexpr{sample(c("A", "B"), 1)}$!
-  \textbf{(2 Punkte)}
-  <<>>=
-  mat <- matrix(rnorm(12, 5, 2), ncol = 3, nrow =
-  4) %>% round
-  mat
-  @
-\item Skizzieren Sie den entsprechenden \Rlogo Code f{\"u}r die
-  Matrixmultiplikation! \textbf{(2 Punkte)}
+\item Welche Wahrscheinlichkeit $Pr$ wollen Sie berechnen? \textbf{(1 Punkt)}
+\item Zeichnen Sie einen H{\"a}ufigkeitsdoppelbaum zur Bestimmung der gesuchten
+  Wahrscheinlichkeit $Pr$! \textbf{(2 Punkte)} 
+\item Beschriften Sie den H{\"a}ufigkeitsdoppelbaum, mit denen Ihnen bekannten
+  Informationen zuder AIDS Erkrankung und dem AIDS-Test! \textbf{(2 Punkte)}
+\item F{\"u}llen Sie den H{\"a}ufigkeitsdoppelbaum mit den sich ergebenden,
+  absoluten Patientenzahlen $n$ aus! \textbf{(2 Punkte)}
 \end{enumerate}
+
+Bei dem folgenden Arztgespr{\"a}ch erfahren Sie, dass beim diagnostischen
+Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)},
+\textit{False Positives (FP)} und \textit{False Negatives (FN)}
+auftreten. Das verstehen Sie so noch nicht und deshalb stellen Sie f{\"u}r sich
+den Zusammenhang in einer 2x2 Kreuztabelle dar.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Tragen Sie \textit{TP}, \textit{TN}, \textit{FP} und \textit{FN} in
+  eine 2x2 Kreuztablle ein. Beschriften Sie die Tabelle entsprechend!
+  \textbf{(1 Punkt)}
+\item Berechnen Sie die Sensitivit{\"a}t und Spezifit{\"a}t des diagnostischen Tests
+  f{\"u}r AIDS! F{\"u}llen Sie daf{\"u}r die 2x2 Kreuztabelle mit den Informationen aus
+  dem H{\"a}ufigkeitsdoppelbaum aus! \textbf{(2 Punkte)}
+\item Was beschreibt die Sensitivit{\"a}t und die Spezifit{\"a}t im Bezug auf die
+  Gesunden und Kranken? Stellen Sie beide diagnostische Ma{\ss}zahlen als
+  Wahrscheinlichkeiten $Pr$ dar! \textbf{(2 Punkte)} 
+\end{enumerate}
+
+
+
 

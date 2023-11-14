@@ -1,106 +1,92 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/3LAq3R0rS14}{\includegraphics[width =
+\hfill\href{https://youtu.be/tDgr6fpkkYA}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Geocaching -- Von Satelliten und Plastikdosen}
+\paragraph{Pyramiden bauen}
 
 <<>>=
-library(stringi)
-l_angel <- c(5, 6, 7) %>% sample(1)
-v_bike <- c(15, 17, 19)  %>% sample(1)
-h_angel <- l_angel + sample(c(1.6, 1.7, 1.8, 1.9), 1)
+land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
+          "oldenburgischen") %>% sample(1)
+land_e <- str_replace(land, "n$", "")
 m_grad <- c(70, 71, 72, 73) %>% sample(1)
-n_matrix <- c("ein Cache", "zwei Caches", "drei Caches") %>% sample(1)
-direct <- c("aufw{\"a}rts", "abw{\"a}rts")  %>% sample(1)
-type <- c("Terrain", "Schwierigkeits")  %>% sample(1)
-GC_pre <- stri_rand_strings(5, 5) %>% toupper()
-GC <- str_c("GC", GC_pre)
-wertung <- seq(1, 5, by = 0.5)
-wertung <- str_pad(wertung, 2, "right", "0") %>%
-  str_replace("0$", ".0")
-wert_str <- str_c(sample(wertung), " | ", sample(wertung), " | ",
-                  sample(c("Mikro", "Klein", "Normal"), size = length(wertung),
-                         replace = TRUE)) %>%
-  sample(5)
-vec_1 <- sample(c("AC", "AB"), 1)
-vec_1_l <- c(3, 4, 5) %>% sample(1)
-vec_2_l <- c(4.5, 5.5, 6) %>% sample(1)
-vec_fach <- c(1.2, 2.1, 1.3) %>% sample(1)
-alpha_grad <- c(20, 30, 40) %>% sample(1)
-gamma_grad <- c(35, 50, 60) %>% sample(1)
-north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
-intercept <- c(0.05, 0.1, 0.2) %>% sample(1)
-slope <- c(0.15, 0.25, 0.13) %>% sample(1)
-start <- c("B", "C", "D", "E") %>% sample(1)
+dick_torf <- c(3, 4, 5, 6) %>% sample(1)
+a_grad <- c(54, 53, 52, 51) %>% sample(1)
+elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
+side <- round(c(17, 20, 23)*100/elle) %>% sample(1)
+beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
+           "Finanzbeamter") %>% sample(1)
+winkel <- c("steil", "flach") %>% sample(1)
+n_slave <- c(2,3,4) %>% sample(1)
+krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
+effizienz <- c(80, 90, 70) %>% sample(1)
+schubkarre <- c(90, 100, 110) %>% sample(1)
+winkel_rampe <- c(9, 10, 11) %>% sample(1)
+winkel_neu <- c(5, 6, 7) %>% sample(1)
 @
 
-Es ist Wochenende und das Wetter ist \textit{sweet}. Sie schwingen sich auf
-Ihr Cachermobil um mit \Sexpr{v_bike}km/h, geleitet von modernster
-Satellietentechnologie und einem Supercompter aus dem Jahr 2000 in Ihren
-H{\"a}nden, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Sie
-wollen diesmal endlich die \Sexpr{direct} \Sexpr{type}challenge
-durchf{\"u}hren. Die Reihenfolge der Caches nach \Sexpr{type}wertung gibt daher
-die von Ihnen abzufahrenden Orte vor. Die Terrain- und
-Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5
-(schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den
-Orten und den entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route
-zu Verf{\"u}gung.
+Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
+abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
+{\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
+Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
+Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
+Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
+fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
+den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
+Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
+misst \Sexpr{elle}cm.\\
 
-\begin{center}
-  \begin{tabular}{ ccc }
-    \toprule
-    Ort & Cache & Wertung (S|T|G) \\
-    \midrule
-    A & \Sexpr{GC[1]} & \Sexpr{wert_str[1]} \\
-    B & \Sexpr{GC[2]} & \Sexpr{wert_str[2]} \\ 
-    C & \Sexpr{GC[3]} & \Sexpr{wert_str[3]} \\ 
-    D & \Sexpr{GC[4]} & \Sexpr{wert_str[4]} \\ 
-    E & \Sexpr{GC[5]} & \Sexpr{wert_str[5]} \\     
- \bottomrule
-\end{tabular}
-\end{center}
-
-Im Weiteren sind Ihnen folgende Informationen zu den Entfernungen der Orte
-zug{\"a}nglich. Der Entfernungsvektor $\overrightarrow{\Sexpr{vec_1}}$ ist
-$\Sexpr{vec_1_l}$km. Im Weiteren ist Ihnen der Entfernungsvektor
-$\overrightarrow{CB}$ mit $\Sexpr{vec_2_l}$km bekannt. Der
-Entfernungsvektor $\overrightarrow{BE}$ ist das $\Sexpr{vec_fach}$-fache
-des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort
-C anpeilen, so liegt der Ort B ungef{\"a}hr $\Sexpr{alpha_grad}^\circ$
-\Sexpr{north_south}. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt
-der Ort D ungef{\"a}hr $\Sexpr{gamma_grad}^\circ$ {\"o}stlich. Vom Ort B
-betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort
-B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E
-\Sexpr{north_south} von B. Die Strecke zwischen A und E ist nicht
-passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
+\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
+  Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
-\item L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
-  Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze
-  entsprechend! \textbf{(2 Punkte)}
-\item Welche Strecke in $km$ legen Sie bei der Bew{\"a}ltigung der
-  \Sexpr{direct} \Sexpr{type}challenge zur{\"u}ck? \textbf{(4
-    Punkte)}
-\item Gehen Sie von einer zus{\"a}tzlichen Suchzeit in Stunden f{\"u}r die
-  Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil
-  aus. Die Suchzeit in Stunden f{\"u}r \textit{jeden einzelnen} Cache wird durch die
-  Funktion
-  \begin{equation*}
-    Suchzeit = \Sexpr{intercept} + \Sexpr{slope} \cdot Schwierigkeit
-  \end{equation*}  
-  beschreiben.  Wie lange in Stunden ben{\"o}tigen Sie um die
-  \Sexpr{direct} \Sexpr{type}challenge zu erf{\"u}llen? \textbf{(3 Punkte)}
-\item An der h{\"o}chsten Schwierigkeit m{\"u}ssen Sie angeln. Ihre Angel ist
-  ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der H{\"o}he
-  von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
-  Angelh{\"o}he! Welche Annahmen mussten Sie treffen um die Aufgabe zu l{\"o}sen? \textbf{(3 Punkte)} 
+\item Bei der K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che
+  \Sexpr{side} K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in m
+  ergibt sich?? \textbf{(1 Punkt)}
+\item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
+  Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
+  Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
+  ben{\"o}tigten Torf in m$^3$! \textbf{(2 Punkte)}
+\end{enumerate}
+
+Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
+\Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
+zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
+chronische \Sexpr{krank}schmerzen entwickelt, als sie von der
+anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
+Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
+\Sexpr{schubkarre} Liter.
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
+  zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
+\item Berechnen Sie die L{\"a}nge der Rampe zur Spitze der Pyramide mit einem
+  Anstellwinkel von $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
+\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die \Sexpr{land_e}
+  Landschaft?  \textbf{(2 Punkte)}
+\end{enumerate}
+
+Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
+Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
+\Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen
+w{\"u}rde. Sie m{\"u}ssen nochmal ran.
+
+\begin{enumerate}
+  \setcounter{enumi}{5}
+\item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
+  {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
+  Pyramide um $\Sexpr{winkel_neu}^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
 \end{enumerate}
 
 
+
+% https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck
+% https://www.matheretter.de/wiki/pyramide
+% https://de.wikipedia.org/wiki/Knickpyramide

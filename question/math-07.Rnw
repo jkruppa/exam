@@ -4,89 +4,64 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/tDgr6fpkkYA}{\includegraphics[width =
+\hfill\href{https://youtu.be/aBxLkdF-c4M}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Pyramiden bauen}
+\paragraph{Solar- \& Biogasanlagen}
 
 <<>>=
-land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
-          "oldenburgischen") %>% sample(1)
-land_e <- str_replace(land, "n$", "")
-m_grad <- c(70, 71, 72, 73) %>% sample(1)
-dick_torf <- c(3, 4, 5, 6) %>% sample(1)
-a_grad <- c(54, 53, 52, 51) %>% sample(1)
-elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
-side <- round(c(17, 20, 23)*100/elle) %>% sample(1)
-beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
-           "Finanzbeamter") %>% sample(1)
-winkel <- c("steil", "flach") %>% sample(1)
-n_slave <- c(2,3,4) %>% sample(1)
-krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
-effizienz <- c(80, 90, 70) %>% sample(1)
-schubkarre <- c(90, 100, 110) %>% sample(1)
-winkel_rampe <- c(9, 10, 11) %>% sample(1)
-winkel_neu <- c(5, 6, 7) %>% sample(1)
+type <- c("Schweinestall", "H{\"u}hnerstall", "Rinderstall") %>% sample(1)
+h_vorne <- c(6, 5, 7) %>% sample(1)
+h_hinten <- c(8, 9, 11) %>% sample(1)
+tiefe <- c(12, 13, 14) %>% sample(1)
+breite <- c(30, 40, 50) %>% sample(1)
+
+beton_m <- c(5, 10, 15) %>% sample(1)
+save_m <- c(10, 15, 20) %>% sample(1)
+dichte_l <- c(220, 235, 240) %>% sample(1)
+dichte_h <- c(270, 280, 290) %>% sample(1)
+radius <- c(1, 1.2, 1.5) %>% sample(1)
+grad <- c(85, 90, 95) %>% sample(1)
 @
 
-Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
-abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
-{\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
-Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
-Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
-Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
-fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
-den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
-Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
-misst \Sexpr{elle}cm.\\
-
-\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
-  Sie Seiten und die Winkel der Pyramide entsprechend!}
+Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
+auf den \Sexpr{type} montieren lassen. Sie messen Ihren Stall und finden
+folgende Ma{\ss}e wieder. Die vordere Seite des \Sexpr{type} hat eine H{\"o}he
+$h_v$ von $\Sexpr{h_vorne}m$. Die hintere Seite des \Sexpr{type} hat eine
+H{\"o}he $h_b$ von $\Sexpr{h_hinten}m$. Der \Sexpr{type} hat eine Tiefe $t$ von
+$\Sexpr{tiefe}m$ und eine Breite $b$ von $\Sexpr{breite}m$.
 
 \begin{enumerate}
-\item Bei der K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che
-  \Sexpr{side} K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in m
-  ergibt sich?? \textbf{(1 Punkt)}
-\item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
-  Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
-  Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
-  ben{\"o}tigten Torf in m$^3$! \textbf{(2 Punkte)}
+\item Skizzieren Sie den \Sexpr{type} auf dem die Solaranlage montiert
+  werden soll! Erg{\"a}nzen Sie die Angaben f{\"u}r die H{\"o}hen $h_v$, $h_b$, die
+  Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che der schr{\"a}gen, neuen Solaranlage auf dem
+  \Sexpr{type}! \textbf{(3 Punkte)}
 \end{enumerate}
 
-Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
-\Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
-zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
-chronische \Sexpr{krank}schmerzen entwickelt, als sie von der
-anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
-Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
-\Sexpr{schubkarre} Liter.
+Ebenfalls planen Sie eine neue Biogasanlage f{\"u}r Ihren Betrieb. Der neue
+Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein
+paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
+zylindrischen Methantanks kann nur ein Gewicht von maximal
+$\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
+Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des
+Methantanks. In fl{\"u}ssiger Form hat
+Methan bei $-80^\circ\text{C}$ eine Dichte von
+$\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
+von $\Sexpr{dichte_h}kg/m^3$. Sie betrieben Ihre Anlage bei
+$-\Sexpr{grad}^\circ\text{C}$.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
-  zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
-\item Berechnen Sie die L{\"a}nge der Rampe zur Spitze der Pyramide mit einem
-  Anstellwinkel von $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
-\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die \Sexpr{land_e}
-  Landschaft?  \textbf{(2 Punkte)}
-\end{enumerate}
-
-Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
-Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
-\Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen
-w{\"u}rde. Sie m{\"u}ssen nochmal ran.
-
-\begin{enumerate}
-  \setcounter{enumi}{5}
-\item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
-  {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
-  Pyramide um $\Sexpr{winkel_neu}^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
+\item Extrapolieren Sie die effektive Dichte des Methans in Ihrem
+  Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
+\item Berechnen Sie wie viel Kubikmeter $m^3$ Sie in den Methantank f{\"u}llen
+  k{\"o}nnen, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
+\item Berechnen Sie die maximale H{\"o}he $h_{max}$ f{\"u}r den gef{\"u}llten
+  Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2
+    Punkte)}
 \end{enumerate}
 
 
-
-% https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck
-% https://www.matheretter.de/wiki/pyramide
-% https://de.wikipedia.org/wiki/Knickpyramide

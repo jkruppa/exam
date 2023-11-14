@@ -4,98 +4,108 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/fiWGgCX-cE4}{\includegraphics[width =
+\hfill\href{https://youtu.be/iErlRMwQ2RE}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-<<>>=
-ort <- c("Ostfriesland", "L{\"u}neburger Heide", "Uckermark") %>% sample(1)
-@ 
-
-\paragraph{\Sexpr{ort}. Unendliche Weiten.}
+\paragraph{Armee der Kaninchen}
 
 <<>>=
-today_year <- lubridate::year(Sys.Date())
-name <- c("Frida", "Fridolin") %>% sample(1)
-animal <- c("des Esels", " des Schafs", "des H{\"a}ngebauchschweins", "der Kuh") %>% sample(1)
-apfel <- c("Jonagoldp", "Boskoopp", "Pink Lady P") %>% sample(1)
-jan <- c(0.4, 0.5, 0.6) %>% sample(1)
-feb <- c(0.75, 0.7, 0.8) %>% sample(1)
-mrz <- c(1.1, 1.2, 1.05) %>% sample(1)
-gamma <- c(30, 40, 50) %>% sample(1)
-n_frid  <- c(120, 230, 180) %>% sample(1)
-n_rent  <- c(140, 210, 190) %>% sample(1)
-jan_temp <- c(0.1, 0.4, 0.3) %>% sample(1)
-feb_temp <- c(1.1, 1.5, 1.2) %>% sample(1)
-mrz_temp <- c(3.1, 2.7, 3.5) %>% sample(1)
-apr_temp <- c(6.1, 5.8, 4.3) %>% sample(1)
-weight <- c(1.2, 1.3, 1.5) %>% sample(1)
-glt <- c(190, 200, 210) %>% sample(1)
+job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
+         "Ihrer Koalakuschelschule", "Ihrer Faultierpension") %>% sample(1)
+year_out <- c(1859, 1860, 1875) %>% sample(1)
+release <- c(22, 24, 26) %>% sample(1)
+release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
+westost <- c(4000, 4100, 4200) %>% sample(1)
+nordsued <- c(3600, 3700, 3800) %>% sample(1)
+wuerfe <- c(8, 12, 11) %>% sample(1)
+year <- c("zw{\"o}lften", "neunten", "elften") %>% sample(1)
+unit_1 <- c("Milliarden", "Millionen") %>% sample(1)
+mort <- c(30, 35, 40) %>% sample(1)
+age <- c(7, 8, 9) %>% sample(1)
+A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
+a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
+satt_year <- c(9, 14, 18)  %>% sample(1)
+percent <- c(99.7, 99.9, 98.5) %>% sample(1)
+recover <- c(40, 50, 60) %>% sample(1)
+v_rabbit <- c(8.8, 9.8, 11.5) %>% sample(1)
+impf_cost <- c(9, 10, 11) %>% sample(1)
+dr_cost <- c(35, 45, 40) %>% sample(1)
+pop <- c(900, 1100, 1200) %>% sample(1)
 @
 
-Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer
-\Sexpr{animal} \Sexpr{name} und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und
-ein strammer Wind im Gesicht, egal wohin Sie schauen. Ein schmatzendes
-Ger{\"a}usch ert{\"o}nt unter Ihnen. Sie sinnieren, sollten Sie Ihre weiten
-Graslandschaften jetzt schon d{\"u}ngen?  Daf{\"u}r ben{\"o}tigen Sie die
-\textit{Gr{\"u}nlandtemperatur}! Die Gr{\"u}nlandtemperatur (GLT) ist die Summe aller
-positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von
-200$^\circ$ kann mit der Stickstoffd{\"u}ngung begonnen werden. Sie sehen nicht
-ein, Geld f{\"u}r einen Agrarmetrologen zu bezahlen. Also rechnen Sie mit
-folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit
-$\Sexpr{jan}\times$, Februar mit $\Sexpr{feb}\times$ und M{\"a}rz mit
-$\Sexpr{mrz}\times$. Sie haben noch im letzten Jahr folgende Temperaturen
-gemessen.
+Leider hat es mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht
+auch nicht \textit{so} die beste Idee... aber daf{\"u}r haben Sie eine Neue!
+Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
+niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
+einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
+Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
+\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat, Millionen
+von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? Dem
+wollen wir mal mathematisch nachgehen... \\
 
-\begin{center}
-\begin{tabular}{cc}
-  \toprule
-  Datum & C$^\circ$ \\
-  \midrule
-  01. Jan \Sexpr{today_year -1} & \Sexpr{jan_temp}\\
-  01. Feb \Sexpr{today_year -1} & \Sexpr{feb_temp}\\
-  01. Mrz \Sexpr{today_year -1} & \Sexpr{mrz_temp}\\
-  01. Apr \Sexpr{today_year -1} & \Sexpr{apr_temp}\\
-  \bottomrule
-\end{tabular}
-\end{center}
+Unter australischen Bedingungen liegt die Zahl der Jungen eines
+Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Jungtieren. Trotz
+fehlender Fressfeinde liegt die Mortalit{\"a}t der S{\"a}uglinge bei
+ca. \Sexpr{mort}\%. Ein Weibchen erreicht nach einem halben Jahr die
+Geschlechtsreife.
 
 \begin{enumerate}
-\item Erstellen Sie eine Skizze aus den Informationen aus der
-  Temperaturtabelle!  \textbf{(1 Punkt)}
-\item Stellen Sie die linearen Funktionen $f_1(t)$, $f_2(t)$ und
-  $f_3(t)$ aus der obigen Temperaturtabelle auf!  \textbf{(1 Punkt)}
-\item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ f{\"u}r
-  Ihre linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(1
+\item Wie viele \Sexpr{unit_1} Kaninchen w{\"u}rden bei einem ungebremsten
+  Wachstum \textit{im \Sexpr{year} Jahr} geboren? \textbf{(2 Punkte)}
+\item Die durchschnittliche, australische Lebenserwartung eines Kaninchens
+  liegt bei \Sexpr{age} Jahren. Wie viele Kaninchen bev{\"o}lkern bei einem
+  ungebremsten Wachstum den australischen Kontinent bevor die ersten,
+  australischen Kaninchen an Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2
+    Punkte)}
+\end{enumerate}
+
+Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der
+Kaninchenpopulation.
+\begin{equation*}
+  f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot 2^{-0.1 \cdot t + 3.4}
+\end{equation*}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Wie viele \Sexpr{unit_1} Kaninchen leben nach der S{\"a}ttigungsfunktion
+  nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1
     Punkt)}
-\item Osterglocken beginnen ab einer GLT von \Sexpr{glt}$^\circ C$ zu bl{\"u}hen. An
-  welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der
-  Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(2 Punkte)}
 \end{enumerate}
 
-Auf dem Weg zu Ihrer \Sexpr{apfel}lantage wurden Sie mit Ihrem Trecker von
-einer Gruppe elektrifizierter Renter abgedr{\"a}ngt. Der Trecker muss wieder
-aus dem Graben! \Sexpr{name} und die elektrifizierten Rentner ziehen an zwei,
-separaten Seilen. Dabei zieht \Sexpr{name} mit $\Sexpr{n_frid}N$. Die
-elektrifizierter Renter  bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
-
-\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
-  Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer
-  Skizze entsprechend!}
+Das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV),
+transmittiert von Stechm{\"u}cken, t{\"o}ten \Sexpr{percent}\% der
+Kaninchenpopulation innerhalb weniger Wochen. 
 
 \begin{enumerate}
-  \setcounter{enumi}{4}  
-\item Im ersten Versuch legen Sie das Seil f{\"u}r \Sexpr{name} lotrecht {\"u}ber einen
-  Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie {\"u}ber
-  die B{\"o}schung hinweg am anderen Seil. Welche Kraft wird aufgebracht?
-  \textbf{(2 Punkte)}
-\item Im zweiten Versuch ziehen \Sexpr{name} und die Rentner mit einem
-  $\Sexpr{gamma}^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft
-  wird aufgebracht? \textbf{(2 Punkte)}
-\item Mit welcher Beschleunigung ziehen Sie den $\Sexpr{weight}t$ schweren
-  Trecker \textit{jeweils} aus dem Graben, wenn $F = m \cdot a$ gilt?
-  \textbf{(1 Punkt)}
+  \setcounter{enumi}{3}  
+\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer
+  Viruspandemie wieder auf \Sexpr{recover}\% der ges{\"a}ttigten
+  Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
 \end{enumerate}
 
+Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten \Sexpr{release_point} von
+Australien. Australien hat eine West-Ost-Ausdehnung von \Sexpr{westost}km
+und eine Nord-S{\"u}d-Ausdehnung von knapp \Sexpr{nordsued}km. Die Kaninchen
+breiten sich radial mit einer Geschwindigkeit von \Sexpr{v_rabbit}km pro
+Jahr aus.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort
+  in Australien erreicht haben? \textit{L{\"o}sen Sie die Aufgabe unter der
+    Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
+\end{enumerate}
+
+Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
+Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ pro Tier und der
+durchf{\"u}hrende Arzt verlangt ca. \Sexpr{dr_cost}\$ pro Tier.
+
+\begin{enumerate}
+  \setcounter{enumi}{5}
+\item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen
+  j{\"a}hrlichen Zusatzkosten f{\"u}r die Impfungen der Kaninchen m{\"u}ssen Sie daher
+  kalkulieren? \textbf{(1 Punkt)}
+\end{enumerate}
 

@@ -4,64 +4,65 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/aBxLkdF-c4M}{\includegraphics[width =
+\hfill\href{https://youtu.be/iCQogS6KhPM}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Solar- \& Biogasanlagen}
+\paragraph{Das Fermi Paradoxon}
 
 <<>>=
-type <- c("Schweinestall", "H{\"u}hnerstall", "Rinderstall") %>% sample(1)
-h_vorne <- c(6, 5, 7) %>% sample(1)
-h_hinten <- c(8, 9, 11) %>% sample(1)
-tiefe <- c(12, 13, 14) %>% sample(1)
-breite <- c(30, 40, 50) %>% sample(1)
-
-beton_m <- c(5, 10, 15) %>% sample(1)
-save_m <- c(10, 15, 20) %>% sample(1)
-dichte_l <- c(220, 235, 240) %>% sample(1)
-dichte_h <- c(270, 280, 290) %>% sample(1)
-radius <- c(1, 1.2, 1.5) %>% sample(1)
-grad <- c(85, 90, 95) %>% sample(1)
+n_sonde <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
+c_voyager <- c(60523, 61198, 62587, 63587, 59256) %>% sample(1)
+build_time <- c(1000, 500, 750, 250) %>% sample(1)
+ziv_y <- c(11000, 10000, 12000, 10500) %>% sample(1)
+n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
+dist_stars <- c(4.24, 5.16, 6.23, 7.81, 3.57)  %>% sample(1)
+steps <- c("drei", "vier")  %>% sample(1)
+age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
+age_plates <- c(1000e+05, 1200e+05, 800e+05, 900e+05) %>% sample(1)
+c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
 @
 
-Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
-auf den \Sexpr{type} montieren lassen. Sie messen Ihren Stall und finden
-folgende Ma{\ss}e wieder. Die vordere Seite des \Sexpr{type} hat eine H{\"o}he
-$h_v$ von $\Sexpr{h_vorne}m$. Die hintere Seite des \Sexpr{type} hat eine
-H{\"o}he $h_b$ von $\Sexpr{h_hinten}m$. Der \Sexpr{type} hat eine Tiefe $t$ von
-$\Sexpr{tiefe}m$ und eine Breite $b$ von $\Sexpr{breite}m$.
+Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
+im Los Alamos National Laboratory mit seinen Kollegen angebliche
+UFO-Sichtungen und fragte schlie{\ss}lich: "`Where is everybody?"'. Warum seien
+weder Raumschiffe anderer Weltraumbewohner noch andere Spuren
+extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine au{\ss}erirdische
+Zivilisation ben{\"o}tigen um die gesamte Milchstra{\ss}e zu
+besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde w{\"a}re?\\[-1ex]
+
+Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$
+Voyager 1 {\"a}hnliche Sonden mit der Geschwindigkeit von $\Sexpr{c_voyager}km/h$
+los um sich auf den erreichten Planeten selbst zu replizieren. Nach
+$\Sexpr{build_time}$ Jahren ist die Replikation abgeschlossen und wiederum
+$\Sexpr{n_sonde}$ Sonden werden ausgesendet. Gehen Sie von
+$\Sexpr{dist_stars}$ Lichtjahren als mittlerer Abstand der Sterne in der
+Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$ Sterne in der Milchstra{\ss}e. Nehmen
+Sie eine Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$ an.
 
 \begin{enumerate}
-\item Skizzieren Sie den \Sexpr{type} auf dem die Solaranlage montiert
-  werden soll! Erg{\"a}nzen Sie die Angaben f{\"u}r die H{\"o}hen $h_v$, $h_b$, die
-  Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
-\item Berechnen Sie die Fl{\"a}che der schr{\"a}gen, neuen Solaranlage auf dem
-  \Sexpr{type}! \textbf{(3 Punkte)}
+\item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
+  Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
+  mit der Dauer und der Anzahl an Sonden f{\"u}r jeden Schritt der Vervielf{\"a}ltigung! \textbf{(2 Punkte)}
+\item Berechnen Sie die theoretische Anzahl an Vervielf{\"a}ltigungsschritten die
+  ben{\"o}tigt werden um mit \textit{einem einzigen Vervielf{\"a}ltigungsschritt} die
+  gesamten Sterne der Milchstra{\ss}e mit Sonden zu besuchen! \textbf{(1 Punkt)}
+\item Berechnen Sie die Dauer, die eine au{\ss}erirdische Zivilisation
+  ann{\"a}hrungsweise ben{\"o}tigt um die gesamten Sterne der Milchstra{\ss}e mit
+  Sonden zu besuchen! \textbf{(3 Punkte)}
+\item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
+  wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu
+  Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die
+  Kontinentalplatten einmal alle $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im
+  Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
+\item Skizzieren Sie in einer Abbildung den Zusammenhang zwischen Zeit $t$
+  und Raum $r$. Erg{\"a}nzen Sie den Geschwindigkeitsvektor $\vec{v_t}$ und
+  $\vec{v_r}$ einer ruhenden Sonde, einer mit 50\% Lichtgeschwindigkeit und
+  mit 99\% Lichtgeschwindigkeit fliegender Sonde! \textbf{(1 Punkt)}
+\item Warum ist die Lichtgeschwindigkeit die maximale m{\"o}gliche Geschwindigkeit?
+Begr{\"u}nden Sie Ihre Antwort anhand der Abbildung!  \textbf{(1 Punkt)}
 \end{enumerate}
 
-Ebenfalls planen Sie eine neue Biogasanlage f{\"u}r Ihren Betrieb. Der neue
-Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein
-paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
-zylindrischen Methantanks kann nur ein Gewicht von maximal
-$\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
-Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des
-Methantanks. In fl{\"u}ssiger Form hat
-Methan bei $-80^\circ\text{C}$ eine Dichte von
-$\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
-von $\Sexpr{dichte_h}kg/m^3$. Sie betrieben Ihre Anlage bei
-$-\Sexpr{grad}^\circ\text{C}$.
-
-\begin{enumerate}
-  \setcounter{enumi}{2}
-\item Extrapolieren Sie die effektive Dichte des Methans in Ihrem
-  Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
-\item Berechnen Sie wie viel Kubikmeter $m^3$ Sie in den Methantank f{\"u}llen
-  k{\"o}nnen, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
-\item Berechnen Sie die maximale H{\"o}he $h_{max}$ f{\"u}r den gef{\"u}llten
-  Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2
-    Punkte)}
-\end{enumerate}
 
 
