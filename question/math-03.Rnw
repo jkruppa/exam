@@ -63,16 +63,17 @@ row.names(data_dfr) <- type_i
 
 So h{\"o}rt man h{\"a}ufiger h{\"o}fliche \Sexpr{type_chick} in Mastst{\"a}llen sagen. Das
 ist nat{\"u}rlich etwas ung{\"u}nstig, den dann kommt es zu Picken und
-Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen gegriffen
-werden. Kennt jeder aus einer mittelm{\"a}{\ss}igen Wohngemeinschaft. Das wollen
-wir aber als vorsorgliche \Sexpr{type_chick}-Halter:innen aber
+Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen
+gegriffen werden. Kennt jeder aus einer mittelm{\"a}{\ss}igen Wohngemeinschaft. Das
+wollen wir aber als vorsorgliche \Sexpr{type_chick}-Halter:innen aber
 nicht\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
-  Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA
-    Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers
-    on farm. EFSA Journal 21.2}}. Betrachten wir also einmal das
-Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der
-\Sexpr{type_chick} f{\"u}r vier T{\"a}tigkeiten und versuchen die notwendige Fl{\"a}che
-zu optimieren. Wie immer gibt es daf{\"u}r mathematische Formel:
+  wissenschaftliche Artikel:
+  \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on
+    Animal Health and Welfare, et al. (2023) Welfare of broilers on
+    farm. EFSA Journal 21.2}}. Betrachten wir also einmal das Platzangebot
+(eng. \textit{space allowance}, abk. \textit{SA}) der \Sexpr{type_chick}
+f{\"u}r vier T{\"a}tigkeiten und versuchen die notwendige Fl{\"a}che zu optimieren. Wie
+immer gibt es daf{\"u}r mathematische Formel:
 
 
 \begin{center}

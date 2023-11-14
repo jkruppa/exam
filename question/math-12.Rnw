@@ -41,9 +41,14 @@ Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
 niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
 einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
 Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
-\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat, Millionen
-von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? Dem
-wollen wir mal mathematisch nachgehen... \\
+\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat,
+Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so
+exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
+  der Inspiration f{\"u}r die Aufgabe war der folgendes YouTube Video:
+  \href{https://youtu.be/38fuOr3tdgc?si=Li7NL_FoByML8JtT}{ Incredible
+    Stories -- Why don't they eat wild rabbits in Australia? They have
+    millions of them! The reason is surprising...}}
+\\
 
 Unter australischen Bedingungen liegt die Zahl der Jungen eines
 Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Jungtieren. Trotz
