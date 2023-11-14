@@ -8,52 +8,53 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Entschuldigung -- ist das Ihre Feder in meinem Auge?}
+\paragraph{Entschuldigung,  ist das Ihre Feder in meinem Auge?}
 
 <<>>=
-type_chick <- c("H{\"u}hner", "Puten", "Enten", "G{\"a}nse") %>% sample(1)
+type_chick <- c("H{\"u}hner", "Puten", "Enten", "G{\"a}nse")
+names(type_chick) <- c("Huhn", "Pute", "Ente", "Gans")
+type_chick <- type_chick %>% sample(1)
+
 behaviour_vec <-  c("standing", "sitting", "walking",
-                    "foraging including scratching", "dustbathing",
+                    "foraging incl. scratching", "dustbathing",
                     "preening", "wing/leg stretching", "wingflapping",
                     "drinking/eating")
 type_i <- behaviour_vec %>% sample(4)
+
+get_values <- function(sample){
+str_c(round(rnorm(1, 35, 5)), "cm; ",
+      round(rnorm(1, 25, 5)), "cm; ",
+      sample, "%")
+}
+
 data_dfr <- tibble(behav = behaviour_vec,
-                   "Aldridge et al." = c(sample(c(3.5, 12.1, 8.9), 1),
-                                               sample(c(50.1, 25.4, 64.1), 1),
-                                               sample(c(1.8, 2.1, 4.1), 1),
-                                               sample(c(0.4, 0.8, 0.2), 1),
-                                               sample(c(0.5, 1.2, 8.1), 1),
-                                               sample(c(3.6, 6.3, 8.1), 1),
-                                               sample(c(3.2, 1.2, 5.1), 1),
-                                               sample(c(1.2, 1.0, 0.8), 1),
-                                               sample(c(18.1, 16.4, 12.8), 1)),
-                   "Baxter et al." = c(sample(c(3.5, 12.1, 8.9), 1),
-                                               sample(c(50.1, 25.4, 64.1), 1),
-                                               sample(c(1.8, 2.1, 4.1), 1),
-                                               sample(c(0.4, 0.8, 0.2), 1),
-                                               sample(c(0.5, 1.2, 8.1), 1),
-                                               sample(c(3.6, 6.3, 8.1), 1),
-                                               sample(c(3.2, 1.2, 5.1), 1),
-                                               sample(c(1.2, 1.0, 0.8), 1),
-                                               sample(c(18.1, 16.4, 12.8), 1)),
-                   "Jabcobs et al." = c(sample(c(3.5, 12.1, 8.9), 1),
-                                               sample(c(50.1, 25.4, 64.1), 1),
-                                               sample(c(1.8, 2.1, 4.1), 1),
-                                               sample(c(0.4, 0.8, 0.2), 1),
-                                               sample(c(0.5, 1.2, 8.1), 1),
-                                               sample(c(3.6, 6.3, 8.1), 1),
-                                               sample(c(3.2, 1.2, 5.1), 1),
-                                               sample(c(1.2, 1.0, 0.8), 1),
-                                               sample(c(18.1, 16.4, 12.8), 1)),
-                   "Ma et al." = c(sample(c(3.5, 12.1, 8.9), 1),
-                                               sample(c(50.1, 25.4, 64.1), 1),
-                                               sample(c(1.8, 2.1, 4.1), 1),
-                                               sample(c(0.4, 0.8, 0.2), 1),
-                                               sample(c(0.5, 1.2, 8.1), 1),
-                                               sample(c(3.6, 6.3, 8.1), 1),
-                                               sample(c(3.2, 1.2, 5.1), 1),
-                                               sample(c(1.2, 1.0, 0.8), 1),
-                                   sample(c(18.1, 16.4, 12.8), 1))) %>%
+                   "Aldridge et al. (2021)" = c(get_values(sample(c(3.5, 12.1, 8.9, 7.2), 1)),
+                                         get_values(sample(c(50.1, 25.4, 64.1, 52.2), 1)),
+                                         get_values(sample(c(1.8, 2.1, 4.1, 4.3), 1)),
+                                         get_values(sample(c(0.4, 0.8, 0.2, 0.6), 1)),
+                                         get_values(sample(c(0.5, 1.2, 8.1, 1.6), 1)),
+                                         get_values(sample(c(3.6, 6.3, 8.1, 4.1), 1)),
+                                         get_values(sample(c(3.2, 1.2, 5.1, 6.2), 1)),
+                                         get_values(sample(c(1.2, 1.0, 0.8, 7.3), 1)),
+                                         get_values(sample(c(18.1, 16.4, 12.8, 13.2), 1))),
+                   "Baxter et al. (2022)" = c(get_values(sample(c(3.5, 12.1, 8.9, 4.5), 1)),
+                                         get_values(sample(c(50.1, 25.4, 64.1, 54.1), 1)),
+                                         get_values(sample(c(1.8, 2.1, 4.1, 5.2), 1)),
+                                         get_values(sample(c(0.4, 0.8, 0.2, 0.6), 1)),
+                                         get_values(sample(c(0.5, 1.2, 8.1, 2.4), 1)),
+                                         get_values(sample(c(3.6, 6.3, 8.1, 5.2), 1)),
+                                         get_values(sample(c(3.2, 1.2, 5.1, 6.1), 1)),
+                                         get_values(sample(c(1.2, 1.0, 0.8, 0.9), 1)),
+                                         get_values(sample(c(18.1, 16.4, 12.8, 14.2), 1))),
+                   "Jabcobs et al. (2019)" = c(get_values(sample(c(3.5, 12.1, 8.9, 10.1), 1)),
+                                         get_values(sample(c(50.1, 25.4, 64.1, 24.1), 1)),
+                                         get_values(sample(c(1.8, 2.1, 4.1, 3.5), 1)),
+                                         get_values(sample(c(0.4, 0.8, 0.2, 0.9), 1)),
+                                         get_values(sample(c(0.5, 1.2, 8.1, 7.6), 1)),
+                                         get_values(sample(c(3.6, 6.3, 8.1, 5.1), 1)),
+                                         get_values(sample(c(3.2, 1.2, 5.1, 6.9), 1)),
+                                         get_values(sample(c(1.2, 1.0, 0.8, 0.1), 1)),
+                                         get_values(sample(c(18.1, 16.4, 12.8, 12.3), 1)))) %>%
   filter(behav %in% type_i) %>%
   select(-behav) %>%
   as.data.frame()
@@ -62,7 +63,7 @@ row.names(data_dfr) <- type_i
 
 So h{\"o}rt man h{\"a}ufiger h{\"o}fliche \Sexpr{type_chick} in Mastst{\"a}llen sagen. Das
 ist nat{\"u}rlich etwas ung{\"u}nstig, den dann kommt es zu Picken und
-Kannibalismus. Wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen gegriffen
+Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen gegriffen
 werden. Kennt jeder aus einer mittelm{\"a}{\ss}igen Wohngemeinschaft. Das wollen
 wir aber als vorsorgliche \Sexpr{type_chick}-Halter:innen aber
 nicht\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
@@ -80,6 +81,8 @@ zu optimieren. Wie immer gibt es daf{\"u}r mathematische Formel:
   \end{tabular}
 \end{center}
 
+\vspace{-2Ex}
+
 mit
 
 \begin{itemize}[noitemsep]
@@ -92,21 +95,38 @@ mit
   \Sexpr{type_i[3]} und (4) \Sexpr{type_i[4]}.
 \end{itemize}
 
-In der folgenden Tabelle 1 sehen Sie die t{\"a}glichen prozentualen Zeiten f{\"u}r
-ein spezifisches Verhalten aus vier wissenschaftlichen Ver{\"o}ffentlichungen.
+In der folgenden Tabelle 1 sind die Werte f{\"u}r $r_i$, $R_i$ und $PB_i$ f{\"u}r
+ein spezifisches Verhalten $i$ aus drei wissenschaftlichen
+Ver{\"o}ffentlichungen dargestellt.
 
 \vspace{-1Ex}
 
 {\small
 <<>>=
 data_dfr %>% kable(booktabs = TRUE, align = c("lllll")) %>%
-  kable_styling(latex_options = c("hold_position")) %>%  
-  row_spec(0, angle = 30) 
+  kable_styling(latex_options = c("hold_position")) 
 @ 
 }
 
 \begin{enumerate}
-\item Skizzieren S
+\item Erstellen Sie eine zusammenfassende Tabelle mit den mittleren Werten f{\"u}r $r$, $R$ und
+  $PB$ aus der Tabelle 1 f{\"u}r die jeweiligen Verhalten! \textbf{(3 Punkte)}
+\item Erg{\"a}nzen Sie eine Spalte mit dem ben{\"o}tigten Platz $A$ f{\"u}r das jeweilige
+  Verhalten, welches sich aus den mittleren Werten ergibt! \textbf{(1 Punkt)}
+\item Berechnen Sie das ben{\"o}tigte Platzangebot $SA$ f{\"u}r alle betrachteten
+  Verhalten! \textbf{(1 Punkt)}
+\item Skizzieren Sie die Werte $r_i$, $R_i$ und $A_i$ f{\"u}r zwei nebeneinander
+  agierender \Sexpr{type_chick} f{\"u}r ein Verhalten $i$. Nutzen Sie hierf{\"u}r vereinfachte
+  geometrische Formen! \textbf{(2 Punkte)}
+\item Sie entnehmen der Literatur folgende Aussage zur Verteilung der
+  \Sexpr{type_chick} in der Fl{\"a}che $A$: \textit{"`Assuming, that the
+    animals will optimally and equally distribute in an area $A$, we observe a
+    small part, which is not covered. This area is called
+    $\omega$ and is calculated with $\omega = \tfrac{A}{0.9069}$."'
+  } Veranschaulichen Sie die Fl{\"a}che $\omega$ in einer aussagekr{\"a}ftigen
+  Abbildung!  \textbf{(1 Punkt)}
+\item Welche Fl{\"a}che $a$ nimmt eine \Sexpr{names(type_chick)} ein? Welche Annahmen haben
+  Sie f{\"u}r die Berechnung der \Sexpr{type_chick}fl{\"a}che getroffen? \textbf{(2 Punkte)}
 \end{enumerate}
 
 
