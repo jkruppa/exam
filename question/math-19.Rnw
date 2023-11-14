@@ -8,5 +8,41 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Entschuldigung,  ist das Ihre Feder in meinem Auge?}
+\paragraph{T{\"o}dliche Seuche AIDS -- Die r{\"a}tselhafte Krankheit}
 
+
+<<>>=
+arzt <- c("Ihrem Hautarzt", "Ihrem Hausarzt", "Ihrem Augenarzt",
+          "Ihrem HNO-Arzt", "Ihrem Orthop{\"a}den") %>% sample(1)
+partner <- c("Ihre Partnerin", "Ihr Partner") %>% sample(1)
+praev <- sample(c(0.01, 0.1, 0.5, 0.75, 0.8), 1)
+pos_1_rate <- sample(c(90, 92, 95, 96), 1)
+pos_2_rate <- sample(c(0.5, 2.5, 1, 3, 4), 1)
+n_animal <- sample(c(10000, 20000, 40000, 30000), 1)
+
+@
+
+Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern
+beiseite. Sie sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen
+lassen. Tja, woanders leider keinen Termin gekriegt... Immerhin denken Sie und
+\Sexpr{partner} {\"u}ber Nachwuchs nach und da geht es eben nur durch
+ungesch{\"u}tzten Sex. Was wissen Sie nun aber {\"u}ber AIDS und dem diagnostischen
+AIDS-Test, den Sie nun machen werden? Die Pr{\"a}valenz von AIDS bei einem
+Menschen in Europa wird mit \Sexpr{praev}\% angenommen. In
+\Sexpr{pos_1_rate}\% der F{\"a}lle ist ein HIV-Test positiv, wenn der Patient
+erkrankt ist. In \Sexpr{pos_2_rate}\% der F{\"a}lle ist ein HIV-Test positiv,
+wenn der Patient \textit{nicht} erkrankt ist und somit gesund ist. Sie
+stutzen. Wie wahrscheinlich ist es denn eigentlich an AIDS erkrankt zu sein
+$(K^+)$, wenn Sie einen positiven AIDS-Test vorliegen haben $(T^+)$? Gehen Sie
+f{\"u}r die folgenden Berechnungen von $n = \Sexpr{n_animal}$ Patienten mit
+einem diagnostischen Test f{\"u}r AIDS aus. Sie nehmen sich also einen Kuli und
+fangen an auf der historischen Ausgabe des Spiegels zu rechnen.
+
+\begin{enumerate}
+\item Welche Wahrscheinlichkeit wollen Sie berechnen? \textbf{(1 Punkt)}
+\item Zeichnen Sie einen Doppelbaum zur Berechnung der gesuchten
+  Wahrscheinlichkeit!  
+\item Beschriften Sie die {\"A}ste des Doppelbaumes, mit denen Ihnen bekannten
+  Informationen! \textbf{(8 Punkte)}
+\item F{\"u}llen Sie den Doppelbaum mit den sich ergebenden, absoluten Patientenzahlen aus.
+\end{enumerate}
