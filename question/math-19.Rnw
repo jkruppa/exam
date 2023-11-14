@@ -40,9 +40,24 @@ fangen an auf der historischen Ausgabe des Spiegels zu rechnen.
 
 \begin{enumerate}
 \item Welche Wahrscheinlichkeit wollen Sie berechnen? \textbf{(1 Punkt)}
-\item Zeichnen Sie einen Doppelbaum zur Berechnung der gesuchten
-  Wahrscheinlichkeit!  
-\item Beschriften Sie die {\"A}ste des Doppelbaumes, mit denen Ihnen bekannten
-  Informationen! \textbf{(8 Punkte)}
-\item F{\"u}llen Sie den Doppelbaum mit den sich ergebenden, absoluten Patientenzahlen aus.
+\item Zeichnen Sie einen H{\"a}ufigkeitsdoppelbaum zur Bestimmung der gesuchten
+  Wahrscheinlichkeit! \textbf{(2 Punkte)} 
+\item Beschriften Sie den H{\"a}ufigkeitsdoppelbaum, mit denen Ihnen bekannten
+  Informationen zu der AIDS Erkrankung und dem AIDS-Test! \textbf{(2 Punkte)}
+\item F{\"u}llen Sie den H{\"a}ufigkeitsdoppelbaum mit den sich ergebenden, absoluten
+  Patientenzahlen aus! \textbf{(3 Punkte)}
+\end{enumerate}
+
+Bei dem folgenden Arztgespr{\"a}ch erfahren Sie, dass beim diagnostischen
+Testen \textit{True Positives (TP)}, \textit{True Negatives
+  (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Tragen Sie \textit{TP}, \textit{TN}, \textit{FP} und \textit{FN} in
+  eine 2x2 Kreuztablle ein. Beschriften Sie die Tabelle entsprechend!
+  \textbf{(1 Punkt)}
+\item Berechnen Sie die Sensifit{\"a}t und Spezifit{\"a}t des diagnostischen Tests
+  f{\"u}r Klauenseuche! Erstellen Sie daf{\"u}r zun{\"a}chst eine 2x2 Kreuztabelle aus
+  dem ausgef{\"u}llten Doppelbaum!
 \end{enumerate}
