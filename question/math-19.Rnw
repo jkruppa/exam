@@ -12,10 +12,11 @@
 
 
 <<>>=
-firma <- c("KH Gesund und Sch{\"o}n Komponenten (KH-GSK)",
-           "GroKo Versicherungssysteme (GroKoVer)",
-           "Direkt Finanzanlagen Left/Right (D-FL/R)")  %>%
-  set_names(c("KH-GSK", "GroKoVer", "D-FL/R")) %>% sample(1)
+firma <- c("KH Gesund und Sch{\"o}n Components (KH-GSC)",
+           "Up/Down Systems and Networking (UDSysNet)",
+           "Direct Finanzanlagen Left/Right (D-FL/R)",
+           "Healthy Herbs Manufacture International (HeHeMan)")  %>%
+  set_names(c("KH-GSC", "UDSysNet", "D-FL/R", "HeHeMan")) %>% sample(1)
 umsatz <- c(260, 275, 290, 310) %>% sample(1)
 steigerung <- c(10, 15, 24, 27) %>% sample(1)
 partner <- c(280000, 330000, 360000, 380000) %>% sample(1)
@@ -36,7 +37,7 @@ abtauchen\footnote{Die Quellen der Inspiration f{\"u}r die Aufgabe waren
   \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus --
     Die meistgesuchte Betr{\"u}gerin der Welt} und der Artikel:
   \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{
-    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
+    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.
 
 Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
 \Sexpr{firma}. Das Unternehmen steigerte den Umsatz um rund
@@ -47,7 +48,7 @@ Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
 \begin{enumerate}
 \item Berechnen Sie zuerst den Umsatz der Firma \Sexpr{names(firma)} im
   Jahr \Sexpr{year}! \textbf{(1 Punkt)}
-\item Wie viel von dem Umsatz im Jahr 2021 wird im Schnitt von jedem
+\item Wie viel von dem Umsatz im Jahr 2021 wird im Durchschnitt von jedem
   aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
   Durchschnitt f{\"u}r jeden aktiven Partner? \textbf{(1 Punkt)}  
