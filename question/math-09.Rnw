@@ -13,10 +13,10 @@
 
 <<>>=
 library(stringi)
-l_angel <- c(5, 6, 7) %>% sample(1)
-v_bike <- c(15, 17, 19)  %>% sample(1)
-h_angel <- l_angel + sample(c(1.6, 1.7, 1.8, 1.9), 1)
-m_grad <- c(70, 71, 72, 73) %>% sample(1)
+l_angel <- c(5, 6, 7, 8) %>% sample(1)
+v_bike <- c(15, 17, 19, 16, 18)  %>% sample(1)
+h_angel <- l_angel + sample(c(1.6, 1.7, 1.8, 1.9, 2.1), 1)
+m_grad <- c(70, 71, 72, 73, 74) %>% sample(1)
 n_matrix <- c("ein Cache", "zwei Caches", "drei Caches") %>% sample(1)
 direct <- c("aufw{\"a}rts", "abw{\"a}rts")  %>% sample(1)
 type <- c("Terrain", "Schwierigkeits")  %>% sample(1)
@@ -30,14 +30,14 @@ wert_str <- str_c(sample(wertung), " | ", sample(wertung), " | ",
                          replace = TRUE)) %>%
   sample(5)
 vec_1 <- sample(c("AC", "AB"), 1)
-vec_1_l <- c(3, 4, 5) %>% sample(1)
-vec_2_l <- c(4.5, 5.5, 6) %>% sample(1)
-vec_fach <- c(1.2, 2.1, 1.3) %>% sample(1)
-alpha_grad <- c(20, 30, 40) %>% sample(1)
-gamma_grad <- c(35, 50, 60) %>% sample(1)
+vec_1_l <- c(3, 4, 5, 6) %>% sample(1)
+vec_2_l <- c(4.5, 5.5, 6.5, 7.5) %>% sample(1)
+vec_fach <- c(1.2, 2.1, 1.3, 1.5) %>% sample(1)
+alpha_grad <- c(20, 30, 40, 25, 25) %>% sample(1)
+gamma_grad <- c(35, 50, 60, 45, 55) %>% sample(1)
 north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
-intercept <- c(0.05, 0.1, 0.2) %>% sample(1)
-slope <- c(0.15, 0.25, 0.13) %>% sample(1)
+intercept <- c(0.05, 0.1, 0.2, 0.15) %>% sample(1)
+slope <- c(0.15, 0.25, 0.13, 0.18) %>% sample(1)
 start <- c("B", "C", "D", "E") %>% sample(1)
 @
 
