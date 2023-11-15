@@ -12,13 +12,21 @@
 
 
 <<>>=
-test <- "a"
+firma <- c("KH Gesund und Sch{\"o}n Komponenten (KH-GSK)",
+           "GroKo Versicherungssysteme (GroKoVer)",
+           "Direkt Finanzanlagen Left/Right (D-FL/R)")  %>%
+  set_names(c("KH-GSK", "GroKoVer", "D-FL/R")) %>% sample(1)
+umsatz <- c(260, 275, 290, 310) %>% sample(1)
+steigerung <- c(10, 15, 24, 27) %>% sample(1)
+partner <- c(280000, 330000, 360000, 380000) %>% sample(1)
+year <- year(Sys.Date()) - 2
+prov <- c(20, 25, 30) %>% sample(1)
 
 @
 
-Eine M{\"o}glichkeit leicht Geld zu verdienen ist es anderen Menschen f{\"u}r Geld
-zu verkaufen, wie man leicht Geld verdienen kann. Am besten nat{\"u}rlich ohne
-viel Aufwand und von zu Hause aus. Dann wollen wir mal loslegen. Schnell
+Eine M{\"o}glichkeit, leicht Geld zu verdienen, ist es anderen Menschen f{\"u}r Geld
+zu versprechen, wie man leicht reich werden kann. Am besten nat{\"u}rlich ohne
+viel Aufwand und ortsunabh{\"a}ngig. Dann wollen wir mal loslegen. Schnell
 ein YouTube-Werbevideo gedreht und auf geht es mit unserem
 Network-Marketing. Aber Moment, wie funktioniert Network-Marketing
 eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Wir
@@ -28,12 +36,21 @@ abtauchen\footnote{Die Quellen der Inspiration f{\"u}r die Aufgabe waren
   \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus --
     Die meistgesuchte Betr{\"u}gerin der Welt} und der Artikel:
   \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{
-    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.
+    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
+
+Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
+\Sexpr{firma}. Das Unternehmen steigerte den Umsatz um rund
+\Sexpr{steigerung} Prozent von \Sexpr{umsatz} Millionen Euro im Jahr
+\Sexpr{year - 1}. Doch wie viel kommt bei den Partnern an? Laut
+\Sexpr{names(firma)} habe das Unternehmen \Sexpr{partner} aktive Partner.
 
 \begin{enumerate}
-\item Welche Wahrscheinlichkeit $Pr$ wollen Sie berechnen? \textbf{(1 Punkt)}
-\item Zeichnen Sie einen H{\"a}ufigkeitsdoppelbaum zur Bestimmung der gesuchten
-  Wahrscheinlichkeit $Pr$! \textbf{(2 Punkte)} 
+\item Berechnen Sie zuerst den Umsatz der Firma \Sexpr{names(firma)} im
+  Jahr \Sexpr{year}! \textbf{(1 Punkt)}
+\item Wie viel von dem Umsatz im Jahr 2021 wird im Schnitt von jedem
+  aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
+\item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
+  Durchschnitt f{\"u}r jeden aktiven Partner? \textbf{(1 Punkt)}  
 \end{enumerate}
 
 Bei dem folgend
