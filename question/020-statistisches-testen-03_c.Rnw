@@ -14,7 +14,8 @@ sign_vec  <- c("+", "-") %>%
 
 @ 
 
-Im folgenden ist eine t-Verteilung abgebildet. Erg{\"a}nzen Sie die Abbildung wie folgt.
+Im Folgenden ist die t-Verteilung unter der Anahme der G{\"u}ltigkeit der
+Nullhypothese abgebildet. Erg{\"a}nzen Sie die Abbildung wie folgt.
 
 \begin{enumerate}
 \item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! \textbf{(2 Punkte)} 
@@ -25,12 +26,12 @@ Im folgenden ist eine t-Verteilung abgebildet. Erg{\"a}nzen Sie die Abbildung wi
 \item Zeichnen Sie $\Sexpr{sign_vec}T_{calc}$ in die Abbildung! \textbf{(1 Punkt)} 
 \end{enumerate}
 
-<<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+<<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 5, fig.width = 6, fig.align = "center", message = FALSE>>=
 
-curve(dt(x, df=10), from=-4, to=4, 
-    main = 't Distribution', #add title
-    ylab = 'Density', #change y-axis label
-    xlab = "",
-    lwd = 2, #increase line width to 2
-    col = 'steelblue') #change line color to steelblue 
+ggplot(data.frame(x = c(-5, 5)), aes(x = x)) +
+  stat_function(fun = dt, args = list(df = 3)) +
+  theme_minimal() +
+  labs(x = "", y = "") +
+  scale_x_continuous(breaks = c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5))
+
 @
