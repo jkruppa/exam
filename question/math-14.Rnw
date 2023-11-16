@@ -12,11 +12,11 @@
 \paragraph{In der Kartonagenfabrik}
 
 <<>>=
-fold <- c(4, 6, 8) %>% sample(1)
-karton <- c(30, 40, 50) %>% sample(1)
-mm <- c(0.6, 0.7, 0.8) %>% sample(1)
-sb <- c(18, 21, 23) %>% sample(1)
-zaun <- c(100, 120, 130) %>% sample(1)
+fold <- c(4, 6, 8, 5) %>% sample(1)
+karton <- c(30, 40, 50, 60) %>% sample(1)
+mm <- c(0.6, 0.7, 0.8, 0.5) %>% sample(1)
+sb <- c(18, 21, 23, 22, 20) %>% sample(1)
+zaun <- c(100, 120, 130, 90, 110) %>% sample(1)
 
 @
 

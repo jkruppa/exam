@@ -17,11 +17,18 @@ firma <- c("KH Gesund und Sch{\"o}n Components (KH-GSC)",
            "Direct Finanzanlagen Left/Right (D-FL/R)",
            "Healthy Herbs Manufacture International (HeHeMan)")  %>%
   set_names(c("KH-GSC", "UDSysNet", "D-FL/R", "HeHeMan")) %>% sample(1)
-umsatz <- c(260, 275, 290, 310) %>% sample(1)
-steigerung <- c(10, 15, 24, 27) %>% sample(1)
+umsatz <- c(260, 275, 290, 310, 280) %>% sample(1)
+steigerung <- c(10, 15, 24, 27, 18) %>% sample(1)
 partner <- c(280000, 330000, 360000, 380000) %>% sample(1)
 year <- year(Sys.Date()) - 2
-prov <- c(20, 25, 30) %>% sample(1)
+prov <- c(20, 25, 30, 35, 40) %>% sample(1)
+prov_1 <- c(20, 25, 30, 35, 40) %>% sample(1)
+prov_2 <- c(2, 2.5, 3, 1.5, 3.5) %>% sample(1)
+prov_3 <- prov_2 - 1
+prov_4 <- prov_3 - 0.5
+cost_prod <- c(50, 100, 150, 200, 75) %>% sample(1)
+n_partner <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
+income <- c(1500, 2000, 1800, 2100, 2500, 5000) %>% sample(1)
 
 @
 
@@ -51,16 +58,35 @@ Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
 \item Wie viel von dem Umsatz im Jahr 2021 wird im Durchschnitt von jedem
   aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
-  Durchschnitt f{\"u}r jeden aktiven Partner? \textbf{(1 Punkt)}  
+  Durchschnitt f{\"u}r jeden aktiven Partner bei einer Provision von
+  \Sexpr{prov}\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Bei dem folgend
+Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet
+\Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision
+f{\"u}r die erste Stufe betr{\"a}gt \Sexpr{prov_1}\%. F{\"u}r die zweite, dritte und vierte
+Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%, 
+\Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Im Schnitt wirbt jeder Ihrer
+angeworbenen "`Partner"' wiederum \Sexpr{n_partner} Partner f{\"u}r sich selber
+an. Sie wollen \Sexpr{income}EUR im Monat \textit{passiv} erwirtschaften.  
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Tragen 
+\item Wie viele Partner m{\"u}ssen Sie daf{\"u}r auf der 2 Stufe anwerben?
 \end{enumerate}
 
+\begin{center}
+\begin{tabular}{cccc}
+  \toprule
+  \textbf{Stufe} & \textbf{Anzahl Partner}  & \textbf{Umsatz/Stufe} & \textbf{Provision}\\
+  \midrule
+  1 & 0 (Sie selber)  & 50 & 10 \\
+  2 & 3  & 150 & 3 \\
+  3 & 9  & 450 & 9 \\
+  4 & 9  & 450 & 9 \\
+  \bottomrule
+\end{tabular}
+\end{center}
 
 
 
