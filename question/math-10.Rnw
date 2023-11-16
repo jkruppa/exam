@@ -19,11 +19,11 @@ vol <- c(sample(c(77.1, 78.1, 79.7), 1),
 molg <- c(sample(c(28.1, 28.4, 27.9), 1),
          sample(c(15.8, 16.2, 16.5), 1),
          sample(c(11.8, 12.1, 12.5), 1))
-crit_ra <- c(280, 300, 320) %>% sample(1)
-radon_t <- c(3.5, 4.1, 2.8) %>% sample(1)
-polo_t <- c(135, 140, 143) %>% sample(1)
-low_ra <- c(80, 90, 100) %>% sample(1)
-upper <- c(21, 19, 17) %>% sample(1)
+crit_ra <- c(280, 300, 320, 400, 380) %>% sample(1)
+radon_t <- c(3.5, 4.1, 2.8, 1.8, 3.7) %>% sample(1)
+polo_t <- c(135, 140, 143, 180, 160) %>% sample(1)
+low_ra <- c(80, 90, 100, 110, 120) %>% sample(1)
+upper <- c(21, 19, 17, 15, 23) %>% sample(1)
 upper_str <- str_c(upper, ":00")
 mid_str <- str_c(((upper-7)/2+7), ":00")
 @
