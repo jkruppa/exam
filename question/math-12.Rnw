@@ -15,15 +15,16 @@
 job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
          "Ihrer Koalakuschelschule", "Ihrer Faultierpension") %>% sample(1)
 year_out <- c(1859, 1860, 1875) %>% sample(1)
-release <- c(22, 24, 26) %>% sample(1)
+release <- c(28, 26, 30, 32) %>% sample(1)
 release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
 westost <- c(4000, 4100, 4200) %>% sample(1)
 nordsued <- c(3600, 3700, 3800) %>% sample(1)
-wuerfe <- c(8, 12, 11) %>% sample(1)
-year <- c("zw{\"o}lften", "neunten", "elften") %>% sample(1)
-unit_1 <- c("Milliarden", "Millionen") %>% sample(1)
-mort <- c(30, 35, 40) %>% sample(1)
-age <- c(7, 8, 9) %>% sample(1)
+wuerfe <- c(8, 12, 11, 9, 10) %>% sample(1)
+wurf <- c(3, 4, 5, 6, 7) %>% sample(1)
+year <- c("vierten", "f{\"u}nften", "dritten") %>% sample(1)
+unit_1 <- c("Tausend", "Millionen") %>% sample(1)
+mort <- c(32, 30, 35, 40, 37) %>% sample(1)
+age <- c(5, 6, 7, 8, 9) %>% sample(1)
 A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
 a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
 satt_year <- c(9, 14, 18)  %>% sample(1)
@@ -50,23 +51,23 @@ exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
     millions of them! The reason is surprising...}}
 \\
 
-Unter australischen Bedingungen liegt die Zahl der Jungen eines
-Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Jungtieren. Trotz
-fehlender Fressfeinde liegt die Mortalit{\"a}t der S{\"a}uglinge bei
-ca. \Sexpr{mort}\%. Gehen Sie unter australischen Bedingungen von einem
-Wurf pro Weibchen und Jahr aus.
+Unter australischen Bedingungen liegt die Zahl der Jungtiere eines
+Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Tieren pro Wurf. Ein
+Weibchen hat im Durchschnitt \Sexpr{wurf} W{\"u}rfe pro Jahr. Trotz fehlender
+Fressfeinde liegt die Mortalit{\"a}t der S{\"a}uglinge bei \Sexpr{mort}\%.
 
 \begin{enumerate}
 \item Wie viele \Sexpr{unit_1} Kaninchen w{\"u}rden bei einem ungebremsten
-  Wachstum \textit{im \Sexpr{year} Jahr} geboren? \textbf{(2 Punkte)}
-\item Die durchschnittliche, australische Lebenserwartung eines Kaninchens
-  liegt bei \Sexpr{age} Jahren. Wie viele Kaninchen bev{\"o}lkern bei einem
-  ungebremsten Wachstum den australischen Kontinent bevor die ersten,
-  australischen Kaninchen an Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2
+  Wachstum \textit{im \Sexpr{year} Jahr} geboren? Berechnen Sie hierf{\"u}r
+  zuerst die Anzahl an geboren Weibchen im \Sexpr{year} Jahr! \textbf{(2 Punkte)}
+\item Die durchschnittliche, australische Lebenserwartung eines weiblichen
+  Kaninchens liegt bei \Sexpr{age} Jahren. Wie viele weibliche Kaninchen
+  bev{\"o}lkern bei einem ungebremsten Wachstum den australischen Kontinent
+  bevor die ersten Weibchen an Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2
     Punkte)}
 \end{enumerate}
 
-Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der
+Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der gesamten
 Kaninchenpopulation.
 \begin{equation*}
   f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot 2^{-0.1 \cdot t + 3.4}
