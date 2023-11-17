@@ -67,26 +67,30 @@ Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet
 f{\"u}r die erste Stufe betr{\"a}gt \Sexpr{prov_1}\%. F{\"u}r die zweite, dritte und vierte
 Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%, 
 \Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Im Schnitt wirbt jeder Ihrer
-angeworbenen "`Partner"' wiederum \Sexpr{n_partner} Partner f{\"u}r sich selber
+angeworbenen "`Partner"' wiederum \Sexpr{n_partner} Partner f{\"u}r sich selbst
 an. Sie wollen \Sexpr{income}EUR im Monat \textit{passiv} erwirtschaften.  
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Wie viele Partner m{\"u}ssen Sie daf{\"u}r auf der 2 Stufe anwerben?
+\item F{\"u}llen Sie die folgende Tabelle mit den obigen Informationen aus! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \begin{center}
-\begin{tabular}{cccc}
+\begin{tabular}{c|c|c|c}
   \toprule
   \textbf{Stufe} & \textbf{Anzahl Partner}  & \textbf{Umsatz/Stufe} & \textbf{Provision}\\
   \midrule
-  1 & 0 (Sie selber)  & 50 & 10 \\
-  2 & 3  & 150 & 3 \\
-  3 & 9  & 450 & 9 \\
-  4 & 9  & 450 & 9 \\
+  1 & 0 (Sie selber)  &  & \\ \midrule
+  2 & 1  &  &  \\ \midrule
+  3 &   &  &  \\ \midrule
+  4 &   &  &  \\
   \bottomrule
 \end{tabular}
 \end{center}
 
 
-
+\begin{enumerate}
+  \setcounter{enumi}{5}
+\item Wie viele Partner m{\"u}ssen auf der 2 Stufe anwerben um Ihr
+  passives Einkommen zu erreichen? \textbf{(3 Punkte)}
+\end{enumerate}
