@@ -105,7 +105,7 @@ ggplot(plot_tbl, aes(animal, eaten)) +
 In der folgenden Abbildung sehen Sie die
 Bev{\"o}lkerungsentwicklung in Nigeria von 1950 bis ins Jahr 2030 fortgef{\"u}hrt.
 
-<<math-14-c,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
+<<math-14-c,  echo = FALSE, fig.height = 8, fig.width = 9, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(year = c(1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2022, 2025,
                             2030, 2035, 2040, 2045, 2050),
                    people = c(sample(c(36.0, 37.1, 38.1), 1),
@@ -113,7 +113,7 @@ plot_tbl <- tibble(year = c(1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020
                               sample(c(54.1, 55.6, 57), 1),
                               sample(c(70.1, 72.9, 74), 1),
                               sample(c(91.2, 95.2, 100.1), 1),
-                              sample(c(115.1, 122.8, 125.3), 1),
+                              sample(c(120.1, 122.8, 125.3), 1),
                               sample(c(158, 160.8, 163.1), 1),
                               sample(c(182.1, 184.1, 187.1), 1),
                               sample(c(208.3, 208.4), 1),
@@ -130,7 +130,7 @@ ggplot(plot_tbl, aes(year, people)) +
   scale_x_continuous(breaks = c(1950, 1960, 1970, 1980, 1990, 2000,
                                 2010, 2015, 2020, 2022, 2025, 2030,
                                 2035, 2040, 2045, 2050)) +
-  scale_y_continuous(breaks = seq(0, 500, by = 50), limits = c(0, 500)) +
+  scale_y_continuous(breaks = seq(0, 750, by = 50), limits = c(0, 750)) +
   theme(axis.text.x = element_text(angle = -45, hjust = 0))
                                        
 @
