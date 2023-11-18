@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -23,12 +23,16 @@ partner <- c(280000, 330000, 360000, 380000) %>% sample(1)
 year <- year(Sys.Date()) - 2
 prov <- c(20, 25, 30, 35, 40) %>% sample(1)
 prov_1 <- c(20, 25, 30, 35, 40) %>% sample(1)
-prov_2 <- c(2, 2.5, 3, 1.5, 3.5) %>% sample(1)
+prov_2 <- c(2, 2.5, 3, 1.75, 3.25) %>% sample(1)
 prov_3 <- prov_2 - 1
 prov_4 <- prov_3 - 0.5
 cost_prod <- c(50, 100, 150, 200, 75) %>% sample(1)
 n_partner <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
-income <- c(1500, 2000, 1800, 2100, 2500, 5000) %>% sample(1)
+income <- c(1800, 2100, 2500, 3200, 4100, 5000) %>% sample(1)
+unit <- c("zwei", "drei", "vier", "f{\"u}nf") %>% sample(1)
+einstieg <- c(cost_prod * 30, cost_prod * 35, cost_prod * 40, cost_prod * 45) %>% sample(1)
+zins <- c(2.5, 3.5, 4.1, 4.5, 5.0) %>% sample(1)
+month <- c(36, 48, 60, 72) %>% sample(1)
 
 @
 
@@ -44,7 +48,7 @@ abtauchen\footnote{Die Quellen der Inspiration f{\"u}r die Aufgabe waren
   \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus --
     Die meistgesuchte Betr{\"u}gerin der Welt} und der Artikel:
   \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{
-    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.
+    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
 
 Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
 \Sexpr{firma}. Das Unternehmen steigerte den Umsatz um rund
@@ -58,21 +62,22 @@ Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
 \item Wie viel von dem Umsatz im Jahr 2021 wird im Durchschnitt von jedem
   aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
-  Durchschnitt f{\"u}r jeden aktiven Partner bei einer Provision von
+  Durchschnitt f{\"u}r jeden aktiven Partner bei einer direkten Provision von
   \Sexpr{prov}\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet
 \Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision
-f{\"u}r die erste Stufe betr{\"a}gt \Sexpr{prov_1}\%. F{\"u}r die zweite, dritte und vierte
-Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%, 
-\Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Im Schnitt wirbt jeder Ihrer
-angeworbenen "`Partner"' wiederum \Sexpr{n_partner} Partner f{\"u}r sich selbst
-an. Sie wollen \Sexpr{income}EUR im Monat \textit{passiv} erwirtschaften.  
+f{\"u}r die erste Stufe betr{\"a}gt \Sexpr{prov_1}\%. F{\"u}r die zweite, dritte und
+vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%,
+\Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen "`Partner"'
+wirbt wiederum \Sexpr{n_partner} Partner f{\"u}r sich selbst an. Pro Monat
+werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun
+\Sexpr{income}EUR im Monat \textit{passiv} erwirtschaften.
 
 \begin{enumerate}
-  \setcounter{enumi}{4}
-\item F{\"u}llen Sie die folgende Tabelle mit den obigen Informationen aus! \textbf{(2 Punkte)}
+  \setcounter{enumi}{3}
+\item Erg{\"a}nzen Sie die folgende Tabelle mit den obigen Informationen! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \begin{center}
@@ -88,9 +93,23 @@ an. Sie wollen \Sexpr{income}EUR im Monat \textit{passiv} erwirtschaften.
 \end{tabular}
 \end{center}
 
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Wie viele Partner m{\"u}ssen auf der 2 Stufe anwerben um Ihr passives
+  Einkommen zu erreichen? Stellen Sie den Zusammenhang graphisch dar! \textbf{(3 Punkte)}
+\end{enumerate}
+
+Sie mussten zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts
+f{\"u}r \Sexpr{einstieg}EUR kaufen. Diese Einheiten k{\"o}nnen Sie nur direkt
+verkaufen. Leider mussten Sie den Kauf {\"u}ber einen Kredit {\"u}ber
+\Sexpr{zins}\% p.a. {\"u}ber \Sexpr{month} Monate finanzieren.
 
 \begin{enumerate}
-  \setcounter{enumi}{5}
-\item Wie viele Partner m{\"u}ssen auf der 2 Stufe anwerben um Ihr
-  passives Einkommen zu erreichen? \textbf{(3 Punkte)}
+  \setcounter{enumi}{6}
+\item Berechnen Sie die Gesamtsumme, die Sie als Kredit abbezahlen m{\"u}ssen! \textbf{(2 Punkte)}
+\item Wie viele Einheiten m{\"u}ssen Sie pro Monat verkaufen um die anfallenden Zinsen
+  durch die direkte Provision zu erwirtschaften? \textbf{(1 Punkt)}
+\item Wie lange in
+  Monaten ben{\"o}tigen Sie um den Kredit durch die direkte
+  Provision abzubezahlen? \textbf{(1 Punkt)}
 \end{enumerate}
