@@ -41,7 +41,7 @@ points_vec <- ques_points_tbl %>% pull(points)
 textpoints <- sum(points_vec) 
 overallpoints <- textpoints + 20
 
-## Build up the grade table  
+## Build up the grade table
 pre_grade_tbl <- unique(cut(overallpoints:(overallpoints/2), 10)) %>% 
   as_tibble() %>% 
   separate(value, into = c("low", "high"), sep = ",") %>% 
