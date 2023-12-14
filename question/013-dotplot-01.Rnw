@@ -6,7 +6,7 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch") %>% sample(1)
 @ 
 
 Nach einer Bonitur von \Sexpr{plant} mit einer Kontrolle und drei

@@ -9,12 +9,13 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
 cont_vec <- round(rnorm(sample(c(12, 14, 15), 1), 10, 2), 1)
 
 @
 
-Nach einem Experiment z{\"a}hlen Sie folgende Trockengewichte von Sonnenblumen nach einer durchgestandenen Infektion. 
+Nach einem Freilandexperiment bestimmen Sie folgende Trockengewichte von
+\Sexpr{plant} nach einer durchgestandenen Infektion der Pflanzen. 
 
 \begin{center}
 $\Sexpr{cont_vec}$

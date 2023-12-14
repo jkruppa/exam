@@ -16,7 +16,7 @@ deskriptive Ma{\ss}zahlen.
 
 <<>>=
 wanted_vec <- c("Den Mittelwert", "Die Varianz", "Den Median", "Die Range oder Spannweite", "Das 1st Quartile", "Das 3rd Quartile", "Den Interquartileabstand", "Die Standardabweichung") %>%
-  sample(6)
+  sample(5)
 @ 
 
 \begin{enumerate}

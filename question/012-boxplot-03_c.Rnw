@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -22,14 +22,12 @@ sd_range <- c("$\\pm 2s$", "$\\pm 1s$") %>% sample(1)
 \item Zeichnen Sie {\"u}ber die untenstehenden Boxplots die entsprechende
   zugeh{\"o}rige Verteilung! \textbf{(2 Punkte)} 
 \item Zeichnen Sie unter die untenstehenden Boxplots die entsprechende
-  zugeh{\"o}rige Beobachtungen! \textbf{(2 Punkte)}
+  zugeh{\"o}rige Beobachtungen als Stiche! \textbf{(2 Punkte)}
 \item Wieviel Prozent der Beobachtungen fallen in das IQR? Erg{\"a}nzen Sie die
-  Abbildung entsprechend um den Bereich! \textbf{(1 Punkt)}
+  Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
 \item Wieviel Prozent der Beobachtungen fallen in \Sexpr{sd_range} unter
   der Annahme einer Normalverteilung?  \textit{Wenn m{\"o}glich}, erg{\"a}nzen Sie
   die Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie die statistischen Ma{\ss}zahlen zu einer Verteilung und
-  einem Boxplot! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \vspace*{8cm}

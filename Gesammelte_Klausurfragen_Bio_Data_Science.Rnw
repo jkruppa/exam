@@ -436,6 +436,24 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[33])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Multiple Gruppenvergleiche}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung f{\"u}r multiple Vergleiche}
+  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{Kapitel 31.7 Compact letter display}
+  \end{itemize}
+\end{graybox}
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[59])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[60])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[61])} 
+\clearpage
+% -----------------------------------------------------------------------
   \begin{graybox}{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -549,24 +567,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \clearpage
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(text_questions_vec[58])} 
-\clearpage
-% -----------------------------------------------------------------------
-\begin{graybox}{Multiple Gruppenvergleiche}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung f{\"u}r multiple Vergleiche}
-  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{Kapitel 31.7 Compact letter display}
-  \end{itemize}
-\end{graybox}
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[59])} 
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[60])} 
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[61])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{R Programmierung}

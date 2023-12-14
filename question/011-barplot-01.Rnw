@@ -33,9 +33,9 @@ gen_data <- function(...){
 }
 @ 
 
-Nach einem Gew{\"a}chshausexperiment mit drei \Sexpr{type} als Behandlung 
-ergibt sich die folgende Datentabelle mit dem gemessenen Frischgewicht
-(\textit{freshmatter}) von \Sexpr{plant}.
+In einem Gew{\"a}chshausexperiment mit drei \Sexpr{type} als Behandlung
+(\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
+gemessenen Frischgewicht (\textit{freshmatter}) von \Sexpr{plant}.
 
 <<barplot-01, results='asis', echo = FALSE>>=
 

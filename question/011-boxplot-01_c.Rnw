@@ -32,9 +32,9 @@ gen_data <- function(...){
 }
 @ 
 
-Nach einem Experiment mit zwei \Sexpr{type} ergibt sich die
-folgende Datentabelle mit dem gemessenen Trockengewicht
-(\textit{drymatter})  von \Sexpr{plant}. 
+Nach einem Freilandexperiment mit zwei \Sexpr{type} als Behandlung
+(\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
+gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
 
 <<boxplot-01, results='asis', echo = FALSE>>=
 data_tbl <- map(1:length(groups_vec), gen_data) %>% 
