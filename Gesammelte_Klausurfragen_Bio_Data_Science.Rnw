@@ -13,7 +13,11 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
                cache.path='cache/', fig.pos='H')
 ## get the paths
-exam_path <- file.path(path_home(), "work/GitHub/exam")
+if(str_detect(path_home(), "^C:")){
+  exam_path <- file.path(path_home(), "Documents/GitHub/exam")
+} else {
+  exam_path <- file.path(path_home(), "work/GitHub/exam")  
+}
 init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
@@ -80,14 +84,16 @@ grade_tbl <- pre_grade_tbl %>%
 
 \begin{graybox}{Inhalte der Klausur nach Modul}  
   \small
-  \textcolor{red}{\textit{Die folgende Einordnung der Themenkomplexe zu den Modulen dient zur Orientierung. Einzelne Klausuren k{\"o}nnen und werden davon abweichen. Die Angaben hier sind daher ohne Gew{\"a}hr.}}\\[1Ex]
+  \textcolor{red}{\textit{Die folgende Einordnung der Themenkomplexe zu den
+      Modulen dient zur Orientierung. Einzelne Klausuren k{\"o}nnen und werden
+      davon abweichen. Die Angaben hier sind daher ohne Gew{\"a}hr. Bitte immer
+    auf die Inhalte der entsprechenden Vorlesung achten!}}\\[1Ex]
   \textit{Mathematik \& Statistik} 
   \begin{itemize}
   \item 1 Frage zur deskriptiven Statistik
   \item 1 Frage zum t-Test
   \item 1 Frage zur einfaktoriellen ANOVA
-  \item 0 -- 1 Frage(n) zur R Programmierung
-  \item 3 -- 4 Fragen zur Mathematik
+  \item 4 Fragen zur Mathematik
   \end{itemize} 
   \textit{Statistik} 
   \begin{itemize}
@@ -96,8 +102,9 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zum t-Test
   \item 1 Frage zur einfaktoriellen ANOVA
   \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
-  \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder diagnostischen Testen
-  \item 1 Frage zur R Programmierung
+  \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder
+    diagnostischen Testen
+  \item 1 Offene Frage aus den Themen
   \end{itemize} 
   \textit{Angewandte Statistik f{\"u}r Bioverfahrenstechnik } 
   \begin{itemize}
@@ -107,7 +114,7 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zur einfaktoriellen ANOVA
   \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
   \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder diagnostischen Testen
-  \item 1 Frage zur R Programmierung
+  \item 1 Offene Frage aus den Themen
   \end{itemize} 
   \textit{Angewandte Statistik und Versuchswesen} 
   \begin{itemize}
@@ -117,7 +124,7 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zur zweifaktoriellen ANOVA
   \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
   \item 1 Frage zu multiplen Gruppenvergleichen
-  \item 1 Frage zur R Programmierung
+  \item 1 Offene Frage aus den Themen
   \end{itemize} 
   \textit{Biostatistik}
   \begin{itemize}
@@ -125,7 +132,7 @@ grade_tbl <- pre_grade_tbl %>%
   \item 1 Frage zum statistischen Testen
   \item 1 Frage zu der zweifaktoriellen ANOVA
   \item 1 Frage zu der multiplen Regression
-  \item 1 Frage zu der R Programmierung
+  \item 1 Offene Frage aus den Themen
   \item 2 Fragen abh{\"a}ngig von der Vertiefung (Pflanze- oder Nutztierwissenschaften)
   \end{itemize} 
 \end{graybox}
@@ -436,24 +443,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[33])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Multiple Gruppenvergleiche}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung f{\"u}r multiple Vergleiche}
-  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{Kapitel 31.7 Compact letter display}
-  \end{itemize}
-\end{graybox}
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[59])} 
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[60])} 
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[61])} 
-\clearpage
-% -----------------------------------------------------------------------
   \begin{graybox}{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -569,39 +558,24 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(text_questions_vec[58])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{R Programmierung}
+\begin{graybox}{Multiple Gruppenvergleiche}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item \href{https://jkruppa.github.io/programing-preface.html}{Kapitel 9ff. Programmieren in R}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung f{\"u}r multiple Vergleiche}
+  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{Kapitel 31.7 Compact letter display}
   \end{itemize}
-In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt. \\
-
-In der Klausur zu dem Modul \textbf{Statistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
-
-In der Klausur zu dem Modul \textbf{Angewandte Statistik f{\"u}r Bioverfahrenstechnik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
-
-In der Klau sur zu dem Modul \textbf{Angewandte Statistik und Versuchswesen} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
-
-In der Klausur zu dem Modul \textbf{Biostatistik} wird \textit{eine Aufgabe} aus den folgenden Aufgaben zur R Programmierung ausgew{\"a}hlt.  \\
-
 \end{graybox}
 \clearpage
-% -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[62])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[63])} 
-\clearpage
-% -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[64])} 
-\clearpage
-% -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[65])} 
-\clearpage
-% -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[66])} 
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[59])} 
 \clearpage
 % ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[60])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(text_questions_vec[61])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Mathematik}
 Mehr Informationen zu den Aufgaben in den \href{https://jkruppa.github.io/math/}{Skript Mathematik} und den entsprechenden Kapiteln.\\
 
