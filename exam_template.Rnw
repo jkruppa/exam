@@ -10,6 +10,7 @@ conflict_prefer("filter", "dplyr")
 conflict_prefer("mutate", "dplyr")
 conflict_prefer("extract", "magrittr")
 conflict_prefer("set_names", "magrittr")
+conflicts_prefer(plyr::mutate)
 conflicts_prefer(dplyr::arrange)
 ##
 options(show.signif.stars = FALSE)
@@ -19,7 +20,7 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
                cache.path='cache/', fig.pos='H')
 ## get the paths
-exam_path <- file.path(path_home(), "Documents/GitHub/exam")
+exam_path <- file.path(path_home(), "work/GitHub/exam")
 init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")

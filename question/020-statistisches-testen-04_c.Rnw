@@ -13,12 +13,12 @@ s_or_n <- sample(c("Varianz $s_p$", "Fallzahl $n$"), 1)
 
 alpha <- c(90, 99) %>% sample(1)
 
-ki_sample <- c("Ein signifikantes, relevantes 95\\%-Konfidenzintervall",
-               "Ein signifikantes, nicht relevantes 95\\%-Konfidenzintervall",
-               "Ein nicht signifikantes, nicht relevantes 95\\%-Konfidenzintervall",
-               str_c("Ein 95\\%-Konfidenzintervall mit h{\"o}herer ", s_or_n, " in der Stichprobe als der Rest der 95\\%-Konfidenzintervalle"),
-               str_c("Ein 95\\%-Konfidenzintervall mit niedriger ", s_or_n, " in der Stichprobe als der Rest 95\\%-der Konfidenzintervalle"),
-               str_c("Ein signifikantes, relevantes ", alpha,"\\%-Konfidenzintervall.")) %>%
+ki_sample <- c("Ein signifikantes, relevantes 95\\% Konfidenzintervall",
+               "Ein signifikantes, nicht relevantes 95\\% Konfidenzintervall",
+               "Ein nicht signifikantes, nicht relevantes 95\\% Konfidenzintervall",
+               str_c("Ein 95\\% Konfidenzintervall mit h{\"o}herer ", s_or_n, " in der Stichprobe als der Rest der 95\\% Konfidenzintervalle"),
+               str_c("Ein 95\\% Konfidenzintervall mit niedriger ", s_or_n, " in der Stichprobe als der Rest 95\\% der Konfidenzintervalle"),
+               str_c("Ein signifikantes, relevantes ", alpha,"\\% Konfidenzintervall.")) %>%
   sample
 
 effect <- c("dem mittleren Trockengewicht nach D{\"u}ngergabe",
