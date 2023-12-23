@@ -4,18 +4,18 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/0xc0jIPeiyw}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\hfill\href{}{\includegraphics[width = 2cm]{img/caution}} %%youtube
+\hspace{2Ex}
 %% --------------------------------------------------------------------
 
 <<>>=
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-type <- c("D{\"u}ngestufen ($ctrl$und $high$)",
-          "Lichtstufen ($none$ und $600lm$)",
-          "L{\"u}ftungssystemen und Folientunneln ($ctrl$ und $tornado$)",
-          "Substrattypen ($torf$ und $70p30n$)",
-          "Bew{\"a}sserungstypen ($low$ und $high$)",
-          "Genotypen ($AA$ und $BB$)") %>% sample(1)
+type <- c("D{\"u}ngestufen ($ctrl$, $low$ und $high$)",
+          "Lichtstufen ($none$, $200lm$ und $600lm$)",
+          "L{\"u}ftungssystemen und Folientunneln ($ctrl$, $storm$ und $tornado$)",
+          "Substrattypen ($torf$, $40p60n$ und $70p30n$)",
+          "Bew{\"a}sserungstypen ($low$, $mid$ und $high$)",
+          "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
 groups_vec <- type %>% 
   str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
   str_subset("\\$") %>% 
@@ -36,14 +36,20 @@ Nach einem Freilandexperiment mit zwei \Sexpr{type} als Behandlung
 (\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
 gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
 
-<<boxplot-01, results='asis', echo = FALSE>>=
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%  
+<<boxplot-02-zer, results='asis', echo = FALSE, fig.height = 4, fig.width = 4.5, fig.align = "center", message = FALSE>>=
+
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
   set_names(c("treatment", "freshmatter")) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
-kable(data_tbl, booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
+ggplot(data_tbl, aes(x = treatment, y = freshmatter, fill = treatment)) + 
+  theme_minimal() +
+  geom_boxplot(width = 0.5, coef = 6) +
+  labs(x = "", y = "") +
+  theme(legend.position = "none") +
+  scale_fill_grey(start = 0.4)
+
 @
 
 \begin{enumerate}

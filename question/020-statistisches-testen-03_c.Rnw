@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/32JjH1eyuTU}{\includegraphics[width =
@@ -15,15 +15,17 @@ sign_vec  <- c("+", "-") %>%
 @ 
 
 Im Folgenden ist die t-Verteilung unter der Anahme der G{\"u}ltigkeit der
-Nullhypothese abgebildet. Erg{\"a}nzen Sie die Abbildung wie folgt.
+Nullhypothese abgebildet. 
 
 \begin{enumerate}
-\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! \textbf{(2 Punkte)} 
-\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! \textbf{(2 Punkte)} 
+\item Erg{\"a}nzen Sie die Beschriftung der $x$-Achse! \textbf{(1 Punkt)}
 \item Erg{\"a}nzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
 \item Erg{\"a}nzen Sie "`$A = 0.95$"'! \textbf{(1 Punkt)}
 \item Zeichnen Sie $T_{\alpha=5\%}$ in die Abbildung! \textbf{(1 Punkt)} 
-\item Zeichnen Sie $\Sexpr{sign_vec}T_{calc}$ in die Abbildung! \textbf{(1 Punkt)} 
+\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! \textbf{(2 Punkte)} 
+\item Zeichnen Sie $\Sexpr{sign_vec}T_{calc}$ in die Abbildung! \textbf{(1
+    Punkt)}
+\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! \textbf{(2 Punkte)}   
 \end{enumerate}
 
 <<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 5, fig.width = 6, fig.align = "center", message = FALSE>>=

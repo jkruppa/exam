@@ -8,22 +8,19 @@
 <<>>=
 d_vec <- c("\\Delta\\uparrow", "\\Delta\\downarrow") %>% sample(1)
 s_vec <- c("s\\uparrow", "s\\downarrow") %>% sample(1)
+ci <- c("99\\%-igen Konfidenzintervall", "90\\%-igen Konfidenzintervall") %>% sample(1)
 @ 
 
-Gegeben ist die vereinfachte Formel f{\"u}r den Student t-Test mit der
-gepoolten Standardabweichung $s_p$ und gleicher Gruppengr{\"o}sse $n_g$ der
-beiden Gruppen.
-
-\begin{equation*}
-  \label{eq:1}
-  T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{\tfrac{2}{n_g}}}
-\end{equation*}
+Gegeben ist die Formel f{\"u}r den Student t-Test. Welche
+Auswirkung hat die {\"A}nderungen der jeweiligen statistischen Masszahl
+$\Delta$, $s$ und $n$ auf die Teststistik $T_{calc}$, den p-Wert
+$Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\alpha}$?
 
 \begin{enumerate}
-\item Welche Auswirkung hat die {\"A}nderungen der jeweiligen statistischen
-  Masszahl $\Delta$, $s$ und $n$ auf die Teststistik $T_{calc}$, den p-Wert
-  $Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\alpha}$? F{\"u}llen
-Sie hierzu die untenstehende Tabelle aus! \textbf{(6 Punkte)}
+\item Visualisieren Sie den Zusammenhang zwischen der Teststatiatik
+  $T_{calc}$ und dem p-Wert $Pr(D|H_0)$ f{\"u}r sich {\"a}nderende $T_{calc}$-Werte!
+  \textbf{(2 Punkte)}  
+\item  F{\"u}llen Sie die untenstehende Tabelle aus! \textbf{(6 Punkte)}
 \begin{center}
   \large
   \begin{tabular}[c]{l|c|c|c|l|c|c|c}
@@ -45,12 +42,6 @@ Sie hierzu die untenstehende Tabelle aus! \textbf{(6 Punkte)}
     \hline
   \end{tabular}
 \end{center}
-\item Visualisieren Sie anhand von einer Normalverteilung folgende {\"A}nderung in den
-  Daten.  
-  \begin{enumerate}
-  \item In einer Abbildung f{\"u}r den Fall $\Sexpr{d_vec[1]}$. Beschriften Sie
-    $\Sexpr{d_vec[1]}$ in der Abbildung! \textbf{(2 Punkte)}
-  \item In einer Abbildung f{\"u}r den Fall $\Sexpr{s_vec[1]}$. Beschriften Sie
-    $\Sexpr{s_vec[1]}$ in der Abbildung! \textbf{(2 Punkte)}
-  \end{enumerate}
+\item Visualisieren Sie ein 95\%-iges Konfidenzintervall im Vergleich
+  zu einem \Sexpr{ci}! Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)} 
 \end{enumerate}
