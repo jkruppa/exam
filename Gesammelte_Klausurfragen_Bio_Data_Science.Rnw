@@ -26,10 +26,19 @@ img_path <- file.path(question_path, "img")
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
-text_questions_vec <- str_subset(questions_vec, "mc|math|tier", negate = TRUE)
+text_questions_vec <- str_subset(questions_vec, "mc|math|tier|stat_test", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
 math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
 tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
+stat_test_questions_vec <- str_subset(questions_vec, "stat_test-", negate = FALSE)
+desc_stat_questions_vec <- str_subset(questions_vec, "desc_stat-", negate = FALSE)
+ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
+anova_questions_vec <- str_subset(questions_vec, "/anova-", negate = FALSE)
+chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FALSE)
+linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
+nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
+multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
+
 
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
@@ -239,7 +248,7 @@ grade_tbl <- pre_grade_tbl %>%
 
 \begin{graybox}{Rechen- und Textaufgaben}
   \begin{itemize}
-  \item Die Tabelle wird vom Dozenten ausgef{\"u}llt.
+  \item Die Tabelle wird vom Dozenten ausgefüllt.
   \end{itemize}
   \begin{center}
     \large
@@ -319,43 +328,43 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[1])} 
+\Sexpr{knit_child(desc_stat_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[2])} 
+\Sexpr{knit_child(desc_stat_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[3])} 
+\Sexpr{knit_child(desc_stat_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[4])} 
+\Sexpr{knit_child(desc_stat_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[5])} 
+\Sexpr{knit_child(desc_stat_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[6])} 
+\Sexpr{knit_child(desc_stat_questions_vec[6])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[7])} 
+\Sexpr{knit_child(desc_stat_questions_vec[7])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[8])} 
+\Sexpr{knit_child(desc_stat_questions_vec[8])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[9])} 
+\Sexpr{knit_child(desc_stat_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[10])} 
+\Sexpr{knit_child(desc_stat_questions_vec[10])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[11])} 
+\Sexpr{knit_child(desc_stat_questions_vec[11])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[12])} 
+\Sexpr{knit_child(desc_stat_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[13])} 
+\Sexpr{knit_child(desc_stat_questions_vec[13])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Statistisches Testen}
@@ -367,19 +376,19 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[14])} 
+\Sexpr{knit_child(stat_test_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[15])} 
+\Sexpr{knit_child(stat_test_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[16])} 
+\Sexpr{knit_child(stat_test_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[17])} 
+\Sexpr{knit_child(stat_test_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[18])} 
+\Sexpr{knit_child(stat_test_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Der t-Test}
@@ -390,25 +399,25 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[19])} 
+\Sexpr{knit_child(ttest_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[20])} 
+\Sexpr{knit_child(ttest_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[21])} 
+\Sexpr{knit_child(ttest_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[22])} 
+\Sexpr{knit_child(ttest_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[23])} 
+\Sexpr{knit_child(ttest_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[24])} 
+\Sexpr{knit_child(ttest_questions_vec[6])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[25])} 
+\Sexpr{knit_child(ttest_questions_vec[7])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Die ANOVA}
@@ -419,28 +428,46 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[26])} 
+\Sexpr{knit_child(anova_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[27])} 
+\Sexpr{knit_child(anova_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[28])} 
+\Sexpr{knit_child(anova_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[29])} 
+\Sexpr{knit_child(anova_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[30])} 
+\Sexpr{knit_child(anova_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[31])} 
+\Sexpr{knit_child(anova_questions_vec[6])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[32])} 
+\Sexpr{knit_child(anova_questions_vec[7])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[33])} 
+\Sexpr{knit_child(anova_questions_vec[8])} 
+\clearpage
+% -----------------------------------------------------------------------
+\begin{graybox}{Multiple Gruppenvergleiche}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel 20.3 Adjustierung für multiple Vergleiche}
+  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html}{Kapitel 31.7 Compact letter display}
+  \end{itemize}
+\end{graybox}
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(multcomp_questions_vec[1])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(multcomp_questions_vec[2])} 
+\clearpage
+% ----------------------------------------------------------------------- 
+\Sexpr{knit_child(multcomp_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
   \begin{graybox}{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
@@ -452,92 +479,22 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[34])} 
+\Sexpr{knit_child(chisquare_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[35])} 
+\Sexpr{knit_child(chisquare_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[36])} 
+\Sexpr{knit_child(chisquare_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[37])} 
+\Sexpr{knit_child(chisquare_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[38])} 
+\Sexpr{knit_child(chisquare_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[39])} 
-\clearpage
-% -----------------------------------------------------------------------
-\begin{graybox}{Simple lineare Regression}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-basic.html}{Kapitel 32 - Simple lineare Regression}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel 33 - Ma{\ss}zahlen der Modelg{\"u}te}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel 34 - Korrelation}
-  \end{itemize}
-\end{graybox}
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[40])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[41])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[42])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[43])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[44])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[45])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[46])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[47])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[48])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[49])} 
-\clearpage
-% -----------------------------------------------------------------------
-\begin{graybox}{Multiple lineare Regression}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-modeling-basic.html}{Kapitel 35 - Multiple lineare Regression}
-  \item \href{https://jkruppa.github.io/stat-modeling-gaussian.html}{Kapitel 40 - Gaussian Regression}
-  \item \href{https://jkruppa.github.io/stat-modeling-poisson.html}{Kapitel 41 - Poisson Regression}
-  \item \href{https://jkruppa.github.io/stat-modeling-logistic.html}{Kapitel 43 - Logistische Regression}
-  \item \href{https://jkruppa.github.io/stat-modeling-mixed.html}{Kapitel 44 - Lineare gemischte Modelle}
-  \end{itemize}
-\end{graybox}
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[50])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[51])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[52])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[53])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[54])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[55])} 
+\Sexpr{knit_child(chisquare_questions_vec[6])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Nicht parametrische Tests}
@@ -549,37 +506,63 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(text_questions_vec[56])} 
+\Sexpr{knit_child(nonpar_questions_vec[1])} 
 \clearpage
 % ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[57])} 
+\Sexpr{knit_child(nonpar_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------  
-\Sexpr{knit_child(text_questions_vec[58])} 
+\Sexpr{knit_child(nonpar_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Multiple Gruppenvergleiche}
+\begin{graybox}{Simple lineare Regression \& Korrelation}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html#sec-statistisches-testen-alpha-adjust}{Kapitel 20.3 Adjustierung f{\"u}r multiple Vergleiche}
-  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html#sec-compact-letter}{Kapitel 31.7 Compact letter display}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-basic.html}{Kapitel 32 - Simple lineare Regression}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel 33 - Maßzahlen der Modelgüte}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel 34 - Korrelation}
   \end{itemize}
 \end{graybox}
 \clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[59])} 
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[1])} 
 \clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[60])} 
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[2])} 
 \clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(text_questions_vec[61])} 
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[3])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[4])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[5])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[6])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[7])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[8])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[9])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[10])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[11])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(linreg_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Mathematik}
 Mehr Informationen zu den Aufgaben in den \href{https://jkruppa.github.io/math/}{Skript Mathematik} und den entsprechenden Kapiteln.\\
-
-In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei bis vier Aufgaben aus den folgenden Aufgaben zur Mathematik ausgew{\"a}hlt. \\
 \end{graybox}
 \clearpage
 % -----------------------------------------------------------------------  
@@ -647,9 +630,9 @@ In der Klausur zu dem Modul \textbf{Mathematik \& Statistik} werden drei bis vie
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Angewandte Nutztier- und Pflanzenwissenschaften (M.Sc.)}
-  Im Rahmen der Klausur zu dem Modul "`Biostatistik"' werden auch Fragen
-  nur f{\"u}r die Studierenden des Schwerpunktes Nutztierwissenschaften
-  gestellt. Im Folgenden daher eine lose Sammlung von m{\"o}glichen Fragen zu
+  Im Rahmen der Klausur zu dem Modul "Biostatistik" werden auch Fragen
+  nur für die Studierenden des Schwerpunktes Nutztierwissenschaften
+  gestellt. Im Folgenden daher eine lose Sammlung von möglichen Fragen zu
   diesem Themenkomplex.
 \end{graybox}
 \clearpage

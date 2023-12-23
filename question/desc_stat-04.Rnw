@@ -33,7 +33,7 @@ gen_data <- function(...){
 @ 
 
 Nach einem Freilandexperiment mit zwei \Sexpr{type} als Behandlung
-(\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
+(\textit{treatment}) ergibt sich die folgende Boxplots mit dem
 gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
 
 <<boxplot-02-zer, results='asis', echo = FALSE, fig.height = 4, fig.width = 4.5, fig.align = "center", message = FALSE>>=
@@ -46,19 +46,20 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
 ggplot(data_tbl, aes(x = treatment, y = freshmatter, fill = treatment)) + 
   theme_minimal() +
   geom_boxplot(width = 0.5, coef = 6) +
-  labs(x = "", y = "") +
+  labs(x = "", y = "Trockengewicht in [kg]") +
   theme(legend.position = "none") +
   scale_fill_grey(start = 0.4)
 
 @
 
 \begin{enumerate}
-\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots f{\"u}r die
-  zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
-  \textbf{(6 Punkte)}
-\item Beschriften Sie \textit{einen} der beiden Boxplots mit den g{\"a}ngigen
+\item Erstellen Sie eine Tabelle mit den statistischen Ma{\ss}zahlen aus der
+  obigen Abbildung der drei Boxplots! \textit{Beachten Sie die korrekte
+    Darstellungsform der statistischen Ma{\ss}zahlen!} \textbf{(3 Punkte)}
+\item Beschriften Sie \textit{einen} der Boxplots mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
-  \Sexpr{plant} erwarten w{\"u}rden, wie sehen dann die beiden Boxplots aus?
-  \textbf{(1 Punkt)}
+\item Erstellen Sie einen beispielhaften Datensatz, aus dem die drei
+  Boxplots \textit{m{\"o}glicherweise} erstellt wurden, im \Rlogo {\"u}blichen Format! \textbf{(2 Punkte)}
+\item Erwarten Sie einen Unterschied zwischen den Behandlungen? Begr{\"u}nden
+  Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}

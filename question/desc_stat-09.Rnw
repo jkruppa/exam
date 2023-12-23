@@ -1,31 +1,29 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (6 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/ORHSPTCdfeY}{\includegraphics[width =
+\hfill\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-cont_vec <- round(rnorm(sample(c(12, 14, 15), 1), 10, 2), 1)
+count_vec <- rpois(sample(c(30, 27, 33), 1), 4)
+
 
 @
 
-Nach einem Freilandexperiment bestimmen Sie folgende Trockengewichte von
-\Sexpr{plant} nach einer durchgestandenen Infektion der Pflanzen. 
+Nach einem Gew{\"a}chshausexperiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den
+Bl{\"a}ttern von \Sexpr{plant} nach einer durchgestandenen Infektion der Pflanze. 
 
 \begin{center}
-$\Sexpr{cont_vec}$
+$\Sexpr{count_vec}$
 \end{center}
 
 \begin{enumerate}
-\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu
-  visualisieren! (\textbf{3 Punkte})
- \item Erl{\"a}utern Sie Ihr Vorgehen um ein Histogramm f{\"u}r kontinuierliche
-  Daten zu zeichnen!  (\textbf{2 Punkte})
+\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
 \item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
 \item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten in der Abbildung! \textbf{(1
     Punkt)}  

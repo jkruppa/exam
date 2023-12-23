@@ -24,7 +24,8 @@ data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
   sample_n(size = nrow(.))
 
 
-preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE) 
+preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
+preprint$null.value <- "[condensed]"
 
 preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
   sample(1)

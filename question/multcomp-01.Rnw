@@ -1,0 +1,67 @@
+\section{Aufgabe \hfill (8 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+ \hfill\href{https://youtu.be/hr_jPd1hpKY}{\includegraphics[width =
+   2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
+In einem Experiment zur Dosiswirkung wurden verschiedene Dosisstufen mit
+einer Kontrollgruppe vergleichen. Es wurden verschiedene t-Test f{\"u}r den
+Mittelwertsvergleich gerechnet und es ergab sich folgende Tabelle mit den
+rohen p-Werten (\textit{Raw p-value}).
+
+
+<<multcomp-01-a, echo = FALSE>>=
+
+pval_vec <- c(0.001, 0.02, 0.012, 0.03,
+              0.34, 0.76, 0.06, 0.08,
+              0.0012, 0.23, 0.002, 0.07) %>%
+  set_names(c("dose 10 - ctrl", "dose 15 - ctrl", "dose 20 - ctrl", "dose 25 - ctrl",
+          "dose 30 - ctrl", "dose 35 - ctrl", "dose 40 - ctrl", "dose 50 - ctrl",
+          "dose 60 - ctrl", "dose 70 - ctrl", "dose 80 - ctrl", "dose 90 - ctrl")) %>% 
+  sample(sample(c(4, 5, 6), 1))
+
+tibble(Vergleich = names(pval_vec),
+       pval = pval_vec,
+       adj = c(""),
+       reject = c("")) %>%
+  set_names(c("Vergleich", "Raw p-value", "Adjusted p-value", "Reject Null")) %>% 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position", font_size = 12)
+
+@
+
+
+%\begin{center}
+%  \Large
+%  \begin{tabular}{c|c|c|c}
+%    \textbf{Vergleich} & \textbf{Raw p-val} & \textbf{Adjusted p-val} &
+%                                                                        \textbf{Reject $\boldsymbol{H_0}$} \strut\\
+%    \hline
+%    dose 10 - ctrl  & \Sexpr{pval_vec[1]} &  &\strut\\
+%    \hline
+%    dose 15 - ctrl  & \Sexpr{pval_vec[2]} & &\strut\\
+%    \hline
+%    dose 20 - ctrl  & \Sexpr{pval_vec[3]} & &\strut\\
+%    \hline
+%    dose 40 - ctrl  & \Sexpr{pval_vec[4]} & &\strut\\
+%  \end{tabular}
+%\end{center}
+
+\begin{enumerate}
+\item F{\"u}llen Sie die Spalte "`Adjusted p-value"' mit den adjustierten
+  p-Werten nach Bonferoni aus! \textbf{(4 Punkte)}
+\item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese weiter
+  abgelehnt werden kann. Tragen Sie Ihre Entscheidung in die obige Tabelle
+  ein. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie warum die p-Werte bei multiplen Vergleichen
+  adjustiert werden m{\"u}ssen! \textbf{(2 Punkte)}
+\end{enumerate}
+
+\vspace{1Ex}
+
+

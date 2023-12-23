@@ -34,7 +34,7 @@ gen_data <- function(...){
 @ 
 
 In einem Gew{\"a}chshausexperiment mit drei \Sexpr{type} als Behandlung
-(\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
+(\textit{treatment}) ergibt sich die folgende Barplots mit dem
 gemessenen Frischgewicht (\textit{freshmatter}) von \Sexpr{plant}.
 
 
@@ -53,7 +53,7 @@ stat_tbl <- data_tbl %>%
 ggplot(stat_tbl, aes(x = treatment, y = mean, fill = treatment)) + 
   theme_minimal() +
   geom_bar(stat = "identity", width = 0.5) +
-  labs(x = "", y = "") +
+  labs(x = "", y = "Frischgewicht in [kg]") +
   theme(legend.position = "none") +
   geom_errorbar(aes(ymin = mean-sd, ymax = mean+sd),
                 width = 0.2) +
@@ -62,12 +62,11 @@ ggplot(stat_tbl, aes(x = treatment, y = mean, fill = treatment)) +
 @
 
 \begin{enumerate}
-\item Zeichnen Sie in \textit{einer} Abbildung die Barplots f{\"u}r die
-  Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
-  \textbf{(4 Punkte)}
-\item Beschriften Sie \textit{einen} Barplot mit den g{\"a}ngigen
-  statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
-  \Sexpr{plant} erwarten w{\"u}rden, wie sehen dann die Barplots aus?
-  \textbf{(1 Punkt)}
+\item Erstellen Sie eine Tabelle mit den statistischen Ma{\ss}zahlen aus der
+  obigen Abbildung der drei Barplots! \textit{Beachten Sie die korrekte
+    Darstellungsform der statistischen Ma{\ss}zahlen!} \textbf{(3 Punkte)}
+\item Erstellen Sie einen beispielhaften Datensatz, aus dem die drei
+  Barplots \textit{m{\"o}glicherweise} erstellt wurden, im \Rlogo {\"u}blichen Format! \textbf{(2 Punkte)}
+\item Erwarten Sie einen Unterschied zwischen den Behandlungen? Begr{\"u}nden
+  Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}

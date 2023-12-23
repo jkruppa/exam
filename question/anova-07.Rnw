@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/2qG1Dws0MJo}{\includegraphics[width =
@@ -18,12 +18,11 @@ inter_vec <- c("eine schwache", "eine starke", "keine") %>% sample(2)
 \begin{enumerate}
 \item Visualisieren Sie in zwei getrennten Abbildungen 
   \Sexpr{inter_vec[1]} und \Sexpr{inter_vec[2]} Interaktion zwischen
-  den Faktoren $f_1$ und $f_2$! \textbf{(2 Punkte)}
+  den Faktoren $f_1$ und $f_2$! \textbf{(4 Punkte)}
 \item Erkl{\"a}ren Sie den Unterschied zwischen den beiden St{\"a}rken der Interaktion!
   \textbf{(2 Punkte)}
 \item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist
-  dann das weitere Vorgehen bei einem Posthoc-Test? Benennen Sie zwei
-  m{\"o}gliche Vorgehen!
+  dann das weitere Vorgehen bei einem Posthoc-Test? 
   \textbf{(2 Punkte)}
 \end{enumerate}
 
