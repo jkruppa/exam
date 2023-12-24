@@ -1,18 +1,20 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-var_vec <- c("einen Boxplot", "ein Histogramm", "einen Dotplot") %>% sample(1)
+var_vec <- c("Boxplot", "Barplot") %>% sample(1)
 @
 
-Die empfohlene Mindestanzahl an Beobachtungen f{\"u}r \Sexpr{var_vec} sind...
+Der \Sexpr{var_vec} stellt folgende statistische Ma{\ss}zahlen in einer
+Abbildung dar. Damit geh{\"o}rt der \Sexpr{var_vec} zu einem der am meisten
+genutzten statistischen Verfahren zur Visualisierung von Daten. 
 
 <<mc-desc-05, results='asis', echo = FALSE>>=
 
-questions_vec <- c('5 und mehr Beobachtungen.',
-                   '2-5 Beobachtungen.',
-                   'mindestens 20 Beobachtungen.',
-                   '1 Beobachtung.',
-                   '10 Beobachtungen.') %>%
+questions_vec <- c('Den Mittelwert und die Standardabweichung.',
+                   'Den Mittelwert und die Varianz.',
+                   'Den Median und die Quartile.',
+                   'Den Median und die Standardabweichung.',
+                   'Den Mittelwert sowie den Median und die Streuung.') %>%
   sample
 
 

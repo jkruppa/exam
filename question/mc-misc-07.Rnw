@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage {\"u}ber Cook's d und Cohen's d ist richtig? 
+
+<<mc-desc-04, results='asis', echo = FALSE>>=
+
+questions_vec <- c("Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um einen standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.",
+                   "Wir nutzen Cohen's d um Outlier in den Daten zu finden und Cook's d um einen standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.",
+                   "Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um standardisierte Outlier f{\"u}r Gruppenvergeliche zu erhalten.",
+                   "Wir nutzen Cook's d um Outlier in den Daten zu finden. Cohen's d findet auch Outlier, ist aber ein veraltetetes Konzept in der Statistik.",
+                   "Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um einen nicht standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.") %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

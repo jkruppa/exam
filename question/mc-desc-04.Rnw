@@ -1,14 +1,22 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber Cook's d und Cohen's d ist richtig? 
+<<>>=
+type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
+@ 
 
-<<mc-desc-04, results='asis', echo = FALSE>>=
+Nachdem Sie in einem Experiment die Daten $D$ erhoben haben, berechnen Sie den
+Mittelwert und den Median. Der Mittelwert $\bar{y}$ und der Median
+$\tilde{y}$ \Sexpr{type_vec}. Welche Aussage ist richtig?
 
-questions_vec <- c("Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um einen standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.",
-                   "Wir nutzen Cohen's d um Outlier in den Daten zu finden und Cook's d um einen standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.",
-                   "Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um standardisierte Outlier f{\"u}r Gruppenvergeliche zu erhalten.",
-                   "Wir nutzen Cook's d um Outlier in den Daten zu finden. Cohen's d findet auch Outlier, ist aber ein veraltetetes Konzept in der Statistik.",
-                   "Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um einen nicht standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.") %>%
+
+<<mc-desc-07a, results='asis', echo = FALSE>>=
+
+
+questions_vec <- c('Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auff{\"a}lligen Beobachtungen.',
+                   'Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.',
+                   'Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
+                   'Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
+                   'Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median m{\"u}ssen gleich sein.') %>%
   sample
 
 

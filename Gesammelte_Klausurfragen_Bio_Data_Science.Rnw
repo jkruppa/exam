@@ -217,29 +217,27 @@ grade_tbl <- pre_grade_tbl %>%
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Deskriptive Statistik \& Explorative Datenanalyse}
+
+\section*{ANOVA}
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 
 \Sexpr{knit_child(mc_questions_vec[3])} 
-\section*{Statistische Testtheorie}
-\section*{ANOVA}
-\section*{Statistische Tests für Gruppenvergleiche}
-\section*{Multiple Gruppenvergleiche}
-\section*{Lineare Regression}
-\section*{Vermischte Themen}
 \Sexpr{knit_child(mc_questions_vec[4])} 
+\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 \Sexpr{knit_child(mc_questions_vec[5])} 
 \Sexpr{knit_child(mc_questions_vec[6])} 
 \Sexpr{knit_child(mc_questions_vec[7])} 
-\Sexpr{knit_child(mc_questions_vec[8])} 
+\Sexpr{knit_child(mc_questions_vec[8])}
 \Sexpr{knit_child(mc_questions_vec[9])} 
+\section*{Lineare Regression \& Korrelation}    
 \Sexpr{knit_child(mc_questions_vec[10])}
-\Sexpr{knit_child(mc_questions_vec[11])} 
+\Sexpr{knit_child(mc_questions_vec[11])}   
 \Sexpr{knit_child(mc_questions_vec[12])} 
 \Sexpr{knit_child(mc_questions_vec[13])} 
 \Sexpr{knit_child(mc_questions_vec[14])} 
 \Sexpr{knit_child(mc_questions_vec[15])}
 \Sexpr{knit_child(mc_questions_vec[16])}
+\section*{Vermischte Themen}     
 \Sexpr{knit_child(mc_questions_vec[17])}
 \Sexpr{knit_child(mc_questions_vec[18])}
 \Sexpr{knit_child(mc_questions_vec[19])}
@@ -250,7 +248,9 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[24])}
 \Sexpr{knit_child(mc_questions_vec[25])}
 \Sexpr{knit_child(mc_questions_vec[26])}
+\section*{Multiple Gruppenvergleiche}
 \Sexpr{knit_child(mc_questions_vec[27])}
+\section*{Statistische Testtheorie} 
 \Sexpr{knit_child(mc_questions_vec[28])}
 \Sexpr{knit_child(mc_questions_vec[29])}
 \Sexpr{knit_child(mc_questions_vec[30])}
@@ -259,11 +259,13 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[33])}
 \Sexpr{knit_child(mc_questions_vec[34])}
 \Sexpr{knit_child(mc_questions_vec[35])}
+\section*{Statistische Tests für Gruppenvergleiche}    
 \Sexpr{knit_child(mc_questions_vec[36])}
 \Sexpr{knit_child(mc_questions_vec[37])}
 \Sexpr{knit_child(mc_questions_vec[38])}
 \Sexpr{knit_child(mc_questions_vec[39])}
 \Sexpr{knit_child(mc_questions_vec[40])}
+    \Sexpr{knit_child(mc_questions_vec[41])}
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------

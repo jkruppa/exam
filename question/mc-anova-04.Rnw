@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Die ANOVA ist ein statistisches Verfahren welches h{\"a}ufig in den
+Auswertungen von Experimenten in den Agrarwissenschaften angewendet
+wird. Dabei wird die ANOVA als ein erstes statistischen Werkzeug f{\"u}r die
+{\"U}bersicht {\"u}ber die Daten benutzt. Eine ANOVA testet dabei ...
+
+<<results='asis', echo = FALSE>>=
+
+questions_vec <- c('...den Unterschied zwischen der globalen Varianz und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.',
+                   '...den Unterschied zwischen mehreren Varianzen aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.',
+                   '...den Unterschied zwischen zwei paarweisen Mittelwerten aus verschiedenen Behandlungsguppen. Wenn die signifikant ist, ist daher bekannt welcher Vergleich konkret unterschiedlich ist.',
+                   '...den Unterschied zwischen der Mittelwerte und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist bekannt welcher Vergleich konkret unterschiedlich ist.',
+                   '...den Unterschied zwischen der F-Statistik anhand der Varianz der Gruppen. Wenn die F-Statistik exakt 0 ist, kann die Nullhypothese abgelehnt werden.') %>%
+  sample
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}
