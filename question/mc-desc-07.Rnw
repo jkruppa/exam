@@ -1,0 +1,29 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+var_vec <- c("einer Normalverteilung", "einer Varianzhomogenit{\"a}t") %>% sample(1)
+@
+
+Um zu {\"U}berpr{\"u}fen, ob die Daten die Annahme \Sexpr{var_vec} gen{\"u}gen, k{\"o}nnen
+wir folgende Visualisierung nutzen. Dabei kommt dann auch die entsprechende
+Regel zur Absch{\"a}tzung der Annahme \Sexpr{var_vec} zur Anwendung. 
+
+<<mc-desc-07, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Einen Boxplot. Der Median als Linie, muss in der Mitte des IQR, dargestellt durch die Box, liegen.',
+                   'Einen Boxplot. Das IQR muss {\"u}ber alle Behandlungen zusammen mit den Whiskers ungef{\"a}hr gleich sein.',
+                   'Einen Barplot. Die Mittelwerte m{\"u}ssen alle auf einer H{\"o}he liegen. Die Fehlerbalken haben hier keine Informationen.',
+                   'Einen Dotplot. Die Punkte m{\"u}ssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung f{\"u}hrt zur Ablehnung der Annahme.',
+                   'Einen Violinplot. Der Bauch der Violine muss hierbei einen h{\"o}hren Wert annehmen als der Steg der Violine. Dann kann die Annahme angenommen werden.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

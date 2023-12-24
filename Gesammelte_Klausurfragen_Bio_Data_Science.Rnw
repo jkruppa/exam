@@ -229,18 +229,18 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[7])} 
 \Sexpr{knit_child(mc_questions_vec[8])}
 \Sexpr{knit_child(mc_questions_vec[9])} 
-\section*{Lineare Regression \& Korrelation}    
 \Sexpr{knit_child(mc_questions_vec[10])}
-\Sexpr{knit_child(mc_questions_vec[11])}   
+\Sexpr{knit_child(mc_questions_vec[11])}
+\section*{Lineare Regression \& Korrelation}     
 \Sexpr{knit_child(mc_questions_vec[12])} 
 \Sexpr{knit_child(mc_questions_vec[13])} 
 \Sexpr{knit_child(mc_questions_vec[14])} 
 \Sexpr{knit_child(mc_questions_vec[15])}
 \Sexpr{knit_child(mc_questions_vec[16])}
-\section*{Vermischte Themen}     
 \Sexpr{knit_child(mc_questions_vec[17])}
 \Sexpr{knit_child(mc_questions_vec[18])}
 \Sexpr{knit_child(mc_questions_vec[19])}
+\section*{Vermischte Themen}  
 \Sexpr{knit_child(mc_questions_vec[20])}
 \Sexpr{knit_child(mc_questions_vec[21])}
 \Sexpr{knit_child(mc_questions_vec[22])}
@@ -265,7 +265,9 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[38])}
 \Sexpr{knit_child(mc_questions_vec[39])}
 \Sexpr{knit_child(mc_questions_vec[40])}
-    \Sexpr{knit_child(mc_questions_vec[41])}
+\Sexpr{knit_child(mc_questions_vec[41])}
+\Sexpr{knit_child(mc_questions_vec[42])}
+
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------

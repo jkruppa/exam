@@ -1,22 +1,18 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
-@ 
+var_vec <- c("Varianz", "Standardabweichung") %>% sample(1)
+@
 
-Nachdem Sie in einem Experiment die Daten $D$ erhoben haben, berechnen Sie den
-Mittelwert und den Median. Der Mittelwert $\bar{y}$ und der Median
-$\tilde{y}$ \Sexpr{type_vec}. Welche Aussage ist richtig?
+Um die \Sexpr{var_vec} zu berechnen m{\"u}ssen wir folgende Rechenoperationen durchf{\"u}hren.
 
+<<mc-desc-06, results='asis', echo = FALSE>>=
 
-<<mc-desc-07a, results='asis', echo = FALSE>>=
-
-
-questions_vec <- c('Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auff{\"a}lligen Beobachtungen.',
-                   'Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.',
-                   'Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
-                   'Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
-                   'Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median m{\"u}ssen gleich sein.') %>%
+questions_vec <- c('Den Mittelwert berechen, dann die quadratischen Abst{\"a}nde zum Mittelwert aufsummieren und durch die Fallzahl teilen.',
+                   'Den Mittelwert berechen, dann die quadratischen Abst{\"a}nde zum Mittelwert aufsummieren und durch die Fallzahl teilen, dann die Wurzel ziehen.',
+                   'Den Mittelwert berechen, dann die absoluten Abst{\"a}nde zum Mittelwert aufsummieren',
+                   'Den Median berechen, dann die quadratischen Abst{\"a}nde zum Median aufsummieren, dann die Wurzel ziehen.',
+                   'Den Mittelwert berechnen und die Abst{\"a}nde quadrieren. Die Summe mit der Fallzahl multiplizieren.') %>%
   sample
 
 
