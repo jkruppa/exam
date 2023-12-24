@@ -91,64 +91,6 @@ grade_tbl <- pre_grade_tbl %>%
 \clearpage
 % -----------------------------------------------------------------------
 
-\begin{graybox}{Inhalte der Klausur nach Modul}  
-  \small
-  \textcolor{red}{\textit{Die folgende Einordnung der Themenkomplexe zu den
-      Modulen dient zur Orientierung. Einzelne Klausuren k{\"o}nnen und werden
-      davon abweichen. Die Angaben hier sind daher ohne Gew{\"a}hr. Bitte immer
-    auf die Inhalte der entsprechenden Vorlesung achten!}}\\[1Ex]
-  \textit{Mathematik \& Statistik} 
-  \begin{itemize}
-  \item 1 Frage zur deskriptiven Statistik
-  \item 1 Frage zum t-Test
-  \item 1 Frage zur einfaktoriellen ANOVA
-  \item 4 Fragen zur Mathematik
-  \end{itemize} 
-  \textit{Statistik} 
-  \begin{itemize}
-  \item 1 Frage zur deskriptiven Statistik
-  \item 1 Frage zum statistischen Testen
-  \item 1 Frage zum t-Test
-  \item 1 Frage zur einfaktoriellen ANOVA
-  \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
-  \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder
-    diagnostischen Testen
-  \item 1 Offene Frage aus den Themen
-  \end{itemize} 
-  \textit{Angewandte Statistik f{\"u}r Bioverfahrenstechnik } 
-  \begin{itemize}
-  \item 1 Frage zur deskriptiven Statistik
-  \item 1 Frage zum statistischen Testen
-  \item 1 Frage zum t-Test
-  \item 1 Frage zur einfaktoriellen ANOVA
-  \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
-  \item 1 Frage zum $\mathcal{X}^2$-Test oder Nicht-Parametrik oder diagnostischen Testen
-  \item 1 Offene Frage aus den Themen
-  \end{itemize} 
-  \textit{Angewandte Statistik und Versuchswesen} 
-  \begin{itemize}
-  \item 1 Frage zur deskriptiven Statistik
-  \item 1 Frage zu statistischen Verteilungen
-  \item 1 Frage zum statistischen Testen
-  \item 1 Frage zur zweifaktoriellen ANOVA
-  \item 1 Frage zur linearen Regression beinhaltend Korrelation und $R^2$
-  \item 1 Frage zu multiplen Gruppenvergleichen
-  \item 1 Offene Frage aus den Themen
-  \end{itemize} 
-  \textit{Biostatistik}
-  \begin{itemize}
-  \item 1 Frage zu der deskriptiven Statistik
-  \item 1 Frage zum statistischen Testen
-  \item 1 Frage zu der zweifaktoriellen ANOVA
-  \item 1 Frage zu der multiplen Regression
-  \item 1 Offene Frage aus den Themen
-  \item 2 Fragen abh{\"a}ngig von der Vertiefung (Pflanze- oder Nutztierwissenschaften)
-  \end{itemize} 
-\end{graybox}
-% -----------------------------------------------------------------------
-\newpage  
-% -----------------------------------------------------------------------
-
 \begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
   \begin{itemize}
@@ -275,9 +217,16 @@ grade_tbl <- pre_grade_tbl %>%
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
+\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 
 \Sexpr{knit_child(mc_questions_vec[3])} 
+\section*{Statistische Testtheorie}
+\section*{ANOVA}
+\section*{Statistische Tests für Gruppenvergleiche}
+\section*{Multiple Gruppenvergleiche}
+\section*{Lineare Regression}
+\section*{Vermischte Themen}
 \Sexpr{knit_child(mc_questions_vec[4])} 
 \Sexpr{knit_child(mc_questions_vec[5])} 
 \Sexpr{knit_child(mc_questions_vec[6])} 
