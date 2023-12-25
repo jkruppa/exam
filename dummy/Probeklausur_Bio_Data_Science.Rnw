@@ -18,7 +18,7 @@ if(str_detect(path_home(), "^C:")){
 } else {
   exam_path <- file.path(path_home(), "work/GitHub/exam")  
 }
-init_path <- file.path(exam_path, "init")
+init_path <- file.path(exam_path, "dummy/init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
 
@@ -247,25 +247,25 @@ grade_tbl <- pre_grade_tbl %>%
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[1])} 
+\Sexpr{knit_child(text_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[2])} 
+\Sexpr{knit_child(text_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[3])} 
+\Sexpr{knit_child(text_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[4])} 
+\Sexpr{knit_child(text_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[5])} 
+\Sexpr{knit_child(text_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[6])} 
+\Sexpr{knit_child(text_questions_vec[6])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[7])} 
+\Sexpr{knit_child(text_questions_vec[7])} 
 \clearpage
 % -----------------------------------------------------------------------
 \end{document}

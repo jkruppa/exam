@@ -1,0 +1,775 @@
+\documentclass[a4paper, 9pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage[ngerman]{babel}
+% -----------------------------------------------------------------------
+
+% -----------------------------------------------------------------------
+\input{/Users/kruppajo/work/GitHub/exam/dummy/init}
+% -----------------------------------------------------------------------
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+% -----------------------------------------------------------------------
+\maketitle
+\thispagestyle{empty}
+\clearpage
+% -----------------------------------------------------------------------
+
+\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
+    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
+  \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
+    handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
+  \item \textbf{You can answer the questions in English without any consequences.}  
+  \end{itemize}
+\end{graybox}
+\vfill
+
+\begin{graybox}{Ergebnis der Klausur}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus dem Multiple
+    Choice Teil erreicht.
+  \item[] \rule[0ex]{3em}{.4pt}\, von 68 Punkten sind aus dem Rechen- und
+    Textteil erreicht. 
+  \item[] \rule[0ex]{3em}{.4pt}\, von 88 Punkten in Summe.
+  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
+  \end{itemize}
+  \vspace{1ex}
+\begin{center}
+  \begin{tabular}[c]{cc}
+    \toprule
+    \textbf{Punkte}	&	\textbf{Note}	\\
+    \midrule
+    84.0 - 88.0	&	1,0	\\
+    79.5 - 83.5	&	1,3	\\
+    75.5 - 79.0	&	1,7	\\
+    71.0 - 75.0	&	2,0	\\
+    66.5 - 70.5	&	2,3	\\
+    62.0 - 66.0	&	2,7	\\
+    57.5 - 61.5	&	3,0	\\
+    53.5 - 57.0	&	3,3	\\
+    49.0 - 53.0	&	3,7	\\
+    44.0 - 48.5	&	4,0	\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+  \vspace{1ex}
+\begin{itemize}
+\item[] Es ergibt sich eine Endnote von \rule[0ex]{4em}{.4pt}.
+\end{itemize}
+  \vspace{1Ex}
+\end{graybox}
+
+% -----------------------------------------------------------------------
+\newpage
+% -----------------------------------------------------------------------
+
+\begin{graybox}{Multiple Choice Aufgaben}
+  \begin{itemize}
+  \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
+  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+      dieser Seite.}
+  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+    angekreuzt sind!
+  \end{itemize}
+
+\begin{center}
+  \large
+  \begin{tabular}{|r|c|c|c|c|c||c|}
+    \hline
+    & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & $\boldsymbol{\checkmark}$\strut\\
+    \hline
+    1 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    2 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    3 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    4 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    5 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    6 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    7 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    8 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    9 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    10 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Es sind \rule[0ex]{2em}{.4pt}\, von 20 Punkten erreicht worden.
+\end{itemize}
+\end{graybox}
+
+\vfill
+
+\begin{graybox}{Rechen- und Textaufgaben}
+  \begin{itemize}
+  \item Die Tabelle wird vom Dozenten ausgefüllt.
+  \end{itemize}
+  \begin{center}
+    \large
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+      \hline
+      \textbf{Aufgabe} & 11 & 12 & 13 & 14 & 15 & 16 & 17 \strut\\
+      \hline
+      \textbf{Punkte} & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{11}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{12}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{7}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{8}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{10}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{10}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{10}\hspace{1Ex} \strut\\
+      \hline
+  \end{tabular}
+\end{center}
+\begin{itemize}
+\item Es sind \rule[0ex]{2em}{.4pt}\, von 68 Punkten erreicht worden.
+\end{itemize}
+\end{graybox}
+
+% -----------------------------------------------------------------------
+\clearpage
+% -----------------------------------------------------------------------
+
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+Die Randomisierung von Beobachtungen bzw. Samples zu den Versuchseinheiten
+ist bedeutend in der Versuchsplanung. Welche der folgenden Aussagen ist richtig?
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Randomisierung sorgt f{"u}r Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{"u}ckzuschliessen.
+\item [\textbf{B} \msquare] Randomisierung war bis 1952 bedeutend, wurde dann aber in Folge besserer Rechnerleistung nicht mehr verwendet. Aktuelle Statistik nutzt keine Randomisierung mehr.
+\item [\textbf{C} \msquare] Randomisierung bringt starke Unstrukturiertheit in das Experiment und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{"u}ckzuschliessen.
+\item [\textbf{D} \msquare] Randomisierung erlaubt erst die Varianzen zu sch{"a}tzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht m{"o}glich.
+\item [\textbf{E} \msquare] Randomisierung erlaubt erst die Mittelwerte zu sch{"a}tzen. Ohne Randomisierung keine Mittelwerte.
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+Die Testtheorie hat mehrere S{"a}ulen. Einer der S{"a}ulen ist das Falsifikationsprinzip. Das Falsifikationsprinzip besagt,
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] ... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.
+\item [\textbf{B} \msquare] ... dass Annahmen an statistische Modelle meist falsch sind.
+\item [\textbf{C} \msquare] ... dass Fehlerterme in statistischen Modellen nicht verifiziert werden k{"o}nnen.
+\item [\textbf{D} \msquare] ... dass Modelle meist falsch sind und selten richtig.
+\item [\textbf{E} \msquare] ... dass ein schlechtes Modell durch ein weniger schlechtes Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+In der Statistik m{\"u}ssen wir h{\"a}ufig {\"U}berpr{\"u}fen, ob unser Outcome einer
+bestimmten Verteilung folgt. Meistens {\"U}berpr{\"u}fen wir, ob eine
+Normalverteilung vorliegt. Folgende drei Abbildungen eigenen sich im
+Besonderen f{\"u}r die {\"U}berpr{\"u}fung einer Verteilungsannahme an eine Variable.
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Boxplot, Violinplot, Mosaicplot
+\item [\textbf{B} \msquare] Scatterplot, Mosaicplot, Boxplot
+\item [\textbf{C} \msquare] Violinplot, Scatterplot, Barplot
+\item [\textbf{D} \msquare] Boxplot, Densityplot, Violinplot
+\item [\textbf{E} \msquare] Histogramm, Scatterplot, Boxplot
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+Wenn Sie einen Datensatz erstellen, dann ist es ratsam die Spalten und die
+Eintr{\"a}ge in englischer Sprache zu verfassen, wenn Sie sp{\"a}ter die Daten in
+\Rlogo auswerten wollen. Welcher folgende Grund ist richtig?
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Alle Funktionen und auch Anwendungen sind in \Rlogo in englischer Sprache. Die Nutzung von deutschen W{"o}rtern ist nicht schick und das ist zu vermeiden.
+\item [\textbf{B} \msquare] Es gibt keinen Grund nicht auch deutsche W{"o}rter zu verwenden. Es ist ein Stilmittel.
+\item [\textbf{C} \msquare] Programmiersprachen k{"o}nnen nur englische Begriffe verarbeiten. Zus{"a}tzliche Pakete k{"o}nnen zwar geladen werden, aber meist funktionieren diese Pakete nicht richtig. Deutsch ist International nicht bedeutend genug.
+\item [\textbf{D} \msquare] Die Spracherkennung von \Rlogo ist nicht in der Lage Deutsch zu verstehen.
+\item [\textbf{E} \msquare] Im Allgemeinen haben Programmiersprachen Probleme mit Umlauten und Sonderzeichen, die in der deutschen Sprache vorkommen. Eine Nutzung der englischen Sprache umgeht dieses Problem auf einfache Art.
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+Die ANOVA ist ein statistisches Verfahren welches h{\"a}ufig in den
+Auswertungen von Experimenten in den Agrarwissenschaften angewendet
+wird. Dabei wird die ANOVA als ein erstes statistischen Werkzeug f{\"u}r die
+{\"U}bersicht {\"u}ber die Daten benutzt. Eine ANOVA testet dabei ...
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] ... den Unterschied zwischen der Mittelwerte und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist bekannt welcher Vergleich konkret unterschiedlich ist.
+\item [\textbf{B} \msquare] ... den Unterschied zwischen der F-Statistik anhand der Varianz der Gruppen. Wenn die F-Statistik exakt 0 ist, kann die Nullhypothese abgelehnt werden.
+\item [\textbf{C} \msquare] ... den Unterschied zwischen der globalen Varianz und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.
+\item [\textbf{D} \msquare] ... den Unterschied zwischen zwei paarweisen Mittelwerten aus verschiedenen Behandlungsguppen. Wenn die signifikant ist, ist daher bekannt welcher Vergleich konkret unterschiedlich ist.
+\item [\textbf{E} \msquare] ... den Unterschied zwischen mehreren Varianzen aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+Sie f{\"u}hren ein Feldexperiment durch um das Gewicht von Brokoli zu
+steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen
+Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA
+ergibt sich ein $\eta^2 = 0.23$. Welche Aussage ist richtig?
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
+\item [\textbf{B} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
+\item [\textbf{C} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
+\item [\textbf{D} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{E} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+
+Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit 11, 8, 18, 5 und 11.
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Es ergibt sich 10.6 +/- 2.415
+\item [\textbf{B} \msquare] Es ergibt sich 10.6 +/- 4.83
+\item [\textbf{C} \msquare] Es ergibt sich 9.6 +/- 11.65
+\item [\textbf{D} \msquare] Es ergibt sich 11.6 +/- 2.415
+\item [\textbf{E} \msquare] Es ergibt sich 10.6 +/- 23.3
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+Die Ergebnisse der einer statistischen Analyse k{\"o}nnen in die Analogie einer
+Wettervorhersage gebracht werden. Welche Analogie f{\"u}r die
+Ergebnisse eines statistischen Tests trifft am besten zu?
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] In der Analogie des Niederschlags oder Regenmenge: ein statistischer Test gibt die St{"a}rke eines Effektes wieder. Zum Beispiel, wie hoch ist der Mittelwertsunterschied.
+\item [\textbf{B} \msquare] In der Analogie der Regenwahrscheinlichkeit: ein statistischer Test gibt die Wahrscheinlichkeit f{"u}r das Auftreten eines Ereignisses wieder. Die St{"a}rke des Effektes wird nicht wiedergeben.
+\item [\textbf{C} \msquare] In der Analogie der Durchschnittstemperatur: Wie oft tritt ein Effekt durchschnittlich ein? Wir erhalten eine Wahrscheinlichkeit f{"u}r die Effekte. Zum Beispiel, wie hoch ist die Wahrscheinlichkeit f{"u}r einen Mittelwert als Durchschnitt.
+\item [\textbf{D} \msquare] In der Analogie der Maximaltemperatur: Was ist der maximale Unterschied zwischen zwei Gruppen. Wir erhalten hier eine Aussage {"u}ber die Spannweite und den maximalen Effekt.
+\item [\textbf{E} \msquare] In der Analogie der Sonnenscheindauer: Wie lange kann mit einem entsprechenden Effekt gerechnet werden? Die Wahrscheinlichkeit f{"u}r den Effekt gibt der statistische Test wieder.
+\end{enumerate}
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur Bewertung der
+Wirkung von Vitamin C auf das Zahnwachstum bei Meerschweinchen. Der Versuch
+wurde an 60 Schweinen durchgef{\"u}hrt, wobei jedes Tier eine von
+drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) {\"u}ber eine von zwei
+Verabreichungsmethoden mit Orangensaft (Orange) oder Ascorbins{\"a}ure (Vitamin C)
+erhielt.
+
+
+
+{\centering \includegraphics[width=\maxwidth]{img/mc-anova-02-a-1} 
+
+}
+
+
+
+
+Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Eine leichte Interaktion ist zu erwarten. Die Geraen schneiden sich noch nicht, aber die Abst{"a}nde unterscheiden sich stark.
+\item [\textbf{B} \msquare] Eine starke Interaktion liegt vor. Die Geraden laufen parallel und schneiden sich nicht.
+\item [\textbf{C} \msquare] Keine Interaktion ist zu erwatzen. Die Geraden der Verabreichungsmethode laufen parallel und mit {"a}hnlichen Abst{"a}nden.
+\item [\textbf{D} \msquare] Eine starke Interaktion ist zu erwarten. Die Geraden schneiden sich und die Abst{"a}nde sind nicht gleichbleibend.
+\item [\textbf{E} \msquare] Keine Interaktion liegt vor. Die Geraden scheiden sich und laufen nicht parallel.
+\end{enumerate} 
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+
+
+In dem folgenden Histogramm von $n = 212$ Pflanzen ist welche
+Verteilung mit welchen korrekten Verteilungsparametern dargestellt?
+
+
+
+{\centering \includegraphics[width=\maxwidth]{img/mc-distribution-02-a-1} 
+
+}
+
+
+
+
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Eine rechtsschiefe, multivariate Normalverteilung.
+\item [\textbf{B} \msquare] Es handelt sich um eine Binomial-Verteilung mit Binom(10).
+\item [\textbf{C} \msquare] Es handelt sich um eine Normalverteilung mit N(15, 5).
+\item [\textbf{D} \msquare] Eine Standardnormalverteilung mit N(0,1).
+\item [\textbf{E} \msquare] Es handelt sich um eine Poisson-Verteilung mit Pois(15).
+\end{enumerate}
+
+% -----------------------------------------------------------------------
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (11 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
+
+
+Nach einem Feldexperiment ergibt sich die folgende 2x2 Datentabelle mit einem
+Pestizid (ja/nein) der Marke RoundUp, dargestellt in den Zeilen, und
+dem infizierten Pflanzenstatus (ja/nein) von Weizen, dargesellt in
+den Spalten. Insgesamt wurden $n = 122$ Pflanzen untersucht.
+\vspace{5Ex}
+
+\begin{center}
+  \Large
+  \begin{tabular}{c|c|c|c}
+     & \textbf{Erkrankt (ja)} & \textbf{Erkrankt (nein)} &  \strut\\
+    \hline
+    \textbf{Pestizid (ja)} & 24  & 19  &     \strut\\
+    \hline
+    \textbf{Pestizid (nein)} & 27  & 52  &      \strut\\
+    \hline
+     \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
+  \end{tabular}
+\end{center}
+
+\vspace{5Ex}
+
+\begin{enumerate}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Erg{\"a}nzen Sie die Tabelle um die Randsummen! \textbf{(1 Punkt)} 
+\item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test auf der 2x2
+  Tafel! \textbf{(3 Punkte)}
+\item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! Begr{\"u}nden Sie Ihre Antwort!
+  \textbf{(2 Punkte)}
+\item Skizzieren Sie die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr
+  ist! Erg{\"a}nzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und
+  $\mathcal{X}^2_{calc}$ in der Abbildung! \textbf{(2 Punkte)}
+\item Berechnen Sie den Effektsch{\"a}tzer $Cramers\; V$! Interpretieren Sie den
+  Effektsch{\"a}tzer! \textbf{(2 Punkte)}
+\end{enumerate} 
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (12 Punkte)}
+
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/_7s44pbOc00}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
+
+
+
+Folgender diagnostischer Doppelbaum nach der Testung auf Klauenseuche bei
+Fleckvieh ist gegeben.
+
+\begin{enumerate}
+\item F{\"u}llen und beschriften Sie den untenstehenden Doppelbaum! \textbf{(4
+    Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
+\item Berechnen Sie die Pr{\"a}valenz f{\"u}r Klauenseuche! \textbf{(2 Punkte)}
+\item Berechnen Sie die Sensifit{\"a}t und Spezifit{\"a}t des diagnostischen Tests
+  f{\"u}r Klauenseuche! Erstellen Sie daf{\"u}r zun{\"a}chst eine 2x2 Kreuztabelle aus
+  dem ausgef{\"u}llten Doppelbaum!
+  \textbf{(4 Punkte)}
+\end{enumerate}
+
+\vspace{1cm}
+ 
+\begin{tikzpicture}
+  \node (image) at (0,0) {
+    \includegraphics[width=\textwidth]{/Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum}
+  };
+  \node[] at (-4.8,0) {\huge 160};
+  \node[] at (-1.7,0) {\huge 60};
+  \node[] at (1.7,0) {\huge 850};
+  \node[] at (4.75,0) {\huge 1800};
+\end{tikzpicture}
+
+
+
+
+ 
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (7 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/2dUJcYK9RgU}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+In einer Studie zur "`Arbeitssicherheit auf dem Feld"' wurde gemessen wie viele
+Stunden auf einem Feld gefahren wurden und wie oft der Fahrer dabei drohte
+einzunicken. Es ergab sich folgende Abbildung. 
+
+
+
+{\centering \includegraphics[width=\maxwidth]{img/scatter-02-1} 
+
+}
+
+
+
+
+\begin{enumerate}
+\item Erstellen Sie die Regressionsgleichung aus der obigen Abbildung in
+  der Form $y \sim \beta_0 + \beta_1 \cdot x$! \textbf{(2 Punkte)}
+\item Beschriften Sie die Grade mit den Parametern der linearen
+  Regressionsgleichung! \textbf{(2 Punkte)}
+\item Liegt ein Zusammenhang zwischen der Anzahl an gefahrenen Runden und
+  der M{\"u}digkeit vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wenn kein Zusammenhang zu beobachten w{\"a}re, wie w{\"u}rde die Grade aussehen? \textbf{(1 Punkt)}
+\end{enumerate} 
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (8 Punkte)}
+Ihnen liegt folgendes Varianzanalysemodell mit der {\"u}blichen Beschreibung
+zur Auswertung des Merkmals fett- und eiwei{\ss}korrigierte Milchleistung pro
+Kuh und Jahr in kg vor:
+
+\begin{equation*}
+  Y_{ijkl} = \mu + Var_i + EKA_j + VarEKA_{ij} + V_k + b(L_{ij} - L) + e_{ijkl}
+\end{equation*}
+
+mit
+
+\begin{itemize}
+\item $Y_{ijkl}$: l-te Beobachtung
+\item $\mu$: Populationsmittel 
+\item $Var_i$: fixer Effekt der i-ten Variante (i: Kontrolle,
+  Versuchsgruppe 1, Versuchsgruppe 2)
+\item $EKA_j$: fixer Effekt der j-ten Erstkalbealtergruppe (j: EKA $\leq$ 25
+  Monate, EKA > 25 Monate)
+\item $VarEKA_{ij}$: fixer Effekt der Interaktion Variante x
+  Erstkalbealtergruppe 
+\item $V_k$: zuf{\"a}lliger Effekt des Vaters 
+\item $b(L_{ij} - L)$: lineare Kovariable Laktationsnummer 
+\item $e_{ijkl}$: zuf{\"a}lliger
+  Restfehler
+\end{itemize}
+Erl{\"a}utern Sie anhand dieses Beispiels die Begriffe fixer Effekt,
+Interaktion, zuf{\"a}lliger Effekt und Kovariable und grenzen Sie diese
+Begriffe voneinander ab.
+
+ 
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (10 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/RuzMjwvwT-4}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
+\hspace{2Ex}
+%% --------------------------------------------------------------------
+
+\paragraph{In der Kartonagenfabrik}
+
+
+
+Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
+geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
+schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
+Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
+werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
+anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
+  5-mal-gefaltete, 0.5mm, 30-cm-Karton} durch
+Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
+schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
+sind. Martin gef{\"a}llt das. An dem Vorrat
+an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
+
+Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
+hat eine L{\"a}nge von 30cm und eine Breite von 22cm. Die
+Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
+der L{\"a}nge $x$ falzen.
+
+\begin{enumerate}
+\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
+  Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
+  \textbf{(1 Punkt)}
+\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des flachen
+  Kartons! \textbf{(3 Punkte)}
+\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten
+  Falztiefe $x$?  \textbf{(1 Punkt)}
+\item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
+  den Karton stanzen lassen. Wie gro{\ss} ist die Fl{\"a}che des
+  Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
+\end{enumerate}
+
+Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
+nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
+er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
+Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
+Rektor Skinner nur 130m Zaun zu Verf{\"u}gung. Sie wollen nun die
+maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
+Seitenl{\"a}ngen bei der Verwendung von 130m Zaun bestimmen!
+
+\begin{enumerate}
+  \setcounter{enumi}{4}  
+\item  Welche Seitenl{\"a}ngen f{\"u}r den Zaun ergeben sich f{\"u}r die
+  maximale Fl{\"a}che des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che des abgeschirmten Vorgartens! \textbf{(1
+    Punkt)}
+\end{enumerate}
+
+ 
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (10 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/Bbu6n8MXxQk}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
+\hspace{2Ex}
+%% --------------------------------------------------------------------
+
+\paragraph{Armee der Finsternis}
+
+
+
+Ihr Studentenjob war nach Ladenschluss bei Aldi die Regale
+einzur{\"a}umen. Dabei ist Ihnen in der Auslage der Sonderangebote das
+Necronomicon\footnote{Ein wirklich gef{\"a}hrliches Buch ist:
+  \textit{Du bist genug: Vom Mut, gl{\"u}cklich zu sein} von Fumitake Koga und
+  Ichiro Kishimi} in die H{\"a}nde gefallen. Nun sind Sie ein Magier der
+Zeichen geworden! Also eigentlich k{\"o}nnen Sie nur Mathe und das d{\"a}mliche
+Necronomicon hat Sie in die Vergangenheit geschleudert... aber gut, was tut
+man nicht alles im Jahr 254 n. Chr. f{\"u}r den neuen Lehnsherren
+Henry dem Roten. Sie bauen nat{\"u}rlich einen Schrottkugelturm um sich den
+Horden der Finsternis mit genug Schrott erwehren zu k{\"o}nnen! Ihnen stehen
+zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
+
+\begin{center}
+  \begin{tabular}{cc}
+    $E_{kin} = \cfrac{1}{2}\cdot m \cdot v^2$ & $E_{pot} = m \cdot g \cdot h$\\
+  \end{tabular}
+\end{center}
+
+mit
+
+\begin{itemize}
+\item $m$, gleich der Masse [kg] des Objekts
+\item $h$, gleich der H{\"o}he [m] des ruhenden Objekts
+\item $v$, gleich der Geschwindigkeit [m/s] des Objekts
+\item $g$, gleich der Erdbeschleunigung mit $9.81 \tfrac{m}{s^2}$ 
+\end{itemize}
+
+Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
+bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
+Blei\textit{tropfen} mit einem Gewicht von $40mg$ zu
+gleichf{\"o}rmigen Blei\textit{kugeln} bei einer Geschwindigkeit von
+$11m/s$ bilden.
+
+\begin{enumerate}
+\item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
+  runde Bleikugeln durch die Fallgeschwindigkeit von $11m/s$ bilden?
+  \textbf{(3 Punkte)}
+\end{enumerate}
+
+Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige
+Schrottkugeln in einer Ladung. Damit k{\"o}nnen Sie die Armee der Finsternis
+nicht aufhalten. Die Sachlage m{\"u}ssen Sie einmal mathematisch untersuchen.
+
+\begin{enumerate}
+  \setcounter{enumi}{1}
+\item Nennen Sie die beiden geometrischen Formen aus denen sich
+  n{\"a}herungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete 
+  Skizze des Tropfens!
+  \textbf{(2 Punkte)}
+\item Sie messen eine L{\"a}nge des Tropfens von 2.8mm. Die L{\"o}cher
+  im Sieb erlauben ein Tropfendurchmesser von 1.6mm. Welchen
+  Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
+\end{enumerate}
+
+Sie haben jetzt die \ensuremath{2.3\times 10^{5}} Bleikugeln zusammen. Blei hat eine Dichte
+von $10.32g/cm^3$.
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Wie schwer in Kilogramm $kg$ sind die \ensuremath{2.3\times 10^{5}} produzierten
+  Bleikugeln, die Sie jetzt auf die Burgmauer transportieren m{\"u}ssen?
+  \textbf{(1 Punkt)}
+\end{enumerate}
+
+Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
+  wenn Sie pro Fall ca. 1200 Bleikugeln produzieren wollen und
+  die Bleikugel im Fall 1.2cm Abstand haben m{\"u}ssen?  \textbf{(1
+    Punkt)}
+\end{enumerate}
+ 
+\clearpage
+% -----------------------------------------------------------------------
+
+\section{Aufgabe \hfill (10 Punkte)}
+
+%% --------------------------------------------------------------------
+\hfill\href{https://youtu.be/ghArbetOr_E}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+Nach einem Experiment erhalten Sie folgende 2x2 Kreuztabelle aus Ihren
+erhobenen Daten.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+##            Verschimmelt
+## Gruppe      yes no
+##   Belana      4 12
+##   Goldmarie  10  3
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+Aus der 2x2 Kreuztabelle erhalten Sie folgende \Rlogo Ausgabe der Funktion
+\texttt{fisher.test()}.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## 
+## 	Fisher's Exact Test for Count Data
+## 
+## data:  mat
+## p-value = 0.009221
+## alternative hypothesis: true odds ratio is not equal to 1
+## 95 percent confidence interval:
+##  0.01244701 0.70309883
+## sample estimates:
+## odds ratio 
+##  0.1102808
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+
+\begin{enumerate}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2 Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
+\item Beschriften Sie die Abbildung und
+  das 95\% Konfidenzintervall entsprechend! \textbf{(2 Punkte)} 
+\item Interpretieren Sie das \textit{Odds ratio} im Kontext der
+  wissenschaftlichen Fragestellung! \textbf{(2 Punkte)} 
+\end{enumerate}
+ 
+\clearpage
+% -----------------------------------------------------------------------
+\end{document}
+% -----------------------------------------------------------------------
+
+
+  
