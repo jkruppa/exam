@@ -2,11 +2,14 @@
 
 <<>>=
 type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
 @ 
 
-Nachdem Sie in einem Experiment die Daten $D$ erhoben haben, berechnen Sie den
-Mittelwert und den Median. Der Mittelwert $\bar{y}$ und der Median
-$\tilde{y}$ \Sexpr{type_vec}. Welche Aussage ist richtig?
+Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von
+\Sexpr{plant} durchgef{\"u}hrt haben, berechnen Sie den Mittelwert und den
+Median. Der Mittelwert $\bar{y}$ und der Median $\tilde{y}$
+\Sexpr{type_vec}. Welche Aussage ist richtig?
 
 
 <<mc-desc-07a, results='asis', echo = FALSE>>=

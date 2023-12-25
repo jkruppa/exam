@@ -12,12 +12,15 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
 
 eta2_val <- round(anova_mdl$Eta2, 2)
 
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+
 @
 
-Der Datensatz \texttt{PlantGrowth} enth{\"a}lt das Gewicht von Pflanzen, die
-unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen erzielt
-wurden. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein
-$\eta^2 = \Sexpr{eta2_val}$. Welche Aussage ist richtig?
+Sie f{\"u}hren ein Feldexperiment durch um das Gewicht von \Sexpr{plant} zu
+steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen
+Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA
+ergibt sich ein $\eta^2 = \Sexpr{eta2_val}$. Welche Aussage ist richtig?
 
 <<mc-anova-01-b, results='asis', echo = FALSE>>=
 

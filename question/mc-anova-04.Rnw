@@ -1,24 +1,29 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur
-Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
-Meerschweinchen. Der Versuch wurde an 60 Schweinen durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) {\"u}ber eine
-von zwei Verabreichungsmethoden mit Orangensaft (OJ)  oder
-Ascorbins{\"a}ure (VC) erhielt. 
+<<>>=
+n_pig <- rpois(1, 60)
+@ 
+
+Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur Bewertung der
+Wirkung von Vitamin C auf das Zahnwachstum bei Meerschweinchen. Der Versuch
+wurde an \Sexpr{n_pig} Schweinen durchgef{\"u}hrt, wobei jedes Tier eine von
+drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) {\"u}ber eine von zwei
+Verabreichungsmethoden mit Orangensaft (Orange) oder Ascorbins{\"a}ure (Vitamin C)
+erhielt.
 
 <<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 4, fig.align = "center", message = FALSE>>=
 
 data_tbl <- tibble(mean = sample(c(10, 15, 20, 22, 25, 30)),
                    dose = rep(c(0.5, 1, 1.5), each = 2),
-                   Form = rep(c("OJ", "VC"), times = 3))
+                   Form = rep(c("Orange", "Vitamin C"), times = 3))
 
 ggplot(data_tbl, aes(x = dose, y = mean, color = Form, group = Form,
                      shape = Form, linetype = Form)) +
   geom_line() +
   geom_point(size = 2) +
   theme_minimal() +
-  labs(y = "Mittelwert", x = "Verabreichte Dosis") +
+  labs(y = "Mittleres Zahnwachstum", x = "Verabreichte Dosis",
+       color = "", shape = "", linetype = "") +
   ylim(0, NA)
 
 

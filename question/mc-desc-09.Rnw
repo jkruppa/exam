@@ -1,7 +1,11 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-In dem folgenden Histogramm von $n = 200$ Pflanzen ist welche Verteilung
-mit welchen korrekten Verteilungsparametern dargestellt?
+<<>>=
+n_plant <- rpois(1, 200)
+@ 
+
+In dem folgenden Histogramm von $n = \Sexpr{n_plant}$ Pflanzen ist welche
+Verteilung mit welchen korrekten Verteilungsparametern dargestellt?
 
 <<mc-distribution-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 5, fig.align = "center", message = FALSE>>=
 

@@ -1,8 +1,9 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Beim statistischen Testen wird \texttt{signal} mit \texttt{noise} zur
-Teststatistik T verrechnet. Welche der Formel berechnet korrekt die
-Teststatistik T?
+Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim
+statistischen Testen wird das \textit{"`signal"'} mit dem
+\textit{"`noise"'} zu einer Teststatistik T verrechnet. Welche der Formel
+berechnet korrekt die Teststatistik T?
 
 <<mc-statistisches-testen-05, results='asis', echo = FALSE>>=
 

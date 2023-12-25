@@ -1,10 +1,16 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-var_vec <- c("Varianz", "Standardabweichung") %>% sample(1)
-@
 
-Um die \Sexpr{var_vec} zu berechnen m{\"u}ssen wir folgende Rechenoperationen durchf{\"u}hren.
+var_vec <- c("Varianz", "Standardabweichung") %>% sample(1)
+
+quest_vec <- c(str_c("Um die ", var_vec, " zu berechnen m{\"u}ssen wir folgende Rechenoperationen durchf{\"u}hren."),
+               str_c("Sie wollen nach einem Feldversuch die ", var_vec, " berechnen. Welche der folgenden Rechenoperationen m{\"u}ssen durchgef{\"u}hrt werden?"),
+               str_c("Die ", var_vec, " ist eine bedeutende deskriptive Statistik f{\"u}r die Analyse von Daten. Wie m{\"u}ssen Sie vorgehen um die ", var_vec, " zu berechnene?")) %>%
+  sample(1)
+@ 
+
+\Sexpr{quest_vec}
 
 <<mc-desc-06, results='asis', echo = FALSE>>=
 
