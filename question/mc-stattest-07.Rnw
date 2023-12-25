@@ -1,17 +1,15 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche statistische Masszahl erlaubt es \textit{Relevanz} mit
-\textit{Signifikanz} zuverbinden? Welche Aussage ist richtig?
+Welche Aussage über den $p$-Wert und dem Signifikanzniveau $\alpha$ gleich 5\% ist richtig?
 
-<<mc-statistisches-testen-09, results='asis', echo = FALSE>>=
+<<mc-statistisches-testen-11, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Das Konfidenzintervall. Durch die Visualizierung des Konfidenzintervals kann eine Relevanzschwelle vom Anwender definiert werden. Zus{\"a}tzlich erlaubt das Konfidenzinterval auch eine Entscheidung {\"u}ber die Signifikanz.',
-                   'Die Teststatistik. Durch den Vergleich von $T_c$ zu $T_k$ ist es m{\"o}glich die $H_0$ abzulehnen. Die Relevanz ergibt sich aus der Fl{\"a}che rechts vom dem $T_c$-Wert.',
-                   'Der p-Wert. Durch den Vergleich mit $\\alpha$ l{\"a}sst sich {\"u}ber die Signifikanz entscheiden und der $\\beta$-Fehler erlaubt {\"u}ber die Power eine Einsch{\"a}tzung der Relevanz.',
-                   'Das $\\Delta$. Durch die Effektst{\"a}rke haben wir einen Wert f{\"u}r die Relevanz, die vom Anwender bewertet werden muss. Da $\\Delta$ antiproportional zum p-Wert ist, bedeutet auch ein hohes $\\Delta$ ein sehr kleinen p-Wert.',
-                   'Das OR. Als Chancenverh{\"a}ltnis gibt es das Verh{\"a}ltnis von Relevanz und Signifikanz wieder.') %>%
+questions_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.',
+                   'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.',
+                   'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.',
+                   'Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$.',
+                   'Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifiaknzschwelle unter der Annahme der Nullhypothese.') %>%
   sample
-
 
 @
 

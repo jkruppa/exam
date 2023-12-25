@@ -1,15 +1,16 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber den gepaarten t-Test f{\"u}r verbundene Stichproben ist richtig?
+Welche Aussage {\"u}ber den t-Test im Allgmeinen ist richtig? 
 
-<<mc-ttest-04, results='asis', echo = FALSE>>=
+<<mc-ttest-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{\"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{\"o}nnen.',
-                   'Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abh{\"a}ngig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
-                   'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{\"u}r Varianzhomogenit{\"a}t mit den Vorteilen des Welch t-Test f{\"u}r Varianzheterogenit{\"a}t. Wir bilden daf{\"u}r die Differenz der Einzelbeobachtungen.',
-                   'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{\"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
-                   'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{\"a}{\"a}ngigkeit nicht mehr vorliegen haben.') %>%
+questions_vec <- c('Der t-Test vergleicht die Varianzen von mindestens zwei oder mehr Gruppen',
+                   'Der t-Test testet generell zu einem erh{\"o}hten $\\alpha$-Niveau von 20\\%.',
+                   'Der t-Test vergleicht die Mittelwerte von zwei Gruppen.',
+                   'Der t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{\"a}t. Sollte keine Varianzhomogenit{\"a}t vorliegen, so gibt es keine M{\"o}glichkeit den t-Test in einer Variante anzuwenden.',
+                   'Der t-Test ist ein Vortest der ANOVA und basiert daher auf dem Vergleich von Streuungsparametern') %>%
   sample
+
 
 @
 

@@ -1,32 +1,19 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Sie rechnen eine linearen Regression und erhalten folgenden Residual
-Plot. Welche Aussage ist richtig?
+Nach einer simplen linearen Regression zur Untersuchung vom Einfluss der
+$CO_2$-Konzentration [$\mu g$] im Wasser auf das Wachstum von Wasserlinsen
+[$kg$] erhalten Sie einen $\beta_1$ Koeffizienten von $0.00001$ und einen
+hoch signifikanten $p$-Wert mit $2.3\cdot 10^{-9}$. Warum sehen Sie so einen kleinen
+Effekt bei einer so deutlichen Signifikanz? 
 
 
-<<mc-regression-06-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+<<mc-distribution-01, results='asis', echo = FALSE>>=
 
-n <- rpois(1, 100)
-data_tbl <- tibble(x = 1:n,
-                   y_1 = rnorm(n, 0, 1)) %>%
-  set_names(c("x", "y"))
-
-mod <- lm(y ~ x, data_tbl)
-df <- augment(mod)
-ggplot(df, aes(x = .fitted, y = .resid)) +
-  geom_point() +
-    theme_minimal() 
-
-@ 
-
-
-<<mc-regression-06-b, results='asis', echo = FALSE>>=
-
-questions_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
-                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.',
-                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil auf der Diagonalen.',
-                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Es ist kein Muster zu erkennen.',
-                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Es ist ein Muster zu erkennen.') %>%
+questions_vec <- c("Die Einheit der $CO_2$-Konzentration ist zu klein gew{\"a}hlt. Die Erh{\"o}hung der $CO_2$-Konzentration um 1 f{\"u}hrt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gew{\"a}hlt werden.",
+                   "Die Einheit der $CO_2$-Konzentration ist zu klein gew{\"a}hlt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration h{\"a}ngen zusammen.",
+                   "Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h{\"o}her ist die Teststatsitik und damit auch der $p$-Wert kleiner. ",
+                   "Die Fallzahl ist zu hoch angesetzt. Je h{\"o}her die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.",
+                   "Das Gewicht und die $CO_2$-Konzentration korrelieren sehr stark, deshalb wird der $\\beta_1$ Koeffizient sehr klein.") %>%
   sample
 
 

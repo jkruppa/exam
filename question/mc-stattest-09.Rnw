@@ -2,23 +2,24 @@
 
 <<>>=
 
-var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
-             "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
+var_vec <- c("die untersuchte Population",
+             "ein untersuchtes Individuum") %>%
+  set_names(c("zur Population", "zum Individuum")) %>% 
   sample(1)
 
 @  
 
-Die Ergebnisse der einer statistischen Analyse k{\"o}nnen in die Analogie einer
-Wettervorhersage gebracht werden. Welche Analogie f{\"u}r die
-Ergebnisse eines statistischen Tests trifft am besten zu?
+Sie wollen eine Aussage {\"u}ber \Sexpr{var_vec} treffen. Dazu nutzen Sie einen
+statistischen Test. K{\"o}nnen Sie eine valide Aussage \Sexpr{names(var_vec)}
+aus einem statistischen Test erhalten? 
 
-<<mc-statistisches-testen-09-rain, results='asis', echo = FALSE>>=
+<<mc-statistisches-testen-10, results='asis', echo = FALSE>>=
 
-questions_vec <- c('In der Analogie der Regenwahrscheinlichkeit: ein statistischer Test gibt die Wahrscheinlichkeit f{\"u}r das Auftreten eines Ereignisses wieder. Die St{\"a}rke des Effektes wird nicht wiedergeben.',
-                   'In der Analogie des Niederschlags oder Regenmenge: ein statistischer Test gibt die St{\"a}rke eines Effektes wieder. Zum Beispiel, wie hoch ist der Mittelwertsunterschied.',
-                   'In der Analogie der Durchschnittstemperatur: Wie oft tritt ein Effekt durchschnittlich ein? Wir erhalten eine Wahrscheinlichkeit f{\"u}r die Effekte. Zum Beispiel, wie hoch ist die Wahrscheinlichkeit f{\"u}r einen Mittelwert als Durchschnitt.',
-                   'In der Analogie der Maximaltemperatur: Was ist der maximale Unterschied zwischen zwei Gruppen. Wir erhalten hier eine Aussage {\"u}ber die Spannweite und den maximalen Effekt.',
-                   'In der Analogie der Sonnenscheindauer: Wie lange kann mit einem entsprechenden Effekt gerechnet werden? Die Wahrscheinlichkeit f{\"u}r den Effekt gibt der statistische Test wieder.') %>%
+questions_vec <- c(str_c('Ja, ', var_vec, ' k{\"o}nnen wir mit einem statistischen Test auswerten. Wir erhalten eine Aussage ', names(var_vec), '.'),
+                   str_c('Nein, ', var_vec, ' k{\"o}nnen wir mit einem statistischen Test nicht auswerten. Wir erhalten keine Aussage ', names(var_vec), '.'),
+                   str_c('Nein, wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.'),
+                   str_c('Ja, wir erhalten eine Aussage. M{\"u}ssen aber das Individuum im Kontext der Population adjustieren.'),
+                   str_c('Weder eine Ausssage {\"u}ber die Population noch {\"u}ber das Individuum ist mit einem statistischen Test m{\"o}glich. Wir erhalten eine Aussage {\"u}ber ein Experiment.')) %>%
   sample
 
 

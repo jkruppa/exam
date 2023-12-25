@@ -1,0 +1,23 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Welche Aussage {\"u}ber die Power ist richtig?
+
+<<mc-statistisches-testen-04, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Die Power $1-\\beta$ wird auf 80\\% gesetzt. Alle statistischen Tests sind so konstruiert, dass die $H_A$ mit 80\\% "bewiesen wird".' ,
+                   'Es gilt $\\alpha + \\beta = 1$ und somit liegt $\\beta$ meist bei 95\\%.',
+                   'Die Power $1-\\beta$ wird auf 80\\% gesetzt. Damit liegt die Wahrscheinlichkeit f{\"u}r die $H_0$ bei 20\\%.',
+                   'Die Power ist nicht in der aktuellen Testthorie mehr vertreten. Wir rechnen nur noch mit dem Fehler 1. Art.',
+                   'Die Power beschreibt die Wahrscheinlichkeit die $H_A$ abzulehnen. Wir testen die Power jedoch nicht.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

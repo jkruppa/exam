@@ -1,22 +1,15 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Nach einem Experiment mit f{\"u}nf Weizensorten ergibt eine ANOVA ($p = 0.041$)
-einen signifikanten Unterschied f{\"u}r den Ertrag. Sie f{\"u}hren anschlie{\ss}end die
-paarweisen t-Tests f{\"u}r alle Vergleiche der verschiedenen Weizensorten
-durch. Nach der Adjustierung f{\"u}r multiples Testen ist kein p-Wert unter der
-$\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte
-an und finden hier als niedrigsten p-Wert $p_{3-2} = 0.053$. Welche Aussage
-ist richtig? 
+Welche Aussage {\"u}ber den gepaarten t-Test f{\"u}r verbundene Stichproben ist richtig?
 
-<<mc-ttest-03, results='asis', echo = FALSE>>=
+<<mc-ttest-04, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.',
-                   'Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.',
-                   'Die ANOVA testet auf der gesamten Fallzahl. Es w{\"a}re besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.',
-                   'Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.',
-                   'Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.') %>%
+questions_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{\"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{\"o}nnen.',
+                   'Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abh{\"a}ngig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
+                   'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{\"u}r Varianzhomogenit{\"a}t mit den Vorteilen des Welch t-Test f{\"u}r Varianzheterogenit{\"a}t. Wir bilden daf{\"u}r die Differenz der Einzelbeobachtungen.',
+                   'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{\"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
+                   'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{\"a}{\"a}ngigkeit nicht mehr vorliegen haben.') %>%
   sample
-
 
 @
 

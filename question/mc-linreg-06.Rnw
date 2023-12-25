@@ -1,26 +1,16 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+In einer linearen Regression werden die $\epsilon$ oder Residuen
+gesch{\"a}tzt. Welcher Verteilung folgen die Residuen bei einer optimalen
+Modellierung? 
 
-<<mc-corr-01a, results='markup', echo = FALSE>>=
-corr_type <- c("Pearson", "Kendall", "Spearman") %>% sample(1)
-@
+<<mc-regression-02, results='asis', echo = FALSE>>=
 
-Welche Aussage {\"u}ber den Korrelationskoeffizienten nach \Sexpr{corr_type}
-ist richtig?
-
-<<mc-corr-01b, results='asis', echo = FALSE>>=
-
-questions_vec <- c(str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn der Korrelationskoeffizienten zwischen -1 und 1 liegt. Dann sind die Residuen normalverteilt.')
-                   ) %>%
+questions_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(0, s^2)$.',
+                   'Die Residuen sind normalverteilt mit $\\mathcal{N}(\\bar{y}, s^2)$.',
+                   'Die Residuen sind normalverteilt mit $\\mathcal{N}(0, 1)$.',
+                   'Die Residuen sind binomialverteilt.',
+                   'Die Residuen folgen einer Poissonverteilung mit Pois(0).') %>%
   sample
 
 

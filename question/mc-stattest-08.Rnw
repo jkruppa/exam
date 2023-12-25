@@ -1,15 +1,26 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage über den $p$-Wert und dem Signifikanzniveau $\alpha$ gleich 5\% ist richtig?
+<<>>=
 
-<<mc-statistisches-testen-11, results='asis', echo = FALSE>>=
+var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
+             "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
+  sample(1)
 
-questions_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.',
-                   'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.',
-                   'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.',
-                   'Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$.',
-                   'Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifiaknzschwelle unter der Annahme der Nullhypothese.') %>%
+@  
+
+Die Ergebnisse der einer statistischen Analyse k{\"o}nnen in die Analogie einer
+Wettervorhersage gebracht werden. Welche Analogie f{\"u}r die
+Ergebnisse eines statistischen Tests trifft am besten zu?
+
+<<mc-statistisches-testen-09-rain, results='asis', echo = FALSE>>=
+
+questions_vec <- c('In der Analogie der Regenwahrscheinlichkeit: ein statistischer Test gibt die Wahrscheinlichkeit f{\"u}r das Auftreten eines Ereignisses wieder. Die St{\"a}rke des Effektes wird nicht wiedergeben.',
+                   'In der Analogie des Niederschlags oder Regenmenge: ein statistischer Test gibt die St{\"a}rke eines Effektes wieder. Zum Beispiel, wie hoch ist der Mittelwertsunterschied.',
+                   'In der Analogie der Durchschnittstemperatur: Wie oft tritt ein Effekt durchschnittlich ein? Wir erhalten eine Wahrscheinlichkeit f{\"u}r die Effekte. Zum Beispiel, wie hoch ist die Wahrscheinlichkeit f{\"u}r einen Mittelwert als Durchschnitt.',
+                   'In der Analogie der Maximaltemperatur: Was ist der maximale Unterschied zwischen zwei Gruppen. Wir erhalten hier eine Aussage {\"u}ber die Spannweite und den maximalen Effekt.',
+                   'In der Analogie der Sonnenscheindauer: Wie lange kann mit einem entsprechenden Effekt gerechnet werden? Die Wahrscheinlichkeit f{\"u}r den Effekt gibt der statistische Test wieder.') %>%
   sample
+
 
 @
 

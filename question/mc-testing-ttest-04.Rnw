@@ -1,14 +1,20 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber den t-Test ist richtig?
+Nach einem Experiment mit f{\"u}nf Weizensorten ergibt eine ANOVA ($p = 0.041$)
+einen signifikanten Unterschied f{\"u}r den Ertrag. Sie f{\"u}hren anschlie{\ss}end die
+paarweisen t-Tests f{\"u}r alle Vergleiche der verschiedenen Weizensorten
+durch. Nach der Adjustierung f{\"u}r multiples Testen ist kein p-Wert unter der
+$\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte
+an und finden hier als niedrigsten p-Wert $p_{3-2} = 0.053$. Welche Aussage
+ist richtig? 
 
-<<mc-ttest-01, results='asis', echo = FALSE>>=
+<<mc-ttest-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Der t-Test vergleicht die Varianzen von mindestens zwei oder mehr Gruppen',
-                   'Der t-Test testet generell zu einem erh{\"o}hten $\\alpha$-Niveau von 20\\%.',
-                   'Der t-Test vergleicht die Mittelwerte von zwei Gruppen.',
-                   'Der t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{\"a}t. Sollte keine Varianzhomogenit{\"a}t vorliegen, so gibt es keine M{\"o}glichkeit den t-Test in einer Variante anzuwenden.',
-                   'Der t-Test ist ein Vortest der ANOVA und basiert daher auf dem Vergleich von Streuungsparametern') %>%
+questions_vec <- c('Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.',
+                   'Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.',
+                   'Die ANOVA testet auf der gesamten Fallzahl. Es w{\"a}re besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.',
+                   'Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.',
+                   'Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.') %>%
   sample
 
 

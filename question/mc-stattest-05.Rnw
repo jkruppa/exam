@@ -1,16 +1,23 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Beim statistischen Testen wird \texttt{signal} mit \texttt{noise} zur
-Teststatistik T verrechnet. Welche der Formel berechnet korrekt die
-Teststatistik T?
+<<>>=
 
-<<mc-statistisches-testen-05, results='asis', echo = FALSE>>=
+var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
+             "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
+  sample(1)
 
-questions_vec <- c('Es gilt $T = \\cfrac{signal}{noise}$' ,
-                   'Es gilt $T = signal \\cdot noise$',
-                   'Es gilt $T = \\cfrac{noise}{signal}$',
-                   'Es gilt $T = \\cfrac{signal}{noise^2}$',
-                   'Es gilt $T = (signal \\cdot noise)^2$') %>%
+@  
+
+In der Theorie zur statistischen Testentscheidung kann "`\Sexpr{var_vec}"'
+in welche richtige Analogie gesetzt werden?
+
+<<mc-statistisches-testen-06, results='asis', echo = FALSE>>=
+
+questions_vec <- c('In die Analogie eines Rauchmelders: \\textit{Fire without alarm}, dem $\\beta$-Fehler.',
+                   'In die Analogie eines Rauchmelders: \\textit{Alarm without fire}, dem $\\alpha$-Fehler.',
+                   'In die Analogie eines brennenden Hauses ohne Rauchmelder: \\textit{House without noise}.',
+                   'In die Analogie eines Feuerwehrautos: \\textit{Car without noise}.',
+                   'In die Analogie eines Rauchmelders: \\textit{Alarm with fire}.') %>%
   sample
 
 
@@ -23,5 +30,3 @@ questions_vec <- c('Es gilt $T = \\cfrac{signal}{noise}$' ,
 \item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
 \item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
 \end{enumerate}
-
-%% ------------------------------------------------------------

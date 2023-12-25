@@ -232,8 +232,8 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[10])}
 \Sexpr{knit_child(mc_questions_vec[11])}
 \Sexpr{knit_child(mc_questions_vec[12])}
-\section*{Lineare Regression \& Korrelation}      
 \Sexpr{knit_child(mc_questions_vec[13])} 
+\section*{Lineare Regression \& Korrelation}
 \Sexpr{knit_child(mc_questions_vec[14])} 
 \Sexpr{knit_child(mc_questions_vec[15])}
 \Sexpr{knit_child(mc_questions_vec[16])}
@@ -265,8 +265,8 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[39])}
 \Sexpr{knit_child(mc_questions_vec[40])}
 \Sexpr{knit_child(mc_questions_vec[41])}
-\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[42])}
+\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[43])}
 \Sexpr{knit_child(mc_questions_vec[44])}
 \Sexpr{knit_child(mc_questions_vec[45])}
