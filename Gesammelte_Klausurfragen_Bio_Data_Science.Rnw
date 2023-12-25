@@ -231,8 +231,8 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[9])} 
 \Sexpr{knit_child(mc_questions_vec[10])}
 \Sexpr{knit_child(mc_questions_vec[11])}
-\section*{Lineare Regression \& Korrelation}     
-\Sexpr{knit_child(mc_questions_vec[12])} 
+\Sexpr{knit_child(mc_questions_vec[12])}
+\section*{Lineare Regression \& Korrelation}      
 \Sexpr{knit_child(mc_questions_vec[13])} 
 \Sexpr{knit_child(mc_questions_vec[14])} 
 \Sexpr{knit_child(mc_questions_vec[15])}
@@ -240,33 +240,37 @@ grade_tbl <- pre_grade_tbl %>%
 \Sexpr{knit_child(mc_questions_vec[17])}
 \Sexpr{knit_child(mc_questions_vec[18])}
 \Sexpr{knit_child(mc_questions_vec[19])}
-\section*{Vermischte Themen}  
 \Sexpr{knit_child(mc_questions_vec[20])}
+\section*{Vermischte Themen}  
 \Sexpr{knit_child(mc_questions_vec[21])}
 \Sexpr{knit_child(mc_questions_vec[22])}
 \Sexpr{knit_child(mc_questions_vec[23])}
 \Sexpr{knit_child(mc_questions_vec[24])}
 \Sexpr{knit_child(mc_questions_vec[25])}
 \Sexpr{knit_child(mc_questions_vec[26])}
-\section*{Multiple Gruppenvergleiche}
 \Sexpr{knit_child(mc_questions_vec[27])}
-\section*{Statistische Testtheorie} 
 \Sexpr{knit_child(mc_questions_vec[28])}
+\section*{Multiple Gruppenvergleiche}    
 \Sexpr{knit_child(mc_questions_vec[29])}
 \Sexpr{knit_child(mc_questions_vec[30])}
 \Sexpr{knit_child(mc_questions_vec[31])}
 \Sexpr{knit_child(mc_questions_vec[32])}
+\section*{Statistische Testtheorie}  
 \Sexpr{knit_child(mc_questions_vec[33])}
 \Sexpr{knit_child(mc_questions_vec[34])}
 \Sexpr{knit_child(mc_questions_vec[35])}
-\section*{Statistische Tests für Gruppenvergleiche}    
 \Sexpr{knit_child(mc_questions_vec[36])}
 \Sexpr{knit_child(mc_questions_vec[37])}
 \Sexpr{knit_child(mc_questions_vec[38])}
 \Sexpr{knit_child(mc_questions_vec[39])}
 \Sexpr{knit_child(mc_questions_vec[40])}
 \Sexpr{knit_child(mc_questions_vec[41])}
+\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[42])}
+\Sexpr{knit_child(mc_questions_vec[43])}
+\Sexpr{knit_child(mc_questions_vec[44])}
+\Sexpr{knit_child(mc_questions_vec[45])}
+\Sexpr{knit_child(mc_questions_vec[46])}
 
 % -----------------------------------------------------------------------
 \clearpage

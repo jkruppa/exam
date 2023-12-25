@@ -1,0 +1,36 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+wrong_vec <- c("Scatterplot, Mosaicplot, Boxplot",
+               "Boxplot, Violinplot, Mosaicplot",
+               "Scatterplot, Densityplot, Barplot",
+               "Histogramm, Scatterplot, Boxplot",
+               "Barplot, Mosaicplot, Violinplot",
+               "Violinplot, Scatterplot, Barplot",
+               "Histogramm, Densityplot, Dotplot") %>% sample(4)
+@
+
+In der Statistik m{\"u}ssen wir h{\"a}ufig {\"U}berpr{\"u}fen, ob unser Outcome einer
+bestimmten Verteilung folgt. Meistens {\"U}berpr{\"u}fen wir, ob eine
+Normalverteilung vorliegt. Folgende drei Abbildungen eigenen sich im
+Besonderen f{\"u}r die {\"U}berpr{\"u}fung einer Verteilungsannahme an eine Variable.
+
+<<mc-desc-08, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Boxplot, Densityplot, Violinplot',
+                   wrong_vec[1],
+                   wrong_vec[2],
+                   wrong_vec[3],
+                   wrong_vec[4]) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

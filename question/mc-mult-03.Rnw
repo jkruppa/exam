@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Der multiple Vergleich als Posthoc-Test nach einer ANOVA ist in den
+Agrarwissenschaften heutzutage Standard. Welches R Paket wird h{\"a}ufig f{\"u}r
+den multiplen Vergleich genutzt? Welche Beschreibung der Eigenschaften ist korrekt?
+
+<<mc-mult-03, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Das R Paket emmeans erlaubt die Durchf{\"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{\"a}sst sich recht einfach das CLD erstellen und so {\"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{\"u}hren.',
+                   'Das R Paket hmisc erlaubt die Durchf{\"u}hrung eines multiplen Gruppenvergleichs aus verschiedenen Modellen heraus. Aus einem hmisc Objekt l{\"a}sst sich recht einfach das CL-h erstellen und so {\"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{\"u}hren.',
+                   'Das R Paket emmeans erlaubt die Durchf{\"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{\"a}sst sich leider kein CLD erstellen. Dennoch ist das Paket einfach zu bedienen und wird deshalb genutzt. Die Interpretation der statistischen Auswertung wird {\"u}ber einen Barplot abgebildet.',
+                   'Das R Paket lm. Das Paket lm erstellt selbstst{\"a}ndig Konfidenzintervalle und entsprechende p-Werte. Da wir in dem Paket nicht adjustieren m{\"u}ssen, ist es bei Anwendern sehr beliebt.',
+                   'Das R Paket ggplot. Wir erhalten hier sofort eine Visualisierung der Daten. Anhand der Visualisierung l{\"a}sst sich eine explorative Datenanalyse durchf{\"u}hren, die gleichwertig zu einem Posthoc-Test ist.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

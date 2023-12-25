@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Bei einem multiplen Vergleich oder Posthoc Test kann es zu einer Besonderheit beim
+statistischen Testen kommen. Wie nennt man diese Besonderheit beim
+statistischen Testen und wie kann man mit ihr umgehen?
+
+<<mc-mult-04, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Beim multiplen Testen kann es zu einer $\\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern sehr viel h{\"o}her. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.',
+                   'Beim multiplen Testen kann es zu einer $\\beta$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $20\\%$. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.',
+                   'Beim multiplen Testen kann es zu einer $\\alpha$-Deflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist. Die p-Werte werden durch die Anzahl an Vergleichen geteilt',
+                   'Beim multiplen Testen kann es zu Varianzheterogenit{\"a}t kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Das Verfahren nach Welch, bekannt aus dem t-Test, ist hier h{\"a}ufig anzuwenden.',
+                   'Beim multiplen Testen kann es zu einer $\\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Welch das bekanneste Verfahren ist.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

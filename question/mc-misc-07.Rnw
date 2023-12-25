@@ -1,14 +1,34 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber Cook's d und Cohen's d ist richtig? 
+<<>>=
 
-<<mc-desc-04, results='asis', echo = FALSE>>=
+var_vec <- c("Odds ratio", "Risk ratio") %>%
+  sample(1)
 
-questions_vec <- c("Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um einen standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.",
-                   "Wir nutzen Cohen's d um Outlier in den Daten zu finden und Cook's d um einen standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.",
-                   "Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um standardisierte Outlier f{\"u}r Gruppenvergeliche zu erhalten.",
-                   "Wir nutzen Cook's d um Outlier in den Daten zu finden. Cohen's d findet auch Outlier, ist aber ein veraltetetes Konzept in der Statistik.",
-                   "Wir nutzen Cook's d um Outlier in den Daten zu finden und Cohen's d um einen nicht standardisierten Effektsch{\"a}tzer f{\"u}r Gruppenvergeliche zu erhalten.") %>%
+num_1 <- c(3, 4, 5, 6) %>% sample(1)
+num_2 <- c(7, 8, 12) %>% sample(1)
+
+@ 
+
+Sie f{\"u}hren ein Experiment zur Behandlung von Klaueninfektionen bei K{\"u}hen
+durch. Bei \Sexpr{num_1} Tieren finden Sie eine Erkrankung der Klauen vor und
+\Sexpr{num_2} Tiere sind gesund. Welche Aussage {\"u}ber den \Sexpr{var_vec}
+Effektsch{\"a}tzer ist richtig?
+
+<<mc-modeling-05, results='asis', echo = FALSE>>=
+
+questions_vec <- c(
+  str_c(
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/num_2, 2), ', da es sich um eine Chancenverh{\"a}ltnis handelt.'),
+  str_c(
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), ', da es sich um eine Chancenverh{\"a}ltnis handelt.'),
+  str_c(
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/num_2, 2), ', da es sich um ein Anteil handelt.'),
+  str_c(
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), ', da es sich um ein Anteil handelt.'),
+  str_c(
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_2/num_1, 2), ', da es sich um ein Anteil handelt.')
+) %>%
   sample
 
 
