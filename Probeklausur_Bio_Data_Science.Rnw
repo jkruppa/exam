@@ -1,0 +1,275 @@
+\documentclass[a4paper, 9pt]{scrartcl}
+\usepackage[ngerman]{babel}
+% -----------------------------------------------------------------------
+<<init, echo = FALSE>>=
+pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
+               gridExtra, broom, effectsize, gtsummary, glmmTMB, performance,
+               janitor, pander, lme4, corpcor, fs)
+##
+options(show.signif.stars = FALSE)
+options(scipen = 0, digits = 7)
+##
+opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
+               echo=FALSE, warning=FALSE, message=FALSE, 
+               cache.path='cache/', fig.pos='H')
+## get the paths
+if(str_detect(path_home(), "^C:")){
+  exam_path <- file.path(path_home(), "Documents/GitHub/exam")
+} else {
+  exam_path <- file.path(path_home(), "work/GitHub/exam")  
+}
+init_path <- file.path(exam_path, "init")
+question_path <- file.path(exam_path, "question")
+img_path <- file.path(question_path, "img")
+
+## get the question files
+questions_vec <- list.files(question_path,
+                            full.names = TRUE, pattern = "Rnw")
+
+mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
+math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
+tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
+stat_test_questions_vec <- str_subset(questions_vec, "stat_test-", negate = FALSE)
+desc_stat_questions_vec <- str_subset(questions_vec, "desc_stat-", negate = FALSE)
+ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
+anova_questions_vec <- str_subset(questions_vec, "/anova-", negate = FALSE)
+chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FALSE)
+linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
+nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
+multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
+
+text_question_vec <- c(desc_stat_questions_vec,
+                       stat_test_questions_vec, ttest_questions_vec,
+                       anova_questions_vec, multcomp_questions_vec,
+                       chisquare_questions_vec, nonpar_questions_vec,
+                       linreg_questions_vec,
+                       math_questions_vec, tier_questions_vec)
+
+## get the wanted questions for the exam
+source(file.path(exam_path, "questions_vec.R"))
+wanted_questions <- wanted_questions_lst %>% unlist()
+
+mc_questions_vec <- mc_questions_vec %>% 
+  magrittr::extract(wanted_questions_lst$mc) %>%
+  sample()
+
+text_questions_vec <- text_question_vec %>% 
+  magrittr::extract(wanted_questions_lst$text - length(mc_questions_vec)) %>%
+  sample()
+
+## get the points per question
+points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
+
+## get the points done
+ques_points_tbl <- points_tbl %>% 
+  filter(file_name %in% basename(text_questions_vec)) %>% 
+  arrange(factor(file_name, levels = basename(text_questions_vec)))
+
+points_vec <- ques_points_tbl %>% pull(points) 
+textpoints <- sum(points_vec) 
+overallpoints <- textpoints + 20
+
+## Build up the grade table
+pre_grade_tbl <- unique(cut(overallpoints:(overallpoints/2), 10)) %>% 
+  as_tibble() %>% 
+  separate(value, into = c("low", "high"), sep = ",") %>% 
+  mutate(low = str_replace_all(low, "\\(", ""),
+         high = str_replace_all(high, "\\]", "")) %>% 
+  mutate_if(is.character, as.numeric) %>% 
+  mutate(low = round(low/0.5) * 0.5 + 0.5,
+         high = round(high/0.5) * 0.5)
+
+## be sure the lowest grade at half points
+pre_grade_tbl$low[10] <- overallpoints/2
+
+#if((overallpoints/2)%%1 != 0) {
+pre_grade_tbl$low <- str_pad(pre_grade_tbl$low, 3, "right", "0") %>% 
+  str_replace_all("0$", ".0")
+pre_grade_tbl$high <- str_pad(pre_grade_tbl$high, 3, "right", "0") %>% 
+  str_replace_all("0$", ".0")
+#}
+
+## final grade table
+grade_tbl <- pre_grade_tbl %>% 
+  mutate(Punkte = str_c(low, " - ", high),
+         Note = c("1.0", "1.3", "1.7", "2.0", "2.3", 
+                 "2.7", "3.0", "3.3", "3.7", "4.0")) %>% 
+  select(Punkte, Note)
+@ 
+% -----------------------------------------------------------------------
+\input{\Sexpr{init_path}}
+% -----------------------------------------------------------------------
+\begin{document}
+% -----------------------------------------------------------------------
+\maketitle
+\thispagestyle{empty}
+\clearpage
+% -----------------------------------------------------------------------
+
+\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
+    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
+  \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
+    handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
+  \item \textbf{You can answer the questions in English without any consequences.}  
+  \end{itemize}
+\end{graybox}
+\vfill
+
+\begin{graybox}{Ergebnis der Klausur}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus dem Multiple
+    Choice Teil erreicht.
+  \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
+    Textteil erreicht. 
+  \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
+  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
+  \end{itemize}
+  \vspace{1ex}
+\begin{center}
+  \begin{tabular}[c]{cc}
+    \toprule
+    \textbf{Punkte}	&	\textbf{Note}	\\
+    \midrule
+    \Sexpr{grade_tbl$Punkte[1]}	&	1,0	\\
+    \Sexpr{grade_tbl$Punkte[2]}	&	1,3	\\
+    \Sexpr{grade_tbl$Punkte[3]}	&	1,7	\\
+    \Sexpr{grade_tbl$Punkte[4]}	&	2,0	\\
+    \Sexpr{grade_tbl$Punkte[5]}	&	2,3	\\
+    \Sexpr{grade_tbl$Punkte[6]}	&	2,7	\\
+    \Sexpr{grade_tbl$Punkte[7]}	&	3,0	\\
+    \Sexpr{grade_tbl$Punkte[8]}	&	3,3	\\
+    \Sexpr{grade_tbl$Punkte[9]}	&	3,7	\\
+    \Sexpr{grade_tbl$Punkte[10]}	&	4,0	\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+  \vspace{1ex}
+\begin{itemize}
+\item[] Es ergibt sich eine Endnote von \rule[0ex]{4em}{.4pt}.
+\end{itemize}
+  \vspace{1Ex}
+\end{graybox}
+
+% -----------------------------------------------------------------------
+\newpage
+% -----------------------------------------------------------------------
+
+\begin{graybox}{Multiple Choice Aufgaben}
+  \begin{itemize}
+  \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
+  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+      dieser Seite.}
+  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+    angekreuzt sind!
+  \end{itemize}
+
+\begin{center}
+  \large
+  \begin{tabular}{|r|c|c|c|c|c||c|}
+    \hline
+    & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & $\boldsymbol{\checkmark}$\strut\\
+    \hline
+    1 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    2 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    3 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    4 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    5 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    6 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    7 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    8 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    9 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+    10 Aufgabe &   &   &   &   &   & \strut\\
+    \hline
+  \end{tabular}
+\end{center}
+
+\begin{itemize}
+\item Es sind \rule[0ex]{2em}{.4pt}\, von 20 Punkten erreicht worden.
+\end{itemize}
+\end{graybox}
+
+\vfill
+
+\begin{graybox}{Rechen- und Textaufgaben}
+  \begin{itemize}
+  \item Die Tabelle wird vom Dozenten ausgefüllt.
+  \end{itemize}
+  \begin{center}
+    \large
+    \begin{tabular}{|l|c|c|c|c|c|c|c|}
+      \hline
+      \textbf{Aufgabe} & 11 & 12 & 13 & 14 & 15 & 16 & 17 \strut\\
+      \hline
+      \textbf{Punkte} & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[2]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[3]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[4]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[5]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[7]}}\hspace{1Ex} \strut\\
+      \hline
+  \end{tabular}
+\end{center}
+\begin{itemize}
+\item Es sind \rule[0ex]{2em}{.4pt}\, von \Sexpr{textpoints} Punkten erreicht worden.
+\end{itemize}
+\end{graybox}
+
+% -----------------------------------------------------------------------
+\clearpage
+% -----------------------------------------------------------------------
+
+\Sexpr{knit_child(mc_questions_vec[1])} 
+\Sexpr{knit_child(mc_questions_vec[2])} 
+\Sexpr{knit_child(mc_questions_vec[3])} 
+\Sexpr{knit_child(mc_questions_vec[4])} 
+\Sexpr{knit_child(mc_questions_vec[5])} 
+\Sexpr{knit_child(mc_questions_vec[6])} 
+\Sexpr{knit_child(mc_questions_vec[7])} 
+\Sexpr{knit_child(mc_questions_vec[8])}
+\Sexpr{knit_child(mc_questions_vec[9])} 
+\Sexpr{knit_child(mc_questions_vec[10])}
+
+% -----------------------------------------------------------------------
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[1])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[2])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[3])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[4])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[5])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[6])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(desc_stat_questions_vec[7])} 
+\clearpage
+% -----------------------------------------------------------------------
+\end{document}
+% -----------------------------------------------------------------------
+
+
+  
