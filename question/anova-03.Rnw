@@ -7,10 +7,18 @@
 
 <<>>=
 resp <- c("drymatter", "freshmatter", "height") %>% sample(1)
+
+exp <- c("ein Gew{\"a}chshausexperiment",
+         "einen Freilandversuch",
+         "ein Experiment in einer Klimakammer",
+         "ein Feldexperiment") %>% sample(1)
+plant <- c("Maisspflanzen", "Erbsenschoten", "Kartoffeln", "Lauchstangen", "Erdbeerenpflanzen",
+           "Brokolik{\"o}pfen") %>% sample(1)
 @ 
 
-Der Datensatz \textit{crop\_tbl} enth{\"a}lt das Outcome \textit{\Sexpr{resp}} f{\"u}r ein Experiment mit 
-Maispflanzen, welches unter drei 
+
+Der Datensatz \textit{crop\_tbl} enth{\"a}lt das Outcome \textit{\Sexpr{resp}} f{\"u}r \Sexpr{exp} mit 
+\Sexpr{plant}, welches unter drei 
 verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen sind in dem Faktor
 \textit{trt} mit den Faktorstufen \textit{\Sexpr{sample(c("low", "ctrl", "A"),
     1)}},  \textit{\Sexpr{sample(c("mid", "trt1", "B"), 1)}} und

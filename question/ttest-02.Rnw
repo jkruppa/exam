@@ -8,9 +8,18 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Nach einem Experiment mit zwei Futtermitteln (\textit{FatDown} und
-\textit{ProGain}) an Puten ergibt sich die folgende Datentabelle mit dem gemessenen
-Gewichtszunahmen nach f{\"u}nf Wochen Mast.
+<<>>=
+exp <- c("einem Stallexperiment",
+         "einem Freilandversuch",
+         "einem Experiment in einer geschlossenen Anlage",
+         "einem Feldexperiment") %>% sample(1)
+animal <- c("Puten", "Mastschweinen", "Rindern", "H{\"u}hnern", "Ziegen",
+           "H{\"a}ngebauchschweinen") %>% sample(1)
+@ 
+
+Nach \Sexpr{exp} mit zwei Futtermitteln (\textit{FatDown} und
+\textit{ProGain}) an \Sexpr{animal} ergibt sich die folgende Datentabelle
+mit dem gemessenen Gewichtszunahmen nach f{\"u}nf Wochen Mast.
 
 <<ttest-04, results='asis', echo = FALSE>>=
 

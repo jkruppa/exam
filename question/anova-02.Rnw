@@ -8,8 +8,19 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+exp <- c("einem Gew{\"a}chshausexperiment",
+         "einem Freilandversuch",
+         "einem Experiment in einer Klimakammer",
+         "einem Feldexperiment") %>% sample(1)
+plant <- c("Maisspflanzen", "Erbsenschoten", "Kartoffeln", "Lauchstangen", "Erdbeerenpflanzen",
+           "Brokolik{\"o}pfe") %>% sample(1)
+resp <- c("das Trockengewicht", "das Frischgewicht", "den Ertrag pro Hektar") %>%
+  sample(1)
+@ 
 
-Der Datensatz \texttt{plant\_growth\_tbl} enth{\"a}lt das Gewicht der Kohlk{\"o}pfe
+
+Der Datensatz \texttt{plant\_growth\_tbl} enth{\"a}lt \Sexpr{resp} der \Sexpr{plant}
 (\textit{weight}), die unter einer Kontrolle und zwei verschiedenen
 Behandlungsbedingungen erzielt wurden -- dem Faktor \textit{group} mit den
 Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.

@@ -5,9 +5,18 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-In einem Experiment wurde der Ertrag von Erbsen unter drei verschiedenen
-Pestizid-Dosen 0.5 g/l, 1.5 g/l und 2.5 g/l gemessen. Unten stehenden sehen
-Sie die Visualisierung des Datensatzes.
+<<>>=
+exp <- c("einem Gew{\"a}chshausexperiment",
+         "einem Freilandversuch",
+         "einem Experiment in einer Klimakammer",
+         "einem Feldexperiment") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+@ 
+
+In \Sexpr{exp} wurde der Ertrag von \Sexpr{plant} unter drei verschiedenen
+Pestizid-Dosen $0.5 g/l$, $1.5 g/l$ und $2.5 g/l$ gemessen. Im Folgenden ist der
+Datensatz einmal visualisiert.
 
 <<anova-01-a,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
 data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(5,7,9), 1),

@@ -9,6 +9,10 @@
 %% --------------------------------------------------------------------
 
 <<>>=
+exp <- c("einem Gew{\"a}chshausexperiment",
+         "einem Freilandversuch",
+         "einem Versuch in einer Klimakammer",
+         "einem Feldexperiment") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
 type <- c("D{\"u}ngestufen ($ctrl$ und $high$)",
           "Lichtstufen ($none$ und $600lm$)",
@@ -32,7 +36,7 @@ gen_data <- function(...){
 }
 @ 
 
-Nach einem Freilandexperiment mit zwei \Sexpr{type} als Behandlung
+Nach \Sexpr{exp} mit zwei \Sexpr{type} als Behandlung
 (\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
 gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
 

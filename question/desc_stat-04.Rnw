@@ -9,6 +9,10 @@
 %% --------------------------------------------------------------------
 
 <<>>=
+exp <- c("einem Gew{\"a}chshausexperiment",
+         "einem Freilandversuch",
+         "einem Versuch in einer Klimakammer",
+         "einem Feldexperiment") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
 type <- c("D{\"u}ngestufen ($ctrl$, $low$ und $high$)",
           "Lichtstufen ($none$, $200lm$ und $600lm$)",
@@ -32,8 +36,8 @@ gen_data <- function(...){
 }
 @ 
 
-Nach einem Freilandexperiment mit zwei \Sexpr{type} als Behandlung
-(\textit{treatment}) ergibt sich die folgende Boxplots mit dem
+Nach \Sexpr{exp} mit zwei \Sexpr{type} als Behandlung
+(\textit{treatment}) ergeben sich die folgenden Boxplots mit dem
 gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
 
 <<boxplot-02-zer, results='asis', echo = FALSE, fig.height = 4, fig.width = 4.5, fig.align = "center", message = FALSE>>=

@@ -5,10 +5,15 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+animal <- c("Puten", "Mastschweinen", "Rindern", "H{\"u}hnern", "Ziegen",
+            "H{\"a}ngebauchschweinen") %>% sample(1)
+n_ani <- rpois(1, 60)
+@ 
 
 Der Datensatz \textit{pig\_gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
-der Wirkung vom Vitamin Selen auf das Wachstum bei Mastschweinen. Der
-Versuch wurde an \Sexpr{nrow(data_tbl)} Mastschweinen durchgef{\"u}hrt, wobei
+der Wirkung vom Vitamin Selen auf das Wachstum von \Sexpr{animal}. Der
+Versuch wurde an \Sexpr{n_ani} \Sexpr{animal} durchgef{\"u}hrt, wobei
 jedes Tier eine von drei Selen-Dosen $dose$ ($\Sexpr{sample(c("0.1", "0.2",
   "0.5"), 1)}$ ng/Tag, $\Sexpr{sample(c("1", "2",
   "3"), 1)}$ ng/Tag und $\Sexpr{sample(c("10", "15",
