@@ -1,32 +1,51 @@
 \section{Aufgabe \hfill (6 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width =
+\hfill\href{https://youtu.be/knAziLLQGb0}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-count_vec <- rpois(sample(c(30, 27, 33), 1), 4)
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch") %>% sample(1)
+@ 
 
+Nach einer Bonitur von \Sexpr{plant} mit einer Kontrolle und drei
+Pestiziden ($ctrl$, $pestKill$, $roundUp$ und $zeroX$) ergibt sich die
+folgende Datentabelle mit den Boniturnoten (\textit{grade}).
 
+<<dotplot-01, results='asis', echo = FALSE>>=
+data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(3, 4), 1),
+                                         mean = sample(c(5, 6, 7), 1),
+                                         sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather,
+                  tibble(pestKill = round(rnorm(n = sample(c(3, 4), 1),
+                                             mean = sample(c(2, 3, 4), 1),
+                                             sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather,
+                  tibble(roundUp = round(rnorm(n = sample(c(3, 4), 1),
+                                             mean = sample(c(4, 5, 6), 1),
+                                             sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather,
+                  tibble(zeroX = round(rnorm(n = sample(c(3, 4), 1),
+                                             mean = sample(c(1, 2, 3), 1),
+                                             sd = sample(c(1, 2, 1), 1)))) %>%
+                    gather) %>%
+  set_names(c("pesticide", "grade")) %>%
+  mutate(grade = ifelse(grade <= 0, 1, grade)) %>% 
+#  mutate(gain = ifelse(rsp >= 20, "high", "low"),
+#         water = round(rnorm(nrow(.), 10, 1), 1)) %>%
+  sample_n(size = nrow(.))
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
 @
 
-Nach einem Gew{\"a}chshausexperiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den
-Bl{\"a}ttern von \Sexpr{plant} nach einer durchgestandenen Infektion der Pflanze. 
-
-\begin{center}
-$\Sexpr{count_vec}$
-\end{center}
-
 \begin{enumerate}
-\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
-\item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
-\item Erg{\"a}nzen Sie die relativen H{\"a}ufigkeiten in der Abbildung! \textbf{(1
-    Punkt)}  
+\item Zeichnen Sie in \textit{einer} Abbildung die Dotplots f{\"u}r die
+  vier Pestizidlevel! Beschriften Sie die Achsen entsprechend!
+  \textbf{(4 Punkte)}
+\item Erg{\"a}nzen Sie die Dotplots mit der g{\"a}ngigen
+  statistischen Ma{\ss}zahl! \textbf{(1 Punkt)}
+\item Wenn Sie \textit{keinen Effekt} zwischen den Pestizidlevel erwarten
+  w{\"u}rden, wie sehen dann die Dotplots aus? \textbf{(1 Punkt)}
 \end{enumerate}
-
-

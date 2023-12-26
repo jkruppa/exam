@@ -1,5 +1,8 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/bc1m7rkXld4}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
@@ -11,16 +14,23 @@ s_vec <- c("s\\uparrow", "s\\downarrow") %>% sample(1)
 ci <- c("99\\%-igen Konfidenzintervall", "90\\%-igen Konfidenzintervall") %>% sample(1)
 @ 
 
-Gegeben ist die Formel f{\"u}r den Student t-Test. Welche
-Auswirkung hat die {\"A}nderungen der jeweiligen statistischen Masszahl
-$\Delta$, $s$ und $n$ auf die Teststistik $T_{calc}$, den p-Wert
-$Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\alpha}$?
+Beim statistischen Testen gibt es einen Zusammenhang zwischen dem Effekt,
+der Streuung sowie der Fallzahl. Gegeben sei die Formel f{\"u}r den Student
+t-Test auf den die folgenden {\"U}berlegungen basieren sollen. Welche
+Auswirkung hat die {\"A}nderungen der jeweiligen statistischen Ma{\ss}zahl des
+Effekts $\Delta$, der Streuung $s$ und der Fallzahl $n$ auf die Teststistik
+$T_{calc}$, den p-Wert $Pr(D|H_0)$ sowie dem Konfidenzintervall
+$KI_{1-\alpha}$?
 
 \begin{enumerate}
 \item Visualisieren Sie den Zusammenhang zwischen der Teststatiatik
-  $T_{calc}$ und dem p-Wert $Pr(D|H_0)$ f{\"u}r sich {\"a}nderende $T_{calc}$-Werte!
-  \textbf{(2 Punkte)}  
-\item  F{\"u}llen Sie die untenstehende Tabelle aus! \textbf{(6 Punkte)}
+  $T_{calc}$ und dem p-Wert $Pr(D|H_0)$ f{\"u}r sich {\"a}ndernde $T_{calc}$-Werte!
+  \textit{Geben Sie daf{\"u}r eine numerischen Beispiel in dem Sie drei
+    $T_{calc}$-Werte und deren Einfluss auf den p-Wert vergleichen!}
+  \textbf{(3 Punkte)}  
+\item  F{\"u}llen Sie die untenstehende Tabelle aus in dem Sie die {\"A}nderung der
+  statistischen Ma{\ss}zahlen auf die Teststatistik, den p-Wert sowie das
+  Konfidenzintervall in \textit{einem} Wort beschreiben! \textbf{(4 Punkte)}
 \begin{center}
   \large
   \begin{tabular}[c]{l|c|c|c|l|c|c|c}
@@ -43,5 +53,6 @@ $Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\alpha}$?
   \end{tabular}
 \end{center}
 \item Visualisieren Sie ein 95\%-iges Konfidenzintervall im Vergleich
-  zu einem \Sexpr{ci}! Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)} 
+  zu einem \Sexpr{ci}! Begr{\"u}nden Sie Ihre Visualisierung anhand der Formel
+  des Konfidenzintervalls des t-Tests mathematisch! \textbf{(3 Punkte)} 
 \end{enumerate}

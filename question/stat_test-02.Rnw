@@ -14,15 +14,29 @@ words <- c("(Unbekannte) Wahrheit", "H$_0$ wahr", "H$_0$ falsch",
            "5\\%", "20\\%") %>% sample(4)
 @ 
 
+F{\"u}r ein besseres Verst{\"a}ndnis der statistischen Testtheorie, auch
+Null-Ritual genannt, kann eine Visualisierung als Kreuztabelle genutzt werden.  
+
 \begin{enumerate}
-\item Tragen Sie folgende Fachbegriffe zur statistischen Testtheorie korrekt eine passende Kreuztabelle ein! \textbf{(3 Punkte)}
-  \begin{itemize}
-  \item \Sexpr{words[1]}
-  \item \Sexpr{words[2]}
-  \item \Sexpr{words[3]}
-  \item \Sexpr{words[4]}
-  \end{itemize}
-\item Erg{\"a}nzen Sie die Kreuztabelle um vier weitere, passende Fachbegriffe zur statistischen Testtheorie! \textbf{(2 Punkte)}
+\item Tragen Sie folgende statistische Fachbegriffe zur statistischen
+  Testtheorie korrekt eine selbst erstellte Kreuztabelle ein! \textbf{(3
+    Punkte)}
+  \begin{center}
+  \begin{tabular}{cccc}
+  \Sexpr{words[1]} & \Sexpr{words[2]} & \Sexpr{words[3]} & \Sexpr{words[4]} \\
+  \end{tabular}
+  \end{center}
+\item Erg{\"a}nzen Sie Ihre erstellte Kreuztabelle um vier weitere, passende
+  Fachbegriffe zur statistischen Testtheorie! \textbf{(2 Punkte)}
+\end{enumerate}
+
+Die Entscheidungsfindung durch einen statistischen Test kann auch durch die
+Analogie zu einem Feuermelder abgebildet werden. Dabei symbolisiert der
+Feuermelder den statistischen Test und es soll getestet werden, ob ein Feuer
+ausgebrochen ist.
+
+\begin{enumerate}
+  \setcounter{enumi}{2}    
 \item In der Analogie des Feuermelders, wie lautet der $\alpha$-Fehler? \textbf{(1 Punkt)}
 \item In der Analogie des Feuermelders, wie lautet der $\beta$-Fehler? \textbf{(1 Punkt)}
 \item Wenn der Feuermelder einmal pro Tag messen w{\"u}rde, wie oft w{\"u}rde der

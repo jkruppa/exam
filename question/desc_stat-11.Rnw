@@ -1,52 +1,45 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/MiD42k4l5Ag}{\includegraphics[width =
+\hfill\href{https://youtu.be/Op-gjzASH9I}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
 
-mean_vec <- c(0, 1, 2, 3, 4) %>%
+files <- dir(file.path(question_path, "img"),
+             pattern = "boxplot-03", full.names = TRUE) %>%
   sample(2)
 
-sd_vec <- c(0.5^2, 1^2, 2^2, 3^2) %>%
-  sample(2, replace = TRUE)
+sd_range <- c("$\\pm 2s$", "$\\pm 1s$") %>% sample(1)
 
-lambda_vec <- c(sample(c(1,2,3), 1), sample(c(15, 20, 25), 1)) %>% sample()
-
-@
+@ 
 
 \begin{enumerate}
-\item Skizieren Sie in die unten stehenden, freien Abbildungen die
-  Verteilungen, die sich nach der Abbildungs{\"u}berschrift ergeben! \textbf{(6
-    Punkte)}
-\item Beschriften Sie die Achsen der Abbildungen entsprechend! \textbf{(1
-    Punkt)}
-\item Achten Sie auf die entsprechende Skalierung der beiden Verteilungen
-  in den Abbildungen! \textbf{(2 Punkte)}
+\item Zeichnen Sie {\"u}ber die untenstehenden Boxplots die entsprechende
+  zugeh{\"o}rige Verteilung! \textbf{(2 Punkte)} 
+\item Zeichnen Sie unter die untenstehenden Boxplots die entsprechende
+  zugeh{\"o}rige Beobachtungen als Stiche! \textbf{(2 Punkte)}
+\item Wieviel Prozent der Beobachtungen fallen in das IQR? Erg{\"a}nzen Sie die
+  Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
+\item Wieviel Prozent der Beobachtungen fallen in \Sexpr{sd_range} unter
+  der Annahme einer Normalverteilung?  \textit{Wenn m{\"o}glich}, erg{\"a}nzen Sie
+  die Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
 \end{enumerate}
 
-<<histogram-01, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+\vspace*{8cm}
 
-df <- data.frame()
-p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  # xlab("Y") + ylab("H{\"a}ufigkeit") +
-  ggtitle(str_c("N(", mean_vec[1], ", ", sd_vec[1], ") und ",
-                "N(", mean_vec[2], ", ", sd_vec[2], ")")) + 
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  # xlab("Y") + ylab("H{\"a}ufigkeit") +
-  ggtitle(str_c("Pois(", lambda_vec[1], ") und ",
-                "Pois(", lambda_vec[2], ")")) + 
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-grid.arrange(p1, p3, nrow = 2)
-@
+\begin{minipage}[c]{.4\linewidth} % [b] => Ausrichtung an \caption
+  \includegraphics[width=\linewidth]{\Sexpr{files[1]}}
+\end{minipage}
+\hspace{.1\linewidth}% Abstand zwischen Bilder
+\begin{minipage}[c]{.4\linewidth} % [b] => Ausrichtung an \caption
+  \includegraphics[width=\linewidth]{\Sexpr{files[2]}}
+\end{minipage}
+
+
+
 
