@@ -46,15 +46,15 @@ text_question_vec <- c(desc_stat_questions_vec,
                        math_questions_vec, tier_questions_vec)
 
 ## get the wanted questions for the exam
-source(file.path(exam_path, "questions_vec.R"))
+source(file.path(exam_path, "dummy/questions_vec.R"))
 wanted_questions <- wanted_questions_lst %>% unlist()
+
+text_questions_vec <- text_question_vec %>% 
+  magrittr::extract((wanted_questions_lst$text - length(mc_questions_vec))) %>%
+  sample()
 
 mc_questions_vec <- mc_questions_vec %>% 
   magrittr::extract(wanted_questions_lst$mc) %>%
-  sample()
-
-text_questions_vec <- text_question_vec %>% 
-  magrittr::extract(wanted_questions_lst$text - length(mc_questions_vec)) %>%
   sample()
 
 ## get the points per question
