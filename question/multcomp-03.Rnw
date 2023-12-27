@@ -21,11 +21,11 @@ outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
 
 <<multcomp-03-a, echo = FALSE>>=
 
-data_tbl <- tibble(A = rnorm(8, sample(c(5, 7), 1), 2),
-                   B = rnorm(8, sample(c(7, 9), 1), 2),
+data_tbl <- tibble(A = rnorm(8, sample(c(5, 8), 1), 2),
+                   B = rnorm(8, sample(c(11, 9), 1), 2),
                    C = rnorm(8, sample(c(10, 3), 1), 2),
-                   D = rnorm(8, sample(c(5, 7), 1), 2),
-                   E = rnorm(8, sample(c(5, 7), 1), 2)) %>%
+                   D = rnorm(8, sample(c(5, 4), 1), 2),
+                   E = rnorm(8, sample(c(5, 3), 1), 2)) %>%
   gather(key = "trt", value = "rsp")
 
 @
