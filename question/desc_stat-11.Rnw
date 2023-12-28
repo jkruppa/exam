@@ -9,13 +9,7 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-
-files <- dir(file.path(question_path, "img"),
-             pattern = "boxplot-03", full.names = TRUE) %>%
-  sample(2)
-
 sd_range <- c("$\\pm 2s$", "$\\pm 1s$") %>% sample(1)
-
 @ 
 
 \begin{enumerate}
