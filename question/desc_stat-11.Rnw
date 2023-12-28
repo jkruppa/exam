@@ -30,16 +30,24 @@ sd_range <- c("$\\pm 2s$", "$\\pm 1s$") %>% sample(1)
   die Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
 \end{enumerate}
 
-\vspace*{8cm}
 
-\begin{minipage}[c]{.4\linewidth} % [b] => Ausrichtung an \caption
-  \includegraphics[width=\linewidth]{\Sexpr{files[1]}}
-\end{minipage}
-\hspace{.1\linewidth}% Abstand zwischen Bilder
-\begin{minipage}[c]{.4\linewidth} % [b] => Ausrichtung an \caption
-  \includegraphics[width=\linewidth]{\Sexpr{files[2]}}
-\end{minipage}
+<<desc-stat-11, results='asis', echo = FALSE, fig.height = 6, fig.width = 10, fig.align = "center", message = FALSE>>=
+data_tbl <- lst(a = tibble(value = rexp(20, 2)),
+                b = tibble(value = rnorm(20, 10, 4)),
+                c = tibble(value = rpois(20, 3))) %>%
+  sample() %>% 
+  ldply(.id = "key")
 
-
+ggplot(data_tbl, aes(1, value)) +
+  theme_minimal() +
+  geom_boxplot() +
+  facet_wrap(~ key, scales = "free_x") +
+  coord_flip() +
+  labs(x = "", y = "") +
+  xlim(c(-7, 7)) +
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank(),
+        strip.text.x = element_blank())
+@ 
 
 
