@@ -1,47 +1,34 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Op-gjzASH9I}{\includegraphics[width =
+\hfill\href{https://youtu.be/ZrJhn2wPbq4}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-sd_range <- c("$\\pm 2s$", "$\\pm 1s$") %>% sample(1)
-@ 
+
+n <- c(2,3,4) %>%
+  sample(1)
+
+sd_vec <- str_c(rep("s_", times = n), 1:n, collapse = sample(c(" = ", " \\neq "), 1))
+
+mu_vec <- str_c(rep("\\bar{y}_", times = n), 1:n, collapse = " \\neq ")
+
+
+@
 
 \begin{enumerate}
-\item Zeichnen Sie {\"u}ber die untenstehenden Boxplots die entsprechende
-  zugeh{\"o}rige Verteilung! \textbf{(2 Punkte)} 
-\item Zeichnen Sie unter die untenstehenden Boxplots die entsprechende
-  zugeh{\"o}rige Beobachtungen als Stiche! \textbf{(2 Punkte)}
-\item Wieviel Prozent der Beobachtungen fallen in das IQR? Erg{\"a}nzen Sie die
-  Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
-\item Wieviel Prozent der Beobachtungen fallen in \Sexpr{sd_range} unter
-  der Annahme einer Normalverteilung?  \textit{Wenn m{\"o}glich}, erg{\"a}nzen Sie
-  die Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
+\item Skizieren Sie $\Sexpr{n}$ Normalverteilungen \textit{in einer
+    Abbildung} mit $\Sexpr{mu_vec}$ und $\Sexpr{sd_vec}$! \textbf{(3 Punkte)}
+\item Beschriften Sie die Normalverteilungen mit den entsprechenden
+  Parametern! \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie die Bereiche in der 68\% und 95\% der Beobachtungen
+  fallen! Beschriften Sie die Grenzen der Bereiche mit der statistischen Ma{\ss}zahl! \textbf{(2 Punkte)}
+\item Liegt Varianzhomogenit{\"a}t oder Varianzheterogenit{\"a}t vor? Begr{\"u}nden Sie
+  Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
-
-
-<<desc-stat-11, results='asis', echo = FALSE, fig.height = 6, fig.width = 10, fig.align = "center", message = FALSE>>=
-data_tbl <- lst(a = tibble(value = rexp(20, 2)),
-                b = tibble(value = rnorm(20, 10, 4)),
-                c = tibble(value = rpois(20, 3))) %>%
-  sample() %>% 
-  ldply(.id = "key")
-
-ggplot(data_tbl, aes(1, value)) +
-  theme_minimal() +
-  geom_boxplot() +
-  facet_wrap(~ key, scales = "free_x") +
-  coord_flip() +
-  labs(x = "", y = "") +
-  xlim(c(-7, 7)) +
-  theme(axis.text.x = element_blank(),
-        axis.text.y = element_blank(),
-        strip.text.x = element_blank())
-@ 
 
 
