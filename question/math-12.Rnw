@@ -5,7 +5,7 @@
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/iErlRMwQ2RE}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+  2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
@@ -18,13 +18,9 @@ year_out <- c(1859, 1860, 1875) %>% sample(1)
 release <- c(28, 26, 30, 32) %>% sample(1)
 release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
 westost <- c(4000, 4100, 4200) %>% sample(1)
+start_inf <- c(12, 14, 16, 18, 20) %>% sample(1)
+base_inf <- c(1.2, 1.4, 1.6, 1.8, 2, 2.2) %>% sample(1)
 nordsued <- c(3600, 3700, 3800) %>% sample(1)
-wuerfe <- c(8, 12, 11, 9, 10) %>% sample(1)
-wurf <- c(3, 4, 5, 6, 7) %>% sample(1)
-year <- c("vierten", "f{\"u}nften", "dritten") %>% sample(1)
-unit_1 <- c("Tausend", "Millionen") %>% sample(1)
-mort <- c(32, 30, 35, 40, 37) %>% sample(1)
-age <- c(5, 6, 7, 8, 9) %>% sample(1)
 A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
 a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
 satt_year <- c(9, 14, 18)  %>% sample(1)
@@ -51,38 +47,41 @@ exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
     millions of them! The reason is surprising...}}
 \\
 
-Unter australischen Bedingungen liegt die Zahl der Jungtiere eines
-Kaninchenweibchens pro Jahr bei ca. \Sexpr{wuerfe} Tieren pro Wurf. Ein
-Weibchen hat im Durchschnitt \Sexpr{wurf} W{\"u}rfe pro Jahr. Trotz fehlender
-Fressfeinde liegt die Mortalit{\"a}t der S{\"a}uglinge bei \Sexpr{mort}\%.
-
-\begin{enumerate}
-\item Wie viele \Sexpr{unit_1} Kaninchen w{\"u}rden bei einem ungebremsten
-  Wachstum \textit{im \Sexpr{year} Jahr} geboren? Berechnen Sie hierf{\"u}r
-  zuerst die Anzahl an geboren Weibchen im \Sexpr{year} Jahr! \textbf{(2 Punkte)}
-\item Die durchschnittliche, australische Lebenserwartung eines weiblichen
-  Kaninchens liegt bei \Sexpr{age} Jahren. Wie viele weibliche Kaninchen
-  bev{\"o}lkern bei einem ungebremsten Wachstum den australischen Kontinent
-  bevor die ersten Weibchen an Altersschw{\"a}che sterben w{\"u}rden? \textbf{(2
-    Punkte)}
-\end{enumerate}
-
-Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das Wachstum der gesamten
-Kaninchenpopulation.
+Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das j{\"a}hrliche Wachstum
+der gesamten Kaninchenpopulation im westlichen Australien.
 \begin{equation*}
   f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot 2^{-0.1 \cdot t + 3.4}
 \end{equation*}
 
 \begin{enumerate}
-  \setcounter{enumi}{2}
-\item Wie viele \Sexpr{unit_1} Kaninchen leben nach der S{\"a}ttigungsfunktion
+\item Skizzieren Sie die S{\"a}ttigungsfunktion \textit{ann{\"a}herungsweise} in einer Abbildung! \textbf{(1
+    Punkt)}
+\item Wie viele Kaninchen k{\"o}nnen nach der S{\"a}ttigungsfunktion maximal im
+  westlichen Australien leben? Erg{\"a}nzen Sie den Wert in Ihrer Abbildung! \textbf{(2 Punkte)}
+\item Wie viele Millionen Kaninchen leben nach der S{\"a}ttigungsfunktion
   nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1
     Punkt)}
 \end{enumerate}
 
-Das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV),
-transmittiert von Stechm{\"u}cken, t{\"o}ten \Sexpr{percent}\% der
-Kaninchenpopulation innerhalb weniger Wochen. 
+Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit
+Haemorrhagic Disease Virus (RHDV) in \Sexpr{start_inf} Kaninchen
+ausgebracht. Da die Kaninchen keine Ma{\ss}nahmen gegen die Ausbreitung
+vornehmen k{\"o}nnen, verl{\"a}uft die Ausbreitung mit einem w{\"o}chentlichen
+Wachstumsfakor von \Sexpr{base_inf} nach folgender Formel.
+
+\begin{equation*}
+  N(t) = N(0) \cdot a^t
+\end{equation*}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Wie viele Wochen ben{\"o}tigen die Viren um theoretisch die gesamte
+  Kaninchenpopulation nach 9 Jahren Wachstum zu durchseuchen? \textbf{(1
+    Punkt)}
+\end{enumerate}
+
+Das Myxoma Virus und das RHDV t{\"o}ten \Sexpr{percent}\% der
+Kaninchenpopulation innerhalb weniger Wochen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}  
