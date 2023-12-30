@@ -127,11 +127,9 @@ data_dfr %>% kable(booktabs = TRUE, align = c("lllll")) %>%
     $\omega$ and is calculated with $\omega = \tfrac{A}{0.9069}$."'
   } Veranschaulichen Sie die Fl{\"a}che $\omega$ in einer aussagekr{\"a}ftigen
   Abbildung!  \textbf{(1 Punkt)}
-\item Ein \Sexpr{names(type_chick)} braucht Platz f{\"u}r sich
-  selbst. Berechnen Sie nun die K{\"o}rperfl{\"a}che $a$, die ein Tier
-  \Sexpr{names(type_chick)} einnimmt. Welche Annahmen haben Sie f{\"u}r die
-  Berechnung der \Sexpr{type_chick}k{\"o}rperfl{\"a}che getroffen? \textbf{(2
-    Punkte)}
+\item Ein Tier braucht Platz f{\"u}r sich selbst. Berechnen Sie nun die
+  K{\"o}rperfl{\"a}che $a$, die ein Tier einnimmt. Welche Annahmen haben Sie f{\"u}r
+  die Berechnung der K{\"o}rperfl{\"a}che getroffen? \textbf{(2 Punkte)}
 \end{enumerate}
 
 
