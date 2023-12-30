@@ -17,19 +17,22 @@ job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
 year_out <- c(1859, 1860, 1875) %>% sample(1)
 release <- c(28, 26, 30, 32) %>% sample(1)
 release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
-westost <- c(4000, 4100, 4200) %>% sample(1)
+westost <- c(4000, 4100, 4200, 4300, 4400) %>% sample(1)
 start_inf <- c(12, 14, 16, 18, 20) %>% sample(1)
 base_inf <- c(1.2, 1.4, 1.6, 1.8, 2, 2.2) %>% sample(1)
-nordsued <- c(3600, 3700, 3800) %>% sample(1)
-A_formula <- c(11e9, 9e9, 10e9) %>% sample(1)
-a_formula <- c(0.9e9, 1e9, 1.1e9) %>% sample(1)
-satt_year <- c(9, 14, 18)  %>% sample(1)
+nordsued <- c(3600, 3700, 3800, 3500, 3400) %>% sample(1)
+A_formula <- c(11e9, 9e9, 10e9, 8e9, 12e9) %>% sample(1)
+a_formula <- c(0.9e9, 1e9, 1.1e9, 1.2e9, 1.4e9) %>% sample(1)
+satt_year <- c(6, 9, 12, 15, 18)  %>% sample(1)
 percent <- c(99.7, 99.9, 98.5) %>% sample(1)
-recover <- c(40, 50, 60) %>% sample(1)
-v_rabbit <- c(8.8, 9.8, 11.5) %>% sample(1)
-impf_cost <- c(9, 10, 11) %>% sample(1)
-dr_cost <- c(35, 45, 40) %>% sample(1)
-pop <- c(900, 1100, 1200) %>% sample(1)
+recover <- c(40, 50, 60, 70, 30) %>% sample(1)
+v_rabbit <- c(8.8, 9.8, 11.5, 7.3, 7.8) %>% sample(1)
+impf_cost <- c(9, 10, 11, 12, 13) %>% sample(1)
+dr_cost <- c(35, 45, 40, 45, 42) %>% sample(1)
+pop <- c(900, 1100, 1200, 1000, 800) %>% sample(1)
+upp <- c(-0.1, -0.15, -0.2, -0.3) %>% sample(1)
+plus  <- c(2.4, 3.2, 3.1, 4.1, 2.7) %>% sample(1)
+base <- c(1.9, 2, 2.1, 2.2, 2.3, 1.7) %>% sample(1)
 @
 
 Leider hat es mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht
@@ -50,7 +53,7 @@ exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
 Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das j{\"a}hrliche Wachstum
 der gesamten Kaninchenpopulation im westlichen Australien.
 \begin{equation*}
-  f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot 2^{-0.1 \cdot t + 3.4}
+  f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot \Sexpr{base}^{\Sexpr{upp} \cdot t + \Sexpr{plus}}
 \end{equation*}
 
 \begin{enumerate}
@@ -76,8 +79,8 @@ Wachstumsfakor von \Sexpr{base_inf} nach folgender Formel.
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Wie viele Wochen ben{\"o}tigen die Viren um theoretisch die gesamte
-  Kaninchenpopulation nach 9 Jahren Wachstum zu durchseuchen? \textbf{(1
-    Punkt)}
+  Kaninchenpopulation nach \Sexpr{satt_year - 2} Jahren Wachstum zu
+  durchseuchen? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Das Myxoma Virus und das RHDV t{\"o}ten \Sexpr{percent}\% der
