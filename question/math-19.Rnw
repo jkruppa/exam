@@ -73,7 +73,8 @@ vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%,
 \Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen "`Partner"'
 wirbt wiederum \Sexpr{n_partner} Partner f{\"u}r sich selbst an. Pro Monat
 werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun
-\Sexpr{income}EUR im Monat \textit{passiv} erwirtschaften.
+\Sexpr{income}EUR im Monat \textit{passiv} -- also durch indirekte
+Provisionen -- erwirtschaften.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -85,8 +86,8 @@ werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun
   \toprule
   \textbf{Stufe} & \textbf{Anzahl Partner}  & \textbf{Umsatz/Stufe} & \textbf{Provision}\\
   \midrule
-  1 & 0 (Sie selber)  &  & \\ \midrule
-  2 & 1  &  &  \\ \midrule
+  1 & Sie selber  &  & \\ \midrule
+  2 &   &  &  \\ \midrule
   3 &   &  &  \\ \midrule
   4 &   &  &  \\
   \bottomrule
@@ -96,7 +97,8 @@ werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Wie viele Partner m{\"u}ssen auf der 2 Stufe anwerben um Ihr passives
-  Einkommen zu erreichen? Stellen Sie den Zusammenhang graphisch dar! \textbf{(3 Punkte)}
+  Einkommen durch indirekte Provision zu erreichen? Stellen Sie den
+  Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
 \end{enumerate}
 
 Sie mussten zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts
