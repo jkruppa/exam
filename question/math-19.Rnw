@@ -31,7 +31,7 @@ n_partner <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
 income <- c(1800, 2100, 2500, 3200, 4100, 5000) %>% sample(1)
 unit <- c("zwei", "drei", "vier", "f{\"u}nf") %>% sample(1)
 einstieg <- c(cost_prod * 30, cost_prod * 35, cost_prod * 40, cost_prod * 45) %>% sample(1)
-zins <- c(2.5, 3.5, 4.1, 4.5, 5.0) %>% sample(1)
+zins <- c(4.7, 5.0, 5.5, 6.0, 5.1, 6.2) %>% sample(1)
 month <- c(36, 48, 60, 72) %>% sample(1)
 
 @
@@ -108,7 +108,7 @@ verkaufen. Leider mussten Sie den Kauf {\"u}ber einen Kredit {\"u}ber
 \Sexpr{zins}\% p.a. {\"u}ber \Sexpr{month} Monate finanzieren.
 
 \begin{enumerate}
-  \setcounter{enumi}{6}
+  \setcounter{enumi}{5}
 \item Berechnen Sie die Gesamtsumme, die Sie als Kredit abbezahlen m{\"u}ssen! \textbf{(2 Punkte)}
 \item Wie viele Einheiten m{\"u}ssen Sie pro Monat verkaufen um die anfallenden Zinsen
   durch die direkte Provision zu erwirtschaften? \textbf{(1 Punkt)}
