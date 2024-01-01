@@ -35,7 +35,7 @@ Fleischkonsum im Jahr 2050 zu treffen. \\
 Im folgenden ist Abbildung des Fleischkonsums im Jahr \Sexpr{year} in
 Deutschland und Nigeria in [kg] einmal dargestellt. 
 
-<<math-14-a,  echo = FALSE, fig.height = 2.5, fig.width = 7, fig.align = "center", message = FALSE>>=
+<<math-14-a,  echo = FALSE, fig.height = 2.5, fig.width = 8, fig.align = "center", message = FALSE>>=
 plot_animal_tbl <- tibble(animal = rep(c("pig", "chicken", "cow", "goat"), times = 2),
                    eaten = c(sample(c(35.9, 36.2, 44.0), 1) * n_germany,
                              sample(c(16.5, 18.3, 21.1), 1) * n_germany,
@@ -74,10 +74,10 @@ ggplot(plot_animal_tbl, aes(animal, eaten, fill = country)) +
   Nigeria/Deutschland, setzen! \textbf{(1 Punkt)}
 \end{enumerate}
 
-In der n{\"a}chsten Abbildung finden Sie die CO$_2$-Emission in [kg] pro [kg] nach Lebensmittel
-abgebildet, die durch die Produktion entsteht.
+In der n{\"a}chsten Abbildung finden Sie die CO$_2$-Emission in [kg] nach
+Lebensmittel, die durch die Produktion entsteht, abgebildet.
 
-<<math-14-b,  echo = FALSE, fig.height = 2.2, fig.width = 7, fig.align = "center", message = FALSE>>=
+<<math-14-b,  echo = FALSE, fig.height = 2.2, fig.width = 8, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(animal = c("pig", "chicken", "cow", "goat"),
                    eaten = c(sample(c(12.31, 10.24, 14.48), 1),
                              sample(c(9.87, 8.1, 11.12), 1),
@@ -92,7 +92,7 @@ plot_tbl <- tibble(animal = c("pig", "chicken", "cow", "goat"),
 ggplot(plot_tbl, aes(animal, eaten)) +
   geom_bar(stat = "identity", position = position_dodge()) +
   theme_minimal() +
-  labs(y = "Treibhausgasemissionen [kg] pro [kg] Lebensmittel",
+  labs(y = "Treibhausgasemissionen pro [kg] Lebensmittel",
        x = "") +
   scale_fill_grey(start = 0.4, end = 0.8) +
   coord_flip() +
