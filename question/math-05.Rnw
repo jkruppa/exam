@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -15,7 +15,6 @@
 m_sun <- c(2e30, 2e28, 2e31, 2e29, 2e27) %>% sample(1)
 m_perc <- c(30, 35, 40, 45, 20) %>% sample(1)
 r_black <- c(4000, 3000, 5000, 2500, 3500) %>% sample(1)
-word <- c("Ereignishorizont", "Singularit{\"a}t")  %>% sample(1)
 c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
 grav <- c(6.674, 5.974, 6.274, 6.165) %>% sample(1)
 @
@@ -61,9 +60,7 @@ Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
 \item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
   $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
   und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
-  \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie in diesem Zusammenhang den Begriff
-  \textit{\Sexpr{word}}! \textbf{(2 Punkte)} 
+  \textbf{(2 Punkte)} 
 \end{enumerate}
 
 
