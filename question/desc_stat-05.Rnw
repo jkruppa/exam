@@ -42,7 +42,7 @@ gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
 
 <<boxplot-01, results='asis', echo = FALSE>>=
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%  
-  set_names(c("treatment", "freshmatter")) %>%
+  set_names(c("treatment", "drymatter")) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
