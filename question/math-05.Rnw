@@ -17,6 +17,8 @@ m_perc <- c(30, 35, 40, 45, 20) %>% sample(1)
 r_black <- c(4000, 3000, 5000, 2500, 3500) %>% sample(1)
 c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
 grav <- c(6.674, 5.974, 6.274, 6.165) %>% sample(1)
+ding_1 <- c("Ein Amboss", "Ein Auto", "Ein Elefant", "Eine Kirchenglocke", "Ein Flugzeug") %>% sample(1)
+ding_2 <- c("eine Feder", "ein Lolli", "ein {\"A}ffchen", "ein Handtuch", "eine Klorolle") %>% sample(1)
 @
 
 Die Sonne hat eine aktuelle, angenommene Masse von $\Sexpr{m_sun}$kg. Wenn
@@ -49,9 +51,9 @@ Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
 
 \begin{enumerate}
 \item Geben Sie die Formel f{\"u}r die Fluchtgeschwindigkeit $v_f$ an! 
-  \textbf{(2 Punkte)}
+  \textbf{(1 Punkt)}
 \item {\"U}berpr{\"u}fen Sie Ihre umgestellte Formel nach $v_f$ anhand der Einheiten!
-  \textbf{(2 Punkte)} 
+  \textbf{(1 Punkt)} 
 \item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
   Lichtteilchens mit den angegebenen Informationen! \textbf{(2 Punkte)}
 \item Gehen Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$
@@ -60,7 +62,11 @@ Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
 \item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
   $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
   und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
-  \textbf{(2 Punkte)} 
+  \textbf{(2 Punkte)}
+ \item \Sexpr{ding_1} und \Sexpr{ding_2} st{\"u}rzen aus gro{\ss}er und gleicher H{\"o}he
+  in ein schwarzes Loch. Welches der beiden Objekte {\"u}berschreitet zuerst
+  den Ereignishorizont des schwarzes Loches? Begr{\"u}nden
+  Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)}  
 \end{enumerate}
 
 
