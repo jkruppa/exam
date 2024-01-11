@@ -1,13 +1,12 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
- \hfill\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width =
+ \hfill\href{https://youtu.be/xq29O8qDrg0}{\includegraphics[width =
    2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
-
 
 <<>>=
 outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
@@ -15,52 +14,39 @@ outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
              "den Proteingehalt von Wasserlinsen in g/l") %>% sample(1)
 @ 
  
- In einem Experiment f{\"u}r \Sexpr{outcome} mit vier
- Dosisstufen (ctrl, low, mid und high) erhalten Sie folgende Matrix als
- \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten.
+ In einem Experiment f{\"u}r \Sexpr{outcome} mit f{\"u}nf
+ Dosisstufen (ctrl, low, mid, high und pos) erhalten Sie folgendes \textit{Compact
+   letter display (CLD)} als \Rlogo Ausgabe aus den rohen, unadjustierten
+ $p$-Werten.
 
-<<multcomp-02-a, echo = FALSE>>=
+<<multcomp-03-a, echo = FALSE>>=
 
-data_tbl <- tibble(ctrl = rnorm(9, sample(c(10, 12), 1), 1),
-                   low = rnorm(9, sample(c(13, 15), 1), 4),
-                   mid = rnorm(9, sample(c(10, 8), 1), 3),
-                   high = rnorm(9, sample(c(6, 8), 1), 4)) %>%
+data_tbl <- tibble(ctrl = rnorm(8, sample(c(5, 8), 1), 2),
+                   low = rnorm(8, sample(c(11, 9), 1), 2),
+                   mid = rnorm(8, sample(c(10, 3), 1), 2),
+                   high = rnorm(8, sample(c(5, 4), 1), 2),
+                   pos = rnorm(8, sample(c(5, 3), 1), 2)) %>%
   gather(key = "trt", value = "rsp")
 
 @
 
-<<multcomp-02-b,  echo = FALSE>>=
-pacman::p_load(rcompanion, magrittr)
+<<multcomp-03-b,  echo = FALSE>>=
+pacman::p_load(rcompanion, magrittr, multcompView)
 pairwise.t.test(data_tbl$rsp, data_tbl$trt,
                 p.adjust.method = "none") %>% 
   extract2("p.value") %>% 
   fullPTable() %>%
-  round(7)
+  multcompLetters()
 @
-
-Im Weiteren erhalten Sie folgende Informationen {\"u}ber die Fallzahl $n$, den
-Mittelwert $mean$ und die Standardabweichung $sd$ in den jeweiligen Dosisstufen.
-
-<<multcomp-02-c,  echo = FALSE>>=
-
-group_by(data_tbl, trt) %>%
-  dplyr::summarise(
-           n = n(),
-           mean = round(mean(rsp, na.rm = TRUE), 2),
-           sd = round(sd(rsp, na.rm = TRUE), 2),
-           ) %>%
-  kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
-
-@
-
 
 \begin{enumerate}
-\item Zeichnen Sie in eine Abbildung, die sich ergebenden Barplots! \textbf{(2 Punkte)}
-\item Adjustieren Sie die rohen $p$-Werte nach Bonferroni. Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
+\item Zeichnen Sie eine Abbildung, der sich ergebenden Barplots! \textbf{(2 Punkte)}
 \item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
-  Abbildung. Nutzen Sie dazu die rohen $p$-Werte! \textbf{(2 Punkte)}
-\item Interpretieren Sie das \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)} 
+  Abbildung! \textbf{(1 Punkt)}
+\item Erkl{\"a}ren Sie \textit{einen} Vorteil und \textit{einen} Nachteil des
+  \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)}
+\item Erstellen Sie eine Matrix mit den paarweisen $p$-Werten, die sich
+  n{\"a}herungsweise aus dem \textit{Compact letter display (CLD)} ergeben w{\"u}rde! Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
 \end{enumerate}
 
 
