@@ -15,17 +15,17 @@ outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
 @ 
  
  In einem Experiment f{\"u}r \Sexpr{outcome} mit f{\"u}nf
- Dosisstufen (A, B, C, D und E) erhalten Sie folgendes \textit{Compact
+ Dosisstufen (ctrl, low, mid, high und pos) erhalten Sie folgendes \textit{Compact
    letter display (CLD)} als \Rlogo Ausgabe aus den rohen, unadjustierten
  $p$-Werten.
 
 <<multcomp-03-a, echo = FALSE>>=
 
-data_tbl <- tibble(A = rnorm(8, sample(c(5, 8), 1), 2),
-                   B = rnorm(8, sample(c(11, 9), 1), 2),
-                   C = rnorm(8, sample(c(10, 3), 1), 2),
-                   D = rnorm(8, sample(c(5, 4), 1), 2),
-                   E = rnorm(8, sample(c(5, 3), 1), 2)) %>%
+data_tbl <- tibble(ctrl = rnorm(8, sample(c(5, 8), 1), 2),
+                   low = rnorm(8, sample(c(11, 9), 1), 2),
+                   mid = rnorm(8, sample(c(10, 3), 1), 2),
+                   high = rnorm(8, sample(c(5, 4), 1), 2),
+                   pos = rnorm(8, sample(c(5, 3), 1), 2)) %>%
   gather(key = "trt", value = "rsp")
 
 @
@@ -40,12 +40,13 @@ pairwise.t.test(data_tbl$rsp, data_tbl$trt,
 @
 
 \begin{enumerate}
-\item Erstellen Sie eine Matrix mit den paarweisen $p$-Werten, die sich
-  n{\"a}herungsweise aus dem \textit{Compact letter display (CLD)} ergeben w{\"u}rde! Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
 \item Zeichnen Sie eine Abbildung, der sich ergebenden Barplots! \textbf{(2 Punkte)}
 \item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
   Abbildung! \textbf{(1 Punkt)}
-\item Erkl{\"a}ren Sie \textit{einen} Vorteil und \textit{einen} Nachteil des \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie \textit{einen} Vorteil und \textit{einen} Nachteil des
+  \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)}
+\item Erstellen Sie eine Matrix mit den paarweisen $p$-Werten, die sich
+  n{\"a}herungsweise aus dem \textit{Compact letter display (CLD)} ergeben w{\"u}rde! Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
 \end{enumerate}
 
 
