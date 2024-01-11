@@ -2542,6 +2542,48 @@ dose 70 - ctrl & 0.230 &  & \\
 \clearpage
 % ----------------------------------------------------------------------- 
 
+\section{Aufgabe \hfill (8 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+ \hfill\href{https://youtu.be/xq29O8qDrg0}{\includegraphics[width =
+   2cm]{img/youtube}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+
+ 
+ In einem Experiment f{\"u}r den Ertrag von Weizen in kg/ha mit f{\"u}nf
+ Dosisstufen (ctrl, low, mid, high und pos) erhalten Sie folgendes \textit{Compact
+   letter display (CLD)} als \Rlogo Ausgabe aus den rohen, unadjustierten
+ $p$-Werten.
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{verbatim}
+## ctrl high  low  mid  pos 
+##  "a"  "b"  "c"  "c"  "b"
+\end{verbatim}
+\end{kframe}
+\end{knitrout}
+
+\begin{enumerate}
+\item Zeichnen Sie eine Abbildung, der sich ergebenden Barplots! \textbf{(2 Punkte)}
+\item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
+  Abbildung! \textbf{(1 Punkt)}
+\item Erkl{\"a}ren Sie \textit{einen} Vorteil und \textit{einen} Nachteil des
+  \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)}
+\item Erstellen Sie eine Matrix mit den paarweisen $p$-Werten, die sich
+  n{\"a}herungsweise aus dem \textit{Compact letter display (CLD)} ergeben w{\"u}rde! Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
+\end{enumerate}
+
+ 
+\clearpage
+% ----------------------------------------------------------------------- 
+
 \section{Aufgabe \hfill (9 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
@@ -2555,7 +2597,7 @@ dose 70 - ctrl & 0.230 &  & \\
 
 
  
- In einem Experiment f{\"u}r den Ertrag von Weizen in kg/ha mit vier
+ In einem Experiment f{\"u}r den Proteingehalt von Wasserlinsen in g/l mit vier
  Dosisstufen (ctrl, low, mid und high) erhalten Sie folgende Matrix als
  \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten.
 
@@ -2565,10 +2607,10 @@ dose 70 - ctrl & 0.230 &  & \\
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ##           ctrl      high       low       mid
-## ctrl 1.0000000 0.0000282 0.1014529 0.1135821
-## high 0.0000282 1.0000000 0.0000002 0.0027005
-## low  0.1014529 0.0000002 1.0000000 0.0022975
-## mid  0.1135821 0.0027005 0.0022975 1.0000000
+## ctrl 1.0000000 0.3979337 0.0128916 0.3787048
+## high 0.3979337 1.0000000 0.0014277 0.9716086
+## low  0.0128916 0.0014277 1.0000000 0.0012956
+## mid  0.3787048 0.9716086 0.0012956 1.0000000
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2583,10 +2625,10 @@ Mittelwert $mean$ und die Standardabweichung $sd$ in den jeweiligen Dosisstufen.
 \toprule
 trt & n & mean & sd\\
 \midrule
-ctrl & 9 & 12.20 & 0.94\\
-high & 9 & 6.82 & 3.00\\
-low & 9 & 14.06 & 2.31\\
-mid & 9 & 10.41 & 2.57\\
+ctrl & 9 & 12.10 & 1.22\\
+high & 9 & 10.60 & 4.77\\
+low & 9 & 16.69 & 4.67\\
+mid & 9 & 10.54 & 2.97\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2600,47 +2642,6 @@ mid & 9 & 10.41 & 2.57\\
 \item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
   Abbildung. Nutzen Sie dazu die rohen $p$-Werte! \textbf{(2 Punkte)}
 \item Interpretieren Sie das \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)} 
-\end{enumerate}
-
- 
-\clearpage
-% ----------------------------------------------------------------------- 
-
-\section{Aufgabe \hfill (8 Punkte)}
-
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
-%% --------------------------------------------------------------------
- \hfill\href{https://youtu.be/xq29O8qDrg0}{\includegraphics[width =
-   2cm]{img/youtube}}\\[1Ex]
-%% --------------------------------------------------------------------
-
-
- 
- In einem Experiment f{\"u}r den Zuckergehalt von Erdbeeren in g/kg mit f{\"u}nf
- Dosisstufen (A, B, C, D und E) erhalten Sie folgendes \textit{Compact
-   letter display (CLD)} als \Rlogo Ausgabe aus den rohen, unadjustierten
- $p$-Werten.
-
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
-##    A    B    C    D    E 
-## "ab"  "a"  "c"  "b"  "b"
-\end{verbatim}
-\end{kframe}
-\end{knitrout}
-
-\begin{enumerate}
-\item Erstellen Sie eine Matrix mit den paarweisen $p$-Werten, die sich
-  n{\"a}herungsweise aus dem \textit{Compact letter display (CLD)} ergeben w{\"u}rde! Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
-\item Zeichnen Sie eine Abbildung, der sich ergebenden Barplots! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
-  Abbildung! \textbf{(1 Punkt)}
-\item Erkl{\"a}ren Sie \textit{einen} Vorteil und \textit{einen} Nachteil des \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)}
 \end{enumerate}
 
  
