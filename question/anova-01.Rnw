@@ -51,9 +51,9 @@ ggplot(data_tbl, aes(dose, activity, shape = dose)) +
 \item Zeichnen Sie folgende statistischen Masszahlen in die Abildung ein!
   Beschriften Sie die statistischen Ma{\ss}zahlen! \textbf{(6 Punkte)}
   \begin{itemize}
-  \item Total (grand) mean: $\beta_0$
-  \item Mittelwerte der Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$
-  \item Effekt der einzelnen Level der Dosen: $\beta_{0.5}$, $\beta_{1.5}$,
+  \item Globale Mittelwert: $\beta_0$
+  \item Mittelwerte der einzelnen Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$
+  \item Effekt der einzelnen Dosen: $\beta_{0.5}$, $\beta_{1.5}$,
     und $\beta_{2.5}$
   \item Residuen oder Fehler: $\epsilon$
   \end{itemize}
