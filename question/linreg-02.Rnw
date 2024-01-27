@@ -14,8 +14,8 @@ n <- sample(c(40, 60, 120), 1)
 
 In einem Stallexperiment mit $n = \Sexpr{n}$ Ferkeln wurde der
 Gewichtszuwachs in kg unter ansteigender Lichteinstrahlung in nm
-gemessen. Sie erhalten den \Rlogo Output einer
-simplen Gaussian linearen Regression sieben Wochen nach der ersten Messung.
+gemessen. Sie erhalten den \Rlogo Output einer simplen Gaussian linearen
+Regression sieben Wochen nach der ersten Messung.
 
 <<regression-02-a, results='asis', echo = FALSE>>=
 
