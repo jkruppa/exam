@@ -1,53 +1,44 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/exDo7AyHl4Q}{\includegraphics[width =
+\hfill\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 
-<<ttest-R-01-a,  echo = FALSE>>=
+Das Gewicht von K{\"u}ken wurde \textit{vor} der Behandlung mit STARTex und 1
+Woche \textit{nach} der Behandlung gemessen. Es ergibt sich die folgende
+Datentabelle.
 
-question_vec <- c("das statistische Hypothesenpaar",
-                  "die wissenschaftliche Fragestellung") %>% sample(1)
+<<ttest-02, results='asis', echo = FALSE>>=
+n <- sample(c(7,8,9), 1)
 
-data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather,
-                  tibble(high = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather) %>%
-  set_names(c("N", "freshweight")) %>%
-  sample_n(size = nrow(.))
+t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
 
-preprint <- t.test(freshweight ~ N, data_tbl, var.equal = TRUE) 
-preprint$null.value <- "[condensed]"
-
-preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
-  sample(1)
-
-first_vec <- c("high", "ctrl", "mid") %>% sample(1)
-second_vec <- c("low", "trt1", "trt2") %>% sample(1)
-
-names(preprint$estimate) <- c(str_c("mean in group ", first_vec),
-                              str_c("mean in group ", second_vec))
-
-preprint
-
-ttest <- t.test(freshweight ~ N, data_tbl, var.equal = TRUE)
-tk <- qt(0.975, df=ttest$parameter)
+cbind(tibble(before = round(rnorm(n = n,
+                                  mean = sample(c(12, 14, 16), 1),
+                                  sd = sample(c(2, 4, 6), 1)))),
+      tibble(after = round(rnorm(n = n,
+                                 mean = sample(c(12, 16, 25), 1),
+                                 sd = sample(c(2, 4, 6), 1))))) %>%
+  mutate(animal_id = 1:nrow(.)) %>%
+  select(animal_id, everything()) %>% 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
 @
 
-
 \begin{enumerate}
-  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(2
-Punkte)}
-\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie eine Abbildung in der Sie $T_{calc}$, $Pr(D|H_0)$, $A=0.95$,
-  sowie $T_{\alpha=5\%} = |\Sexpr{round(tk, 2)}|$ einzeichnen! \textbf{(4 Punkte)}
-\item Beschriften Sie die Abbildung entsprechend! \textbf{(2 Punkte)}  
+\item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
+\item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+    Punkte)}
+\item Bestimmen Sie die Teststatistik $T_{calc}$ eines gepaarten t-Tests f{\"u}r den
+  Vergleich der beiden Zeitpunkte! \textbf{(4 Punkte)}
+\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem berechneten $T_{calc}$ eine Aussage
+  zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Sch{\"a}tzen Sie den $p$-Wert aus Ihrem berechneten $T_{calc}$ ab!
+  Begr{\"u}nden Sie Ihre Antwort mit einer Skizze! \textbf{(2
+    Punkte)}
 \end{enumerate}

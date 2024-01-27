@@ -1,41 +1,59 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width =
+\hfill\href{https://youtu.be/TbSEOMCQYl4}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+exp <- c("einem Stallexperiment",
+         "einem Freilandversuch",
+         "einem Experiment in einer geschlossenen Anlage",
+         "einem Feldexperiment") %>% sample(1)
+animal <- c("Puten", "Mastschweinen", "Rindern", "H{\"u}hnern", "Ziegen",
+           "H{\"a}ngebauchschweinen") %>% sample(1)
+@ 
 
-Das Gewicht von K{\"u}ken wurde \textit{vor} der Behandlung mit STARTex und 1
-Woche \textit{nach} der Behandlung gemessen. Es ergibt sich die folgende
-Datentabelle.
+Nach \Sexpr{exp} mit zwei Futtermitteln (\textit{FatDown} und
+\textit{ProGain}) an \Sexpr{animal} ergibt sich die folgende Datentabelle
+mit dem gemessenen Gewichtszunahmen nach f{\"u}nf Wochen Mast.
 
-<<ttest-02, results='asis', echo = FALSE>>=
-n <- sample(c(7,8,9), 1)
-cbind(tibble(before = round(rnorm(n = n,
-                                  mean = sample(c(12, 14, 16), 1),
-                                  sd = sample(c(2, 4, 6), 1)))),
-      tibble(after = round(rnorm(n = n,
-                                 mean = sample(c(12, 16, 25), 1),
-                                 sd = sample(c(2, 4, 6), 1))))) %>%
-  mutate(animal_id = 1:nrow(.)) %>%
-  select(animal_id, everything()) %>% 
-  kable(booktabs = TRUE, align = "c") %>% 
+<<ttest-04, results='asis', echo = FALSE>>=
+
+alpha <- c(10, 5, 1) %>% sample(1)
+
+data_tbl <- rbind(tibble(FatDown = round(rnorm(n = sample(c(5,6,7), 1),
+                                         mean = sample(c(15, 17, 19), 1),
+                                         sd = sample(c(1, 2, 3), 1)))) %>%
+                  gather,
+                  tibble(ProGain = round(rnorm(n = sample(c(5,6,7), 1),
+                                         mean = sample(c(16, 18, 14), 1),
+                                         sd = sample(c(1, 2, 3), 1)))) %>%
+                  gather) %>%
+  set_names(c("feed", "weight")) %>% 
+  sample_n(size = nrow(.))
+
+## passend qt alpha
+quantile <- round(qt(1 - (alpha/100), df = nrow(data_tbl)), 2)
+conf_inter <- 100-alpha
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 @
 
 \begin{enumerate}
-\item Formulieren Sie die Fragestellung! \textbf{(1 Punkt)}
-\item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
-    Punkte)}
-\item Bestimmen Sie die Teststatistik $T_{calc}$ eines gepaarten t-Tests f{\"u}r den
-  Vergleich der beiden Zeitpunkte! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{calc}$ eine Aussage
-  zur Nullhypothese! \textbf{(2 Punkte)}
-\item Sch{\"a}tzen Sie den $p$-Wert aus Ihrem berechneten $T_{calc}$ ab!
-  Begr{\"u}nden Sie Ihre Antwort mit einer Skizze! \textbf{(2
-    Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+      Punkte)}
+  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Welch t-Tests f{\"u}r den
+  Vergleich der beiden Futtermittel! \textbf{(4 Punkte)}
+\item Treffen Sie mit $T_{\alpha = \Sexpr{alpha}\%} = \Sexpr{quantile}$ und dem berechneten $T_{calc}$ eine Aussage
+  zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Berechnen Sie das \Sexpr{conf_inter}\% Konfidenzintervall unter der
+  Verwendung von $s_p$ und der gemittelten Fallzahl {\"u}ber die beiden Gruppen! \textbf{(2 Punkte)}
+\item Nennen Sie den statistischen Grund, warum Sie sich zwischen einem Student t-Test und einem
+  Welch t-Test entscheiden m{\"u}ssen! \textbf{(1 Punk)}
 \end{enumerate}

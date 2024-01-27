@@ -1,13 +1,13 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/wJqsNV1hOW8}{\includegraphics[width =
+\hfill\href{https://youtu.be/exDo7AyHl4Q}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 
-<<ttest-R-02-a,  echo = FALSE>>=
+<<ttest-R-01-a,  echo = FALSE>>=
 
 question_vec <- c("das statistische Hypothesenpaar",
                   "die wissenschaftliche Fragestellung") %>% sample(1)
@@ -20,11 +20,10 @@ data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
                                          mean = sample(c(15, 17, 19), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%
-  set_names(c("P", "drymatter")) %>%
+  set_names(c("N", "freshweight")) %>%
   sample_n(size = nrow(.))
 
-
-preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
+preprint <- t.test(freshweight ~ N, data_tbl, var.equal = TRUE) 
 preprint$null.value <- "[condensed]"
 
 preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
@@ -38,8 +37,7 @@ names(preprint$estimate) <- c(str_c("mean in group ", first_vec),
 
 preprint
 
-
-ttest <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
+ttest <- t.test(freshweight ~ N, data_tbl, var.equal = TRUE)
 tk <- qt(0.975, df=ttest$parameter)
 @
 
@@ -49,7 +47,7 @@ tk <- qt(0.975, df=ttest$parameter)
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
-\item Beschriften Sie die Abbildung und
-  das 95\% Konfidenzintervall entsprechend! \textbf{(2 Punkte)}  
+\item Skizieren Sie eine Abbildung in der Sie $T_{calc}$, $Pr(D|H_0)$, $A=0.95$,
+  sowie $T_{\alpha=5\%} = |\Sexpr{round(tk, 2)}|$ einzeichnen! \textbf{(4 Punkte)}
+\item Beschriften Sie die Abbildung entsprechend! \textbf{(2 Punkte)}  
 \end{enumerate}
