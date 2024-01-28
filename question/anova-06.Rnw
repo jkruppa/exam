@@ -1,34 +1,66 @@
-\section{Aufgabe \hfill (8 Punkte)}
-
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width =
+\hfill\href{https://youtu.be/rWTyHXXlYjY}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+animal <- c("Puten", "Mastschweinen", "Rindern", "H{\"u}hnern", "Ziegen",
+            "H{\"a}ngebauchschweinen") %>% sample(1)
+n_ani <- rpois(1, 60)
+@ 
 
-In der untenstehenden Tabelle ist die Formel f{\"u}r den F-Test aus der ANOVA
-und die Formel f{\"u}r den Student t-Test dargestellt. In der ANOVA berechnen
-Sie die F-Statistik $F_{calc}$ und in dem Student t-Test die T-Statistik
-$T_{calc}$.
+Der Datensatz \textit{pig\_gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
+der Wirkung vom Vitamin Selen auf das Wachstum von \Sexpr{animal}. Der
+Versuch wurde an \Sexpr{n_ani} \Sexpr{animal} durchgef{\"u}hrt, wobei
+jedes Tier eine von drei Selen-Dosen $dose$ ($\Sexpr{sample(c("0.1", "0.2",
+  "0.5"), 1)}$ ng/Tag, $\Sexpr{sample(c("1", "2",
+  "3"), 1)}$ ng/Tag und $\Sexpr{sample(c("10", "15",
+  "20"), 1)}$ ng/Tag)
+{\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
+Festnahrung). Sie erhalten folgende Ausgabe in \Rlogo.
 
-\begin{center}
-  \begin{tabular}{cc}
-    $F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
-  \end{tabular}
-\end{center}
+<<anova-R-05-a,  echo = FALSE>>=
 
+
+data_tbl <- tibble(mean = sample(c(12, 15, 17, 20, 22, 25)),
+                   dose = rep(c(0.5, 1, 1.5), each = 2),
+                   form = rep(c("OJ", "VC"), times = 3),
+                   id = 1:6)
+
+data_pre_tbl <- data_tbl %>%
+  expand_grid(rep = 1:4)
+
+rsp_tbl <- data_tbl %>%
+  split(.$id) %>%
+  map(~rnorm(4, mean = .x$mean, sd = 4))  %>%
+  reduce(c) %>%
+  as_tibble()
+
+data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
+  dplyr::rename(gain = value) %>%
+  mutate(dose = as_factor(dose))
+
+anova_mdl <- lm(gain ~ dose + form + dose:form, data = data_tbl) %>%
+  anova 
+
+attr(anova_mdl, "heading")[2] <- c("Response: gain",
+                                   "Response: weight",
+                                   "Response: fat_perc") %>% sample(1)
+
+anova_mdl
+
+@
 
 \begin{enumerate}
-\item Erkl{\"a}ren Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$
-  Statistik und $T_{calc}$ Statistik! \textbf{(2 Punkte)}
-\item Visualisieren Sie eine nicht signifikante $F_{calc}$ Statistik sowie
-  eine signifikante $F_{calc}$ Statistik anhand von $MS_{treatment}$ und
-  $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie an der Formel des F-Tests sowie an der Abbildung warum
-  das Minimum der F-Statistik 0 ist! \textbf{(2 Punkte)}
-\item Wenn die F-Statistik 0 ist, spricht dies eher f{\"u}r oder gegen die
-  Nullhypothese? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
+  zweifaktorielle ANOVA f{\"u}r den Faktor $\Sexpr{sample(c("form", "dose"), 1)}$
+  auf! \textbf{(2 Punkte)}
+\item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
+  im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}
+\item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
+  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
+\item Beschriften Sie die Abbildung entsprechend der \Rlogo Ausgabe! \textbf{(2 Punkte)}
 \end{enumerate}
-
 

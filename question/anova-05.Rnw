@@ -1,66 +1,101 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/rWTyHXXlYjY}{\includegraphics[width =
+\hfill\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-animal <- c("Puten", "Mastschweinen", "Rindern", "H{\"u}hnern", "Ziegen",
-            "H{\"a}ngebauchschweinen") %>% sample(1)
-n_ani <- rpois(1, 60)
+dose_num <- c(3, 4, 5) %>% sample(1)
+supp_num <- c(2) # %>% sample(1) ## ich m{\"o}chte das hier zwei stehen, dann kein posthoc n{\"o}tig
+int_num <- (dose_num -1)*(supp_num-1)
 @ 
 
-Der Datensatz \textit{pig\_gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
-der Wirkung vom Vitamin Selen auf das Wachstum von \Sexpr{animal}. Der
-Versuch wurde an \Sexpr{n_ani} \Sexpr{animal} durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Selen-Dosen $dose$ ($\Sexpr{sample(c("0.1", "0.2",
-  "0.5"), 1)}$ ng/Tag, $\Sexpr{sample(c("1", "2",
-  "3"), 1)}$ ng/Tag und $\Sexpr{sample(c("10", "15",
-  "20"), 1)}$ ng/Tag)
-{\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
-Festnahrung). Sie erhalten folgende Ausgabe in \Rlogo.
+Der Datensatz \textit{tooth\_tbl} enth{\"a}lt Daten aus einer Studie zur
+Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
+Meerschweinchen. Der Versuch wurde an verschiedenen Schweinen durchgef{\"u}hrt,
+wobei jedes Tier eine von \Sexpr{dose_num} Vitamin-C-Dosen \textit{dose}
+{\"u}ber eine von \Sexpr{supp_num} Verabreichungsmethoden \textit{supp}
+erhielt. Die Zahnl{\"a}nge wurde als normalverteiltes Outcome gemessen.
 
-<<anova-R-05-a,  echo = FALSE>>=
+<<anova-R-02-a,  echo = FALSE>>=
 
+row_num <- dose_num * supp_num
 
-data_tbl <- tibble(mean = sample(c(12, 15, 17, 20, 22, 25)),
-                   dose = rep(c(0.5, 1, 1.5), each = 2),
-                   form = rep(c("OJ", "VC"), times = 3),
-                   id = 1:6)
+data_tbl <- tibble(mean = sample(c(14, 15, 16, 18, 22, 23), row_num,
+                                 replace = TRUE),
+                   dose = rep(1:dose_num, each = supp_num),
+                   supp = rep(1:supp_num, times = dose_num),
+                   id = 1:row_num)
 
 data_pre_tbl <- data_tbl %>%
-  expand_grid(rep = 1:4)
+  expand_grid(rep = 1:5)
 
 rsp_tbl <- data_tbl %>%
   split(.$id) %>%
-  map(~rnorm(4, mean = .x$mean, sd = 4))  %>%
+  map(~rnorm(5, mean = .x$mean, sd = 3))  %>%
   reduce(c) %>%
   as_tibble()
 
 data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
-  dplyr::rename(gain = value) %>%
+  dplyr::rename(len = value) %>%
   mutate(dose = as_factor(dose))
 
-anova_mdl <- lm(gain ~ dose + form + dose:form, data = data_tbl) %>%
+
+
+# data_tbl <- ToothGrowth %>%
+#  as_tibble %>%
+#  mutate(dose = factor(dose, 
+#                       levels = c(0.5, 1, 2),
+#                       labels = c("D0.5", "D1", "D2")),
+#         len = len + rnorm(n = nrow(.), 0, 0.1))
+
+anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
   anova 
-
-attr(anova_mdl, "heading")[2] <- c("Response: gain",
-                                   "Response: weight",
-                                   "Response: fat_perc") %>% sample(1)
-
-anova_mdl
 
 @
 
 \begin{enumerate}
-\item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
-  zweifaktorielle ANOVA f{\"u}r den Faktor $\Sexpr{sample(c("form", "dose"), 1)}$
-  auf! \textbf{(2 Punkte)}
-\item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
-  im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}
-\item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
-  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
-\item Beschriften Sie die Abbildung entsprechend der \Rlogo Ausgabe! \textbf{(2 Punkte)}
+\item F{\"u}llen Sie die unterstehende zweifaktorielle ANOVA Ergebnistabelle aus
+  mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
+  \textbf{(4 Punkte)}
+\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von den
+  $F_{\alpha = 5\%}$-Werten mit
+  $F_{supp} = 4.26$ und
+  $F_{dose} = 3.40$ sowie
+  $F_{supp:dose} = 5.23$ ab. Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(4 Punkte)}
+\end{enumerate}
+
+\vspace{1Ex}
+
+\begin{center}
+  \Large
+  \begin{tabular}{l|c|c|c|c|c}
+     & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
+    \hline
+   \textbf{supp}  & \Sexpr{supp_num-1} & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
+    \hline
+    \textbf{dose}  & \Sexpr{dose_num-1} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
+    \hline
+    \textbf{supp:dose}  & \Sexpr{int_num} & \Sexpr{round(anova_mdl[[2]][3], 2)} &  &  &  \strut\\
+    \hline
+   \textbf{Residuals}  & \Sexpr{round(anova_mdl[[1]][4], 2)} & \Sexpr{round(anova_mdl[[2]][4], 2)} &  &  &  \strut\\
+  \end{tabular}
+\end{center}
+
+\vspace{1Ex}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Was bedeutet ein signifikantes Ergebnis in einer zweifaktoriellen
+  ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen?
+  Beziehen Sie sich dabei einmal auf den Faktor \textit{supp} und einmal
+  auf den Faktor \textit{dose}! \textbf{(2 Punkte)}
+\item Was sagt der Term \textit{supp:dose} aus? Interpretieren Sie das
+  Ergebnis des abgesch{\"a}tzten p-Wertes! \textbf{(2 Punkte)}
 \end{enumerate}
 

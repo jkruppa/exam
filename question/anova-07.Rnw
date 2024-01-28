@@ -1,29 +1,34 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
+
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/2qG1Dws0MJo}{\includegraphics[width =
+\hfill\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 
-Sie rechnen eine zweifaktorielle ANOVA und erhalten einen signifikanten
-Interaktionseffekt zwischen den beiden Faktoren $f_1$ und $f_2$. Der Faktor
-$f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
+In der untenstehenden Tabelle ist die Formel f{\"u}r den F-Test aus der ANOVA
+und die Formel f{\"u}r den Student t-Test dargestellt. In der ANOVA berechnen
+Sie die F-Statistik $F_{calc}$ und in dem Student t-Test die T-Statistik
+$T_{calc}$.
 
-<<>>=
-inter_vec <- c("eine schwache", "eine starke", "keine") %>% sample(2)
-@
+\begin{center}
+  \begin{tabular}{cc}
+    $F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
+  \end{tabular}
+\end{center}
 
 
 \begin{enumerate}
-\item Visualisieren Sie in zwei getrennten Abbildungen 
-  \Sexpr{inter_vec[1]} und \Sexpr{inter_vec[2]} Interaktion zwischen
-  den Faktoren $f_1$ und $f_2$! \textbf{(4 Punkte)}
-\item Erkl{\"a}ren Sie den Unterschied zwischen den beiden St{\"a}rken der Interaktion!
-  \textbf{(2 Punkte)}
-\item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist
-  dann das weitere Vorgehen bei einem Posthoc-Test? 
-  \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$
+  Statistik und $T_{calc}$ Statistik! \textbf{(2 Punkte)}
+\item Visualisieren Sie eine nicht signifikante $F_{calc}$ Statistik sowie
+  eine signifikante $F_{calc}$ Statistik anhand von $MS_{treatment}$ und
+  $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
+\item Erkl{\"a}ren Sie an der Formel des F-Tests sowie an der Abbildung warum
+  das Minimum der F-Statistik 0 ist! \textbf{(2 Punkte)}
+\item Wenn die F-Statistik 0 ist, spricht dies eher f{\"u}r oder gegen die
+  Nullhypothese? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

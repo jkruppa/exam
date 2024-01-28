@@ -1,31 +1,37 @@
-\section{Aufgabe \hfill (13 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/49hvImMwVyE}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+  2cm]{img/caution}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-exp <- c("einem Gew{\"a}chshausexperiment",
-         "einem Freilandversuch",
-         "einem Experiment in einer Klimakammer",
-         "einem Feldexperiment") %>% sample(1)
-plant <- c("Maisspflanzen", "Erbsenschoten", "Kartoffeln", "Lauchstangen", "Erdbeerenpflanzen",
-           "Brokolik{\"o}pfe") %>% sample(1)
-resp <- c("das Trockengewicht", "das Frischgewicht", "den Ertrag pro Hektar") %>%
+animal <- c("Mastschweinen", "Fleischrindern", "Puten", "H{\"u}hnern", "Lamas",
+           "Emus", "Enten") %>% sample(1)
+resp <- c("das Lebendgewicht", "den Proteingehalt", "den Fettgehalt", "den Muskelfleischanteil") %>%
   sample(1)
+
+n_rep <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
+
+trt_lvl <- c("ctrl", "low", "mid", "high", "extreme", "pos", "neg", "lethal") %>% sample(3)
+
+sig <- c("signifikante", "nicht signifikante") %>% sample(1)
+
 @ 
 
 
-Der Datensatz \texttt{plant\_growth\_tbl} enth{\"a}lt \Sexpr{resp} der \Sexpr{plant}
-(\textit{weight}), die unter einer Kontrolle und zwei verschiedenen
-Behandlungsbedingungen erzielt wurden -- dem Faktor \textit{group} mit den
-Faktorstufen \textit{ctrl}, \textit{trt1}, \textit{trt2}.
+Der Datensatz \texttt{week7\_growth\_tbl} enth{\"a}lt \Sexpr{resp} von
+\Sexpr{animal}, die unter einer Kontrolle und zwei verschiedenen
+Behandlungsbedingungen erzielt wurden. Als Behandlung wurden verschiedene
+Nahrungszus{\"a}tze in unterschiedlichen Dosen verf{\"u}ttert. Als Behandlung haben
+Sie somit den Faktor \textit{group} mit den Faktorstufen
+\textit{\Sexpr{trt_lvl[1]}}, \textit{\Sexpr{trt_lvl[2]}} und
+\textit{\Sexpr{trt_lvl[3]}} vorliegen.
 
-<<anova-R-01-a,  echo = FALSE>>=
+<<anova-R-08-a,  echo = FALSE>>=
 
 data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(7,9), 1),
                                          mean = sample(c(15, 17, 19), 1),
@@ -42,24 +48,18 @@ data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(7,9), 1),
   set_names(c("group", "weight")) %>%
   sample_n(size = nrow(.))
 
-#data_tbl <- PlantGrowth %>%
-#  as_tibble %>%
-#  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
-#         weight = weight + rnorm(n = nrow(.), 0, 0.1))
-
 anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
   anova
+
+total_df <- anova_mdl$Df %>% sum
+total_ss <- anova_mdl$"Sum Sq" %>% sum
 
 @
 
 \begin{enumerate}
 \item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
-  mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
-  \textbf{(4 Punkte)}
-\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
-  $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
-    anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begr{\"u}nden Sie Ihre
-  Antwort! \textbf{(2 Punkte)}
+  mit den gegebenen Informationen von \textbf{Df} und \textbf{Sum Sq}!
+  \textbf{(3 Punkte)}
 \end{enumerate}
 
 \vspace{1Ex}
@@ -71,39 +71,26 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
     \hline
    \textbf{group}  & 2 & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
     \hline
-   \textbf{Residuals}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
+   \textbf{error}  & \Sexpr{round(anova_mdl[[1]][2], 2)} &  &  &  &  \strut\\
+        \hline
+   \textbf{total}  & \Sexpr{round(total_df, 2)} & \Sexpr{round(total_ss, 2)} &  &  &  \strut\\
   \end{tabular}
 \end{center}
 
 \vspace{1Ex}
 
 \begin{enumerate}
-  \setcounter{enumi}{2}
-\item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen
-  ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen? Beziehen Sie sich auf den obigen Fragetext bei Ihrer Antwort!
-  \textbf{(2 Punkte)}
-\item Berechnen Sie \textit{einen} Student t-Test mit f{\"u}r den \textit{vermutlich}
-  signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit
-  $T_{\alpha = 5\%} = 2.03$. Begr{\"u}nden Sie Ihre Auswahl! \textbf{(3 Punkte)}
+  \setcounter{enumi}{1}
+\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
+  $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
+    anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(2 Punkte)}
+\item Berechen Sie den Effektsch{\"a}tzer $\eta^2$. Was sagt Ihnen der Wert von
+  $\eta^2$ aus? \textbf{(2 Punkte)}
+\item Skizzieren Sie K{\"o}rpergr{\"o}{\ss}e von \Sexpr{n_rep} Tieren pro Behandlung f{\"u}r eine
+  \Sexpr{sig}, einfaktorielle ANOVA! \textbf{(2 Punkte)}
 \end{enumerate}
 
-<<anova-R-01-b,  echo = FALSE>>=
 
-group_by(data_tbl, group) %>%
-  dplyr::summarise(
-           n = n(),
-    mean = round(mean(weight, na.rm = TRUE), 2),
-    sd = round(sd(weight, na.rm = TRUE), 2),
-    ) %>%
-  kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
-
-@
-
-\begin{enumerate}
-  \setcounter{enumi}{4}
-\item Gegebenen der ANOVA Tabelle war das Ergebnis des t-Tests zu erwarten?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\end{enumerate}
 
 
