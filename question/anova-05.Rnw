@@ -45,22 +45,14 @@ data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
   mutate(dose = as_factor(dose))
 
 
-
-# data_tbl <- ToothGrowth %>%
-#  as_tibble %>%
-#  mutate(dose = factor(dose, 
-#                       levels = c(0.5, 1, 2),
-#                       labels = c("D0.5", "D1", "D2")),
-#         len = len + rnorm(n = nrow(.), 0, 0.1))
-
 anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
   anova 
 
 @
 
 \begin{enumerate}
-\item F{\"u}llen Sie die unterstehende zweifaktorielle ANOVA Ergebnistabelle aus
-  mit den gegebenen Informationen von \texttt{Df} und \texttt{Sum Sq}!
+\item F{\"u}llen Sie die unterstehende zweifaktorielle ANOVA Ergebnistabelle 
+  mit den gegebenen Informationen von \textbf{Df} und \textbf{Sum Sq} aus!
   \textbf{(4 Punkte)}
 \item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von den
   $F_{\alpha = 5\%}$-Werten mit
@@ -83,7 +75,7 @@ anova_mdl <- lm(len ~ supp + dose + supp:dose, data = data_tbl) %>%
     \hline
     \textbf{supp:dose}  & \Sexpr{int_num} & \Sexpr{round(anova_mdl[[2]][3], 2)} &  &  &  \strut\\
     \hline
-   \textbf{Residuals}  & \Sexpr{round(anova_mdl[[1]][4], 2)} & \Sexpr{round(anova_mdl[[2]][4], 2)} &  &  &  \strut\\
+   \textbf{error}  & \Sexpr{round(anova_mdl[[1]][4], 2)} & \Sexpr{round(anova_mdl[[2]][4], 2)} &  &  &  \strut\\
   \end{tabular}
 \end{center}
 

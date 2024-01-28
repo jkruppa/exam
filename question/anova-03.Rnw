@@ -34,15 +34,15 @@ Faktorstufen \textit{\Sexpr{trt_lvl[1]}}, \textit{\Sexpr{trt_lvl[2]}} und
 
 data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(7,9), 1),
                                          mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(1, 1, 2), 1)))) %>%
+                                         sd = sample(c(1, 3, 2), 1)))) %>%
                   gather,
                   tibble(trt1 = round(rnorm(n = sample(c(7,9), 1),
-                                         mean = sample(c(18, 19, 20), 1),
+                                         mean = sample(c(18, 20, 22), 1),
                                          sd = sample(c(1, 2, 1), 1)))) %>%
                   gather,
                   tibble(trt2 = round(rnorm(n = sample(c(7,9), 1),
-                                         mean = sample(c(19, 20, 21), 1),
-                                         sd = sample(c(2, 2, 2), 1)))) %>%
+                                         mean = sample(c(14, 22, 24), 1),
+                                         sd = sample(c(4, 2, 3), 1)))) %>%
                   gather) %>%
   set_names(c("group", "weight")) %>%
   sample_n(size = nrow(.))
@@ -58,8 +58,8 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
 @
 
 \begin{enumerate}
-\item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus
-  mit den gegebenen Informationen von \textbf{Df} und \textbf{Sum Sq}!
+\item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle
+  mit den gegebenen Informationen von \textbf{Df} und \textbf{Sum Sq} aus!
   \textbf{(3 Punkte)}
 \end{enumerate}
 
@@ -101,6 +101,7 @@ group_by(data_tbl, group) %>%
     mean = round(mean(weight, na.rm = TRUE), 2),
     sd = round(sd(weight, na.rm = TRUE), 2),
     ) %>%
+  mutate(group = trt_lvl) %>% 
   kable(booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 
