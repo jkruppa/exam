@@ -54,6 +54,12 @@ anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
 total_df <- anova_mdl$Df %>% sum
 total_ss <- anova_mdl$"Sum Sq" %>% sum
 
+ss_vec <- c(round(anova_mdl[[2]][1], 2),
+            round(anova_mdl[[2]][2], 2),
+            round(total_ss, 2))
+empty <- 1:3 %>% sample(1)
+ss_vec[empty] <- ""
+
 @
 
 \begin{enumerate}
@@ -69,11 +75,11 @@ total_ss <- anova_mdl$"Sum Sq" %>% sum
   \begin{tabular}{l|c|c|c|c|c}
      & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
     \hline
-   \textbf{group}  & 2 & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
+   \textbf{group}  & 2 & \Sexpr{ss_vec[1]} &  &  &  \strut\\
     \hline
-   \textbf{error}  & \Sexpr{round(anova_mdl[[1]][2], 2)} &  &  &  &  \strut\\
+   \textbf{error}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{ss_vec[2]} &  &  &  \strut\\
         \hline
-   \textbf{total}  & \Sexpr{round(total_df, 2)} & \Sexpr{round(total_ss, 2)} &  &  &  \strut\\
+   \textbf{total}  & \Sexpr{round(total_df, 2)} & \Sexpr{ss_vec[3]} &  &  &  \strut\\
   \end{tabular}
 \end{center}
 
