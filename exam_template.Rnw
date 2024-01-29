@@ -79,6 +79,10 @@ grade_tbl <- pre_grade_tbl %>%
                  "2.7", "3.0", "3.3", "3.7", "4.0")) %>% 
   select(Punkte, Note)
 
+## random ID
+exam_id <- stringi::stri_rand_strings(4, 4) |> 
+  str_c(collapse = "-")
+
 @ 
 % -----------------------------------------------------------------------
 \input{\Sexpr{init_path}}
@@ -86,6 +90,9 @@ grade_tbl <- pre_grade_tbl %>%
 \begin{document}
 % -----------------------------------------------------------------------
 \maketitle
+\fancypagestyle{empty}{
+  \fancyfoot[C]{\tiny \Sexpr{exam_id}}
+}
 \thispagestyle{empty}
 \clearpage
 % -----------------------------------------------------------------------

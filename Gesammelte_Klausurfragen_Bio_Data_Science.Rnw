@@ -83,7 +83,6 @@ grade_tbl <- pre_grade_tbl %>%
   select(Punkte, Note)
 
 ## random ID
-
 exam_id <- stringi::stri_rand_strings(4, 4) |> 
   str_c(collapse = "-")
 
