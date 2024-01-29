@@ -59,6 +59,9 @@
 \begin{document}
 % -----------------------------------------------------------------------
 \maketitle
+\fancypagestyle{empty}{
+  \fancyfoot[C]{\tiny frTL-vngb-8AvU-znmL}
+}
 \thispagestyle{empty}
 \clearpage
 % -----------------------------------------------------------------------
@@ -199,16 +202,16 @@
 Sie f{\"u}hren ein Feldexperiment durch um das Gewicht von Maiss zu
 steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen
 Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA
-ergibt sich ein $\eta^2 = 0.17$. Welche Aussage ist richtig?
+ergibt sich ein $\eta^2 = 0.3$. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
-\item [\textbf{B} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
-\item [\textbf{C} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
+\item [\textbf{A} \msquare] Das $\eta^2$ ist ein Wert f{"u}r die G{"u}te der ANOVA. Je kleiner desto besser. Ein $\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.
+\item [\textbf{B} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{"a}rt wird. Somit der Rest an nicht erkl{"a}rbarer Varianz.
+\item [\textbf{C} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
 \item [\textbf{D} \msquare] Die Berechnung von $\eta^2$ ist ein Wert f{"u}r die Interaktion.
-\item [\textbf{E} \msquare] Das $\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{"a}rt wird. Das $\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.
+\item [\textbf{E} \msquare] Das $\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -219,10 +222,10 @@ Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese a
 
 \begin{enumerate}
 \item [\textbf{A} \msquare] Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 ann{"a}hert kann die Nullhypothese nicht abgelehnt werden.
-\item [\textbf{B} \msquare] Die ANOVA berechnt die F-Statistik aus den SS Behandlung geteilt durch die SS Fehler.
-\item [\textbf{C} \msquare] Die ANOVA berechnet die T-Statistik aus der Multiplikation der MS Behandlung mit der MS der Fehler. Wenn die F-Statistik genau 0 ist, kann die Nullhypothese abgelehnt werden.
-\item [\textbf{D} \msquare] Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik h{"o}her als 1.96 ist, kann die Nullhypothese abgelehnt werden.
-\item [\textbf{E} \msquare] Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 ann{"a}hert kann die Nullhypothese nicht abgelehnt werden.
+\item [\textbf{B} \msquare] Die ANOVA berechnet die T-Statistik aus der Multiplikation der MS Behandlung mit der MS der Fehler. Wenn die F-Statistik genau 0 ist, kann die Nullhypothese abgelehnt werden.
+\item [\textbf{C} \msquare] Die ANOVA berechnt die F-Statistik aus den SS Behandlung geteilt durch die SS Fehler.
+\item [\textbf{D} \msquare] Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 ann{"a}hert kann die Nullhypothese nicht abgelehnt werden.
+\item [\textbf{E} \msquare] Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik h{"o}her als 1.96 ist, kann die Nullhypothese abgelehnt werden.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -236,10 +239,10 @@ wird. Dabei wird die ANOVA als ein erstes statistischen Werkzeug f{\"u}r die
 
 \begin{enumerate}
 \item [\textbf{A} \msquare] ... den Unterschied zwischen der Mittelwerte und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist bekannt welcher Vergleich konkret unterschiedlich ist.
-\item [\textbf{B} \msquare] ... den Unterschied zwischen der globalen Varianz und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.
-\item [\textbf{C} \msquare] ... den Unterschied zwischen zwei paarweisen Mittelwerten aus verschiedenen Behandlungsguppen. Wenn die signifikant ist, ist daher bekannt welcher Vergleich konkret unterschiedlich ist.
-\item [\textbf{D} \msquare] ... den Unterschied zwischen der F-Statistik anhand der Varianz der Gruppen. Wenn die F-Statistik exakt 0 ist, kann die Nullhypothese abgelehnt werden.
-\item [\textbf{E} \msquare] ... den Unterschied zwischen mehreren Varianzen aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.
+\item [\textbf{B} \msquare] ... den Unterschied zwischen mehreren Varianzen aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.
+\item [\textbf{C} \msquare] ... den Unterschied zwischen der F-Statistik anhand der Varianz der Gruppen. Wenn die F-Statistik exakt 0 ist, kann die Nullhypothese abgelehnt werden.
+\item [\textbf{D} \msquare] ... den Unterschied zwischen zwei paarweisen Mittelwerten aus verschiedenen Behandlungsguppen. Wenn die signifikant ist, ist daher bekannt welcher Vergleich konkret unterschiedlich ist.
+\item [\textbf{E} \msquare] ... den Unterschied zwischen der globalen Varianz und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -248,7 +251,7 @@ wird. Dabei wird die ANOVA als ein erstes statistischen Werkzeug f{\"u}r die
 
 Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur Bewertung der
 Wirkung von Vitamin C auf das Zahnwachstum bei Meerschweinchen. Der Versuch
-wurde an 42 Schweinen durchgef{\"u}hrt, wobei jedes Tier eine von
+wurde an 49 Schweinen durchgef{\"u}hrt, wobei jedes Tier eine von
 drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) {\"u}ber eine von zwei
 Verabreichungsmethoden mit Orangensaft (Orange) oder Ascorbins{\"a}ure (Vitamin C)
 erhielt.
@@ -267,10 +270,10 @@ Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Keine Interaktion liegt vor. Die Geraden scheiden sich und laufen nicht parallel.
-\item [\textbf{B} \msquare] Eine leichte Interaktion ist zu erwarten. Die Geraen schneiden sich noch nicht, aber die Abst{"a}nde unterscheiden sich stark.
-\item [\textbf{C} \msquare] Eine starke Interaktion liegt vor. Die Geraden laufen parallel und schneiden sich nicht.
-\item [\textbf{D} \msquare] Eine starke Interaktion ist zu erwarten. Die Geraden schneiden sich und die Abst{"a}nde sind nicht gleichbleibend.
+\item [\textbf{A} \msquare] Eine leichte Interaktion ist zu erwarten. Die Geraen schneiden sich noch nicht, aber die Abst{"a}nde unterscheiden sich stark.
+\item [\textbf{B} \msquare] Eine starke Interaktion liegt vor. Die Geraden laufen parallel und schneiden sich nicht.
+\item [\textbf{C} \msquare] Eine starke Interaktion ist zu erwarten. Die Geraden schneiden sich und die Abst{"a}nde sind nicht gleichbleibend.
+\item [\textbf{D} \msquare] Keine Interaktion liegt vor. Die Geraden scheiden sich und laufen nicht parallel.
 \item [\textbf{E} \msquare] Keine Interaktion ist zu erwatzen. Die Geraden der Verabreichungsmethode laufen parallel und mit {"a}hnlichen Abst{"a}nden.
 \end{enumerate} 
 \section*{Deskriptive Statistik \& Explorative Datenanalyse}
@@ -280,16 +283,16 @@ Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
 
 
 
-Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit 5, 7, 11, 6 und 9.
+Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit 11, 5, 5, 10 und 8.
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es ergibt sich 7.6 +/- 5.8
-\item [\textbf{B} \msquare] Es ergibt sich 6.6 +/- 2.9
-\item [\textbf{C} \msquare] Es ergibt sich 7.6 +/- 1.205
-\item [\textbf{D} \msquare] Es ergibt sich 8.6 +/- 1.205
-\item [\textbf{E} \msquare] Es ergibt sich 7.6 +/- 2.41
+\item [\textbf{A} \msquare] Es ergibt sich 6.8 +/- 3.85
+\item [\textbf{B} \msquare] Es ergibt sich 7.8 +/- 7.7
+\item [\textbf{C} \msquare] Es ergibt sich 8.8 +/- 1.385
+\item [\textbf{D} \msquare] Es ergibt sich 7.8 +/- 1.385
+\item [\textbf{E} \msquare] Es ergibt sich 7.8 +/- 2.77
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -297,66 +300,66 @@ Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit 5, 7, 11, 6 und 
 
 
 
-Berechnen Sie den Median, das $1^{st}$ Quartile sowie das $3^{rd}$ Quartile von $y$ mit 23, 15, 10, 10, 15, 18 und 51.
+Berechnen Sie den Median, das $1^{st}$ Quartile sowie das $3^{rd}$ Quartile von $y$ mit 0, -10, 24, 30, 28, 10 und 51.
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es ergibt sich 20 [11, 24]
-\item [\textbf{B} \msquare] Es ergibt sich 15 +/- 10
-\item [\textbf{C} \msquare] Es ergibt sich 15 [10, 23]
-\item [\textbf{D} \msquare] Es ergibt sich 15 +/- 23
-\item [\textbf{E} \msquare] Es ergibt sich 20 +/- 10
+\item [\textbf{A} \msquare] Es ergibt sich 24 +/- 0
+\item [\textbf{B} \msquare] Es ergibt sich 24 +/- 30
+\item [\textbf{C} \msquare] Es ergibt sich 19 [1, 31]
+\item [\textbf{D} \msquare] Es ergibt sich 19 +/- 0
+\item [\textbf{E} \msquare] Es ergibt sich 24 [0, 30]
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Die empfohlene Mindestanzahl an Beobachtungen f{\"u}r ein Histogramm sind...
+Die empfohlene Mindestanzahl an Beobachtungen f{\"u}r einen Boxplot sind...
 
 
 
 \begin{enumerate}
 \item [\textbf{A} \msquare] 1 Beobachtung.
-\item [\textbf{B} \msquare] 5 und mehr Beobachtungen.
-\item [\textbf{C} \msquare] 10 Beobachtungen.
+\item [\textbf{B} \msquare] 10 Beobachtungen.
+\item [\textbf{C} \msquare] mindestens 20 Beobachtungen.
 \item [\textbf{D} \msquare] 2-5 Beobachtungen.
-\item [\textbf{E} \msquare] mindestens 20 Beobachtungen.
+\item [\textbf{E} \msquare] 5 und mehr Beobachtungen.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Sie wollen nach einem Feldversuch die Varianz berechnen. Welche der folgenden Rechenoperationen m{"u}ssen durchgef{"u}hrt werden?
+Um die Standardabweichung zu berechnen m{"u}ssen wir folgende Rechenoperationen durchf{"u}hren.
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Den Mittelwert berechen, dann die quadratischen Abst{"a}nde zum Mittelwert aufsummieren und durch die Fallzahl teilen.
-\item [\textbf{B} \msquare] Den Mittelwert berechen, dann die absoluten Abst{"a}nde zum Mittelwert aufsummieren
+\item [\textbf{A} \msquare] Den Mittelwert berechnen und die Abst{"a}nde quadrieren. Die Summe mit der Fallzahl multiplizieren.
+\item [\textbf{B} \msquare] Den Median berechen, dann die quadratischen Abst{"a}nde zum Median aufsummieren, dann die Wurzel ziehen.
 \item [\textbf{C} \msquare] Den Mittelwert berechen, dann die quadratischen Abst{"a}nde zum Mittelwert aufsummieren und durch die Fallzahl teilen, dann die Wurzel ziehen.
-\item [\textbf{D} \msquare] Den Mittelwert berechnen und die Abst{"a}nde quadrieren. Die Summe mit der Fallzahl multiplizieren.
-\item [\textbf{E} \msquare] Den Median berechen, dann die quadratischen Abst{"a}nde zum Median aufsummieren, dann die Wurzel ziehen.
+\item [\textbf{D} \msquare] Den Mittelwert berechen, dann die quadratischen Abst{"a}nde zum Mittelwert aufsummieren und durch die Fallzahl teilen.
+\item [\textbf{E} \msquare] Den Mittelwert berechen, dann die absoluten Abst{"a}nde zum Mittelwert aufsummieren
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Der Barplot stellt folgende statistische Ma{\ss}zahlen in einer
-Abbildung dar. Damit geh{\"o}rt der Barplot zu einem der am meisten
+Der Boxplot stellt folgende statistische Ma{\ss}zahlen in einer
+Abbildung dar. Damit geh{\"o}rt der Boxplot zu einem der am meisten
 genutzten statistischen Verfahren zur Visualisierung von Daten. 
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Den Mittelwert und die Varianz.
-\item [\textbf{B} \msquare] Den Mittelwert und die Standardabweichung.
+\item [\textbf{A} \msquare] Den Mittelwert und die Standardabweichung.
+\item [\textbf{B} \msquare] Den Mittelwert sowie den Median und die Streuung.
 \item [\textbf{C} \msquare] Den Median und die Standardabweichung.
-\item [\textbf{D} \msquare] Den Mittelwert sowie den Median und die Streuung.
-\item [\textbf{E} \msquare] Den Median und die Quartile.
+\item [\textbf{D} \msquare] Den Median und die Quartile.
+\item [\textbf{E} \msquare] Den Mittelwert und die Varianz.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -364,7 +367,7 @@ genutzten statistischen Verfahren zur Visualisierung von Daten.
 
 
 Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von
-Brokoli durchgef{\"u}hrt haben, berechnen Sie den Mittelwert und den
+Lauch durchgef{\"u}hrt haben, berechnen Sie den Mittelwert und den
 Median. Der Mittelwert $\bar{y}$ und der Median $\tilde{y}$
 unterscheiden sich. Welche Aussage ist richtig?
 
@@ -372,29 +375,29 @@ unterscheiden sich. Welche Aussage ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median m{"u}ssen gleich sein.
-\item [\textbf{B} \msquare] Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.
-\item [\textbf{C} \msquare] Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auff{"a}lligen Beobachtungen.
-\item [\textbf{D} \msquare] Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.
-\item [\textbf{E} \msquare] Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.
+\item [\textbf{A} \msquare] Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.
+\item [\textbf{B} \msquare] Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.
+\item [\textbf{C} \msquare] Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median m{"u}ssen gleich sein.
+\item [\textbf{D} \msquare] Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.
+\item [\textbf{E} \msquare] Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auff{"a}lligen Beobachtungen.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Um zu {\"U}berpr{\"u}fen, ob die Daten die Annahme einer Varianzhomogenit{"a}t gen{\"u}gen, k{\"o}nnen
+Um zu {\"U}berpr{\"u}fen, ob die Daten die Annahme einer Normalverteilung gen{\"u}gen, k{\"o}nnen
 wir folgende Visualisierung nutzen. Dabei kommt dann auch die entsprechende
-Regel zur Absch{\"a}tzung der Annahme einer Varianzhomogenit{"a}t zur Anwendung. 
+Regel zur Absch{\"a}tzung der Annahme einer Normalverteilung zur Anwendung. 
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Einen Barplot. Die Mittelwerte m{"u}ssen alle auf einer H{"o}he liegen. Die Fehlerbalken haben hier keine Informationen.
+\item [\textbf{A} \msquare] Einen Violinplot. Der Bauch der Violine muss hierbei einen h{"o}hren Wert annehmen als der Steg der Violine. Dann kann die Annahme angenommen werden.
 \item [\textbf{B} \msquare] Einen Boxplot. Das IQR muss {"u}ber alle Behandlungen zusammen mit den Whiskers ungef{"a}hr gleich sein.
-\item [\textbf{C} \msquare] Einen Violinplot. Der Bauch der Violine muss hierbei einen h{"o}hren Wert annehmen als der Steg der Violine. Dann kann die Annahme angenommen werden.
-\item [\textbf{D} \msquare] Einen Dotplot. Die Punkte m{"u}ssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung f{"u}hrt zur Ablehnung der Annahme.
-\item [\textbf{E} \msquare] Einen Boxplot. Der Median als Linie, muss in der Mitte des IQR, dargestellt durch die Box, liegen.
+\item [\textbf{C} \msquare] Einen Barplot. Die Mittelwerte m{"u}ssen alle auf einer H{"o}he liegen. Die Fehlerbalken haben hier keine Informationen.
+\item [\textbf{D} \msquare] Einen Boxplot. Der Median als Linie, muss in der Mitte des IQR, dargestellt durch die Box, liegen.
+\item [\textbf{E} \msquare] Einen Dotplot. Die Punkte m{"u}ssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung f{"u}hrt zur Ablehnung der Annahme.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -409,18 +412,18 @@ Besonderen f{\"u}r die {\"U}berpr{\"u}fung einer Verteilungsannahme an eine Vari
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Histogramm, Densityplot, Dotplot
-\item [\textbf{B} \msquare] Scatterplot, Mosaicplot, Boxplot
-\item [\textbf{C} \msquare] Histogramm, Scatterplot, Boxplot
-\item [\textbf{D} \msquare] Barplot, Mosaicplot, Violinplot
-\item [\textbf{E} \msquare] Boxplot, Densityplot, Violinplot
+\item [\textbf{A} \msquare] Violinplot, Scatterplot, Barplot
+\item [\textbf{B} \msquare] Boxplot, Densityplot, Violinplot
+\item [\textbf{C} \msquare] Barplot, Mosaicplot, Violinplot
+\item [\textbf{D} \msquare] Scatterplot, Mosaicplot, Boxplot
+\item [\textbf{E} \msquare] Scatterplot, Densityplot, Barplot
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-In dem folgenden Histogramm von $n = 207$ Pflanzen ist welche
+In dem folgenden Histogramm von $n = 223$ Pflanzen ist welche
 Verteilung mit welchen korrekten Verteilungsparametern dargestellt?
 
 
@@ -436,11 +439,11 @@ Verteilung mit welchen korrekten Verteilungsparametern dargestellt?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es handelt sich um eine Poisson-Verteilung mit Pois(20).
-\item [\textbf{B} \msquare] Es handelt sich um eine Normalverteilung mit N(20, 5).
-\item [\textbf{C} \msquare] Eine Standardnormalverteilung mit N(0,1).
-\item [\textbf{D} \msquare] Es handelt sich um eine Binomial-Verteilung mit Binom(10).
-\item [\textbf{E} \msquare] Eine rechtsschiefe, multivariate Normalverteilung.
+\item [\textbf{A} \msquare] Es handelt sich um eine Binomial-Verteilung mit Binom(10).
+\item [\textbf{B} \msquare] Eine rechtsschiefe, multivariate Normalverteilung.
+\item [\textbf{C} \msquare] Es handelt sich um eine Normalverteilung mit N(10, 5).
+\item [\textbf{D} \msquare] Eine Standardnormalverteilung mit N(0,1).
+\item [\textbf{E} \msquare] Es handelt sich um eine Poisson-Verteilung mit Pois(10).
 \end{enumerate} 
 \section*{Lineare Regression \& Korrelation}
 
@@ -450,16 +453,16 @@ Verteilung mit welchen korrekten Verteilungsparametern dargestellt?
 
 
 Sie haben das Modell $Y \sim X$ vorliegen und wollen nun ein
-pr{"a}diktives Modell rechnen. Welche Aussage ist richtig?
+kausales Modell rechnen. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Ein pr{"a}diktives Modell ben{"o}tigt mindestens eine Fallzahl von {"u}ber 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten m{"u}ssen homogen sein.
-\item [\textbf{B} \msquare] Ein pr{"a}diktives Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert.
-\item [\textbf{C} \msquare] Ein pr{"a}diktives Modell m{"o}chte die Zusammenh{"a}nge von X auf Y modellieren. Hierbei geht es um die Effekte von X auf Y. Man sagt, wenn X um 1 ansteigt {"a}ndert sich Y um einen Betrag $\beta$.
-\item [\textbf{D} \msquare] Ein pr{"a}diktives Modell schliesst grunds{"a}tzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden.
-\item [\textbf{E} \msquare] Ein pr{"a}diktives Modell wird auf einem Trainingsdatensatz trainiert und anschliessend {"u}ber eine explorative Datenanalyse validiert. Signifikanzen {"u}ber $\beta_i$ k{"o}nnen hier nicht festgestellt werden.
+\item [\textbf{A} \msquare] Ein kausales Modell schliesst grunds{"a}tzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden.
+\item [\textbf{B} \msquare] Ein kausales Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert.
+\item [\textbf{C} \msquare] Ein kausales Modell ben{"o}tigt mindestens eine Fallzahl von {"u}ber 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten m{"u}ssen homogen sein.
+\item [\textbf{D} \msquare] Ein kausales Modell m{"o}chte die Zusammenh{"a}nge von X auf Y modellieren. Hierbei geht es um die Effekte von X auf Y. Man sagt, wenn X um 1 ansteigt {"a}ndert sich Y um einen Betrag $\beta$.
+\item [\textbf{E} \msquare] Ein kausales Modell wird auf einem Trainingsdatensatz trainiert und anschliessend {"u}ber eine explorative Datenanalyse validiert. Signifikanzen {"u}ber $\beta_i$ k{"o}nnen hier nicht festgestellt werden.
 \end{enumerate} 
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -481,11 +484,11 @@ Plot. Welche Aussage ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil nicht auf der Geraden und Korrelation ist negativ.
-\item [\textbf{B} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil auf der Geraden.
-\item [\textbf{C} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil nicht auf der Geraden.
-\item [\textbf{D} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil nicht auf der Geraden.
-\item [\textbf{E} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil auf der Geraden.
+\item [\textbf{A} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil nicht auf der Geraden.
+\item [\textbf{B} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil nicht auf der Geraden und Korrelation ist negativ.
+\item [\textbf{C} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil auf der Geraden.
+\item [\textbf{D} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil nicht auf der Geraden.
+\item [\textbf{E} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil auf der Geraden.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -507,11 +510,11 @@ Plot. Welche Aussage ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Es ist ein Muster zu erkennen.
+\item [\textbf{A} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil auf der Diagonalen.
 \item [\textbf{B} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.
-\item [\textbf{C} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.
-\item [\textbf{D} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Die Punkte liegen zum {"u}berwiegenden Teil auf der Diagonalen.
-\item [\textbf{E} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Es ist kein Muster zu erkennen.
+\item [\textbf{C} \msquare] Die Annahme der normalverteilten Residuen ist nicht erf{"u}llt. Es ist kein Muster zu erkennen.
+\item [\textbf{D} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Es ist ein Muster zu erkennen.
+\item [\textbf{E} \msquare] Die Annahme der normalverteilten Residuen ist erf{"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -525,11 +528,11 @@ ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn der Korrelationskoeffizienten zwischen -1 und 1 liegt. Dann sind die Residuen normalverteilt.
+\item [\textbf{A} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.
 \item [\textbf{B} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.
-\item [\textbf{C} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.
+\item [\textbf{C} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.
 \item [\textbf{D} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.
-\item [\textbf{E} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.
+\item [\textbf{E} \msquare] Der Korrelationskoeffizienten nach Spearman wird genutzt, wenn der Korrelationskoeffizienten zwischen -1 und 1 liegt. Dann sind die Residuen normalverteilt.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -544,11 +547,11 @@ Effekt bei einer so deutlichen Signifikanz?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Einheit der $CO_2$-Konzentration ist zu klein gew{"a}hlt. Die Erh{"o}hung der $CO_2$-Konzentration um 1 f{"u}hrt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gew{"a}hlt werden.
-\item [\textbf{B} \msquare] Die Einheit der $CO_2$-Konzentration ist zu klein gew{"a}hlt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration h{"a}ngen zusammen.
-\item [\textbf{C} \msquare] Die Fallzahl ist zu hoch angesetzt. Je h{"o}her die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.
-\item [\textbf{D} \msquare] Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h{"o}her ist die Teststatsitik und damit auch der $p$-Wert kleiner. 
-\item [\textbf{E} \msquare] Das Gewicht und die $CO_2$-Konzentration korrelieren sehr stark, deshalb wird der $\beta_1$ Koeffizient sehr klein.
+\item [\textbf{A} \msquare] Die Einheit der $CO_2$-Konzentration ist zu klein gew{"a}hlt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration h{"a}ngen zusammen.
+\item [\textbf{B} \msquare] Die Einheit der $CO_2$-Konzentration ist zu klein gew{"a}hlt. Die Erh{"o}hung der $CO_2$-Konzentration um 1 f{"u}hrt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gew{"a}hlt werden.
+\item [\textbf{C} \msquare] Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h{"o}her ist die Teststatsitik und damit auch der $p$-Wert kleiner. 
+\item [\textbf{D} \msquare] Das Gewicht und die $CO_2$-Konzentration korrelieren sehr stark, deshalb wird der $\beta_1$ Koeffizient sehr klein.
+\item [\textbf{E} \msquare] Die Fallzahl ist zu hoch angesetzt. Je h{"o}her die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -561,9 +564,9 @@ Modellierung?
 
 \begin{enumerate}
 \item [\textbf{A} \msquare] Die Residuen sind binomialverteilt.
-\item [\textbf{B} \msquare] Die Residuen sind normalverteilt mit $\mathcal{N}(0, s^2)$.
-\item [\textbf{C} \msquare] Die Residuen sind normalverteilt mit $\mathcal{N}(0, 1)$.
-\item [\textbf{D} \msquare] Die Residuen folgen einer Poissonverteilung mit Pois(0).
+\item [\textbf{B} \msquare] Die Residuen folgen einer Poissonverteilung mit Pois(0).
+\item [\textbf{C} \msquare] Die Residuen sind normalverteilt mit $\mathcal{N}(0, s^2)$.
+\item [\textbf{D} \msquare] Die Residuen sind normalverteilt mit $\mathcal{N}(0, 1)$.
 \item [\textbf{E} \msquare] Die Residuen sind normalverteilt mit $\mathcal{N}(\bar{y}, s^2)$.
 \end{enumerate}
 
@@ -574,11 +577,11 @@ Welche Aussage {\"u}ber das \textit{generalisierte lineare Modell (GLM)} ist ric
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das GLM erlaubt auch nicht normalverteilte Residuen in der Sch{"a}tzung der Regressionsgrade.
-\item [\textbf{B} \msquare] Das GLM ist eine allgemeine Erweiterung der linearen Regression auf die Normalverteilung.
-\item [\textbf{C} \msquare] Das GLM ist eine Vereinfachung des LM in R. Mit dem GLM lassen polygonale Regressionen rechnen.
-\item [\textbf{D} \msquare] Das GLM ist ein faktisch maschineller Lernalgorithmus, der selstst{"a}ndig die Verteilungsfamilie f{"u}r Y w{"a}hlt.
-\item [\textbf{E} \msquare] Das GLM erlaubt auch weitere Verteilungsfamilien f{"u}r das Y bzw. das Outcome in einer linearen Regression zu w{"a}hlen.
+\item [\textbf{A} \msquare] Das GLM ist ein faktisch maschineller Lernalgorithmus, der selstst{"a}ndig die Verteilungsfamilie f{"u}r Y w{"a}hlt.
+\item [\textbf{B} \msquare] Das GLM ist eine Vereinfachung des LM in R. Mit dem GLM lassen polygonale Regressionen rechnen.
+\item [\textbf{C} \msquare] Das GLM erlaubt auch weitere Verteilungsfamilien f{"u}r das Y bzw. das Outcome in einer linearen Regression zu w{"a}hlen.
+\item [\textbf{D} \msquare] Das GLM ist eine allgemeine Erweiterung der linearen Regression auf die Normalverteilung.
+\item [\textbf{E} \msquare] Das GLM erlaubt auch nicht normalverteilte Residuen in der Sch{"a}tzung der Regressionsgrade.
 \end{enumerate}
 \section*{Vermischte Themen}  
 
@@ -592,9 +595,9 @@ Welche Aussage {\"u}ber die parametrische Statistik ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die parametrische Statistik basiert auf R{"a}ngen. Daher wird jeder Zahl ein Rang zugeteilt. Nur auf den R{"a}ngen wird die Auswertung gerechnet. Daher gibt es auch keinen direkt zu interpretierenden Effektsch{"a}tzer.
-\item [\textbf{B} \msquare] Die parametrische Statistik basiert auf dem Sch{"a}tzen von Parametern aus einer festgelegten Verteilung. Daher gibt es auch direkt zu interpretierenden Effektsch{"a}tzer.
-\item [\textbf{C} \msquare] Die parametrische Statistik basiert auf R{"a}ngen. Daher gibt es auch direkt zu interpretierenden Effektsch{"a}tzer.
+\item [\textbf{A} \msquare] Die parametrische Statistik basiert auf R{"a}ngen. Daher gibt es auch direkt zu interpretierenden Effektsch{"a}tzer.
+\item [\textbf{B} \msquare] Die parametrische Statistik basiert auf R{"a}ngen. Daher wird jeder Zahl ein Rang zugeteilt. Nur auf den R{"a}ngen wird die Auswertung gerechnet. Daher gibt es auch keinen direkt zu interpretierenden Effektsch{"a}tzer.
+\item [\textbf{C} \msquare] Die parametrische Statistik basiert auf dem Sch{"a}tzen von Parametern aus einer festgelegten Verteilung. Daher gibt es auch direkt zu interpretierenden Effektsch{"a}tzer.
 \item [\textbf{D} \msquare] Die parametrische Statistik basiert auf dem Sch{"a}tzen von Parametern aus einer a priori festgelegten Verteilung. Daher gibt es auch direkt zu interpretierenden Effektsch{"a}tzer.
 \item [\textbf{E} \msquare] Die nicht-parametrische Statistik ist ein Vorg{"a}nger der parametrischen Statistik und wurde wegen dem Mangel an Effektsch{"a}tzern nicht mehr ab 1960 genutzt.
 \end{enumerate}
@@ -607,11 +610,11 @@ ist bedeutend in der Versuchsplanung. Welche der folgenden Aussagen ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Randomisierung bringt starke Unstrukturiertheit in das Experiment und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{"u}ckzuschliessen.
-\item [\textbf{B} \msquare] Randomisierung sorgt f{"u}r Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{"u}ckzuschliessen.
-\item [\textbf{C} \msquare] Randomisierung erlaubt erst die Varianzen zu sch{"a}tzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht m{"o}glich.
-\item [\textbf{D} \msquare] Randomisierung erlaubt erst die Mittelwerte zu sch{"a}tzen. Ohne Randomisierung keine Mittelwerte.
-\item [\textbf{E} \msquare] Randomisierung war bis 1952 bedeutend, wurde dann aber in Folge besserer Rechnerleistung nicht mehr verwendet. Aktuelle Statistik nutzt keine Randomisierung mehr.
+\item [\textbf{A} \msquare] Randomisierung war bis 1952 bedeutend, wurde dann aber in Folge besserer Rechnerleistung nicht mehr verwendet. Aktuelle Statistik nutzt keine Randomisierung mehr.
+\item [\textbf{B} \msquare] Randomisierung erlaubt erst die Mittelwerte zu sch{"a}tzen. Ohne Randomisierung keine Mittelwerte.
+\item [\textbf{C} \msquare] Randomisierung sorgt f{"u}r Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{"u}ckzuschliessen.
+\item [\textbf{D} \msquare] Randomisierung bringt starke Unstrukturiertheit in das Experiment und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{"u}ckzuschliessen.
+\item [\textbf{E} \msquare] Randomisierung erlaubt erst die Varianzen zu sch{"a}tzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht m{"o}glich.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -623,11 +626,11 @@ Eintr{\"a}ge in englischer Sprache zu verfassen, wenn Sie sp{\"a}ter die Daten i
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es gibt keinen Grund nicht auch deutsche W{"o}rter zu verwenden. Es ist ein Stilmittel.
-\item [\textbf{B} \msquare] Programmiersprachen k{"o}nnen nur englische Begriffe verarbeiten. Zus{"a}tzliche Pakete k{"o}nnen zwar geladen werden, aber meist funktionieren diese Pakete nicht richtig. Deutsch ist International nicht bedeutend genug.
+\item [\textbf{A} \msquare] Alle Funktionen und auch Anwendungen sind in \Rlogo in englischer Sprache. Die Nutzung von deutschen W{"o}rtern ist nicht schick und das ist zu vermeiden.
+\item [\textbf{B} \msquare] Es gibt keinen Grund nicht auch deutsche W{"o}rter zu verwenden. Es ist ein Stilmittel.
 \item [\textbf{C} \msquare] Im Allgemeinen haben Programmiersprachen Probleme mit Umlauten und Sonderzeichen, die in der deutschen Sprache vorkommen. Eine Nutzung der englischen Sprache umgeht dieses Problem auf einfache Art.
-\item [\textbf{D} \msquare] Alle Funktionen und auch Anwendungen sind in \Rlogo in englischer Sprache. Die Nutzung von deutschen W{"o}rtern ist nicht schick und das ist zu vermeiden.
-\item [\textbf{E} \msquare] Die Spracherkennung von \Rlogo ist nicht in der Lage Deutsch zu verstehen.
+\item [\textbf{D} \msquare] Die Spracherkennung von \Rlogo ist nicht in der Lage Deutsch zu verstehen.
+\item [\textbf{E} \msquare] Programmiersprachen k{"o}nnen nur englische Begriffe verarbeiten. Zus{"a}tzliche Pakete k{"o}nnen zwar geladen werden, aber meist funktionieren diese Pakete nicht richtig. Deutsch ist International nicht bedeutend genug.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -637,10 +640,10 @@ Bei der explorativen Datenanalyse (EDA) in \Rlogo gibt es eine richtige Abfolge 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \texttt{tidyverse} nutzen, da dieses Paket veraltet ist. {"U}ber die Funktion \texttt{library(tidyverse)} entfernen wir das Paket von der Analyse.
-\item [\textbf{B} \msquare] Wir lesen die Daten {"u}ber eine generische Funktion \texttt{read()} ein und m{"u}ssen dann die Funktion \texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \texttt{*.png} vorliegen.
-\item [\textbf{C} \msquare] Wir lesen als erstes die Daten {"u}ber \texttt{read\_excel()} ein, transformieren die Spalten {"u}ber \texttt{mutate()} in die richtige Form und k{"o}nnen dann {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen.
-\item [\textbf{D} \msquare] Wir transformieren die Spalten {"u}ber \texttt{mutate()} in ein \texttt{tibble} und k{"o}nnen dann {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.
+\item [\textbf{A} \msquare] Wir transformieren die Spalten {"u}ber \texttt{mutate()} in ein \texttt{tibble} und k{"o}nnen dann {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.
+\item [\textbf{B} \msquare] Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \texttt{tidyverse} nutzen, da dieses Paket veraltet ist. {"U}ber die Funktion \texttt{library(tidyverse)} entfernen wir das Paket von der Analyse.
+\item [\textbf{C} \msquare] Wir lesen die Daten {"u}ber eine generische Funktion \texttt{read()} ein und m{"u}ssen dann die Funktion \texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \texttt{*.png} vorliegen.
+\item [\textbf{D} \msquare] Wir lesen als erstes die Daten {"u}ber \texttt{read\_excel()} ein, transformieren die Spalten {"u}ber \texttt{mutate()} in die richtige Form und k{"o}nnen dann {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen.
 \item [\textbf{E} \msquare] Wir lesen als erstes die Daten {"u}ber \texttt{read\_excel()} ein, transformieren die Spalten {"u}ber \texttt{mutate()} in die richtige Form und k{"o}nnen dann  {"u}ber \text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.
 \end{enumerate}
 
@@ -650,16 +653,16 @@ Bei der explorativen Datenanalyse (EDA) in \Rlogo gibt es eine richtige Abfolge 
 
 
 Sie haben das abstrakte Modell $Y \sim X$ mit $X$ als Faktor mit zwei
-Leveln vorliegen. Welche Aussage {\"u}ber $n_1 = n_2$ ist richtig?
+Leveln vorliegen. Welche Aussage {\"u}ber $s^2_1 \neq s^2_2$ ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es liegt Varianzhetrogenit{"a}t vor.
-\item [\textbf{B} \msquare] Es handelt sich um ein balanciertes Design.
-\item [\textbf{C} \msquare] Es handelt sich um ein unbalanciertes Design
-\item [\textbf{D} \msquare] Es liegt Varianzhomogenit{"a}t vor.
-\item [\textbf{E} \msquare] Es handelt sich um abh{"a}ngige Beobachtungen.
+\item [\textbf{A} \msquare] Es liegt Varianzhomogenit{"a}t vor.
+\item [\textbf{B} \msquare] Es handelt sich um abh{"a}ngige Beobachtungen.
+\item [\textbf{C} \msquare] Es liegt Varianzhetrogenit{"a}t vor.
+\item [\textbf{D} \msquare] Es handelt sich um ein balanciertes Design.
+\item [\textbf{E} \msquare] Es handelt sich um ein unbalanciertes Design
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -670,11 +673,11 @@ Ferkel einer Muttersau sind daher im statistischen Sinne...
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Untereinander unabh{"a}ngig. Sollten die M{"u}tter verwandt sein, so ist die Varianzstruktur {"a}hnlich und muss modelliert werden.
-\item [\textbf{B} \msquare] Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert.
-\item [\textbf{C} \msquare] Untereinander unabh{"a}ngig. Die Ferkel sind eigenst{"a}ndig und ben{"o}tigen keine zus{"a}tzliche Behandlung.
-\item [\textbf{D} \msquare] Untereinander abh{"a}ngig. Die Ferkel stammen von einem Muttertier und haben vermutliche eine {"a}hnliche Varianzstruktur.
-\item [\textbf{E} \msquare] Untereinander abh{"a}ngig, wenn die M{"u}tter ebenfalls miteinander verwandt sind. Erst die Abh{"a}ngigkeit 2. Grades wird in der Statistik modelliert.
+\item [\textbf{A} \msquare] Untereinander abh{"a}ngig. Die Ferkel stammen von einem Muttertier und haben vermutliche eine {"a}hnliche Varianzstruktur.
+\item [\textbf{B} \msquare] Untereinander abh{"a}ngig, wenn die M{"u}tter ebenfalls miteinander verwandt sind. Erst die Abh{"a}ngigkeit 2. Grades wird in der Statistik modelliert.
+\item [\textbf{C} \msquare] Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert.
+\item [\textbf{D} \msquare] Untereinander unabh{"a}ngig. Sollten die M{"u}tter verwandt sein, so ist die Varianzstruktur {"a}hnlich und muss modelliert werden.
+\item [\textbf{E} \msquare] Untereinander unabh{"a}ngig. Die Ferkel sind eigenst{"a}ndig und ben{"o}tigen keine zus{"a}tzliche Behandlung.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -682,18 +685,18 @@ Ferkel einer Muttersau sind daher im statistischen Sinne...
 
 
 Sie f{\"u}hren ein Experiment zur Behandlung von Klaueninfektionen bei K{\"u}hen
-durch. Bei 6 Tieren finden Sie eine Erkrankung der Klauen vor und
-7 Tiere sind gesund. Welche Aussage {\"u}ber den Odds ratio
+durch. Bei 5 Tieren finden Sie eine Erkrankung der Klauen vor und
+12 Tiere sind gesund. Welche Aussage {\"u}ber den Risk ratio
 Effektsch{\"a}tzer ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es ergibt sich ein Odds ratio von 0.46, da es sich um ein Anteil handelt.
-\item [\textbf{B} \msquare] Es ergibt sich ein Odds ratio von 0.86, da es sich um ein Anteil handelt.
-\item [\textbf{C} \msquare] Es ergibt sich ein Odds ratio von 0.46, da es sich um eine Chancenverh{"a}ltnis handelt.
-\item [\textbf{D} \msquare] Es ergibt sich ein Odds ratio von 1.17, da es sich um ein Anteil handelt.
-\item [\textbf{E} \msquare] Es ergibt sich ein Odds ratio von 0.86, da es sich um eine Chancenverh{"a}ltnis handelt.
+\item [\textbf{A} \msquare] Es ergibt sich ein Risk ratio von 0.42, da es sich um ein Anteil handelt.
+\item [\textbf{B} \msquare] Es ergibt sich ein Risk ratio von 0.29, da es sich um eine Chancenverh{"a}ltnis handelt.
+\item [\textbf{C} \msquare] Es ergibt sich ein Risk ratio von 0.42, da es sich um eine Chancenverh{"a}ltnis handelt.
+\item [\textbf{D} \msquare] Es ergibt sich ein Risk ratio von 0.29, da es sich um ein Anteil handelt.
+\item [\textbf{E} \msquare] Es ergibt sich ein Risk ratio von 2.4, da es sich um ein Anteil handelt.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -705,11 +708,11 @@ Daten und deren Bewertung hinsichtlich der Signifikanz. Welche Aussage ist richt
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Aktuell werden immer gr{"o}ssere Datens{"a}tze erhoben. Eine erh{"o}hte Fallzahl f{"u}hrt automatisch auch zu mehr signifikanten Ergebnissen, selbst wenn die eigentlichen Effekte nicht relevant sind.
+\item [\textbf{A} \msquare] Big Data ist ein Problem der parametrischen Statistik. Parameter lassen sich nur auf kleinen Datens{"a}tzen berechnen, da es sich sonst nicht mehr um eine Stichprobe im engen Sinne der Statistik handelt.
 \item [\textbf{B} \msquare] Aktuell werden zu grosse Datens{"a}tze f{"u}r die g{"a}nigige Statistik gemessen. Daher wendet man maschinelle Lernverfahren f{"u}r kausale Modelle an. Hier ist die Relevanz gleich Signifikanz.
-\item [\textbf{C} \msquare] Big Data ist ein Problem der parametrischen Statistik. Parameter lassen sich nur auf kleinen Datens{"a}tzen berechnen, da es sich sonst nicht mehr um eine Stichprobe im engen Sinne der Statistik handelt.
-\item [\textbf{D} \msquare] Relevanz und Signifikanz haben nichts miteinander zu tun. Daher gibt es auch keinen Zusammenhang zwischen hoher Fahlzahl (n > 10000) und einem signifikanten Test. Ein Effekt ist immer relevant und somit signifikant.
-\item [\textbf{E} \msquare] Aktuell werden immer gr{"o}ssere Datens{"a}tze erhoben. Dadurch wird auch die Varianz immer h{"o}her was automatisch zu mehr signifikanten Ergebnissen f{"u}hrt.
+\item [\textbf{C} \msquare] Aktuell werden immer gr{"o}ssere Datens{"a}tze erhoben. Eine erh{"o}hte Fallzahl f{"u}hrt automatisch auch zu mehr signifikanten Ergebnissen, selbst wenn die eigentlichen Effekte nicht relevant sind.
+\item [\textbf{D} \msquare] Aktuell werden immer gr{"o}ssere Datens{"a}tze erhoben. Dadurch wird auch die Varianz immer h{"o}her was automatisch zu mehr signifikanten Ergebnissen f{"u}hrt.
+\item [\textbf{E} \msquare] Relevanz und Signifikanz haben nichts miteinander zu tun. Daher gibt es auch keinen Zusammenhang zwischen hoher Fahlzahl (n > 10000) und einem signifikanten Test. Ein Effekt ist immer relevant und somit signifikant.
 \end{enumerate}
 \section*{Multiple Gruppenvergleiche}    
 
@@ -717,17 +720,17 @@ Daten und deren Bewertung hinsichtlich der Signifikanz. Welche Aussage ist richt
 
 
 
-Sie haben folgende unadjustierten p-Werte gegeben: 0.02, 0.34, 0.001, 0.01 und 0.89. Sie adjustieren die p-Werte nach
+Sie haben folgende unadjustierten p-Werte gegeben: 0.42, 0.89, 0.02 und 0.34. Sie adjustieren die p-Werte nach
 Bonferroni. Welche Aussage ist richtig?
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.004, 0.068, 2e-04, 0.002 und 0.178. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.1, 1.7, 0.005, 0.05 und 4.45. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.1, 1, 0.005, 0.05 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
-\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.1, 1, 0.005, 0.05 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
-\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.004, 0.068, 2e-04, 0.002 und 0.178. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1\% verglichen.
+\item [\textbf{A} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1, 1, 0.08 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{B} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1, 1, 0.08 und 1. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
+\item [\textbf{C} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.105, 0.2225, 0.005 und 0.085. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 1.25\% verglichen.
+\item [\textbf{D} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 1.68, 3.56, 0.08 und 1.36. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
+\item [\textbf{E} \msquare] Nach der Bonferroni-Adjustierung ergeben sich die adjustierten p-Werte von 0.105, 0.2225, 0.005 und 0.085. Die adjustierten p-Werte werden zu einem $\alpha$-Niveau von 5\% verglichen.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -738,10 +741,10 @@ anschlie{\ss}ende Beschreibung der Interpretation ist korrekt?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Contrast letter display. Unterschiede in den Behandlungen werden durch den gleichen Buchstaben oder Symbol dargestellt. Die Interpretation des CLD f{"u}hrt h{"a}ufig in die Irre.
-\item [\textbf{B} \msquare] Compact line display. Gleichheit in den Behandlungen wird durch den gleichen Buchstaben oder Symbol dargestellt. Fr{"u}her wurden keine Buchstaben sondern eine durchgezogene Linie verwendet. Bei mehr als drei Gruppen funktioniert die Linie aber graphisch nicht mehr.
-\item [\textbf{C} \msquare] Compact letter display. Gleichheit in den Behandlungen wird durch den gleichen Buchstaben oder Symbol dargestellt. Teilweise ist die Interpretation des CLD herausfordernd, da wir ja nach dem Unterschied suchen.
-\item [\textbf{D} \msquare] Compound letter display. Gleichheit in dem Outcomes wird durch den gleichen Buchstaben oder Symbol dargestellt. Teilweise ist die Interpretation des Verbunds (eng. compound) herausfordernd, da wir ja nach dem Unterschied suchen.
+\item [\textbf{A} \msquare] Compact line display. Gleichheit in den Behandlungen wird durch den gleichen Buchstaben oder Symbol dargestellt. Fr{"u}her wurden keine Buchstaben sondern eine durchgezogene Linie verwendet. Bei mehr als drei Gruppen funktioniert die Linie aber graphisch nicht mehr.
+\item [\textbf{B} \msquare] Compact letter display. Gleichheit in den Behandlungen wird durch den gleichen Buchstaben oder Symbol dargestellt. Teilweise ist die Interpretation des CLD herausfordernd, da wir ja nach dem Unterschied suchen.
+\item [\textbf{C} \msquare] Compound letter display. Gleichheit in dem Outcomes wird durch den gleichen Buchstaben oder Symbol dargestellt. Teilweise ist die Interpretation des Verbunds (eng. compound) herausfordernd, da wir ja nach dem Unterschied suchen.
+\item [\textbf{D} \msquare] Contrast letter display. Unterschiede in den Behandlungen werden durch den gleichen Buchstaben oder Symbol dargestellt. Die Interpretation des CLD f{"u}hrt h{"a}ufig in die Irre.
 \item [\textbf{E} \msquare] Compact letter detection. Gleichheit in den Behandlungen wird durch den gleichen Buchstaben oder Symbol dargestellt.
 \end{enumerate}
 
@@ -754,10 +757,10 @@ den multiplen Vergleich genutzt? Welche Beschreibung der Eigenschaften ist korre
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Das R Paket lm. Das Paket lm erstellt selbstst{"a}ndig Konfidenzintervalle und entsprechende p-Werte. Da wir in dem Paket nicht adjustieren m{"u}ssen, ist es bei Anwendern sehr beliebt.
-\item [\textbf{B} \msquare] Das R Paket emmeans erlaubt die Durchf{"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{"a}sst sich recht einfach das CLD erstellen und so {"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{"u}hren.
-\item [\textbf{C} \msquare] Das R Paket emmeans erlaubt die Durchf{"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{"a}sst sich leider kein CLD erstellen. Dennoch ist das Paket einfach zu bedienen und wird deshalb genutzt. Die Interpretation der statistischen Auswertung wird {"u}ber einen Barplot abgebildet.
-\item [\textbf{D} \msquare] Das R Paket hmisc erlaubt die Durchf{"u}hrung eines multiplen Gruppenvergleichs aus verschiedenen Modellen heraus. Aus einem hmisc Objekt l{"a}sst sich recht einfach das CL-h erstellen und so {"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{"u}hren.
+\item [\textbf{A} \msquare] Das R Paket hmisc erlaubt die Durchf{"u}hrung eines multiplen Gruppenvergleichs aus verschiedenen Modellen heraus. Aus einem hmisc Objekt l{"a}sst sich recht einfach das CL-h erstellen und so {"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{"u}hren.
+\item [\textbf{B} \msquare] Das R Paket emmeans erlaubt die Durchf{"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{"a}sst sich leider kein CLD erstellen. Dennoch ist das Paket einfach zu bedienen und wird deshalb genutzt. Die Interpretation der statistischen Auswertung wird {"u}ber einen Barplot abgebildet.
+\item [\textbf{C} \msquare] Das R Paket emmeans erlaubt die Durchf{"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{"a}sst sich recht einfach das CLD erstellen und so {"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{"u}hren.
+\item [\textbf{D} \msquare] Das R Paket lm. Das Paket lm erstellt selbstst{"a}ndig Konfidenzintervalle und entsprechende p-Werte. Da wir in dem Paket nicht adjustieren m{"u}ssen, ist es bei Anwendern sehr beliebt.
 \item [\textbf{E} \msquare] Das R Paket ggplot. Wir erhalten hier sofort eine Visualisierung der Daten. Anhand der Visualisierung l{"a}sst sich eine explorative Datenanalyse durchf{"u}hren, die gleichwertig zu einem Posthoc-Test ist.
 \end{enumerate}
 
@@ -770,11 +773,11 @@ statistischen Testen und wie kann man mit ihr umgehen?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Beim multiplen Testen kann es zu einer $\alpha$-Deflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$ sondern weit darunter. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist. Die p-Werte werden durch die Anzahl an Vergleichen geteilt
-\item [\textbf{B} \msquare] Beim multiplen Testen kann es zu einer $\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$ sondern weit darunter. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Welch das bekanneste Verfahren ist.
-\item [\textbf{C} \msquare] Beim multiplen Testen kann es zu einer $\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$ sondern sehr viel h{"o}her. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.
-\item [\textbf{D} \msquare] Beim multiplen Testen kann es zu einer $\beta$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $20\%$. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.
-\item [\textbf{E} \msquare] Beim multiplen Testen kann es zu Varianzheterogenit{"a}t kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Das Verfahren nach Welch, bekannt aus dem t-Test, ist hier h{"a}ufig anzuwenden.
+\item [\textbf{A} \msquare] Beim multiplen Testen kann es zu einer $\beta$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $20\%$. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.
+\item [\textbf{B} \msquare] Beim multiplen Testen kann es zu einer $\alpha$-Deflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$ sondern weit darunter. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist. Die p-Werte werden durch die Anzahl an Vergleichen geteilt
+\item [\textbf{C} \msquare] Beim multiplen Testen kann es zu einer $\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$ sondern weit darunter. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Welch das bekanneste Verfahren ist.
+\item [\textbf{D} \msquare] Beim multiplen Testen kann es zu Varianzheterogenit{"a}t kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Das Verfahren nach Welch, bekannt aus dem t-Test, ist hier h{"a}ufig anzuwenden.
+\item [\textbf{E} \msquare] Beim multiplen Testen kann es zu einer $\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\%$ sondern sehr viel h{"o}her. Daher m{"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.
 \end{enumerate}
 \section*{Statistische Testtheorie}  
 
@@ -788,8 +791,8 @@ Welche Aussage zum mathematische Ausdruck $Pr(D|H_0)$ ist richtig?
 \item [\textbf{A} \msquare] $Pr(D|H_0)$ ist die Wahrscheinlichkeit der Alternativehypothese und somit $1 - Pr(H_A)$
 \item [\textbf{B} \msquare] Die Inverse der Wahrscheinlichkeit unter der die Nullhypothese nicht mehr die Alternativehypothese {"u}berdeckt.
 \item [\textbf{C} \msquare] $Pr(D|H_0)$ ist die Wahrscheinlichkeit die Daten D zu beobachten wenn die Nullhypothese wahr ist.
-\item [\textbf{D} \msquare] Die Wahrscheinlichkeit f{"u}r die Nullhypothese, wenn die Daten wahr sind.
-\item [\textbf{E} \msquare] Die Wahrscheinlichkeit der Daten unter der Nullhypothese in der Grundgesamtheit.
+\item [\textbf{D} \msquare] Die Wahrscheinlichkeit der Daten unter der Nullhypothese in der Grundgesamtheit.
+\item [\textbf{E} \msquare] Die Wahrscheinlichkeit f{"u}r die Nullhypothese, wenn die Daten wahr sind.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -801,11 +804,11 @@ Das statistische Testen basiert auf dem Falsifikationsprinzip. Es besagt,
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] ... dass ein schlechtes Modell durch ein weniger schlechtes Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.
-\item [\textbf{B} \msquare] ... dass Modelle meist falsch sind und selten richtig.
-\item [\textbf{C} \msquare] ... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.
-\item [\textbf{D} \msquare] ... dass Annahmen an statistische Modelle meist falsch sind.
-\item [\textbf{E} \msquare] ... dass Fehlerterme in statistischen Modellen nicht verifiziert werden k{"o}nnen.
+\item [\textbf{A} \msquare] ... dass Modelle meist falsch sind und selten richtig.
+\item [\textbf{B} \msquare] ... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.
+\item [\textbf{C} \msquare] ... dass ein schlechtes Modell durch ein weniger schlechtes Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.
+\item [\textbf{D} \msquare] ... dass Fehlerterme in statistischen Modellen nicht verifiziert werden k{"o}nnen.
+\item [\textbf{E} \msquare] ... dass Annahmen an statistische Modelle meist falsch sind.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -816,11 +819,11 @@ Der Fehler 1. Art oder auch Signifikanzniveau $\alpha$ genannt, liegt bei
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der Begr{"u}nder der modernen Statistik, R. Fischer, hat die Grenze simuliert und berechnet. Dadurch ergibt sich dieser optimale Cut-Off.
-\item [\textbf{B} \msquare] Im Rahmen eines langen Disputs zwischen Neyman und Fischer wurde $\alpha = 5\%$ festgelegt. Leider werden die Randbedingungen und Voraussetzungen an statistsiche Modelle heute immer wieder ignoriert.
-\item [\textbf{C} \msquare] Der Wert ergab sich aus einer Auswertung von 1042 wissenschaftlichen Ver{"o}ffentlichungen zwischen 1914 und 1948. Der Wert $5\%$ wurde in $28\%$ der Ver{"o}ffentlichungen genutzt. Daher legte man sich auf diese Zahl fest.
-\item [\textbf{D} \msquare] Die Festlegung von $\alpha = 5\%$ ist eine Kulturkonstante. Wissenschaftler ben{"o}tigt eine Schwelle f{"u}r eine statistische Testentscheidung, der Wert von $\alpha$ wurde aber historisch mehr zuf{"a}llig gew{"a}hlt.
-\item [\textbf{E} \msquare] Auf einer Statistikkonferenz in Genf im Jahre 1942 wurde dieser Cut-Off nach langen Diskussionen festgelegt. Bis heute ist der Cut Off aber umstritten, da wegen dem 2. Weltkrieg viele Wissenschaftler nicht teilnehmen konnten.
+\item [\textbf{A} \msquare] Im Rahmen eines langen Disputs zwischen Neyman und Fischer wurde $\alpha = 5\%$ festgelegt. Leider werden die Randbedingungen und Voraussetzungen an statistsiche Modelle heute immer wieder ignoriert.
+\item [\textbf{B} \msquare] Auf einer Statistikkonferenz in Genf im Jahre 1942 wurde dieser Cut-Off nach langen Diskussionen festgelegt. Bis heute ist der Cut Off aber umstritten, da wegen dem 2. Weltkrieg viele Wissenschaftler nicht teilnehmen konnten.
+\item [\textbf{C} \msquare] Die Festlegung von $\alpha = 5\%$ ist eine Kulturkonstante. Wissenschaftler ben{"o}tigt eine Schwelle f{"u}r eine statistische Testentscheidung, der Wert von $\alpha$ wurde aber historisch mehr zuf{"a}llig gew{"a}hlt.
+\item [\textbf{D} \msquare] Der Begr{"u}nder der modernen Statistik, R. Fischer, hat die Grenze simuliert und berechnet. Dadurch ergibt sich dieser optimale Cut-Off.
+\item [\textbf{E} \msquare] Der Wert ergab sich aus einer Auswertung von 1042 wissenschaftlichen Ver{"o}ffentlichungen zwischen 1914 und 1948. Der Wert $5\%$ wurde in $28\%$ der Ver{"o}ffentlichungen genutzt. Daher legte man sich auf diese Zahl fest.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -836,8 +839,8 @@ berechnet korrekt die Teststatistik T?
 \item [\textbf{A} \msquare] Es gilt $T = \cfrac{signal}{noise}$
 \item [\textbf{B} \msquare] Es gilt $T = signal \cdot noise$
 \item [\textbf{C} \msquare] Es gilt $T = \cfrac{signal}{noise^2}$
-\item [\textbf{D} \msquare] Es gilt $T = \cfrac{noise}{signal}$
-\item [\textbf{E} \msquare] Es gilt $T = (signal \cdot noise)^2$
+\item [\textbf{D} \msquare] Es gilt $T = (signal \cdot noise)^2$
+\item [\textbf{E} \msquare] Es gilt $T = \cfrac{noise}{signal}$
 \end{enumerate}
 
 %% ------------------------------------------------------------
@@ -852,11 +855,11 @@ in welche richtige Analogie gesetzt werden?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] In die Analogie eines Rauchmelders: \textit{Alarm with fire}.
-\item [\textbf{B} \msquare] In die Analogie eines Rauchmelders: \textit{Fire without alarm}, dem $\beta$-Fehler.
+\item [\textbf{A} \msquare] In die Analogie eines Rauchmelders: \textit{Alarm without fire}, dem $\alpha$-Fehler.
+\item [\textbf{B} \msquare] In die Analogie eines Feuerwehrautos: \textit{Car without noise}.
 \item [\textbf{C} \msquare] In die Analogie eines brennenden Hauses ohne Rauchmelder: \textit{House without noise}.
-\item [\textbf{D} \msquare] In die Analogie eines Feuerwehrautos: \textit{Car without noise}.
-\item [\textbf{E} \msquare] In die Analogie eines Rauchmelders: \textit{Alarm without fire}, dem $\alpha$-Fehler.
+\item [\textbf{D} \msquare] In die Analogie eines Rauchmelders: \textit{Fire without alarm}, dem $\beta$-Fehler.
+\item [\textbf{E} \msquare] In die Analogie eines Rauchmelders: \textit{Alarm with fire}.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -867,11 +870,11 @@ Welche statistische Masszahl erlaubt es \textit{Relevanz} mit
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Teststatistik. Durch den Vergleich von $T_c$ zu $T_k$ ist es m{"o}glich die $H_0$ abzulehnen. Die Relevanz ergibt sich aus der Fl{"a}che rechts vom dem $T_c$-Wert.
-\item [\textbf{B} \msquare] Der p-Wert. Durch den Vergleich mit $\alpha$ l{"a}sst sich {"u}ber die Signifikanz entscheiden und der $\beta$-Fehler erlaubt {"u}ber die Power eine Einsch{"a}tzung der Relevanz.
-\item [\textbf{C} \msquare] Das Konfidenzintervall. Durch die Visualizierung des Konfidenzintervals kann eine Relevanzschwelle vom Anwender definiert werden. Zus{"a}tzlich erlaubt das Konfidenzinterval auch eine Entscheidung {"u}ber die Signifikanz.
-\item [\textbf{D} \msquare] Das OR. Als Chancenverh{"a}ltnis gibt es das Verh{"a}ltnis von Relevanz und Signifikanz wieder.
-\item [\textbf{E} \msquare] Das $\Delta$. Durch die Effektst{"a}rke haben wir einen Wert f{"u}r die Relevanz, die vom Anwender bewertet werden muss. Da $\Delta$ antiproportional zum p-Wert ist, bedeutet auch ein hohes $\Delta$ ein sehr kleinen p-Wert.
+\item [\textbf{A} \msquare] Das Konfidenzintervall. Durch die Visualizierung des Konfidenzintervals kann eine Relevanzschwelle vom Anwender definiert werden. Zus{"a}tzlich erlaubt das Konfidenzinterval auch eine Entscheidung {"u}ber die Signifikanz.
+\item [\textbf{B} \msquare] Die Teststatistik. Durch den Vergleich von $T_c$ zu $T_k$ ist es m{"o}glich die $H_0$ abzulehnen. Die Relevanz ergibt sich aus der Fl{"a}che rechts vom dem $T_c$-Wert.
+\item [\textbf{C} \msquare] Das OR. Als Chancenverh{"a}ltnis gibt es das Verh{"a}ltnis von Relevanz und Signifikanz wieder.
+\item [\textbf{D} \msquare] Das $\Delta$. Durch die Effektst{"a}rke haben wir einen Wert f{"u}r die Relevanz, die vom Anwender bewertet werden muss. Da $\Delta$ antiproportional zum p-Wert ist, bedeutet auch ein hohes $\Delta$ ein sehr kleinen p-Wert.
+\item [\textbf{E} \msquare] Der p-Wert. Durch den Vergleich mit $\alpha$ l{"a}sst sich {"u}ber die Signifikanz entscheiden und der $\beta$-Fehler erlaubt {"u}ber die Power eine Einsch{"a}tzung der Relevanz.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -881,11 +884,11 @@ Welche Aussage über den $p$-Wert und dem Signifikanzniveau $\alpha$ gleich 5\% 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifiaknzschwelle unter der Annahme der Nullhypothese.
-\item [\textbf{B} \msquare] Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.
+\item [\textbf{A} \msquare] Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.
+\item [\textbf{B} \msquare] Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifiaknzschwelle unter der Annahme der Nullhypothese.
 \item [\textbf{C} \msquare] Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$.
-\item [\textbf{D} \msquare] Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.
-\item [\textbf{E} \msquare] Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.
+\item [\textbf{D} \msquare] Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.
+\item [\textbf{E} \msquare] Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -899,29 +902,29 @@ Ergebnisse eines statistischen Tests trifft am besten zu?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] In der Analogie der Regenwahrscheinlichkeit: ein statistischer Test gibt die Wahrscheinlichkeit f{"u}r das Auftreten eines Ereignisses wieder. Die St{"a}rke des Effektes wird nicht wiedergeben.
-\item [\textbf{B} \msquare] In der Analogie des Niederschlags oder Regenmenge: ein statistischer Test gibt die St{"a}rke eines Effektes wieder. Zum Beispiel, wie hoch ist der Mittelwertsunterschied.
-\item [\textbf{C} \msquare] In der Analogie der Sonnenscheindauer: Wie lange kann mit einem entsprechenden Effekt gerechnet werden? Die Wahrscheinlichkeit f{"u}r den Effekt gibt der statistische Test wieder.
+\item [\textbf{A} \msquare] In der Analogie der Durchschnittstemperatur: Wie oft tritt ein Effekt durchschnittlich ein? Wir erhalten eine Wahrscheinlichkeit f{"u}r die Effekte. Zum Beispiel, wie hoch ist die Wahrscheinlichkeit f{"u}r einen Mittelwert als Durchschnitt.
+\item [\textbf{B} \msquare] In der Analogie der Sonnenscheindauer: Wie lange kann mit einem entsprechenden Effekt gerechnet werden? Die Wahrscheinlichkeit f{"u}r den Effekt gibt der statistische Test wieder.
+\item [\textbf{C} \msquare] In der Analogie der Regenwahrscheinlichkeit: ein statistischer Test gibt die Wahrscheinlichkeit f{"u}r das Auftreten eines Ereignisses wieder. Die St{"a}rke des Effektes wird nicht wiedergeben.
 \item [\textbf{D} \msquare] In der Analogie der Maximaltemperatur: Was ist der maximale Unterschied zwischen zwei Gruppen. Wir erhalten hier eine Aussage {"u}ber die Spannweite und den maximalen Effekt.
-\item [\textbf{E} \msquare] In der Analogie der Durchschnittstemperatur: Wie oft tritt ein Effekt durchschnittlich ein? Wir erhalten eine Wahrscheinlichkeit f{"u}r die Effekte. Zum Beispiel, wie hoch ist die Wahrscheinlichkeit f{"u}r einen Mittelwert als Durchschnitt.
+\item [\textbf{E} \msquare] In der Analogie des Niederschlags oder Regenmenge: ein statistischer Test gibt die St{"a}rke eines Effektes wieder. Zum Beispiel, wie hoch ist der Mittelwertsunterschied.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
 
 
 
-Sie wollen eine Aussage {\"u}ber ein untersuchtes Individuum treffen. Dazu nutzen Sie einen
-statistischen Test. K{\"o}nnen Sie eine valide Aussage zum Individuum
+Sie wollen eine Aussage {\"u}ber die untersuchte Population treffen. Dazu nutzen Sie einen
+statistischen Test. K{\"o}nnen Sie eine valide Aussage zur Population
 aus einem statistischen Test erhalten? 
 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Ja, ein untersuchtes Individuum k{"o}nnen wir mit einem statistischen Test auswerten. Wir erhalten eine Aussage zum Individuum.
-\item [\textbf{B} \msquare] Weder eine Ausssage {"u}ber die Population noch {"u}ber das Individuum ist mit einem statistischen Test m{"o}glich. Wir erhalten eine Aussage {"u}ber ein Experiment.
-\item [\textbf{C} \msquare] Ja, wir erhalten eine Aussage. M{"u}ssen aber das Individuum im Kontext der Population adjustieren.
-\item [\textbf{D} \msquare] Nein, ein untersuchtes Individuum k{"o}nnen wir mit einem statistischen Test nicht auswerten. Wir erhalten keine Aussage zum Individuum.
-\item [\textbf{E} \msquare] Nein, wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.
+\item [\textbf{A} \msquare] Nein, wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.
+\item [\textbf{B} \msquare] Nein, die untersuchte Population k{"o}nnen wir mit einem statistischen Test nicht auswerten. Wir erhalten keine Aussage zur Population.
+\item [\textbf{C} \msquare] Weder eine Ausssage {"u}ber die Population noch {"u}ber das Individuum ist mit einem statistischen Test m{"o}glich. Wir erhalten eine Aussage {"u}ber ein Experiment.
+\item [\textbf{D} \msquare] Ja, die untersuchte Population k{"o}nnen wir mit einem statistischen Test auswerten. Wir erhalten eine Aussage zur Population.
+\item [\textbf{E} \msquare] Ja, wir erhalten eine Aussage. M{"u}ssen aber das Individuum im Kontext der Population adjustieren.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -931,11 +934,11 @@ Welche Aussage {\"u}ber die Power ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Die Power $1-\beta$ wird auf 80\% gesetzt. Damit liegt die Wahrscheinlichkeit f{"u}r die $H_0$ bei 20\%.
-\item [\textbf{B} \msquare] Die Power beschreibt die Wahrscheinlichkeit die $H_A$ abzulehnen. Wir testen die Power jedoch nicht.
-\item [\textbf{C} \msquare] Die Power $1-\beta$ wird auf 80\% gesetzt. Alle statistischen Tests sind so konstruiert, dass die $H_A$ mit 80\% "bewiesen wird".
-\item [\textbf{D} \msquare] Die Power ist nicht in der aktuellen Testthorie mehr vertreten. Wir rechnen nur noch mit dem Fehler 1. Art.
-\item [\textbf{E} \msquare] Es gilt $\alpha + \beta = 1$ und somit liegt $\beta$ meist bei 95\%.
+\item [\textbf{A} \msquare] Die Power $1-\beta$ wird auf 80\% gesetzt. Alle statistischen Tests sind so konstruiert, dass die $H_A$ mit 80\% "bewiesen wird".
+\item [\textbf{B} \msquare] Die Power ist nicht in der aktuellen Testthorie mehr vertreten. Wir rechnen nur noch mit dem Fehler 1. Art.
+\item [\textbf{C} \msquare] Die Power beschreibt die Wahrscheinlichkeit die $H_A$ abzulehnen. Wir testen die Power jedoch nicht.
+\item [\textbf{D} \msquare] Es gilt $\alpha + \beta = 1$ und somit liegt $\beta$ meist bei 95\%.
+\item [\textbf{E} \msquare] Die Power $1-\beta$ wird auf 80\% gesetzt. Damit liegt die Wahrscheinlichkeit f{"u}r die $H_0$ bei 20\%.
 \end{enumerate}
 \section*{Statistische Tests für Gruppenvergleiche} 
 
@@ -946,11 +949,11 @@ Welche Aussage {\"u}ber den t-Test im Allgmeinen ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der t-Test vergleicht die Varianzen von mindestens zwei oder mehr Gruppen
-\item [\textbf{B} \msquare] Der t-Test vergleicht die Mittelwerte von zwei Gruppen.
-\item [\textbf{C} \msquare] Der t-Test testet generell zu einem erh{"o}hten $\alpha$-Niveau von 20\%.
-\item [\textbf{D} \msquare] Der t-Test ist ein Vortest der ANOVA und basiert daher auf dem Vergleich von Streuungsparametern
-\item [\textbf{E} \msquare] Der t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{"a}t. Sollte keine Varianzhomogenit{"a}t vorliegen, so gibt es keine M{"o}glichkeit den t-Test in einer Variante anzuwenden.
+\item [\textbf{A} \msquare] Der t-Test ist ein Vortest der ANOVA und basiert daher auf dem Vergleich von Streuungsparametern
+\item [\textbf{B} \msquare] Der t-Test testet generell zu einem erh{"o}hten $\alpha$-Niveau von 20\%.
+\item [\textbf{C} \msquare] Der t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{"a}t. Sollte keine Varianzhomogenit{"a}t vorliegen, so gibt es keine M{"o}glichkeit den t-Test in einer Variante anzuwenden.
+\item [\textbf{D} \msquare] Der t-Test vergleicht die Mittelwerte von zwei Gruppen.
+\item [\textbf{E} \msquare] Der t-Test vergleicht die Varianzen von mindestens zwei oder mehr Gruppen
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -960,11 +963,11 @@ Welche Aussage {\"u}ber den Welch t-Test ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der Welch t-Test vergleicht die Varianz von zwei Gruppen.
+\item [\textbf{A} \msquare] Der Welch t-Test ist ein Post-hoc Test der ANOVA und basiert daher auf dem Vergleich der Varianz.
 \item [\textbf{B} \msquare] Der Welch t-Test wird angewendet, wenn Varianzheterogenit{"a}t zwischen den beiden zu vergleichenden Gruppen vorliegt.
-\item [\textbf{C} \msquare] Der Welch t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{"a}t.
-\item [\textbf{D} \msquare] Der Welch t-Test ist die veraltete Form des Student t-Test und wird somit nicht mehr verwendet.
-\item [\textbf{E} \msquare] Der Welch t-Test ist ein Post-hoc Test der ANOVA und basiert daher auf dem Vergleich der Varianz.
+\item [\textbf{C} \msquare] Der Welch t-Test vergleicht die Varianz von zwei Gruppen.
+\item [\textbf{D} \msquare] Der Welch t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{"a}t.
+\item [\textbf{E} \msquare] Der Welch t-Test ist die veraltete Form des Student t-Test und wird somit nicht mehr verwendet.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -974,11 +977,11 @@ Welche Aussage {\"u}ber den gepaarten t-Test f{\"u}r verbundene Stichproben ist 
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{"a}{"a}ngigkeit nicht mehr vorliegen haben.
+\item [\textbf{A} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{"o}nnen.
 \item [\textbf{B} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abh{"a}ngig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.
-\item [\textbf{C} \msquare] Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.
-\item [\textbf{D} \msquare] Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{"u}r Varianzhomogenit{"a}t mit den Vorteilen des Welch t-Test f{"u}r Varianzheterogenit{"a}t. Wir bilden daf{"u}r die Differenz der Einzelbeobachtungen.
-\item [\textbf{E} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{"o}nnen.
+\item [\textbf{C} \msquare] Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{"u}r Varianzhomogenit{"a}t mit den Vorteilen des Welch t-Test f{"u}r Varianzheterogenit{"a}t. Wir bilden daf{"u}r die Differenz der Einzelbeobachtungen.
+\item [\textbf{D} \msquare] Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{"a}{"a}ngigkeit nicht mehr vorliegen haben.
+\item [\textbf{E} \msquare] Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -994,11 +997,11 @@ ist richtig?
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.
-\item [\textbf{B} \msquare] Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.
-\item [\textbf{C} \msquare] Die ANOVA testet auf der gesamten Fallzahl. Es w{"a}re besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.
-\item [\textbf{D} \msquare] Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.
-\item [\textbf{E} \msquare] Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.
+\item [\textbf{A} \msquare] Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.
+\item [\textbf{B} \msquare] Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.
+\item [\textbf{C} \msquare] Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.
+\item [\textbf{D} \msquare] Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.
+\item [\textbf{E} \msquare] Die ANOVA testet auf der gesamten Fallzahl. Es w{"a}re besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.
 \end{enumerate}
 
 % -----------------------------------------------------------------------
@@ -1026,7 +1029,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 %% --------------------------------------------------------------------
 
 Sie haben folgende Zahlenreihe $y$ vorliegen
-$y = \{12, 18, 19, 22, 17\}$.
+$y = \{12, 22, 21, 26, 19\}$.
 
 \begin{enumerate}
 \item Visualisieren Sie den Mittelwert von $y$ in der untenstehenden
@@ -1061,9 +1064,9 @@ $y = \{12, 18, 19, 22, 17\}$.
 
 
 
-In einem Feldexperiment mit drei Bew{"a}sserungstypen ($low$, $mid$ und $high$) als Behandlung
+In einem Gew{"a}chshausexperiment mit drei D{"u}ngestufen ($ctrl$, $low$ und $high$) als Behandlung
 (\textit{treatment}) ergeben sich die folgenden Barplots mit dem
-gemessenen Frischgewicht (\textit{freshmatter}) von Kartoffeln.
+gemessenen Frischgewicht (\textit{freshmatter}) von Maiss.
 
 
 
@@ -1099,9 +1102,9 @@ gemessenen Frischgewicht (\textit{freshmatter}) von Kartoffeln.
 
 
 
-In einem Freilandversuch mit drei Lichtstufen ($none$, $200lm$ und $600lm$) als Behandlung
+In einem Gew{"a}chshausexperiment mit drei Bew{"a}sserungstypen ($low$, $mid$ und $high$) als Behandlung
 (\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
-gemessenen Frischgewicht (\textit{freshmatter}) von Kartoffeln.
+gemessenen Frischgewicht (\textit{freshmatter}) von Erdbeeren.
 
 \begin{table}[!h]
 \centering
@@ -1109,17 +1112,21 @@ gemessenen Frischgewicht (\textit{freshmatter}) von Kartoffeln.
 \toprule
 treatment & freshmatter\\
 \midrule
-none & 48.4\\
-600lm & 33.0\\
-600lm & 20.5\\
-200lm & 28.0\\
-200lm & 29.8\\
+low & 24.8\\
+mid & 47.5\\
+high & 30.5\\
+high & 34.9\\
+mid & 39.0\\
 \addlinespace
-none & 28.8\\
-none & 49.0\\
-200lm & 26.3\\
-none & 48.6\\
-600lm & 36.6\\
+mid & 39.2\\
+mid & 40.9\\
+high & 31.0\\
+mid & 37.2\\
+low & 21.9\\
+\addlinespace
+low & 29.9\\
+low & 23.4\\
+high & 42.1\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -1128,12 +1135,12 @@ none & 48.6\\
 
 \begin{enumerate}
 \item Zeichnen Sie in \textit{einer} Abbildung die Barplots f{\"u}r die
-  Behandlung von Kartoffeln! Beschriften Sie die Achsen entsprechend!
+  Behandlung von Erdbeeren! Beschriften Sie die Achsen entsprechend!
   \textbf{(4 Punkte)}
 \item Beschriften Sie \textit{einen} Barplot mit den g{\"a}ngigen
   statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
 \item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
-  Kartoffeln erwarten w{\"u}rden, wie sehen dann die Barplots aus?
+  Erdbeeren erwarten w{\"u}rden, wie sehen dann die Barplots aus?
   \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
@@ -1150,9 +1157,9 @@ none & 48.6\\
 
 
 
-Nach einem Versuch in einer Klimakammer mit drei Substrattypen ($torf$, $40p60n$ und $70p30n$) als Behandlung
+Nach einem Versuch in einer Klimakammer mit drei L{"u}ftungssystemen und Folientunneln ($ctrl$, $storm$ und $tornado$) als Behandlung
 (\textit{treatment}) ergeben sich die folgenden Boxplots mit dem
-gemessenen Trockengewicht (\textit{drymatter}) von Brokoli.
+gemessenen Trockengewicht (\textit{drymatter}) von Erbsen.
 
 
 
@@ -1189,7 +1196,7 @@ gemessenen Trockengewicht (\textit{drymatter}) von Brokoli.
 
 
 
-Nach einem Feldexperiment mit zwei Bew{"a}sserungstypen ($low$ und $high$) als Behandlung
+Nach einem Freilandversuch mit zwei D{"u}ngestufen ($ctrl$ und $high$) als Behandlung
 (\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
 gemessenen Trockengewicht (\textit{drymatter}) von Maiss.
 
@@ -1199,32 +1206,27 @@ gemessenen Trockengewicht (\textit{drymatter}) von Maiss.
 \toprule
 treatment & drymatter\\
 \midrule
-low & 40.6\\
-high & 32.5\\
-low & 39.3\\
-low & 39.1\\
-low & 36.3\\
+high & 42.0\\
+high & 53.1\\
+ctrl & 33.1\\
+ctrl & 41.6\\
+high & 30.1\\
 \addlinespace
-high & 32.8\\
-low & 31.6\\
-high & 32.4\\
-low & 44.8\\
-high & 18.1\\
-\addlinespace
-low & 33.2\\
-high & 34.5\\
-high & 25.2\\
-low & 30.6\\
-high & 30.2\\
-\addlinespace
-low & 24.9\\
-low & 36.5\\
 high & 34.1\\
-high & 26.6\\
-low & 31.1\\
+high & 45.7\\
+ctrl & 43.8\\
+ctrl & 52.8\\
+high & 36.2\\
 \addlinespace
-high & 37.8\\
-high & 24.0\\
+ctrl & 49.4\\
+high & 41.0\\
+ctrl & 49.5\\
+ctrl & 44.3\\
+high & 47.5\\
+\addlinespace
+high & 26.5\\
+ctrl & 48.6\\
+ctrl & 33.1\\
 \bottomrule
 \end{tabular}
 \end{table}
