@@ -1,42 +1,46 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/C_a8aOMI7GE}{\includegraphics[width =
+\hfill\href{https://youtu.be/fB6nF4dxodA}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-<<>>=
 
-effect_vec <- sample(c("no effect of X", "effect of X"), 1)
-
-@
+Im folgenden sehen Sie drei leere Scatterplots. F{\"u}llen Sie diese
+Scatterplots nach folgenden Anweisungen.
 
 \begin{enumerate}
-\item Skizieren Sie in die unten stehenden, freien Abbildungen ein kausales
-  und ein pr{\"a}diktives Modell mit $n = \Sexpr{sample(c(5,7,9), 1)}$
-  Beobachtungen! \textbf{(4 Punkte)}
-\item Beachten Sie bei der Erstellung der Skizze, ob ein Effekt von X
-  vorliegt oder nicht! \textbf{(2 Punkte)}
-\item Beschriften Sie die Abbildung mit "`Trainingsdaten"' und "`Testdaten"'!  \textbf{(2 Punkte)}
+\item Zeichnen Sie f{\"u}r die angegebene $\rho$-Werte eine Gerade in die
+  entsprechende Abbildung! \textbf{(3 Punkte)}
+\item Zeichnen Sie f{\"u}r die angegebenen $R^2$-Werte die entsprechende
+  Punktewolke um die Gerade. \textbf{(3 Punkte)}
+\item Sie rechnen ein statistisches Modell. Was sagen Ihnen die $R^2$-Werte
+  {\"u}ber das jeweilige Modell? \textbf{(3 Punkte)}
 \end{enumerate}
 
-<<modeling-01, results='asis', echo = FALSE, fig.height = 7, fig.width = 5, fig.align = "center", message = FALSE>>=
 
+<<correlation-01, results='asis', echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", message = FALSE>>=
+
+corr_vec <- c(-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1) %>%
+  sample(size = 3)
+r2_vec <- c(0.25, 0.5, 0.75, 1) %>%
+  sample(size = 3)
 df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  xlab("X") + ylab("Y") +
-  ggtitle(str_c("Causal model with ", effect_vec)) + 
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
+  ggtitle(bquote(Pearsons~rho ==.(corr_vec[1])), 
+          bquote(R^{2}==.(r2_vec[1]))) +
+          theme_minimal() ## +
+  ## xlab( bquote(Value~is~sigma~R^{2}==.(r2.value)))
 p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  xlab("X") + ylab("Y") +
-  ggtitle(str_c("Predictive model with ", effect_vec)) + 
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
+  ggtitle(bquote(Pearsons~rho ==.(corr_vec[2])), 
+          bquote(R^{2}==.(r2_vec[2]))) +
+  theme_minimal()
+p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  ggtitle(bquote(Pearsons~rho ==.(corr_vec[3])), 
+          bquote(R^{2}==.(r2_vec[3]))) +
+  theme_minimal()
 ##
-grid.arrange(p1, p2, ncol = 1)
+grid.arrange(p1, p2, p3, ncol = 2)
 
 @
 

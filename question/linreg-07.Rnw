@@ -1,51 +1,38 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width =
-   2cm]{img/youtube}}\\[1Ex]
+\hfill\href{https://youtu.be/dyQlYV9nOqY}{\includegraphics[width =
+  2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{cor.test()}.
+Sie rechnen eine lineare Regression um nach einem Feldexperiment den
+Zusammenhang zwischen Trockengewicht kg/m$^2$ (\textit{drymatter}) und
+Wassergabe l/m$^2$ (\textit{water}) bei Spargel zu bestimmen. Sie erhalten
+folgende Datentabelle.
 
-<<correlation-03,  echo = FALSE>>=
+<<>>=
 
+data_tbl <- tibble(water = rnorm(sample(c(9,11,13), 1), 10, 4),
+                   drymatter = 10 + 1.5 * water + rnorm(length(water), 0, 2))
 
-question_vec <- c("das statistische Hypothesenpaar",
-                  "die wissenschaftliche Fragestellung") %>% sample(1)
+fit <- lm(drymatter ~ water, data_tbl)
 
-visual_vec <- c("das 95\\% Konfidenzintervall!",
-                "die Teststatistik und den p-Wert!") %>% sample(1)
+fit %>% augment %>%
+  mutate_all(round, 1) %>%
+  mutate(.id = 1:n()) %>% 
+  select(.id, drymatter, water, .fitted) %>%
+  mutate(.resid = "") %>% 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position", font_size = 12)
 
-cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
-
-data_tbl <- tibble(x = rnorm(10, 5, 2),
-                   y = cor_vec * x + rnorm(10, 0, 1))
-
-print_obj <- cor.test(~ y + x, data_tbl)
-
-print_obj$method  <- c("Pearson's correlation", "Spearman's correlation", "Kendall's correlation") %>% sample(1)
-
-print_obj$data.name  <- c("weight and fertilizer",
-                          "drymatter and water",
-                          "height and food") %>% sample(1)
-
-store_vec <- print_obj$data.name 
-
-print_obj
-
-@
-
+@ 
 
 \begin{enumerate}
-  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(1
-Punkt)}
-\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten!
-  Erkl{\"a}ren Sie \textit{eine} der Eigenschaften an einem Beispiel! \textbf{(3
-    Punkte)}
-\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
-  Effekts und der Signifikanz! Begr{\"u}nden Sie
-  Ihre Antwort! \textbf{(3 Punkte)}
-\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(3 Punkte)} 
+\item Erg{\"a}nzen Sie die Werte in der Spalte \texttt{.resid} in der obigen
+  Tabelle. Geben Sie den Rechenweg und Formel mit an! \textbf{(4 Punkte)}
+\item Zeichnen Sie den sich aus der obigen Tabelle ergebenden
+  Residualplot. Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
+\item Gibt es auff{\"a}llige Werte anhand des Residualplots? Begr{\"u}nden Sie Ihre
+  Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
+

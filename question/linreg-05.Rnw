@@ -1,46 +1,61 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/fB6nF4dxodA}{\includegraphics[width =
+\hfill\href{https://youtu.be/2QJa19ZwLls}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+Im folgenden sehen Sie vier Scatterplots. Erg{\"a}nzen Sie die {\"U}berschriften
+der jeweiligen Scatterplots.
 
-Im folgenden sehen Sie drei leere Scatterplots. F{\"u}llen Sie diese
-Scatterplots nach folgenden Anweisungen.
 
 \begin{enumerate}
-\item Zeichnen Sie f{\"u}r die angegebene $\rho$-Werte eine Gerade in die
-  entsprechende Abbildung! \textbf{(3 Punkte)}
-\item Zeichnen Sie f{\"u}r die angegebenen $R^2$-Werte die entsprechende
-  Punktewolke um die Gerade. \textbf{(3 Punkte)}
+\item Sch{\"a}tzen Sie die $\rho$-Werte in der entsprechenden
+  Abbildung! \textbf{(4 Punkte)}
+\item Sch{\"a}tzen Sie die $R^2$-Werte in der entsprechenden
+  Punktewolke um die Gerade! \textbf{(4 Punkte)}
 \item Sie rechnen ein statistisches Modell. Was sagen Ihnen die $R^2$-Werte
-  {\"u}ber das jeweilige Modell? \textbf{(3 Punkte)}
+  {\"u}ber das jeweilige Modell? \textbf{(1 Punkt)}
 \end{enumerate}
 
 
-<<correlation-01, results='asis', echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", message = FALSE>>=
+<<correlation-02, results='asis', echo = FALSE, fig.height = 7, fig.width =7, fig.align = "center", message = FALSE>>=
 
-corr_vec <- c(-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1) %>%
-  sample(size = 3)
-r2_vec <- c(0.25, 0.5, 0.75, 1) %>%
-  sample(size = 3)
-df <- data.frame()
-p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  ggtitle(bquote(Pearsons~rho ==.(corr_vec[1])), 
-          bquote(R^{2}==.(r2_vec[1]))) +
-          theme_minimal() ## +
-  ## xlab( bquote(Value~is~sigma~R^{2}==.(r2.value)))
-p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  ggtitle(bquote(Pearsons~rho ==.(corr_vec[2])), 
-          bquote(R^{2}==.(r2_vec[2]))) +
+corr_vec <- c(-1, -0.5, 0, 0.5, 1) %>%
+  sample(size = 4)
+r2_vec <- c(0, 0.1, 0.2, 0.3) %>%
+  sample(size = 4, replace = FALSE)
+
+df <- tibble(x = rnorm(1000, 0.5, 0.5), #seq(0, 1, length.out = 1000),
+             y_1 = 0 + corr_vec[1] * x + rnorm(length(x), 0, r2_vec[1]),
+             y_2 = 0 + corr_vec[2] * x + rnorm(length(x), 0, r2_vec[2]),
+             y_3 = 0 + corr_vec[3] * x + rnorm(length(x), 0, r2_vec[3]),
+             y_4 = 0 + corr_vec[4] * x + rnorm(length(x), 0, r2_vec[4]))
+p1 <- ggplot(df, aes(x, y_1)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
   theme_minimal()
-p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  ggtitle(bquote(Pearsons~rho ==.(corr_vec[3])), 
-          bquote(R^{2}==.(r2_vec[3]))) +
+p2 <- ggplot(df, aes(x, y_2)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
   theme_minimal()
-##
-grid.arrange(p1, p2, p3, ncol = 2)
+p3 <- ggplot(df, aes(x, y_3)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
+  theme_minimal()
+p4 <- ggplot(df, aes(x, y_4)) + geom_point() +# xlim(0, 1) +
+  ylim(-2, 2) + xlim(-2,2) +
+  ggtitle(bquote(Pearsons~rho == ""), 
+          bquote(R^{2}== "")) +
+  labs(x = "", y = "") +
+  theme_minimal()
+grid.arrange(p1, p2, p3, p4, ncol = 2)
 
 @
 

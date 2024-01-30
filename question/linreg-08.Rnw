@@ -1,43 +1,44 @@
-\section{Aufgabe \hfill (6 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/EK7JEtdZbnw}{\includegraphics[width =
+\hfill\href{https://youtu.be/lHzRgm7hPw0}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-
 <<>>=
 
-outlier_vec <- sample(c(1,2,3), 1)
-text_rr_vec <- str_c("Residual plot with ", outlier_vec, " outlier fullfiling the normality assumption.")
+reg_row <- sample(c("Normalverteilung", "Poissonverteilung", "Binomialverteilung"), 1)
 
-
-@ 
+@
 
 \begin{enumerate}
-\item Skizieren Sie in die unten stehenden, freien Abbildungen die
-  Abbildung, die sich nach der {\"U}berschrift ergibt! \textbf{(4 Punkte)}
-\item Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)}
+\item Zeichen Sie in die drei untenstehenden, leeren Abbilungen die Zeile des
+  Regressionskreuzes der \Sexpr{reg_row}. W{\"a}hlen Sie die Beschriftung der
+  y-Achse sowie der x-Achse entsprechend aus! \textbf{(6 Punkte)}
+\item Erg{\"a}nzen Sie die jeweiligen statistischen Methoden zu der Abbildung! \textbf{(2 Punkte)}
+\item Welchen Effektsch{\"a}tzer erhalten Sie aus der entsprechend linearen
+  Regression bzw. den Gruppenvergleich? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
+\item Wenn Sie keinen Effekt erwarten, welchen \textit{Zahlenraum} nimmt dann
+  der Effektsch{\"a}tzer ein? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
 \end{enumerate}
 
-<<regression-03, results='asis', echo = FALSE, fig.height = 7.5, fig.width = 5.5, fig.align = "center", message = FALSE>>=
+<<regression-01, results='asis', echo = FALSE, fig.height = 3, fig.width = 9, fig.align = "center", message = FALSE>>=
 
 df <- data.frame()
 p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  xlab("") + ylab("") +
-  ggtitle(str_c(text_rr_vec)) + 
   theme_minimal() + theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  xlab("") + ylab("") +
-  ggtitle(str_c("Residual plot violating the normality assumption.")) + 
-  theme_minimal() + theme(
+  theme_minimal()+ theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  theme_minimal()+ theme(
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 ##
-grid.arrange(p1, p2, ncol = 1)
-
+grid.arrange(p1, p2, p3, nrow = 1)
 
 @
 

@@ -83,8 +83,8 @@ grade_tbl <- pre_grade_tbl %>%
   select(Punkte, Note)
 
 ## random ID
-exam_id <- stringi::stri_rand_strings(4, 4) |> 
-  str_c(collapse = "-")
+exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |> 
+  str_c(collapse = "\\!")
 
 @ 
 % -----------------------------------------------------------------------
@@ -94,7 +94,7 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
 % -----------------------------------------------------------------------
 \maketitle
 \fancypagestyle{empty}{
-  \fancyfoot[C]{\tiny \Sexpr{exam_id}}
+  \fancyfoot[L]{\tiny $\Sexpr{exam_id}$}
 }
 \thispagestyle{empty}
 \clearpage
@@ -467,9 +467,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(chisquare_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(chisquare_questions_vec[6])} 
-\clearpage
-% -----------------------------------------------------------------------
 \begin{graybox}{Nicht parametrische Tests}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
@@ -523,15 +520,6 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(linreg_questions_vec[9])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(linreg_questions_vec[10])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(linreg_questions_vec[11])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(linreg_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Mathematik}

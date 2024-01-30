@@ -80,8 +80,8 @@ grade_tbl <- pre_grade_tbl %>%
   select(Punkte, Note)
 
 ## random ID
-exam_id <- stringi::stri_rand_strings(4, 4) |> 
-  str_c(collapse = "-")
+exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |> 
+  str_c(collapse = "\\!")
 
 @ 
 % -----------------------------------------------------------------------
@@ -91,7 +91,7 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
 % -----------------------------------------------------------------------
 \maketitle
 \fancypagestyle{empty}{
-  \fancyfoot[C]{\tiny \Sexpr{exam_id}}
+  \fancyfoot[L]{\tiny $\Sexpr{exam_id}$}
 }
 \thispagestyle{empty}
 \clearpage
