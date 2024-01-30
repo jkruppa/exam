@@ -100,11 +100,11 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
 \clearpage
 % -----------------------------------------------------------------------
 
-\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
   \vspace{1Ex}
   \begin{itemize}
-  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
-    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
+  \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
+    Geräten - also ausdrücklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
   \item \textbf{You can answer the questions in English without any consequences.}  
@@ -120,7 +120,7 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
     Textteil erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
-  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
+  \item[] Es wird folgender Notenschlüssel angewendet.   
   \end{itemize}
   \vspace{1ex}
 \begin{center}
@@ -264,8 +264,8 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
 \Sexpr{knit_child(mc_questions_vec[30])}
 \Sexpr{knit_child(mc_questions_vec[31])}
 \Sexpr{knit_child(mc_questions_vec[32])}
-\section*{Statistische Testtheorie}  
 \Sexpr{knit_child(mc_questions_vec[33])}
+\section*{Statistische Testtheorie}  
 \Sexpr{knit_child(mc_questions_vec[34])}
 \Sexpr{knit_child(mc_questions_vec[35])}
 \Sexpr{knit_child(mc_questions_vec[36])}
@@ -275,12 +275,14 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
 \Sexpr{knit_child(mc_questions_vec[40])}
 \Sexpr{knit_child(mc_questions_vec[41])}
 \Sexpr{knit_child(mc_questions_vec[42])}
-\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[43])}
 \Sexpr{knit_child(mc_questions_vec[44])}
+\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[45])}
 \Sexpr{knit_child(mc_questions_vec[46])}
-
+\Sexpr{knit_child(mc_questions_vec[47])}
+\Sexpr{knit_child(mc_questions_vec[48])}
+    
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------

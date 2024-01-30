@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Sie rechnen mehrere t-Tests f{\"u}r einen multiplen Vergleich nachdem eine
+einfaktorielle ANOVA sich als signifikant herausgestellt hat. Welche
+Aussage im Bezug auf den Effekt ist richtig? 
+
+<<mc-mult-05, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Beim multiplen Testen muss der Effekt, hier der Mittelwertsunterschied $\\Delta$ aus den paarweisen t-Tests, nicht adjusiert werden.',
+                   'Beim multiplen Testen kann es zu einer $\\Delta$-Inflation kommen. Das globale Effektniveau liegt nicht mehr bei $20\\%$. Daher m{\"u}ssen die Effekte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der Effekte nach Bonferroni das bekanneste Verfahren ist.',
+                   'Beim multiplen Testen kann es zu einer $\\Delta$-Deflation kommen. Das globale Relevanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher m{\"u}ssen die $\\Delta$-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der $\\Delta$-Werte nach Bonferroni das bekanneste Verfahren ist. Die $\\Delta$-Werte werden durch die Anzahl an Vergleichen geteilt.',
+                   'Beim multiplen Testen werden die Effekte der paarweisen Vergleiche ignoriert. Der Nachteil des multiplen Testens ist ja auch, dass wir am Ende keine Effekte mehr vorliegen haben. Eine ANOVA liefert hier bessere Informationen.',
+                   'Beim multiplen Testen kann es zu einer Effekt{\"u}bersch{\"a}tzung ($\\Delta$-Inflation) kommen. Daher m{\"u}ssen die Effekte angepasst werden. Dies geschieht nicht h{\"a}ndisch sondern intern in den angewendeten Algorithmen.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}
