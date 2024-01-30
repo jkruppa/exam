@@ -1,0 +1,25 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+Wenn Sie im Allgemeinen einen statistischen Test rechnen, dann kommen Sie
+um eine statistische Hypothese $H$ nicht herum. Welche Aussage {\"u}ber
+statistische Hypothesen ist richtig?
+
+<<mc-statistisches-testen-013, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Es gibt ein statistisches Hypothesenpaar mit der Nullhypothese $H_0$ und der Alternativehypothese $H_A$ oder $H_1$.',
+                   'Es gibt ein Hypothesenset bestehend aus $k$ Hypothesen. Meistens wird die Nullhypothese $H_0$ und die Alternativhypothese $H_A$ verwendet. Wegen des Falsifikationsprinzips ist es wichtig, die bekannte falsche und unbekannte richtige Hypothese mit in das Set zu nehmen.',
+                   'Es gibt - bedingt durch das das Falsifikationsprinzip - ein Set von $k$ Nullhypothesen, die iterative gegen $k-1$ Alternativhypothesen getestet werden.',
+                   'Es gibt ein statistisches Hypothesenpaar mit der Hypothese f{\"u}r und gegen die wissenschaftliche Fragestellung. Die Hypothesen werden $H_{pro}$ und $H_{contra}$ bezeichnet.',
+                   'Die Hypothesen $H_0$ und $H_A$ sind rein prosarischer Natur und bilden keinen mathematischen Hintergrund ab. In der Statistik wird die wissenschaftliche Fragestellung getestet. Daher stehen auch die verst{\"a}ndlichen Hypothesen im Mittelpunkt der biologischen Interpretation.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

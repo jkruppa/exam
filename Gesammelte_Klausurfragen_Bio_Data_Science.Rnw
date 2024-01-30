@@ -277,11 +277,13 @@ exam_id <- stringi::stri_rand_strings(4, 4) |>
 \Sexpr{knit_child(mc_questions_vec[42])}
 \Sexpr{knit_child(mc_questions_vec[43])}
 \Sexpr{knit_child(mc_questions_vec[44])}
-\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[45])}
 \Sexpr{knit_child(mc_questions_vec[46])}
+\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[47])}
 \Sexpr{knit_child(mc_questions_vec[48])}
+\Sexpr{knit_child(mc_questions_vec[49])}
+\Sexpr{knit_child(mc_questions_vec[50])}
     
 % -----------------------------------------------------------------------
 \clearpage
