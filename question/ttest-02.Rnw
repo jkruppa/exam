@@ -11,10 +11,11 @@
 <<>>=
 exp <- c("einem Gew{\"a}chshausexperiment",
          "einem Freilandversuch",
-         "einem Experiment in einer Klimakammer",
+         "einer Klimakammer",
          "einem Feldexperiment") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
+type <- c("Student t-Tests", "Welch t-Tests") %>% sample(1)
 @ 
 
 Eine neue technische Anlage wurde in \Sexpr{exp} getestet. Bei dem
@@ -44,8 +45,9 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 \begin{enumerate}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
       Punkte)}
-  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Student t-Tests f{\"u}r den
-  Vergleich der beiden Behandlungen! \textbf{(4 Punkte)}
+  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines
+    \textit{\Sexpr{type}} f{\"u}r den Vergleich der beiden Behandlungen!
+    \textbf{(4 Punkte)}
 \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem
   berechneten $T_{calc}$ eine Aussage zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort!  \textbf{(2 Punkte)}
 \end{enumerate}
