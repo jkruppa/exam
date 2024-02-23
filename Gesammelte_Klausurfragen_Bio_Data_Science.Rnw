@@ -91,6 +91,7 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \input{\Sexpr{init_path}}
 % -----------------------------------------------------------------------
 \begin{document}
+\date{Sommersemester 2024}
 % -----------------------------------------------------------------------
 \maketitle
 \fancypagestyle{empty}{
