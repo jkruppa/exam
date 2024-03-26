@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  24 MAR 2024 20:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  25 MAR 2024 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3460,33 +3460,49 @@ Underfull \hbox (badness 10000) in paragraph at lines 5098--5111
 
 [102
 
-] [103
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 5181.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 5184--5185
+
+ []
+
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 5187.
+(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
+[103
+
+] [104
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5189.
+(hyperref)                removing `\hfill' on input line 5215.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5195.
+(hyperref)                removing `\hfill' on input line 5221.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5226.
+(hyperref)                removing `\hfill' on input line 5252.
 
 
 AED: lastpage setting LastPage
-[104
+[105
 
 ]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     5232.
+(LaTeX3)     5258.
 
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     5232.
+(LaTeX3)     5258.
 
  (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
 
@@ -3501,10 +3517,10 @@ t' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29147 strings out of 478994
- 537126 string characters out of 5858183
+ 29153 strings out of 478994
+ 537184 string characters out of 5858183
  979968 words of memory out of 5000000
- 45371 multiletter control sequences out of 15000+600000
+ 45372 multiletter control sequences out of 15000+600000
  530247 words of font info for 245 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,19n,116p,10718b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3525,11 +3541,11 @@ type1/public/mathdesign/mdbch/md-chbma.pfb></usr/local/texlive/2021/texmf-dist/
 fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/local/texlive/2021/texmf
 -dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2021/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (104 pages, 898
-497 bytes).
+Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (105 pages, 899
+683 bytes).
 PDF statistics:
- 1766 PDF objects out of 2073 (max. 8388607)
- 1584 compressed objects within 16 object streams
- 617 named destinations out of 1000 (max. 500000)
- 1141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1779 PDF objects out of 2073 (max. 8388607)
+ 1596 compressed objects within 16 object streams
+ 622 named destinations out of 1000 (max. 500000)
+ 1149 words of extra memory for PDF output out of 10000 (max. 10000000)
 
