@@ -36,7 +36,7 @@ cbind(tibble(before = round(rnorm(n = n,
     Punkte)}
 \item Bestimmen Sie die Teststatistik $T_{calc}$ eines gepaarten t-Tests f{\"u}r den
   Vergleich der beiden Zeitpunkte! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem berechneten $T_{calc}$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem berechneten $T_{D}$ eine Aussage
   zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Sch{\"a}tzen Sie den $p$-Wert aus Ihrem berechneten $T_{calc}$ ab!
   Begr{\"u}nden Sie Ihre Antwort mit einer Skizze! \textbf{(2

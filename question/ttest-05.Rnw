@@ -47,7 +47,7 @@ tk <- qt(0.975, df=ttest$parameter)
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie eine Abbildung in der Sie $T_{calc}$, $Pr(D|H_0)$, $A=0.95$,
+\item Skizieren Sie eine Abbildung in der Sie $T_{D}$, $Pr(D|H_0)$, $A=0.95$,
   sowie $T_{\alpha=5\%} = |\Sexpr{round(tk, 2)}|$ einzeichnen! \textbf{(4 Punkte)}
 \item Beschriften Sie die Abbildung entsprechend! \textbf{(1 Punkt)}  
 \item Berechnen Sie den Effekt der Behandlungen! \textbf{(1 Punkt)}

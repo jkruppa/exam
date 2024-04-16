@@ -39,10 +39,10 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 Rechnen Sie einen Mann-Whitney-U-Test auf den obigen Daten.
 
 \begin{enumerate}
-\item Bestimmen Sie hierf{\"u}r $U_c$ mit $U_c = n_1n_2 +
+\item Bestimmen Sie hierf{\"u}r $U_D$ mit $U_D = n_1n_2 +
   \cfrac{n_1(n_1+1)}{2}-R_1$! \textbf{(4 Punkte)} 
-\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_c$ durch
-  $z = \cfrac{U_c -
+\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_D$ durch
+  $z = \cfrac{U_D -
     \cfrac{n_1n_2}{2}}{\sqrt{\cfrac{n_1n_2(n_1+n_2+1)}{12}}}$ und dem
   kritischen Wert von $z_{\alpha = 5\%} = 1.96$. Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}

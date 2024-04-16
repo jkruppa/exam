@@ -49,7 +49,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
     \textit{\Sexpr{type}} f{\"u}r den Vergleich der beiden Behandlungen!
     \textbf{(4 Punkte)}
 \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem
-  berechneten $T_{calc}$ eine Aussage zur Nullhypothese! Begr{\"u}nden Sie Ihre
+  berechneten $T_{D}$ eine Aussage zur Nullhypothese! Begr{\"u}nden Sie Ihre
   Antwort!  \textbf{(2 Punkte)}
 \item Berechnen Sie den Effekt der Behandlungen \textit{ctrl} und
   \textit{dose} auf das Gewicht von \Sexpr{plant}! \textbf{(1 Punkt)}

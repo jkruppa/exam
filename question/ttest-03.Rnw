@@ -50,7 +50,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
       Punkte)}
   \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Welch t-Tests f{\"u}r den
   Vergleich der beiden Futtermittel! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = \Sexpr{alpha}\%} = \Sexpr{quantile}$ und dem berechneten $T_{calc}$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = \Sexpr{alpha}\%} = \Sexpr{quantile}$ und dem berechneten $T_{D}$ eine Aussage
   zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie das \Sexpr{conf_inter}\% Konfidenzintervall unter der
   Verwendung von $s_p$ und der gemittelten Fallzahl {\"u}ber die beiden Gruppen! \textbf{(2 Punkte)}

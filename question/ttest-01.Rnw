@@ -53,7 +53,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
       Punkte)}
   \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Student t-Tests f{\"u}r den
   Vergleich der beiden Pestizide! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem berechneten $T_{calc}$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem berechneten $T_{D}$ eine Aussage
   zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie den Effekt der Behandlung mit Pestiziden! \textbf{(1 Punkt)}
 \item Wenn Sie \textit{\Sexpr{textsig}} Unterschied zwischen den beiden

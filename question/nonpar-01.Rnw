@@ -39,10 +39,10 @@ sigma_w <- sqrt((n_d * (n_d + 1) * (2 * n_d +1))/24) %>%
 \item Erg{\"a}nzen Sie die obige Tabelle mit den notwendigen Informationen, die
   Sie ben{\"o}tigen um einen Wilcoxon-Vorzeichen-Rang-Test zu rechnen!
   \textbf{(4 Punkte)}
-\item Bestimmen Sie die Teststatistik $W$ mit $W = \min(T_{-}; T_{+})$ und
+\item Bestimmen Sie die Teststatistik $W_D$ mit $W_D = \min(T_{-}; T_{+})$ und
   berechnen Sie den erwarteten Wert $\mu_W = \cfrac{n_{!0} \cdot (n_{!0} + 1)}{4}$!
   \textbf{(2 Punkte)}
-\item Berechnen Sie anschlie{\ss}end den $z$-Wert mit $z = \cfrac{W -
+\item Berechnen Sie anschlie{\ss}end den $z$-Wert mit $z = \cfrac{W_D -
     \mu_W}{\Sexpr{sigma_w}}$! \textbf{(2 Punkte)}
 \item Liegt mit einer Signifikanzschwelle von $z_{\alpha = 5\%} =
   1.96$ ein Unterschied zwischen den beiden Zeitpunkten vor? Begr{\"u}nden Sie
