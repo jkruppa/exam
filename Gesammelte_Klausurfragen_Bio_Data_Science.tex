@@ -1692,7 +1692,7 @@ Nullhypothese. \textit{Beachten Sie, dass im Folgenden keine
 \item Zeichnen Sie $T_{\alpha=5\%}$ in die Abbildung! \textbf{(1 Punkt)} 
 \item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! Begr{\"u}nden
   Sie Ihre Antwort! \textbf{(2 Punkte)} 
-\item Zeichnen Sie $-T_{calc}$ in die Abbildung! \textbf{(1
+\item Zeichnen Sie $-T_{D}$ in die Abbildung! \textbf{(1
     Punkt)}
 \item Zeichnen Sie einen signifikant p-Wert in die Abbildung! Begr{\"u}nden
   Sie Ihre Antwort! \textbf{(2 Punkte)}   
@@ -1862,7 +1862,7 @@ RoundUp & 18\\
       Punkte)}
   \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Student t-Tests f{\"u}r den
   Vergleich der beiden Pestizide! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = 1.84$ und dem berechneten $T_{calc}$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = 5\%} = 1.84$ und dem berechneten $T_{D}$ eine Aussage
   zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie den Effekt der Behandlung mit Pestiziden! \textbf{(1 Punkt)}
 \item Wenn Sie \textit{einen} Unterschied zwischen den beiden
@@ -1916,7 +1916,7 @@ dose & 14.6\\
     \textit{Welch t-Tests} f{\"u}r den Vergleich der beiden Behandlungen!
     \textbf{(4 Punkte)}
 \item Treffen Sie mit $T_{\alpha = 5\%} = 1.84$ und dem
-  berechneten $T_{calc}$ eine Aussage zur Nullhypothese! Begr{\"u}nden Sie Ihre
+  berechneten $T_{D}$ eine Aussage zur Nullhypothese! Begr{\"u}nden Sie Ihre
   Antwort!  \textbf{(2 Punkte)}
 \item Berechnen Sie den Effekt der Behandlungen \textit{ctrl} und
   \textit{dose} auf das Gewicht von Lauch! \textbf{(1 Punkt)}
@@ -1971,7 +1971,7 @@ FatDown & 16\\
       Punkte)}
   \item Bestimmen Sie die Teststatistik $T_{calc}$ eines Welch t-Tests f{\"u}r den
   Vergleich der beiden Futtermittel! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 1\%} = 2.72$ und dem berechneten $T_{calc}$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = 1\%} = 2.72$ und dem berechneten $T_{D}$ eine Aussage
   zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie das 99\% Konfidenzintervall unter der
   Verwendung von $s_p$ und der gemittelten Fallzahl {\"u}ber die beiden Gruppen! \textbf{(2 Punkte)}
@@ -2023,7 +2023,7 @@ animal\_id & before & after\\
     Punkte)}
 \item Bestimmen Sie die Teststatistik $T_{calc}$ eines gepaarten t-Tests f{\"u}r den
   Vergleich der beiden Zeitpunkte! \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{calc}$ eine Aussage
+\item Treffen Sie mit $T_{\alpha = 5\%} = 2.04$ und dem berechneten $T_{D}$ eine Aussage
   zur Nullhypothese! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Sch{\"a}tzen Sie den $p$-Wert aus Ihrem berechneten $T_{calc}$ ab!
   Begr{\"u}nden Sie Ihre Antwort mit einer Skizze! \textbf{(2
@@ -2065,7 +2065,7 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie eine Abbildung in der Sie $T_{calc}$, $Pr(D|H_0)$, $A=0.95$,
+\item Skizieren Sie eine Abbildung in der Sie $T_{D}$, $Pr(D|H_0)$, $A=0.95$,
   sowie $T_{\alpha=5\%} = |2.18|$ einzeichnen! \textbf{(4 Punkte)}
 \item Beschriften Sie die Abbildung entsprechend! \textbf{(1 Punkt)}  
 \item Berechnen Sie den Effekt der Behandlungen! \textbf{(1 Punkt)}
@@ -3143,10 +3143,10 @@ Vorher & Nachher & Differenz & Vorzeichen & Rang & Positiv Rang & Negativ Rang\\
 \item Erg{\"a}nzen Sie die obige Tabelle mit den notwendigen Informationen, die
   Sie ben{\"o}tigen um einen Wilcoxon-Vorzeichen-Rang-Test zu rechnen!
   \textbf{(4 Punkte)}
-\item Bestimmen Sie die Teststatistik $W$ mit $W = \min(T_{-}; T_{+})$ und
+\item Bestimmen Sie die Teststatistik $W_D$ mit $W_D = \min(T_{-}; T_{+})$ und
   berechnen Sie den erwarteten Wert $\mu_W = \cfrac{n_{!0} \cdot (n_{!0} + 1)}{4}$!
   \textbf{(2 Punkte)}
-\item Berechnen Sie anschlie{\ss}end den $z$-Wert mit $z = \cfrac{W -
+\item Berechnen Sie anschlie{\ss}end den $z$-Wert mit $z = \cfrac{W_D -
     \mu_W}{11.247}$! \textbf{(2 Punkte)}
 \item Liegt mit einer Signifikanzschwelle von $z_{\alpha = 5\%} =
   1.96$ ein Unterschied zwischen den beiden Zeitpunkten vor? Begr{\"u}nden Sie
@@ -3204,10 +3204,10 @@ RootsGoneX & 11.6\\
 Rechnen Sie einen Mann-Whitney-U-Test auf den obigen Daten.
 
 \begin{enumerate}
-\item Bestimmen Sie hierf{\"u}r $U_c$ mit $U_c = n_1n_2 +
+\item Bestimmen Sie hierf{\"u}r $U_D$ mit $U_D = n_1n_2 +
   \cfrac{n_1(n_1+1)}{2}-R_1$! \textbf{(4 Punkte)} 
-\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_c$ durch
-  $z = \cfrac{U_c -
+\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $U_D$ durch
+  $z = \cfrac{U_D -
     \cfrac{n_1n_2}{2}}{\sqrt{\cfrac{n_1n_2(n_1+n_2+1)}{12}}}$ und dem
   kritischen Wert von $z_{\alpha = 5\%} = 1.96$. Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}
@@ -3270,11 +3270,11 @@ Dosis 40 & 14.2 &  &  & \\
 Rechnen Sie einen Kruskal-Wallis-Test auf den obigen Daten.
 
 \begin{enumerate}
-\item Bestimmen Sie hierf{\"u}r $H_c$ mit $H_c =
+\item Bestimmen Sie hierf{\"u}r $H_D$ mit $H_D=
   \cfrac{12}{n(n+1)}\left(\cfrac{R_1^2}{n_1}+\cfrac{R_2^2}{n_2}
     + \cfrac{R_3^2}{n_3}\right)
   - 3(n+1)$! \textbf{(6 Punkte)} 
-\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $H_c$ durch
+\item Geben Sie eine Aussage {\"u}ber die Signifikanz von $H_D$ durch
   den kritischen Wert von $H_{\alpha = 5\%} = 5.99$! \textbf{(1 Punkt)}
 \item Wie lautet die statistische Nullhypothese die Sie mit dem Kruskal-Wallis-Test
   {\"u}berpr{\"u}fen? \textbf{(1 Punkt)}
@@ -5184,7 +5184,7 @@ verkaufen. Leider mussten Sie den Kauf {\"u}ber einen Kredit {\"u}ber
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
+\hfill\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
