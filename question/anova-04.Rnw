@@ -17,7 +17,7 @@ plant <- c("Maisspflanzen", "Erbsenschoten", "Kartoffeln", "Lauchstangen", "Erdb
 @ 
 
 
-Der Datensatz \textit{crop\_tbl} enth{\"a}lt das Outcome \textit{\Sexpr{resp}} f{\"u}r \Sexpr{exp} mit 
+Der Datensatz \textit{plant\_tbl} enth{\"a}lt das Outcome \textit{\Sexpr{resp}} f{\"u}r \Sexpr{exp} mit 
 \Sexpr{plant}, welches unter drei 
 verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen sind in dem Faktor
 \textit{trt} mit den Faktorstufen \textit{\Sexpr{sample(c("low", "ctrl", "A"),
