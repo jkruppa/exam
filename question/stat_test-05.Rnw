@@ -19,14 +19,14 @@ der Streuung sowie der Fallzahl. Gegeben sei die Formel f{\"u}r den Student
 t-Test auf den die folgenden {\"U}berlegungen basieren sollen. Welche
 Auswirkung hat die {\"A}nderungen der jeweiligen statistischen Ma{\ss}zahl des
 Effekts $\Delta$, der Streuung $s$ und der Fallzahl $n$ auf die Teststistik
-$T_{calc}$, den p-Wert $Pr(D|H_0)$ sowie dem Konfidenzintervall
+$T_{D}$, den p-Wert $Pr(D|H_0)$ sowie dem Konfidenzintervall
 $KI_{1-\alpha}$?
 
 \begin{enumerate}
 \item Visualisieren Sie den Zusammenhang zwischen der Teststatiatik
-  $T_{calc}$ und dem p-Wert $Pr(D|H_0)$ f{\"u}r sich ver{\"a}ndernde $T_{calc}$-Werte!
+  $T_{D}$ und dem p-Wert $Pr(D|H_0)$ f{\"u}r sich ver{\"a}ndernde $T_{D}$-Werte!
   \textit{Geben Sie daf{\"u}r ein numerisches Beispiel in dem Sie drei
-    $T_{calc}$-Werte und deren Einfluss auf den p-Wert vergleichen!}
+    $T_{D}$-Werte und deren Einfluss auf den p-Wert vergleichen!}
   \textbf{(3 Punkte)}  
 \item  F{\"u}llen Sie die untenstehende Tabelle aus in dem Sie die {\"A}nderung der
   statistischen Ma{\ss}zahlen auf die Teststatistik, den p-Wert sowie das
@@ -34,7 +34,7 @@ $KI_{1-\alpha}$?
 \begin{center}
   \large
   \begin{tabular}[c]{l|c|c|c|l|c|c|c}
-    & $T_{calc}$ & $Pr(D|H_0)$ & $KI_{1-\alpha}$ & & $T_{calc}$ & $Pr(D|H_0)$ & $KI_{1-\alpha}$\strut\\ 
+    & $T_{D}$ & $Pr(D|H_0)$ & $KI_{1-\alpha}$ & & $T_{D}$ & $Pr(D|H_0)$ & $KI_{1-\alpha}$\strut\\ 
     \hline
     \textbf{$\Delta\; \uparrow$} & \hspace{1.8cm} & \hspace{1.8cm}  & \hspace{1.8cm} & \textbf{
                                                           $\Delta\; \downarrow$} &
