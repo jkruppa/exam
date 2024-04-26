@@ -33,8 +33,34 @@ wanted_questions <- wanted_questions_lst %>% unlist()
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
-text_questions_vec <- str_subset(questions_vec, "mc", negate = TRUE) %>%
-  magrittr::extract(wanted_questions_lst$text - 40) %>%
+## sort them
+text_questions_vec <- str_subset(questions_vec, "mc|math|tier|stat_test", negate = TRUE)
+mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
+math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
+tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
+stat_test_questions_vec <- str_subset(questions_vec, "stat_test-", negate = FALSE)
+desc_stat_questions_vec <- str_subset(questions_vec, "desc_stat-", negate = FALSE)
+ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
+anova_questions_vec <- str_subset(questions_vec, "/anova-", negate = FALSE)
+chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FALSE)
+linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
+nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
+multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
+
+## glue them
+glue_questions_vec <- c(desc_stat_questions_vec,
+                        stat_test_questions_vec,
+                        ttest_questions_vec,
+                        anova_questions_vec,
+                        multcomp_questions_vec,
+                        chisquare_questions_vec,
+                        nonpar_questions_vec,
+                        linreg_questions_vec,
+                        math_questions_vec,
+                        tier_questions_vec)
+
+text_questions_vec <- glue_questions_vec %>%
+  magrittr::extract(wanted_questions_lst$text - 50) %>%
   sample()
 mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)  %>%
   magrittr::extract(wanted_questions_lst$mc) %>%
