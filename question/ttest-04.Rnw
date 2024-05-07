@@ -8,10 +8,18 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<>>=
+animal <- c("Mastschweinen", "Fleischrindern", "Puten", "H{\"u}hnern", "Lamas",
+            "Emus", "Enten") %>% sample(1)
+trt <- c("STARTex", "BioBefore", "GainX", "BetterFood") %>% sample(1)
+@
 
-Das Gewicht von K{\"u}ken wurde \textit{vor} der Behandlung mit STARTex und 1
-Woche \textit{nach} der Behandlung gemessen. Es ergibt sich die folgende
-Datentabelle.
+Das Schlachtgewicht von \Sexpr{animal} h{\"a}ngt ma{\ss}geblich von der
+Gewichtszunahme in den ersten sieben Tagen hab. Um einen F{\"u}tterungsversuch
+in verschiedenen St{\"a}llen zu planen w{\"u}rde ein Pilotversuch durchgef{\"u}hrt. Das
+Gewicht von \Sexpr{animal} wurde \textit{vor} der Behandlung mit
+\Sexpr{trt} und 1 Woche \textit{nach} der Behandlung gemessen. Es ergibt
+sich die folgende Datentabelle.
 
 <<ttest-02, results='asis', echo = FALSE>>=
 n <- sample(c(7,8,9), 1)
@@ -19,7 +27,7 @@ n <- sample(c(7,8,9), 1)
 t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
 
 cbind(tibble(before = round(rnorm(n = n,
-                                  mean = sample(c(12, 14, 16), 1),
+                                  mean = sample(c(12, 14, 10), 1),
                                   sd = sample(c(2, 4, 6), 1)))),
       tibble(after = round(rnorm(n = n,
                                  mean = sample(c(12, 16, 25), 1),

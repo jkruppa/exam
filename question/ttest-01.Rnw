@@ -15,11 +15,12 @@ exp <- c("einem Gew{\"a}chshausexperiment",
          "einem Feldexperiment") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
+unit <- c("kg/ha", "t/ha", "g/m^2", "kg/m^2") %>% sample(1)
 @ 
 
 Nach \Sexpr{exp} mit zwei Pestiziden (\textit{RoundUp} und
 \textit{GoneEx}) ergibt sich die folgende Datentabelle mit dem gemessenen
-Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
+Trockengewicht (\textit{drymatter}) von \Sexpr{plant} in $\Sexpr{unit}$.
 
 <<ttest-01, results='asis', echo = FALSE>>=
 data_tbl <- rbind(tibble(RoundUp = round(rnorm(n = sample(c(5,6,7), 1),
