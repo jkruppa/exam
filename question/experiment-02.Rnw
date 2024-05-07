@@ -1,0 +1,48 @@
+\section{Aufgabe \hfill (9 Punkte)}
+
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+  Teilaufgaben mit an!} \\[1Ex]
+
+%% --------------------------------------------------------------------
+\hfill\href{}{\includegraphics[width =
+  2cm]{img/caution}}\\[1Ex]
+%% --------------------------------------------------------------------
+
+<<>>=
+
+sig_vec <- c("signifikant", "nicht signifikant") %>%
+  sample(1)
+sign_vec  <- c("+", "-") %>%
+  sample(1)
+a_vec <- c("A = 0.95", "A = 95\\%", "95\\%") %>% sample(1)
+@ 
+
+Abgebildet ist die t-Verteilung unter der Anahme der G{\"u}ltigkeit der
+Nullhypothese. \textit{Beachten Sie, dass im Folgenden keine
+  numerisch korrekte Darstellung verlangt wird! Es gilt Erkennbarkeit vor
+  Genauigkeit!}
+
+\begin{enumerate}
+\item Erg{\"a}nzen Sie eine beschriftete $x$-Achse! \textbf{(1 Punkt)}
+\item Erg{\"a}nzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
+\item Erg{\"a}nzen Sie "`$\Sexpr{a_vec}$"'! \textbf{(1 Punkt)}
+\item Zeichnen Sie $T_{\alpha=5\%}$ in die Abbildung! \textbf{(1 Punkt)} 
+\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! Begr{\"u}nden
+  Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Zeichnen Sie $\Sexpr{sign_vec}T_{D}$ in die Abbildung! \textbf{(1
+    Punkt)}
+\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! Begr{\"u}nden
+  Sie Ihre Antwort! \textbf{(2 Punkte)}   
+\end{enumerate}
+
+<<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
+
+ggplot(data.frame(x = c(-5, 5)), aes(x = x)) +
+  stat_function(fun = dt, args = list(df = 3)) +
+  theme_minimal() +
+  labs(x = "", y = "") +
+  scale_x_continuous(breaks = c(-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5)) +
+  theme(axis.text.x = element_blank(),
+        axis.text.y = element_blank())
+
+@
