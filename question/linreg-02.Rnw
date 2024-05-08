@@ -38,13 +38,13 @@ lm(weight ~ light, data = dd) %>% tidy %>%
 @
 
 \begin{enumerate}
+\item Zeichnen Sie die Grade aus der obigen Tabelle in ein Koordinatenkreuz! \textbf{(1 Punkt)}
+\item Beschriften Sie die Abbildung und die Gerade mit den statistischen
+  Kenngr{\"o}{\ss}en! \textbf{(2 Punkte)}
+\item Formulieren Sie die Regressionsgleichung! \textbf{(2 Punkte)}
 \item Berechnen Sie die t Statistik f{\"u}r \textit{(Intercept)} und
   \textit{light}! \textbf{(2 Punkte)}
 \item Sch{\"a}tzen Sie den p-Wert f{\"u}r \textit{(Intercept)} und
   \textit{light} mit $T_{\alpha = 5\%} = 1.96$ ab. Was sagt Ihnen der p-Wert aus?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
-\item Zeichnen Sie die Grade aus der obigen Tabelle in ein Koordinatenkreuz! \textbf{(1 Punkt)}
-\item Beschriften Sie die Abbildung und die Gerade mit den statistischen
-  Kenngr{\"o}{\ss}en! \textbf{(2 Punkte)}
-\item Formulieren Sie die Regressionsgleichung! \textbf{(2 Punkte)}
 \end{enumerate}
