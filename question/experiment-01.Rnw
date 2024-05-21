@@ -1,7 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
-
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\section{Aufgabe \hfill (10 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{}{\includegraphics[width =
@@ -15,32 +12,37 @@ exp <- c("einem Gew{\"a}chshausexperiment",
          "einem Feldexperiment") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
-unit <- c("kg/ha", "t/ha", "g/m^2", "kg/m^2") %>% sample(1)
 f1 <- c("Pestiziden", "Fe-D{\"u}ngern", "Bodenbehandlungen", "N{\"u}tzlingen",
         "P-D{\"u}ngern", "Lichtregimen", "Bel{\"u}ftungen") %>% sample(1)
 f1_lev <- c(3, 4) %>% sample(1)
 f2 <- c("dem Block", "dem Feld", "dem Tisch", "dem Gew{\"a}chshaus", "dem Tunnel", "der Hanglage", "der Sorte", "dem Hitzestress", "dem Trockenstress") %>% sample(1)
 f2_lev <- c(3, 4) %>% sample(1)
 simple <- c("Complete randomized design (CRD)",
-            "Latin square design")  %>% sample(1)
+            "Latin square design",
+            "Randomized complete block design (RCBD)")  %>% sample(1)
+rep <- c("zwei", "drei", "vier") %>% sample(1)
+switch <- c("Barplots", "Boxplots") %>% sample(1)
 @ 
 
 Nach einem erfolgreichen Pilotversuch zur Wirksamkeit von \Sexpr{f1} bei
 \Sexpr{plant} in \Sexpr{exp} wollen Sie nun den Versuch eine Nummer gr{\"o}{\ss}er
-anlegen. Daf{\"u}r m{\"u}ssen Sie sich nun f{\"u}r ein faktorielles Versuchsdesign
-entscheiden.\\
-
-In Ihrem Hauptversuch stellt die Wirksamkeit von \Sexpr{f1} den ersten
-Faktor mit insgesamt \Sexpr{f1_lev} Leveln dar. Der zweite Faktor mit
-\Sexpr{f2} beinhaltet
-\Sexpr{f2_lev}. \\
+anlegen. Daf{\"u}r entscheiden Sie sich f{\"u}r ein faktorielles Versuchsdesign. In
+Ihrem Hauptversuch stellt die Wirksamkeit von \Sexpr{f1} den ersten Faktor
+mit insgesamt \Sexpr{f1_lev} Leveln dar. Der zweite Faktor mit \Sexpr{f2}
+beinhaltet
+\Sexpr{f2_lev} Level. \\
 
 Im ersten Schritt {\"u}berlegen Sie ein einfaches experimentelles Design zu
-probieren. Sie entscheiden sich f{\"u}r das $\Sexpr{simple}$.
+probieren. Sie entscheiden sich f{\"u}r das \textit{\Sexpr{simple}}.
 
 \begin{enumerate}
-  \setcounter{enumi}{1}
-\item Skizieren Sie das $\Sexpr{simple}$ f{\"u}r Ihren Versuch! \textbf{4 Punkte}
+  \setcounter{enumi}{0}
+\item Skizieren Sie das \textit{\Sexpr{simple}} f{\"u}r Ihren Versuch!
+  \textbf{(4 Punkte)}
+\item Skizieren Sie eine Datentabelle f{\"u}r den Versuch mit \Sexpr{rep}
+  Wiederholungen! \textbf{(2 Punkte)}
+\item Skizieren Sie eine Abbilung mit \Sexpr{switch} und einem angenommenen
+  normalverteilten Outcome! \textbf{(4 Punkte)}
 \end{enumerate}
 
 

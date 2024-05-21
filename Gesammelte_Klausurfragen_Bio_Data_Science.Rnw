@@ -39,6 +39,7 @@ chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FAL
 linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
 nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
+experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 
 
 ## get the points per question
@@ -101,11 +102,11 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \clearpage
 % -----------------------------------------------------------------------
 
-\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
   \vspace{1Ex}
   \begin{itemize}
-  \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
-    Geräten - also ausdrücklich kein Handy!
+  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
+    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
   \item \textit{You can answer the questions in English without any consequences.}  
@@ -121,7 +122,7 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
     Textteil erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
-  \item[] Es wird folgender Notenschlüssel angewendet.   
+  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
   \end{itemize}
   \vspace{1ex}
 \begin{center}
@@ -156,9 +157,9 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
   \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
-  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
+  \item \textbf{{\"U}bertragen Sie Ihre Kreuze in die Tabelle auf
       dieser Seite.}
-  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
+  \item Es werden nur Antworten ber{\"u}cksichtigt, die in dieser Tabelle
     angekreuzt sind!
   \end{itemize}
 
@@ -277,7 +278,7 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \Sexpr{knit_child(mc_questions_vec[44])}
 \Sexpr{knit_child(mc_questions_vec[45])}
 \Sexpr{knit_child(mc_questions_vec[46])}
-\section*{Statistische Tests für Gruppenvergleiche} 
+\section*{Statistische Tests f{\"u}r Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[47])}
 \Sexpr{knit_child(mc_questions_vec[48])}
 \Sexpr{knit_child(mc_questions_vec[49])}
@@ -426,7 +427,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \begin{graybox}{Multiple Gruppenvergleiche}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel - Adjustierung für multiple Vergleiche}
+  \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel - Adjustierung f{\"u}r multiple Vergleiche}
   \item \href{https://jkruppa.github.io/stat-tests-posthoc.html}{Kapitel - Compact letter display}
   \end{itemize}
 \end{graybox}
@@ -487,7 +488,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
   \item \href{https://jkruppa.github.io/stat-linear-reg-basic.html}{Kapitel - Simple lineare Regression}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel - Maßzahlen der Modelgüte}
+  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel - Ma{\ss}zahlen der Modelg{\"u}te}
   \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel - Korrelation}
   \end{itemize}
 \end{graybox}
@@ -520,10 +521,21 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(linreg_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
+\begin{graybox}{Experimentelles Design}
+Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
+  \begin{itemize}
+  \item \href{https://jkruppa.github.io/experimental-design-preface.html}{Kapitel - Experimentelle Designs}
+  \end{itemize}  
+\end{graybox}
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(experimental_questions_vec[1])} 
+\clearpage
+% -----------------------------------------------------------------------
 \begin{graybox}{Mathematik}
-Die Formeln und weitere Informationen zu den Aufgaben gibt es in dem \href{https://jkruppa.github.io/math/}{Skript Mathematik}. Alle Matheaufgaben sind mehr oder weniger \href{https://de.wikipedia.org/wiki/Fermi-Problem}{Fermi Probleme} und werden daher auch so gelöst. Wir machen Annahmen an die Umstände und rechnen mit diesen Annahmen dann die Aufgaben durch. Manchmal passen die Annahmen besser und manchmal schlechter. Wie eben auch im echten Leben.
+Die Formeln und weitere Informationen zu den Aufgaben gibt es in dem \href{https://jkruppa.github.io/math/}{Skript Mathematik}. Alle Matheaufgaben sind mehr oder weniger \href{https://de.wikipedia.org/wiki/Fermi-Problem}{Fermi Probleme} und werden daher auch so gel{\"o}st. Wir machen Annahmen an die Umst{\"a}nde und rechnen mit diesen Annahmen dann die Aufgaben durch. Manchmal passen die Annahmen besser und manchmal schlechter. Wie eben auch im echten Leben.
 
-Die Inspirationen und Ideen sind dann teilweise bei den jeweiligen Aufgaben in den Fußnoten ergänzt oder aber auch bei den YouTube Videos zu finden. Nicht immer gibt es die eine Inspiration, dann habe ich auch keine angegeben. Wer mehr Lesen möchte und sich auch die ein oder andere Inspiration mehr holen möchte, kann die Arbeiten von Harte (1988, 2001) aufarbeiten. In der älteren Arbeit von Harte (1988) sind die Beispiele natürlich veraltet, lassen sich aber mit wenig Aufwand auf heutige, aktuelle Beispiele anpassen. In dem Sinne, viel Spaß bei den Aufgaben.
+Die Inspirationen und Ideen sind dann teilweise bei den jeweiligen Aufgaben in den Fu{\ss}noten erg{\"a}nzt oder aber auch bei den YouTube Videos zu finden. Nicht immer gibt es die eine Inspiration, dann habe ich auch keine angegeben. Wer mehr Lesen m{\"o}chte und sich auch die ein oder andere Inspiration mehr holen m{\"o}chte, kann die Arbeiten von Harte (1988, 2001) aufarbeiten. In der {\"a}lteren Arbeit von Harte (1988) sind die Beispiele nat{\"u}rlich veraltet, lassen sich aber mit wenig Aufwand auf heutige, aktuelle Beispiele anpassen. In dem Sinne, viel Spa{\ss} bei den Aufgaben.
 
 \begin{itemize}
 \item Harte, J. (1988). Consider a spherical cow: A course in environmental problem solving. University Science Books.
@@ -594,8 +606,8 @@ Die Inspirationen und Ideen sind dann teilweise bei den jeweiligen Aufgaben in d
 % -----------------------------------------------------------------------
 \begin{graybox}{Angewandte Nutztier- und Pflanzenwissenschaften (M.Sc.)}
   Im Rahmen der Klausur zu dem Modul Biostatistik werden auch Fragen
-  nur für die Studierenden des Schwerpunktes Nutztierwissenschaften
-  gestellt. Im Folgenden daher eine lose Sammlung von möglichen Fragen zu
+  nur f{\"u}r die Studierenden des Schwerpunktes Nutztierwissenschaften
+  gestellt. Im Folgenden daher eine lose Sammlung von m{\"o}glichen Fragen zu
   diesem Themenkomplex.
 \end{graybox}
 \clearpage
