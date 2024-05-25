@@ -1,4 +1,4 @@
-\documentclass[a4paper, 9pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{color}
+\documentclass[a4paper, 9pt]{scrartcl}\usepackage[]{graphicx}\usepackage[]{xcolor}
 % maxwidth is the original width if it is less than linewidth
 % otherwise use linewidth (to make sure the graphics do not exceed the margin)
 \makeatletter
@@ -12,9 +12,6 @@
 \makeatother
 
 \definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\makeatletter
-\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}}}
-\makeatother
 \newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
 \newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
 \newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
@@ -49,14 +46,6 @@
 \definecolor{messagecolor}{rgb}{0, 0, 0}
 \definecolor{warningcolor}{rgb}{1, 0, 1}
 \definecolor{errorcolor}{rgb}{1, 0, 0}
-\makeatletter
-\@ifundefined{AddToHook}{}{\AddToHook{package/xcolor/after}{
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-}}
-\makeatother
 \newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
 
 \usepackage{alltt}
@@ -64,7 +53,7 @@
 % -----------------------------------------------------------------------
 
 % -----------------------------------------------------------------------
-\input{C:/Users/jokruppa/Documents/GitHub/exam/init}
+\input{/Users/kruppajo/work/GitHub/exam/init}
 % -----------------------------------------------------------------------
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
 \begin{document}
@@ -1752,7 +1741,7 @@ Kontrolle.
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 12cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/statistisches-testen-04}
+  \includegraphics[height = 12cm]{/Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04}
 \end{center}
 
 
@@ -2184,18 +2173,20 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{verbatim}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in t.test.formula(drymatter \textasciitilde{} P, data\_tbl, var.equal = TRUE, paired = TRUE): cannot use 'paired' in formula method}}\begin{verbatim}
 ## 
-## 	Paired t-test
+## 	Welch t-Test
 ## 
 ## data:  freshmatter by N
-## t = 3.2733, df = 8, p-value = 0.0113
+## t = 2.1133, df = 10, p-value = 0.06071
 ## alternative hypothesis: true  is not equal to [condensed]
 ## 95 percent confidence interval:
-##  1.47752 8.52248
+##  -0.1879213  7.1022070
 ## sample estimates:
-## mean of the differences 
-##                       5
+##  mean in group mid mean in group trt1 
+##           18.85714           15.40000
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2247,7 +2238,7 @@ Datensatz einmal visualisiert.
 \end{knitrout}
 
 \begin{enumerate}
-\item Zeichnen Sie folgende statistischen Masszahlen in die Abildung ein!
+\item Zeichnen Sie folgende statistischen Ma{\ss}zahlen in die Abildung ein!
   Beschriften Sie die statistischen Ma{\ss}zahlen! \textbf{(6 Punkte)}
   \begin{itemize}
   \item Globale Mittelwert: $\beta_0$
@@ -2443,9 +2434,9 @@ verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen si
 \item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
   einfaktorielle ANOVA auf! \textbf{(2 Punkte)}
 \item Interpretieren Sie das Ergebnis der einfaktoriellen ANOVA! \textbf{(2 Punkt)} 
-\item Berechen Sie den Effektsch{\"a}tzer $\eta^2$. Was sagt Ihnen der Wert von
+\item Berechnen Sie den Effektsch{\"a}tzer $\eta^2$. Was sagt Ihnen der Wert von
   $\eta^2$ aus? \textbf{(2 Punkte)}
-\item Skizieren Sie eine Abbildung, der dem obigen Ergebnis der
+\item Skizzieren Sie eine Abbildung, der dem obigen Ergebnis der
   einfaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(3 Punkte)}
 \end{enumerate}
 
@@ -3049,7 +3040,7 @@ diagnostischen Test auf Klauenseuche aus.
 \vspace{1cm}
 
 \begin{center}
-  \includegraphics[width=17cm]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
+  \includegraphics[width=17cm]{/Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum}
 \end{center}
 
 
@@ -3088,7 +3079,7 @@ Fleckvieh ist gegeben.
  
 \begin{tikzpicture}
   \node (image) at (0,0) {
-    \includegraphics[width=\textwidth]{C:/Users/jokruppa/Documents/GitHub/exam/question/img/diag-doppelbaum}
+    \includegraphics[width=\textwidth]{/Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum}
   };
   \node[] at (-4.8,0) {\huge 200};
   \node[] at (-1.7,0) {\huge 40};
@@ -3686,7 +3677,7 @@ folgende gemessene Endpunkte zu Verf{\"u}gung: drymatter, yield, count, quality\
 \begin{graybox}{Experimentelles Design}
 Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
   \begin{itemize}
-  \item foo
+  \item \href{https://jkruppa.github.io/experimental-design-preface.html}{Kapitel - Experimentelle Designs}
   \end{itemize}  
 \end{graybox}
 \clearpage
@@ -5162,12 +5153,7 @@ den Zusammenhang in einer 2x2 Kreuztabelle dar.
 \paragraph{Network-Marketing oder Schneeballschlacht!}
 
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in year(Sys.Date()): could not find function "{}year"{}}}\end{kframe}
-\end{knitrout}
 
 Eine M{\"o}glichkeit, leicht Geld zu verdienen, ist es anderen Menschen f{\"u}r Geld
 zu versprechen, wie man leicht reich werden kann. Am besten nat{\"u}rlich ohne
@@ -5183,16 +5169,16 @@ abtauchen\footnote{Die Quellen der Inspiration f{\"u}r die Aufgabe waren
   \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{
     Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
 
-Das Jahr 2020 war das erfolgreichste Jahr in der Geschichte von
+Das Jahr 2022 war das erfolgreichste Jahr in der Geschichte von
 Direct Finanzanlagen Left/Right (D-FL/R). Das Unternehmen steigerte den Umsatz um rund
 27 Prozent von 310 Millionen Euro im Jahr
-2019. Doch wie viel kommt bei den Partnern an? Laut
+2021. Doch wie viel kommt bei den Partnern an? Laut
 D-FL/R habe das Unternehmen \ensuremath{2.8\times 10^{5}} aktive Partner.
 
 \begin{enumerate}
 \item Berechnen Sie zuerst den Umsatz der Firma D-FL/R im
-  Jahr 2020! \textbf{(1 Punkt)}
-\item Wie viel von dem Umsatz im Jahr 2020 wird im Durchschnitt von jedem
+  Jahr 2022! \textbf{(1 Punkt)}
+\item Wie viel von dem Umsatz im Jahr 2022 wird im Durchschnitt von jedem
   aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
   Durchschnitt f{\"u}r jeden aktiven Partner bei einer direkten Provision von
