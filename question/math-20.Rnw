@@ -13,12 +13,19 @@
 
 <<>>=
 person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
-            "einem Mädchen mit Zöpfen und Zahnspange", "einem Studenten im Karohemd") |> 
+            "einem M{\"a}dchen mit Z{\"o}pfen und Zahnspange", "einem Studenten im Karohemd",
+            "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
   sample(1)
 markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
 @
 
-"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele Aligatorenbirnen?"' Irritiert drehen Sie sich um und blicken in das hochrote Gesicht \Sexpr{person}. "'Wieso?"', entfährt es Ihnen und Sie bereuen sogleich die Frage. Schnell werden Sie zu einem Whiteboard geschliffen und müssen folgenden mathematischen untermauerten Argumenten im \Sexpr{markt} über sich ergehen lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich mitmachen.
+"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
+Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um
+und blicken in das hochrote Gesicht \Sexpr{person}. "'Wieso?"', entf{\"a}hrt es
+Ihnen und Sie bereuen sogleich die Frage. Schnell werden Sie zu einem
+Whiteboard geschliffen und m{\"u}ssen folgenden mathematischen untermauerten
+Argumenten im \Sexpr{markt} {\"u}ber sich ergehen lassen. Da kommen Sie nicht
+mehr raus, also k{\"o}nnen Sie auch gleich mitmachen.
 
 
 \begin{enumerate}

@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
 %% --------------------------------------------------------------------
 \hfill\href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width =
@@ -37,15 +37,15 @@ print_obj
 
 
 \begin{enumerate}
-  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(1
+  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(2
 Punkt)}
 \item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten!
-  Erkl{\"a}ren Sie \textit{eine} der Eigenschaften an einem Beispiel! \textbf{(3
+  Erkl{\"a}ren Sie \textit{eine} der Eigenschaften an einem Beispiel! \textbf{(2
     Punkte)}
-\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
   Effekts und der Signifikanz! Begr{\"u}nden Sie
-  Ihre Antwort! \textbf{(3 Punkte)}
-\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(3 Punkte)} 
+  Ihre Antwort! \textbf{(2 Punkte)}
+\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
+\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt?
+  Begr{\"u}nden Sie Ihre Antwort! \textbf{(1 Punkt)}
 \end{enumerate}

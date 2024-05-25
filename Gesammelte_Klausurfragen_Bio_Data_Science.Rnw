@@ -41,7 +41,6 @@ nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 
-
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
 
