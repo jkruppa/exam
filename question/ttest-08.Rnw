@@ -15,30 +15,24 @@ question_vec <- c("das statistische Hypothesenpaar",
 
 n_vec <- sample(c(5,7,9), 1)
 
-data_tbl <- rbind(tibble(low = round(rnorm(n = n_vec,
+data_tbl <- cbind(tibble(low = round(rnorm(n = n_vec,
                                          mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather,
+                                         sd = sample(c(2, 3, 4), 1)))),
                   tibble(high = round(rnorm(n = n_vec,
                                          mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather) %>%
-  set_names(c("P", "drymatter")) %>%
-  sample_n(size = nrow(.))
+                                         sd = sample(c(2, 3, 4), 1))))) 
 
 
-preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE,
+preprint <- t.test(data_tbl$low, data_tbl$high, var.equal = TRUE,
                    paired = TRUE)
 preprint$null.value <- "[condensed]"
 
-preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "pigweight by group", "chickenweight by infusion") %>% 
+preprint$data.name <- c("low and high", "before and after", "t0 and t1", "ctrl and trt") %>% 
   sample(1)
 
 
 preprint
 
-ttest <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
-tk <- qt(0.975, df=ttest$parameter)
 @
 
 
