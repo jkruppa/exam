@@ -46,6 +46,7 @@ chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FAL
 linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
 nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
+experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 
 ## glue them
 glue_questions_vec <- c(desc_stat_questions_vec,
@@ -56,6 +57,7 @@ glue_questions_vec <- c(desc_stat_questions_vec,
                         chisquare_questions_vec,
                         nonpar_questions_vec,
                         linreg_questions_vec,
+                        experimental_questions_vec,
                         math_questions_vec,
                         tier_questions_vec)
 
