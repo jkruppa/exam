@@ -30,7 +30,13 @@ tomate_g <- str_c(sample(c(90, 100, 110, 120), 1), " - ",
 salat_g <- str_c(sample(c(300, 310, 320, 280), 1), " - ",
                    sample(c(490, 510, 520, 530), 1))
 blaubeere_g <- str_c(sample(c(3.0, 3.1, 3.2, 3.3), 1), " - ",
-                   sample(c(3.5, 3.6, 3.7, 3.8), 1))
+                     sample(c(3.5, 3.6, 3.7, 3.8), 1))
+export_blau_chile <- c(75000, 77000, 79000, 80000, 90000) %>% sample(1)
+export_avocado_chile <- c(190000, 200000, 210000, 230000) %>% sample(1) 
+export_blau_chile_per <- c(5.1, 6.1, 7.2, 8.6) %>% sample(1) 
+export_avocado_chile_per <- c(18.1, 21.2, 23.8, 22.1) %>% sample(1) 
+
+
 @
 
 "'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
@@ -42,15 +48,38 @@ mathematischen untermauerten Argumenten im \Sexpr{markt} {\"u}ber sich ergehen
 lassen. Da kommen Sie nicht mehr raus, also k{\"o}nnen Sie auch gleich
 mitmachen. \\
 
-\textit{Nutzen Sie im Folgenden die tabellarische Darstellung des Dreisatzes}
+\textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
+  Dreisatzes! \textbf{(1 Punkt)}}
 
 \Sexpr{heidel_beere_pk} Blaubeerschalen kosten \Sexpr{heidel_beere_pk * heidel_beere_price} Euro. Wie viel kosten \Sexpr{heidel_beere_pk + sample(1:5, 1)} Schalen?
+
+\begin{itemize}[noitemsep]
+\item Ein Kilo Strauchtomaten ben{\"o}tigt \Sexpr{kilo_tomate_water}l Wasser.
+\item Ein Kilo Salat ben{\"o}tigt \Sexpr{kilo_salat_water}l Wasser.
+\item Ein Kilo Avocado ben{\"o}tigt \Sexpr{kilo_avocado_water}l Wasser.
+\item Ein Kilo Blaubeeren ben{\"o}tigt \Sexpr{kilo_blaubeeren_water}l Wasser.
+\end{itemize}
+
+\begin{itemize}[noitemsep]
+\item Eine Strauchtomate wiegt \Sexpr{tomate_g}g in Frischmasse.
+\item Ein Salatkopf wiegt \Sexpr{salat_g}g in Frischmasse.
+\item Eine Avocado wiegt \Sexpr{avocado_g}g in Frischmasse.
+\item Eine Blaubeeree wiegt \Sexpr{blaubeeren_g}g in Frischmasse.
+\end{itemize}
 
 \begin{enumerate}
   \setcounter{enumi}{5}
 \item Be
   Provision abzubezahlen? \textbf{(1 Punkt)}
 \end{enumerate}
+
+In dem Exportjahr 2023/24 blieben die Ertr{\"a}ge von Blaubeeren mit \Sexpr{export_blau_chile}t
+in dem prognostizierten Rahmen aber hinter den Erwartungen zur{\"u}ck. Die
+Menge reduzierte sich um \Sexpr{export_blau_per}\%. Die Exporte f{\"u}r Avocados stiegen in
+dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile}t an. 
+
+Our World in Data anschauen?
+FAOSTAT anschauen?
 
 %https://de.serlo.org/mathe/2193/prozentrechnung-mittels-formeln
 %https://123mathe.de/dreisatz-einfach-rechnen
