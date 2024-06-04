@@ -12,6 +12,7 @@
 
 
 <<>>=
+export_year <- "2023/24"
 person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
             "einem M{\"a}dchen mit Z{\"o}pfen und Zahnspange", "einem Studenten im Karohemd",
             "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
@@ -35,7 +36,13 @@ export_blau_chile <- c(75000, 77000, 79000, 80000, 90000) %>% sample(1)
 export_avocado_chile <- c(190000, 200000, 210000, 230000) %>% sample(1) 
 export_blau_chile_per <- c(5.1, 6.1, 7.2, 8.6) %>% sample(1) 
 export_avocado_chile_per <- c(18.1, 21.2, 23.8, 22.1) %>% sample(1) 
-
+wasserverbauch_chile <- c(45, 50, 55, 60) %>% sample(1)
+wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
+                          "9 - 14 Liter pro Sp{\"u}lgang",
+                          "35 - 115 Liter pro Waschgang einer Waschmaschine",
+                          "8 - 17 Liter pro Sp{\"u}lmaschinenlauf",
+                          "3 - 12 Liter pro Minute H{\"a}ndewaschen") %>%
+  sample(2)
 
 @
 
@@ -46,7 +53,12 @@ Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
 Whiteboard voller roter Schn{\"u}re geschliffen und m{\"u}ssen folgenden
 mathematischen untermauerten Argumenten im \Sexpr{markt} {\"u}ber sich ergehen
 lassen. Da kommen Sie nicht mehr raus, also k{\"o}nnen Sie auch gleich
-mitmachen. \\
+mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
+  wissenschaftliche Artikel:
+  \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis
+  zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August 2021}.}. \\
+
+
 
 \textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
   Dreisatzes! \textbf{(1 Punkt)}}
@@ -73,10 +85,25 @@ mitmachen. \\
   Provision abzubezahlen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-In dem Exportjahr 2023/24 blieben die Ertr{\"a}ge von Blaubeeren mit \Sexpr{export_blau_chile}t
-in dem prognostizierten Rahmen aber hinter den Erwartungen zur{\"u}ck. Die
-Menge reduzierte sich um \Sexpr{export_blau_per}\%. Die Exporte f{\"u}r Avocados stiegen in
-dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile}t an. 
+In dem Exportjahr \Sexpr{export_year} blieben die Ertr{\"a}ge von Blaubeeren mit
+\Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den
+Erwartungen zur{\"u}ck. Die Menge reduzierte sich um
+\Sexpr{export_blau_per}\%. Die Exporte f{\"u}r Avocados stiegen in dem gleichen
+Zeitraum um \Sexpr{export_avocado_chile_per}\% auf
+\Sexpr{export_avocado_chile}t an.
+
+\begin{enumerate}
+  \setcounter{enumi}{5}
+\item Wie viele Tonnen Wasser hat Chile in dem Exportjahr \Sexpr{export_year} exportiert? \textbf{(1 Punkt)}
+\end{enumerate}
+
+Chile ist eines der wenigen L{\"a}nder der Welt, die ihr Wasser komplett
+privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes
+f{\"u}r den h{\"a}uslichen Verbrauch vorgesehen. In den D{\"o}rfern der
+Anbauregionen versorgen daher Tankwagen die Bev{\"o}lkerung jede Woche mit Wasser, es
+gibt etwa \Sexpr{wasserverbrauch_type} Liter pro Kopf.
+
+\Sexpr{wasserverbrauch_type[1]} und \Sexpr{wasserverbrauch_type[2]}
 
 Our World in Data anschauen?
 FAOSTAT anschauen?
