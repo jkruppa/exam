@@ -17,6 +17,8 @@ person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
             "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
   sample(1)
 markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
+heidel_beere_pk <- c(3,4,5,6,7) %>% sample(1)
+heidel_beere_price <- c(1.60, 1.70, 1.80, 1.90) %>% sample(1)
 @
 
 "'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
@@ -29,13 +31,15 @@ lassen. Da kommen Sie nicht mehr raus, also k{\"o}nnen Sie auch gleich
 mitmachen.
 
 
+\Sexpr{heidel_beere_pk} Blaubeerschalen kosten \Sexpr{heidel_beere_pk * heidel_beere_price} Euro. Wie viel kosten \Sexpr{heidel_beere_pk + sample(1:5, 1)} Schalen?
+
 \begin{enumerate}
   \setcounter{enumi}{5}
 \item Be
   Provision abzubezahlen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-https://de.serlo.org/mathe/2193/prozentrechnung-mittels-formeln
-https://123mathe.de/dreisatz-einfach-rechnen
-https://de.serlo.org/mathe/66809/aufgaben-zum-dreisatz
-https://www.mathe-ist-einfach.de/Dreisatz/Aufgaben_Dreisatz1.pdf
+%https://de.serlo.org/mathe/2193/prozentrechnung-mittels-formeln
+%https://123mathe.de/dreisatz-einfach-rechnen
+%https://de.serlo.org/mathe/66809/aufgaben-zum-dreisatz
+%https://www.mathe-ist-einfach.de/Dreisatz/Aufgaben_Dreisatz1.pdf
