@@ -18,7 +18,7 @@ person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
   sample(1)
 markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
 heidel_beere_pk <- c(3,4,5,6,7) %>% sample(1)
-heidel_beere_price <- c(1.60, 1.70, 1.80, 1.90) %>% sample(1)
+heidel_beere_price <- c(1.59, 1.79, 1.89, 1.99) %>% sample(1)
 @
 
 "'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
@@ -28,8 +28,9 @@ Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
 Whiteboard voller roter Schn{\"u}re geschliffen und m{\"u}ssen folgenden
 mathematischen untermauerten Argumenten im \Sexpr{markt} {\"u}ber sich ergehen
 lassen. Da kommen Sie nicht mehr raus, also k{\"o}nnen Sie auch gleich
-mitmachen.
+mitmachen. \\
 
+\textit{Nutzen Sie im Folgenden die tabellarische Darstellung des Dreisatzes}
 
 \Sexpr{heidel_beere_pk} Blaubeerschalen kosten \Sexpr{heidel_beere_pk * heidel_beere_price} Euro. Wie viel kosten \Sexpr{heidel_beere_pk + sample(1:5, 1)} Schalen?
 
