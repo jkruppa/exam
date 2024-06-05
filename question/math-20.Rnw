@@ -11,7 +11,7 @@
 \paragraph{Aligatorenbirnen und Blaubeeren}
 
 <<>>=
-export_year <- "2023/24"
+export_year <- c(2021, 2022, 2023, 2024) |> sample(1)
 person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
             "einem M{\"a}dchen mit Z{\"o}pfen und Zahnspange", "einem Studenten im Karohemd",
             "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
@@ -74,7 +74,7 @@ Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder
 \item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Das Whiteboard beinhaltet folgende Liste mit Informationen zu Produkten aus dem \Sexpr{markt}. Seltsam, was man so alles in einem \Sexpr{markt} über Produkte erfährt.
+Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem \Sexpr{markt} über Gemüse erfährt.
   
 \begin{itemize}[noitemsep]
 \item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g.
@@ -88,23 +88,14 @@ Das Whiteboard beinhaltet folgende Liste mit Informationen zu Produkten aus dem 
 \item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(2 Punkte)}
 \end{enumerate}
 
-In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit
-\Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den
-Erwartungen zurück. Die Menge reduzierte sich um
-\Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados stiegen in dem gleichen
-Zeitraum um \Sexpr{export_avocado_chile_per}\% auf
-\Sexpr{export_avocado_chile}t an.
+Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den Erwartungen zurück. Die Menge reduzierte sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados stiegen in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile} an.
 
 \begin{enumerate}
-  \setcounter{enumi}{5}
-\item Wie viele Tonnen Wasser hat Chile in dem Exportjahr \Sexpr{export_year} exportiert? \textbf{(1 Punkt)}
+  \setcounter{enumi}{3}
+\item Wie viele Tonnen Wasser hat Chile in dem Exportjahr \Sexpr{export_year-1} exportiert? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett
-privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes
-für den häuslichen Verbrauch vorgesehen. In den Dörfern der
-Anbauregionen versorgen daher Tankwagen die Bevölkerung jede Woche mit Wasser, es
-gibt etwa \Sexpr{wasserverbrauch_chile} Liter Wasser pro Kopf für den täglichen Bedarf.
+Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen daher Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa \Sexpr{wasserverbrauch_chile} Liter Wasser pro Kopf für den täglichen Bedarf.
 
 \Sexpr{wasserverbrauch_type[1]} und \Sexpr{wasserverbrauch_type[2]}
 
