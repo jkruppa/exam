@@ -36,7 +36,7 @@ export_blau_chile <- c(75000, 77000, 79000, 80000, 90000) %>% sample(1)
 export_avocado_chile <- c(190000, 200000, 210000, 230000) %>% sample(1) 
 export_blau_chile_per <- c(5.1, 6.1, 7.2, 8.6) %>% sample(1) 
 export_avocado_chile_per <- c(18.1, 21.2, 23.8, 22.1) %>% sample(1) 
-wasserverbauch_chile <- c(45, 50, 55, 60) %>% sample(1)
+wasserverbrauch_chile <- c(45, 50, 55, 60) %>% sample(1)
 wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
                           "9 - 14 Liter pro Sp{\"u}lgang",
                           "35 - 115 Liter pro Waschgang einer Waschmaschine",
@@ -70,17 +70,10 @@ mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
 \Sexpr{heidel_beere_pk} Blaubeerschalen kosten \Sexpr{heidel_beere_pk * heidel_beere_price} Euro. Wie viel kosten \Sexpr{heidel_beere_pk + sample(1:5, 1)} Schalen?
 
 \begin{itemize}[noitemsep]
-\item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser.
-\item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser.
-\item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser.
-\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser.
-\end{itemize}
-
-\begin{itemize}[noitemsep]
-\item Eine Strauchtomate wiegt \Sexpr{tomate_g}g in Frischmasse.
-\item Ein Salatkopf wiegt \Sexpr{salat_g}g in Frischmasse.
-\item Eine Avocado wiegt \Sexpr{avocado_g}g in Frischmasse.
-\item Eine Blaubeeree wiegt \Sexpr{blaubeeren_g}g in Frischmasse.
+\item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g in Frischmasse.
+\item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser. Ein Salatkopf wiegt \Sexpr{salat_g}g in Frischmasse.
+\item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser. Eine Avocado wiegt \Sexpr{avocado_g}g in Frischmasse.
+\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeeree wiegt \Sexpr{blaubeeren_g}g in Frischmasse.
 \end{itemize}
 
 \begin{enumerate}
