@@ -10,7 +10,6 @@
 
 \paragraph{Aligatorenbirnen und Blaubeeren}
 
-
 <<>>=
 export_year <- "2023/24"
 person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
@@ -20,6 +19,9 @@ person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
 markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
 heidel_beere_pk <- c(3,4,5,6,7) %>% sample(1)
 heidel_beere_price <- c(1.59, 1.79, 1.89, 1.99) %>% sample(1)
+heidel_beere_kauf <- heidel_beere_pk + sample(1:5, 1)
+aligator_price <- c(2.59, 0.99, 2.89, 1.79) %>% sample(1)
+schein <- c(50, 100, 200) |> sample(1)
 kilo_tomate_water <- c(160, 170, 180, 190) %>% sample(1)
 kilo_salat_water <- c(130, 120, 100, 140) %>% sample(1)
 kilo_avocado_water <- c(1050, 950, 1100, 980) %>% sample(1)
@@ -48,7 +50,7 @@ wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
 
 "'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
 Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um
-und blicken in das hochrote Gesicht \Sexpr{person}. "'Wieso?"', entfährt es
+und blicken in das puderrote Gesicht \Sexpr{person}. "'Wieso?"', entfährt es
 Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
 Whiteboard voller roter Schnüre geschliffen und müssen folgenden
 mathematischen untermauerten Argumenten im \Sexpr{markt} über sich ergehen
@@ -60,26 +62,30 @@ mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
   2021} und
 \href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit
   in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem
-  Fachjournal der Welthungerhilfe vom April 2022.}}. \\
+  Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
 
-
+Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{person}?\\
 
 \textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
   Dreisatzes! \textbf{(1 Punkt)}}
 
-\Sexpr{heidel_beere_pk} Blaubeerschalen kosten \Sexpr{heidel_beere_pk * heidel_beere_price} Euro. Wie viel kosten \Sexpr{heidel_beere_pk + sample(1:5, 1)} Schalen?
+\begin{enumerate}
+\item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(2 Punkte)}
+\item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(2 Punkte)}
+\end{enumerate}
 
+Das Whiteboard beinhaltet folgende Liste mit Informationen zu Produkten aus dem \Sexpr{markt}. Seltsam, was man so alles in einem \Sexpr{markt} über Produkte erfährt.
+  
 \begin{itemize}[noitemsep]
-\item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g in Frischmasse.
-\item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser. Ein Salatkopf wiegt \Sexpr{salat_g}g in Frischmasse.
-\item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser. Eine Avocado wiegt \Sexpr{avocado_g}g in Frischmasse.
-\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeeree wiegt \Sexpr{blaubeeren_g}g in Frischmasse.
+\item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g.
+\item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser. Ein Salatkopf wiegt \Sexpr{salat_g}g.
+\item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser. Eine Avocado wiegt \Sexpr{avocado_g}g.
+\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeeree wiegt \Sexpr{blaubeeren_g}g.
 \end{itemize}
 
 \begin{enumerate}
-  \setcounter{enumi}{5}
-\item Be
-  Provision abzubezahlen? \textbf{(1 Punkt)}
+  \setcounter{enumi}{2}
+\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(2 Punkte)}
 \end{enumerate}
 
 In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit
