@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -45,7 +45,8 @@ wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
                           "8 - 17 Liter pro Sp{\"u}lmaschinenlauf",
                           "3 - 12 Liter pro Minute H{\"a}ndewaschen") %>%
   sample(2)
-
+unit <- c("Tonnen", "Liter", "Kubikmeter") |> sample(1)
+water_perc <- c("ein", "zwei", "drei") |> sample(1)
 @
 
 "'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
@@ -67,11 +68,11 @@ mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
 Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{person}?\\
 
 \textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
-  Dreisatzes! \textbf{(1 Punkt)}}
+  Dreisatzes!}
 
 \begin{enumerate}
-\item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(2 Punkte)}
-\item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(2 Punkte)}
+\item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(1 Punkt)}
+\item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem \Sexpr{markt} über Gemüse erfährt.
@@ -80,29 +81,31 @@ Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch b
 \item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g.
 \item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser. Ein Salatkopf wiegt \Sexpr{salat_g}g.
 \item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser. Eine Avocado wiegt \Sexpr{avocado_g}g.
-\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeeree wiegt \Sexpr{blaubeeren_g}g.
+\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeere wiegt \Sexpr{blaubeeren_g}g.
 \end{itemize}
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(2 Punkte)}
+\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
 \end{enumerate}
 
 Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den Erwartungen zurück. Die Menge reduzierte sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados stiegen in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile} an.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie viele Tonnen Wasser hat Chile in dem Exportjahr \Sexpr{export_year-1} exportiert? \textbf{(2 Punkte)}
+\item Wie viele \Sexpr{unit} Wasser hat Chile in dem Exportjahr \Sexpr{export_year-1} exportiert? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen daher Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa \Sexpr{wasserverbrauch_chile} Liter Wasser pro Kopf für den täglichen Bedarf.
+Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur \Sexpr{water_perc} Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa \Sexpr{wasserverbrauch_chile} Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei \Sexpr{wasserverbrauch_type[1]} und \Sexpr{wasserverbrauch_type[2]}.
 
-\Sexpr{wasserverbrauch_type[1]} und \Sexpr{wasserverbrauch_type[2]}
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(2 Punkte)}
+\end{enumerate}
 
-Our World in Data anschauen?
-FAOSTAT anschauen?
+Das alles hätten Sie nicht von \Sexpr{person} erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
 
-%https://de.serlo.org/mathe/2193/prozentrechnung-mittels-formeln
-%https://123mathe.de/dreisatz-einfach-rechnen
-%https://de.serlo.org/mathe/66809/aufgaben-zum-dreisatz
-%https://www.mathe-ist-einfach.de/Dreisatz/Aufgaben_Dreisatz1.pdf
+\begin{enumerate}
+  \setcounter{enumi}{5}  
+  \item Nennen Sie eine \textit{Daten}quelle im Internet, wo Sie mehr Informationen zu landwirtschaftlichen Daten oder klimatischen, wirtschaftlichen und gesellschaftlichen Daten erhalten! \textbf{(1 Punkt)}
+\end{enumerate}
