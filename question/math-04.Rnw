@@ -4,68 +4,108 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/1B53cVFIU7Q}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+\hfill\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Nelken von den Molukken}
+\paragraph{Aligatorenbirnen und Blaubeeren}
 
 <<>>=
-day1 <- c(40, 45, 50, 42) %>% sample(1)
-day2 <- c(60, 65, 70, 72) %>% sample(1)
-day3 <- c(100, 105, 110, 115) %>% sample(1)
-people <- c(218, 222, 237, 245) %>% sample(1)
-vit_c_sellerie <- c(7000, 8000, 6000, 5000, 4000) %>% sample(1)
-vit_c_bedarf <- c(105, 110, 115, 110, 120) %>% sample(1)
-surv_day <- c(90, 95, 100) %>% sample(1)
-day_journey <- c(18, 20, 22, 24) %>% sample(1)
-unit <- c("kg", "t") %>% sample(1) 
-gramm <- c(150, 100, 50, 10) %>% sample(1)
+export_year <- c(2021, 2022, 2023, 2024) |> sample(1)
+person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
+            "einem M{\"a}dchen mit Z{\"o}pfen und Zahnspange", "einem Studenten im Karohemd",
+            "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
+  sample(1)
+markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
+heidel_beere_pk <- c(3,4,5,6,7) %>% sample(1)
+heidel_beere_price <- c(1.59, 1.79, 1.89, 1.99) %>% sample(1)
+heidel_beere_kauf <- heidel_beere_pk + sample(1:5, 1)
+aligator_price <- c(2.59, 0.99, 2.89, 1.79) %>% sample(1)
+schein <- c(50, 100, 200) |> sample(1)
+kilo_tomate_water <- c(160, 170, 180, 190) %>% sample(1)
+kilo_salat_water <- c(130, 120, 100, 140) %>% sample(1)
+kilo_avocado_water <- c(1050, 950, 1100, 980) %>% sample(1)
+kilo_blaubeeren_water <- c(820, 830, 850, 880) %>% sample(1)
+avocado_g <- str_c(sample(c(120, 130, 140, 150), 1), " - ",
+                   sample(c(380, 400, 410, 420), 1))
+tomate_g <- str_c(sample(c(90, 100, 110, 120), 1), " - ",
+                   sample(c(120, 125, 130, 115), 1))
+salat_g <- str_c(sample(c(300, 310, 320, 280), 1), " - ",
+                   sample(c(490, 510, 520, 530), 1))
+blaubeeren_g <- str_c(sample(c(3.0, 3.1, 3.2, 3.3), 1), " - ",
+                     sample(c(3.5, 3.6, 3.7, 3.8), 1))
+export_blau_chile <- c(75000, 77000, 79000, 80000, 90000) %>% sample(1)
+export_avocado_chile <- c(190000, 200000, 210000, 230000) %>% sample(1) 
+export_blau_chile_per <- c(5.1, 6.1, 7.2, 8.6) %>% sample(1) 
+export_avocado_chile_per <- c(18.1, 21.2, 23.8, 22.1) %>% sample(1) 
+wasserverbrauch_chile <- c(45, 50, 55, 60) %>% sample(1)
+wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
+                          "9 - 14 Liter pro Sp{\"u}lgang",
+                          "35 - 115 Liter pro Waschgang einer Waschmaschine",
+                          "8 - 17 Liter pro Sp{\"u}lmaschinenlauf",
+                          "3 - 12 Liter pro Minute H{\"a}ndewaschen") %>%
+  sample(2)
+unit <- c("Tonnen", "Liter", "Kubikmeter") |> sample(1)
+water_perc <- c("ein", "zwei", "drei") |> sample(1)
 @
 
-In der Ausstellung "`Europa und das Meer"' im Deutschen Historischen Museum in
-Berlin gab es folgendes Zitat {\"u}ber die Probleme der fr{\"u}hen Hochseeschifffahrt.
+"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
+Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um
+und blicken in das puderrote Gesicht von \Sexpr{person}. "'Wieso?"', entfährt es
+Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
+Whiteboard voller roter Schnüre geschliffen und müssen folgenden
+mathematischen untermauerten Argumenten im \Sexpr{markt} über sich ergehen
+lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich
+mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
+  für die Aufgabe waren folgende Reportagen:
+  \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis
+  zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August
+  2021} und
+\href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit
+  in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem
+  Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
 
-\begin{quote}
-  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach \Sexpr{day1} Tagen die
-  ersten Symptome ein; die ersten Toten sind nach \Sexpr{day2} Tagen zu beklagen;
-  nach \Sexpr{day3} Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
-\end{quote}
+Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{person}?\\
 
-Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den
-s{\"u}damerikanischen Kontinent zu finden. Zu seiner Flotte geh{\"o}rten
-f{\"u}nf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die
-Concepci{\'o}n und die Santiago - mit einer Besatzung von insgesamt
-\Sexpr{people} Mann. 
+\textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
+  Dreisatzes!}
 
 \begin{enumerate}
-\item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der
-  Flotte in der Form einer {\"U}berlebenszeitkurve dar! Beschriften Sie die
-  Achsen entsprechend! \textbf{(3 Punkte)} 
-\item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen
-  aus Ihrer Abbildung ab! \textbf{(2 Punkte)} 
+\item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(1 Punkt)}
+\item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(1 Punkt)}
 \end{enumerate}
 
-
-Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem
-Bericht "`[...] Um nicht Hungers zu sterben, a{\ss}en wir das Leder, mit dem
-die gro{\ss}e Rahe zum Schutz der Taue umwunden war."' Insbesondere die
-Mannschaft der Concepci{\'o}n erlitt gro{\ss}e Verluste durch die Skrobut bei der
-{\"U}berquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um
-wilden Sellerie aufzunehmen. Wilder Sellerie enth{\"a}lt
-$\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}mg$ Vitamin C. Der Bedarf liegt bei
-$\Sexpr{vit_c_bedarf}mg$ pro Tag f{\"u}r M{\"a}nner.
+Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem \Sexpr{markt} über Gemüse erfährt.
+  
+\begin{itemize}[noitemsep]
+\item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g.
+\item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser. Ein Salatkopf wiegt \Sexpr{salat_g}g.
+\item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser. Eine Avocado wiegt \Sexpr{avocado_g}g.
+\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeere wiegt \Sexpr{blaubeeren_g}g.
+\end{itemize}
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie die notwendige Menge in $\Sexpr{unit}$ an
-  aufzunehmenden wilden Sellerie auf die Concepci{\'o}n f{\"u}r die ununterbrochene
-  Fahrt von drei Monate und \Sexpr{day_journey} Tage {\"u}ber den Pazifik!
-  \textbf{(3 Punkte)}
-\item Skizzieren Sie die {\"U}berlebenszeitkurve f{\"u}r die Concepci{\'o}n im
-  Vergleich zu der {\"U}berlebenszeitkurve der Trinidad! Beschriften Sie die
-  Achsen! \textbf{(2 Punkte)}
+\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
 \end{enumerate}
 
+Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den Erwartungen zurück. Die Menge reduzierte sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados stiegen in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile} an.
 
+\begin{enumerate}
+  \setcounter{enumi}{3}
+\item Wie viele \Sexpr{unit} Wasser hat Chile in dem Exportjahr \Sexpr{export_year-1} exportiert? \textbf{(2 Punkte)}
+\end{enumerate}
+
+Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur \Sexpr{water_perc} Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa \Sexpr{wasserverbrauch_chile} Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei \Sexpr{wasserverbrauch_type[1]} und \Sexpr{wasserverbrauch_type[2]}.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(2 Punkte)}
+\end{enumerate}
+
+Das alles hätten Sie nicht von \Sexpr{person} erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
+
+\begin{enumerate}
+  \setcounter{enumi}{5}  
+  \item Nennen Sie eine \textit{Daten}quelle im Internet, wo Sie mehr Informationen zu landwirtschaftlichen Daten oder klimatischen, wirtschaftlichen und gesellschaftlichen Daten erhalten! \textbf{(1 Punkt)}
+\end{enumerate}

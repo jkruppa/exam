@@ -4,69 +4,23 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/q-qYK4Chslg}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
+\hfill\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/caution}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Event Horizon -- Am Rande des Universums}
+\paragraph{Die Dampfnudelerde}
 
 <<>>=
-m_sun <- c(2e30, 2e28, 2e31, 2e29, 2e27) %>% sample(1)
-m_perc <- c(30, 35, 40, 45, 20) %>% sample(1)
-r_black <- c(4000, 3000, 5000, 2500, 3500) %>% sample(1)
-c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
-grav <- c(6.674, 5.974, 6.274, 6.165) %>% sample(1)
-ding_1 <- c("Ein Amboss", "Ein Auto", "Ein Elefant", "Eine Kirchenglocke", "Ein Flugzeug") %>% sample(1)
-ding_2 <- c("eine Feder", "ein Lolli", "ein {\"A}ffchen", "ein Handtuch", "eine Klorolle") %>% sample(1)
+dino_years <- c(66, 65, 67, 69) |> sample(1)
 @
 
-Die Sonne hat eine aktuelle, angenommene Masse von $\Sexpr{m_sun}$kg. Wenn
-die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem
-Radius von $\Sexpr{r_black}$m kollabiert, wird die Sonne $\Sexpr{m_perc}$\%
-der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$
-und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen.  Sie
-haben folgende Formeln f{\"u}r die kinetische Energie des Lichtteilchens
-$E_{kin}$ und der Graviationsenergie des schwarzen Lochs $E_{grav}$
-gegeben.
-
-\begin{center}
-  \begin{tabular}{cc}
-    $E_{kin} = \cfrac{1}{2}m_fv_f^2$ & $E_{grav} = \cfrac{Gm_sm_f}{r_s}$\\
-  \end{tabular}
-\end{center}
-
-mit
-
-\begin{itemize}[noitemsep]
-\item $m_f$, gleich der Masse [kg] des fliehenden Objektes
-\item $m_s$, gleich der Masse [kg] des station{\"a}ren Objekts
-\item $r_s$, gleich dem Radius [m] des station{\"a}ren Objekts  
-\item $G$, gleich der Gravitationskonstante mit $\Sexpr{grav} \cdot 10^{-11}
-  m^3(kg \cdot s^2)^{-1}$ 
-\end{itemize}
-
-Im Folgenden wollen wir uns mit der Frage besch{\"a}ftigen, ob das
-Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
+"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum die Dinosaurier vor \Sexpr{dino_years} Millionen Jahren - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde aus dem 17.–18. Jahrhundert von Edmond Halley? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen.\footnote{Die Quelle der Inspiration
+  für die Aufgabe war folgende Artikel:
+  \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"`Skeptische Anmerkungen --- Die Erde als Dampfnudel"' in Der Humanistische Pressedienst} und {https://www.final-frontier.ch/erdexpansion}{"`Die expandierende Erde – die gescheiterte Hypothese"' in Final-frontier.ch}}
 
 \begin{enumerate}
-\item Geben Sie die Formel f{\"u}r die Fluchtgeschwindigkeit $v_f$ an! 
-  \textbf{(1 Punkt)}
-\item {\"U}berpr{\"u}fen Sie Ihre umgestellte Formel nach $v_f$ anhand der Einheiten!
-  \textbf{(1 Punkt)} 
-\item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
-  Lichtteilchens mit den angegebenen Informationen! \textbf{(2 Punkte)}
-\item Gehen Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$
-  aus. Kann das Lichtteilchen der Gravitation des schwarzen Lochs
-  entkommen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
-  $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
-  und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
-  \textbf{(2 Punkte)}
- \item \Sexpr{ding_1} und \Sexpr{ding_2} st{\"u}rzen aus gro{\ss}er und gleicher H{\"o}he
-  in ein schwarzes Loch. Welches der beiden Objekte {\"u}berschreitet zuerst
-  den Ereignishorizont des schwarzes Loches? Begr{\"u}nden
-  Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)}  
+  \setcounter{enumi}{2}
+\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
 \end{enumerate}
 
 

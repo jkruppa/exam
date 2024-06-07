@@ -4,111 +4,89 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/4-dSaPMhK9s}{\includegraphics[width =
+\hfill\href{https://youtu.be/tDgr6fpkkYA}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Die atmende Wand und Brot aus Luft}
+\paragraph{Pyramiden bauen}
 
 <<>>=
-m_grad <- c(70, 71, 72, 73) %>% sample(1)
-vol <- c(sample(c(77.1, 78.1, 79.7), 1),
-         sample(c(20.45, 19.5, 21.3), 1),
-         sample(c(0.035, 0.045, 0.029), 1))
-molg <- c(sample(c(28.1, 28.4, 27.9), 1),
-         sample(c(15.8, 16.2, 16.5), 1),
-         sample(c(11.8, 12.1, 12.5), 1))
-crit_ra <- c(280, 300, 320, 400, 380) %>% sample(1)
-radon_t <- c(3.5, 4.1, 2.8, 1.8, 3.7) %>% sample(1)
-polo_t <- c(135, 140, 143, 180, 160) %>% sample(1)
-low_ra <- c(80, 90, 100, 110, 120) %>% sample(1)
-upper <- c(21, 19, 17, 15, 23) %>% sample(1)
-upper_str <- str_c(upper, ":00")
-mid_str <- str_c(((upper-7)/2+7), ":00")
+land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
+          "oldenburgischen") %>% sample(1)
+land_e <- str_replace(land, "n$", "")
+m_grad <- c(70, 71, 72, 73, 74) %>% sample(1)
+dick_torf <- c(3, 4, 5, 6, 7) %>% sample(1)
+a_grad <- c(54, 53, 52, 51, 55, 60) %>% sample(1)
+elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
+side <- round(c(17, 20, 23)*100/elle) %>% sample(1)
+beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
+           "Finanzbeamter") %>% sample(1)
+winkel <- c("steil", "flach") %>% sample(1)
+n_slave <- c(2,3,4,5) %>% sample(1)
+krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
+effizienz <- c(80, 90, 70, 75, 85) %>% sample(1)
+schubkarre <- c(90, 100, 110, 95) %>% sample(1)
+winkel_rampe <- c(9, 10, 11, 12, 14) %>% sample(1)
+winkel_neu <- c(5, 6, 7, 8) %>% sample(1)
 @
 
-Sie wollen das Ausma{\ss} der Radonbelastung in ihrem Keller bestimmen und
-l{\"u}ften daher nicht. W{\"a}hrend einer Messperiode von 7:00 Uhr bis
-\Sexpr{upper_str} bestimmen Sie dreimal automatisch die Radonbelastung in
-Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung.
+Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
+abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
+{\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
+Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
+Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
+Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
+fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
+den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
+Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
+misst \Sexpr{elle}cm.\\
 
-<<math-10,  echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
-plot_tbl <- tibble(time = as_factor(1:3),
-                   rsp = c(sample(c(15, 20, 25), 1),
-                           sample(c(45, 60, 75), 1),
-                           sample(c(85, 90, 95), 1)))
-
-ggplot(plot_tbl, aes(time, rsp)) +
-  geom_point() +
-  theme_minimal() +
-  ylim(0, 100) +
-  labs(x = "", y = expression(Bq/m^3)) +
-  scale_x_discrete(labels = c("7:00", mid_str, upper_str))
-@ 
-
-\vspace{-0.75cm}
+\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
+  Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
-\item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von
-  \Sexpr{crit_ra}$Bq/m^3$ in Ihrem ungel{\"u}fteten Kellerraum erreicht haben?
-  \textbf{(2 Punkte)}
+\item Bei der K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che
+  \Sexpr{side} K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in $m$
+  ergibt sich? \textbf{(1 Punkt)}
+\item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
+  Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
+  Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
+  ben{\"o}tigten Torf in $m^3$! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Radon zerf{\"a}llt mit einer Halbwertszeit von \Sexpr{radon_t}d zu
-Polonium. Polonium wiederum zerf{\"a}llt mit einer Halbwertszeit von
-\Sexpr{polo_t}d zu Blei. Nur Radon und Polonium tragen zur
-radioaktiven Strahlenbelastung bei.
+Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
+\Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
+zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
+chronische \Sexpr{krank}schmerzen entwickelt, als sie von der
+anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
+Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
+\Sexpr{schubkarre} Liter.
 
 \begin{enumerate}
-  \setcounter{enumi}{1}
-\item Wie lange dauert es in Stunden bis Ihre kritische Radonbelastung von
-  \Sexpr{crit_ra}$Bq/m^3$ auf unter \Sexpr{low_ra}$Bq/m^3$ gefallen ist?
-  \textbf{(4 Punkte)}
+  \setcounter{enumi}{2}
+\item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
+  zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
+\item Berechnen Sie die L{\"a}nge der Rampe zur Spitze der Pyramide mit einem
+  Anstellwinkel von $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
+\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die \Sexpr{land_e}
+  Landschaft?  \textbf{(2 Punkte)}
 \end{enumerate}
 
-Folgende Tabelle enth{\"a}lt die Informationen zur Zusammensetzung der
-normalen Umgebungsluft.
-
-\begin{center}
-  \begin{tabular}{ c|c|c|c }
-     & Vol-\% & M [g/mol] & ppm \\
-    \hline
-    Stickstoff & \Sexpr{vol[1]} & \Sexpr{molg[1]} &
-                                                    \phantom{1000000000000}\strut\\
-        \hline
-    Sauerstoff & \Sexpr{vol[2]} & \Sexpr{molg[2]} &
-                                                    \phantom{10000000}\strut\\
-        \hline
-    Kohlenstoffdioxid & \Sexpr{vol[3]} & \Sexpr{molg[3]} & \phantom{10000000}\strut\\     
-     \hline
-\end{tabular}
-\end{center}
+Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
+Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
+\Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen
+w{\"u}rde. Sie m{\"u}ssen nochmal ran.
 
 \begin{enumerate}
-   \setcounter{enumi}{2}
-\item Rechnen Sie die Volumenprozente (Vol-\%) der Umgebungsluft in die
-  entsprechenden ppm-Werte um und erg{\"a}nzen Sie die berechneten ppm-Werte in
-  die Tabelle!  \textbf{(1 Punkt)}
-\end{enumerate}
-
-F{\"u}r die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak
-$NH_3$ gilt folgende Reaktionsgleichung:
-
-\begin{equation*}
-  N_2 + 3H_2 \rightarrow 2NH_3
-\end{equation*}  
-
-Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein
-Volumen von 22.4 Liter. % Ein Mol enth{\"a}lt $6 \cdot 10^{23}$ Teilchen.
-
-\begin{enumerate}
-  \setcounter{enumi}{3}
-\item Welche Masse an Ammoniak in Kilogramm $kg$ k{\"o}nnen Sie aus einem
-  Kubikmeter $m^3$ Luft unter normalen Umweltbedingungen gewinnen?
-  \textbf{(2 Punkte)}
-\item Wieviel Ammoniak in $mol$ erhalten Sie aus einem Kubikmeter Luft?
-  \textbf{(1 Punkt)}
+  \setcounter{enumi}{5}
+\item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
+  {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
+  Pyramide um $\Sexpr{winkel_neu}^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
 \end{enumerate}
 
 
+
+% https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck
+% https://www.matheretter.de/wiki/pyramide
+% https://de.wikipedia.org/wiki/Knickpyramide

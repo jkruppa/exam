@@ -4,134 +4,64 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/n451XnhtSh4}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
+\hfill\href{https://youtu.be/aBxLkdF-c4M}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Entschuldigung,  ist das Ihre Feder in meinem Auge?}
+\paragraph{Solar- \& Biogasanlagen}
 
 <<>>=
-type_chick <- c("H{\"u}hner", "Puten", "Enten", "G{\"a}nse")
-names(type_chick) <- c("Huhn", "Pute", "Ente", "Gans")
-type_chick <- type_chick %>% sample(1)
+type <- c("Schweinestall", "H{\"u}hnerstall", "Rinderstall") %>% sample(1)
+h_vorne <- c(6, 5, 7, 6.5, 5.5) %>% sample(1)
+h_hinten <- c(8, 9, 11, 8.5, 9.5, 10) %>% sample(1)
+tiefe <- c(12, 13, 14, 15, 16) %>% sample(1)
+breite <- c(30, 40, 50, 60, 70) %>% sample(1)
 
-behaviour_vec <-  c("standing", "sitting", "walking",
-                    "foraging incl. scratching", "dustbathing",
-                    "preening", "wing/leg stretching", "wingflapping",
-                    "drinking/eating")
-type_i <- behaviour_vec %>% sample(4)
-
-get_values <- function(sample){
-str_c(round(rnorm(1, 35, 5)), "cm; ",
-      round(rnorm(1, 25, 5)), "cm; ",
-      sample, "%")
-}
-
-data_dfr <- tibble(behav = behaviour_vec,
-                   "Aldridge et al. (2021)" = c(get_values(sample(c(3.5, 12.1, 8.9, 7.2), 1)),
-                                         get_values(sample(c(50.1, 25.4, 64.1, 52.2), 1)),
-                                         get_values(sample(c(1.8, 2.1, 4.1, 4.3), 1)),
-                                         get_values(sample(c(0.4, 0.8, 0.2, 0.6), 1)),
-                                         get_values(sample(c(0.5, 1.2, 8.1, 1.6), 1)),
-                                         get_values(sample(c(3.6, 6.3, 8.1, 4.1), 1)),
-                                         get_values(sample(c(3.2, 1.2, 5.1, 6.2), 1)),
-                                         get_values(sample(c(1.2, 1.0, 0.8, 7.3), 1)),
-                                         get_values(sample(c(18.1, 16.4, 12.8, 13.2), 1))),
-                   "Baxter et al. (2022)" = c(get_values(sample(c(3.5, 12.1, 8.9, 4.5), 1)),
-                                         get_values(sample(c(50.1, 25.4, 64.1, 54.1), 1)),
-                                         get_values(sample(c(1.8, 2.1, 4.1, 5.2), 1)),
-                                         get_values(sample(c(0.4, 0.8, 0.2, 0.6), 1)),
-                                         get_values(sample(c(0.5, 1.2, 8.1, 2.4), 1)),
-                                         get_values(sample(c(3.6, 6.3, 8.1, 5.2), 1)),
-                                         get_values(sample(c(3.2, 1.2, 5.1, 6.1), 1)),
-                                         get_values(sample(c(1.2, 1.0, 0.8, 0.9), 1)),
-                                         get_values(sample(c(18.1, 16.4, 12.8, 14.2), 1))),
-                   "Jabcobs et al. (2019)" = c(get_values(sample(c(3.5, 12.1, 8.9, 10.1), 1)),
-                                         get_values(sample(c(50.1, 25.4, 64.1, 24.1), 1)),
-                                         get_values(sample(c(1.8, 2.1, 4.1, 3.5), 1)),
-                                         get_values(sample(c(0.4, 0.8, 0.2, 0.9), 1)),
-                                         get_values(sample(c(0.5, 1.2, 8.1, 7.6), 1)),
-                                         get_values(sample(c(3.6, 6.3, 8.1, 5.1), 1)),
-                                         get_values(sample(c(3.2, 1.2, 5.1, 6.9), 1)),
-                                         get_values(sample(c(1.2, 1.0, 0.8, 0.1), 1)),
-                                         get_values(sample(c(18.1, 16.4, 12.8, 12.3), 1)))) %>%
-  filter(behav %in% type_i) %>%
-  select(-behav) %>%
-  as.data.frame()
-row.names(data_dfr) <- type_i
+beton_m <- c(5, 10, 15, 12, 14) %>% sample(1)
+save_m <- c(10, 15, 20, 25) %>% sample(1)
+dichte_l <- c(220, 235, 240, 200) %>% sample(1)
+dichte_h <- c(270, 280, 290, 300) %>% sample(1)
+radius <- c(1, 1.2, 1.5, 1.8) %>% sample(1)
+grad <- c(85, 90, 95, 80) %>% sample(1)
 @
 
-So h{\"o}rt man h{\"a}ufiger h{\"o}fliche \Sexpr{type_chick} in Mastst{\"a}llen sagen. Das
-ist nat{\"u}rlich etwas ung{\"u}nstig, den dann kommt es zu Picken und
-Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen
-gegriffen werden. Kennt jeder aus einer mittelm{\"a}{\ss}igen Wohngemeinschaft. Das
-wollen wir aber als vorsorgliche \Sexpr{type_chick}-Halter:innen
-nicht\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
-  wissenschaftliche Artikel:
-  \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on
-    Animal Health and Welfare, et al. (2023) Welfare of broilers on
-    farm. EFSA Journal 21.2}.}. Betrachten wir also einmal das Platzangebot
-(eng. \textit{space allowance}, abk. \textit{SA}) der \Sexpr{type_chick}
-f{\"u}r vier T{\"a}tigkeiten und versuchen die notwendige Fl{\"a}che zu optimieren. Wie
-immer gibt es daf{\"u}r eine mathematische Formel:
-
-
-\begin{center}
-  \begin{tabular}{cc}
-    $SA = \sum^n_{i = 1} (A_i \times PB_i)$ & $A_i = \pi \times (r_i + R_i)^2$\\
-  \end{tabular}
-\end{center}
-
-\vspace{-2Ex}
-
-mit
-
-\begin{itemize}[noitemsep]
-\item $SA$ dem ben{\"o}tigten Platzangebot aller aufsummierten Verhalten $i$.
-\item $A_i$ dem ben{\"o}tigten Platz f{\"u}r ein Verhalten $i$. 
-\item $PB_i$ dem Anteil des Auftretens eines Verhaltens $i$.
-\item $r_i$ dem Radius \Sexpr{names(type_chick)} plus dem ben{\"o}tigten Radius f{\"u}r das Verhalten $i$.
-\item $R_i$ dem notwendigen Abstand zu den Nachbarn f{\"u}r das Verhalten $i$.    
-\item $i$ dem Verhalten: (1) \Sexpr{type_i[1]}, (2) \Sexpr{type_i[2]}, (3)
-  \Sexpr{type_i[3]} und (4) \Sexpr{type_i[4]}.
-\end{itemize}
-
-In der folgenden Tabelle 1 sind die Werte f{\"u}r $r_i$, $R_i$ und $PB_i$ f{\"u}r
-ein spezifisches Verhalten $i$ aus drei wissenschaftlichen
-Ver{\"o}ffentlichungen dargestellt.
-
-\vspace{-1Ex}
-
-{\small
-<<>>=
-data_dfr %>% kable(booktabs = TRUE, align = c("lllll")) %>%
-  kable_styling(latex_options = c("hold_position")) 
-@ 
-}
+Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
+auf den \Sexpr{type} montieren lassen. Sie messen Ihren Stall und finden
+folgende Ma{\ss}e wieder. Die vordere Seite des \Sexpr{type} hat eine H{\"o}he
+$h_v$ von $\Sexpr{h_vorne}m$. Die hintere Seite des \Sexpr{type} hat eine
+H{\"o}he $h_b$ von $\Sexpr{h_hinten}m$. Der \Sexpr{type} hat eine Tiefe $t$ von
+$\Sexpr{tiefe}m$ und eine Breite $b$ von $\Sexpr{breite}m$.
 
 \begin{enumerate}
-\item Erstellen Sie eine zusammenfassende Tabelle mit den mittleren Werten
-  f{\"u}r $r$, $R$ und $PB$ aus der obigen Tabelle 1 f{\"u}r die jeweiligen
-  Verhalten! \textbf{(3 Punkte)}
-\item Erg{\"a}nzen Sie eine Spalte mit dem ben{\"o}tigten Platz $A$ f{\"u}r das jeweilige
-  Verhalten, welches sich aus den mittleren Werten ergibt! \textbf{(1 Punkt)}
-\item Berechnen Sie das ben{\"o}tigte Platzangebot $SA$ f{\"u}r alle betrachteten
-  Verhalten! \textbf{(1 Punkt)}
-\item Skizzieren Sie die Werte $r_i$, $R_i$ und $A_i$ f{\"u}r zwei
-  nebeneinander agierende \Sexpr{type_chick} f{\"u}r ein Verhalten $i$. Nutzen
-  Sie hierf{\"u}r vereinfachte geometrische Formen! \textbf{(2 Punkte)}
-\item Sie entnehmen der Literatur folgende Aussage zur Verteilung der
-  \Sexpr{type_chick} in der Fl{\"a}che $A$: \textit{"`Assuming, that the
-    animals will optimally and equally distribute in an area $A$, we observe a
-    small part, which is not covered. This area is called
-    $\omega$ and is calculated with $\omega = \tfrac{A}{0.9069}$."'
-  } Veranschaulichen Sie die Fl{\"a}che $\omega$ in einer aussagekr{\"a}ftigen
-  Abbildung!  \textbf{(1 Punkt)}
-\item Ein Tier braucht Platz f{\"u}r sich selbst. Berechnen Sie nun die
-  K{\"o}rperfl{\"a}che $a$, die ein Tier einnimmt. Welche Annahmen haben Sie f{\"u}r
-  die Berechnung der K{\"o}rperfl{\"a}che getroffen? \textbf{(2 Punkte)}
+\item Skizzieren Sie den \Sexpr{type} auf dem die Solaranlage montiert
+  werden soll! Erg{\"a}nzen Sie die Angaben f{\"u}r die H{\"o}hen $h_v$, $h_b$, die
+  Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che der schr{\"a}gen, neuen Solaranlage auf dem
+  \Sexpr{type}! \textbf{(3 Punkte)}
 \end{enumerate}
 
+Ebenfalls planen Sie eine neue Biogasanlage f{\"u}r Ihren Betrieb. Der neue
+Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein
+paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
+zylindrischen Methantanks kann nur ein Gewicht von maximal
+$\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
+Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des
+Methantanks. In fl{\"u}ssiger Form hat
+Methan bei $-80^\circ\text{C}$ eine Dichte von
+$\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
+von $\Sexpr{dichte_h}kg/m^3$. Sie betrieben Ihre Anlage bei
+$-\Sexpr{grad}^\circ\text{C}$.
 
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Extrapolieren Sie die effektive Dichte des Methans in Ihrem
+  Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
+\item Berechnen Sie wie viel Kubikmeter $m^3$ Sie in den Methantank f{\"u}llen
+  k{\"o}nnen, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
+\item Berechnen Sie die maximale H{\"o}he $h_{max}$ f{\"u}r den gef{\"u}llten
+  Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2
+    Punkte)}
+\end{enumerate}
 
 

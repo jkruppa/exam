@@ -4,91 +4,66 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width =
+\hfill\href{https://youtu.be/RuzMjwvwT-4}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{H{\"o}hlen \& Drachen}
+\paragraph{In der Kartonagenfabrik}
 
 <<>>=
-gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
-pr_a <- c(0.6, 0.65, 0.7) %>% sample(1)
-pr_b <- c(0.7, 0.75, 0.9) %>% sample(1)
-pr_ab <- c(40, 45, 50) %>% sample(1)
-type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
-ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
-
-num_dice <- c(4:7) %>% sample(1)
-
-type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
-                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
-                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
-                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
-
-type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
-                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
-
-add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
-
-type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
-                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
-                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
-                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
-
-num_erfolge <- num_dice - sample(c(1,2), 1)
+fold <- c(4, 6, 8, 5) %>% sample(1)
+karton <- c(30, 40, 50, 60) %>% sample(1)
+mm <- c(0.6, 0.7, 0.8, 0.5) %>% sample(1)
+sb <- c(18, 21, 23, 22, 20) %>% sample(1)
+zaun <- c(100, 120, 130, 90, 110) %>% sample(1)
 
 @
 
-Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
-haben, wollen Sie bei \Sexpr{gender} einmal \textit{H{\"o}hlen \& Drachen}
-ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
-Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz sch{\"o}n viele
-unterschiedliche W{\"u}rfel durch die Gegend fliegen. Daher m{\"u}ssen Sie sich
-jetzt einiges an Fragen stellen. \\%[-1ex]
+Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
+geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
+schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
+Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
+werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
+anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
+  \Sexpr{fold}-mal-gefaltete, \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch
+Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
+schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
+sind. Martin gef{\"a}llt das. An dem Vorrat
+an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
-In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1,
-  1)} zum w{\"u}rfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} w{\"u}rfeln,
-haben Sie einen Erfolg.
+Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
+hat eine L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
+Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
+der L{\"a}nge $x$ falzen.
 
 \begin{enumerate}
-\item Berechnen Sie die Wahrscheinlichkeit \textit{genau}
-  \Sexpr{num_erfolge} Erfolge zu erzielen!  \textbf{(2 Punkte)}
-\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
+\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
+  Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
   \textbf{(1 Punkt)}
+\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des flachen
+  Kartons! \textbf{(3 Punkte)}
+\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten
+  Falztiefe $x$?  \textbf{(1 Punkt)}
+\item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
+  den Karton stanzen lassen. Wie gro{\ss} ist die Fl{\"a}che des
+  Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
-wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
-Schwert entscheiden.
+Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
+nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
+er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
+Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
+Rektor Skinner nur \Sexpr{zaun}m Zaun zu Verf{\"u}gung. Sie wollen nun die
+maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
+Seitenl{\"a}ngen bei der Verwendung von \Sexpr{zaun}m Zaun bestimmen!
 
 \begin{enumerate}
-  \setcounter{enumi}{2}
-\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
-  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
-  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+  \setcounter{enumi}{4}  
+\item  Welche Seitenl{\"a}ngen f{\"u}r den Zaun ergeben sich f{\"u}r die
+  maximale Fl{\"a}che des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
+\item Berechnen Sie die Fl{\"a}che des abgeschirmten Vorgartens! \textbf{(1
+    Punkt)}
 \end{enumerate}
 
-Jetzt wird es immer wilder, da Sie sich jetzt {\"u}berlegen m{\"u}ssen, wie
-wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
-funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
-Wahrscheinlichkeit f{\"u}r das Ereignis $A$, der Rettungswurf ist erfolgreich,
-ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
-der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie
-haben mitgez{\"a}hlt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 F{\"a}llen
-Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
-\begin{enumerate}
-  \setcounter{enumi}{3}
-\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
-  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
-  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
-  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
-\item Bestimmen Sie $Pr(A \cap B)$! \textbf{(1 Punkt)}
-\item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2
-  Kreuztabelle! \textbf{(2 Punkte)}
-\item Bestimmen Sie Wahrscheinlichkeit $Pr(A|B)$, dass Ihr Rettungswurf gelingt, wenn
-  der Hexer erfolgreich gezaubert hat! \textbf{(1 Punkt)}
-\end{enumerate}
-
- 

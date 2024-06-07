@@ -4,108 +4,91 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/caution}} %%youtube
+\hfill\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width =
+  2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Aligatorenbirnen und Blaubeeren}
+\paragraph{H{\"o}hlen \& Drachen}
 
 <<>>=
-export_year <- c(2021, 2022, 2023, 2024) |> sample(1)
-person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
-            "einem M{\"a}dchen mit Z{\"o}pfen und Zahnspange", "einem Studenten im Karohemd",
-            "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
-  sample(1)
-markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
-heidel_beere_pk <- c(3,4,5,6,7) %>% sample(1)
-heidel_beere_price <- c(1.59, 1.79, 1.89, 1.99) %>% sample(1)
-heidel_beere_kauf <- heidel_beere_pk + sample(1:5, 1)
-aligator_price <- c(2.59, 0.99, 2.89, 1.79) %>% sample(1)
-schein <- c(50, 100, 200) |> sample(1)
-kilo_tomate_water <- c(160, 170, 180, 190) %>% sample(1)
-kilo_salat_water <- c(130, 120, 100, 140) %>% sample(1)
-kilo_avocado_water <- c(1050, 950, 1100, 980) %>% sample(1)
-kilo_blaubeeren_water <- c(820, 830, 850, 880) %>% sample(1)
-avocado_g <- str_c(sample(c(120, 130, 140, 150), 1), " - ",
-                   sample(c(380, 400, 410, 420), 1))
-tomate_g <- str_c(sample(c(90, 100, 110, 120), 1), " - ",
-                   sample(c(120, 125, 130, 115), 1))
-salat_g <- str_c(sample(c(300, 310, 320, 280), 1), " - ",
-                   sample(c(490, 510, 520, 530), 1))
-blaubeeren_g <- str_c(sample(c(3.0, 3.1, 3.2, 3.3), 1), " - ",
-                     sample(c(3.5, 3.6, 3.7, 3.8), 1))
-export_blau_chile <- c(75000, 77000, 79000, 80000, 90000) %>% sample(1)
-export_avocado_chile <- c(190000, 200000, 210000, 230000) %>% sample(1) 
-export_blau_chile_per <- c(5.1, 6.1, 7.2, 8.6) %>% sample(1) 
-export_avocado_chile_per <- c(18.1, 21.2, 23.8, 22.1) %>% sample(1) 
-wasserverbrauch_chile <- c(45, 50, 55, 60) %>% sample(1)
-wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
-                          "9 - 14 Liter pro Sp{\"u}lgang",
-                          "35 - 115 Liter pro Waschgang einer Waschmaschine",
-                          "8 - 17 Liter pro Sp{\"u}lmaschinenlauf",
-                          "3 - 12 Liter pro Minute H{\"a}ndewaschen") %>%
-  sample(2)
-unit <- c("Tonnen", "Liter", "Kubikmeter") |> sample(1)
-water_perc <- c("ein", "zwei", "drei") |> sample(1)
+gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
+pr_a <- c(0.6, 0.65, 0.7) %>% sample(1)
+pr_b <- c(0.7, 0.75, 0.9) %>% sample(1)
+pr_ab <- c(40, 45, 50) %>% sample(1)
+type_draw <- c("einem Mengendiagramm", " einem Baumdiagramm", "einer 2x2 Kreuztabelle") %>% sample(2)
+ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
+
+num_dice <- c(4:7) %>% sample(1)
+
+type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
+                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
+                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
+                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
+
+type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
+                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
+
+add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
+
+type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
+                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
+                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
+                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
+
+num_erfolge <- num_dice - sample(c(1,2), 1)
+
 @
 
-"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
-Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um
-und blicken in das puderrote Gesicht \Sexpr{person}. "'Wieso?"', entfährt es
-Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
-Whiteboard voller roter Schnüre geschliffen und müssen folgenden
-mathematischen untermauerten Argumenten im \Sexpr{markt} über sich ergehen
-lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich
-mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
-  für die Aufgabe waren folgende Reportagen:
-  \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis
-  zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August
-  2021} und
-\href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit
-  in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem
-  Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
+Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
+haben, wollen Sie bei \Sexpr{gender} einmal \textit{H{\"o}hlen \& Drachen}
+ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
+Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz sch{\"o}n viele
+unterschiedliche W{\"u}rfel durch die Gegend fliegen. Daher m{\"u}ssen Sie sich
+jetzt einiges an Fragen stellen. \\%[-1ex]
 
-Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{person}?\\
-
-\textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
-  Dreisatzes!}
+In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1,
+  1)} zum w{\"u}rfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} w{\"u}rfeln,
+haben Sie einen Erfolg.
 
 \begin{enumerate}
-\item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(1 Punkt)}
-\item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(1 Punkt)}
+\item Berechnen Sie die Wahrscheinlichkeit \textit{genau}
+  \Sexpr{num_erfolge} Erfolge zu erzielen!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
+  \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem \Sexpr{markt} über Gemüse erfährt.
-  
-\begin{itemize}[noitemsep]
-\item Ein Kilo Strauchtomaten benötigt \Sexpr{kilo_tomate_water}l Wasser. Eine Strauchtomate wiegt \Sexpr{tomate_g}g.
-\item Ein Kilo Salat benötigt \Sexpr{kilo_salat_water}l Wasser. Ein Salatkopf wiegt \Sexpr{salat_g}g.
-\item Ein Kilo Avocado benötigt \Sexpr{kilo_avocado_water}l Wasser. Eine Avocado wiegt \Sexpr{avocado_g}g.
-\item Ein Kilo Blaubeeren benötigt \Sexpr{kilo_blaubeeren_water}l Wasser. Eine Blaubeere wiegt \Sexpr{blaubeeren_g}g.
-\end{itemize}
+Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
+wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
+Schwert entscheiden.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
+\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
+  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
+  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den Erwartungen zurück. Die Menge reduzierte sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados stiegen in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile} an.
+Jetzt wird es immer wilder, da Sie sich jetzt {\"u}berlegen m{\"u}ssen, wie
+wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
+funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
+Wahrscheinlichkeit f{\"u}r das Ereignis $A$, der Rettungswurf ist erfolgreich,
+ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
+der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie
+haben mitgez{\"a}hlt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 F{\"a}llen
+Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie viele \Sexpr{unit} Wasser hat Chile in dem Exportjahr \Sexpr{export_year-1} exportiert? \textbf{(2 Punkte)}
+\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
+  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
+  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
+  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+\item Bestimmen Sie $Pr(A \cap B)$! \textbf{(1 Punkt)}
+\item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2
+  Kreuztabelle! \textbf{(2 Punkte)}
+\item Bestimmen Sie Wahrscheinlichkeit $Pr(A|B)$, dass Ihr Rettungswurf gelingt, wenn
+  der Hexer erfolgreich gezaubert hat! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur \Sexpr{water_perc} Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa \Sexpr{wasserverbrauch_chile} Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei \Sexpr{wasserverbrauch_type[1]} und \Sexpr{wasserverbrauch_type[2]}.
-
-\begin{enumerate}
-  \setcounter{enumi}{4}
-\item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(2 Punkte)}
-\end{enumerate}
-
-Das alles hätten Sie nicht von \Sexpr{person} erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
-
-\begin{enumerate}
-  \setcounter{enumi}{5}  
-  \item Nennen Sie eine \textit{Daten}quelle im Internet, wo Sie mehr Informationen zu landwirtschaftlichen Daten oder klimatischen, wirtschaftlichen und gesellschaftlichen Daten erhalten! \textbf{(1 Punkt)}
-\end{enumerate}
+ 

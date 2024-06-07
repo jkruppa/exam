@@ -4,66 +4,116 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/RuzMjwvwT-4}{\includegraphics[width =
+\hfill\href{https://youtu.be/Mr6eslls4J0}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{In der Kartonagenfabrik}
+\paragraph{Armee der Kaninchen}
 
 <<>>=
-fold <- c(4, 6, 8, 5) %>% sample(1)
-karton <- c(30, 40, 50, 60) %>% sample(1)
-mm <- c(0.6, 0.7, 0.8, 0.5) %>% sample(1)
-sb <- c(18, 21, 23, 22, 20) %>% sample(1)
-zaun <- c(100, 120, 130, 90, 110) %>% sample(1)
-
+job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
+         "Ihrer Koalakuschelschule", "Ihrer Faultierpension") %>% sample(1)
+year_out <- c(1859, 1860, 1875) %>% sample(1)
+release <- c(28, 26, 30, 32) %>% sample(1)
+release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
+westost <- c(4000, 4100, 4200, 4300, 4400) %>% sample(1)
+start_inf <- c(12, 14, 16, 18, 20) %>% sample(1)
+base_inf <- c(1.2, 1.4, 1.6, 1.8, 2, 2.2) %>% sample(1)
+nordsued <- c(3600, 3700, 3800, 3500, 3400) %>% sample(1)
+A_formula <- c(11e9, 9e9, 10e9, 8e9, 12e9) %>% sample(1)
+a_formula <- c(0.9e9, 1e9, 1.1e9, 1.2e9, 1.4e9) %>% sample(1)
+satt_year <- c(6, 9, 12, 15, 18)  %>% sample(1)
+percent <- c(99.7, 99.9, 98.5) %>% sample(1)
+recover <- c(40, 50, 60, 70, 30) %>% sample(1)
+v_rabbit <- c(8.8, 9.8, 11.5, 7.3, 7.8) %>% sample(1)
+impf_cost <- c(9, 10, 11, 12, 13) %>% sample(1)
+dr_cost <- c(35, 45, 40, 45, 42) %>% sample(1)
+pop <- c(900, 1100, 1200, 1000, 800) %>% sample(1)
+upp <- c(-0.1, -0.15, -0.2, -0.3) %>% sample(1)
+plus  <- c(2.4, 3.2, 3.1, 4.1, 2.7) %>% sample(1)
+base <- c(1.9, 2, 2.1, 2.2, 2.3, 1.7) %>% sample(1)
 @
 
-Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
-geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
-schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
-Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
-werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
-anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
-  \Sexpr{fold}-mal-gefaltete, \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch
-Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
-schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
-sind. Martin gef{\"a}llt das. An dem Vorrat
-an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
+Leider hat es mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht
+auch nicht \textit{so} die beste Idee... aber daf{\"u}r haben Sie eine Neue!
+Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
+niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
+einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
+Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
+\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat,
+Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so
+exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
+  der Inspiration f{\"u}r die Aufgabe war der folgendes YouTube Video:
+  \href{https://youtu.be/38fuOr3tdgc?si=Li7NL_FoByML8JtT}{ Incredible
+    Stories -- Why don't they eat wild rabbits in Australia? They have
+    millions of them! The reason is surprising...}}
+\\
 
-Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
-hat eine L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
-Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
-der L{\"a}nge $x$ falzen.
-
-\begin{enumerate}
-\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
-  Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
-  \textbf{(1 Punkt)}
-\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des flachen
-  Kartons! \textbf{(3 Punkte)}
-\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten
-  Falztiefe $x$?  \textbf{(1 Punkt)}
-\item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
-  den Karton stanzen lassen. Wie gro{\ss} ist die Fl{\"a}che des
-  Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
-\end{enumerate}
-
-Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
-nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
-er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
-Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
-Rektor Skinner nur \Sexpr{zaun}m Zaun zu Verf{\"u}gung. Sie wollen nun die
-maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
-Seitenl{\"a}ngen bei der Verwendung von \Sexpr{zaun}m Zaun bestimmen!
+Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das j{\"a}hrliche Wachstum
+der gesamten Kaninchenpopulation im westlichen Australien.
+\begin{equation*}
+  f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot \Sexpr{base}^{\Sexpr{upp} \cdot t + \Sexpr{plus}}
+\end{equation*}
 
 \begin{enumerate}
-  \setcounter{enumi}{4}  
-\item  Welche Seitenl{\"a}ngen f{\"u}r den Zaun ergeben sich f{\"u}r die
-  maximale Fl{\"a}che des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
-\item Berechnen Sie die Fl{\"a}che des abgeschirmten Vorgartens! \textbf{(1
+\item Skizzieren Sie die S{\"a}ttigungsfunktion \textit{ann{\"a}herungsweise} in einer Abbildung! \textbf{(1
+    Punkt)}
+\item Wie viele Kaninchen k{\"o}nnen nach der S{\"a}ttigungsfunktion maximal im
+  westlichen Australien leben? Erg{\"a}nzen Sie den Wert in Ihrer Abbildung! \textbf{(2 Punkte)}
+\item Wie viele Millionen Kaninchen leben nach der S{\"a}ttigungsfunktion
+  nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1
     Punkt)}
 \end{enumerate}
 
+Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit
+Haemorrhagic Disease Virus (RHDV) in \Sexpr{start_inf} Kaninchen
+ausgebracht. Da die Kaninchen keine Ma{\ss}nahmen gegen die Ausbreitung
+vornehmen k{\"o}nnen, verl{\"a}uft die Ausbreitung mit einem w{\"o}chentlichen
+Wachstumsfakor von \Sexpr{base_inf} nach folgender Formel.
+
+\begin{equation*}
+  N(t) = N(0) \cdot a^t
+\end{equation*}
+
+\begin{enumerate}
+  \setcounter{enumi}{2}
+\item Wie viele Wochen ben{\"o}tigen die Viren um theoretisch die gesamte
+  Kaninchenpopulation nach \Sexpr{satt_year - 2} Jahren Wachstum zu
+  durchseuchen? \textbf{(1 Punkt)}
+\end{enumerate}
+
+Das Myxoma Virus und das RHDV t{\"o}ten \Sexpr{percent}\% der
+Kaninchenpopulation innerhalb weniger Wochen.
+
+\begin{enumerate}
+  \setcounter{enumi}{3}  
+\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer
+  Viruspandemie wieder auf \Sexpr{recover}\% der ges{\"a}ttigten
+  Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
+\end{enumerate}
+
+Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten \Sexpr{release_point} von
+Australien. Australien hat eine West-Ost-Ausdehnung von \Sexpr{westost}km
+und eine Nord-S{\"u}d-Ausdehnung von knapp \Sexpr{nordsued}km. Die Kaninchen
+breiten sich radial mit einer Geschwindigkeit von \Sexpr{v_rabbit}km pro
+Jahr aus.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort
+  in Australien erreicht haben? \textit{L{\"o}sen Sie die Aufgabe unter der
+    Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
+\end{enumerate}
+
+Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
+Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ pro Tier und der
+durchf{\"u}hrende Arzt verlangt ca. \Sexpr{dr_cost}\$ pro Tier.
+
+\begin{enumerate}
+  \setcounter{enumi}{5}
+\item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen
+  j{\"a}hrlichen Zusatzkosten f{\"u}r die Impfungen der Kaninchen m{\"u}ssen Sie daher
+  kalkulieren? \textbf{(1 Punkt)}
+\end{enumerate}
 

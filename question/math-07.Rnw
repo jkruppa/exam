@@ -4,64 +4,68 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/aBxLkdF-c4M}{\includegraphics[width =
+\hfill\href{https://youtu.be/1B53cVFIU7Q}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Solar- \& Biogasanlagen}
+\paragraph{Nelken von den Molukken}
 
 <<>>=
-type <- c("Schweinestall", "H{\"u}hnerstall", "Rinderstall") %>% sample(1)
-h_vorne <- c(6, 5, 7, 6.5, 5.5) %>% sample(1)
-h_hinten <- c(8, 9, 11, 8.5, 9.5, 10) %>% sample(1)
-tiefe <- c(12, 13, 14, 15, 16) %>% sample(1)
-breite <- c(30, 40, 50, 60, 70) %>% sample(1)
-
-beton_m <- c(5, 10, 15, 12, 14) %>% sample(1)
-save_m <- c(10, 15, 20, 25) %>% sample(1)
-dichte_l <- c(220, 235, 240, 200) %>% sample(1)
-dichte_h <- c(270, 280, 290, 300) %>% sample(1)
-radius <- c(1, 1.2, 1.5, 1.8) %>% sample(1)
-grad <- c(85, 90, 95, 80) %>% sample(1)
+day1 <- c(40, 45, 50, 42) %>% sample(1)
+day2 <- c(60, 65, 70, 72) %>% sample(1)
+day3 <- c(100, 105, 110, 115) %>% sample(1)
+people <- c(218, 222, 237, 245) %>% sample(1)
+vit_c_sellerie <- c(7000, 8000, 6000, 5000, 4000) %>% sample(1)
+vit_c_bedarf <- c(105, 110, 115, 110, 120) %>% sample(1)
+surv_day <- c(90, 95, 100) %>% sample(1)
+day_journey <- c(18, 20, 22, 24) %>% sample(1)
+unit <- c("kg", "t") %>% sample(1) 
+gramm <- c(150, 100, 50, 10) %>% sample(1)
 @
 
-Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
-auf den \Sexpr{type} montieren lassen. Sie messen Ihren Stall und finden
-folgende Ma{\ss}e wieder. Die vordere Seite des \Sexpr{type} hat eine H{\"o}he
-$h_v$ von $\Sexpr{h_vorne}m$. Die hintere Seite des \Sexpr{type} hat eine
-H{\"o}he $h_b$ von $\Sexpr{h_hinten}m$. Der \Sexpr{type} hat eine Tiefe $t$ von
-$\Sexpr{tiefe}m$ und eine Breite $b$ von $\Sexpr{breite}m$.
+In der Ausstellung "`Europa und das Meer"' im Deutschen Historischen Museum in
+Berlin gab es folgendes Zitat {\"u}ber die Probleme der fr{\"u}hen Hochseeschifffahrt.
+
+\begin{quote}
+  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach \Sexpr{day1} Tagen die
+  ersten Symptome ein; die ersten Toten sind nach \Sexpr{day2} Tagen zu beklagen;
+  nach \Sexpr{day3} Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
+\end{quote}
+
+Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den
+s{\"u}damerikanischen Kontinent zu finden. Zu seiner Flotte geh{\"o}rten
+f{\"u}nf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die
+Concepci{\'o}n und die Santiago - mit einer Besatzung von insgesamt
+\Sexpr{people} Mann. 
 
 \begin{enumerate}
-\item Skizzieren Sie den \Sexpr{type} auf dem die Solaranlage montiert
-  werden soll! Erg{\"a}nzen Sie die Angaben f{\"u}r die H{\"o}hen $h_v$, $h_b$, die
-  Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
-\item Berechnen Sie die Fl{\"a}che der schr{\"a}gen, neuen Solaranlage auf dem
-  \Sexpr{type}! \textbf{(3 Punkte)}
+\item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der
+  Flotte in der Form einer {\"U}berlebenszeitkurve dar! Beschriften Sie die
+  Achsen entsprechend! \textbf{(3 Punkte)} 
+\item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen
+  aus Ihrer Abbildung ab! \textbf{(2 Punkte)} 
 \end{enumerate}
 
-Ebenfalls planen Sie eine neue Biogasanlage f{\"u}r Ihren Betrieb. Der neue
-Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein
-paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
-zylindrischen Methantanks kann nur ein Gewicht von maximal
-$\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
-Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des
-Methantanks. In fl{\"u}ssiger Form hat
-Methan bei $-80^\circ\text{C}$ eine Dichte von
-$\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
-von $\Sexpr{dichte_h}kg/m^3$. Sie betrieben Ihre Anlage bei
-$-\Sexpr{grad}^\circ\text{C}$.
+
+Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem
+Bericht "`[...] Um nicht Hungers zu sterben, a{\ss}en wir das Leder, mit dem
+die gro{\ss}e Rahe zum Schutz der Taue umwunden war."' Insbesondere die
+Mannschaft der Concepci{\'o}n erlitt gro{\ss}e Verluste durch die Skrobut bei der
+{\"U}berquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um
+wilden Sellerie aufzunehmen. Wilder Sellerie enth{\"a}lt
+$\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}mg$ Vitamin C. Der Bedarf liegt bei
+$\Sexpr{vit_c_bedarf}mg$ pro Tag f{\"u}r M{\"a}nner.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Extrapolieren Sie die effektive Dichte des Methans in Ihrem
-  Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
-\item Berechnen Sie wie viel Kubikmeter $m^3$ Sie in den Methantank f{\"u}llen
-  k{\"o}nnen, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
-\item Berechnen Sie die maximale H{\"o}he $h_{max}$ f{\"u}r den gef{\"u}llten
-  Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2
-    Punkte)}
+\item Berechnen Sie die notwendige Menge in $\Sexpr{unit}$ an
+  aufzunehmenden wilden Sellerie auf die Concepci{\'o}n f{\"u}r die ununterbrochene
+  Fahrt von drei Monate und \Sexpr{day_journey} Tage {\"u}ber den Pazifik!
+  \textbf{(3 Punkte)}
+\item Skizzieren Sie die {\"U}berlebenszeitkurve f{\"u}r die Concepci{\'o}n im
+  Vergleich zu der {\"U}berlebenszeitkurve der Trinidad! Beschriften Sie die
+  Achsen! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

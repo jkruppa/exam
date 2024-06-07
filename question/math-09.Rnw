@@ -1,106 +1,62 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/3LAq3R0rS14}{\includegraphics[width =
+\hfill\href{https://youtu.be/iCQogS6KhPM}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Geocaching -- Von Satelliten und Plastikdosen}
+\paragraph{Das Fermi Paradoxon}
 
 <<>>=
-library(stringi)
-l_angel <- c(5, 6, 7, 8) %>% sample(1)
-v_bike <- c(15, 17, 19, 16, 18)  %>% sample(1)
-h_angel <- l_angel + sample(c(1.6, 1.7, 1.8, 1.9, 2.1), 1)
-m_grad <- c(70, 71, 72, 73, 74) %>% sample(1)
-n_matrix <- c("ein Cache", "zwei Caches", "drei Caches") %>% sample(1)
-direct <- c("aufw{\"a}rts", "abw{\"a}rts")  %>% sample(1)
-type <- c("Terrain", "Schwierigkeits")  %>% sample(1)
-GC_pre <- stri_rand_strings(5, 5) %>% toupper()
-GC <- str_c("GC", GC_pre)
-wertung <- seq(1, 5, by = 0.5)
-wertung <- str_pad(wertung, 2, "right", "0") %>%
-  str_replace("0$", ".0")
-wert_str <- str_c(sample(wertung), " | ", sample(wertung), " | ",
-                  sample(c("Mikro", "Klein", "Normal"), size = length(wertung),
-                         replace = TRUE)) %>%
-  sample(5)
-vec_1 <- sample(c("AC", "AB"), 1)
-vec_1_l <- c(3, 4, 5, 6) %>% sample(1)
-vec_2_l <- c(4.5, 5.5, 6.5, 7.5) %>% sample(1)
-vec_fach <- c(1.2, 2.1, 1.3, 1.5) %>% sample(1)
-alpha_grad <- c(20, 30, 40, 25, 25) %>% sample(1)
-gamma_grad <- c(35, 50, 60, 45, 55) %>% sample(1)
-north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
-intercept <- c(0.05, 0.1, 0.2, 0.15) %>% sample(1)
-slope <- c(0.15, 0.25, 0.13, 0.18) %>% sample(1)
-start <- c("B", "C", "D", "E") %>% sample(1)
+n_sonde <- c("drei", "vier", "zwei") %>% sample(1)
+c_voyager <- c(60523, 61198, 62587, 63587, 59256) %>% sample(1)
+build_time <- c(1000, 500, 750, 250) %>% sample(1)
+ziv_y <- c(11000, 10000, 12000, 10500) %>% sample(1)
+n_stars <- c(100e+09, 150e+09, 200e+09) %>% sample(1)
+dist_stars <- c(4.24, 5.16, 6.23, 7.81, 3.57)  %>% sample(1)
+steps <- c("drei", "vier")  %>% sample(1)
+age_earth <- c(4.1e+09, 4.5e+09, 4.6e+09, 4.3e+09) %>% sample(1)
+age_plates <- c(1000e+05, 1200e+05, 800e+05, 900e+05) %>% sample(1)
+c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
 @
 
-Es ist Wochenende und das Wetter ist \textit{sweet}. Sie schwingen sich auf
-Ihr Cachermobil um mit \Sexpr{v_bike}km/h, geleitet von modernster
-Satellietentechnologie und einem Supercompter aus dem Jahr 2000 in Ihren
-H{\"a}nden, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Sie
-wollen diesmal endlich die \Sexpr{direct} \Sexpr{type}challenge
-durchf{\"u}hren. Die Reihenfolge der Caches nach \Sexpr{type}wertung gibt daher
-die von Ihnen abzufahrenden Orte vor. Die Terrain- und
-Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5
-(schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den
-Orten und den entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route
-zu Verf{\"u}gung.
+Der Kernphysiker Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen
+im Los Alamos National Laboratory mit seinen Kollegen angebliche
+UFO-Sichtungen und fragte schlie{\ss}lich: "`Where is everybody?"'. Warum seien
+weder Raumschiffe anderer Weltraumbewohner noch andere Spuren
+extraterrestrischer Technik zu beobachten? Wie lange w{\"u}rde eine au{\ss}erirdische
+Zivilisation ben{\"o}tigen um die gesamte Milchstra{\ss}e zu
+besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde w{\"a}re?\\[-1ex]
 
-\begin{center}
-  \begin{tabular}{ ccc }
-    \toprule
-    Ort & Cache & Wertung (S|T|G) \\
-    \midrule
-    A & \Sexpr{GC[1]} & \Sexpr{wert_str[1]} \\
-    B & \Sexpr{GC[2]} & \Sexpr{wert_str[2]} \\ 
-    C & \Sexpr{GC[3]} & \Sexpr{wert_str[3]} \\ 
-    D & \Sexpr{GC[4]} & \Sexpr{wert_str[4]} \\ 
-    E & \Sexpr{GC[5]} & \Sexpr{wert_str[5]} \\     
- \bottomrule
-\end{tabular}
-\end{center}
-
-Im Weiteren sind Ihnen folgende Informationen zu den Entfernungen der Orte
-zug{\"a}nglich. Der Entfernungsvektor $\overrightarrow{\Sexpr{vec_1}}$ ist
-$\Sexpr{vec_1_l}$km. Im Weiteren ist Ihnen der Entfernungsvektor
-$\overrightarrow{CB}$ mit $\Sexpr{vec_2_l}$km bekannt. Der
-Entfernungsvektor $\overrightarrow{BE}$ ist das $\Sexpr{vec_fach}$-fache
-des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort
-C anpeilen, so liegt der Ort B ungef{\"a}hr $\Sexpr{alpha_grad}^\circ$
-\Sexpr{north_south}. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt
-der Ort D ungef{\"a}hr $\Sexpr{gamma_grad}^\circ$ {\"o}stlich. Vom Ort B
-betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort
-B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E
-\Sexpr{north_south} von B. Die Strecke zwischen A und E ist nicht
-passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
+Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $\Sexpr{n_sonde}$
+Voyager 1 {\"a}hnliche Sonden mit der Geschwindigkeit von $\Sexpr{c_voyager}km/h$
+los um sich auf den erreichten Planeten selbst zu replizieren. Nach
+$\Sexpr{build_time}$ Jahren ist die Replikation abgeschlossen und wiederum
+$\Sexpr{n_sonde}$ Sonden werden ausgesendet. Gehen Sie von
+$\Sexpr{dist_stars}$ Lichtjahren als mittlerer Abstand der Sterne in der
+Milchstra{\ss}e aus. Es gibt $\Sexpr{n_stars}$ Sterne in der Milchstra{\ss}e. Nehmen
+Sie eine Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$ an.
 
 \begin{enumerate}
-\item L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
-  Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze
-  entsprechend! \textbf{(2 Punkte)}
-\item Welche Strecke in $km$ legen Sie bei der Bew{\"a}ltigung der
-  \Sexpr{direct} \Sexpr{type}challenge zur{\"u}ck? \textbf{(5
-    Punkte)}
-\item Gehen Sie von einer zus{\"a}tzlichen Suchzeit in Stunden f{\"u}r die
-  Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil
-  aus. Die Suchzeit in Stunden f{\"u}r \textit{jeden einzelnen} Cache wird durch die
-  Funktion
-  \begin{equation*}
-    Suchzeit = \Sexpr{intercept} + \Sexpr{slope} \cdot Schwierigkeit
-  \end{equation*}  
-  beschreiben.  Wie lange in Stunden ben{\"o}tigen Sie um die
-  \Sexpr{direct} \Sexpr{type}challenge zu erf{\"u}llen? \textbf{(3 Punkte)}
-\item An der h{\"o}chsten Schwierigkeit m{\"u}ssen Sie angeln. Ihre Angel ist
-  ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der H{\"o}he
-  von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
-  Angelh{\"o}he! Welche Annahmen mussten Sie treffen um die Aufgabe zu l{\"o}sen? \textbf{(2 Punkte)} 
+\item Skizzieren Sie in einer Abbildung die ersten \Sexpr{steps} Schritte der
+  Vervielf{\"a}ltigung der Sonden in der Galaxie! Beschriften Sie die Abbildung
+  mit der Dauer und der Anzahl an Sonden f{\"u}r jeden Schritt der Vervielf{\"a}ltigung! \textbf{(4 Punkte)}
+\item Berechnen Sie die theoretische Anzahl an Vervielf{\"a}ltigungsschritten die
+  ben{\"o}tigt werden um mit \textit{einem einzigen Vervielf{\"a}ltigungsschritt} die
+  gesamten Sterne der Milchstra{\ss}e mit Sonden zu besuchen! \textbf{(2 Punkte)}
+\item Berechnen Sie die Dauer, die eine au{\ss}erirdische Zivilisation
+  ann{\"a}hrungsweise ben{\"o}tigt um die gesamten Sterne der Milchstra{\ss}e mit
+  Sonden zu besuchen! \textbf{(2 Punkte)}
+\item Bei einem vermutetet Alter der Erde von $\Sexpr{age_earth}$ Jahren,
+  wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu
+  Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die
+  Kontinentalplatten einmal alle $\Sexpr{age_plates}$ Jahre vollst{\"a}ndig im
+  Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
 \end{enumerate}
+
 
 

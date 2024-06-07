@@ -1,102 +1,106 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Bbu6n8MXxQk}{\includegraphics[width =
+\hfill\href{https://youtu.be/3LAq3R0rS14}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Armee der Finsternis}
+\paragraph{Geocaching -- Von Satelliten und Plastikdosen}
 
 <<>>=
-job <- c("Aldi", "IKEA", "Kaufland", "Penny") %>% sample(1)
-mage <- c("ein Magier", "eine Magierin") %>% sample(1)
-year <- sample(1201, 1145, 976)  %>%  sample(1)
-lehnsherr <- c("F{\"u}rsten Arthur", "Henry dem Roten")  %>%  sample(1)
-v_blei <- c(10, 11, 12, 13, 14) %>% sample(1)
-l_tropf <- c(3.2, 3.5, 3.1, 4.1, 2.8) %>% sample(1)
-d_tropf <- c(2, 1.8, 1.7, 1.5, 1.6, 2.1) %>% sample(1)
-n_blei <- c(1.2e6, 2.3e5, 6.1e4) %>% sample(1)
-d_blei <- c(11.34, 10.32, 12.63, 11.23, 15.1) %>% sample(1)
-n_prod <- c(700, 900, 1100, 1200) %>% sample(1)
-dist <- c(0.5, 0.8, 1.2, 1.4) %>% sample(1)
-g_schrott <- c(10, 20, 30, 40) %>% sample(1)
+library(stringi)
+l_angel <- c(5, 6, 7, 8) %>% sample(1)
+v_bike <- c(15, 17, 19, 16, 18)  %>% sample(1)
+h_angel <- l_angel + sample(c(1.6, 1.7, 1.8, 1.9, 2.1), 1)
+m_grad <- c(70, 71, 72, 73, 74) %>% sample(1)
+n_matrix <- c("ein Cache", "zwei Caches", "drei Caches") %>% sample(1)
+direct <- c("aufw{\"a}rts", "abw{\"a}rts")  %>% sample(1)
+type <- c("Terrain", "Schwierigkeits")  %>% sample(1)
+GC_pre <- stri_rand_strings(5, 5) %>% toupper()
+GC <- str_c("GC", GC_pre)
+wertung <- seq(1, 5, by = 0.5)
+wertung <- str_pad(wertung, 2, "right", "0") %>%
+  str_replace("0$", ".0")
+wert_str <- str_c(sample(wertung), " | ", sample(wertung), " | ",
+                  sample(c("Mikro", "Klein", "Normal"), size = length(wertung),
+                         replace = TRUE)) %>%
+  sample(5)
+vec_1 <- sample(c("AC", "AB"), 1)
+vec_1_l <- c(3, 4, 5, 6) %>% sample(1)
+vec_2_l <- c(4.5, 5.5, 6.5, 7.5) %>% sample(1)
+vec_fach <- c(1.2, 2.1, 1.3, 1.5) %>% sample(1)
+alpha_grad <- c(20, 30, 40, 25, 25) %>% sample(1)
+gamma_grad <- c(35, 50, 60, 45, 55) %>% sample(1)
+north_south <- c("n{\"o}rdlich", "s{\"u}dlich")  %>% sample(1)
+intercept <- c(0.05, 0.1, 0.2, 0.15) %>% sample(1)
+slope <- c(0.15, 0.25, 0.13, 0.18) %>% sample(1)
+start <- c("B", "C", "D", "E") %>% sample(1)
 @
 
-Ihr Studentenjob war nach Ladenschluss bei \Sexpr{job} die Regale
-einzur{\"a}umen. Dabei ist Ihnen in der Auslage der Sonderangebote das
-Necronomicon\footnote{Ein wirklich gef{\"a}hrliches Buch ist:
-  \textit{Du bist genug: Vom Mut, gl{\"u}cklich zu sein} von Fumitake Koga und
-  Ichiro Kishimi} in die H{\"a}nde gefallen. Nun sind Sie \Sexpr{mage} der
-Zeichen geworden! Also eigentlich k{\"o}nnen Sie nur Mathe und das d{\"a}mliche
-Necronomicon hat Sie in die Vergangenheit geschleudert... aber gut, was tut
-man nicht alles im Jahr \Sexpr{year} n. Chr. f{\"u}r den neuen Lehnsherren
-\Sexpr{lehnsherr}. Sie bauen nat{\"u}rlich einen Schrottkugelturm um sich den
-Horden der Finsternis mit genug Schrott erwehren zu k{\"o}nnen! Ihnen stehen
-zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
+Es ist Wochenende und das Wetter ist \textit{sweet}. Sie schwingen sich auf
+Ihr Cachermobil um mit \Sexpr{v_bike}km/h, geleitet von modernster
+Satellietentechnologie und einem Supercompter aus dem Jahr 2000 in Ihren
+H{\"a}nden, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Sie
+wollen diesmal endlich die \Sexpr{direct} \Sexpr{type}challenge
+durchf{\"u}hren. Die Reihenfolge der Caches nach \Sexpr{type}wertung gibt daher
+die von Ihnen abzufahrenden Orte vor. Die Terrain- und
+Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5
+(schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den
+Orten und den entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route
+zu Verf{\"u}gung.
 
 \begin{center}
-  \begin{tabular}{cc}
-    $E_{kin} = \cfrac{1}{2}\cdot m \cdot v^2$ & $E_{pot} = m \cdot g \cdot h$\\
-  \end{tabular}
+  \begin{tabular}{ ccc }
+    \toprule
+    Ort & Cache & Wertung (S|T|G) \\
+    \midrule
+    A & \Sexpr{GC[1]} & \Sexpr{wert_str[1]} \\
+    B & \Sexpr{GC[2]} & \Sexpr{wert_str[2]} \\ 
+    C & \Sexpr{GC[3]} & \Sexpr{wert_str[3]} \\ 
+    D & \Sexpr{GC[4]} & \Sexpr{wert_str[4]} \\ 
+    E & \Sexpr{GC[5]} & \Sexpr{wert_str[5]} \\     
+ \bottomrule
+\end{tabular}
 \end{center}
 
-mit
-
-\begin{itemize}
-\item $m$, gleich der Masse [kg] des Objekts
-\item $h$, gleich der H{\"o}he [m] des ruhenden Objekts
-\item $v$, gleich der Geschwindigkeit [m/s] des Objekts
-\item $g$, gleich der Erdbeschleunigung mit $9.81 \tfrac{m}{s^2}$ 
-\end{itemize}
-
-Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
-bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
-Blei\textit{tropfen} mit einem Gewicht von $\Sexpr{g_schrott}mg$ zu
-gleichf{\"o}rmigen Blei\textit{kugeln} bei einer Geschwindigkeit von
-$\Sexpr{v_blei}m/s$ bilden.
-
-\begin{enumerate}
-\item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
-  runde Bleikugeln durch die Fallgeschwindigkeit von $\Sexpr{v_blei}m/s$ bilden?
-  \textbf{(3 Punkte)}
-\end{enumerate}
-
-Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige
-Schrottkugeln in einer Ladung. Damit k{\"o}nnen Sie die Armee der Finsternis
-nicht aufhalten. Die Sachlage m{\"u}ssen Sie einmal mathematisch untersuchen.
+Im Weiteren sind Ihnen folgende Informationen zu den Entfernungen der Orte
+zug{\"a}nglich. Der Entfernungsvektor $\overrightarrow{\Sexpr{vec_1}}$ ist
+$\Sexpr{vec_1_l}$km. Im Weiteren ist Ihnen der Entfernungsvektor
+$\overrightarrow{CB}$ mit $\Sexpr{vec_2_l}$km bekannt. Der
+Entfernungsvektor $\overrightarrow{BE}$ ist das $\Sexpr{vec_fach}$-fache
+des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort
+C anpeilen, so liegt der Ort B ungef{\"a}hr $\Sexpr{alpha_grad}^\circ$
+\Sexpr{north_south}. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt
+der Ort D ungef{\"a}hr $\Sexpr{gamma_grad}^\circ$ {\"o}stlich. Vom Ort B
+betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort
+B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E
+\Sexpr{north_south} von B. Die Strecke zwischen A und E ist nicht
+passierbar. Sie starten an dem Ort \Sexpr{start} Ihre Cachertour. \\
 
 \begin{enumerate}
-  \setcounter{enumi}{1}
-\item Nennen Sie die beiden geometrischen Formen aus denen sich
-  n{\"a}herungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete 
-  Skizze des Tropfens!
-  \textbf{(2 Punkte)}
-\item Sie messen eine L{\"a}nge des Tropfens von \Sexpr{l_tropf}mm. Die L{\"o}cher
-  im Sieb erlauben ein Tropfendurchmesser von \Sexpr{d_tropf}mm. Welchen
-  Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
+\item L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
+  Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze
+  entsprechend! \textbf{(2 Punkte)}
+\item Welche Strecke in $km$ legen Sie bei der Bew{\"a}ltigung der
+  \Sexpr{direct} \Sexpr{type}challenge zur{\"u}ck? \textbf{(5
+    Punkte)}
+\item Gehen Sie von einer zus{\"a}tzlichen Suchzeit in Stunden f{\"u}r die
+  Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil
+  aus. Die Suchzeit in Stunden f{\"u}r \textit{jeden einzelnen} Cache wird durch die
+  Funktion
+  \begin{equation*}
+    Suchzeit = \Sexpr{intercept} + \Sexpr{slope} \cdot Schwierigkeit
+  \end{equation*}  
+  beschreiben.  Wie lange in Stunden ben{\"o}tigen Sie um die
+  \Sexpr{direct} \Sexpr{type}challenge zu erf{\"u}llen? \textbf{(3 Punkte)}
+\item An der h{\"o}chsten Schwierigkeit m{\"u}ssen Sie angeln. Ihre Angel ist
+  ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der H{\"o}he
+  von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
+  Angelh{\"o}he! Welche Annahmen mussten Sie treffen um die Aufgabe zu l{\"o}sen? \textbf{(2 Punkte)} 
 \end{enumerate}
 
-Sie haben jetzt die \Sexpr{n_blei} Bleikugeln zusammen. Blei hat eine Dichte
-von $\Sexpr{d_blei}g/cm^3$.
-
-\begin{enumerate}
-  \setcounter{enumi}{3}
-\item Wie schwer in Kilogramm $kg$ sind die \Sexpr{n_blei} produzierten
-  Bleikugeln, die Sie jetzt auf die Burgmauer transportieren m{\"u}ssen?
-  \textbf{(1 Punkt)}
-\end{enumerate}
-
-Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
-
-\begin{enumerate}
-  \setcounter{enumi}{4}
-\item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
-  wenn Sie pro Fall ca. \Sexpr{n_prod} Bleikugeln produzieren wollen und
-  die Bleikugel im Fall \Sexpr{dist}cm Abstand haben m{\"u}ssen?  \textbf{(1
-    Punkt)}
-\end{enumerate}
 

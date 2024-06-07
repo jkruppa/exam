@@ -4,89 +4,69 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/tDgr6fpkkYA}{\includegraphics[width =
+\hfill\href{https://youtu.be/q-qYK4Chslg}{\includegraphics[width =
   2cm]{img/youtube}} %%youtube
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Pyramiden bauen}
+\paragraph{Event Horizon -- Am Rande des Universums}
 
 <<>>=
-land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
-          "oldenburgischen") %>% sample(1)
-land_e <- str_replace(land, "n$", "")
-m_grad <- c(70, 71, 72, 73, 74) %>% sample(1)
-dick_torf <- c(3, 4, 5, 6, 7) %>% sample(1)
-a_grad <- c(54, 53, 52, 51, 55, 60) %>% sample(1)
-elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
-side <- round(c(17, 20, 23)*100/elle) %>% sample(1)
-beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
-           "Finanzbeamter") %>% sample(1)
-winkel <- c("steil", "flach") %>% sample(1)
-n_slave <- c(2,3,4,5) %>% sample(1)
-krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
-effizienz <- c(80, 90, 70, 75, 85) %>% sample(1)
-schubkarre <- c(90, 100, 110, 95) %>% sample(1)
-winkel_rampe <- c(9, 10, 11, 12, 14) %>% sample(1)
-winkel_neu <- c(5, 6, 7, 8) %>% sample(1)
+m_sun <- c(2e30, 2e28, 2e31, 2e29, 2e27) %>% sample(1)
+m_perc <- c(30, 35, 40, 45, 20) %>% sample(1)
+r_black <- c(4000, 3000, 5000, 2500, 3500) %>% sample(1)
+c_light <- c(2.9e+08, 2.8e+08, 2.7e+08) %>% sample(1)
+grav <- c(6.674, 5.974, 6.274, 6.165) %>% sample(1)
+ding_1 <- c("Ein Amboss", "Ein Auto", "Ein Elefant", "Eine Kirchenglocke", "Ein Flugzeug") %>% sample(1)
+ding_2 <- c("eine Feder", "ein Lolli", "ein {\"A}ffchen", "ein Handtuch", "eine Klorolle") %>% sample(1)
 @
 
-Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
-abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
-{\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
-Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
-Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
-Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
-fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
-den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
-Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
-misst \Sexpr{elle}cm.\\
+Die Sonne hat eine aktuelle, angenommene Masse von $\Sexpr{m_sun}$kg. Wenn
+die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem
+Radius von $\Sexpr{r_black}$m kollabiert, wird die Sonne $\Sexpr{m_perc}$\%
+der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$
+und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen.  Sie
+haben folgende Formeln f{\"u}r die kinetische Energie des Lichtteilchens
+$E_{kin}$ und der Graviationsenergie des schwarzen Lochs $E_{grav}$
+gegeben.
 
-\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
-  Sie Seiten und die Winkel der Pyramide entsprechend!}
+\begin{center}
+  \begin{tabular}{cc}
+    $E_{kin} = \cfrac{1}{2}m_fv_f^2$ & $E_{grav} = \cfrac{Gm_sm_f}{r_s}$\\
+  \end{tabular}
+\end{center}
 
-\begin{enumerate}
-\item Bei der K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che
-  \Sexpr{side} K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in $m$
-  ergibt sich? \textbf{(1 Punkt)}
-\item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
-  Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
-  Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
-  ben{\"o}tigten Torf in $m^3$! \textbf{(2 Punkte)}
-\end{enumerate}
+mit
 
-Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
-\Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
-zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
-chronische \Sexpr{krank}schmerzen entwickelt, als sie von der
-anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
-Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
-\Sexpr{schubkarre} Liter.
+\begin{itemize}[noitemsep]
+\item $m_f$, gleich der Masse [kg] des fliehenden Objektes
+\item $m_s$, gleich der Masse [kg] des station{\"a}ren Objekts
+\item $r_s$, gleich dem Radius [m] des station{\"a}ren Objekts  
+\item $G$, gleich der Gravitationskonstante mit $\Sexpr{grav} \cdot 10^{-11}
+  m^3(kg \cdot s^2)^{-1}$ 
+\end{itemize}
+
+Im Folgenden wollen wir uns mit der Frage besch{\"a}ftigen, ob das
+Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
 
 \begin{enumerate}
-  \setcounter{enumi}{2}
-\item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
-  zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
-\item Berechnen Sie die L{\"a}nge der Rampe zur Spitze der Pyramide mit einem
-  Anstellwinkel von $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
-\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die \Sexpr{land_e}
-  Landschaft?  \textbf{(2 Punkte)}
-\end{enumerate}
-
-Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
-Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
-\Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen
-w{\"u}rde. Sie m{\"u}ssen nochmal ran.
-
-\begin{enumerate}
-  \setcounter{enumi}{5}
-\item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
-  {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
-  Pyramide um $\Sexpr{winkel_neu}^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
+\item Geben Sie die Formel f{\"u}r die Fluchtgeschwindigkeit $v_f$ an! 
+  \textbf{(1 Punkt)}
+\item {\"U}berpr{\"u}fen Sie Ihre umgestellte Formel nach $v_f$ anhand der Einheiten!
+  \textbf{(1 Punkt)} 
+\item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
+  Lichtteilchens mit den angegebenen Informationen! \textbf{(2 Punkte)}
+\item Gehen Sie von einer Lichtgeschwindigkeit von $\Sexpr{c_light}m/s$
+  aus. Kann das Lichtteilchen der Gravitation des schwarzen Lochs
+  entkommen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
+  $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
+  und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
+  \textbf{(2 Punkte)}
+ \item \Sexpr{ding_1} und \Sexpr{ding_2} st{\"u}rzen aus gro{\ss}er und gleicher H{\"o}he
+  in ein schwarzes Loch. Welches der beiden Objekte {\"u}berschreitet zuerst
+  den Ereignishorizont des schwarzes Loches? Begr{\"u}nden
+  Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)}  
 \end{enumerate}
 
 
-
-% https://de.wikipedia.org/wiki/Rechtwinkliges_Dreieck
-% https://www.matheretter.de/wiki/pyramide
-% https://de.wikipedia.org/wiki/Knickpyramide
