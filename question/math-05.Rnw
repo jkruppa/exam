@@ -12,15 +12,37 @@
 
 <<>>=
 dino_years <- c(66, 65, 67, 69) |> sample(1)
+durchmesser_erde <- c(12742, 12350, 12890, 11956) |> sample(1)
+sonne_erde_ae_dist <- c(1.1, 1, 0.95, 1.1) |> sample(1)
+ae_diff <- c(150000000, 152000000, 148000000, 155000000) |> sample(1)
+sonnen_wind_h <- c(84, 87, 85, 81, 79) |> sample(1)
+sonnen_wind_he <- c(12, 11, 9, 10, 8) |> sample(1)
+sonnen_wind_rest <- 100 - sonnen_wind_h - sonnen_wind_he
+teilchendichte_erde <- c(5, 6, 7, 8) |> sample(1)
+fallbeschleunigung <- c(9.81, 9.78. 9.65. 9.87) |> sample(1)
 @
 
-"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum die Dinosaurier vor \Sexpr{dino_years} Millionen Jahren - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde aus dem 17.–18. Jahrhundert von Edmond Halley? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen.\footnote{Die Quelle der Inspiration
+"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum vor \Sexpr{dino_years} Millionen Jahren die Dinosaurier - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde aus dem 17.–18. Jahrhundert von Edmond Halley? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen.\footnote{Die Quelle der Inspiration
   für die Aufgabe war folgende Artikel:
-  \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"`Skeptische Anmerkungen --- Die Erde als Dampfnudel"' in Der Humanistische Pressedienst} und {https://www.final-frontier.ch/erdexpansion}{"`Die expandierende Erde – die gescheiterte Hypothese"' in Final-frontier.ch}}
+  \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"`Skeptische Anmerkungen --- Die Erde als Dampfnudel"' in Der Humanistische Pressedienst} und {https://www.final-frontier.ch/erdexpansion}{"`Die expandierende Erde – die gescheiterte Hypothese"' in Final-frontier.ch}}\\
+
+Die Erde hat einen Durchmesser von \Sexpr{durchmesser_erde}km. Die Distanz zwischen Sonne und Erde entspricht \Sexpr{sonne_erde_ae_dist} astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \Sexpr{ae_diff}km angegeben. \\
+
+Der \textit{massebehaftete} Sonnenwind besteht aus \Sexpr{sonnen_wind_h}\% Wasserstoffkernen, \Sexpr{sonnen_wind_he}\% Heliumkernen sowie \Sexpr{sonnen_wind_rest}\% anderen Atomkernen. Die Teilchendichte pro Sekunde ist hierbei zwischen 0.4 bis 100 Teilchen cm$^{-3}$ mit einer mittleren Teilchendichte von \Sexpr{teilchendichte_erde}cm$^{-3}$). \\
+
+\textit{Lösen Sie den folgenden Aufgabenteil mit einer aussagekräftigen Skizze!}
 
 \begin{enumerate}
-  \setcounter{enumi}{2}
+\item Berechnen Sie die Anzahl an massebehafteten Teilchen, die die Erde pro Sekunde treffen! \textbf{(1 Punkt)}
+\item Berechnen Sie die Anzahl an massebehafteten Teilchen, die die Sonne pro Sekunde aussendet! \textbf{(2 Punkte)}
+\item Berechnen Sie die Masse, die die Erde pro Jahr durch den \textit{massebehafteten} Sonnenwind zunimmt! \textbf{(2 Punkte)}
+\end{enumerate}
+
+Betrachten wir die Kraft, die auf die Dinosaurier gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung einen Wert von \Sexpr{fallbeschleunigung}m/s$^2$ an.
+
+\begin{enumerate}
+  \setcounter{enumi}{3}
 \item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
 \end{enumerate}
 
-
+% https://de.wikipedia.org/wiki/Kardaschow-Skala
