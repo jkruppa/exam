@@ -13,36 +13,52 @@
 <<>>=
 dino_years <- c(66, 65, 67, 69) |> sample(1)
 durchmesser_erde <- c(12742, 12350, 12890, 11956) |> sample(1)
-sonne_erde_ae_dist <- c(1.1, 1, 0.95, 1.1) |> sample(1)
+sonne_erde_ae_dist <- c(1.01, 1.03, 0.99, 1.05) |> sample(1)
 ae_diff <- c(150000000, 152000000, 148000000, 155000000) |> sample(1)
 sonnen_wind_h <- c(84, 87, 85, 81, 79) |> sample(1)
 sonnen_wind_he <- c(12, 11, 9, 10, 8) |> sample(1)
 sonnen_wind_rest <- 100 - sonnen_wind_h - sonnen_wind_he
 teilchendichte_erde <- c(5, 6, 7, 8) |> sample(1)
-fallbeschleunigung <- c(9.81, 9.78. 9.65. 9.87) |> sample(1)
+fallbeschleunigung <- c(9.81, 9.78, 9.65, 9.87) |> sample(1)
+gewicht_elefant <- c("asiatischen Elefanten liegt bei 3t bis 5t",
+                     "afrikanischen Elefanten liegt bei 5t bis 7t",
+                     "Waldelefanten mit 2.7t liegt bei 6t") |> sample(1)
+gewicht_dino <- c("Tyrannosaurus rex (T. rex) bei 4.5t bis 8t",
+                  "Triceratops bei 6t bis 12t",
+                  "Brachiosaurus bei bis zu 30t") |> sample(1)
+h_G <- c(1.01, 1.05, 1.02, 1.08) |> sample(1)
+he_G <- c(4.01, 3.92, 4.11, 4.32) |> sample(1)
+rest_G <- c(152.01, 145.31, 89.32, 69.18) |> sample(1)
+dichte_erde <- c(5.51, 5.21, 5.86, 5.44) |> sample(1)
 @
 
-"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum vor \Sexpr{dino_years} Millionen Jahren die Dinosaurier - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde aus dem 17.–18. Jahrhundert von Edmond Halley? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen.\footnote{Die Quelle der Inspiration
-  für die Aufgabe war folgende Artikel:
-  \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"`Skeptische Anmerkungen --- Die Erde als Dampfnudel"' in Der Humanistische Pressedienst} und {https://www.final-frontier.ch/erdexpansion}{"`Die expandierende Erde – die gescheiterte Hypothese"' in Final-frontier.ch}}\\
+"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum vor \Sexpr{dino_years} Millionen Jahren die Dinosaurier - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde von Edmond Halley aus dem 17.–18. Jahrhundert? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen\footnote{Die Quelle der Inspiration
+  für die Aufgabe waren folgende Artikel:
+  \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"`Skeptische Anmerkungen --- Die Erde als Dampfnudel"' in Der Humanistische Pressedienst} und \href{https://www.final-frontier.ch/erdexpansion}{"`Die expandierende Erde – die gescheiterte Hypothese"' in Final-frontier.ch}}.  \\
 
-Die Erde hat einen Durchmesser von \Sexpr{durchmesser_erde}km. Die Distanz zwischen Sonne und Erde entspricht \Sexpr{sonne_erde_ae_dist} astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \Sexpr{ae_diff}km angegeben. \\
+Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und heute gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung $g$ der Erde \textit{heutzutage} einen Wert von \Sexpr{fallbeschleunigung}m/s$^2$ an. Im Weiteren hat die Erde einen ungefähren Durchmesser von \Sexpr{durchmesser_erde}km und eine mittlere Dichte $\rho$ von \Sexpr{dichte_erde}g/cm$^3$. Das Gewicht von einem heute lebenden \Sexpr{gewicht_elefant} und das Gewicht von einem \Sexpr{gewicht_dino}.
 
-Der \textit{massebehaftete} Sonnenwind besteht aus \Sexpr{sonnen_wind_h}\% Wasserstoffkernen, \Sexpr{sonnen_wind_he}\% Heliumkernen sowie \Sexpr{sonnen_wind_rest}\% anderen Atomkernen. Die Teilchendichte pro Sekunde ist hierbei zwischen 0.4 bis 100 Teilchen cm$^{-3}$ mit einer mittleren Teilchendichte von \Sexpr{teilchendichte_erde}cm$^{-3}$). \\
+\begin{enumerate}
+\item Welchen Durchmesser müsste die Erde vor \Sexpr{dino_years} Millionen Jahren gehabt haben, wenn Dinosaurier und Elefanten die gleiche Gewichtskraft $\overrightarrow{F_G}$ damals und heute erfahren hätten? \textit{Beantworten Sie die Frage anhand der folgenden Teilaufgaben!}
+\begin{enumerate}
+\item Berechnen Sie die Fallbeschleunigung von vor \Sexpr{dino_years} Millionen Jahren unter der obigen Annahme der gleiche Gewichtskraft $\overrightarrow{F_G}$! \textbf{(1 Punkt)}
+\item Berechnen Sie Masse der heutigen Erde! \textbf{(1 Punkt)}
+\item Schließen Sie über die Masse auf den Durchmesser der Erde vor \Sexpr{dino_years} Millionen Jahren! \textbf{(2 Punkte)}
+\end{enumerate}
+\item Beantworten Sie die Eingangsfrage mit 1-2 Antwortsätzen! \textbf{(1 Punkt)}
+\end{enumerate}
+
+Die Distanz zwischen Sonne und Erde entspricht \Sexpr{sonne_erde_ae_dist} astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \Sexpr{ae_diff}km angegeben. Der \textit{massebehaftete} Sonnenwind besteht aus \Sexpr{sonnen_wind_h}\% Wasserstoffkernen mit einer molaren Masse von \Sexpr{h_G }g/mol, \Sexpr{sonnen_wind_he}\% Heliumkernen mit \Sexpr{he_G}g/mol sowie \Sexpr{sonnen_wind_rest}\% weiteren Atomkernen mit  \Sexpr{rest_G}g/mol. Die Teilchendichte bei Eintritt in die Erdatmosphäre liegt zwischen 0.4 bis 100 Teilchen cm$^{-3}$ pro Sekunde mit einer mittleren Teilchendichte von \Sexpr{teilchendichte_erde}cm$^{-3}$ pro Sekunde. \\
 
 \textit{Lösen Sie den folgenden Aufgabenteil mit einer aussagekräftigen Skizze!}
 
 \begin{enumerate}
-\item Berechnen Sie die Anzahl an massebehafteten Teilchen, die die Erde pro Sekunde treffen! \textbf{(1 Punkt)}
-\item Berechnen Sie die Anzahl an massebehafteten Teilchen, die die Sonne pro Sekunde aussendet! \textbf{(2 Punkte)}
-\item Berechnen Sie die Masse, die die Erde pro Jahr durch den \textit{massebehafteten} Sonnenwind zunimmt! \textbf{(2 Punkte)}
-\end{enumerate}
-
-Betrachten wir die Kraft, die auf die Dinosaurier gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung einen Wert von \Sexpr{fallbeschleunigung}m/s$^2$ an.
-
-\begin{enumerate}
   \setcounter{enumi}{3}
-\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
+\item Berechnen Sie die Anzahl an massebehafteten Teilchen des Sonnenwindes, die die gesamte Erde pro Sekunde treffen! \textbf{(1 Punkt)}
+\item Berechnen Sie die Anzahl an massebehafteten Teilchen des Sonnenwindes, die die Sonne pro Sekunde in alle Richtungen aussendet! \textbf{(2 Punkte)}
+\item Berechnen Sie die Masse, die die Erde pro Jahr durch die \textit{massebehafteten} Teilchen des Sonnenwind zunimmt! \textbf{(2 Punkte)}
 \end{enumerate}
+
+
 
 % https://de.wikipedia.org/wiki/Kardaschow-Skala
