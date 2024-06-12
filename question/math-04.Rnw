@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -83,7 +83,7 @@ Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch b
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
+\item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(2 Punkte)}
 \end{enumerate}
 
 Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen aber hinter den Erwartungen zurück. Die Menge reduzierte sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados stiegen in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile} an.
@@ -97,7 +97,7 @@ Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisie
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(2 Punkte)}
+\item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Das alles hätten Sie nicht von \Sexpr{person} erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
