@@ -67,9 +67,6 @@ mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
 
 Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{person}?\\
 
-\textit{Nutzen Sie im Folgenden die tabellarische Darstellung des
-  Dreisatzes!}
-
 \begin{enumerate}
 \item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(1 Punkt)}
 \item Wenn Sie die \Sexpr{heidel_beere_kauf} Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je \Sexpr{aligator_price} EUR können Sie sich dann noch für \Sexpr{schein} EUR leisten? \textbf{(1 Punkt)}
