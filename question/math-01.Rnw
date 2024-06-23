@@ -19,7 +19,9 @@ Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach
 sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-j{\"a}hrigen Eiche aus Ivenack vor
 den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch
 lautes Wiehern, woraufhin die franz{\"o}sische Armee den Schimmel
-beschlagnahmte und nach Frankreich f{\"u}hrte. \\
+beschlagnahmte und nach Frankreich f{\"u}hrte\footnote{Die Quelle der Inspiration
+  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
+  \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. \\
 
 <<>>=
 mm_wachstum <- c(0.8, 0.9, 1.0, 1.1, 1.2) %>% sample(1)
