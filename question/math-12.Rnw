@@ -13,11 +13,7 @@
 {\tiny\textbf{Stichworte:} Brot aus Luft $\bullet$ Walöl $\bullet$ Haber-Bosch-Verfahren $\bullet$ 1. Weltkrieg $\bullet$ 40\% N im menschlichen Körper $\bullet$ Positivist}
 %% --------------------------------------------------------------------
 
-\paragraph{Die atmende Wand\footnote{Die Quelle der Inspiration
-  für die Aufgabe war folgender Artikel:
-  \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}} und Brot aus Luft\footnote{Die Quelle der Inspiration
-  für die Aufgabe war folgender Artikel:
-  \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}}
+\paragraph{Die atmende Wand und Brot aus Luft}
 
 <<>>=
 m_grad <- c(70, 71, 72, 73) %>% sample(1)
@@ -39,7 +35,9 @@ mid_str <- str_c(((upper-7)/2+7), ":00")
 Sie wollen das Ausma{\ss} der Radonbelastung in ihrem Keller bestimmen und
 l{\"u}ften daher nicht. W{\"a}hrend einer Messperiode von 7:00 Uhr bis
 \Sexpr{upper_str} bestimmen Sie dreimal automatisch die Radonbelastung in
-Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung.
+Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Quelle der Inspiration
+  für die Aufgabe war folgender Artikel:
+  \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}}.
 
 <<math-10,  echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(time = as_factor(1:3),
@@ -101,7 +99,9 @@ normalen Umgebungsluft.
 \end{enumerate}
 
 F{\"u}r die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak
-$NH_3$ gilt folgende Reaktionsgleichung:
+$NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration
+  für die Aufgabe war folgender Artikel:
+  \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}:
 
 \begin{equation*}
   N_2 + 3H_2 \rightarrow 2NH_3

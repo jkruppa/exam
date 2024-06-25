@@ -9,9 +9,7 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Geocaching\footnote{Die Quelle der Inspiration
-  für die Aufgabe war folgende Tätigkeit:
-  \href{https://www.geocaching.com/play}{Geocaching -- Mach mit bei der weltweit größten Schatzsuche.}} -- Von Satelliten und Plastikdosen}
+\paragraph{Geocaching -- Von Satelliten und Plastikdosen}
 
 <<>>=
 library(stringi)
@@ -53,7 +51,9 @@ die von Ihnen abzufahrenden Orte vor. Die Terrain- und
 Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5
 (schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den
 Orten und den entsprechenden Caches stehen Ihnen f{\"u}r Ihre Planung der Route
-zu Verf{\"u}gung.
+zu Verf{\"u}gung\footnote{Die Quelle der Inspiration
+  für die Aufgabe war folgende Tätigkeit:
+  \href{https://www.geocaching.com/play}{Geocaching -- Mach mit bei der weltweit größten Schatzsuche.}}.
 
 \begin{center}
   \begin{tabular}{ ccc }
