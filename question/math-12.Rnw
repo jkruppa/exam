@@ -1,6 +1,6 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
@@ -32,8 +32,8 @@ upper_str <- str_c(upper, ":00")
 mid_str <- str_c(((upper-7)/2+7), ":00")
 @
 
-Sie wollen das Ausma{\ss} der Radonbelastung in ihrem Keller bestimmen und
-l{\"u}ften daher nicht. W{\"a}hrend einer Messperiode von 7:00 Uhr bis
+Als Kellerkind vom Dorf wollen das Ausmaß der Radonbelastung in ihrem Kellerzimmer bestimmen und
+lüften daher nicht. Spart dann auch Energie und lüften wird sowieso überschätzt. Während einer Messperiode von 7:00 Uhr bis
 \Sexpr{upper_str} bestimmen Sie dreimal automatisch die Radonbelastung in
 Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Quelle der Inspiration
   für die Aufgabe war folgender Artikel:
@@ -57,12 +57,12 @@ ggplot(plot_tbl, aes(time, rsp)) +
 
 \begin{enumerate}
 \item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von
-  \Sexpr{crit_ra}$Bq/m^3$ in Ihrem ungel{\"u}fteten Kellerraum erreicht haben?
+  \Sexpr{crit_ra}$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben?
   \textbf{(2 Punkte)}
 \end{enumerate}
 
-Radon zerf{\"a}llt mit einer Halbwertszeit von \Sexpr{radon_t}d zu
-Polonium. Polonium wiederum zerf{\"a}llt mit einer Halbwertszeit von
+Radon zerfällt mit einer Halbwertszeit von \Sexpr{radon_t}d zu
+Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von
 \Sexpr{polo_t}d zu Blei. Nur Radon und Polonium tragen zur
 radioaktiven Strahlenbelastung bei.
 
@@ -73,7 +73,7 @@ radioaktiven Strahlenbelastung bei.
   \textbf{(4 Punkte)}
 \end{enumerate}
 
-Folgende Tabelle enth{\"a}lt die Informationen zur Zusammensetzung der
+Folgende Tabelle enthält die Informationen zur Zusammensetzung der
 normalen Umgebungsluft.
 
 \begin{center}
@@ -94,11 +94,11 @@ normalen Umgebungsluft.
 \begin{enumerate}
    \setcounter{enumi}{2}
 \item Rechnen Sie die Volumenprozente (Vol-\%) der Umgebungsluft in die
-  entsprechenden ppm-Werte um und erg{\"a}nzen Sie die berechneten ppm-Werte in
+  entsprechenden ppm-Werte um und ergänzen Sie die berechneten ppm-Werte in
   die Tabelle!  \textbf{(1 Punkt)}
 \end{enumerate}
 
-F{\"u}r die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak
+Während Sie Ihr etwas pappiges Toastbrot mampfen kommt Ihnen die Dokumentation über Brot aus Luft in den Sinn. Sie denken darüber ein wenig nach. Für die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak
 $NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration
   für die Aufgabe war folgender Artikel:
   \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}:
@@ -108,11 +108,11 @@ $NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration
 \end{equation*}  
 
 Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein
-Volumen von 22.4 Liter. % Ein Mol enth{\"a}lt $6 \cdot 10^{23}$ Teilchen.
+Volumen von 22.4 Liter. % Ein Mol enthält $6 \cdot 10^{23}$ Teilchen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Welche Masse an Ammoniak in Kilogramm $kg$ k{\"o}nnen Sie aus einem
+\item Welche Masse an Ammoniak in Kilogramm $kg$ können Sie aus einem
   Kubikmeter $m^3$ Luft unter normalen Umweltbedingungen gewinnen?
   \textbf{(2 Punkte)}
 \item Wieviel Ammoniak in $mol$ erhalten Sie aus einem Kubikmeter Luft?
