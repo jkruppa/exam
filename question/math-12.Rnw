@@ -9,7 +9,15 @@
 \hspace{2Ex}
 %% --------------------------------------------------------------------
 
-\paragraph{Die atmende Wand und Brot aus Luft}
+%% --------------------------------------------------------------------
+{\tiny\textbf{Stichworte:} Brot aus Luft $\bullet$ Walöl $\bullet$ Haber-Bosch-Verfahren $\bullet$ 1. Weltkrieg $\bullet$ 40\% N im menschlichen Körper $\bullet$ Positivist}
+%% --------------------------------------------------------------------
+
+\paragraph{Die atmende Wand\footnote{Die Quelle der Inspiration
+  für die Aufgabe war folgender Artikel:
+  \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}} und Brot aus Luft\footnote{Die Quelle der Inspiration
+  für die Aufgabe war folgender Artikel:
+  \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}}
 
 <<>>=
 m_grad <- c(70, 71, 72, 73) %>% sample(1)

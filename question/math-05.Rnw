@@ -37,7 +37,7 @@ dichte_erde <- c(5.51, 5.21, 5.86, 5.44) |> sample(1)
 @
 
 "'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum vor \Sexpr{dino_years} Millionen Jahren die Dinosaurier - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde von Edmond Halley aus dem 17.–18. Jahrhundert? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen\footnote{Die Quelle der Inspiration
-  für die Aufgabe waren folgende Artikel:
+  für die Aufgabe war folgender Artikel:
   \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"Skeptische Anmerkungen --- Die Erde als Dampfnudel" in Der Humanistische Pressedienst}}.  \\
 
 Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und heute gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung $g$ der Erde \textit{heutzutage} einen Wert von \Sexpr{fallbeschleunigung}m/s$^2$ an. Im Weiteren hat die Erde einen ungefähren Durchmesser von \Sexpr{durchmesser_erde}km und eine mittlere Dichte $\rho$ von \Sexpr{dichte_erde}g/cm$^3$. Das Gewicht von einem heute lebenden \Sexpr{gewicht_elefant} und das Gewicht von einem \Sexpr{gewicht_dino}.
