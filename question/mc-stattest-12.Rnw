@@ -1,7 +1,7 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-type <- c("des p-Wertes", "der Teststatistik", "des 95\\%-Konfidenzintervalls") %>% sample(1)
+type <- c("des p-Wertes", "der berechneten Teststatistik", "des 95\\%-Konfidenzintervalls") %>% sample(1)
 @ 
 
 Welche Aussage {\"u}ber die Entscheidung anhand \Sexpr{type} gegen die
@@ -10,7 +10,7 @@ Nullhypothese ist richtig?
 <<mc-statistisches-testen-012, results='asis', echo = FALSE>>=
 
 questions_vec <- c('Ist $Pr(D|H_0)$ kleiner als das Signifikanzniveau $\\alpha$ gleich $5\\%$ dann wird die Nullhypothese $H_0$ abgelehnt.',
-                   'Ist $T_{calc}$ h{\"o}her als der kritische Wert $T_{\\alpha = 5\\%}$ dann wird die Nullhypothese $H_0$ abgelehnt.',
+                   'Ist $T_{D}$ h{\"o}her als der kritische Wert $T_{\\alpha = 5\\%}$ dann wird die Nullhypothese $H_0$ abgelehnt.',
                    'Ist in dem 95\\%-Konfidenzintervall nicht die Null enthalten dann wird die Nullhypothese $H_0$ abgelehnt.',
                    str_c('Anhand ', type, ' l{\"a}sst sich wie folgt eine Entscheidung treffen. Liegt der Wert {\"u}ber oder gleich dem Signifikanzniveau $\\alpha$ dann kann die Nullhypothese abgelehnt werden.'),
                    str_c('Anhand ', type, ' l{\"a}sst sich wie folgt eine Entscheidung treffen. Liegt der Wert in dem Signifikanzniveauintervall $\\alpha$ dann kann die Nullhypothese abgelehnt werden.')                   
