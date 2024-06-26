@@ -5,8 +5,13 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+<<ttest-R-04-0,  echo = FALSE>>=
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+@
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit \Sexpr{plant}.
 
 <<ttest-R-04-a,  echo = FALSE>>=
 

@@ -72,7 +72,7 @@
 \clearpage
 % -----------------------------------------------------------------------
 
-\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel}
   \vspace{1Ex}
   \begin{itemize}
   \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
@@ -85,7 +85,7 @@
 \end{graybox}
 \vfill
 
-\begin{graybox}{Ergebnis der Klausur}
+\begin{graybox}{Endnote}
   \vspace{1Ex}
   \begin{itemize}
   \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus dem Multiple
@@ -175,7 +175,7 @@
     \large
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
-      \textbf{Aufgabe} & 11 & 12 & 13 & 14 & 15 & 16 & 17 \strut\\
+      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} \strut\\
       \hline
       \textbf{Punkte} & 
       \hspace{1Ex}\Large\textcolor{gray!70}{9}\hspace{1Ex}  & 
@@ -2046,7 +2046,9 @@ animal\_id & before & after\\
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit Lauch.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -2054,14 +2056,14 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 
 ## 	Two Sample t-test
 ## 
-## data:  waterintake by infusion
-## t = 1.5815, df = 14, p-value = 0.1361
+## data:  drymatter [kg/ha] by Fe
+## t = -0.56684, df = 8, p-value = 0.5864
 ## alternative hypothesis: true  is not equal to [condensed]
 ## 95 percent confidence interval:
-##  -0.9554858  6.3205652
+##  -7.09541  4.29541
 ## sample estimates:
-##  mean in group mid mean in group trt1 
-##           17.11111           14.42857
+##  mean in group mid mean in group trt2 
+##               16.2               17.6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2073,7 +2075,7 @@ Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Skizieren Sie eine Abbildung in der Sie $T_{D}$, $Pr(D|H_0)$, $A=0.95$,
-  sowie $T_{\alpha=5\%} = |2.14|$ einzeichnen! \textbf{(4 Punkte)}
+  sowie $T_{\alpha=5\%} = |2.31|$ einzeichnen! \textbf{(4 Punkte)}
 \item Beschriften Sie die Abbildung entsprechend! \textbf{(1 Punkt)}  
 \item Berechnen Sie den Effekt der Behandlungen! \textbf{(1 Punkt)}
 \end{enumerate} 
@@ -2087,7 +2089,9 @@ Punkte)}
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit Erdbeeren.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -2095,21 +2099,21 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 
 ## 	Two Sample t-test
 ## 
-## data:  waterintake by infusion
-## t = -0.031823, df = 14, p-value = 0.9751
+## data:  drymatter [kg/ha] by Fe
+## t = 2.0868, df = 14, p-value = 0.05568
 ## alternative hypothesis: true  is not equal to [condensed]
 ## 95 percent confidence interval:
-##  -3.256973  3.161735
+##  -0.08869472  6.46964710
 ## sample estimates:
-## mean in group ctrl mean in group trt1 
-##           20.28571           20.33333
+## mean in group mid mean in group low 
+##          20.33333          17.14286
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
 \begin{enumerate}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2
 Punkte)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
@@ -2127,22 +2131,24 @@ Punkte)}
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit Lauch.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## 
-## 	Welch t-Test
+## 	Two Sample t-test
 ## 
-## data:  weight by group
-## t = 0.28937, df = 14, p-value = 0.7765
+## data:  waterintake [ml/d] by infusion
+## t = -1.0307, df = 12, p-value = 0.323
 ## alternative hypothesis: true  is not equal to [condensed]
 ## 95 percent confidence interval:
-##  -3.765798  4.940402
+##  -7.117753  2.546324
 ## sample estimates:
-## mean in group ctrl mean in group trt2 
-##           15.44444           14.85714
+## mean in group high mean in group trt2 
+##           17.57143           19.85714
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2171,7 +2177,8 @@ Punkte)}
 %% --------------------------------------------------------------------
 
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit Erbsen.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -2179,14 +2186,14 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
 ## 
 ## 	Paired t-test
 ## 
-## data:  t0 and t1
-## t = -2.7899, df = 8, p-value = 0.02356
+## data:  before and after
+## t = -1.4626, df = 4, p-value = 0.2174
 ## alternative hypothesis: true  is not equal to [condensed]
 ## 95 percent confidence interval:
-##  -7.3061663 -0.6938337
+##  -7.535517  2.335517
 ## sample estimates:
 ## mean difference 
-##              -4
+##            -2.6
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2223,7 +2230,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 
 
 
-In einem Freilandversuch wurde der Ertrag von Lauch unter drei verschiedenen
+In einem Freilandversuch wurde der Ertrag von Brokoli unter drei verschiedenen
 Pestizid-Dosen $0.5 g/l$, $1.5 g/l$ und $2.5 g/l$ gemessen. Im Folgenden ist der
 Datensatz einmal visualisiert.
 
@@ -2267,13 +2274,13 @@ Datensatz einmal visualisiert.
 
 
 
-Der Datensatz \texttt{week7\_growth\_tbl} enth{\"a}lt den Muskelfleischanteil von
-Lamas, die unter einer Kontrolle und zwei verschiedenen
+Der Datensatz \texttt{week7\_growth\_tbl} enth{\"a}lt das Lebendgewicht von
+Enten, die unter einer Kontrolle und zwei verschiedenen
 Behandlungsbedingungen erzielt wurden. Als Behandlung wurden verschiedene
 Nahrungszus{\"a}tze in unterschiedlichen Dosen verf{\"u}ttert. Als Behandlung haben
 Sie somit den Faktor \textit{group} mit den Faktorstufen
-\textit{lethal}, \textit{pos} und
-\textit{mid} vorliegen.
+\textit{pos}, \textit{mid} und
+\textit{neg} vorliegen.
 
 
 
@@ -2292,9 +2299,9 @@ Sie somit den Faktor \textit{group} mit den Faktorstufen
     \hline
    \textbf{group}  & 2 &  &  &  &  \strut\\
     \hline
-   \textbf{error}  & 20 & 94.32 &  &  &  \strut\\
+   \textbf{error}  & 22 & 55.08 &  &  &  \strut\\
         \hline
-   \textbf{total}  & 22 & 133.3 &  &  &  \strut\\
+   \textbf{total}  & 24 & 228.96 &  &  &  \strut\\
   \end{tabular}
 \end{center}
 
@@ -2303,11 +2310,11 @@ Sie somit den Faktor \textit{group} mit den Faktorstufen
 \begin{enumerate}
   \setcounter{enumi}{1}
 \item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
-  $F_{\alpha = 5\%} = 3.49$ ab. Begr{\"u}nden Sie Ihre
+  $F_{\alpha = 5\%} = 3.44$ ab. Begr{\"u}nden Sie Ihre
   Antwort! \textbf{(2 Punkte)}
 \item Berechen Sie den Effektsch{\"a}tzer $\eta^2$. Was sagt Ihnen der Wert von
   $\eta^2$ aus? \textbf{(2 Punkte)}
-\item Skizzieren Sie K{\"o}rpergr{\"o}{\ss}e von drei Tieren pro Behandlung f{\"u}r eine
+\item Skizzieren Sie K{\"o}rpergr{\"o}{\ss}e von vier Tieren pro Behandlung f{\"u}r eine
   signifikante, einfaktorielle ANOVA! \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -2330,13 +2337,13 @@ Sie somit den Faktor \textit{group} mit den Faktorstufen
 
 
 
-Der Datensatz \texttt{fertilizer\_growth\_tbl} enth{\"a}lt den Ertrag pro Hektar der
-Erdbeerenpflanzen, die unter einer Kontrolle und zwei
+Der Datensatz \texttt{fertilizer\_growth\_tbl} enth{\"a}lt das Frischgewicht der
+Maisspflanzen, die unter einer Kontrolle und zwei
 verschiedenen Behandlungsbedingungen erzielt wurden. Dabei wurden die
-Erdbeerenpflanzen unter verschiedenen Konzentrationen von einem alternativen
+Maisspflanzen unter verschiedenen Konzentrationen von einem alternativen
 D{\"u}nger angebaut. Als Behandlung haben Sie daher den Faktor \textit{group} mit den
-Faktorstufen \textit{high}, \textit{lethal} und
-\textit{extreme} vorliegen.
+Faktorstufen \textit{high}, \textit{pos} und
+\textit{neg} vorliegen.
 
 
 
@@ -2353,9 +2360,9 @@ Faktorstufen \textit{high}, \textit{lethal} und
   \begin{tabular}{l|c|c|c|c|c}
      & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
     \hline
-   \textbf{group}  & 2 & 220.22 &  &  &  \strut\\
+   \textbf{group}  & 2 & 71.41 &  &  &  \strut\\
     \hline
-   \textbf{error}  & 24 & 131.78 &  &  &  \strut\\
+   \textbf{error}  & 24 & 199.56 &  &  &  \strut\\
   \end{tabular}
 \end{center}
 
@@ -2382,9 +2389,9 @@ Faktorstufen \textit{high}, \textit{lethal} und
 \toprule
 group & n & mean & sd\\
 \midrule
-high & 9 & 16.78 & 0.67\\
-lethal & 9 & 18.67 & 1.80\\
-extreme & 9 & 23.56 & 3.57\\
+high & 9 & 19.78 & 2.49\\
+pos & 9 & 20.00 & 0.71\\
+neg & 9 & 23.33 & 4.27\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2411,11 +2418,11 @@ extreme & 9 & 23.56 & 3.57\\
 
 
 
-Der Datensatz \textit{plant\_tbl} enth{\"a}lt das Outcome \textit{height} f{\"u}r ein Experiment in einer Klimakammer mit 
-Maisspflanzen, welches unter drei 
+Der Datensatz \textit{plant\_tbl} enth{\"a}lt das Outcome \textit{height} f{\"u}r ein Gew{"a}chshausexperiment mit 
+Lauchstangen, welches unter drei 
 verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen sind in dem Faktor
-\textit{trt} mit den Faktorstufen \textit{low},  \textit{B} und
- \textit{high} codiert. Sie erhalten folgenden Output in \Rlogo.
+\textit{trt} mit den Faktorstufen \textit{A},  \textit{B} und
+ \textit{trt2} codiert. Sie erhalten folgenden Output in \Rlogo.
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -2423,9 +2430,9 @@ verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen si
 ## Analysis of Variance Table
 ## 
 ## Response: height
-##           Df  Sum Sq Mean Sq F value    Pr(>F)
-## trt        2 141.015  70.507  37.995 7.306e-08
-## Residuals 22  40.825   1.856
+##           Df Sum Sq Mean Sq F value    Pr(>F)
+## trt        2 70.382  35.191  17.054 4.761e-05
+## Residuals 20 41.270   2.063
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2459,7 +2466,7 @@ verschiedenen D{\"u}ngerbedingungen erzielt wurden. Die D{\"u}ngerbedingungen si
 Der Datensatz \textit{tooth\_tbl} enth{\"a}lt Daten aus einer Studie zur
 Bewertung der Wirkung von Vitamin C auf das Zahnwachstum bei
 Meerschweinchen. Der Versuch wurde an verschiedenen Schweinen durchgef{\"u}hrt,
-wobei jedes Tier eine von 5 Vitamin-C-Dosen \textit{dose}
+wobei jedes Tier eine von 3 Vitamin-C-Dosen \textit{dose}
 {\"u}ber eine von 2 Verabreichungsmethoden \textit{supp}
 erhielt. Die Zahnl{\"a}nge wurde als normalverteiltes Outcome gemessen.
 
@@ -2484,13 +2491,13 @@ erhielt. Die Zahnl{\"a}nge wurde als normalverteiltes Outcome gemessen.
   \begin{tabular}{l|c|c|c|c|c}
      & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
     \hline
-   \textbf{supp}  & 1 & 231.69 &  &  &  \strut\\
+   \textbf{supp}  & 1 & 53.65 &  &  &  \strut\\
     \hline
-    \textbf{dose}  & 4 & 73.13 &  &  &  \strut\\
+    \textbf{dose}  & 2 & 103.78 &  &  &  \strut\\
     \hline
-    \textbf{supp:dose}  & 4 & 167.37 &  &  &  \strut\\
+    \textbf{supp:dose}  & 2 & 261.65 &  &  &  \strut\\
     \hline
-   \textbf{error}  & 40 & 407.11 &  &  &  \strut\\
+   \textbf{error}  & 24 & 200.1 &  &  &  \strut\\
   \end{tabular}
 \end{center}
 
@@ -2519,9 +2526,9 @@ erhielt. Die Zahnl{\"a}nge wurde als normalverteiltes Outcome gemessen.
 
 
 Der Datensatz \textit{gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
-der Wirkung vom Vitamin Selen auf das Wachstum von Puten. Der
-Versuch wurde an 60 Puten durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Selen-Dosen $dose$ ($0.5$ ng/Tag, $2$ ng/Tag und $10$ ng/Tag)
+der Wirkung vom Vitamin Selen auf das Wachstum von Rindern. Der
+Versuch wurde an 68 Rindern durchgef{\"u}hrt, wobei
+jedes Tier eine von drei Selen-Dosen $dose$ ($0.5$ ng/Tag, $1$ ng/Tag und $15$ ng/Tag)
 {\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
 Festnahrung). Sie erhalten folgende Ausgabe in \Rlogo.
 
@@ -2530,19 +2537,19 @@ Festnahrung). Sie erhalten folgende Ausgabe in \Rlogo.
 \begin{verbatim}
 ## Analysis of Variance Table
 ## 
-## Response: gain
-##           Df Sum Sq Mean Sq F value  Pr(>F)
-## dose       2 145.19  72.594  4.3543 0.02868
-## form       1 132.64 132.636  7.9558 0.01132
-## dose:form  2 125.70  62.851  3.7700 0.04290
-## Residuals 18 300.09  16.672
+## Response: fat_perc
+##           Df Sum Sq Mean Sq F value    Pr(>F)
+## dose       2 418.23 209.114  11.354 0.0006463
+## form       1  12.71  12.708   0.690 0.4170537
+## dose:form  2 370.36 185.178  10.054 0.0011703
+## Residuals 18 331.53  18.418
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 \begin{enumerate}
 \item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
-  zweifaktorielle ANOVA f{\"u}r den Faktor $form$
+  zweifaktorielle ANOVA f{\"u}r den Faktor $dose$
   auf! \textbf{(2 Punkte)}
 \item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
   im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}
@@ -2632,7 +2639,7 @@ $f_1$ hat drei Level. Der Faktor $f_2$ hat dagegen nur zwei Level.
 
 
 Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit
-f{"u}nf Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet
+drei Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet
 haben, erhalten Sie einen p-Wert von $0.078$ und eine F Statistik mit
 $F_{calc} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen,
 stellen Sie fest, dass es eigentlich einen Mittelwertsunterschied zwischen
@@ -2688,11 +2695,10 @@ rohen p-Werten (\textit{Raw p-value}).
 \toprule
 Vergleich & Raw p-value & Adjusted p-value & Reject Null\\
 \midrule
-dose 30 - ctrl & 0.3400 &  & \\
-dose 90 - ctrl & 0.0700 &  & \\
-dose 20 - ctrl & 0.0120 &  & \\
-dose 35 - ctrl & 0.7600 &  & \\
 dose 60 - ctrl & 0.0012 &  & \\
+dose 30 - ctrl & 0.3400 &  & \\
+dose 25 - ctrl & 0.0300 &  & \\
+dose 35 - ctrl & 0.7600 &  & \\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -2745,7 +2751,7 @@ dose 60 - ctrl & 0.0012 &  & \\
 
 
  
- In einem Experiment f{\"u}r den Proteingehalt von Wasserlinsen in g/l mit f{\"u}nf
+ In einem Experiment f{\"u}r den Zuckergehalt von Erdbeeren in g/kg mit f{\"u}nf
  Dosisstufen (ctrl, low, mid, high und pos) erhalten Sie folgendes \textit{Compact
    letter display (CLD)} als \Rlogo Ausgabe aus den rohen, unadjustierten
  $p$-Werten.
@@ -2756,7 +2762,7 @@ dose 60 - ctrl & 0.0012 &  & \\
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## ctrl high  low  mid  pos 
-##  "a"  "b"  "a"  "b"  "b"
+##  "a"  "b"  "a"  "a"  "b"
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2788,7 +2794,7 @@ dose 60 - ctrl & 0.0012 &  & \\
 
 
  
- In einem Experiment f{\"u}r den Proteingehalt von Wasserlinsen in g/l mit vier
+ In einem Experiment f{\"u}r den Ertrag von Weizen in kg/ha mit vier
  Dosisstufen (ctrl, low, mid und high) erhalten Sie folgende Matrix als
  \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten.
 
@@ -2798,10 +2804,10 @@ dose 60 - ctrl & 0.0012 &  & \\
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ##           ctrl      high       low       mid
-## ctrl 1.0000000 0.0000034 0.2435954 0.2684085
-## high 0.0000034 1.0000000 0.0001068 0.0000895
-## low  0.2435954 0.0001068 1.0000000 0.9512355
-## mid  0.2684085 0.0000895 0.9512355 1.0000000
+## ctrl 1.0000000 0.0097442 0.0029010 0.0542432
+## high 0.0097442 1.0000000 0.0000012 0.4582890
+## low  0.0029010 0.0000012 1.0000000 0.0000104
+## mid  0.0542432 0.4582890 0.0000104 1.0000000
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -2816,10 +2822,10 @@ Mittelwert $mean$ und die Standardabweichung $sd$ in den jeweiligen Dosisstufen.
 \toprule
 trt & n & mean & sd\\
 \midrule
-ctrl & 9 & 11.95 & 1.47\\
-high & 9 & 3.46 & 3.86\\
-low & 9 & 10.15 & 3.87\\
-mid & 9 & 10.24 & 3.04\\
+ctrl & 9 & 9.40 & 1.08\\
+high & 9 & 5.74 & 3.11\\
+low & 9 & 13.71 & 3.52\\
+mid & 9 & 6.74 & 2.97\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -2862,9 +2868,9 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 
 
 Nach einem Feldexperiment ergibt sich die folgende 2x2 Datentabelle mit einem
-Pestizid (ja/nein) der Marke KillAll, dargestellt in den Zeilen, und
+Pestizid (ja/nein) der Marke CleanX, dargestellt in den Zeilen, und
 dem infizierten Pflanzenstatus (ja/nein) von Weizen, dargesellt in
-den Spalten. Insgesamt wurden $n = 120$ Pflanzen untersucht.
+den Spalten. Insgesamt wurden $n = 132$ Pflanzen untersucht.
 \vspace{5Ex}
 
 \begin{center}
@@ -2872,9 +2878,9 @@ den Spalten. Insgesamt wurden $n = 120$ Pflanzen untersucht.
   \begin{tabular}{c|c|c|c}
      & \textbf{Erkrankt (ja)} & \textbf{Erkrankt (nein)} &  \strut\\
     \hline
-    \textbf{Pestizid (ja)} & 38  & 11  &     \strut\\
+    \textbf{Pestizid (ja)} & 38  & 19  &     \strut\\
     \hline
-    \textbf{Pestizid (nein)} & 27  & 44  &      \strut\\
+    \textbf{Pestizid (nein)} & 23  & 52  &      \strut\\
     \hline
      \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
   \end{tabular}
@@ -2913,7 +2919,7 @@ den Spalten. Insgesamt wurden $n = 120$ Pflanzen untersucht.
 
 
 Gegeben sind folgende Randsummen in einer 2x2 Kreuztabelle aus einem
-Experiment mit $n = 129$ Sauen. In dem Experiment wurde gemessen,
+Experiment mit $n = 147$ Sauen. In dem Experiment wurde gemessen,
 ob eine Sau nach einer Behandlung mit einem Medikament (ja/nein)
 mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).
 
@@ -2924,11 +2930,11 @@ mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).
   \begin{tabular}{c|c|c|c}
      & \textbf{>30 Ferkel (ja)} & \textbf{$\leq$30 Ferkel (nein)} &  \strut\\
     \hline
-    \textbf{Medikament (ja)} & \phantom{100}  & \phantom{100}  &   77  \strut\\
+    \textbf{Medikament (ja)} & \phantom{100}  & \phantom{100}  &   53  \strut\\
     \hline
-    \textbf{Medikament (nein)} & \phantom{100}  & \phantom{100}  &   52   \strut\\
+    \textbf{Medikament (nein)} & \phantom{100}  & \phantom{100}  &   94   \strut\\
     \hline
-     &  69 &  60 &  129  \strut\\
+     &  82 &  65 &  147  \strut\\
   \end{tabular}
 \end{center}
 
@@ -2968,10 +2974,10 @@ erhobenen Daten.
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
-##            Fehlerhaft
-## Gruppe      yes no
-##   Belana      4 12
-##   Goldmarie  10  3
+##                  Fehlerhaft
+## Gruppe            yes no
+##   Papageien-Tulpe   4 12
+##   Zwerg-Tulpe      10  3
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -3021,8 +3027,8 @@ Aus der 2x2 Kreuztabelle erhalten Sie folgende \Rlogo Ausgabe der Funktion
 
 
 Die Pr{\"a}valenz von Klauenseuche bei Wollschweinen wird mit
-3\% angenommen. In 85\% der F{\"a}lle ist ein Test positiv, wenn das Wollschwein erkrankt
-ist. In 7.5\% der F{\"a}lle ist ein Test positiv,
+4\% angenommen. In 85\% der F{\"a}lle ist ein Test positiv, wenn das Wollschwein erkrankt
+ist. In 8\% der F{\"a}lle ist ein Test positiv,
 wenn das Wollschwein \textit{nicht} erkrankt ist und somit gesund ist. Sie
 werten 1000 Wollschweine mit einem
 diagnostischen Test auf Klauenseuche aus.
@@ -3081,10 +3087,10 @@ Fleckvieh ist gegeben.
   \node (image) at (0,0) {
     \includegraphics[width=\textwidth]{/Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum}
   };
-  \node[] at (-4.8,0) {\huge 180};
+  \node[] at (-4.8,0) {\huge 200};
   \node[] at (-1.7,0) {\huge 20};
-  \node[] at (1.7,0) {\huge 850};
-  \node[] at (4.75,0) {\huge 1450};
+  \node[] at (1.7,0) {\huge 750};
+  \node[] at (4.75,0) {\huge 1600};
 \end{tikzpicture}
 
 
@@ -3124,23 +3130,23 @@ bioaktiven D{\"u}nger gez{\"a}hlt. Es ergibt sich folgende Datentabelle.
 \toprule
 Vorher & Nachher & Differenz & Vorzeichen & Rang & Positiv Rang & Negativ Rang\\
 \midrule
-12 & 12 &  &  &  &  & \\
-12 & 13 &  &  &  &  & \\
-8 & 13 &  &  &  &  & \\
-6 & 11 &  &  &  &  & \\
-12 & 14 &  &  &  &  & \\
-\addlinespace
-7 & 13 &  &  &  &  & \\
-9 & 12 &  &  &  &  & \\
-13 & 12 &  &  &  &  & \\
-9 & 15 &  &  &  &  & \\
-8 & 12 &  &  &  &  & \\
-\addlinespace
-13 & 13 &  &  &  &  & \\
-11 & 12 &  &  &  &  & \\
-6 & 12 &  &  &  &  & \\
 9 & 11 &  &  &  &  & \\
-11 & 15 &  &  &  &  & \\
+10 & 8 &  &  &  &  & \\
+11 & 9 &  &  &  &  & \\
+11 & 10 &  &  &  &  & \\
+7 & 11 &  &  &  &  & \\
+\addlinespace
+8 & 15 &  &  &  &  & \\
+13 & 13 &  &  &  &  & \\
+9 & 12 &  &  &  &  & \\
+12 & 14 &  &  &  &  & \\
+11 & 11 &  &  &  &  & \\
+\addlinespace
+8 & 13 &  &  &  &  & \\
+10 & 13 &  &  &  &  & \\
+8 & 10 &  &  &  &  & \\
+14 & 13 &  &  &  &  & \\
+8 & 15 &  &  &  &  & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3190,20 +3196,19 @@ folgender Datensatz an mittleren Wurzelanzahl.
 \toprule
 Treatment & Count\\
 \midrule
-Kontrolle & 5.2\\
-Kontrolle & 7.5\\
+RootsGoneX & 11.6\\
 Kontrolle & 8.9\\
-Kontrolle & 9.5\\
-RootsGoneX & 11.9\\
+RootsGoneX & 12.2\\
+Kontrolle & 14.3\\
+RootsGoneX & 11.6\\
 \addlinespace
-RootsGoneX & 12.1\\
-Kontrolle & 8.5\\
-RootsGoneX & 11.8\\
-Kontrolle & 7.5\\
-RootsGoneX & 12.8\\
+Kontrolle & 10.6\\
+RootsGoneX & 11.2\\
+RootsGoneX & 12.7\\
+Kontrolle & 14.4\\
+RootsGoneX & 13.8\\
 \addlinespace
-RootsGoneX & 13.9\\
-Kontrolle & 12.9\\
+Kontrolle & 12.0\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3251,27 +3256,26 @@ ergeben sich folgende nach der Anzahl der Bl{\"u}ten geordnete Daten.
 \toprule
 Treatment & Count & Rang Kontrolle & Rang Dosis 20 & Rang Dosis 40\\
 \midrule
-Dosis 20 & 11.8 &  &  & \\
-Dosis 20 & 13.6 &  &  & \\
-Dosis 20 & 6.5 &  &  & \\
-Kontrolle & 9.4 &  &  & \\
-Kontrolle & 8.1 &  &  & \\
-\addlinespace
-Dosis 40 & 9.7 &  &  & \\
-Kontrolle & 9.6 &  &  & \\
-Dosis 40 & 13.2 &  &  & \\
-Dosis 40 & 11.3 &  &  & \\
-Kontrolle & 8.0 &  &  & \\
-\addlinespace
-Dosis 40 & 10.3 &  &  & \\
-Kontrolle & 9.1 &  &  & \\
-Dosis 40 & 13.4 &  &  & \\
-Kontrolle & 8.2 &  &  & \\
-Dosis 40 & 17.4 &  &  & \\
+Dosis 40 & 8.8 &  &  & \\
+Kontrolle & 2.8 &  &  & \\
+Dosis 20 & 11.7 &  &  & \\
+Kontrolle & 1.4 &  &  & \\
+Kontrolle & 1.4 &  &  & \\
 \addlinespace
 Dosis 20 & 12.5 &  &  & \\
-Dosis 40 & 12.9 &  &  & \\
-Kontrolle & 5.1 &  &  & \\
+Dosis 40 & 7.5 &  &  & \\
+Dosis 20 & 12.8 &  &  & \\
+Dosis 20 & 12.2 &  &  & \\
+Kontrolle & -0.1 &  &  & \\
+\addlinespace
+Kontrolle & 1.3 &  &  & \\
+Dosis 40 & 6.1 &  &  & \\
+Dosis 40 & 11.7 &  &  & \\
+Dosis 20 & 13.4 &  &  & \\
+Dosis 20 & 12.0 &  &  & \\
+\addlinespace
+Kontrolle & 2.5 &  &  & \\
+Dosis 40 & 5.3 &  &  & \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -3354,7 +3358,7 @@ einzunicken. Es ergab sich folgende Abbildung.
 
 
 
-In einem Stallexperiment mit $n = 60$ Ferkeln wurde der
+In einem Stallexperiment mit $n = 40$ Ferkeln wurde der
 Gewichtszuwachs in kg unter ansteigender Lichteinstrahlung in nm
 gemessen. Sie erhalten den \Rlogo Output einer simplen Gaussian linearen
 Regression sieben Wochen nach der ersten Messung.
@@ -3366,8 +3370,8 @@ Regression sieben Wochen nach der ersten Messung.
 \toprule
 term & estimate & std.error & t statistic & p-value\\
 \midrule
-(Intercept) & 3.59 & 1.63 &  & \\
-light & 0.81 & 0.16 &  & \\
+(Intercept) & 2.30 & 2.0 &  & \\
+light & 0.99 & 0.2 &  & \\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -3409,17 +3413,17 @@ erhalten folgende \Rlogo Ausgabe.
 ## lm(formula = weight ~ water, data = data_tbl)
 ## 
 ## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -5.2000 -1.8889  0.1111  1.6278  6.8000 
+##    Min     1Q Median     3Q    Max 
+##     -5     -1      0      1      6 
 ## 
 ## Coefficients:
 ##             Estimate Std. Error t value Pr(>|t|)
-## (Intercept)   16.889      1.113  15.180 3.39e-09
-## waterB        -6.689      1.862  -3.593  0.00369
+## (Intercept)   21.000      1.291  16.267 1.53e-09
+## waterB         6.000      1.610   3.726  0.00289
 ## 
-## Residual standard error: 3.338 on 12 degrees of freedom
-## Multiple R-squared:  0.5182,	Adjusted R-squared:  0.4781 
-## F-statistic: 12.91 on 1 and 12 DF,  p-value: 0.003694
+## Residual standard error: 2.887 on 12 degrees of freedom
+## Multiple R-squared:  0.5364,	Adjusted R-squared:  0.4978 
+## F-statistic: 13.89 on 1 and 12 DF,  p-value: 0.002893
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -3432,7 +3436,7 @@ erhalten folgende \Rlogo Ausgabe.
 \item Liegt ein signifikanter
   Effekt vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Erkl{\"a}ren Sie \textit{kurz} den Begriff \texttt{R-squared}!
-  Was sagt Ihnen der Wert $0.5182$ aus? \textbf{(2 Punkte)}
+  Was sagt Ihnen der Wert $0.5364$ aus? \textbf{(2 Punkte)}
 \item Schreiben Sie das Ergebnis der \Rlogo Ausgabe in zwei S{\"a}tzen auf, der die
   Information zum Effekt und der Signifikanz enth{\"a}lt! \textbf{(2 Punkte)} 
 \end{enumerate}
@@ -3519,23 +3523,23 @@ Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{cor.test()}.
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## 
-## 	Pearson's correlation
+## 	Spearman's correlation
 ## 
-## data:  weight and fertilizer
-## t = 6.0309, df = 8, p-value = 0.0003125
+## data:  drymatter and water
+## t = 2.0208, df = 8, p-value = 0.07796
 ## alternative hypothesis: true correlation is not equal to 0
 ## 95 percent confidence interval:
-##  0.641348 0.977678
+##  -0.07617187  0.88648629
 ## sample estimates:
 ##       cor 
-## 0.9053751
+## 0.5813352
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
 
 
 \begin{enumerate}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2
 Punkt)}
 \item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten!
   Erkl{\"a}ren Sie \textit{eine} der Eigenschaften an einem Beispiel! \textbf{(2
@@ -3544,7 +3548,7 @@ Punkt)}
   Effekts und der Signifikanz! Begr{\"u}nden Sie
   Ihre Antwort! \textbf{(2 Punkte)}
 \item Visualisieren Sie die Teststatistik und den p-Wert! Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
-\item Sind die Variablen \texttt{weight and fertilizer} normalverteilt?
+\item Sind die Variablen \texttt{drymatter and water} normalverteilt?
   Begr{\"u}nden Sie Ihre Antwort! \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
@@ -3570,19 +3574,21 @@ folgende Datentabelle.
 \toprule
 .id & drymatter & water & .fitted & .resid\\
 \midrule
-1 & 23.2 & 8.4 & 22.8 & \\
-2 & 17.4 & 3.3 & 14.9 & \\
-3 & 19.5 & 7.3 & 21.1 & \\
-4 & 35.9 & 15.6 & 33.9 & \\
-5 & 25.4 & 10.8 & 26.5 & \\
+1 & 16.7 & 5.2 & 17.7 & \\
+2 & 15.3 & 3.2 & 14.8 & \\
+3 & 6.5 & -1.1 & 8.1 & \\
+4 & 26.6 & 10.2 & 25.4 & \\
+5 & 25.0 & 9.3 & 24.0 & \\
 \addlinespace
-6 & 13.8 & 4.3 & 16.5 & \\
-7 & 20.3 & 9.5 & 24.5 & \\
-8 & 18.5 & 4.3 & 16.4 & \\
-9 & 26.4 & 9.7 & 24.8 & \\
-10 & 37.6 & 18.2 & 38.0 & \\
+6 & 29.5 & 13.8 & 30.9 & \\
+7 & 26.9 & 11.4 & 27.2 & \\
+8 & 24.5 & 10.0 & 25.1 & \\
+9 & 27.3 & 12.1 & 28.3 & \\
+10 & 18.5 & 4.4 & 16.5 & \\
 \addlinespace
-11 & 27.8 & 10.6 & 26.2 & \\
+11 & 17.0 & 5.6 & 18.4 & \\
+12 & 23.7 & 7.5 & 21.3 & \\
+13 & 25.3 & 10.0 & 25.1 & \\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -3613,7 +3619,7 @@ folgende Datentabelle.
 
 \begin{enumerate}
 \item Zeichen Sie in die drei untenstehenden, leeren Abbilungen die Zeile des
-  Regressionskreuzes der Binomialverteilung. W{\"a}hlen Sie die Beschriftung der
+  Regressionskreuzes der Poissonverteilung. W{\"a}hlen Sie die Beschriftung der
   y-Achse sowie der x-Achse entsprechend aus! \textbf{(6 Punkte)}
 \item Erg{\"a}nzen Sie die jeweiligen statistischen Methoden zu der Abbildung! \textbf{(2 Punkte)}
 \item Welchen Effektsch{\"a}tzer erhalten Sie aus der entsprechend linearen
@@ -3644,18 +3650,18 @@ folgende Datentabelle.
 
 
 Ein Feldexperiment wurde mit $n = 200$ Pflanzen durchgef{\"u}hrt. Folgende
-Einflussvariablen ($x$) wurden erhoben: weight, block und height. Als m{\"o}gliche Outcomevariablen stehen Ihnen nun
+Einflussvariablen ($x$) wurden erhoben: S, height und block. Als m{\"o}gliche Outcomevariablen stehen Ihnen nun
 folgende gemessene Endpunkte zu Verf{\"u}gung: drymatter, yield, count, quality\_score und dead.
 
 \begin{enumerate}
 \item W{\"a}hlen Sie ein Outcome was zu der Verteilungsfamilie
-  \textit{Gaussian} geh{\"o}rt! \textbf{(1 Punkt)}
+  \textit{Poisson} geh{\"o}rt! \textbf{(1 Punkt)}
 \item Schreiben Sie das Modell in der Form $y \sim x$ wie es in \Rlogo in
   der Funktion \texttt{glm()}
   {\"u}blich ist \textit{ohne Interaktionsterm}! \textbf{(3 Punkte)}
 \item Schreiben Sie das Modell in der Form $y \sim x$ wie es in \Rlogo
   {\"u}blich ist und erg{\"a}nzen Sie \textit{einen} Interaktionsterm nach Wahl! \textbf{(1 Punkt)} 
-\item Zeichen Sie eine \textit{schwache}
+\item Zeichen Sie eine \textit{starke}
   Interaktion in die Abbildung unten f{\"u}r den Endpunkt
   \textit{yield}. Erg{\"a}nzen Sie eine aussagekr{\"a}ftige Legende. Wie erkennen
   Sie eine Interaktion? Begr{\"u}nden Sie Ihre Antwort! \textbf{(4 Punkte)}
@@ -3690,23 +3696,23 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 
 
 Nach einem erfolgreichen Pilotversuch zur Wirksamkeit von P-D{"u}ngern bei
-Erbsen in einem Feldexperiment wollen Sie nun den Versuch eine Nummer gr{\"o}{\ss}er
+Erbsen in einem Experiment in einer Klimakammer wollen Sie nun den Versuch eine Nummer gr{\"o}{\ss}er
 anlegen. Daf{\"u}r entscheiden Sie sich f{\"u}r ein faktorielles Versuchsdesign. In
 Ihrem Hauptversuch stellt die Wirksamkeit von P-D{"u}ngern den ersten Faktor
-mit insgesamt 4 Leveln dar. Der zweite Faktor mit dem Gew{"a}chshaus
+mit insgesamt 4 Leveln dar. Der zweite Faktor mit dem Hitzestress
 beinhaltet
 4 Level. \\
 
 Im ersten Schritt {\"u}berlegen Sie ein einfaches experimentelles Design zu
-probieren. Sie entscheiden sich f{\"u}r das \textit{Complete randomized design (CRD)}.
+probieren. Sie entscheiden sich f{\"u}r das \textit{Randomized complete block design (RCBD)}.
 
 \begin{enumerate}
   \setcounter{enumi}{0}
-\item Skizieren Sie das \textit{Complete randomized design (CRD)} f{\"u}r Ihren Versuch!
+\item Skizieren Sie das \textit{Randomized complete block design (RCBD)} f{\"u}r Ihren Versuch!
   \textbf{(4 Punkte)}
-\item Skizieren Sie eine Datentabelle f{\"u}r den Versuch mit drei
+\item Skizieren Sie eine Datentabelle f{\"u}r den Versuch mit vier
   Wiederholungen! \textbf{(2 Punkte)}
-\item Skizieren Sie eine Abbilung mit Barplots und einem angenommenen
+\item Skizieren Sie eine Abbilung mit Boxplots und einem angenommenen
   normalverteilten Outcome! \textbf{(4 Punkte)}
 \end{enumerate}
 
@@ -3758,11 +3764,11 @@ beschlagnahmte und nach Frankreich f{\"u}hrte\footnote{Die Quelle der Inspiratio
   vor dem Zugriff von Napoleon in der 1000-j{\"a}hrigen Eiche verstecken?"} \\
 
 Gehen Sie von einem radialen Wachstum der 1000-j{\"a}hrigen Eiche von
-$0.8mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im
-Jahr 2022 einen Umfang von $13m$ in Brusth{\"o}he hatte.
+$0.9mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im
+Jahr 2022 einen Umfang von $11m$ in Brusth{\"o}he hatte.
 
 \begin{enumerate}
-\item Wie gro{\ss} war der Durchmesser in $m$ der Eiche im Jahr $1820$ als
+\item Wie gro{\ss} war der Durchmesser in $m$ der Eiche im Jahr $1810$ als
   Herodot in der Eiche versteckt werden sollte?
   \textbf{(2 Punkte)}
 \item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen
@@ -3771,8 +3777,8 @@ Auswirkungen der Entscheidung f{\"u}r linear oder exponentiell auf Ihre
 Berechnungen! \textbf{(2 Punkte)}
 \end{enumerate}
  
-Herodot hatte eine Schulterh{\"o}he von $195$cm, eine Breite von
-$85$cm sowie eine L{\"a}nge von  $220$cm.
+Herodot hatte eine Schulterh{\"o}he von $180$cm, eine Breite von
+$95$cm sowie eine L{\"a}nge von  $250$cm.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
@@ -3781,13 +3787,13 @@ $85$cm sowie eine L{\"a}nge von  $220$cm.
 \end{enumerate}
 
 Es wurde berichtet, dass sich Herodot in der 1000-j{\"a}hrigen Eiche
-$m{"u}hsam$ um die eigene Achse drehen konnte.
+$bequem$ um die eigene Achse drehen konnte.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
 \item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre
   Berechnungen an einer aussagekr{\"a}ftigen Skizze f{\"u}r Pferd und Eiche! \textbf{(2 Punkte)} 
-\item Unter einer Dicke der Eichenwand von $10cm$ bricht
+\item Unter einer Dicke der Eichenwand von $25cm$ bricht
   die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begr{\"u}nden Sie
   Ihre Antwort! \textbf{(1 Punkt)} 
 \end{enumerate}
@@ -3810,17 +3816,17 @@ $m{"u}hsam$ um die eigene Achse drehen konnte.
 
 
 
-In einem Experiment wollen Sie die Wuchsh{\"o}he von 120
+In einem Experiment wollen Sie die Wuchsh{\"o}he von 200
 Sonnenblumen bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen
 k{\"o}nnen, gibt es aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den Aufwand
 zu treffen. Zum einen m{\"u}ssen Sie die Sonnenblumen einpflanzen und m{\"u}ssen
 daf{\"u}r Substrat bestellen. Zum anderen m{\"u}ssen Sie die Sonnenblumen auch
 bewegen und in ein Gew{\"a}chshaus platzieren. Die T{\"o}pfe f{\"u}r die Keimung haben
-einen Durchmesser von 8.5cm und eine H{\"o}he von 7cm. Der
-Kubikmeterpreis f{\"u}r Torf liegt bei 290 EUR.
+einen Durchmesser von 8cm und eine H{\"o}he von 8cm. Der
+Kubikmeterpreis f{\"u}r Torf liegt bei 310 EUR.
 
 \begin{enumerate}
-\item Skizzieren Sie den Versuchsplan auf \textit{vier} Tischen im
+\item Skizzieren Sie den Versuchsplan auf \textit{zwei} Tischen im
   Gew{\"a}chshaus! \textbf{(2 Punkte)}
 \item Berechnen Sie die ben{\"o}tigte Anzahl an Pflanzt{\"o}pfen, wenn Sie
   Randpflanzen mit ber{\"u}cksichtigen wollen! \textbf{(1 Punkt)}
@@ -3856,30 +3862,30 @@ Kubikmeterpreis f{\"u}r Torf liegt bei 290 EUR.
 
 
 Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
-auf den Schweinestall montieren lassen. Sie messen Ihren Stall und finden
-folgende Ma{\ss}e wieder. Die vordere Seite des Schweinestall hat eine H{\"o}he
-$h_v$ von $5.5m$. Die hintere Seite des Schweinestall hat eine
-H{\"o}he $h_b$ von $8m$. Der Schweinestall hat eine Tiefe $t$ von
-$15m$ und eine Breite $b$ von $70m$.
+auf den H{"u}hnerstall montieren lassen. Sie messen Ihren Stall und finden
+folgende Ma{\ss}e wieder. Die vordere Seite des H{"u}hnerstall hat eine H{\"o}he
+$h_v$ von $5m$. Die hintere Seite des H{"u}hnerstall hat eine
+H{\"o}he $h_b$ von $10m$. Der H{"u}hnerstall hat eine Tiefe $t$ von
+$16m$ und eine Breite $b$ von $60m$.
 
 \begin{enumerate}
-\item Skizzieren Sie den Schweinestall auf dem die Solaranlage montiert
+\item Skizzieren Sie den H{"u}hnerstall auf dem die Solaranlage montiert
   werden soll! Erg{\"a}nzen Sie die Angaben f{\"u}r die H{\"o}hen $h_v$, $h_b$, die
   Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
 \item Berechnen Sie die Fl{\"a}che der schr{\"a}gen, neuen Solaranlage auf dem
-  Schweinestall! \textbf{(3 Punkte)}
+  H{"u}hnerstall! \textbf{(3 Punkte)}
 \end{enumerate}
 
 Ebenfalls planen Sie eine neue Biogasanlage f{\"u}r Ihren Betrieb. Der neue
 Methantank hat einen Radius $r$ von $1.5m$. Leider gibt es ein
 paar bauliche Beschr{\"a}nkungen auf dem Grundst{\"u}ck. Ihr Fundament des
 zylindrischen Methantanks kann nur ein Gewicht von maximal
-$14t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
+$5t$ aushalten bevor der Tank wegbricht. Sie rechnen eine
 Sicherheitstoleranz von $10\%$ ein beinhaltend das Gewicht des
 Methantanks. In fl{\"u}ssiger Form hat
 Methan bei $-80^\circ\text{C}$ eine Dichte von
-$240kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
-von $290kg/m^3$. Sie betrieben Ihre Anlage bei
+$220kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte
+von $270kg/m^3$. Sie betrieben Ihre Anlage bei
 $-95^\circ\text{C}$.
 
 \begin{enumerate}
@@ -3918,10 +3924,10 @@ $-95^\circ\text{C}$.
 
 "'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
 Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um
-und blicken in das puderrote Gesicht von einer {"a}ltern Dame mit aufgespannten Regenschirm. "'Wieso?"', entfährt es
+und blicken in das puderrote Gesicht von einem Studienrat mit Stock. "'Wieso?"', entfährt es
 Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
 Whiteboard voller roter Schnüre geschliffen und müssen folgenden
-mathematischen untermauerten Argumenten im Rewe über sich ergehen
+mathematischen untermauerten Argumenten im Lidl über sich ergehen
 lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich
 mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
   für die Aufgabe waren folgende Reportagen:
@@ -3932,20 +3938,20 @@ mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
   in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem
   Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
 
-Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von einer {"a}ltern Dame mit aufgespannten Regenschirm?\\
+Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von einem Studienrat mit Stock?\\
 
 \begin{enumerate}
-\item Wenn 4 Blaubeerschalen 7.56 Euro kosten,  wie viel kosten 8 Schalen? \textbf{(1 Punkt)}
-\item Wenn Sie die 8 Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je 0.99 EUR können Sie sich dann noch für 100 EUR leisten? \textbf{(1 Punkt)}
+\item Wenn 4 Blaubeerschalen 6.36 Euro kosten,  wie viel kosten 7 Schalen? \textbf{(1 Punkt)}
+\item Wenn Sie die 7 Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je 2.89 EUR können Sie sich dann noch für 50 EUR leisten? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem Rewe über Gemüse erfährt.
+Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem Lidl über Gemüse erfährt.
   
 \begin{itemize}[noitemsep]
-\item Ein Kilo Strauchtomaten benötigt 170l Wasser. Eine Strauchtomate wiegt 100 - 120g.
-\item Ein Kilo Salat benötigt 120l Wasser. Ein Salatkopf wiegt 310 - 530g.
-\item Ein Kilo Avocado benötigt 1050l Wasser. Eine Avocado wiegt 140 - 380g.
-\item Ein Kilo Blaubeeren benötigt 830l Wasser. Eine Blaubeere wiegt 3.1 - 3.7g.
+\item Ein Kilo Strauchtomaten benötigt 190l Wasser. Eine Strauchtomate wiegt 100 - 125g.
+\item Ein Kilo Salat benötigt 100l Wasser. Ein Salatkopf wiegt 280 - 530g.
+\item Ein Kilo Avocado benötigt 980l Wasser. Eine Avocado wiegt 150 - 420g.
+\item Ein Kilo Blaubeeren benötigt 850l Wasser. Eine Blaubeere wiegt 3.2 - 3.5g.
 \end{itemize}
 
 \begin{enumerate}
@@ -3953,21 +3959,21 @@ Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch b
 \item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr 2023 blieben die Erträge von Blaubeeren mit \ensuremath{7.5\times 10^{4}}t in dem prognostizierten Rahmen. Die Menge reduzierte sich um 6.8\%. Die Exporte für Avocados fielen in dem gleichen Zeitraum um 17.3\% auf \ensuremath{2.3\times 10^{5}}t.
+Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr 2023 blieben die Erträge von Blaubeeren mit \ensuremath{7.9\times 10^{4}}t in dem prognostizierten Rahmen. Die Menge steigerte sich um 8.6\%. Die Exporte für Avocados stiegen in dem gleichen Zeitraum um 22.1\% auf \ensuremath{2.3\times 10^{5}}t.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie viele Liter Wasser hat Chile in dem Exportjahr 2022 exportiert? \textbf{(2 Punkte)}
+\item Wie viele Kubikmeter Wasser hat Chile in dem Exportjahr 2022 exportiert? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa 61 Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei 9 - 14 Liter pro Sp{"u}lgang und 35 - 115 Liter pro Waschgang einer Waschmaschine.
+Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur ein Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa 61 Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei 8 - 17 Liter pro Sp{"u}lmaschinenlauf und 35 - 115 Liter pro Waschgang einer Waschmaschine.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das alles hätten Sie nicht von einer {"a}ltern Dame mit aufgespannten Regenschirm erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
+Das alles hätten Sie nicht von einem Studienrat mit Stock erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
 
 \begin{enumerate}
   \setcounter{enumi}{5}  
@@ -3998,7 +4004,7 @@ Das alles hätten Sie nicht von einer {"a}ltern Dame mit aufgespannten Regenschi
   für die Aufgabe war folgender Artikel:
   \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"Skeptische Anmerkungen --- Die Erde als Dampfnudel" in Der Humanistische Pressedienst}}.  \\
 
-Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und heute gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung $g$ der Erde \textit{heutzutage} einen Wert von 9.81m/s$^2$ an. Im Weiteren hat die Erde einen ungefähren Durchmesser von \ensuremath{1.289\times 10^{4}}km und eine mittlere Dichte $\rho$ von 5.86g/cm$^3$. Das Gewicht von einem heute lebenden afrikanischen Elefanten liegt bei 5t bis 7t und das Gewicht von einem Brachiosaurus bei bis zu 30t.
+Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und heute gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung $g$ der Erde \textit{heutzutage} einen Wert von 9.65m/s$^2$ an. Im Weiteren hat die Erde einen ungefähren Durchmesser von \ensuremath{1.1956\times 10^{4}}km und eine mittlere Dichte $\rho$ von 5.51g/cm$^3$. Das Gewicht von einem heute lebenden asiatischen Elefanten liegt bei 3t bis 5t und das Gewicht von einem Tyrannosaurus rex (T. rex) bei 4.5t bis 8t.
 
 \begin{enumerate}
 \item Welchen Durchmesser müsste die Erde vor 65 Millionen Jahren gehabt haben, wenn Dinosaurier und Elefanten die gleiche Gewichtskraft $\overrightarrow{F_G}$ damals und heute erfahren hätten? \textit{Beantworten Sie die Frage anhand der folgenden Teilaufgaben!}
@@ -4010,7 +4016,7 @@ Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und 
 \item Beantworten Sie die Eingangsfrage mit 1-2 Antwortsätzen! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Die Distanz zwischen Sonne und Erde entspricht 1.01 astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \ensuremath{1.5\times 10^{8}}km angegeben. Der \textit{massebehaftete} Sonnenwind besteht aus 87\% Wasserstoffkernen mit einer molaren Masse von 1.08g/mol, 8\% Heliumkernen mit 4.11g/mol sowie 5\% weiteren Atomkernen mit  152.01g/mol. Die Teilchendichte bei Eintritt in die Erdatmosphäre liegt zwischen 0.4 bis 100 Teilchen cm$^{-3}$ pro Sekunde mit einer mittleren Teilchendichte von 8cm$^{-3}$ pro Sekunde. \\
+Die Distanz zwischen Sonne und Erde entspricht 1.05 astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \ensuremath{1.48\times 10^{8}}km angegeben. Der \textit{massebehaftete} Sonnenwind besteht aus 84\% Wasserstoffkernen mit einer molaren Masse von 1.01g/mol, 10\% Heliumkernen mit 3.92g/mol sowie 6\% weiteren Atomkernen mit  69.18g/mol. Die Teilchendichte bei Eintritt in die Erdatmosphäre liegt zwischen 0.4 bis 100 Teilchen cm$^{-3}$ pro Sekunde mit einer mittleren Teilchendichte von 6cm$^{-3}$ pro Sekunde. \\
 
 \textit{Lösen Sie den folgenden Aufgabenteil mit einer aussagekräftigen Skizze!}
 
@@ -4072,8 +4078,8 @@ mit
 \item $PB_i$ dem Anteil des Auftretens eines Verhaltens $i$.
 \item $r_i$ dem Radius Pute plus dem ben{\"o}tigten Radius f{\"u}r das Verhalten $i$.
 \item $R_i$ dem notwendigen Abstand zu den Nachbarn f{\"u}r das Verhalten $i$.    
-\item $i$ dem Verhalten: (1) sitting, (2) foraging incl. scratching, (3)
-  dustbathing und (4) preening.
+\item $i$ dem Verhalten: (1) drinking/eating, (2) wing/leg stretching, (3)
+  wingflapping und (4) foraging incl. scratching.
 \end{itemize}
 
 In der folgenden Tabelle 1 sind die Werte f{\"u}r $r_i$, $R_i$ und $PB_i$ f{\"u}r
@@ -4090,10 +4096,10 @@ Ver{\"o}ffentlichungen dargestellt.
 \toprule
   & Aldridge et al. (2021) & Baxter et al. (2022) & Jabcobs et al. (2019)\\
 \midrule
-sitting & 35cm; 24cm; 64.1\% & 27cm; 26cm; 25.4\% & 43cm; 16cm; 64.1\%\\
-foraging incl. scratching & 31cm; 25cm; 0.6\% & 31cm; 13cm; 0.4\% & 38cm; 33cm; 0.4\%\\
-dustbathing & 33cm; 33cm; 8.1\% & 37cm; 27cm; 2.4\% & 37cm; 23cm; 7.6\%\\
-preening & 27cm; 29cm; 8.1\% & 35cm; 25cm; 5.2\% & 41cm; 28cm; 8.1\%\\
+drinking/eating & 41cm; 21cm; 0.2\% & 41cm; 26cm; 0.2\% & 35cm; 30cm; 0.8\%\\
+wing/leg stretching & 46cm; 26cm; 3.2\% & 33cm; 25cm; 3.2\% & 41cm; 23cm; 3.2\%\\
+wingflapping & 23cm; 30cm; 0.8\% & 39cm; 24cm; 1\% & 28cm; 17cm; 1\%\\
+foraging incl. scratching & 35cm; 22cm; 13.2\% & 45cm; 26cm; 12.8\% & 35cm; 28cm; 12.8\%\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -4149,22 +4155,22 @@ In der Ausstellung "`Europa und das Meer"' im Deutschen Historischen Museum in
 Berlin gab es folgendes Zitat {\"u}ber die Probleme der fr{\"u}hen Hochseeschifffahrt.
 
 \begin{quote}
-  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach 50 Tagen die
-  ersten Symptome ein; die ersten Toten sind nach 72 Tagen zu beklagen;
-  nach 110 Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
+  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach 40 Tagen die
+  ersten Symptome ein; die ersten Toten sind nach 60 Tagen zu beklagen;
+  nach 105 Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
 \end{quote}
 
 Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den
 s{\"u}damerikanischen Kontinent zu finden. Zu seiner Flotte geh{\"o}rten
 f{\"u}nf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die
 Concepci{\'o}n und die Santiago - mit einer Besatzung von insgesamt
-245 Mann. 
+237 Mann. 
 
 \begin{enumerate}
 \item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der
   Flotte in der Form einer {\"U}berlebenszeitkurve dar! Beschriften Sie die
   Achsen entsprechend! \textbf{(2 Punkte)} 
-\item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach 95 Tagen
+\item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach 90 Tagen
   aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
 \end{enumerate}
 
@@ -4174,14 +4180,14 @@ die gro{\ss}e Rahe zum Schutz der Taue umwunden war."' Insbesondere die
 Mannschaft der Concepci{\'o}n erlitt gro{\ss}e Verluste durch die Skrobut bei der
 {\"U}berquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um
 wilden Sellerie aufzunehmen. Wilder Sellerie enth{\"a}lt
-$4000\mu g/100mg$ Vitamin C. Der Bedarf liegt bei
-$120mg$ pro Tag f{\"u}r M{\"a}nner.
+$4000\mu g/10mg$ Vitamin C. Der Bedarf liegt bei
+$110mg$ pro Tag f{\"u}r M{\"a}nner.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Berechnen Sie die notwendige Menge in $kg$ an
   aufzunehmenden wilden Sellerie auf die Concepci{\'o}n f{\"u}r die ununterbrochene
-  Fahrt von drei Monate und 22 Tage {\"u}ber den Pazifik!
+  Fahrt von drei Monate und 20 Tage {\"u}ber den Pazifik!
   \textbf{(3 Punkte)}
 \item Skizzieren Sie die {\"U}berlebenszeitkurve f{\"u}r die Concepci{\'o}n im
   Vergleich zu der {\"U}berlebenszeitkurve der Trinidad! Beschriften Sie die
@@ -4207,9 +4213,9 @@ $120mg$ pro Tag f{\"u}r M{\"a}nner.
 
 
 
-Die Sonne hat eine aktuelle, angenommene Masse von $\ensuremath{2\times 10^{29}}$kg. Wenn
+Die Sonne hat eine aktuelle, angenommene Masse von $\ensuremath{2\times 10^{31}}$kg. Wenn
 die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem
-Radius von $2500$m kollabiert, wird die Sonne $45$\%
+Radius von $3000$m kollabiert, wird die Sonne $20$\%
 der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$
 und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen.  Sie
 haben folgende Formeln f{\"u}r die kinetische Energie des Lichtteilchens
@@ -4230,7 +4236,7 @@ mit
 \item $m_f$, gleich der Masse [kg] des fliehenden Objektes
 \item $m_s$, gleich der Masse [kg] des station{\"a}ren Objekts
 \item $r_s$, gleich dem Radius [m] des station{\"a}ren Objekts  
-\item $G$, gleich der Gravitationskonstante mit $6.165 \cdot 10^{-11}
+\item $G$, gleich der Gravitationskonstante mit $5.974 \cdot 10^{-11}
   m^3(kg \cdot s^2)^{-1}$ 
 \end{itemize}
 
@@ -4244,14 +4250,14 @@ Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
   \textbf{(1 Punkt)} 
 \item Berechnen Sie die notwendige Fluchtgeschwindigkeit $v_f$ des
   Lichtteilchens mit den angegebenen Informationen! \textbf{(2 Punkte)}
-\item Gehen Sie von einer Lichtgeschwindigkeit von $\ensuremath{2.7\times 10^{8}}m/s$
+\item Gehen Sie von einer Lichtgeschwindigkeit von $\ensuremath{2.9\times 10^{8}}m/s$
   aus. Kann das Lichtteilchen der Gravitation des schwarzen Lochs
   entkommen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Stellen Sie den Zusammenhang zwischen dem sich verringernden Radius
   $r$ des schwarzen Lochs bei gleichbleibender Masse $m_s$
   und der notwendigen Fluchtgeschwindigkeit $v_f$ in einer Abbildung dar!
   \textbf{(2 Punkte)}
- \item Ein Elefant und ein {"A}ffchen st{\"u}rzen aus gro{\ss}er und gleicher H{\"o}he
+ \item Ein Auto und eine Klorolle st{\"u}rzen aus gro{\ss}er und gleicher H{\"o}he
   in ein schwarzes Loch. Welches der beiden Objekte {\"u}berschreitet zuerst
   den Ereignishorizont des schwarzes Loches? Begr{\"u}nden
   Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)}  
@@ -4286,13 +4292,13 @@ besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde w
   für die Aufgabe war folgender Wikipediaeintrag:
   \href{https://de.wikipedia.org/wiki/Fermi-Paradoxon}{Fermi-Paradoxon}}\\[-1ex]
 
-Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $zwei$
+Wir treffen folgende Annahmen. Eine au{\ss}erirdische Zivilisation schickt $vier$
 Voyager 1 {\"a}hnliche Sonden mit der Geschwindigkeit von $\ensuremath{5.9256\times 10^{4}}km/h$
 los um sich auf den erreichten Planeten selbst zu replizieren. Nach
-$750$ Jahren ist die Replikation abgeschlossen und wiederum
-$zwei$ Sonden werden ausgesendet. Gehen Sie von
-$5.16$ Lichtjahren als mittlerer Abstand der Sterne in der
-Milchstra{\ss}e aus. Es gibt $\ensuremath{1.5\times 10^{11}}$ Sterne in der Milchstra{\ss}e. Nehmen
+$250$ Jahren ist die Replikation abgeschlossen und wiederum
+$vier$ Sonden werden ausgesendet. Gehen Sie von
+$3.57$ Lichtjahren als mittlerer Abstand der Sterne in der
+Milchstra{\ss}e aus. Es gibt $\ensuremath{2\times 10^{11}}$ Sterne in der Milchstra{\ss}e. Nehmen
 Sie eine Lichtgeschwindigkeit von $\ensuremath{2.9\times 10^{8}}m/s$ an.
 
 \begin{enumerate}
@@ -4308,7 +4314,7 @@ Sie eine Lichtgeschwindigkeit von $\ensuremath{2.9\times 10^{8}}m/s$ an.
 \item Bei einem vermutetet Alter der Erde von $\ensuremath{4.6\times 10^{9}}$ Jahren,
   wie oft war dann eine Sonde einer au{\ss}erirdischen Zivilisation schon zu
   Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die
-  Kontinentalplatten einmal alle $\ensuremath{10^{8}}$ Jahre vollst{\"a}ndig im
+  Kontinentalplatten einmal alle $\ensuremath{1.2\times 10^{8}}$ Jahre vollst{\"a}ndig im
   Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -4332,58 +4338,58 @@ Sie eine Lichtgeschwindigkeit von $\ensuremath{2.9\times 10^{8}}m/s$ an.
 
 
 
-Es stehen die mecklemburgischen Pyramidentage an und Sie sind auf
+Es stehen die bayrischen Pyramidentage an und Sie sind auf
 abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
 {\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
 Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
 Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
 Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
-fallen durch ihren steilen Winkel von 71 Grad im Vergleich zu
+fallen durch ihren steilen Winkel von 73 Grad im Vergleich zu
 den {\"a}gyptischen Pyramiden mit 55 Grad auf. Die durchschnittliche
-Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt 38 K{\"o}nigsellen. Eine K{\"o}nigselle
-misst 52.4cm.\\
+Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt 44 K{\"o}nigsellen. Eine K{\"o}nigselle
+misst 52.6cm.\\
 
 \textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
   Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
 \item Bei der K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che
-  38 K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in $m$
+  44 K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in $m$
   ergibt sich? \textbf{(1 Punkt)}
 \item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
-  Bepflanzung muss eine 5cm dicke Torfschicht auf die
+  Bepflanzung muss eine 4cm dicke Torfschicht auf die
   Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
   ben{\"o}tigten Torf in $m^3$! \textbf{(2 Punkte)}
 \end{enumerate}
 
 Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
-3 Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
+4 Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
 zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
-chronische R{"u}ckenschmerzen entwickelt, als sie von der
+chronische Schulterschmerzen entwickelt, als sie von der
 anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
-Sklaven von 80\% aus. In eine Schubkarre passen
-100 Liter.
+Sklaven von 70\% aus. In eine Schubkarre passen
+90 Liter.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
   zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
 \item Berechnen Sie die L{\"a}nge der Rampe zur Spitze der Pyramide mit einem
-  Anstellwinkel von $14^\circ$! \textbf{(2 Punkte)}
-\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die mecklemburgische
+  Anstellwinkel von $10^\circ$! \textbf{(2 Punkte)}
+\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die bayrische
   Landschaft?  \textbf{(2 Punkte)}
 \end{enumerate}
 
 Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
-Pharao (Nebenberuf \textit{Mittelst{"a}ndler}) mit, das die Pyramide zu
-steil sei und somit nicht in die mecklemburgische Landschaft passen
+Pharao (Nebenberuf \textit{Finanzbeamter}) mit, das die Pyramide zu
+steil sei und somit nicht in die bayrische Landschaft passen
 w{\"u}rde. Sie m{\"u}ssen nochmal ran.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
 \item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
   {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
-  Pyramide um $5^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
+  Pyramide um $8^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
 \end{enumerate}
 
 
@@ -4410,10 +4416,10 @@ w{\"u}rde. Sie m{\"u}ssen nochmal ran.
 
 
 Es ist Wochenende und das Wetter ist \textit{sweet}. Sie schwingen sich auf
-Ihr Cachermobil um mit 18km/h, geleitet von modernster
+Ihr Cachermobil um mit 19km/h, geleitet von modernster
 Satellietentechnologie und einem Supercompter aus dem Jahr 2000 in Ihren
 H{\"a}nden, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Sie
-wollen diesmal endlich die aufw{"a}rts Schwierigkeitschallenge
+wollen diesmal endlich die abw{"a}rts Schwierigkeitschallenge
 durchf{\"u}hren. Die Reihenfolge der Caches nach Schwierigkeitswertung gibt daher
 die von Ihnen abzufahrenden Orte vor. Die Terrain- und
 Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5
@@ -4428,48 +4434,48 @@ zu Verf{\"u}gung\footnote{Die Quelle der Inspiration
     \toprule
     Ort & Cache & Wertung (S|T|G) \\
     \midrule
-    A & GCQJ2EY & 3.0 | 5.0 | Normal \\
-    B & GCTCGQE & 5.0 | 4.0 | Klein \\ 
-    C & GCBXLAL & 2.5 | 1.0 | Mikro \\ 
-    D & GCFERPQ & 2.0 | 2.5 | Mikro \\ 
-    E & GCVADRU & 3.5 | 1.5 | Mikro \\     
+    A & GCKLLFO & 3.5 | 2.0 | Normal \\
+    B & GCNZN3N & 2.0 | 2.5 | Klein \\ 
+    C & GCZX3YY & 4.0 | 4.5 | Mikro \\ 
+    D & GCNGMDE & 2.5 | 1.0 | Mikro \\ 
+    E & GC0HRCR & 5.0 | 1.5 | Mikro \\     
  \bottomrule
 \end{tabular}
 \end{center}
 
 Im Weiteren sind Ihnen folgende Informationen zu den Entfernungen der Orte
-zug{\"a}nglich. Der Entfernungsvektor $\overrightarrow{AB}$ ist
+zug{\"a}nglich. Der Entfernungsvektor $\overrightarrow{AC}$ ist
 $5$km. Im Weiteren ist Ihnen der Entfernungsvektor
-$\overrightarrow{CB}$ mit $4.5$km bekannt. Der
+$\overrightarrow{CB}$ mit $6.5$km bekannt. Der
 Entfernungsvektor $\overrightarrow{BE}$ ist das $1.3$-fache
 des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort
-C anpeilen, so liegt der Ort B ungef{\"a}hr $25^\circ$
+C anpeilen, so liegt der Ort B ungef{\"a}hr $30^\circ$
 s{"u}dlich. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt
-der Ort D ungef{\"a}hr $35^\circ$ {\"o}stlich. Vom Ort B
+der Ort D ungef{\"a}hr $50^\circ$ {\"o}stlich. Vom Ort B
 betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort
 B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E
 s{"u}dlich von B. Die Strecke zwischen A und E ist nicht
-passierbar. Sie starten an dem Ort D Ihre Cachertour. \\
+passierbar. Sie starten an dem Ort E Ihre Cachertour. \\
 
 \begin{enumerate}
 \item L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
   Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze
   entsprechend! \textbf{(2 Punkte)}
 \item Welche Strecke in $km$ legen Sie bei der Bew{\"a}ltigung der
-  aufw{"a}rts Schwierigkeitschallenge zur{\"u}ck? \textbf{(5
+  abw{"a}rts Schwierigkeitschallenge zur{\"u}ck? \textbf{(5
     Punkte)}
 \item Gehen Sie von einer zus{\"a}tzlichen Suchzeit in Stunden f{\"u}r die
   Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil
   aus. Die Suchzeit in Stunden f{\"u}r \textit{jeden einzelnen} Cache wird durch die
   Funktion
   \begin{equation*}
-    Suchzeit = 0.15 + 0.25 \cdot Schwierigkeit
+    Suchzeit = 0.05 + 0.25 \cdot Schwierigkeit
   \end{equation*}  
   beschreiben.  Wie lange in Stunden ben{\"o}tigen Sie um die
-  aufw{"a}rts Schwierigkeitschallenge zu erf{\"u}llen? \textbf{(3 Punkte)}
+  abw{"a}rts Schwierigkeitschallenge zu erf{\"u}llen? \textbf{(3 Punkte)}
 \item An der h{\"o}chsten Schwierigkeit m{\"u}ssen Sie angeln. Ihre Angel ist
-  ausgefahren 6m lang. Erreichen Sie einen Cache in der H{\"o}he
-  von 7.8m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
+  ausgefahren 8m lang. Erreichen Sie einen Cache in der H{\"o}he
+  von 9.7m?  Berechnen Sie dazu Ihre maximale m{\"o}gliche
   Angelh{\"o}he! Welche Annahmen mussten Sie treffen um die Aufgabe zu l{\"o}sen? \textbf{(2 Punkte)} 
 \end{enumerate}
 
@@ -4517,19 +4523,19 @@ Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Que
 
 \begin{enumerate}
 \item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von
-  280$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben?
+  320$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben?
   \textbf{(2 Punkte)}
 \end{enumerate}
 
-Radon zerfällt mit einer Halbwertszeit von 1.8d zu
+Radon zerfällt mit einer Halbwertszeit von 4.1d zu
 Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von
-140d zu Blei. Nur Radon und Polonium tragen zur
+180d zu Blei. Nur Radon und Polonium tragen zur
 radioaktiven Strahlenbelastung bei.
 
 \begin{enumerate}
   \setcounter{enumi}{1}
 \item Wie lange dauert es in Stunden bis Ihre kritische Radonbelastung von
-  280$Bq/m^3$ auf unter 80$Bq/m^3$ gefallen ist?
+  320$Bq/m^3$ auf unter 100$Bq/m^3$ gefallen ist?
   \textbf{(4 Punkte)}
 \end{enumerate}
 
@@ -4543,10 +4549,10 @@ normalen Umgebungsluft.
     Stickstoff & 79.7 & 27.9 &
                                                     \phantom{1000000000000}\strut\\
         \hline
-    Sauerstoff & 20.45 & 16.2 &
+    Sauerstoff & 21.3 & 16.5 &
                                                     \phantom{10000000}\strut\\
         \hline
-    Kohlenstoffdioxid & 0.045 & 12.5 & \phantom{10000000}\strut\\     
+    Kohlenstoffdioxid & 0.035 & 12.5 & \phantom{10000000}\strut\\     
      \hline
 \end{tabular}
 \end{center}
@@ -4598,14 +4604,14 @@ Volumen von 22.4 Liter. % Ein Mol enthält $6 \cdot 10^{23}$ Teilchen.
 
 
 
-Ihr Studentenjob war nach Ladenschluss bei Aldi die Regale
+Ihr Studentenjob war nach Ladenschluss bei Kaufland die Regale
 einzur{\"a}umen. Dabei ist Ihnen in der Auslage der Sonderangebote das
 Necronomicon\footnote{Ein wirklich gef{\"a}hrliches Buch ist:
   \textit{Du bist genug: Vom Mut, gl{\"u}cklich zu sein} von Fumitake Koga und
   Ichiro Kishimi} in die H{\"a}nde gefallen. Nun sind Sie eine Magierin der
 Zeichen geworden! Also eigentlich k{\"o}nnen Sie nur Mathe und das d{\"a}mliche
 Necronomicon hat Sie in die Vergangenheit geschleudert... aber gut, was tut
-man nicht alles im Jahr 565 n. Chr. f{\"u}r den neuen Lehnsherren
+man nicht alles im Jahr 250 n. Chr. f{\"u}r den neuen Lehnsherren
 Henry dem Roten. Sie bauen nat{\"u}rlich einen Schrottkugelturm um sich den
 Horden der Finsternis mit genug Schrott erwehren zu k{\"o}nnen! Ihnen stehen
 zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
@@ -4629,11 +4635,11 @@ Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
 bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
 Blei\textit{tropfen} mit einem Gewicht von $40mg$ zu
 gleichf{\"o}rmigen Blei\textit{kugeln} bei einer Geschwindigkeit von
-$14m/s$ bilden.
+$11m/s$ bilden.
 
 \begin{enumerate}
 \item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
-  runde Bleikugeln durch die Fallgeschwindigkeit von $14m/s$ bilden?
+  runde Bleikugeln durch die Fallgeschwindigkeit von $11m/s$ bilden?
   \textbf{(3 Punkte)}
 \end{enumerate}
 
@@ -4652,12 +4658,12 @@ nicht aufhalten. Die Sachlage m{\"u}ssen Sie einmal mathematisch untersuchen.
   Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Sie haben jetzt die \ensuremath{2.3\times 10^{5}} Bleikugeln zusammen. Blei hat eine Dichte
-von $10.32g/cm^3$.
+Sie haben jetzt die \ensuremath{6.1\times 10^{4}} Bleikugeln zusammen. Blei hat eine Dichte
+von $15.1g/cm^3$.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie schwer in Kilogramm $kg$ sind die \ensuremath{2.3\times 10^{5}} produzierten
+\item Wie schwer in Kilogramm $kg$ sind die \ensuremath{6.1\times 10^{4}} produzierten
   Bleikugeln, die Sie jetzt auf die Burgmauer transportieren m{\"u}ssen?
   \textbf{(1 Punkt)}
 \end{enumerate}
@@ -4667,7 +4673,7 @@ Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimiere
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
-  wenn Sie pro Fall ca. 900 Bleikugeln produzieren wollen und
+  wenn Sie pro Fall ca. 1200 Bleikugeln produzieren wollen und
   die Bleikugel im Fall 0.8cm Abstand haben m{\"u}ssen?  \textbf{(1
     Punkt)}
 \end{enumerate}
@@ -4696,7 +4702,7 @@ Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
 niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
 einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
 Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
-1860 ungef{\"a}hr 30 Kaninchen entlassen hat,
+1860 ungef{\"a}hr 32 Kaninchen entlassen hat,
 Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so
 exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
   der Inspiration f{\"u}r die Aufgabe war der folgendes YouTube Video:
@@ -4708,7 +4714,7 @@ exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
 Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das j{\"a}hrliche Wachstum
 der gesamten Kaninchenpopulation im westlichen Australien.
 \begin{equation*}
-  f(t) = \ensuremath{1.2\times 10^{10}} - \ensuremath{10^{9}} \cdot 1.9^{-0.2 \cdot t + 2.7}
+  f(t) = \ensuremath{1.2\times 10^{10}} - \ensuremath{1.1\times 10^{9}} \cdot 2^{-0.1 \cdot t + 2.7}
 \end{equation*}
 
 \begin{enumerate}
@@ -4717,15 +4723,15 @@ der gesamten Kaninchenpopulation im westlichen Australien.
 \item Wie viele Kaninchen k{\"o}nnen nach der S{\"a}ttigungsfunktion maximal im
   westlichen Australien leben? Erg{\"a}nzen Sie den Wert in Ihrer Abbildung! \textbf{(2 Punkte)}
 \item Wie viele Millionen Kaninchen leben nach der S{\"a}ttigungsfunktion
-  nach 15 Jahren auf dem australischen Kontinent? \textbf{(1
+  nach 6 Jahren auf dem australischen Kontinent? \textbf{(1
     Punkt)}
 \end{enumerate}
 
 Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit
-Haemorrhagic Disease Virus (RHDV) in 14 Kaninchen
+Haemorrhagic Disease Virus (RHDV) in 18 Kaninchen
 ausgebracht. Da die Kaninchen keine Ma{\ss}nahmen gegen die Ausbreitung
 vornehmen k{\"o}nnen, verl{\"a}uft die Ausbreitung mit einem w{\"o}chentlichen
-Wachstumsfakor von 1.2 nach folgender Formel.
+Wachstumsfakor von 2.2 nach folgender Formel.
 
 \begin{equation*}
   N(t) = N(0) \cdot a^t
@@ -4734,24 +4740,24 @@ Wachstumsfakor von 1.2 nach folgender Formel.
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Wie viele Wochen ben{\"o}tigen die Viren um theoretisch die gesamte
-  Kaninchenpopulation nach 13 Jahren Wachstum zu
+  Kaninchenpopulation nach 4 Jahren Wachstum zu
   durchseuchen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das Myxoma Virus und das RHDV t{\"o}ten 99.7\% der
+Das Myxoma Virus und das RHDV t{\"o}ten 99.9\% der
 Kaninchenpopulation innerhalb weniger Wochen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}  
 \item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer
-  Viruspandemie wieder auf 50\% der ges{\"a}ttigten
+  Viruspandemie wieder auf 60\% der ges{\"a}ttigten
   Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
 \end{enumerate}
 
-Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten Westen von
-Australien. Australien hat eine West-Ost-Ausdehnung von 4200km
+Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten Osten von
+Australien. Australien hat eine West-Ost-Ausdehnung von 4000km
 und eine Nord-S{\"u}d-Ausdehnung von knapp 3700km. Die Kaninchen
-breiten sich radial mit einer Geschwindigkeit von 9.8km pro
+breiten sich radial mit einer Geschwindigkeit von 7.8km pro
 Jahr aus.
 
 \begin{enumerate}
@@ -4762,12 +4768,12 @@ Jahr aus.
 \end{enumerate}
 
 Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
-Disease Virus (RHDV) kosten 11\$ pro Tier und der
+Disease Virus (RHDV) kosten 12\$ pro Tier und der
 durchf{\"u}hrende Arzt verlangt ca. 35\$ pro Tier.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
-\item In Ihrem Stall leben 1100 Mastkaninchen. Mit welchen
+\item In Ihrem Stall leben 1200 Mastkaninchen. Mit welchen
   j{\"a}hrlichen Zusatzkosten f{\"u}r die Impfungen der Kaninchen m{\"u}ssen Sie daher
   kalkulieren? \textbf{(1 Punkt)}
 \end{enumerate}
@@ -4793,7 +4799,7 @@ durchf{\"u}hrende Arzt verlangt ca. 35\$ pro Tier.
 
 
 Wir schreiben das Jahr 2024. Dies sind die Abenteuer
- des Schafs Frida und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und
+der Kuh Fridolin und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und
 ein strammer Wind im Gesicht, egal wohin Sie schauen. Ein schmatzendes
 Ger{\"a}usch ert{\"o}nt unter Ihnen. Sie sinnieren, sollten Sie Ihre weiten
 Graslandschaften jetzt schon d{\"u}ngen?  Daf{\"u}r ben{\"o}tigen Sie die
@@ -4802,8 +4808,8 @@ positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von
 200$^\circ$ kann mit der Stickstoffd{\"u}ngung begonnen werden. Sie sehen nicht
 ein, Geld f{\"u}r einen Agrarmetrologen zu bezahlen. Also rechnen Sie mit
 folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit
-$0.4\times$, Februar mit $0.8\times$ und M{\"a}rz mit
-$1.2\times$. Sie haben noch im letzten Jahr folgende Temperaturen
+$0.4\times$, Februar mit $0.7\times$ und M{\"a}rz mit
+$1.05\times$. Sie haben noch im letzten Jahr folgende Temperaturen
 gemessen.
 
 \begin{center}
@@ -4812,8 +4818,8 @@ gemessen.
   Datum & C$^\circ$ \\
   \midrule
   01. Jan 2023 & 0.1\\
-  01. Feb 2023 & 1.2\\
-  01. Mrz 2023 & 2.7\\
+  01. Feb 2023 & 1.5\\
+  01. Mrz 2023 & 3.5\\
   01. Apr 2023 & 4.3\\
   \bottomrule
 \end{tabular}
@@ -4827,16 +4833,16 @@ gemessen.
 \item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ f{\"u}r
   Ihre linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(1
     Punkt)}
-\item Osterglocken beginnen ab einer GLT von 190$^\circ C$ zu bl{\"u}hen. An
+\item Osterglocken beginnen ab einer GLT von 210$^\circ C$ zu bl{\"u}hen. An
   welchem Tag im 1. Quartal des Jahres 2023 war dies der
   Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(4 Punkte)}
 \end{enumerate}
 
 Auf dem Weg zu Ihrer Jonagoldplantage wurden Sie mit Ihrem Trecker von
 einer Gruppe elektrifizierter Renter abgedr{\"a}ngt. Der Trecker muss wieder
-aus dem Graben! Frida und die elektrifizierten Rentner ziehen an zwei,
-separaten Seilen. Dabei zieht Frida mit $180N$. Die
-elektrifizierter Renter  bringen eine Kraft von $210N$ auf.\\
+aus dem Graben! Fridolin und die elektrifizierten Rentner ziehen an zwei,
+separaten Seilen. Dabei zieht Fridolin mit $230N$. Die
+elektrifizierter Renter  bringen eine Kraft von $140N$ auf.\\
 
 \textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
   Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer
@@ -4844,14 +4850,14 @@ elektrifizierter Renter  bringen eine Kraft von $210N$ auf.\\
 
 \begin{enumerate}
   \setcounter{enumi}{4}  
-\item Im ersten Versuch legen Sie das Seil f{\"u}r Frida lotrecht {\"u}ber einen
+\item Im ersten Versuch legen Sie das Seil f{\"u}r Fridolin lotrecht {\"u}ber einen
   Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie {\"u}ber
   die B{\"o}schung hinweg am anderen Seil. Welche Kraft wird aufgebracht?
   \textbf{(2 Punkte)}
-\item Im zweiten Versuch ziehen Frida und die Rentner mit einem
-  $30^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft
+\item Im zweiten Versuch ziehen Fridolin und die Rentner mit einem
+  $40^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft
   wird aufgebracht? \textbf{(2 Punkte)}
-\item Mit welcher Beschleunigung ziehen Sie den $1.3t$ schweren
+\item Mit welcher Beschleunigung ziehen Sie den $1.5t$ schweren
   Trecker \textit{jeweils} aus dem Graben, wenn $F = m \cdot a$ gilt?
   \textbf{(1 Punkt)}
 \end{enumerate}
@@ -4881,14 +4887,14 @@ schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
 Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
 werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
 anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
-  8-mal-gefaltete, 0.8mm, 50-cm-Karton} durch
+  4-mal-gefaltete, 0.6mm, 30-cm-Karton} durch
 Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
 schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
 sind. Martin gef{\"a}llt das. An dem Vorrat
 an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
 
 Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
-hat eine L{\"a}nge von 50cm und eine Breite von 20cm. Die
+hat eine L{\"a}nge von 30cm und eine Breite von 20cm. Die
 Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
 der L{\"a}nge $x$ falzen.
 
@@ -4909,9 +4915,9 @@ Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
 nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
 er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
 Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
-Rektor Skinner nur 100m Zaun zu Verf{\"u}gung. Sie wollen nun die
+Rektor Skinner nur 120m Zaun zu Verf{\"u}gung. Sie wollen nun die
 maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
-Seitenl{\"a}ngen bei der Verwendung von 100m Zaun bestimmen!
+Seitenl{\"a}ngen bei der Verwendung von 120m Zaun bestimmen!
 
 \begin{enumerate}
   \setcounter{enumi}{4}  
@@ -4947,13 +4953,13 @@ wollen\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
 wir uns dazu einmal den Vergleich Deutschland zu Nigeria an. Nigeria hat
 eine der am schnellsten wachsenden Bev{\"o}lkerungen der Welt und wird
 vermutlich im Jahr 2100 zu den Top 5 der bev{\"o}lkerungsreichsten L{\"a}nder
-z{\"a}hlen. Im Jahr 2023 leben ca. \ensuremath{8.4\times 10^{7}} Menschen in
+z{\"a}hlen. Im Jahr 2020 leben ca. \ensuremath{8.2\times 10^{7}} Menschen in
 Deutschland und ca. \ensuremath{1.84\times 10^{8}} Menschen in Nigeria. Mit den
 Informationen wollen wir anfangen und dann eine Prognose f{\"u}r den
 Fleischkonsum im Jahr 2050 zu treffen. \\ 
 
 
-Im folgenden ist Abbildung des Fleischkonsums im Jahr 2023 in
+Im folgenden ist Abbildung des Fleischkonsums im Jahr 2020 in
 Deutschland und Nigeria in [kg] einmal dargestellt. 
 
 \begin{knitrout}
@@ -4968,7 +4974,7 @@ Deutschland und Nigeria in [kg] einmal dargestellt.
   
 \begin{enumerate}
 \item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
-  2023 \textit{pro Kopf} in einer aussagekr{\"a}ftigen Tabelle dar! 
+  2020 \textit{pro Kopf} in einer aussagekr{\"a}ftigen Tabelle dar! 
   \textbf{(2 Punkte)}
 \item Erg{\"a}nzen Sie in der Tabelle eine Spalte in der Sie f{\"u}r den
   Fleischkonsum in Nigeria auf Deutschland normieren, daher ins Verh{\"a}ltnis
@@ -4992,7 +4998,7 @@ Lebensmittel, die durch die Produktion entsteht, abgebildet.
   \setcounter{enumi}{2}  
 \item Stellen Sie in einer Tabelle die Treibhausgasemissionen an $CO_2$ pro
   Kopf, die durch den Fleischkonsum in Deutschland und Nigeria im Jahr
-  2023 entstehen, dar! Erg{\"a}nzen Sie auch hier das Verh{\"a}ltnis
+  2020 entstehen, dar! Erg{\"a}nzen Sie auch hier das Verh{\"a}ltnis
   Nigeria zu Deutschland! \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -5022,10 +5028,10 @@ Bev{\"o}lkerungsentwicklung [Millionen] in Nigeria von 1950 bis ins Jahr 2030 fo
     Punkt)}
 \end{enumerate}
 \item Berechnen Sie den gesch{\"a}tzten Fleischkonsum von Nigeria im Jahr
-  2050 unter der Annahme 70\%-iger Angleichung der Lebensbedingungen zu
-  Deutschland im Jahr 2023! \textbf{(1 Punkt)}
+  2050 unter der Annahme 80\%-iger Angleichung der Lebensbedingungen zu
+  Deutschland im Jahr 2020! \textbf{(1 Punkt)}
 \item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr 2023, der
+  an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr 2020, der
   sich durch den angeglichenen Fleischkonsum ergibt! \textbf{(1 Punkt)}
 \item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
   an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme 
@@ -5059,20 +5065,20 @@ Bev{\"o}lkerungsentwicklung [Millionen] in Nigeria von 1950 bis ins Jahr 2030 fo
 
 
 Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern
-beiseite. Sie sind bei Ihrem Orthop{"a}den und wollen einen AIDS-Test machen
+beiseite. Sie sind bei Ihrem HNO-Arzt und wollen einen AIDS-Test machen
 lassen. Woanders leider keinen Termin gekriegt... Immerhin denken Sie und
-Ihr Partner {\"u}ber Nachwuchs nach und da geht es eben nur durch
+Ihre Partnerin {\"u}ber Nachwuchs nach und da geht es eben nur durch
 ungesch{\"u}tzten Sex. Was wissen Sie nun aber {\"u}ber AIDS und dem diagnostischen
 AIDS-Test, den Sie nun machen werden?\\
 
 Die Pr{\"a}valenz von AIDS bei einem Menschen in Europa wird mit
-0.8\% angenommen. In 95\% der F{\"a}lle ist ein
+0.8\% angenommen. In 96\% der F{\"a}lle ist ein
 HIV-Test positiv, wenn der Patient erkrankt ist. In 3\%
 der F{\"a}lle ist ein HIV-Test positiv, wenn der Patient \textit{nicht}
 erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es
 denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven
 AIDS-Test vorliegen haben $(T^+)$? Gehen Sie f{\"u}r die folgenden Berechnungen
-von $n = \ensuremath{2\times 10^{4}}$ Patienten mit einem diagnostischen Test f{\"u}r AIDS
+von $n = \ensuremath{4\times 10^{4}}$ Patienten mit einem diagnostischen Test f{\"u}r AIDS
 aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen
 Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration f{\"u}r die
   Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et
@@ -5146,29 +5152,29 @@ abtauchen\footnote{Die Quellen der Inspiration f{\"u}r die Aufgabe waren
     Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
 
 Das Jahr 2022 war das erfolgreichste Jahr in der Geschichte von
-KH Gesund und Sch{"o}n Components (KH-GSC). Das Unternehmen steigerte den Umsatz um rund
-24 Prozent von 310 Millionen Euro im Jahr
+Direct Finanzanlagen Left/Right (D-FL/R). Das Unternehmen steigerte den Umsatz um rund
+15 Prozent von 310 Millionen Euro im Jahr
 2021. Doch wie viel kommt bei den Partnern an? Laut
-KH-GSC habe das Unternehmen \ensuremath{3.3\times 10^{5}} aktive Partner.
+D-FL/R habe das Unternehmen \ensuremath{3.3\times 10^{5}} aktive Partner.
 
 \begin{enumerate}
-\item Berechnen Sie zuerst den Umsatz der Firma KH-GSC im
+\item Berechnen Sie zuerst den Umsatz der Firma D-FL/R im
   Jahr 2022! \textbf{(1 Punkt)}
 \item Wie viel von dem Umsatz im Jahr 2022 wird im Durchschnitt von jedem
   aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
   Durchschnitt f{\"u}r jeden aktiven Partner bei einer direkten Provision von
-  30\%? \textbf{(1 Punkt)}
+  35\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet
-150EUR pro Einheit im Direktverkauf. Die direkte Provision
-f{\"u}r die erste Stufe betr{\"a}gt 35\%. F{\"u}r die zweite, dritte und
-vierte Stufe betragen die indirekten Provisionen jeweils 2\%,
-1\% und 0.5\%. Jeder Ihrer angeworbenen "`Partner"'
-wirbt wiederum f{"u}nf Partner f{\"u}r sich selbst an. Pro Monat
-werden im Schnitt f{"u}nf Einheiten vom Produkt verkauft. Sie wollen nun
-1800EUR im Monat \textit{passiv} -- also durch indirekte
+200EUR pro Einheit im Direktverkauf. Die direkte Provision
+f{\"u}r die erste Stufe betr{\"a}gt 25\%. F{\"u}r die zweite, dritte und
+vierte Stufe betragen die indirekten Provisionen jeweils 1.75\%,
+0.75\% und 0.25\%. Jeder Ihrer angeworbenen "`Partner"'
+wirbt wiederum vier Partner f{\"u}r sich selbst an. Pro Monat
+werden im Schnitt drei Einheiten vom Produkt verkauft. Sie wollen nun
+4100EUR im Monat \textit{passiv} -- also durch indirekte
 Provisionen -- erwirtschaften.
 
 \begin{enumerate}
@@ -5197,8 +5203,8 @@ Provisionen -- erwirtschaften.
   Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Sie mussten zum Einstieg bei KH-GSC Einheiten des Produkts
-f{\"u}r 5250EUR kaufen. Diese Einheiten k{\"o}nnen Sie nur direkt
+Sie mussten zum Einstieg bei D-FL/R Einheiten des Produkts
+f{\"u}r 7000EUR kaufen. Diese Einheiten k{\"o}nnen Sie nur direkt
 verkaufen. Leider mussten Sie den Kauf {\"u}ber einen Kredit {\"u}ber
 6\% p.a. {\"u}ber 72 Monate finanzieren.
 
@@ -5230,13 +5236,13 @@ verkaufen. Leider mussten Sie den Kauf {\"u}ber einen Kredit {\"u}ber
 
 
 Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
-haben, wollen Sie bei einem Ihrer Freunde einmal \textit{H{\"o}hlen \& Drachen}
+haben, wollen Sie bei einer Ihrer Freundinnen einmal \textit{H{\"o}hlen \& Drachen}
 ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
 Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz sch{\"o}n viele
 unterschiedliche W{\"u}rfel durch die Gegend fliegen. Daher m{\"u}ssen Sie sich
 jetzt einiges an Fragen stellen. \\%[-1ex]
 
-In dem Spiel haben Sie nun auf einmal 5 vierseitige W{"u}rfel (5d4) zum w{\"u}rfeln in der Hand. Wenn Sie eine 4 w{\"u}rfeln,
+In dem Spiel haben Sie nun auf einmal 4 zw{"o}lfseitige W{"u}rfel (4d12) zum w{\"u}rfeln in der Hand. Wenn Sie eine 12 w{\"u}rfeln,
 haben Sie einen Erfolg.
 
 \begin{enumerate}
@@ -5252,8 +5258,8 @@ Schwert entscheiden.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item W{\"u}rden Sie die Axt mit zwei achtseitigen W{"u}rfeln (2d8) als Schaden oder
-  das Schwert mit einem sechseitigen W{"u}rfel plus 7 (1d6+7) als Schaden bevorzugen?
+\item W{\"u}rden Sie die Axt mit zwei vierseitigen W{"u}rfeln (2d4) als Schaden oder
+  das Schwert mit einem achtseitigen W{"u}rfel plus 5 (1d8+5) als Schaden bevorzugen?
   Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
 \end{enumerate}
 
@@ -5261,9 +5267,9 @@ Jetzt wird es immer wilder, da Sie sich jetzt {\"u}berlegen m{\"u}ssen, wie
 wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
 funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
 Wahrscheinlichkeit f{\"u}r das Ereignis $A$, der Rettungswurf ist erfolgreich,
-ist $Pr(A) = 0.6$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
+ist $Pr(A) = 0.65$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
 der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = 0.9$. Sie
-haben mitgez{\"a}hlt und festgestellt, dass in $40$ von 100 F{\"a}llen
+haben mitgez{\"a}hlt und festgestellt, dass in $45$ von 100 F{\"a}llen
 Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
 \begin{enumerate}
@@ -5305,15 +5311,15 @@ h{\"a}tten sein sollten. Aber Sie brauchen das Geld und jetzt hei{\ss}t es
 Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa
 gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
 Kandidaten {\"u}berbieten (eng. \textit{outbid}). Mit Ihnen bilden
-Thorsten und Elke das Team der drei Kandidaten.
+Frida und Helmut das Team der drei Kandidaten.
 
 \begin{center}
 \begin{tabular}{ccc}
   \toprule
   Name & $P(win)$ & $P(outbid)$\\
   \midrule
-  Thorsten & 0.2 & 0.02\\
-  Elke & 0.4 & 0.043 \\
+  Frida & 0.2 & 0.08\\
+  Helmut & 0.2 & 0.12 \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -5322,15 +5328,15 @@ Thorsten und Elke das Team der drei Kandidaten.
 \item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
   Mitropa, wenn keiner der Kandidaten {\"u}berbietet? \textbf{(1 Punkt)}
 \item Wenn Ihre {\"U}berbietungswahrscheinlichkeit $P(outbid)$ bei
-  0.05 liegt, mit welcher Wahrscheinlichkeit gewinnt
+  0.11 liegt, mit welcher Wahrscheinlichkeit gewinnt
   \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Gl{\"u}cksrad f{\"u}r Arme auf der Kirmes! Leider hat es f{\"u}r Maren Gilzer nicht
 gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit
-einem Typen in einem Tentakelkost{"u}m um das gro{\ss}e Geld. Das Gl{\"u}cksrad hat 24
-Felder. Sie drehen das Gl{\"u}cksrad zweimal. Auf 8 Feldern
-gewinnen Sie 5000EUR sonst 2000EUR. Ganz sch{\"o}n viel Geld
+einem Typen in einem Tentakelkost{"u}m um das gro{\ss}e Geld. Das Gl{\"u}cksrad hat 22
+Felder. Sie drehen das Gl{\"u}cksrad zweimal. Auf 10 Feldern
+gewinnen Sie 3000EUR sonst 1500EUR. Ganz sch{\"o}n viel Geld
 und ganz sch{\"o}n zwielichtig hier...
 
 \begin{enumerate}
@@ -5340,7 +5346,7 @@ und ganz sch{\"o}n zwielichtig hier...
 \item Zeichnen Sie das zugeh{\"o}rige Baumdiagramm f{\"u}r das zweimalige Drehen!
   Erg{\"a}nzen Sie die Wahrscheinlichkeiten und die entsprechenden Ereignisse
   \textbf{(2 Punkte)}
-\item Mir welcher Wahrscheinlichkeit gewinnen Sie 7000EUR? \textbf{(1
+\item Mir welcher Wahrscheinlichkeit gewinnen Sie 4500EUR? \textbf{(1
     Punkt)}
 \end{enumerate}
 

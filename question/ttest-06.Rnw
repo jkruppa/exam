@@ -5,7 +5,13 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()}.
+<<ttest-R-02-0,  echo = FALSE>>=
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+@
+
+Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit \Sexpr{plant}.
 
 <<ttest-R-02-a,  echo = FALSE>>=
 
@@ -27,7 +33,7 @@ data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
 preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
 preprint$null.value <- "[condensed]"
 
-preprint$data.name <- c("drymatter by Fe", "freshmatter by N", "weight by group", "waterintake by infusion") %>% 
+preprint$data.name <- c("drymatter [kg/ha] by Fe", "freshmatter [kg/qm] by N", "weight [g/qm] by group", "waterintake [ml/d] by infusion") %>% 
   sample(1)
 
 first_vec <- c("high", "ctrl", "mid") %>% sample(1)
