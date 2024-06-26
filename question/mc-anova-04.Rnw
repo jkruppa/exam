@@ -34,7 +34,7 @@ Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
 <<mc-anova-02-b, results='asis', echo = FALSE>>=
 
 questions_vec <- c('Keine Interaktion ist zu erwatzen. Die Geraden der Verabreichungsmethode laufen parallel und mit {\"a}hnlichen Abst{\"a}nden.',
-                   'Eine leichte Interaktion ist zu erwarten. Die Geraen schneiden sich noch nicht, aber die Abst{\"a}nde unterscheiden sich stark.',
+                   'Eine leichte Interaktion ist zu erwarten. Die Geraden schneiden sich noch nicht, aber die Abst{\"a}nde unterscheiden sich stark.',
                    'Eine starke Interaktion ist zu erwarten. Die Geraden schneiden sich und die Abst{\"a}nde sind nicht gleichbleibend.',
                    'Keine Interaktion liegt vor. Die Geraden scheiden sich und laufen nicht parallel.',
                    'Eine starke Interaktion liegt vor. Die Geraden laufen parallel und schneiden sich nicht.') %>%
