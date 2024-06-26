@@ -124,14 +124,15 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \thispagestyle{empty}
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel für die Klausur}
   \vspace{1Ex}
   \begin{itemize}
   \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
-    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
+    Geräten - also ausdrücklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
-  \item \textbf{You can answer the questions in English without any
+  \item \textbf{\textcolor{red}{Die Verwendung eines roten Stiftes ist nicht gestattet. Korrekturfarbe!}}
+  \item \textit{You can answer the questions in English without any
       consequences.}
   \end{itemize}
 \end{graybox}
@@ -145,7 +146,7 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
     Textteil erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
-  \item[] Es wird folgender Notenschl{\"u}ssel angewendet.   
+  \item[] Es wird folgender Notenschlüssel angewendet.   
   \end{itemize}
   \vspace{1ex}
 \begin{center}
@@ -180,37 +181,37 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \begin{graybox}{Multiple Choice Aufgaben}
   \begin{itemize}
   \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
-  \item \textbf{{\"U}bertragen Sie Ihre Kreuze in die Tabelle auf
+  \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
       dieser Seite.}
-  \item Es werden nur Antworten ber{\"u}cksichtigt, die in dieser Tabelle
+  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
     angekreuzt sind!
   \end{itemize}
 
 \begin{center}
   \large
-  \begin{tabular}{|r|c|c|c|c|c||c|}
+  \begin{tabular}{|l|c|c|c|c|c?c|}
     \hline
     & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & $\boldsymbol{\checkmark}$\strut\\
     \hline
-    1 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 1} &   &   &   &   &   & \strut\\
     \hline
-    2 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 2} &   &   &   &   &   & \strut\\
     \hline
-    3 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 3} &   &   &   &   &   & \strut\\
     \hline
-    4 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 4} &   &   &   &   &   & \strut\\
     \hline
-    5 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 5} &   &   &   &   &   & \strut\\
     \hline
-    6 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 6} &   &   &   &   &   & \strut\\
     \hline
-    7 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 7} &   &   &   &   &   & \strut\\
     \hline
-    8 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 8} &   &   &   &   &   & \strut\\
     \hline
-    9 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 9} &   &   &   &   &   & \strut\\
     \hline
-    10 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 10} &   &   &   &   &   & \strut\\
     \hline
   \end{tabular}
 \end{center}
@@ -224,7 +225,7 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 
 \begin{graybox}{Rechen- und Textaufgaben}
   \begin{itemize}
-  \item Die Tabelle wird vom Dozenten ausgef{\"u}llt.
+  \item Die Tabelle wird vom Dozenten ausgefüllt.
   \end{itemize}
   \begin{center}
     \large

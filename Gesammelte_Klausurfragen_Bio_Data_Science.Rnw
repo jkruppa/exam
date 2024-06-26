@@ -113,6 +113,7 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
     Geräten - also ausdrücklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
     handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
+  \item \textbf{\textcolor{red}{Die Verwendung eines roten Farbstiftes ist nicht gestattet! Korrekturfarbe!}}
   \item \textit{You can answer the questions in English without any consequences.}  
   \end{itemize}
 \end{graybox}
@@ -169,29 +170,29 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 
 \begin{center}
   \large
-  \begin{tabular}{|r|c|c|c|c|c||c|}
+  \begin{tabular}{|l|c|c|c|c|c?c|}
     \hline
     & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & $\boldsymbol{\checkmark}$\strut\\
     \hline
-    1 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 1} &   &   &   &   &   & \strut\\
     \hline
-    2 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 2} &   &   &   &   &   & \strut\\
     \hline
-    3 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 3} &   &   &   &   &   & \strut\\
     \hline
-    4 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 4} &   &   &   &   &   & \strut\\
     \hline
-    5 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 5} &   &   &   &   &   & \strut\\
     \hline
-    6 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 6} &   &   &   &   &   & \strut\\
     \hline
-    7 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 7} &   &   &   &   &   & \strut\\
     \hline
-    8 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 8} &   &   &   &   &   & \strut\\
     \hline
-    9 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 9} &   &   &   &   &   & \strut\\
     \hline
-    10 Aufgabe &   &   &   &   &   & \strut\\
+    \textbf{Aufgabe 10} &   &   &   &   &   & \strut\\
     \hline
   \end{tabular}
 \end{center}
