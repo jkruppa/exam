@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
@@ -56,7 +56,7 @@ group_by(data_tbl, trt) %>%
 
 
 \begin{enumerate}
-\item Zeichnen Sie in eine Abbildung, die sich ergebenden Barplots! \textbf{(2 Punkte)}
+\item Zeichnen Sie in eine Abbildung, die sich ergebenden Barplots! \textit{Sortieren Sie dabei die Gruppen nach absteigender Effektstärke!} \textbf{(3 Punkte)}
 \item Adjustieren Sie die rohen $p$-Werte nach Bonferroni. Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
 \item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
   Abbildung. Nutzen Sie dazu die rohen $p$-Werte! \textbf{(2 Punkte)}
