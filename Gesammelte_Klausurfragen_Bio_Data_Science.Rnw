@@ -110,9 +110,9 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
   \vspace{1Ex}
   \begin{itemize}
   \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
-    Geräten - also ausdrücklich kein Handy!
+    Geräten! Ausdrücklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
-    handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
+    handschriftliche Formelsammlung. Keine digitalen Ausdrucke! 
   \item \textbf{\textcolor{red}{Die Verwendung eines roten Farbstiftes ist nicht gestattet! Korrekturfarbe!}}
   \item \textit{You can answer the questions in English without any consequences.}  
   \end{itemize}
@@ -122,10 +122,10 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \begin{graybox}{Endnote}
   \vspace{1Ex}
   \begin{itemize}
-  \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus dem Multiple
-    Choice Teil erreicht.
-  \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus dem Rechen- und
-    Textteil erreicht. 
+  \item[] \rule[0ex]{3em}{.4pt}\, von 20\, Punkten sind aus den Multiple
+    Choice Aufgaben erreicht.
+  \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{textpoints} Punkten sind aus den Rechen- und
+    Textaufgaben erreicht. 
   \item[] \rule[0ex]{3em}{.4pt}\, von \Sexpr{overallpoints} Punkten in Summe.
   \item[] Es wird folgender Notenschlüssel angewendet.   
   \end{itemize}
@@ -164,8 +164,6 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
   \item Pro Multipe Choice Frage ist \emph{genau} eine Antwort richtig.
   \item \textbf{Übertragen Sie Ihre Kreuze in die Tabelle auf
       dieser Seite.}
-  \item Es werden nur Antworten berücksichtigt, die in dieser Tabelle
-    angekreuzt sind!
   \end{itemize}
 
 \begin{center}
