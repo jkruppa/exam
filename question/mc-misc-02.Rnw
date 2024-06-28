@@ -1,15 +1,20 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Die Randomisierung von Beobachtungen bzw. Samples zu den Versuchseinheiten
+Die Randomisierung von Beobachtungen zu den Versuchseinheiten
 ist bedeutend in der Versuchsplanung. Welche der folgenden Aussagen ist richtig?
 
 <<mc-planing-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Randomisierung sorgt f{\"u}r Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{\"u}ckzuschliessen.',
+right_vec <- c('Randomisierung sorgt f{\"u}r Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{\"u}ckzuschliessen.',
+               'Strukturgleichheit ist durch Randomisierung gegeben. Somit kann von der Stichprobe auf die Grundgesamtheit geschlossen werden',
+               'Durch eine Randomisierung können wir von Strukturgleichheit zwischen der Stichprobe und der Grundgesamtheit ausgehen.') %>% 
+  sample(1)
+
+questions_vec <- c(right_vec,
                    'Randomisierung bringt starke Unstrukturiertheit in das Experiment und erlaubt erst von der Stichprobe auf die Grundgesamtheit zur{\"u}ckzuschliessen.',
-                   'Randomisierung erlaubt erst die Varianzen zu sch{\"a}tzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht m{\"o}glich.',
+                   'Randomisierung erlaubt erst die Varianzen zu sch{\"a}tzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht m{\"o}glich. Dadurch lässt sich erst ein Experiment auswerten.',
                    'Randomisierung war bis 1952 bedeutend, wurde dann aber in Folge besserer Rechnerleistung nicht mehr verwendet. Aktuelle Statistik nutzt keine Randomisierung mehr.',
-                   'Randomisierung erlaubt erst die Mittelwerte zu sch{\"a}tzen. Ohne Randomisierung keine Mittelwerte.') %>%
+                   'Randomisierung erlaubt erst die Mittelwerte zu sch{\"a}tzen. Ohne Randomisierung keine Mittelwerte. Ohne Mittelwerte keine Varianz und somit auch kein statistischer Test.') %>%
   sample
 
 
