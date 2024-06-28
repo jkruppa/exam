@@ -23,7 +23,7 @@ save_m <- c(10, 15, 20, 25) %>% sample(1)
 dichte_l <- c(220, 235, 240, 200) %>% sample(1)
 dichte_h <- c(270, 280, 290, 300) %>% sample(1)
 radius <- c(1, 1.2, 1.5, 1.8) %>% sample(1)
-grad <- c(85, 90, 95, 100, 105, 110) %>% sample(1)
+grad <- c(85, 88, 90, 92, 95) %>% sample(1)
 @
 
 Um die Energiekosten Ihres Betriebes zu senken, wollen Sie eine Solaranlage
