@@ -4,7 +4,11 @@ Welche Aussage zum mathematische Ausdruck $Pr(D|H_0)$ ist richtig?
 
 <<mc-statistisches-testen-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c('$Pr(D|H_0)$ ist die Wahrscheinlichkeit die Daten D zu beobachten wenn die Nullhypothese wahr ist.',
+right_vec <- c('$Pr(D|H_0)$ ist die Wahrscheinlichkeit die Daten D zu beobachten, wenn die Nullhypothese wahr ist.',
+               '$Pr(D|H_0)$ beschreibt die Wahrscheinlichkeit die Teststatistik $T$ aus den Daten zu beobachten, wenn die Nullhypothese wahr ist.',
+               '$Pr(D|H_0)$ stellt die Wahrscheinlichkeit die Daten D und somit die Teststatistik $T_D$ zu beobachten dar, wenn die Nullhypothese wahr ist.') %>% sample(1)
+
+questions_vec <- c(right_vec,
                    'Die Wahrscheinlichkeit der Daten unter der Nullhypothese in der Grundgesamtheit.',
                    'Die Wahrscheinlichkeit f{\"u}r die Nullhypothese, wenn die Daten wahr sind.',
                    'Die Inverse der Wahrscheinlichkeit unter der die Nullhypothese nicht mehr die Alternativehypothese {\"u}berdeckt.',

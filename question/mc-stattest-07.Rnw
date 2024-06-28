@@ -4,11 +4,15 @@ Welche Aussage über den $p$-Wert und dem Signifikanzniveau $\alpha$ gleich 5\% 
 
 <<mc-statistisches-testen-11, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.',
+right_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.',
+               'Wir schauen, ob der $p$-Wert kleiner ist als das Signifikanzniveau $\\alpha$ und vergleichen somit Wahrscheinlichkeiten. Die Wahrscheinlichkeiten werden als Flächen unter der Kurve der Teststaistik dargestellt, wenn die $H_0$ gilt.',
+               'Wir machen ein Aussage über die Flächen und der Kurve der Teststatistik, wenn die $H_0$ gilt. Dabei werden Wahrscheinlichkeiten vergleichen, die durch die Flächen unter der Kurve repräsentiert werden.') %>% sample(1)
+
+questions_vec <- c(right_vec,
                    'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.',
                    'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.',
-                   'Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$.',
-                   'Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifikanzschwelle unter der Annahme der Nullhypothese.') %>%
+                   'Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$. Der $p$-Wert wird mit dem Signifikanzniveau verglichen und bewertet.',
+                   'Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifikanzschwelle unter der Annahme der Nullhypothese. Dabei gilt, dass wir die Nullhypothese nur ablehnen können anhand des Falsifikationsprinzips.') %>%
   sample
 
 @
