@@ -12,8 +12,8 @@ quest_vec <- c("Die Testtheorie hat einen philosophischen Unterbau. Eins der Pri
 <<mc-statistisches-testen-02, results='asis', echo = FALSE>>=
 
 right_vec <- c('... dass ein schlechtes Modell durch ein weniger schlechtes Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.',
-               '... dass ein minderwertes MOdell durch ein weniger minderwertiges Modell ersetzt wird. Es gilt das Falsifikationsprinzip nach Karl Popper.',
-               '... dass ein schlechtes Modell durch das Falsifikationsprinzip duch ein weniger schlechtes Modell ersetzt wird.') %>% sample(1)
+               '... dass ein minderwertes Modell durch ein weniger minderwertiges Modell ersetzt wird. Es gilt das Falsifikationsprinzip nach Karl Popper.',
+               '... dass ein schlechtes Modell durch das Falsifikationsprinzip durch ein weniger schlechtes Modell ersetzt wird.') %>% sample(1)
 
 questions_vec <- c(right_vec,
                    '... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.',

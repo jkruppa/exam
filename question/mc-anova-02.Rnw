@@ -1,14 +1,41 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese abzulehnen. Welche Aussage {\"u}ber die Teststatistik der ANOVA ist richtig?
+<<mc-anova-01-a,  echo = FALSE>>=
+data_tbl <- PlantGrowth %>%
+  as_tibble %>%
+  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
+         weight = weight + rnorm(n = nrow(.), 0, 0.25))
 
-<<mc-anova-03, results='asis', echo = FALSE>>=
+anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
+  anova %>%
+  eta_squared(partial = FALSE)
 
-questions_vec <- c('Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 ann{\"a}hert kann die Nullhypothese nicht abgelehnt werden.',
-                   'Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 ann{\"a}hert kann die Nullhypothese nicht abgelehnt werden.',
-                   'Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik h{\"o}her als 1.96 ist, kann die Nullhypothese abgelehnt werden.',
-                   'Die ANOVA berechnt die F-Statistik aus den SS Behandlung geteilt durch die SS Fehler.',
-                   'Die ANOVA berechnet die T-Statistik aus der Multiplikation der MS Behandlung mit der MS der Fehler. Wenn die F-Statistik genau 0 ist, kann die Nullhypothese abgelehnt werden.') %>%
+eta2_val <- round(anova_mdl$Eta2, 2)
+
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+
+@
+
+Sie führen ein Feldexperiment durch um das Gewicht von \Sexpr{plant} zu
+steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen
+Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA
+ergibt sich ein $\eta^2 = \Sexpr{eta2_val}$. Welche Aussage ist richtig?
+
+<<mc-anova-01-b, results='asis', echo = FALSE>>=
+
+right_vec <- c(str_c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erklärt wird. Daher werden ', eta2_val*100, '\\% der Varianz durch die Behandlungsgruppen erklärt.'),
+               str_c('Es werden ', eta2_val*100, '\\% der Varianz durch die Behandlung erklärt. Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den unterschiedlichen Behandlungsbedingungen erklärt wird.'),
+               str_c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erklärt wird. Daher werden ', eta2_val*100, '\\% der Varianz erklärt.')) |> sample(1)
+
+wrong_vec <- c(str_c('Es werden ', (1-eta2_val)*100, '\\% der Varianz durch die Behandlung erklärt. Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den unterschiedlichen Behandlungsbedingungen nicht erklärt wird.'),
+              str_c('Es werden ', eta2_val*100, '\\% der Varianz durch den Versuch erklärt. Das $\\eta^2$ beschreibt den Anteil der Varianz, der durch Fehler in der Versuchsdurchführung entsteht.'),
+              str_c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Umweltbedingungen erklärt wird. Daher werden ', eta2_val*100, '\\% der Varianz durch die Umweltbedingungen erklärt. Der Anteil der Varianz durch die Behandlungsgruppen ist dann ', (1-eta2_val)*100, '\\%.'),
+              'Mit dem $\\eta^2$ lässt sich auf die Qualität der Randomisierung und damit der Strukturgleichheit zwischen der Grundgesamtheit und der Stichprobe schließen. Es gilt dabei die Regel, dass ein $\\eta^2$-Wert von 1 zu bevorzugen ist.',
+              'Das $\\eta^2$ beschreibt den Anteil der Varianz, der durch den Forschenden entsteht. Es gilt die Regel, dass ca. 70\\% der Varianz eines Versuches durch die Versuchsdurchführung entstehen sollen.') |> sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

@@ -1,37 +1,29 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-<<mc-anova-01-a,  echo = FALSE>>=
-data_tbl <- PlantGrowth %>%
-  as_tibble %>%
-  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
-         weight = weight + rnorm(n = nrow(.), 0, 0.25))
-
-anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
-  anova %>%
-  eta_squared(partial = FALSE)
-
-eta2_val <- round(anova_mdl$Eta2, 2)
-
-plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
-           "Brokoli") %>% sample(1)
-
+<<>>=
+eta2 <- c(0.12, 0.52, 0.78, 0.31) |>sample(1)
 @
 
-Sie f{\"u}hren ein Feldexperiment durch um das Gewicht von \Sexpr{plant} zu
-steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen
-Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA
-ergibt sich ein $\eta^2 = \Sexpr{eta2_val}$. Welche Aussage ist richtig?
+<<>>=
+ques_vec <- c(str_c('Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein $\\eta^2 = ',  eta2, '$. Welche Aussage ist richtig?'),
+              str_c('Sie führen einen Versuch mit einer Behandlung und drei Faktorleveln durch. Danach rechnen Sie eine einfaktorielle ANOVA und es ergibt sich ein $\\eta^2 = ',  eta2, '$. Welche Aussage ist richtig?'),
+              str_c('Aus einem Feldversuch ergibt sich die Notwendigkeit der Berechnung einer einfaktoriellen ANOVA. Es ergibt sich ein $\\eta^2 = ',  eta2, '$. Welche Aussage ist richtig?')) |>  sample(1)
+              @
 
-<<mc-anova-01-b, results='asis', echo = FALSE>>=
+\Sexpr{ques_vec}
 
-questions_vec <- c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{\"a}rt wird. Das $\\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.',
+<<mc-anova-01-ab, results='asis', echo = FALSE>>=
+
+right_vec <- c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{\"a}rt wird. Das $\\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.',
+               'Das $\\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen und beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{\"a}rt wird.',
+               'Das $\\eta^2$ wird genutzt um zu erfahren welchen Anteil der Varianz die Behandlungsbedingungen erklären.') |> sample(1)
+
+questions_vec <- c(right_vec,
                    'Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{\"a}rt wird. Somit der Rest an nicht erkl{\"a}rbarer Varianz.',
                    'Das $\\eta^2$ ist ein Wert f{\"u}r die G{\"u}te der ANOVA. Je kleiner desto besser. Ein $\\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.',
                    'Das $\\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.',
                    'Die Berechnung von $\\eta^2$ ist ein Wert f{\"u}r die Interaktion.') %>%
   sample
-
-
 @
 
 \begin{enumerate}

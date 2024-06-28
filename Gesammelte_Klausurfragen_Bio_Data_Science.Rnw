@@ -8,7 +8,7 @@ pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
-set.seed(20240701) ## savety seed 
+##set.seed(20240701) ## savety seed 
 ##
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
@@ -234,8 +234,8 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \Sexpr{knit_child(mc_questions_vec[2])} 
 \Sexpr{knit_child(mc_questions_vec[3])} 
 \Sexpr{knit_child(mc_questions_vec[4])} 
-\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 \Sexpr{knit_child(mc_questions_vec[5])} 
+\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 \Sexpr{knit_child(mc_questions_vec[6])} 
 \Sexpr{knit_child(mc_questions_vec[7])} 
 \Sexpr{knit_child(mc_questions_vec[8])}
@@ -244,16 +244,16 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 \Sexpr{knit_child(mc_questions_vec[11])}
 \Sexpr{knit_child(mc_questions_vec[12])}
 \Sexpr{knit_child(mc_questions_vec[13])} 
-\section*{Lineare Regression \& Korrelation}
 \Sexpr{knit_child(mc_questions_vec[14])} 
+\section*{Lineare Regression \& Korrelation}
 \Sexpr{knit_child(mc_questions_vec[15])}
 \Sexpr{knit_child(mc_questions_vec[16])}
 \Sexpr{knit_child(mc_questions_vec[17])}
 \Sexpr{knit_child(mc_questions_vec[18])}
 \Sexpr{knit_child(mc_questions_vec[19])}
 \Sexpr{knit_child(mc_questions_vec[20])}
-\section*{Vermischte Themen}  
 \Sexpr{knit_child(mc_questions_vec[21])}
+\section*{Vermischte Themen}  
 \Sexpr{knit_child(mc_questions_vec[22])}
 \Sexpr{knit_child(mc_questions_vec[23])}
 \Sexpr{knit_child(mc_questions_vec[24])}

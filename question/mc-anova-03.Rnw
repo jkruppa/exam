@@ -1,18 +1,30 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Die ANOVA ist ein statistisches Verfahren welches h{\"a}ufig in den
-Auswertungen von Experimenten in den Agrarwissenschaften angewendet
-wird. Dabei wird die ANOVA als ein erstes statistischen Werkzeug f{\"u}r die
-{\"U}bersicht {\"u}ber die Daten benutzt. Eine ANOVA testet dabei ...
+<<>>=
+ques_vec <- c('Eine einfaktorielle ANOVA berechnet eine Teststatistik um zu die Nullhypothese abzulehnen. Welche Aussage über die Teststatistik der ANOVA ist richtig?',
+              'Sie rechnen eine einfaktorielle ANOVA und erhalten eine Teststatistik. Nun müssen Sie diese Teststatistik interpretieren. Welche Aussage ist richtig?',
+              'Die einfaktorielle ANOVA ist ein Standardverfahren in der agrawissenschaftlichen Forschung wenn es um den Vergleich von Behandlungsgruppen geht. Welche der folgenden Aussage zu der Berechnung der Teststatistik der einfaktoriellen ANOVA ist richtig?') |>  sample(1)
+@
 
-<<results='asis', echo = FALSE>>=
+\Sexpr{ques_vec}
 
-questions_vec <- c('... den Unterschied zwischen der globalen Varianz und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.',
-                   '... den Unterschied zwischen mehreren Varianzen aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist nicht bekannt welcher Vergleich konkret unterschiedlich ist.',
-                   '... den Unterschied zwischen zwei paarweisen Mittelwerten aus verschiedenen Behandlungsguppen. Wenn die signifikant ist, ist daher bekannt welcher Vergleich konkret unterschiedlich ist.',
-                   '... den Unterschied zwischen der Mittelwerte und der Varianz aus verschiedenen Behandlungsguppen. Wenn die ANOVA signifikant ist, ist bekannt welcher Vergleich konkret unterschiedlich ist.',
-                   '... den Unterschied zwischen der F-Statistik anhand der Varianz der Gruppen. Wenn die F-Statistik exakt 0 ist, kann die Nullhypothese abgelehnt werden.') %>%
+<<mc-anova-03, results='asis', echo = FALSE>>=
+
+right_vec <- c('Die F-Statistik wird berechnet indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich kaum von der Null unterscheidet kann die Nullhypothese nicht abgelehnt werden.',
+               'Die ANOVA berechnet die F-Statistik indem die MS der Behandlung durch die MS des Fehlers geteilt werden. Wenn die F-Statistik sich der 0 ann{\"a}hert kann die Nullhypothese nicht abgelehnt werden.',
+               'Wenn die F-Statistik kleiner als der kritische Wert ist kann die Nullhypothese nicht abgelehnt werden. Die F-Statistik ist der Quotient der MS der Behandlung durch die MS des Fehlers.') |> sample(1)
+
+wrong_vec <- c('Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 1 ann{\"a}hert kann die Nullhypothese nicht abgelehnt werden.',
+                   'Die ANOVA berechnet die T-Statistik indem den Mittelwertsunterschied der Gruppen simultan durch die Standardabweichung der Gruppen teilt. Wenn die T-Statistik h{\"o}her als 1.96 ist, kann die Nullhypothese abgelehnt werden.',
+                   'Die ANOVA berechnt die F-Statistik aus den SS Behandlung geteilt durch die SS Fehler.',
+                   'Die ANOVA berechnet die T-Statistik aus der Multiplikation der MS Behandlung mit der MS der Fehler. Wenn die F-Statistik genau 0 ist, kann die Nullhypothese nicht abgelehnt werden.',
+               'Wenn die F-Statistik höher ist als der kritische Wert kann die Nullhypothese nicht abgelehnt werden. Die F-Statistik ist die Differenz der MS der Behandlung durch die MS des Fehlers.',
+               'Die ANOVA berechnet die F-Statistik indem die MS des Fehlers durch die MS der Behandlung geteilt werden. Wenn die F-Statistik sich der 0 ann{\"a}hert kann die Nullhypothese abgelehnt werden.') |> sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
+
 
 @
 

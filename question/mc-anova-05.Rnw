@@ -1,0 +1,52 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+n_pig <- rpois(1, 60)
+@ 
+
+Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur Bewertung der
+Wirkung von Vitamin C auf das Zahnwachstum bei Meerschweinchen. Der Versuch
+wurde an \Sexpr{n_pig} Schweinen durchgef{\"u}hrt, wobei jedes Tier eine von
+drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) {\"u}ber eine von zwei
+Verabreichungsmethoden mit Orangensaft (Orange) oder Ascorbins{\"a}ure (Vitamin C)
+erhielt.
+
+<<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 4, fig.align = "center", message = FALSE>>=
+
+data_tbl <- tibble(mean = sample(c(10, 15, 20, 22, 25, 30)),
+                   dose = rep(c(0.5, 1, 1.5), each = 2),
+                   Form = rep(c("Orange", "Vitamin C"), times = 3))
+
+ggplot(data_tbl, aes(x = dose, y = mean, color = Form, group = Form,
+                     shape = Form, linetype = Form)) +
+  geom_line() +
+  geom_point(size = 2) +
+  theme_minimal() +
+  labs(y = "Mittleres Zahnwachstum", x = "Verabreichte Dosis",
+       color = "", shape = "", linetype = "") +
+  ylim(0, NA)
+
+
+@
+
+Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
+
+<<mc-anova-02-b, results='asis', echo = FALSE>>=
+
+questions_vec <- c('Keine Interaktion ist zu erwarten. Die Geraden der Verabreichungsmethode laufen parallel und mit {\"a}hnlichen Abst{\"a}nden.',
+                   'Eine leichte Interaktion ist zu erwarten. Die Geraden schneiden sich noch nicht, aber die Abst{\"a}nde unterscheiden sich stark.',
+                   'Eine starke Interaktion ist zu erwarten. Die Geraden schneiden sich und die Abst{\"a}nde sind nicht gleichbleibend.',
+                   'Keine Interaktion liegt vor. Die Geraden scheiden sich und laufen nicht parallel.',
+                   'Eine starke Interaktion liegt vor. Die Geraden laufen parallel und schneiden sich nicht.') %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

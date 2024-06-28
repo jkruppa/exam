@@ -16,23 +16,16 @@ data_tbl <- tibble(x = data_vec[[1]])
 ggplot(data_tbl, aes(x)) + geom_histogram() + 
   xlab("X") + ylab("Count") +
   theme_minimal() 
-
-
-norm_str <- str_c("N(", mean_vec, ", 5)")
-pois_str <- str_c("Pois(", mean_vec, ")")
-
 @
 
 
 <<mc-distribution-02-b, results='asis', echo = FALSE>>=
 
-questions_vec <- c(str_c('Es handelt sich um eine Normalverteilung mit ',
-                         norm_str, "."),
-                   str_c('Es handelt sich um eine Poisson-Verteilung mit ',
-                         pois_str, "."),
-                   'Es handelt sich um eine Binomial-Verteilung mit Binom(10).',
-                   'Eine Standardnormalverteilung mit N(0,1).',
-                   'Eine rechtsschiefe, multivariate Normalverteilung.') %>%
+questions_vec <- c('Es handelt sich um eine Normalverteilung.',
+                   'Es handelt sich um eine Poisson-Verteilung.',
+                   'Es handelt sich um eine Binomial-Verteilung.',
+                   'Eine Standardnormalverteilung.',
+                   'Eine multivariate Normalverteilung.') %>%
   sample
 
 

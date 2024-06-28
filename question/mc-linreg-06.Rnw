@@ -10,7 +10,7 @@ questions_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(0, s^2)$.
                    'Die Residuen sind normalverteilt mit $\\mathcal{N}(\\bar{y}, s^2)$.',
                    'Die Residuen sind normalverteilt mit $\\mathcal{N}(0, 1)$.',
                    'Die Residuen sind binomialverteilt.',
-                   'Die Residuen folgen einer Poissonverteilung mit Pois(0).') %>%
+                   'Die Residuen folgen einer Poissonverteilung.') %>%
   sample
 
 
