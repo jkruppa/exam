@@ -17,8 +17,8 @@ aus einem statistischen Test erhalten?
 
 questions_vec <- c(str_c('Ja, ', var_vec, ' k{\"o}nnen wir mit einem statistischen Test auswerten. Wir erhalten eine Aussage ', names(var_vec), '.'),
                    str_c('Nein, ', var_vec, ' k{\"o}nnen wir mit einem statistischen Test nicht auswerten. Wir erhalten keine Aussage ', names(var_vec), '.'),
-                   str_c('Nein, wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.'),
-                   str_c('Ja, wir erhalten eine Aussage. M{\"u}ssen aber das Individuum im Kontext der Population adjustieren.'),
+                   str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.'),
+                   str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten eine Aussage. M{\"u}ssen aber das Individuum im Kontext der Population adjustieren.'),
                    str_c('Weder eine Ausssage {\"u}ber die Population noch {\"u}ber das Individuum ist mit einem statistischen Test m{\"o}glich. Wir erhalten eine Aussage {\"u}ber ein Experiment.')) %>%
   sample
 
