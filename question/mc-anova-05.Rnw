@@ -2,42 +2,77 @@
 
 <<>>=
 n_pig <- rpois(1, 60)
-@ 
+vit <- c("D", "E", "C") |> sample(1)
+animal <- c("Schweine", "Hasen", "Kanarienvögel", "Igeln") |> sample(1)
 
-Die folgende Abbildung enth{\"a}lt die Daten aus einer Studie zur Bewertung der
-Wirkung von Vitamin C auf das Zahnwachstum bei Meerschweinchen. Der Versuch
-wurde an \Sexpr{n_pig} Schweinen durchgef{\"u}hrt, wobei jedes Tier eine von
-drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) {\"u}ber eine von zwei
-Verabreichungsmethoden mit Orangensaft (Orange) oder Ascorbins{\"a}ure (Vitamin C)
-erhielt.
+ques_vec <- c(str_c('Die folgende Abbildung enthält die Daten aus einer Studie zur Bewertung der Wirkung von Vitamin ', vit, ' auf das Zahnwachstum bei ', animal, '. Der Versuch wurde an ', n_pig, ' Tieren durchgeführt, wobei jedes Tier eine von  drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) über eine von zwei Verabreichungsmethoden erhielt. Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?'),
+              str_c('In einer Studie zur Bewertung der Wirkung von Vitamin ', vit, ' auf das Zahnwachstum bei ', animal, ' entstand folgende Abbildung. Der Versuch wurde an ', n_pig, ' Tieren durchgeführt, wobei jedes Tier eine von  drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) über eine von zwei Verabreichungsmethoden erhielt. Welche Aussage ist im Bezug auf eine zweifaktorielle ANOVA richtig?'),
+              str_c('Ein Versuch wurde an ', n_pig, ' Tieren durchgeführt, wobei jedes Tier eine von drei Vitamin-C-Dosen (0.5, 1 und 1.5 mg/Tag) über eine von zwei Verabreichungsmethoden erhielt. Die folgende Abbildung enthält die Daten aus diesem Versuch zur Bewertung der Wirkung von Vitamin ', vit, ' auf das Zahnwachstum bei ', animal, '.  Welche Aussage ist richtig, wenn Sie eine zweifaktorielle ANOVA rechnen?')) |>  sample(1)
+@
 
-<<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 4, fig.align = "center", message = FALSE>>=
+\Sexpr{ques_vec}
+
+<<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+pacman::p_load(ggpattern)
 
 data_tbl <- tibble(mean = sample(c(10, 15, 20, 22, 25, 30)),
                    dose = rep(c(0.5, 1, 1.5), each = 2),
                    Form = rep(c("Orange", "Vitamin C"), times = 3))
 
-ggplot(data_tbl, aes(x = dose, y = mean, color = Form, group = Form,
+p1 <- ggplot(data_tbl, aes(x = dose, y = mean, group = Form,
                      shape = Form, linetype = Form)) +
-  geom_line() +
-  geom_point(size = 2) +
+  geom_line(color = "black", size = 1) +
+  geom_point(size = 3) +
   theme_minimal() +
   labs(y = "Mittleres Zahnwachstum", x = "Verabreichte Dosis",
        color = "", shape = "", linetype = "") +
-  ylim(0, NA)
+  ylim(0, NA)  +
+  theme(legend.position = "none")
 
+p2 <- ggplot(data_tbl, aes(x = dose, y = mean, fill = Form)) +
+  geom_bar(stat = "identity", position = position_dodge(0.5)) +
+  geom_errorbar(aes(ymin = mean-5, ymax = mean+5),
+                width = 0.2, position = position_dodge(0.5)) +
+  theme_minimal() +
+  labs(y = "Mittleres Zahnwachstum", x = "Verabreichte Dosis",
+       color = "", shape = "", linetype = "") +
+  ylim(0, NA) +
+  geom_col_pattern(
+    aes(pattern=Form,
+        pattern_angle=Form,
+        pattern_spacing=Form
+        ), 
+    fill            = 'white',
+    colour          = 'black', 
+    pattern_density = 0.5, 
+    pattern_fill    = 'black',
+    pattern_colour  = 'darkgrey',
+    position = position_dodge(0.5)
+  ) +
+  theme(legend.position = "none")
+
+lst(p1, p2)[[sample(c("p1", "p2"), 1)]]
 
 @
 
-Welche Aussage ist richtig im Bezug auf eine zweifaktorielle ANOVA?
 
 <<mc-anova-02-b, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Keine Interaktion ist zu erwarten. Die Geraden der Verabreichungsmethode laufen parallel und mit {\"a}hnlichen Abst{\"a}nden.',
-                   'Eine leichte Interaktion ist zu erwarten. Die Geraden schneiden sich noch nicht, aber die Abst{\"a}nde unterscheiden sich stark.',
-                   'Eine starke Interaktion ist zu erwarten. Die Geraden schneiden sich und die Abst{\"a}nde sind nicht gleichbleibend.',
-                   'Keine Interaktion liegt vor. Die Geraden scheiden sich und laufen nicht parallel.',
-                   'Eine starke Interaktion liegt vor. Die Geraden laufen parallel und schneiden sich nicht.') %>%
+right_1_vec <- c('Keine Interaktion liegt vor $(p \\leq 0.05)$.') |> sample(1)
+right_2_vec <- c('Eine mittlere bis starke Interaktion liegt vor $(p \\leq 0.05)$') |> sample(1)
+
+wrong_vec <- c('Eine Korrelation liegt vor $(p \\leq 0.05)$.',
+               'Das Bestimmtheitsmaß $R^2$ ist groß.',
+               'Keine Korrelation liegt vor $(p \\geq 0.05)$.',
+               'Die Koeffizienten sind positiv $(\\beta_0 > 0; \\beta_1 > 0)$.',
+               'Die Koeffizienten sind negativ $(\\beta_0 < 0; \\beta_1 < 0)$.',
+               'Das Bestimmtheitsmaß $R^2$ ist klein.',
+               'Eine negative Interaktion liegt vor $(\\rho \\geq 0.5)$.',
+               'Eine positive Interaktion liegt vor $(\\rho \\leq -0.5)$ ') %>%
+  sample(3)
+
+questions_vec <- c(right_1_vec, right_2_vec, 
+                   wrong_vec) %>%
   sample
 
 
