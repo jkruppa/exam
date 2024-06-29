@@ -8,7 +8,7 @@ eta2 <- c(0.12, 0.52, 0.78, 0.31) |>sample(1)
 ques_vec <- c(str_c('Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein $\\eta^2 = ',  eta2, '$. Welche Aussage ist richtig?'),
               str_c('Sie führen einen Versuch mit einer Behandlung und drei Faktorleveln durch. Danach rechnen Sie eine einfaktorielle ANOVA und es ergibt sich ein $\\eta^2 = ',  eta2, '$. Welche Aussage ist richtig?'),
               str_c('Aus einem Feldversuch ergibt sich die Notwendigkeit der Berechnung einer einfaktoriellen ANOVA. Es ergibt sich ein $\\eta^2 = ',  eta2, '$. Welche Aussage ist richtig?')) |>  sample(1)
-              @
+@
 
 \Sexpr{ques_vec}
 

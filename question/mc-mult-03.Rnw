@@ -1,16 +1,28 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Der multiple Vergleich als Posthoc-Test nach einer ANOVA ist in den
-Agrarwissenschaften heutzutage Standard. Welches R Paket wird h{\"a}ufig f{\"u}r
-den multiplen Vergleich genutzt? Welche Beschreibung der Eigenschaften ist korrekt?
+
+<<>>=
+ques_vec <- c('Der multiple Vergleich als Posthoc-Test nach einer ANOVA ist in den Agrarwissenschaften heutzutage Standard. Welches R Paket wird häufig für den multiplen Vergleich genutzt? Welche Beschreibung der Eigenschaften ist korrekt?',
+              'Sie haben eine zweifaktorielle ANOVA gerechnet und wollen nach einem signifikanten Ergebnis in dem Gruppenfaktor einen Posthoc-Test rechnen. Welches R Paket nutzen Sie dafür und welche Eigenschaften des Paktes sind korrekt?',
+              'In Ihrer Bachelorarbeit müssen Sie einen Feldversuch auswerten. Nachdem Sie die zweifaktorielle ANOVA gerechnet haben und keine signifikante Interaktion vorliegt, wollen Sie jetzt einen Posthoc-Test rechnen. Welches R Paket nutzen Sie dafür am besten?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-mult-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Das R Paket emmeans erlaubt die Durchf{\"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{\"a}sst sich recht einfach das CLD erstellen und so {\"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{\"u}hren.',
-                   'Das R Paket hmisc erlaubt die Durchf{\"u}hrung eines multiplen Gruppenvergleichs aus verschiedenen Modellen heraus. Aus einem hmisc Objekt l{\"a}sst sich recht einfach das CL-h erstellen und so {\"u}ber Barplots eine schnelle Interpration der statistischen Auswertung durchf{\"u}hren.',
-                   'Das R Paket emmeans erlaubt die Durchf{\"u}hrung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt l{\"a}sst sich leider kein CLD erstellen. Dennoch ist das Paket einfach zu bedienen und wird deshalb genutzt. Die Interpretation der statistischen Auswertung wird {\"u}ber einen Barplot abgebildet.',
-                   'Das R Paket lm. Das Paket lm erstellt selbstst{\"a}ndig Konfidenzintervalle und entsprechende p-Werte. Da wir in dem Paket nicht adjustieren m{\"u}ssen, ist es bei Anwendern sehr beliebt.',
-                   'Das R Paket ggplot. Wir erhalten hier sofort eine Visualisierung der Daten. Anhand der Visualisierung l{\"a}sst sich eine explorative Datenanalyse durchf{\"u}hren, die gleichwertig zu einem Posthoc-Test ist.') %>%
+right_vec <- c('Das R Paket \\{emmeans\\} erlaubt die Durchführung eines multiplen Gruppenvergleichs. Aus einem \\{emmeans\\} Objekt lässt sich recht einfach das CLD erstellen und so über Barplots eine schnelle Interpration der statistischen Auswertung durchführen.',
+               'Sie nutzen das R Paket \\{emmeans\\} für die Berechnung des multipnen Gruppenvergleichs. Die Ausgabe der Funktion emmeans() erlaubt zügig über \\{ggplot\\} einen Barplot zu erstellen und dann auch das CLD zu berechnen. Sie haben alles sofort zusammen.',
+               'Da Sie für Ihre Bachelorarbeit einen Barplot mit CLD brauchen nutzen Sie das R Paket \\{emmeans\\} welches Ihnen schnell die notwenidigen Informationen liefert um einen Barplot zu erstelen. Die Berechnung eines CLD ist hierbei auch einfach.') |> sample(1)
+
+wrong_vec <- c('Das R Paket \\{hmisc\\} erlaubt die Durchführung eines multiplen Gruppenvergleichs aus verschiedenen Modellen heraus. Aus einem hmisc Objekt lässt sich recht einfach das CLD erstellen und so über Barplots eine schnelle Interpration der statistischen Auswertung durchführen.',
+                   'Das R Paket \\{emmeans\\} erlaubt die Durchführung eines multiplen Gruppenvergleichs. Aus einem emmeans Objekt lässt sich leider kein CLD erstellen. Dennoch ist das Paket einfach zu bedienen und wird deshalb genutzt. Die Interpretation der statistischen Auswertung wird über einen Barplot abgebildet.',
+                   'Das R Paket \\{lm\\}. Das Paket \\{lm\\} erstellt selbstständig Konfidenzintervalle und entsprechende p-Werte. Da wir in dem Paket nicht adjustieren müssen, ist es bei Anwendern sehr beliebt.',
+                   'Das R Paket \\{ggplot\\}. Wir erhalten hier sofort eine Visualisierung der Daten. Anhand der Visualisierung lässt sich eine explorative Datenanalyse durchführen, die gleichwertig zu einem Posthoc-Test ist.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

@@ -1,16 +1,30 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Bei einem multiplen Vergleich oder Posthoc Test kann es zu einer Besonderheit beim
-statistischen Testen kommen. Wie nennt man diese Besonderheit beim
-statistischen Testen und wie kann man mit ihr umgehen?
+<<>>=
+ques_vec <- c('Bei einem multiplen Vergleich oder Posthoc Test kann es zu einer Besonderheit beim statistischen Testen kommen. Wie nennt man diese Besonderheit beim statistischen Testen und wie kann man mit ihr umgehen?',
+              'Bei einem Posthoc-Test kann es zu einer überraschenden Besonderheit beim statistischen Testen kommen. Wie lautet der Fachbegriff und wie kann mit der überraschenden Besonderheit umgegangen werden?',
+              'In den Humanwissenschaften werden multiple Vergleiche häufig anders behandelt als in den Agrarwissenschaften. In beiden Bereichen tritt jedoch das gleiche Phänomen bei multiplen Testen auf. Wie muss mit dem Phänomen umgegangen werden und wie ist es benannt?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-mult-04, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Beim multiplen Testen kann es zu einer $\\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern sehr viel h{\"o}her. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.',
-                   'Beim multiplen Testen kann es zu einer $\\beta$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $20\\%$. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.',
-                   'Beim multiplen Testen kann es zu einer $\\alpha$-Deflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist. Die p-Werte werden durch die Anzahl an Vergleichen geteilt',
-                   'Beim multiplen Testen kann es zu Varianzheterogenit{\"a}t kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Das Verfahren nach Welch, bekannt aus dem t-Test, ist hier h{\"a}ufig anzuwenden.',
-                   'Beim multiplen Testen kann es zu einer $\\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher m{\"u}ssen die p-Werte entsprechend adjustiert werden. Hierf{\"u}r gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Welch das bekanneste Verfahren ist.') %>%
+right_vec <- c('Beim multiplen Testen kann es zu einer $\\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern sehr viel höher. Daher müssen die p-Werte entsprechend adjustiert werden. Hierfür gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.',
+               'Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern sehr viel höher. Es kommt zu einer $\\alpha$-Inflation. Dagegen kann mit der Adjustierung der p-Werte nach Bonferroni vorgegangen werden.',
+               'Die Adjustierung der p-Werte nach Bonferroni erlaubt es gegen die $\\alpha$-Inflation vorzugehen, die häufig beim multiplen Testen auftritt. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern sehr viel höher. Das ist der Grund warum die p-Werte entsprechend adjustiert werden müssen.') |> sample(1)
+
+wrong_vec <- c('Beim multiplen Testen kann es zu einer $\\beta$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $20\\%$. Daher müssen die p-Werte entsprechend adjustiert werden. Hierfür gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist.',
+                   'Beim multiplen Testen kann es zu einer $\\alpha$-Deflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher müssen die p-Werte entsprechend adjustiert werden. Hierfür gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Bonferroni das bekanneste Verfahren ist. Die p-Werte werden durch die Anzahl an Vergleichen geteilt',
+                   'Beim multiplen Testen kann es zu Varianzheterogenit{\"a}t kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$. Daher müssen die p-Werte entsprechend adjustiert werden. Das Verfahren nach Welch, bekannt aus dem t-Test, ist hier h{\"a}ufig anzuwenden.',
+                   'Beim multiplen Testen kann es zu einer $\\alpha$-Inflation kommen. Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern weit darunter. Daher müssen die p-Werte entsprechend adjustiert werden. Hierfür gibt es verschiedene Verfahren, wobei das Verfahren zur Adjustierung der p-Werte nach Welch das bekanneste Verfahren ist.',
+               'Die Adjustierung der p-Werte nach Bonferroni erlaubt es gegen die $\\Beta$-Inflation vorzugehen, die häufig beim multiplen Testen auftritt. Das globale Powerniveau liegt nicht mehr bei $80\\%$ sondern sehr viel niedriger.',
+               'Das globale Signifikanzniveau liegt nicht mehr bei $5\\%$ sondern sehr viel niedriger, bei ca. $1\\%$. Es kommt zu einer $\\alpha$-Hyperinflation. Dagegen kann mit der Adjustierung der p-Werte nach Bonferroni vorgegangen werden.',
+               'Das globale Signifikanzniveau explodiert und erreicht Werte größer als Eins. Es kommt zu einer $\\alpha$-Inflation. Dagegen kann mit der Adjustierung der $\\alpha$-Werte nach Bonferroni vorgegangen werden.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 
