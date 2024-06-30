@@ -8,7 +8,9 @@ var_vec <- c("Odds ratio", "Risk ratio") %>%
 num_1 <- c(3, 4, 5, 6) %>% sample(1)
 num_2 <- c(7, 8, 12) %>% sample(1)
 
-ques_vec <- c(str_c('Sie führen ein Experiment zur Behandlung von Klaueninfektionen bei Kühen durch. Bei ', num_1, ' Tieren finden Sie eine Erkrankung der Klauen vor und ', num_2, ' Tiere sind gesund. Welche Aussage über den ', var_vec, ' Effektschätzer ist richtig?'),
+animal <- c("Kühen", "Schweinen", "Schafe", "Ziegen", "Rinder") |> sample(1)
+
+ques_vec <- c(str_c('Sie führen ein Experiment zur Behandlung von Klaueninfektionen bei ', animal, ' durch. Bei ', num_1, ' Tieren finden Sie eine Erkrankung der Klauen vor und ', num_2, ' Tiere sind gesund. Welche Aussage über den Effektschätzer ', var_vec, ' ist richtig?'),
               '',
               '') |>  sample(1)
 @
