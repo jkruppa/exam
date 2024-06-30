@@ -1,17 +1,28 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-In einem Zuchtexperiment messen wir die Ferkel verschiedener Sauen. Die
-Ferkel einer Muttersau sind daher im statistischen Sinne... 
+<<>>=
+ques_vec <- c('In einem Zuchtexperiment messen wir die Ferkel verschiedener Sauen. Die Ferkel einer Muttersau sind daher im statistischen Sinne...',
+              '',
+              '') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-independence-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c("Untereinander unabh{\"a}ngig. Die Ferkel sind eigenst{\"a}ndig und ben{\"o}tigen keine zus{\"a}tzliche Behandlung.",
-                   "Untereinander abh{\"a}ngig. Die Ferkel stammen von einem Muttertier und haben vermutliche eine {\"a}hnliche Varianzstruktur.",
-                   "Untereinander abh{\"a}ngig, wenn die M{\"u}tter ebenfalls miteinander verwandt sind. Erst die Abh{\"a}ngigkeit 2. Grades wird in der Statistik modelliert.",
-                   "Untereinander unabh{\"a}ngig. Sollten die M{\"u}tter verwandt sein, so ist die Varianzstruktur {\"a}hnlich und muss modelliert werden.",
-                   "Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert." ) %>%
-  sample
+right_vec <- c("Untereinander unabhängig. Die Ferkel sind eigenständig und ben{\"o}tigen keine zusätzliche Behandlung.",
+               '',
+               '') |> sample(1)
 
+wrong_vec <- c("Untereinander abhängig. Die Ferkel stammen von einem Muttertier und haben vermutliche eine ähnliche Varianzstruktur.",
+                   "Untereinander abhängig, wenn die Mütter ebenfalls miteinander verwandt sind. Erst die Abhängigkeit 2. Grades wird in der Statistik modelliert.",
+                   "Untereinander unabhängig. Sollten die Mütter verwandt sein, so ist die Varianzstruktur ähnlich und muss modelliert werden.",
+                   "Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert." ) %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
 
 @
 
