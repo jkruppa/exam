@@ -1,14 +1,71 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber den Welch t-Test ist richtig?
+<<>>=
+n_pig <- rpois(1, 10)
+vit <- c("Eisen", "Nitrat", "Sulfit") |> sample(1)
+animal <- c("Mais", "Weizen", "Mango", "Papaya") |> sample(1)
+
+ques_vec <- c(str_c('Die folgende Abbildung enthält die Daten aus einer Studie zur Bewertung der Wirkung des Mikronährstoff ', vit, ' auf den Ertrag in t/ha von ', animal, ' im Vergleich zu einer Kontrolle. Der Versuch wurde in ', n_pig, ' Parzellen pro Gruppe durchgeführt. Welche Aussage im Bezug auf eine statistische Auswertung ist richtig?'),
+              str_c('In einer Studie zur Bewertung der Wirkung des Mikronährstoff ', vit, ' auf den Ertrag in t/ha  von ', animal, ' im Vergleich zu einer Kontrolle entstand folgende Abbildung. Der Versuch wurde in ', n_pig, ' Parzellen pro Gruppe durchgeführt. Welche Aussage ist im Bezug auf einen t-Test ist richtig?'),
+              str_c('Ein Versuch wurde in ', n_pig, ' Parzellen pro Gruppe durchgeführt. Die folgende Abbildung enthält die Daten aus diesem Versuch zur Bewertung der Wirkung des Mikronährstoff ', vit, ' auf den Ertrag in t/ha von ', animal, ' im Vergleich zu einer Kontrolle.  Welche Aussage ist richtig, wenn Sie einen t-Test rechnen?')) |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
+<<mc-testing-ttest-02, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+pacman::p_load(ggpattern)
+
+data_tbl <- tibble(mean = sample(c(10, 12, 15, 17, 18, 20), 2),
+                   dose = c("Kontrolle", vit))
+
+mean_diff <- diff(data_tbl$mean)
+
+ggplot(data_tbl, aes(x = dose, y = mean, fill = dose)) +
+  geom_errorbar(aes(ymin = mean-round(sd(data_tbl$mean)), ymax = mean+round(sd(data_tbl$mean))),
+                width = 0.2, position = position_dodge(0.5)) +
+  theme_minimal() +
+  labs(y = "Ertrag in Trockenmasse [t/ha]", x = "Behandlung mit Mikronährstoff",
+       color = "", shape = "", linetype = "") +
+  ylim(0, NA) +
+  geom_col_pattern(
+    width = 0.5, 
+    aes(pattern=dose,
+        pattern_angle=dose,
+        pattern_spacing=dose
+        ), 
+    fill            = 'white',
+    colour          = 'black', 
+    pattern_density = 0.5, 
+    pattern_fill    = 'black',
+    pattern_colour  = 'darkgrey',
+    position = position_dodge(0.5)
+  ) +
+  theme(legend.position = "none")
+
+@
+
 
 <<mc-ttest-02, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Der Welch t-Test wird angewendet, wenn Varianzheterogenit{\"a}t zwischen den beiden zu vergleichenden Gruppen vorliegt.',
-                   'Der Welch t-Test ist die veraltete Form des Student t-Test und wird somit nicht mehr verwendet.',
-                   'Der Welch t-Test vergleicht die Varianz von zwei Gruppen.',
-                   'Der Welch t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{\"a}t.',
-                   'Der Welch t-Test ist ein Post-hoc Test der ANOVA und basiert daher auf dem Vergleich der Varianz.') %>%
+switch_sig_vec <- c("ein", "kein") |> sample()
+
+right_1_vec <- c(str_c('Es liegt ', switch_sig_vec[1], ' signifikanter Unterschied vor. Der Effekt liegt bei ', mean_diff, '.'),
+                 str_c('Die Barplots deuten auf ', switch_sig_vec[1], ' signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, '.'),
+                 str_c('Der Test deutet auf ', switch_sig_vec[1], ' signifikanten Unterschied hin. Der Effekt liegt vermutlich bei ', mean_diff, '.')) |> sample(1)
+right_2_vec <- c(str_c('Nach Betrachtung des Barplots liegt ', switch_sig_vec[2], ' signifikanter Unterschied vor. Der Effekt liegt bei ', mean_diff, '.'),
+                 str_c('Die Barplots deuten auf ', switch_sig_vec[2], 'en signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, ' unter einer groben Abschätzung.'),
+                 str_c('Der Test deutet auf ', switch_sig_vec[2], 'en signifikanten Unterschied hin. Der Effekt liegt vermutlich bei ', mean_diff, '.')) |> sample(1)
+
+
+wrong_vec <- c(str_c('Es liegt ein signifikanter Unterschied vor. Der Effekt liegt bei ', mean_diff*0.1, '.'),
+               str_c('Nach Betrachtung des Barplots liegt kein signifikanter Unterschied vor. Der Effekt kann nicht bei einem t-Test aus Barplots bestimmt werden.'),
+               str_c('Die Barplots deuten auf ', switch_sig_vec[2], 'en signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, ' unter einer groben Abschätzung. Wir müssen aber eine ANOVA rechnen um den Effekt wirklich bestimmen zu können.'),
+               str_c('Die Barplots deuten auf ', switch_sig_vec[1], 'en signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, '. Wir müssen aber einen Posthoc-Test rechnen um den Effekt wirklich bestimmen zu können.'),
+               'Der Effekt und die Signifikanz lassen sich nicht aus Barplots abschätzen. Höchtens der Effekt als relativer Unterschied zwischen der Höhe der Barplots. Standard ist der mediane Unterschied aus Boxplots.') %>%
+  sample(3)
+
+questions_vec <- c(right_1_vec, right_2_vec,
+                   wrong_vec) %>%
   sample
 
 

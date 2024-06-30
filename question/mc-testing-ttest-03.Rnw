@@ -1,16 +1,32 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber den gepaarten t-Test f{\"u}r verbundene Stichproben ist richtig?
+
+<<>>=
+ques_vec <- c('Welche Aussage über den gepaarten t-Test für verbundene Stichproben ist richtig?',
+              'Sie rechnen einen gepaarten t-Test, da Ihre Beobachtungen verbunden sind. Welche der folgenden Aussagen ist richtig?',
+              'In Ihrer Abschlussarbeit betrachten Sie die Effekte von einer Behandlung vor und nach der Gabe eines Vitamins. Sie müssen einen gepaarten t-Test rechnen. Welche Aussage ist richtig?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-ttest-04, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabh{\"a}ngig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu k{\"o}nnen.',
-                   'Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abh{\"a}ngig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
-                   'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test f{\"u}r Varianzhomogenit{\"a}t mit den Vorteilen des Welch t-Test f{\"u}r Varianzheterogenit{\"a}t. Wir bilden daf{\"u}r die Differenz der Einzelbeobachtungen.',
-                   'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet daf{\"u}r eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
-                   'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabh{\"a}{\"a}ngigkeit nicht mehr vorliegen haben.') %>%
-  sample
+right_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabhängig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu können.',
+               'Wenn die Beobachtungen nicht unabhängig voneinander sind, rechnen wir einen gepaarten t-Test. Messen wir wiederholt an dem gleichen Tier oder Pflanze dann bilden wir die Differenz zwischen den zwei Messpunkten.',
+               'Abhängige Beobachtungen müssen gesondert in einem gepaarten t-Test modelliert werden. Wenn wiederholt an dem gleichen Tier oder Pflanze gemessen wird, dann bilden wir die Differenz zwischen den beiden Zeitpunkten. Auf den Differenzen rechnen wir den gepaarten t-Test.') |> sample(1)
 
+wrong_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abhängig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
+               'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test für Varianzhomogenität mit den Vorteilen des Welch t-Test für Varianzheterogenität. Wir bilden dafür die Differenz der Einzelbeobachtungen.',
+               'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet dafür eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
+               'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabhäängigkeit nicht mehr vorliegen haben.',
+               'Wenn die Beobachtungen unabhängig voneinander sind, rechnen wir einen gepaarten t-Test. Messen wir wiederholt an dem gleichen Tier oder Pflanze dann bilden wir das Produkt zwischen den zwei Messpunkten.',
+               'Abhängige Beobachtungen müssen gesondert in einem gepaarten t-Test modelliert werden. Wenn wiederholt an dem gleichen Tier oder Pflanze gemessen wird, dann bilden wir den Quotienten zwischen den beiden Zeitpunkten. Auf den Quotienten rechnen wir den gepaarten t-Test.') %>%
+  sample(4)
+
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
 @
 
 \begin{enumerate}

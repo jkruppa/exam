@@ -6,20 +6,41 @@ var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
              "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
   sample(1)
 
+ques_vec <- c('In der Theorie zur statistischen Testentscheidung kann folgende Aussage
+in welche richtige Analogie gesetzt werden?',
+              'Eine Analogie kann helfen einen Sachverhalt besser zu verstehen. Wie kann folgende Aussage richtig in die Analogie der statistischen Testtheorie gesetzt werden?',
+              'Sie versuchen folgende Aussage richtig in die Analogie der statistischen Testtheorie zu setzen. Welche Analogie ist richtig?') |>  sample(1)
+
 @  
 
-In der Theorie zur statistischen Testentscheidung kann "`\Sexpr{var_vec}"'
-in welche richtige Analogie gesetzt werden?
+\Sexpr{ques_vec}
+
+\begin{center}
+\textit{\Sexpr{var_vec}}
+\end{center}
 
 <<mc-statistisches-testen-06, results='asis', echo = FALSE>>=
 
-questions_vec <- c('In die Analogie eines Rauchmelders: \\textit{Fire without alarm}, dem $\\beta$-Fehler.',
-                   'In die Analogie eines Rauchmelders: \\textit{Alarm without fire}, dem $\\alpha$-Fehler.',
-                   'In die Analogie eines brennenden Hauses ohne Rauchmelder: \\textit{House without noise}.',
-                   'In die Analogie eines Feuerwehrautos: \\textit{Car without noise}.',
-                   'In die Analogie eines Rauchmelders: \\textit{Alarm with fire}.') %>%
-  sample
+right_1_vec <- c('In die Analogie eines Rauchmelders: \\textit{Fire without alarm}, dem $\\beta$-Fehler.',
+                 '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie eines Rauchmelders.',
+                 'Dem $\\beta$-Fehler mit der Analogie eines Rauchmelders: \\textit{Fire without alarm}.') |> sample(1)
+right_2_vec <- c('In die Analogie eines Rauchmelders: \\textit{Alarm without fire}, dem $\\alpha$-Fehler.',
+                 '\\textit{Alarm without fire}, dem $\\alpha$-Fehler in der Analogie eines Rauchmelders.',
+                 'Dem $\\alpha$-Fehler in der Analogie eines Rauchmelder: \\textit{Alarm without fire}.') |> sample(1)
 
+wrong_vec <- c('In die Analogie eines brennenden Hauses ohne Rauchmelder: \\textit{House without noise}.',
+               'In die Analogie eines Feuerwehrautos: \\textit{Car without noise}.',
+               'In die Analogie eines Rauchmelders: \\textit{Alarm with fire}.',
+               'In die Analogie eines Rauchmelders: \\textit{Alarm without fire police}, dem $\\alpha$-Fehler.', 
+               'Dem $\\beta$-Fehler mit der Analogie eines brennenden Hauses: \\textit{Fire without alarm}.',
+               '\\textit{Alarm with fire}, dem $\\alpha$-Fehler in der Analogie von Feuer.',
+               '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie von Rauch im Haus.') %>%
+  sample(3)
+
+
+questions_vec <- c(right_1_vec, right_2_vec,
+                   wrong_vec) %>%
+  sample
 
 @
 

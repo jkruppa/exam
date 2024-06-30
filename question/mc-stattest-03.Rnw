@@ -1,17 +1,32 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Der Fehler 1. Art oder auch Signifikanzniveau $\alpha$ genannt, liegt bei
-5\%. Welcher der folgenden Gr{\"u}nde f{\"u}r diese Festlegeung auf 5\% ist richtig?
+<<>>=
+ques_vec <- c('Der Fehler 1. Art oder auch Signifikanzniveau $\\alpha$ genannt, liegt bei
+5\\%. Welcher der folgenden Gründe für diese Festlegeung auf 5\\% als Signifikanzschwelle ist richtig?',
+              'Das Signifikanzniveau $\\alpha$ wird auch Fehler 1. Art genannt und liegt bei 5\\%. Warum wurde der Grenzwert von 5\\% als Signifikanzschwelle gewählt?',
+              'In fast allen wissenschaftlichen Disziplinen liegt der Grenzwert für das Signifikanzniveau $\\alpha$ bei 5\\%. Wieso wurde dieser Konsens über die Signifikanzschwelle in dieser Form getroffen?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-statistisches-testen-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die Festlegung von $\\alpha = 5\\%$ ist eine Kulturkonstante. Wissenschaftler ben{\"o}tigt eine Schwelle f{\"u}r eine statistische Testentscheidung, der Wert von $\\alpha$ wurde aber historisch mehr zuf{\"a}llig gew{\"a}hlt.' ,
-                   'Der Begr{\"u}nder der modernen Statistik, R. Fischer, hat die Grenze simuliert und berechnet. Dadurch ergibt sich dieser optimale Cut-Off.',
-                   'Auf einer Statistikkonferenz in Genf im Jahre 1942 wurde dieser Cut-Off nach langen Diskussionen festgelegt. Bis heute ist der Cut Off aber umstritten, da wegen dem 2. Weltkrieg viele Wissenschaftler nicht teilnehmen konnten.',
-                   'Im Rahmen eines langen Disputs zwischen Neyman und Fischer wurde $\\alpha = 5\\%$ festgelegt. Leider werden die Randbedingungen und Voraussetzungen an statistsiche Modelle heute immer wieder ignoriert.',
-                   'Der Wert ergab sich aus einer Auswertung von 1042 wissenschaftlichen Ver{\"o}ffentlichungen zwischen 1914 und 1948. Der Wert $5\\%$ wurde in $28\\%$ der Ver{\"o}ffentlichungen genutzt. Daher legte man sich auf diese Zahl fest.') %>%
-  sample
+right_vec <- c('Die Festlegung von $\\alpha = 5\\%$ ist eine Kulturkonstante. Wissenschaftler benötigt eine Schwelle für eine statistische Testentscheidung, der Wert von $\\alpha$ wurde aber historisch mehr zufällig gewählt.',
+               'Da Wissenschaftler eine Schwelle für die statistische Testentscheidung benötigen wurde $\\alpha$ historisch gewählt. Damit ist $\\alpha = 5\\%$ eine Kulturkonstante.',
+               'In der Wissenschaft gibt es neben der Naturkonstante, die sich aus der Beobachtung der Welt ergibt, noch die Kulturkonstante, die von einer Gruppe Menschen selbstgewählt wird. Dabei ist $\\alpha = 5\\%$ eine Kulturkonstante und wurde somit eher zufällig gewählt.') |> sample(1)
 
+wrong_vec <- c('Der Begründer der modernen Statistik, R. Fischer, hat die Grenze simuliert und berechnet. Dadurch ergibt sich dieser optimale Cut-Off.',
+               'Auf einer Statistikkonferenz in Genf im Jahre 1942 wurde dieser Cut-Off nach langen Diskussionen festgelegt. Bis heute ist der Cut Off aber umstritten, da wegen dem 2. Weltkrieg viele Wissenschaftler nicht teilnehmen konnten.',
+               'Im Rahmen eines langen Disputs zwischen Neyman und Fischer wurde $\\alpha = 5\\%$ festgelegt. Leider werden die Randbedingungen und Voraussetzungen an statistsiche Modelle heute immer wieder ignoriert.',
+               'Der Wert ergab sich aus einer Auswertung von 1042 wissenschaftlichen Veröffentlichungen zwischen 1914 und 1948. Der Wert $5\\%$ wurde in $28\\%$ der Veröffentlichungen genutzt. Daher legte man sich auf diese Zahl fest.',
+               'Da Wissenschaftler eine Schwelle für die statistische Testentscheidung benötigen wurde $\\alpha$ in einer großen Konferenz 1945 gewählt. Damit ist $\\alpha = 5\\%$ eine Kulturkonstante mit einem Rank einer Naturkonstante.',
+               'Als Kulturkonstante hat $\\alpha = 5\\%$ den Rang einer Naturkonstante und wurde nach langer Diskussion in der UN im Jahre 1983 festgesetzt. Damals auch schon mit der Zustimmung der UdSSR.')  %>%
+  sample(4)
+
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
 
 @
 

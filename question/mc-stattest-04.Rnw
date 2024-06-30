@@ -2,7 +2,7 @@
 
 Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim
 statistischen Testen wird das \textit{"`signal"'} mit dem
-\textit{"`noise"'} zu einer Teststatistik T verrechnet. Welche der Formel
+\textit{"`noise"'} aus den Daten $D$ zu einer Teststatistik $T_D$ verrechnet. Welche der Formel
 berechnet korrekt die Teststatistik $T_D$?
 
 <<mc-statistisches-testen-05, results='asis', echo = FALSE>>=
@@ -12,8 +12,7 @@ questions_vec <- c('Es gilt $T_D = \\cfrac{signal}{noise}$' ,
                    'Es gilt $T_D = \\cfrac{noise}{signal}$',
                    'Es gilt $T_D = \\cfrac{signal}{noise^2}$',
                    'Es gilt $T_D = (signal \\cdot noise)^2$') %>%
-  sample
-
+  sample()
 
 @
 

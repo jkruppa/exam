@@ -3,7 +3,7 @@
 <<>>=
 quest_vec <- c("Die Testtheorie hat einen philosophischen Unterbau. Eins der Prinzipien ist das Falsifikationsprinzip. Das Falsifikationsprinzip besagt,",
                "Das statistische Testen basiert auf dem Falsifikationsprinzip. Es besagt,",
-               "Die Testtheorie hat mehrere S{\"a}ulen. Einer der S{\"a}ulen ist das Falsifikationsprinzip. Das Falsifikationsprinzip besagt,") %>%
+               "Die Testtheorie hat mehrere Säulen. Einer der Säulen ist das Falsifikationsprinzip. Das Falsifikationsprinzip besagt,") %>%
   sample(1)
 @ 
 
@@ -15,13 +15,18 @@ right_vec <- c('... dass ein schlechtes Modell durch ein weniger schlechtes Mode
                '... dass ein minderwertes Modell durch ein weniger minderwertiges Modell ersetzt wird. Es gilt das Falsifikationsprinzip nach Karl Popper.',
                '... dass ein schlechtes Modell durch das Falsifikationsprinzip durch ein weniger schlechtes Modell ersetzt wird.') %>% sample(1)
 
-questions_vec <- c(right_vec,
-                   '... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.',
-                   '... dass Modelle meist falsch sind und selten richtig.',
-                   '... dass Annahmen an statistische Modelle meist falsch sind.',
-                   '... dass Fehlerterme in statistischen Modellen nicht verifiziert werden k{\"o}nnen.') %>%
-  sample
+wrong_vec <- c('... dass in der Wissenschaft immer etwas falsch sein muss. Sonst gebe es keinen Fortschritt.',
+               '... dass Modelle meist falsch sind und selten richtig.',
+               '... dass Annahmen an statistische Modelle meist falsch sind.',
+               '... dass Fehlerterme in statistischen Modellen nicht verifiziert werden können.',
+               '... dass ein schlechtes Modell durch ein schlechteres Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.',
+               '... dass ein minderwertes Modell durch ein minderwertiges Modell ersetzt wird. Es gilt das Verifikationsprinzip nach Karl Popper.',
+               '... dass ein schlechtes Modell durch das Falsifikationsprinzip durch ein noch schlechteres Modell ersetzt wird. Die Wissenschaft lehnt ab und verifiziert nicht.') %>%
+  sample(4)
 
+questions_vec <- c(right_vec, 
+                   wrong_vec) %>%
+  sample
 
 @
 

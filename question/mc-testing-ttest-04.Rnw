@@ -1,22 +1,35 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Nach einem Experiment mit f{\"u}nf Weizensorten ergibt eine ANOVA ($p = 0.041$)
-einen signifikanten Unterschied f{\"u}r den Ertrag. Sie f{\"u}hren anschlie{\ss}end die
-paarweisen t-Tests f{\"u}r alle Vergleiche der verschiedenen Weizensorten
-durch. Nach der Adjustierung f{\"u}r multiples Testen ist kein p-Wert unter der
-$\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte
-an und finden hier als niedrigsten p-Wert $p_{3-2} = 0.053$. Welche Aussage
-ist richtig? 
+<<>>=
+
+
+
+ques_vec <- c(str_c('Nach einem Experiment mit ', sample(c("drei", "vier", "fünf"), 1), ' Weizensorten ergibt eine ANOVA ($p = ', sample(c(0.049, 0.045, 0.048), 1), '$) einen signifikanten Unterschied für den Ertrag. Sie führen anschließend die paarweisen t-Tests für alle Vergleiche der verschiedenen Weizensorten durch. Nach der Adjustierung für multiples Testen ist kein p-Wert unter der $\\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte an und finden hier als niedrigsten p-Wert $p_{3-2} = ', sample(c(0.051, 0.052, 0.053), 1), '$. Welche Aussage ist richtig?'),
+              str_c('Sie führen paarweise t-Tests für alle Vergleiche der verschiedenen Rapssorten in Ihrem Experiment durch. Nach der Adjustierung für multiples Testen ist kein p-Wert unter der $\\alpha$-Schwelle. Ihr Experiment beinhaltet ', sample(c("drei", "vier", "fünf"), 1), ' Rapssorten und eine ANOVA ergibt $p = ', sample(c(0.049, 0.045, 0.048), 1), '$ für den Ertrag. Sie schauen sich auch die rohen, unadjustierten p-Werte an und finden hier als niedrigsten p-Wert $p_{3-2} = ', sample(c(0.051, 0.052, 0.053), 1), '$. Welche Aussage ist richtig?'),
+              str_c('In Ihrer Abschlussarbeit passen die Ergebnisse einer ANOVA und eines multiplen Vergleiches nicht zusammen. Nach einem Experiment mit ', sample(c("drei", "vier", "fünf"), 1), ' Maissorten ergibt eine ANOVA ($p = ', sample(c(0.049, 0.045, 0.048), 1), '$). Sie führen anschließend die paarweisen t-Tests für alle Vergleiche durch. Nach der Adjustierung für multiples Testen ist kein p-Wert unter der $\\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte an und finden hier als niedrigsten p-Wert $p_{3-2} = ', sample(c(0.051, 0.052, 0.053), 1), '$. Welche Aussage ist richtig?')) |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
 
 <<mc-ttest-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.',
-                   'Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.',
-                   'Die ANOVA testet auf der gesamten Fallzahl. Es w{\"a}re besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.',
-                   'Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.',
-                   'Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.') %>%
-  sample
+right_vec <- c('Die ANOVA testet auf der gesamten Fallzahl. Die einzelnen t-Tests immer nur auf einer kleineren Subgruppe. Da mit weniger Fallzahl weniger signifikante Ergebnisse zu erwarten sind, kann eine Diskrepenz zwischen der ANOVA und den paarweisen t-Tests auftreten.',
+               'Das ist kein Wunder. Die ANOVA testet auf der gesamten Fallzahl und die paarweisen t-Tests verlieren immer eine oder mehr Gruppen als Fallzahl. Mit steigender Fallzahl sind mehr signifikante Unterschiede zu erwarten. Die p-Werte unterscheiden sich numerisch auch kaum.',
+               'Hier kommt der Effekt der stiegenden Fallzahl auf die Anzahl an signifikante Ergebnisse zu tragen. Da die ANOVA auf mehr Fallzahl testet als die einzelnen paarweisen t-Tests, kann die ANOVA leichter einen signifikanten Unterscheid nachweisen. Die p-Werte sind immer etwas kleiner als bei den t-Tests.') |> sample(1)
 
+wrong_vec <- c('Der Fehler liegt in den t-Tests. Wenn eine ANOVA signifikant ist, dann muss zwangsweise auch ein t-Test signifikant sein.',
+                   'Die ANOVA testet auf der gesamten Fallzahl. Es wäre besser die ANOVA auf der gleichen Fallzahl wie die einzelnen t-Tests zu rechnen.',
+                   'Die adjustierten p-Werte deuten in die richtige Richtung. Zusammen mit den nicht signifikanten rohen p-Werten ist von einem Fehler in der ANOVA auszugehen.',
+                   'Es gibt einen Fehler in der Varianzstruktur. Daher kann die ANOVA nicht richtig sein und paarweise t-Tests liefern das richtige Ergebnis.',
+               'Das ist kein Wunder. Die ANOVA testet nicht auf der gesamten Fallzahl und die paarweisen t-Tests gewinnen immer eine oder mehr Gruppen als Fallzahl dazu. Mit steigender Fallzahl sind mehr signifikante Unterschiede zu erwarten. Die p-Werte unterscheiden sich numerisch auch kaum.',
+               'Hier kommt der Effekt der stiegenden Fallzahl auf die Anzahl an signifikante Ergebnisse zu tragen. Da die ANOVA auf weniger Fallzahl testet als die paarweisen t-Tests, kann die ANOVA schwerer einen signifikanten Unterscheid nachweisen.',
+               'Das Beispiel kann so nicht auftreten, da die ANOVA und die t-Tests algorithmisch miteinander verschränkt sind.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
 
 @
 

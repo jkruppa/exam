@@ -1,20 +1,32 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage zum mathematische Ausdruck $Pr(D|H_0)$ ist richtig? 
+
+<<>>=
+ques_vec <- c('Welche Aussage zum mathematische Ausdruck $Pr(D|H_0)$ ist richtig?',
+              'Sie haben den mathematischen Ausdruck $Pr(D|H_0)$ vorliegen, welche Aussage ist richtig?',
+              'Geben ist $Pr(D|H_0)$ als mathematischer Ausdruck, welche Aussage ist richtig?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-statistisches-testen-01, results='asis', echo = FALSE>>=
 
-right_vec <- c('$Pr(D|H_0)$ ist die Wahrscheinlichkeit die Daten D zu beobachten, wenn die Nullhypothese wahr ist.',
-               '$Pr(D|H_0)$ beschreibt die Wahrscheinlichkeit die Teststatistik $T$ aus den Daten zu beobachten, wenn die Nullhypothese wahr ist.',
-               '$Pr(D|H_0)$ stellt die Wahrscheinlichkeit die Daten D und somit die Teststatistik $T_D$ zu beobachten dar, wenn die Nullhypothese wahr ist.') %>% sample(1)
+right_vec <- c('$Pr(D|H_0)$ ist die Wahrscheinlichkeit die Daten $D$ zu beobachten, wenn die Nullhypothese wahr ist.',
+               '$Pr(D|H_0)$ beschreibt die Wahrscheinlichkeit die Teststatistik $T_D$ aus den Daten $D$ zu beobachten, wenn die Nullhypothese wahr ist.',
+               '$Pr(D|H_0)$ stellt die Wahrscheinlichkeit die Daten $D$ und somit die Teststatistik $T_D$ zu beobachten dar, wenn die Nullhypothese wahr ist.') |> sample(1)
+
+wrong_vec <- c('Die Wahrscheinlichkeit der Daten unter der Nullhypothese in der Grundgesamtheit.',
+               'Die Wahrscheinlichkeit für die Nullhypothese, wenn die Daten wahr sind.',
+               'Die Inverse der Wahrscheinlichkeit unter der die Nullhypothese nicht mehr die Alternativehypothese überdeckt.',
+               '$Pr(D|H_0)$ ist die Wahrscheinlichkeit der Alternativehypothese und somit $1 - Pr(H_A)$',
+               '$Pr(D|H_0)$ ist die Wahrscheinlichkeit nicht die Daten $D$ zu beobachten sondern die Nullhypothese, wenn diese wahr ist.',
+               '$Pr(D|H_0)$ stellt die Wahrscheinlichkeit die Teststatistik $T$ zu beobachten dar, wenn die Nullhypothese falsch ist.') %>%
+  sample(4)
+
 
 questions_vec <- c(right_vec,
-                   'Die Wahrscheinlichkeit der Daten unter der Nullhypothese in der Grundgesamtheit.',
-                   'Die Wahrscheinlichkeit f{\"u}r die Nullhypothese, wenn die Daten wahr sind.',
-                   'Die Inverse der Wahrscheinlichkeit unter der die Nullhypothese nicht mehr die Alternativehypothese {\"u}berdeckt.',
-                   '$Pr(D|H_0)$ ist die Wahrscheinlichkeit der Alternativehypothese und somit $1 - Pr(H_A)$') %>%
+                   wrong_vec) %>%
   sample
-
 
 @
 

@@ -1,16 +1,31 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber den t-Test im Allgmeinen ist richtig? 
+<<>>=
+ques_vec <- c('Welche Aussage über den t-Test im Allgmeinen ist richtig? Berücksichtigen Sie den Welch t-Test wie auch den Student t-Test!',
+              'In Ihrer Abschlussarbeit rechnen Sie einen Student t-Test. Welche Aussage ist auch für den Welch t-Test richtig?',
+              'Nach einem Feldexperiment wollen Sie zwei Gruppen mit einem Welch t-Test vergleichen. Welche Aussage ist auch für den Student t-Test richtig?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-ttest-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Der t-Test vergleicht die Varianzen von mindestens zwei oder mehr Gruppen',
-                   'Der t-Test testet generell zu einem erh{\"o}hten $\\alpha$-Niveau von 20\\%.',
-                   'Der t-Test vergleicht die Mittelwerte von zwei Gruppen.',
-                   'Der t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenit{\"a}t. Sollte keine Varianzhomogenit{\"a}t vorliegen, so gibt es keine M{\"o}glichkeit den t-Test in einer Variante anzuwenden.',
-                   'Der t-Test ist ein Vortest der ANOVA und basiert daher auf dem Vergleich von Streuungsparametern') %>%
-  sample
+right_vec <- c('Der t-Test berechnet die Differenz von zwei Mittelwerten als Effekt und gibt eine Entscheidung, ob sich die beiden Mittelwerte in den Gruppen signifikant unterscheiden.',
+               'Der t-Test vergleicht die Mittelwerte von zwei Gruppen.',
+               'Der t-Test vergleicht zwei Gruppen indem die Mittelwerte miteinander verglichen werden.') |> sample(1)
 
+wrong_vec <- c('Der t-Test testet generell zu einem erhöhten $\\alpha$-Niveau von 20\\%.',
+               'Der t-Test vergleicht die Varianzen von mindestens zwei oder mehr Gruppen',
+               'Der t-Test vergleicht die Mittelwerte von zwei Gruppen unter der strikten Annahme von Varianzhomogenität. Sollte keine Varianzhomogenität vorliegen, so gibt es keine Möglichkeit den t-Test in einer Variante anzuwenden.',
+               'Der t-Test ist ein Vortest der ANOVA und basiert daher auf dem Vergleich von Streuungsparametern',
+               'Der t-Test vergleicht zwei oder mehr Gruppen indem die Mittelwerte miteinander verglichen werden.',
+               'Der t-Test berechnet die Differenz von zwei Mittelwerten als Effekt und gibt eine Entscheidung, ob sich die beiden Mittelwerte \\textit{jeweils} von Null unterscheiden.') %>%
+  sample(4)
+
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
 
 @
 
