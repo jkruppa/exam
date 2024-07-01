@@ -3,9 +3,9 @@
 
 <<>>=
 ques_vec <- c('In der Statistik müssen wir häufig überprüfen, ob unser Outcome einer bestimmten Verteilung folgt. Meistens überprüfen wir, ob eine
-Normalverteilung vorliegt. Folgende drei Abbildungen eigenen sich im Besonderen für die überprüfung einer Verteilungsannahme an eine Variable.'),
-              '',
-              '') |>  sample(1)
+Normalverteilung vorliegt. Folgende drei Abbildungen eigenen sich im Besonderen für die Überprüfung einer Verteilungsannahme an eine Variable.'),
+              'Sie wollen in Ihrer Abschlussarbeit über eine explorative Datenanalyse überprüfen, ob Ihr gemessener Endpunkt einer Normalverteilung folgt. Welche drei Abbildungen eignen sich insbesondere für die Überprüfung?',
+              'Nach der Durchführung Ihres Feldexperiments wollen Sie eine ANOVA rechnen. Dafür muss aber Ihr Messwert zumindestens approximativ einer Normalverteilung folgen. Welche der drei Abbildungen erlaubt Ihnen abzuschätzen, ob Sie eine Normalverteilung in Ihrem Endpunkt vorliegen haben?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -16,8 +16,8 @@ Normalverteilung vorliegt. Folgende drei Abbildungen eigenen sich im Besonderen 
 
 
 right_vec <- c('Boxplot, Densityplot, Violinplot',
-               '',
-               '') |> sample(1)
+               'Densityplot, Boxplot, Violinplot',
+               'Violinplot, Boxplot, Densityplot') |> sample(1)
 
 wrong_vec <- c("Scatterplot, Mosaicplot, Boxplot",
                "Boxplot, Violinplot, Mosaicplot",
