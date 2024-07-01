@@ -2,17 +2,29 @@
 
 <<>>=
 var_vec <- c("einen Boxplot", "ein Histogramm", "einen Dotplot") %>% sample(1)
+
+ques_vec <- c(str_c('Die empfohlene Mindestanzahl an Beobachtungen für', var_vec, ' sind...'),
+              '',
+              '') |>  sample(1)
 @
 
-Die empfohlene Mindestanzahl an Beobachtungen f{\"u}r \Sexpr{var_vec} sind...
+\Sexpr{ques_vec}
 
 <<mc-desc-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('5 und mehr Beobachtungen.',
+right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c('5 und mehr Beobachtungen.',
                    '2-5 Beobachtungen.',
                    'mindestens 20 Beobachtungen.',
                    '1 Beobachtung.',
                    '10 Beobachtungen.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

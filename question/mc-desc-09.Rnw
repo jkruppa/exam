@@ -2,10 +2,14 @@
 
 <<>>=
 n_plant <- rpois(1, 200)
-@ 
 
-In dem folgenden Histogramm von $n = \Sexpr{n_plant}$ Pflanzen ist welche
-Verteilung mit welchen korrekten Verteilungsparametern dargestellt?
+ques_vec <- c(str_c('In dem folgenden Histogramm von $n = ', n_plant,  'Pflanzen ist welche
+Verteilung mit welchen korrekten Verteilungsparametern dargestellt?'),
+              '',
+              '') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 <<mc-distribution-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 5, fig.align = "center", message = FALSE>>=
 
@@ -21,11 +25,19 @@ ggplot(data_tbl, aes(x)) + geom_histogram() +
 
 <<mc-distribution-02-b, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Es handelt sich um eine Normalverteilung.',
+right_vec <- c('Boxplot, Densityplot, Violinplot',
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c('Es handelt sich um eine Normalverteilung.',
                    'Es handelt sich um eine Poisson-Verteilung.',
                    'Es handelt sich um eine Binomial-Verteilung.',
                    'Eine Standardnormalverteilung.',
-                   'Eine multivariate Normalverteilung.') %>%
+                   'Eine multivariate Normalverteilung.')  %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

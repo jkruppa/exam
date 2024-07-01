@@ -1,20 +1,31 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-var_vec <- c("einer Normalverteilung", "einer Varianzhomogenit{\"a}t") %>% sample(1)
+var_vec <- c("einer Normalverteilung", "einer Varianzhomogenität") %>% sample(1)
+
+ques_vec <- c(str_c('Um zu Überprüfen, ob die Daten die Annahme ', var_vec, ' genügen, können wir folgende Visualisierung nutzen. Dabei kommt dann auch die entsprechende Regel zur Abschätzung der Annahme ', var_vec, ' zur Anwendung.'),
+              '',
+              '') |>  sample(1)
 @
 
-Um zu {\"U}berpr{\"u}fen, ob die Daten die Annahme \Sexpr{var_vec} gen{\"u}gen, k{\"o}nnen
-wir folgende Visualisierung nutzen. Dabei kommt dann auch die entsprechende
-Regel zur Absch{\"a}tzung der Annahme \Sexpr{var_vec} zur Anwendung. 
+\Sexpr{ques_vec}
+
 
 <<mc-desc-07, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Einen Boxplot. Der Median als Linie, muss in der Mitte des IQR, dargestellt durch die Box, liegen.',
-                   'Einen Boxplot. Das IQR muss {\"u}ber alle Behandlungen zusammen mit den Whiskers ungef{\"a}hr gleich sein.',
-                   'Einen Barplot. Die Mittelwerte m{\"u}ssen alle auf einer H{\"o}he liegen. Die Fehlerbalken haben hier keine Informationen.',
-                   'Einen Dotplot. Die Punkte m{\"u}ssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung f{\"u}hrt zur Ablehnung der Annahme.',
-                   'Einen Violinplot. Der Bauch der Violine muss hierbei einen h{\"o}hren Wert annehmen als der Steg der Violine. Dann kann die Annahme angenommen werden.') %>%
+right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c('Einen Boxplot. Der Median als Linie, muss in der Mitte des IQR, dargestellt durch die Box, liegen.',
+                   'Einen Boxplot. Das IQR muss über alle Behandlungen zusammen mit den Whiskers ungefähr gleich sein.',
+                   'Einen Barplot. Die Mittelwerte müssen alle auf einer Höhe liegen. Die Fehlerbalken haben hier keine Informationen.',
+                   'Einen Dotplot. Die Punkte müssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung führt zur Ablehnung der Annahme.',
+                   'Einen Violinplot. Der Bauch der Violine muss hierbei einen höhren Wert annehmen als der Steg der Violine. Dann kann die Annahme angenommen werden.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 
