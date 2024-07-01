@@ -5,7 +5,7 @@ type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
 
-ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von ', plant, ' durchgef{\"u}hrt haben, berechnen Sie den Mittelwert und den Median. Der Mittelwert $\bar{y}$ und der Median $\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
+ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von ', plant, ' durchgeführt haben, berechnen Sie den Mittelwert und den Median. Der Mittelwert $\bar{y}$ und der Median $\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
               '',
               '') |>  sample(1)
 @
@@ -26,7 +26,7 @@ wrong_vec <- c('Da sich der Mittelwert und der Median unterscheiden, liegen verm
                    'Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.',
                    'Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
                    'Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
-                   'Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median m{\"u}ssen gleich sein.') %>%
+                   'Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median müssen gleich sein.') %>%
   sample(4)
 
 questions_vec <- c(right_vec,

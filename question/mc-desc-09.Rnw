@@ -38,7 +38,7 @@ wrong_vec <- c('Es handelt sich um eine Binomial-Verteilung.',
                'Eine multivariate Normalverteilung.',
                'Wir haben eine Gammaverteilung vorliegen.',
                'In dem Histogramm ist eine Ordinalverteilung dargestellt.')  %>%
-  sample(4)
+  sample(3)
 
 questions_vec <- c(right_vec,
                    wrong_vec) %>%
