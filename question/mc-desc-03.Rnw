@@ -1,29 +1,37 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-var_vec <- c("einen Boxplot", "ein Histogramm", "einen Dotplot") %>% sample(1)
+var_vec <- c("Boxplot", "Histogramm", "Dotplot") %>% sample(1)
 
-ques_vec <- c(str_c('Die empfohlene Mindestanzahl an Beobachtungen für', var_vec, ' sind...'),
-              '',
-              '') |>  sample(1)
+ques_vec <- c(str_c('Die empfohlene Mindestanzahl an Beobachtungen für die Visualisierung mit einem ', var_vec, ' sind...'),
+              str_c('Sie überlegen Ihre Daten mit einem ', var_vec, ' zu visualisieren. Was ist die minimale Anzahl an Beobachtungen pro Gruppe ?'),
+              str_c('Mit einem ', var_vec, '  können Sie sehr gut die Verteilung von Daten visualisieren. Die empfohlene Mindestanzahl an Beobachtungen ist dabei?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
 <<mc-desc-03, results='asis', echo = FALSE>>=
 
-right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
-               '',
-               '') |> sample(1)
+right_1_vec <- c('5 und mehr Beobachtungen.',
+               'Wir brauchen fünf oder mehr Beobachtungen.',
+               'Die Mindestanzahl liegt bei fünf Beobachtungen.') |> sample(1)
 
-wrong_vec <- c('5 und mehr Beobachtungen.',
-                   '2-5 Beobachtungen.',
-                   'mindestens 20 Beobachtungen.',
-                   '1 Beobachtung.',
-                   '10 Beobachtungen.') %>%
+right_2_vec <- c('2-5 Beobachtungen.',
+               'Wir sollten zwei bis fünf Beobachtungen mindestens pro Gruppe vorliegen haben.',
+               'Die untere Grenze liegt bei zwei bis fünf Beobachtungen.') |> sample(1)
+
+right_3_vec <- c('Mindestens 20 Beobachtungen.',
+               'Damit wir hier sauber eine Abbilung von einem ', var_vec, ' erhalten, sollten wir mindestens zwanzig Beobachtungen haben.',
+               'Die opimale Anzahl ist größer als zwanzig Beobachtungen, wobei es gerne sehr viel mehr sein können.') |> sample(1)
+
+wrong_vec <- c('1 Beobachtung.',
+               '10 Beobachtungen.',
+               'Wir sollten eine Beobachtung mindestens pro Gruppe vorliegen haben.',
+               'Die untere Grenze liegt bei einer Beobachtung.',
+               'Die opimale Anzahl ist größer als hundert Beobachtungen, wobei es gerne sehr viel mehr sein können.') %>%
   sample(4)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec, right_3_vec,
                    wrong_vec) %>%
   sample
 

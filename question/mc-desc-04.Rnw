@@ -6,7 +6,7 @@ var_vec <- c("Varianz", "Standardabweichung") %>% sample(1)
 
 quest_vec <- c(str_c("Um die ", var_vec, " zu berechnen müssen wir folgende Rechenoperationen durchführen."),
                str_c("Sie wollen nach einem Feldversuch die ", var_vec, " berechnen. Welche der folgenden Rechenoperationen müssen durchgeführt werden?"),
-               str_c("Die ", var_vec, " ist eine bedeutende deskriptive Statistik für die Analyse von Daten. Wie müssen Sie vorgehen um die ", var_vec, " zu berechnene?")) %>%
+               str_c("Die ", var_vec, " ist eine bedeutende deskriptive Statistik für die Analyse von Daten. Wie müssen Sie vorgehen um die ", var_vec, " zu berechnen?")) %>%
   sample(1)
 @ 
 
@@ -14,18 +14,22 @@ quest_vec <- c(str_c("Um die ", var_vec, " zu berechnen müssen wir folgende Rec
 
 <<mc-desc-06, results='asis', echo = FALSE>>=
 
-right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
-               '',
-               '') |> sample(1)
+right_1_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl teilen.',
+                 'Wir berechnen erst den Mittelwert und dann die quadratischen Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl.',
+                 'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend teilen wir durch die Fallzahl.') |> sample(1)
 
-wrong_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl teilen.',
-                   'Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl teilen, dann die Wurzel ziehen.',
-                   'Den Mittelwert berechen, dann die absoluten Abstände zum Mittelwert aufsummieren',
-                   'Den Median berechen, dann die quadratischen Abstände zum Median aufsummieren, dann die Wurzel ziehen.',
-                   'Den Mittelwert berechnen und die Abstände quadrieren. Die Summe mit der Fallzahl multiplizieren.') %>%
-  sample(4)
+right_2_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl teilen, dann die Wurzel ziehen.',
+                 'Wir berechnen erst den Mittelwert und dann die quadratischen Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl. Als letzten Schritt ziehen wir die quadratische Wurzel.',
+                 'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend teilen wir durch die Fallzahl. Nicht zu vergessen, am Ende dann noch die Wurzel zu ziehen.') |> sample(1)
 
-questions_vec <- c(right_vec,
+wrong_vec <- c('Den Mittelwert berechen, dann die absoluten Abstände zum Mittelwert aufsummieren',
+              'Den Median berechen, dann die quadratischen Abstände zum Median aufsummieren, dann die Wurzel ziehen.',
+              'Den Mittelwert berechnen und die Abstände quadrieren. Die Summe mit der Fallzahl multiplizieren.',
+              'Wir berechnen erst den Mittelwert und dann die absoluten Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl.',
+              'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend subtrahieren wir die Fallzahl.') %>%
+  sample(3)
+
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
 

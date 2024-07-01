@@ -228,7 +228,9 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-
+\begin{graybox}{Multiple Choice Aufgaben}
+Bitte beachten Sie, dass die Aufgaben \textcolor{red}{dem Zufall unterliegen}. Die Reihenfolge der Antworten ändert sich. Die Fragen und auch Antworten sind nicht immer semantisch identisch sondern haben \textcolor{red}{verschiedene Textvarianten}. Insbesondere die reinen Textaufgaben unterliegen teilweise starken semantischen Änderungen. Die Inhalte sind aber die gleichen.
+\end{graybox}
 \section*{ANOVA}
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 
