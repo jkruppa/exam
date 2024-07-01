@@ -11,23 +11,31 @@ num_2 <- c(7, 8, 12) %>% sample(1)
 animal <- c("Kühen", "Schweinen", "Schafe", "Ziegen", "Rinder") |> sample(1)
 
 ques_vec <- c(str_c('Sie führen ein Experiment zur Behandlung von Klaueninfektionen bei ', animal, ' durch. Bei ', num_1, ' Tieren finden Sie eine Erkrankung der Klauen vor und ', num_2, ' Tiere sind gesund. Welche Aussage über den Effektschätzer ', var_vec, ' ist richtig?'),
-              '',
-              '') |>  sample(1)
+              'In einer Studie wollen Sie den Effektschätzer ', var_vec, ' berechnen. Sie finden in Ihrem Experiment zur Behandlung von Klaueninfektionen bei ', animal, ' in ', num_1, ' Tieren Erkrankung der Klauen vor. ', num_2, ' Tiere sind gesund. Welche Aussage ist richtig?',
+              'Neben der Mittelwertsdifferenz als Effektschätzer bei normalverteilten Endpunkten wird auch häufig der Effektschätzer ', var_vec, ' bei binären Endpunkten verwendet. Welche Aussage über den Effektschätzer ', var_vec, ' ist im folgenden Beispiel zur Behandlung von Klaueninfektionen bei ', animal, ' richtig? Dabei sind ', num_1, ' Tiere krank und ', num_2, ' Tiere sind gesund.') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
 <<mc-modeling-05, results='asis', echo = FALSE>>=
 
-right_1_vec <- c(str_c(
-    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/num_2, 2), ', da es sich um eine Chancenverhältnis handelt.'),
-               '',
-               '') |> sample(1)
+right_1_vec <- c(
+  str_c(
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/num_2, 2), ', da es sich um eine Chancenverhältnis handelt
+  '),
+  str_c(
+    'Da es sich um ein Chancenverhältnis handelt ergibt sich ein ', var_vec, ' von ', round(num_1/num_2, 2), '.'),
+    str_c(
+    'Das Verhältnis von Chancen ', var_vec, ' ergibt ein Chancenverhältnis von ', round(num_1/num_2, 2), '.')
+  ) |> sample(1)
 
 right_2_vec <- c(  str_c(
-    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), ', da es sich um ein Anteil handelt.'),
-               '',
-               '') |> sample(1)
+    'Es ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), ', da es sich um ein Anteil handelt. Wir berechnen den Anteil der Kranken.'),
+  str_c(
+    'Der Anteil der Kranken wird berechnet. Da es sich um ein Anteil handelt ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), '.'),
+    str_c(
+    'Das Verhältnis der Anteile ', var_vec, ' ergibt ein Anteilsverhältnis von ', round(num_1/(num_1 + num_2), 2), '. Wir sind am Anteil der Kranken interessiert.')
+  ) |> sample(1)
 
 wrong_vec <- c(
   str_c(
