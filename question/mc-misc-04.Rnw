@@ -2,8 +2,8 @@
 
 <<>>=
 ques_vec <- c('Bei der explorativen Datenanalyse (EDA) in \\Rlogo gibt es eine richtige Abfolge von Prozessschritten, auch \textit{Circle of life} genannt. Wie lautet die richtige Reihenfolge für die Erstellung einer EDA?',
-              '',
-              '') |>  sample(1)
+              'In Ihrer Abschlussarbeit wollen Sie zu Beginn eine explorativen Datenanalyse (EDA) in \\Rlogo rechnen. Dafür gibt es eine generelle Abfolge von Prozessschritten. Welche ist hierbei die richtige Reihenfolge?',
+              'Nachdem Sie Ihr Feldexperiment als Vorversuch für Ihre Abschlussarbeit abgeschlossen haben, wollen Sie in einer explorativen Datenanalyse (EDA) in \\Rlogo einmal schauen, ob Sie überhaupt Effekte der Behandlung vorliegen haben. Welche Reihenfolge von Schritten müssen Sie in \\Rlogo durchführen, damit Sie eine EDA rechnen können?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -11,13 +11,15 @@ ques_vec <- c('Bei der explorativen Datenanalyse (EDA) in \\Rlogo gibt es eine r
 <<mc-programming-02, results='asis', echo = FALSE>>=
 
 right_vec <- c('Wir lesen als erstes die Daten über \\texttt{read\\_excel()} ein, transformieren die Spalten über \\texttt{mutate()} in die richtige Form und können dann über \\text{ggplot()} uns die Abbildungen erstellen lassen.',
-               '',
-               '') |> sample(1)
+               'Für eine explorativen Datenanalyse (EDA) in \\Rlogo müssen wir als erstes die Daten über \\texttt{read\\_excel()} einlesen. Danach müssen wir schauen, dass wir die Spalten richtig über \\texttt{mutate()} transformiert haben. Insbesondere müssen Variablen mit Kategorien in einen Faktor umgewandelt werden. Am Ende nutzen wir die Funktion \\text{ggplot()} für die eigentlich EDA.',
+               'Die Funktionsreihenfolge ist wie folgt: \\texttt{read\\_excel()} ->  \\texttt{mutate()} -> \\text{ggplot()}. Dabei ist bei der Transformation der Daten darauf zu achten, dass die Faktoren richtig erstellt werden.') |> sample(1)
 
 wrong_vec <- c('Wir transformieren die Spalten über \\texttt{mutate()} in ein \\texttt{tibble} und können dann über \\text{ggplot()} uns die Abbildungen erstellen lassen. Dabei beachten wir das wir keine Faktoren in den Daten haben.',
-                   'Wir lesen als erstes die Daten über \\texttt{read\\_excel()} ein, transformieren die Spalten über \\texttt{mutate()} in die richtige Form und können dann  über \\text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.',
-                   'Wir lesen die Daten über eine generische Funktion \\texttt{read()} ein und müssen dann die Funktion \\texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \\texttt{*.png} vorliegen.',
-                   'Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \\texttt{tidyverse} nutzen, da dieses Paket veraltet ist. über die Funktion \\texttt{library(tidyverse)} entfernen wir das Paket von der Analyse.') %>%
+               'Wir lesen als erstes die Daten über \\texttt{read\\_excel()} ein, transformieren die Spalten über \\texttt{mutate()} in die richtige Form und können dann  über \\text{ggplot()} uns die Abbildungen erstellen lassen. Wichtig ist, dass wir keine Faktoren sondern nur numerische Variablen vorliegen haben.',
+               'Wir lesen die Daten über eine generische Funktion \\texttt{read()} ein und müssen dann die Funktion \\texttt{ggplot()} nur noch installieren. Dann haben wir die Abbildungen als \\texttt{*.png} vorliegen.',
+               'Wir lesen die Daten ein und mutieren die Daten. Dabei ist wichtig, dass wir nicht das Paket \\texttt{tidyverse} nutzen, da dieses Paket veraltet ist. über die Funktion \\texttt{library(tidyverse)} entfernen wir das Paket von der Analyse.',
+               'Die Funktionsreihenfolge ist wie folgt: \\texttt{read\\_excel()} ->  \\texttt{mutate()} -> \\text{ggplot()}. Dabei ist bei der Transformation der Daten darauf zu achten, dass keine Faktoren erstellt werden.',
+               'Für eine explorativen Datenanalyse (EDA) in \\Rlogo müssen wir als erstes die Daten über \\texttt{read\\_excel()} einlesen. Danach müssen wir schauen, dass wir die Zeilen richtig über \\texttt{mutate()} transformiert haben. Insbesondere müssen Variablen mit kontinuierlichen Werten in einen Faktor umgewandelt werden. Am Ende nutzen wir die Funktion \\text{ggplot()} für die eigentlich EDA.') %>%
   sample(4)
 
 questions_vec <- c(right_vec,

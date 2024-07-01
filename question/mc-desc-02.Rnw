@@ -3,9 +3,14 @@
 
 <<mc-desc-02a, results='markup', echo = FALSE>>=
 x <- c(round(rnorm(sample(c(6, 10), 1), 20, 8)), sample(c(42, 51, 63), 1))
+
+ques_vec <- c(str_c('Berechnen Sie den Median, das $1^{st}$ Quartile sowie das $3^{rd}$ Quartile von $y$ mit ', pander::p(x, wrap = "", copula = " und "), '.'),
+              '',
+              '') |>  sample(1)
 @
 
-Berechnen Sie den Median, das $1^{st}$ Quartile sowie das $3^{rd}$ Quartile von $y$ mit \Sexpr{pander::p(x, wrap = "", copula = " und ")}.
+\Sexpr{ques_vec}
+
 
 <<mc-desc-02b, results='asis', echo = FALSE>>=
 
@@ -22,18 +27,23 @@ if(length(x) == 11) {
   quant_x <- sort(x)[c(3, 9)]
 }
 
-## quant_x <- quantile(x, probs = c(0.25, 0.75))
 
-questions_vec <- c(str_c('Es ergibt sich ', median_x, ' [', quant_x[1], ", ",
+right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c(str_c('Es ergibt sich ', median_x, ' [', quant_x[1], ", ",
                          quant_x[2], "]"),
                    str_c('Es ergibt sich ', mean_x, ' [', quant_x[1]+1, ", ",
                          quant_x[2]+1, "]"),
                    str_c('Es ergibt sich ', median_x, ' +/- ', quant_x[1]),
                    str_c('Es ergibt sich ', median_x, ' +/- ', quant_x[2]),
                    str_c('Es ergibt sich ', mean_x, ' +/- ', quant_x[1])) %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
-
-
 @
 
 \begin{enumerate}

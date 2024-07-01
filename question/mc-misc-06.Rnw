@@ -2,22 +2,26 @@
 
 <<>>=
 ques_vec <- c('In einem Zuchtexperiment messen wir die Ferkel verschiedener Sauen. Die Ferkel einer Muttersau sind daher im statistischen Sinne...',
-              '',
-              '') |>  sample(1)
+              'Die Leistung von Sauen soll auf einem Zuchtbetrieb gesteigert werden. Dafür werden die Ferkel verschiedener Sauen gemessen. Die Ferkel einer Muttersaue sind daher...',
+              'Im Rahmen Ihrer Abschlussarbeit werten Sie ein Experiment mit Ferkel aus. Es geht um die Leistungssteigerung der Ferkelproduktion. Sie messen jeweils die Gewichtszunahme der Ferkel. Die Ferkel einer Muttersau sind dabei...') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
 <<mc-independence-01, results='asis', echo = FALSE>>=
 
-right_vec <- c("Untereinander unabhängig. Die Ferkel sind eigenständig und ben{\"o}tigen keine zusätzliche Behandlung.",
-               '',
-               '') |> sample(1)
+right_vec <- c("Untereinander abhängig. Die Ferkel stammen von einem Muttertier und haben vermutliche eine ähnliche Varianzstruktur.",
+               'Die Ferkel stammen vom gleichen Muttertier und haben vermutlich eine ähnlichere Varianzstruktur als die Ferkel von anderen Sauen. Die Ferkel sind untereinander über die Mutter abhängig.',
+               'Die Ferkel stammen von der gleichen Sau und sind somit untereinander abhängig.') |> sample(1)
 
-wrong_vec <- c("Untereinander abhängig. Die Ferkel stammen von einem Muttertier und haben vermutliche eine ähnliche Varianzstruktur.",
+wrong_vec <- c("",
                    "Untereinander abhängig, wenn die Mütter ebenfalls miteinander verwandt sind. Erst die Abhängigkeit 2. Grades wird in der Statistik modelliert.",
                    "Untereinander unabhängig. Sollten die Mütter verwandt sein, so ist die Varianzstruktur ähnlich und muss modelliert werden.",
-                   "Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert." ) %>%
+                   "Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert.",
+               "Untereinander unabhängig. Die Ferkel sind eigenständig und benötigen keine zusätzliche Behandlung.",
+               "Abhängig von der Stallanlage und des Experiments können die Ferkel abhängig oder unabhängig sein. Allgmein gilt, dass Ferkel von unterschiedlichen Sauen näher miteinander verwandt sind als Ferkel von gleichen Sauen. Das Fisher-Axiom.",
+               "Die Ferkel stammen von der gleichen Sau und sind somit untereinander unabhängig.",
+               "Je nach Stallanlage kommt eine andere Analyse in Betracht. Eine allgemeine Aussage über Ferkel und Sauen lässt sich statistisch nicht treffen.") %>%
   sample(4)
 
 questions_vec <- c(right_vec,
