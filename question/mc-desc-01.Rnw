@@ -5,8 +5,8 @@
 x <- round(rnorm(5, 10, 4))
 
 ques_vec <- c(str_c('Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit ', pander::p(x, wrap = "", copula = " und "), '.'),
-              '',
-              '') |>  sample(1)
+               str_c('Gegeben ist $y$ mit ', pander::p(x, wrap = "", copula = " und "), '. Berechnen Sie den Mittelwert und Standardabweichung.'),
+              str_c('Wie lautet der Mittelwert und Standardabweichung von $y$ mit ', pander::p(x, wrap = "", copula = " und "), '.')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -19,13 +19,15 @@ var_x <- round(var(x), 2)
 
 
 right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
-               '',
-               '') |> sample(1)
+               str_c('Sie erhalten ', mean_x, ' +/- ', sd_x),
+               str_c('Es berechnet sich ', mean_x, ' +/- ', sd_x)) |> sample(1)
 
-wrong_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', var_x),
-               str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x/2),
+wrong_vec <- c(str_c('Es berechnet sich ', mean_x, ' +/- ', var_x),
+               str_c('Sie erhalten ', mean_x, ' +/- ', sd_x/2),
                str_c('Es ergibt sich ', mean_x+1, ' +/- ', sd_x/2),
-               str_c('Es ergibt sich ', mean_x-1, ' +/- ', var_x/2)) %>%
+               str_c('Es ergibt sich ', mean_x-1, ' +/- ', var_x/2),
+               str_c('Sie erhalten ', mean_x, ' +/- ', round(sqrt(sd_x), 2)),
+               str_c('Es berechnet sich ', mean_x+1, ' +/- ', var_x)) %>%
   sample(4)
 
 questions_vec <- c(right_vec,
