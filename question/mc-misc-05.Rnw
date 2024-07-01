@@ -6,9 +6,9 @@ variable_vec <- c("n_1 = n_2", "n_1 < n_2",
                   "s^2_1 = s^2_2", "s^2_1 \\neq s^2_2") %>%
   sample(1)
 
-ques_vec <- c(str_c('Sie haben das abstrakte Modell $Y \sim X$ mit $X$ als Faktor mit zwei Leveln vorliegen. Welche Aussage über $', variable_vec, '$ ist richtig?'),
-              'Gegeben ist das Modell $Y \sim X$. Welche Aussage über $', variable_vec, '$ ist richtig?',
-              'Es sei $', variable_vec, '$ in dem Modell $Y \sim X$. Welche Aussage ist richtig?') |>  sample(1)
+ques_vec <- c(str_c('Sie haben das abstrakte Modell $Y \\sim X$ mit $X$ als Faktor mit zwei Leveln vorliegen. Welche Aussage über $', variable_vec, '$ ist richtig?'),
+              str_c('Gegeben ist das Modell $Y \\sim X$. Welche Aussage über $', variable_vec, '$ ist richtig?'),
+              str_c('Es sei $', variable_vec, '$ in dem Modell $Y \\sim X$. Welche Aussage ist richtig?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}

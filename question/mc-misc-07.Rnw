@@ -45,11 +45,12 @@ wrong_vec <- c(
   str_c(
     'Es ergibt sich ein ', var_vec, ' von ', round(num_2/num_1, 2), ', da es sich um ein Anteil handelt.'),
   str_c(
-    'Das Verhältnis der Chancen ', var_vec, ' ergibt ein Chancenverhältnis von ', round(num_1/(num_1 + num_2), 2), '. Wir sind an der Chance krank zu sein interessiert.'),
+    'Das Verhältnis der Chancen ', var_vec, ' ergibt ein Chancenverhältnis von ', round(num_1/(num_1 + num_2), 2), '. Wir sind an der Chance krank zu sein interessiert.'
+    ),
   str_c(
     'Da es sich um ein Chancenverhältnis handelt ergibt sich ein ', var_vec, ' von ', round((num_2+num_1)/num_1, 2), '.'),
   str_c(
-    'Der Anteil der Gesunden wird berechnet. Da es sich um ein Anteil handelt ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), '.'),
+    'Der Anteil der Gesunden wird berechnet. Da es sich um ein Anteil handelt ergibt sich ein ', var_vec, ' von ', round(num_1/(num_1 + num_2), 2), '.')
 ) %>%
   sample(3)
 

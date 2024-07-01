@@ -3,10 +3,9 @@
 <<>>=
 n_plant <- rpois(1, 200)
 
-ques_vec <- c(str_c('In dem folgenden Histogramm von $n = ', n_plant,  ' Pflanzen ist welche
-Verteilung abgebildet?'),
-              str_c('Sie haben $n = ', n_plant,  ' Pflanzen geerntet und wollen sich nun die Verteilung der Pflanzen einmal in einem Histogramm anschauen. Welche Verteilung ist dargestellt?'),
-              str_c('Bevor Sie in Ihrer Abschlussarbeit einen statistischen Test rechnen, wollen Sie einmal betrachten, welcher Verteilung Ihre $n = ', n_plant,  ' geernteten Pflanzen folgen.  Welche Verteilung ist abgebildet?')) |>  sample(1)
+ques_vec <- c(str_c('In dem folgenden Histogramm von $n = ', n_plant,  '$ Pflanzen ist welche Verteilung abgebildet?'),
+              str_c('Sie haben $n = ', n_plant,  '$ Pflanzen geerntet und wollen sich nun die Verteilung der Pflanzen einmal in einem Histogramm anschauen. Welche Verteilung ist dargestellt?'),
+              str_c('Bevor Sie in Ihrer Abschlussarbeit einen statistischen Test rechnen, wollen Sie einmal betrachten, welcher Verteilung Ihre $n = ', n_plant,  '$ geernteten Pflanzen folgen.  Welche Verteilung ist abgebildet?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
