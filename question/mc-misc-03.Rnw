@@ -1,11 +1,9 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-ques_vec <- c('Wenn Sie einen Datensatz erstellen, dann ist es ratsam die Spalten und die
-Einträge in englischer Sprache zu verfassen, wenn Sie später die Daten in
-\\Rlogo auswerten wollen. Welcher folgende Grund ist richtig?',
-              '',
-              '') |>  sample(1)
+ques_vec <- c('Wenn Sie einen Datensatz erstellen, dann ist es ratsam die Spalten und die Einträge in englischer Sprache zu verfassen, wenn Sie später die Daten in \\Rlogo auswerten wollen. Welcher Aussage ist richtig?',
+              'Sie wollen Ihren Datensatz in \\Rlogo einlesen und stehen nun vor einem Problem. Sie stellen fest, dass die Hilfeseiten alle in englischer Sprache verfasst sind. Warum mag die Nutzung von Deutsch problematisch sein?',
+              'Viele wissenschaftliche Orginalquellen sind in Englisch verfasst. Jetzt finden Sie heraus, dass auch \\Rlogo nur in englischer Sprache funktioniert. Warum ist das so?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -13,13 +11,15 @@ Einträge in englischer Sprache zu verfassen, wenn Sie später die Daten in
 <<mc-programming-01, results='asis', echo = FALSE>>=
 
 right_vec <- c('Im Allgemeinen haben Programmiersprachen Probleme mit Umlauten und Sonderzeichen, die in der deutschen Sprache vorkommen. Eine Nutzung der englischen Sprache umgeht dieses Problem auf einfache Art.',
-               '',
-               '') |> sample(1)
+               'Programmiersprachen haben Probleme mit Umlauten und Sonderzeichen der deutschen Sprache. Die Nutzung von englischer Sprache umgeht dieses Problem in eleganter Art.',
+               'Die \\Rlogo Pakete sind nur in englischer Sprache verfasst. Das ist aber nicht der Hauptgrund, denn \\Rlogo hat wie alle Programmiersprachen Probelem mit Umlauten und Sonderzeichen.') |> sample(1)
 
 wrong_vec <- c('Die Spracherkennung von \\Rlogo ist nicht in der Lage Deutsch zu verstehen.',
                'Alle Funktionen und auch Anwendungen sind in \\Rlogo in englischer Sprache. Die Nutzung von deutschen Wörtern ist nicht schick und das ist zu vermeiden.',
                'Es gibt keinen Grund nicht auch deutsche Wörter zu verwenden. Es ist ein Stilmittel.',
-               'Programmiersprachen können nur englische Begriffe verarbeiten. Zusätzliche Pakete können zwar geladen werden, aber meist funktionieren diese Pakete nicht richtig. Deutsch ist International nicht bedeutend genug.') %>%
+               'Programmiersprachen können nur englische Begriffe verarbeiten. Zusätzliche Pakete können zwar geladen werden, aber meist funktionieren diese Pakete nicht richtig. Deutsch ist International nicht bedeutend genug.',
+               '\\Rlogo Pakete sind nur in englischer Sprache verfasst. Es macht keinen Sinn \\Rlogo daher in Deutsch zu bedienen.',
+               'Programmiersprachen haben Probleme mit Umlauten und Sonderzeichen der deutschen Sprache. Daher ist die Nutzung in Deutsch in den AGBs von \\Rlogo untersagt.') %>%
   sample(4)
 
 questions_vec <- c(right_vec,

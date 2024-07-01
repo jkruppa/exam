@@ -5,7 +5,7 @@ var_vec <- c("einer Normalverteilung", "einer Varianzhomogenität") %>% sample(1
 
 ques_vec <- c(str_c('Um zu Überprüfen, ob die Daten die Annahme ', var_vec, ' genügen, können wir folgende Visualisierung nutzen. Dabei kommt dann auch die entsprechende Regel zur Abschätzung der Annahme ', var_vec, ' zur Anwendung.'),
               str_c('Sie wollen eine ANOVA im Anschluss an Ihr Feldexperiment rechnen. Dafür muss Ihr gemessener Endpunkt die Annahme ', var_vec, ' genügen. Zur Überprüfung können Sie folgende Visualisierung nutzen. Welche entsprechende Regel zur Abschätzung der Annahme ', var_vec, ' kommt zur Anwendung?'),
-              str_c('Ihre Betreuung der Abschlussabreit fragt überraschend in der letzten Besprechung, ob Ihre Messwerte ', var_vec, ' genügen. Sonst könnten Sie ja gar nicht einen t-Test rechnen. Da Ihnen die Zeit wegrennt, entscheiden Sie sich für eien schnelle Visualisierung im Anhang. Welche Visualisierung nutzen Sie und welche Regel kommt zur Abschätzung ', var_vec, ' zur Anwendung?')) |>  sample(1)
+              str_c('Ihre Betreuung der Abschlussarbeit fragt überraschend in der letzten Besprechung, ob Ihre Messwerte ', var_vec, ' genügen. Sonst könnten Sie ja gar nicht einen t-Test rechnen. Da Ihnen die Zeit wegrennt, entscheiden Sie sich für eine schnelle Visualisierung im Anhang. Welche Visualisierung nutzen Sie und welche Regel kommt zur Abschätzung ', var_vec, ' zur Anwendung?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -21,14 +21,14 @@ right_2_vec <- c('Einen Boxplot. Das IQR muss über alle Behandlungen zusammen m
                  'Wir erstellen uns für jede Behandlung einen Boxplot und schauen, ob die Box und damit das IQR für jede Behandlung gleich groß ist.') |> sample(1)
 
 wrong_vec <- c('Einen Barplot. Die Mittelwerte müssen alle auf einer Höhe liegen. Die Fehlerbalken haben hier keine Informationen.',
-               'Einen Dotplot. Die Punkte müssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung führt zur Ablehnung der Annahme.',
-               'Einen Violinplot. Der Bauch der Violine muss hierbei einen höhren Wert annehmen als der Steg der Violine. Dann kann die Annahme angenommen werden.',
+               str_c('Einen Dotplot. Die Punkte müssen sich wie an einer Perlenschnurr audreihen. Eine Abweichung führt zur Ablehnung der Annahme ', var_vec, '.'),
+               str_c('Einen Violinplot. Der Bauch der Violine muss hierbei einen höhren Wert annehmen als der Steg der Violine. Dann kann die Annahme ', var_vec, ' angenommen werden.'),
                'Nach dem Einlesen der Daten nutzen wir einen Barplot um zu schauen, ob alle Mittelwerte über alle Behandlungen in etwa gleich groß sind. Damit ist dann auch die Varianz in allen Behandlungen in etwa gleich.',
                'Wir erstellen uns für jede Behandlung einen Dotplot und schauen, ob die Dots und damit die Varianz für jede Behandlung gleich groß sind.',
                str_c('In einer explorativen Datanalyse nutzen wir den Violinplot. Dabei sollte der Bauch am Rand liegen. Dann können wir von ', var_vec, ' ausgehen.')) %>%
   sample(3)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec, 
                    wrong_vec) %>%
   sample
 

@@ -3,11 +3,9 @@
 <<>>=
 var_vec <- c("Boxplot", "Barplot") %>% sample(1)
 
-ques_vec <- c(str_c('Der ', var_vec, ' stellt folgende statistische Maßzahlen in einer
-Abbildung dar. Damit gehört der ', var_vec, ' zu einem der am meisten
-genutzten statistischen Verfahren zur Visualisierung von Daten.'),
-              '',
-              '') |>  sample(1)
+ques_vec <- c(str_c('Der ', var_vec, ' stellt folgende statistische Maßzahlen in einer Abbildung dar. Damit gehört der ', var_vec, ' zu einem der am meisten genutzten statistischen Verfahren zur Visualisierung von Daten.'),
+              str_c('In Ihrer Abschlußarbeit wolllen Sie Ihre Daten für den Ertrag in einem ', var_vec, ' darstellen. Sie nutzen den ', var_vec, ' auch, da der ', var_vec, ' zu den meist genutzten Visualiserungen von Daten gehört. Welche statistischen Maßzahlen stellt der ', var_vec, ' dar?'),
+              str_c('Nachdem Sie eine ANOVA und die paarweisen t-Tests über das \\Rlogo Paket \\{emmeans\\} durchgeführt haben, müssen Sie Ihre Daten nochmal zur Überprüfung visualisieren. Sie entscheiden sich für den ', var_vec, '. Welche statistischen Maßzahlen stellt der ', var_vec, ' dar?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -16,18 +14,25 @@ genutzten statistischen Verfahren zur Visualisierung von Daten.'),
 
 <<mc-desc-05, results='asis', echo = FALSE>>=
 
-right_vec <- c(str_c('Es ergibt sich ', mean_x, ' +/- ', sd_x),
-               '',
-               '') |> sample(1)
+right_1_vec <- c('Den Mittelwert und die Standardabweichung.',
+                 str_c('Der ', var_vec, ' stellt die Mittelwerte und die Standardabweichung dar.'),
+                 str_c('Durch die Abbildung des ', var_vec, ' erhalten wir die Informationen über die Mittelwerte und die Standardabweichung.')) |> sample(1)
 
-wrong_vec <- c('Den Mittelwert und die Standardabweichung.',
-                   'Den Mittelwert und die Varianz.',
-                   'Den Median und die Quartile.',
-                   'Den Median und die Standardabweichung.',
-                   'Den Mittelwert sowie den Median und die Streuung.') %>%
-  sample(4)
+right_2_vec <- c('Den Median und die Quartile.',
+                 str_c('Der ', var_vec, ' stellt den Median und die Quartile dar.'),
+                 str_c('Durch die Abbildung des ', var_vec, ' erhalten wir die Informationen über den Median und die Quartile.')) |> sample(1)
 
-questions_vec <- c(right_vec,
+wrong_vec <- c('Den Mittelwert und die Varianz.',
+               'Den Median und die Standardabweichung.',
+               'Den Mittelwert sowie den Median und die Streuung.',
+               str_c('Der ', var_vec, ' stellt die Mittelwerte und die Varianz dar.'),
+               str_c('Durch die Abbildung des ', var_vec, ' erhalten wir die Informationen über die Mittelwerte und die Varianz.'),
+               str_c('Der ', var_vec, ' stellt den Median und die Streuung dar.'),
+               str_c('Durch die Abbildung des ', var_vec, ' erhalten wir die Informationen über den Median und die Standardabweichung.')
+               ) %>%
+  sample(3)
+
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
 
