@@ -11,8 +11,8 @@ num_2 <- c(7, 8, 12) %>% sample(1)
 animal <- c("Kühen", "Schweinen", "Schafe", "Ziegen", "Rinder") |> sample(1)
 
 ques_vec <- c(str_c('Sie führen ein Experiment zur Behandlung von Klaueninfektionen bei ', animal, ' durch. Bei ', num_1, ' Tieren finden Sie eine Erkrankung der Klauen vor und ', num_2, ' Tiere sind gesund. Welche Aussage über den Effektschätzer ', var_vec, ' ist richtig?'),
-              'In einer Studie wollen Sie den Effektschätzer ', var_vec, ' berechnen. Sie finden in Ihrem Experiment zur Behandlung von Klaueninfektionen bei ', animal, ' in ', num_1, ' Tieren Erkrankung der Klauen vor. ', num_2, ' Tiere sind gesund. Welche Aussage ist richtig?',
-              'Neben der Mittelwertsdifferenz als Effektschätzer bei normalverteilten Endpunkten wird auch häufig der Effektschätzer ', var_vec, ' bei binären Endpunkten verwendet. Welche Aussage über den Effektschätzer ', var_vec, ' ist im folgenden Beispiel zur Behandlung von Klaueninfektionen bei ', animal, ' richtig? Dabei sind ', num_1, ' Tiere krank und ', num_2, ' Tiere sind gesund.') |>  sample(1)
+              str_c('In einer Studie wollen Sie den Effektschätzer ', var_vec, ' berechnen. Sie finden in Ihrem Experiment zur Behandlung von Klaueninfektionen bei ', animal, ' in ', num_1, ' Tieren Erkrankung der Klauen vor. ', num_2, ' Tiere sind gesund. Welche Aussage ist richtig?'),
+              str_c('Neben der Mittelwertsdifferenz als Effektschätzer bei normalverteilten Endpunkten wird auch häufig der Effektschätzer ', var_vec, ' bei binären Endpunkten verwendet. Welche Aussage über den Effektschätzer ', var_vec, ' ist im folgenden Beispiel zur Behandlung von Klaueninfektionen bei ', animal, ' richtig? Dabei sind ', num_1, ' Tiere krank und ', num_2, ' Tiere sind gesund.')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
