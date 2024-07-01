@@ -2,22 +2,31 @@
 
 <<>>=
 
-variable_vec <- c("pr{\"a}diktives", "kausales") %>%
+variable_vec <- c("prädiktives", "kausales") %>%
   sample(1)
 
+ques_vec <- c(str_c('Sie haben das Modell $Y \\sim X$ vorliegen und wollen nun ein ', variable_vec, ' Modell rechnen. Welche Aussage ist richtig?'),
+              '',
+              '') |>  sample(1)
 @
 
+\Sexpr{ques_vec}
 
-Sie haben das Modell $Y \sim X$ vorliegen und wollen nun ein
-\Sexpr{variable_vec} Modell rechnen. Welche Aussage ist richtig?
+
+
 
 <<mc-modelling-02, results='asis', echo = FALSE>>=
 
-questions_vec <- c(str_c("Ein ", variable_vec, " Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert."),
-                   str_c("Ein ", variable_vec, " Modell m{\"o}chte die Zusammenh{\"a}nge von X auf Y modellieren. Hierbei geht es um die Effekte von X auf Y. Man sagt, wenn X um 1 ansteigt {\"a}ndert sich Y um einen Betrag $\\beta$."),
-                   str_c("Ein ", variable_vec, " Modell ben{\"o}tigt mindestens eine Fallzahl von {\"u}ber 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten m{\"u}ssen homogen sein."),
-                   str_c("Ein ", variable_vec, " Modell schliesst grunds{\"a}tzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden." ),
-                   str_c("Ein ", variable_vec, " Modell wird auf einem Trainingsdatensatz trainiert und anschliessend {\"u}ber eine explorative Datenanalyse validiert. Signifikanzen {\"u}ber $\\beta_i$ k{\"o}nnen hier nicht festgestellt werden.")) %>%
+right_vec <- c(str_c("Ein ", variable_vec, " Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert.")) |> sample(1)
+
+wrong_vec <- c(str_c("Ein ", variable_vec, " Modell möchte die Zusammenhänge von X auf Y modellieren. Hierbei geht es um die Effekte von X auf Y. Man sagt, wenn X um 1 ansteigt ändert sich Y um einen Betrag $\\beta$."),
+                   str_c("Ein ", variable_vec, " Modell benötigt mindestens eine Fallzahl von über 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten müssen homogen sein."),
+                   str_c("Ein ", variable_vec, " Modell schliesst grundsätzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden." ),
+                   str_c("Ein ", variable_vec, " Modell wird auf einem Trainingsdatensatz trainiert und anschliessend über eine explorative Datenanalyse validiert. Signifikanzen über $\\beta_i$ können hier nicht festgestellt werden.")) %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

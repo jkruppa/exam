@@ -1,7 +1,16 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Sie rechnen eine linearen Regression und erhalten folgenden Residual
-Plot. Welche Aussage ist richtig?
+<<>>=
+
+ques_vec <- c('Sie rechnen eine linearen Regression und erhalten folgenden Residual
+Plot. Welche Aussage ist richtig?',
+              '',
+              '') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
+
 
 
 <<mc-regression-06-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
@@ -22,11 +31,18 @@ ggplot(df, aes(x = .fitted, y = .resid)) +
 
 <<mc-regression-06-b, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
-                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.',
-                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Die Punkte liegen zum {\"u}berwiegenden Teil auf der Diagonalen.',
-                   'Die Annahme der normalverteilten Residuen ist nicht erf{\"u}llt. Es ist kein Muster zu erkennen.',
-                   'Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Es ist ein Muster zu erkennen.') %>%
+right_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Diagonalen.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erfüllt. Es ist kein Muster zu erkennen.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Es ist ein Muster zu erkennen.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

@@ -1,16 +1,30 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Welche Aussage {\"u}ber das \textit{generalisierte lineare Modell (GLM)} ist richtig?  
+<<>>=
+
+ques_vec <- c('Welche Aussage über das \\textit{generalisierte lineare Modell (GLM)} ist richtig?',
+              '',
+              '') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
 
 <<mc-regression-03, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Das GLM erlaubt auch weitere Verteilungsfamilien f{\"u}r das Y bzw. das Outcome in einer linearen Regression zu w{\"a}hlen.',
-                   'Das GLM ist eine allgemeine Erweiterung der linearen Regression auf die Normalverteilung.',
-                   'Das GLM erlaubt auch nicht normalverteilte Residuen in der Sch{\"a}tzung der Regressionsgrade.',
-                   'Das GLM ist eine Vereinfachung des LM in R. Mit dem GLM lassen polygonale Regressionen rechnen.',
-                   'Das GLM ist ein faktisch maschineller Lernalgorithmus, der selstst{\"a}ndig die Verteilungsfamilie f{\"u}r Y w{\"a}hlt.') %>%
-  sample
+right_vec <- c('Das GLM erlaubt auch weitere Verteilungsfamilien für das Y bzw. das Outcome in einer linearen Regression zu wählen.',
+                   '',
+               '') |> sample(1)
 
+wrong_vec <- c('Das GLM ist eine allgemeine Erweiterung der linearen Regression auf die Normalverteilung.',
+                   'Das GLM erlaubt auch nicht normalverteilte Residuen in der Schätzung der Regressionsgrade.',
+                   'Das GLM ist eine Vereinfachung des LM in R. Mit dem GLM lassen polygonale Regressionen rechnen.',
+                   'Das GLM ist ein faktisch maschineller Lernalgorithmus, der selstständig die Verteilungsfamilie für Y wählt.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
 
 @
 

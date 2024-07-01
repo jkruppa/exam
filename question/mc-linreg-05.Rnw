@@ -1,19 +1,30 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Nach einer simplen linearen Regression zur Untersuchung vom Einfluss der
-$CO_2$-Konzentration [$\mu g$] im Wasser auf das Wachstum von Wasserlinsen
-[$kg$] erhalten Sie einen $\beta_1$ Koeffizienten von $0.00001$ und einen
-hoch signifikanten $p$-Wert mit $2.3\cdot 10^{-9}$. Warum sehen Sie so einen kleinen
-Effekt bei einer so deutlichen Signifikanz? 
+<<>>=
+
+ques_vec <- c(str_c('Nach einer simplen linearen Regression zur Untersuchung vom Einfluss der $CO_2$-Konzentration [$\\mu g$] im Wasser auf das Wachstum von Wasserlinsen [$kg$] erhalten Sie einen $\\beta_1$ Koeffizienten von $0.00001$ und einen hoch signifikanten $p$-Wert mit $2.3\\cdot 10^{-9}$. Warum sehen Sie so einen kleinen Effekt bei einer so deutlichen Signifikanz?'),
+              '',
+              '') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
 
 
 <<mc-distribution-01, results='asis', echo = FALSE>>=
 
-questions_vec <- c("Die Einheit der $CO_2$-Konzentration ist zu klein gew{\"a}hlt. Die Erh{\"o}hung der $CO_2$-Konzentration um 1 f{\"u}hrt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gew{\"a}hlt werden.",
-                   "Die Einheit der $CO_2$-Konzentration ist zu klein gew{\"a}hlt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration h{\"a}ngen zusammen.",
-                   "Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h{\"o}her ist die Teststatsitik und damit auch der $p$-Wert kleiner. ",
-                   "Die Fallzahl ist zu hoch angesetzt. Je h{\"o}her die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.",
+right_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c("Die Einheit der $CO_2$-Konzentration ist zu klein gewählt. Die Erh öhung der $CO_2$-Konzentration um 1 führt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gewählt werden.",
+                   "Die Einheit der $CO_2$-Konzentration ist zu klein gewählt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration hängen zusammen.",
+                   "Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h öher ist die Teststatsitik und damit auch der $p$-Wert kleiner. ",
+                   "Die Fallzahl ist zu hoch angesetzt. Je h öher die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.",
                    "Das Gewicht und die $CO_2$-Konzentration korrelieren sehr stark, deshalb wird der $\\beta_1$ Koeffizient sehr klein.") %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

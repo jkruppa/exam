@@ -3,14 +3,22 @@
 
 <<mc-corr-01a, results='markup', echo = FALSE>>=
 corr_type <- c("Pearson", "Kendall", "Spearman") %>% sample(1)
+
+ques_vec <- c(str_c('Welche Aussage über den Korrelationskoeffizienten nach ', corr_type, ' ist richtig?'),
+              '',
+              '') |>  sample(1)
 @
 
-Welche Aussage {\"u}ber den Korrelationskoeffizienten nach \Sexpr{corr_type}
-ist richtig?
+\Sexpr{ques_vec}
+
 
 <<mc-corr-01b, results='asis', echo = FALSE>>=
 
-questions_vec <- c(str_c('Der Korrelationskoeffizienten nach ', corr_type,
+right_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c(str_c('Der Korrelationskoeffizienten nach ', corr_type,
                          ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
                    str_c('Der Korrelationskoeffizienten nach ', corr_type,
                          ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
@@ -20,7 +28,11 @@ questions_vec <- c(str_c('Der Korrelationskoeffizienten nach ', corr_type,
                          ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
                    str_c('Der Korrelationskoeffizienten nach ', corr_type,
                          ' wird genutzt, wenn der Korrelationskoeffizienten zwischen -1 und 1 liegt. Dann sind die Residuen normalverteilt.')
-                   ) %>%
+) %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 

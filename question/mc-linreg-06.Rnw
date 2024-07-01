@@ -1,16 +1,32 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-In einer linearen Regression werden die $\epsilon$ oder Residuen
-gesch{\"a}tzt. Welcher Verteilung folgen die Residuen bei einer optimalen
-Modellierung? 
+<<>>=
+
+ques_vec <- c('In einer linearen Regression werden die $\epsilon$ oder Residuen
+geschätzt. Welcher Verteilung folgen die Residuen bei einer optimalen
+Modellierung?',
+              '',
+              '') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
+
 
 <<mc-regression-02, results='asis', echo = FALSE>>=
 
-questions_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(0, s^2)$.',
-                   'Die Residuen sind normalverteilt mit $\\mathcal{N}(\\bar{y}, s^2)$.',
+right_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(0, s^2)$.',
+               '',
+               '') |> sample(1)
+
+wrong_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(\\bar{y}, s^2)$.',
                    'Die Residuen sind normalverteilt mit $\\mathcal{N}(0, 1)$.',
                    'Die Residuen sind binomialverteilt.',
                    'Die Residuen folgen einer Poissonverteilung.') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
   sample
 
 
