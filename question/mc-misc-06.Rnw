@@ -14,8 +14,7 @@ right_vec <- c("Untereinander abhängig. Die Ferkel stammen von einem Muttertier
                'Die Ferkel stammen vom gleichen Muttertier und haben vermutlich eine ähnlichere Varianzstruktur als die Ferkel von anderen Sauen. Die Ferkel sind untereinander über die Mutter abhängig.',
                'Die Ferkel stammen von der gleichen Sau und sind somit untereinander abhängig.') |> sample(1)
 
-wrong_vec <- c("",
-                   "Untereinander abhängig, wenn die Mütter ebenfalls miteinander verwandt sind. Erst die Abhängigkeit 2. Grades wird in der Statistik modelliert.",
+wrong_vec <- c( "Untereinander abhängig, wenn die Mütter ebenfalls miteinander verwandt sind. Erst die Abhängigkeit 2. Grades wird in der Statistik modelliert.",
                    "Untereinander unabhängig. Sollten die Mütter verwandt sein, so ist die Varianzstruktur ähnlich und muss modelliert werden.",
                    "Untereinander stark korreliert. Die Ferkel sind von einer Mutter und sommit miteinander korreliert. Dies wird in der Statistik jedoch meist nicht modelliert.",
                "Untereinander unabhängig. Die Ferkel sind eigenständig und benötigen keine zusätzliche Behandlung.",
