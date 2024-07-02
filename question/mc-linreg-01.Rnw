@@ -6,26 +6,32 @@ variable_vec <- c("prädiktives", "kausales") %>%
   sample(1)
 
 ques_vec <- c(str_c('Sie haben das Modell $Y \\sim X$ vorliegen und wollen nun ein ', variable_vec, ' Modell rechnen. Welche Aussage ist richtig?'),
-              '',
-              '') |>  sample(1)
+              str_c('Im Allgemeinen gibt es zwei mögliche Ziele für ein Regressionsmodell. Wir können eine Vorhersagemodell oder ein kausales Modell rechnen. Welche Aussage ist für ein ', variable_vec, ' Modell richtig?'),
+              str_c('In Ihrer Abschlussarbeit wollen Sie ein ', variable_vec, ' Modell rechnen. Jetzt stellt sich die Frage, was diese Entscheidung für Ihre Auswertung bedeutet. Welche Aussage ist richtig?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
-
-
-
 <<mc-modelling-02, results='asis', echo = FALSE>>=
 
-right_vec <- c(str_c("Ein ", variable_vec, " Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert.")) |> sample(1)
+right_1_vec <- c(str_c("Ein ", variable_vec, " Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert."),
+                 str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll, dann muss zum einen ein Traingsdatensatz sowie ein Testdatensatz definiert werden. Dabei ist der Trainingsdatensatz meist 2/3 und der Testdatensatz 1/3 der Fallzahl groß. Der Testdatensatz dient zur Validierung.'),
+                 str_c('Es wird ein Trainingsdatensatz zum Trainieren des Modells benötigt. Der Testdatensatz dient zur Validierung. Dies gilt insbesondere für ein ', variable_vec, ' Modell.')) |> sample(1)
 
-wrong_vec <- c(str_c("Ein ", variable_vec, " Modell möchte die Zusammenhänge von X auf Y modellieren. Hierbei geht es um die Effekte von X auf Y. Man sagt, wenn X um 1 ansteigt ändert sich Y um einen Betrag $\\beta$."),
-                   str_c("Ein ", variable_vec, " Modell benötigt mindestens eine Fallzahl von über 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten müssen homogen sein."),
+right_2_vec <- c(str_c("Ein ", variable_vec, " Modell möchte die Zusammenhänge von X auf Y modellieren. Hierbei geht es um die Effekte von $X$ auf $Y$. Man sagt, wenn $x_1$ um 1 ansteigt ändert sich $Y$ um einen Betrag $\\beta_1$."),
+                 str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll dann kann dies auf dem gesamten Datensatz geschehen. Das Ziel ist es einen Zusammenhang von $X$ auf $Y$ zu modellieren. Wie wirken sich die Einflussvariablen $X$ auf den gemessenen Endpunkt $Y$ aus?'),
+                 str_c('Wir modellieren den Zusammenhang zwischen $X$ und $Y$ wenn ein ', variable_vec, ' Modell rerechnet wird. Dabei kann der gesamte Datensatz genutzt werden. Eine Aufteilung wie in einem prädiktiven Modell ist nicht notwendig.')) |> sample(1)
+
+wrong_vec <- c( str_c("Ein ", variable_vec, " Modell benötigt mindestens eine Fallzahl von über 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten müssen homogen sein."),
                    str_c("Ein ", variable_vec, " Modell schliesst grundsätzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden." ),
-                   str_c("Ein ", variable_vec, " Modell wird auf einem Trainingsdatensatz trainiert und anschliessend über eine explorative Datenanalyse validiert. Signifikanzen über $\\beta_i$ können hier nicht festgestellt werden.")) %>%
-  sample(4)
+                   str_c("Ein ", variable_vec, " Modell wird auf einem Trainingsdatensatz trainiert und anschliessend über eine explorative Datenanalyse validiert. Signifikanzen über $\\beta_i$ können hier nicht festgestellt werden."),
+                 str_c('Wir modellieren den Zusammenhang zwischen $X$ und $Y$ wenn ein ', variable_vec, ' Modell rerechnet wird. Dabei kann nicht der gesamte Datensatz genutzt werden. Es wird ein Trainingsdatensatz zum Trainieren des Modells benötigt.'),
+                 str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll dann kann dies auf dem gesamten Datensatz geschehen. Das Ziel ist es einen Zusammenhang von $X$ auf $Y$ zu modellieren. Wie wirken sich die Einflussvariablen $Y$ auf die gemessenen Endpunkte $X = x_1, ..., x_p$ aus?'),
+                str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll, dann muss zum einen ein Traingsdatensatz sowie ein Testdatensatz definiert werden. Dabei ist der Trainingsdatensatz meist 1/10 und der Testdatensatz 1/3 der Fallzahl groß. Der Testdatensatz dient zur Validierung.'),
+                 str_c('Es wird ein Trainingsdatensatz zum Modellieren des Trainingsmodells benötigt. Der Testdatensatz dient rein zur Visualisierung. Dies gilt vor allem für ein ', variable_vec, ' Modell.')) %>%
+  sample(3)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec, 
                    wrong_vec) %>%
   sample
 

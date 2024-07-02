@@ -2,10 +2,9 @@
 
 <<>>=
 
-ques_vec <- c('Sie rechnen in eine linearen Regression und erhalten folgenden QQ
-Plot. Welche Aussage ist richtig?',
-              '',
-              '') |>  sample(1)
+ques_vec <- c('Sie rechnen in eine linearen Regression und erhalten folgenden QQ Plot um die Annahme der normalverteilten Residuen zu überprüfen. Welche Aussage ist richtig?',
+              'Nach der Modellierung einer Regression stellt sich die Frage, ob die Residuen approximatic einer Normalverteilung folgen. Sie können einen QQ-Plot für die visuelle Überprüfung der Annahme an die Residuen nutzen. Welche Aussage ist riechtig?',
+              'Nach einer Regressions sollten die Residuen normalverteilt sein. Was bei einer simplen Regression noch relativ einfach visuell in einem Scatterplot zu überprüfen ist. Für komplexere Modell liefert der QQ-Plot die notwendigen Informationen über die Normalverteilung. Welche Aussage ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -13,14 +12,15 @@ Plot. Welche Aussage ist richtig?',
 <<mc-regression-05-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
 
 
-data_tbl <- tibble(y_1 = rt(500, df = 5),
-                   y_2 = rnorm(500, mean = 0, sd = 1)) %>%
-  select(sample(c("y_1", "y_2"), 1)) %>%
+data_tbl <- tibble(y_1 = rt(500, df = 1),
+                   y_2 = rnorm(500, mean = 0, sd = 1),
+                   y_3 = rexp(500, rate = 1)) %>%
+  select(sample(c("y_1", "y_2", "y_3"), 1)) %>%
   set_names("y")
 
 
 ggplot(data_tbl, aes(sample = y)) +
-  stat_qq() + stat_qq_line(color = "red") +
+  stat_qq() + stat_qq_line(color = "black") +
     theme_minimal() 
 
 
@@ -29,17 +29,25 @@ ggplot(data_tbl, aes(sample = y)) +
 
 <<mc-regression-05-b, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Geraden.',
-               '',
-               '') |> sample(1)
+right_1_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Geraden.',
+               'Wir betrachten die Gerade. Wenn die Punkte einigermaßen gleichmäßig um die Gerade verteilt liegen, dann gehen wir von normalverteilten Residuen aus. Wir können hier von normalverteilten Residuen ausgehen.',
+               'Wir betrachten die Gerade und dabei insbesondere die beiden Enden der Gerade. Hier sollten die Punkte auf der Geraden liegen, dann ist die Annahme an die Normalverteilung der Residuen erfüllt.') |> sample(1)
+
+right_2_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden.',
+               'Wir betrachten die Gerade. Wenn die Punkte einigermaßen gleichmäßig um die Gerade verteilt liegen, dann gehen wir von normalverteilten Residuen aus. Dies ist hier nicht der Fall. Wir haben keine normalverteilten Residuen vorliegen.',
+               'Wir betrachten die Gerade und dabei insbesondere die beiden Enden der Gerade. Hier sollten die Punkte auf der Geraden liegen, dann ist die Annahme an die Normalverteilung der Residuen erfüllt. Diese Annahme ist nicht erfüllt.') |> sample(1)
 
 wrong_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden.',
                    'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden.',
                    'Die Annahme der normalverteilten Residuen ist nicht erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Geraden.',
-                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden und Korrelation ist negativ.') %>%
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden und Korrelation ist negativ.',
+               'Wir betrachten die Punkte. Wenn die Punkte einigermaßen gleichmäßig verteilt liegen, dann gehen wir von normalen Residuen aus.',
+               'Wir betrachten insbesondere die beiden Enden der Gerade. Der Rest ist mehr oder minder egal, dann ist die Annahme an die Normalverteilung der Residuen erfüllt.',
+               'Wir betrachten die Gerade, die durch die einzelnen Punkte laufen sollte. Wenn die 95\\% der Punkte von der Geraden getroffen werden, dann gehen wir von normalverteilten Residuen aus.',
+               'Wir betrachten die Gerade und dabei insbesondere die beiden Enden der Gerade in dem IQR, also dem ersten und dritten Quartile. Hier sollten die Punkte auf der Geraden liegen, dann ist die Annahme an die Normalverteilung der Residuen erfüllt.') %>%
   sample(4)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
 
