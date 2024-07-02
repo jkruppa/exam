@@ -12,7 +12,7 @@ ques_vec <- c(str_c('Die folgende Abbildung enthält die Daten aus einer Studie 
 
 \Sexpr{ques_vec}
 
-<<mc-testing-ttest-02, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+<<mc-testing-ttest-02, results='asis', echo = FALSE, fig.height = 2, fig.width = 3, fig.align = "center", message = FALSE>>=
 pacman::p_load(ggpattern)
 
 data_tbl <- tibble(mean = sample(c(10, 12, 15, 17, 18, 20), 2),
@@ -24,7 +24,7 @@ ggplot(data_tbl, aes(x = dose, y = mean, fill = dose)) +
   geom_errorbar(aes(ymin = mean-round(sd(data_tbl$mean)), ymax = mean+round(sd(data_tbl$mean))),
                 width = 0.2, position = position_dodge(0.5)) +
   theme_minimal() +
-  labs(y = "Ertrag in Trockenmasse [t/ha]", x = "Behandlung mit Mikronährstoff",
+  labs(y = "Ertrag [t/ha]", x = "Behandlung mit Mikronährstoff",
        color = "", shape = "", linetype = "") +
   ylim(0, NA) +
   geom_col_pattern(

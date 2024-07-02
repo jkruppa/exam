@@ -10,14 +10,14 @@ ques_vec <- c(str_c('In dem folgenden Histogramm von $n = ', n_plant,  '$ Pflanz
 
 \Sexpr{ques_vec}
 
-<<mc-distribution-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 5, fig.align = "center", message = FALSE>>=
+<<mc-distribution-02-a, results='asis', echo = FALSE, fig.height = 2, fig.width = 5, fig.align = "center", message = FALSE>>=
 
 mean_vec <- sample(c(2,5,10), 1)
 data_vec <- list(pois = rpois(n = 200, mean_vec),
                  norm = rnorm(n = 200, mean = mean_vec, sd = 5))[sample(1:2, 1)]
 data_tbl <- tibble(x = data_vec[[1]])
 ggplot(data_tbl, aes(x)) + geom_histogram() + 
-  xlab("X") + ylab("Count") +
+  xlab("") + ylab("") +
   theme_minimal() 
 @
 
@@ -39,7 +39,7 @@ wrong_vec <- c('Es handelt sich um eine Binomial-Verteilung.',
                'In dem Histogramm ist eine Ordinalverteilung dargestellt.')  %>%
   sample(3)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
 

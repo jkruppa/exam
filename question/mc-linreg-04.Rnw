@@ -2,11 +2,10 @@
 
 
 <<mc-corr-01a, results='markup', echo = FALSE>>=
-corr_type <- c("Pearson", "Kendall", "Spearman") %>% sample(1)
 
-ques_vec <- c(str_c('Welche Aussage über den Korrelationskoeffizienten nach ', corr_type, ' ist richtig?'),
-              '',
-              '') |>  sample(1)
+ques_vec <- c('Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
+              'Sie berechnen in Ihgrer Abschlussarbeit den Korrelationskoeffizienten $\\rho$. Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
+              'In den Humanwissenschaften wird der Korrelationskoeffizienten $\\rho$ sehr häufig verwendet. Daher ist es auch wichtig für andere Forschende den Korrelationskoeffizienten $\\rho$ zu verstehen. Welche Aussazu zu dem Korrelationskoeffizienten $\\rho$ ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -14,21 +13,16 @@ ques_vec <- c(str_c('Welche Aussage über den Korrelationskoeffizienten nach ', 
 
 <<mc-corr-01b, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
-               '',
-               '') |> sample(1)
+right_vec <- c('Der Korrelationskoeffizienten $\\rho$ liegt zwischen -1 und 1. Darüber hinaus ist der Korrelationskoeffizienten $\\rho$ einheitslos und kann als standardisierte Steigung verstanden werden.',
+               'Der Korrelationskoeffizienten $\\rho$ ist eine standardisierte, statistische Maßzahl, die zwischen -1 und 1 liegt. Dabei ist Korrelationskoeffizienten $\\rho$ einheitslos.',
+               'Der Korrelationskoeffizienten $\\rho$ zeigt keinen Zusammenhang zwischen zwei Variablen $x$ und $y$ bei einem Wert von 0. Einen maximalen negativen Zusammenhang bei -1 und somit auch einen maximalen positiven Zusammenhang bei 1. Korrelationskoeffizienten $\\rho$ ist einheitslos.') |> sample(1)
 
-wrong_vec <- c(str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen -1 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn das Outcome Y nicht normalverteilt ist. Der Korrelationskoeffizienten liegt zwischen 0 und 1.'),
-                   str_c('Der Korrelationskoeffizienten nach ', corr_type,
-                         ' wird genutzt, wenn der Korrelationskoeffizienten zwischen -1 und 1 liegt. Dann sind die Residuen normalverteilt.')
-) %>%
+wrong_vec <- c('Korrelationskoeffizienten $\\rho$ liegt zwischen 0 und 1. Darüber hinaus ist der Korrelationskoeffizienten $\\rho$ einheitslos und kann als Standardisierung verstanden werden.',
+               'Der Korrelationskoeffizienten $\\rho$ ist eine standardisierte, statistische Maßzahl, die zwischen 0 und 1 liegt. Dabei ist Korrelationskoeffizienten $\\rho$ einheitslos. Eine Signifikanz kann nicht nachgewiesen werden.',
+               'Der Korrelationskoeffizienten $\\rho$ zeigt keinen Zusammenhang zwischen zwei Variablen $x$ und $y$ bei einem Wert von 0. Einen negativen Zusammenhang Richtung -1 und somit auch einen positiven Zusammenhang Richtung 1. Je größer die Zahl allgemein, desto stärker der Effekt.',
+               'Der Korrelationskoeffizienten $\\rho$ ist eine veraltete Darstellungsform von Effekten in der linearen Regression und wird wie das $\\eta^2$ aus der ANOVA interpretiert. Der Korrelationskoeffizienten $\\rho$ beschreibt den Anteil an erklärter Varianz durch die Regression.',
+               'Der Korrelationskoeffizienten $\\rho$ wird wie das $\\eta^2$ aus der ANOVA interpretiert. Der Korrelationskoeffizienten $\\rho$ beschreibt den Anteil an erklärter Varianz durch die Regression. Dabei gibt er jedoch eine Richtung an und kann auch negativ werden.',
+               'Der Korrelationskoeffizienten $\\rho$ liegt zwischen -1 und 1. Darüber hinaus ist der Korrelationskoeffizienten $\\rho$ als standardisierte Steigung zu verstehen, wenn eine Standardisierung durchgeführt wurde. Diese Adjustierung nach Fischer muss am Anschluß der Berechnung der Korrelation durchgeführt werden.') %>%
   sample(4)
 
 questions_vec <- c(right_vec,

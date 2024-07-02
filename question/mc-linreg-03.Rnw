@@ -2,23 +2,25 @@
 
 <<>>=
 
-ques_vec <- c('Sie rechnen eine linearen Regression und erhalten folgenden Residual
-Plot. Welche Aussage ist richtig?',
-              '',
-              '') |>  sample(1)
+ques_vec <- c('Sie rechnen eine linearen Regression und erhalten folgende Abbildung der Residuen (\\texttt{.resid}). Welche Aussage ist richtig?',
+              'Nach der Modellierung einer Regression stellt sich die Frage, ob die Residuen (\\texttt{.resid}) gleichmäßig um die gefitte Gerade liegen. Sie können folgende Abbildung für die visuelle Überprüfung der Residuen nutzen. Welche Aussage ist richtig?',
+              'Nach einer Regressions sollten die Residuen (\\texttt{.resid}) gleichmäßig um die Gerade verortet sein. Was bei einer simplen Regression noch relativ einfach visuell in einem Scatterplot zu überprüfen ist. Für komplexere Modell liefert der Residual Plot die notwendigen Informationen. Welche Aussage ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
+<<mc-regression-06-a, results='asis', echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 
-
-
-<<mc-regression-06-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
-
-n <- rpois(1, 100)
+n <- rpois(1, 20)
 data_tbl <- tibble(x = 1:n,
-                   y_1 = rnorm(n, 0, 1)) %>%
+                   y_1 = rnorm(n, 0, 1),
+                   y_2 = rexp(n, rate = 1),
+                   y_3 = rexp(n, rate = 5),
+                   y_4 = c(rnorm(n-3, 0, 1), rnorm(3, 5, 4)),
+                   y_5 = c(rexp(n-3, rate = 1), rexp(3, 5))) %>%
+  select(x, sample(c("y_1", "y_2", "y_3", "y_4", "y_5"), 1)) %>%
   set_names(c("x", "y"))
+
 
 mod <- lm(y ~ x, data_tbl)
 df <- augment(mod)
@@ -31,17 +33,23 @@ ggplot(df, aes(x = .fitted, y = .resid)) +
 
 <<mc-regression-06-b, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
-               '',
-               '') |> sample(1)
+right_1_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
+               'Wir betrachten die Nulllinie und alle Punkte sollten ohne Muster gleichmäßig um die Nulllinie liegen. Da dies der Fal ist, gehen wir von keinen Ausreißern aus.',
+               'Wenn die Punkte gleichmäßig in dem positiven wie auch negativen Bereich ohne ein klares Muster liegen, dann hat unsere Modellierung geklappt. Wir können mit dem Modell weitermachen.') |> sample(1)
+
+right_2_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Ein klares Muster ist zu erkennen und/oder einige Outlier sind zu beobachten.',
+               'Wenn wir die Nulllinie betrachten so liegen die Punkte nicht gleichmäßig über und unter der Nulllinie. Unser Modell erfüllt nicht die Annahme von normalverteilten Residuen mit einem Mittelwert von 0 und einer Streuung von $s^2$.',
+               'Die Punkte müssen gleichmäßig, mit ähnlichen Abständen, in dem positiven wie auch negativen Bereich liegen. Dies ist hier klar nicht der Fall. Einzelne Ausreißer können beobachtet werden. Wir können mit dem Model so nicht rechnen und müssen erst die auffälligen Werte gesondert betrachten.') |> sample(1)
 
 wrong_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.',
-                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Diagonalen.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Diagonalen. Damit ist das Modell erfolgreich geschätzt worden.',
                    'Die Annahme der normalverteilten Residuen ist nicht erfüllt. Es ist kein Muster zu erkennen.',
-                   'Die Annahme der normalverteilten Residuen ist erfüllt. Es ist ein Muster zu erkennen.') %>%
-  sample(4)
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Es ist ein Muster zu erkennen und wir können damit auf die Signifkanz von $x_1, ..., x_p$ schließen.',
+               str_c('Wenn wir die Nulllinie betrachten so müssen die Punkte gleichmäßig ', sample(c("über", "unter"), 1),' der Nulllinie liegen. Unser Modell erfüllt somit nicht die Annahme von normalverteilten Residuen mit einem Mittelwert von $>0$ und einer Streuung von $s$.'),
+               str_c('Die Punkte müssen gleichmäßig in dem ', sample(c("positiven", "negativen"), 1),' Bereich liegen. Dies ist hier klar nicht der Fall. Einzelne Ausreißer können beobachtet werden. Die Analyse ist gescheitert.')) %>%
+  sample(3)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
 

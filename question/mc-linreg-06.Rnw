@@ -2,11 +2,9 @@
 
 <<>>=
 
-ques_vec <- c('In einer linearen Regression werden die $\\epsilon$ oder Residuen
-geschätzt. Welcher Verteilung folgen die Residuen bei einer optimalen
-Modellierung?',
-              '',
-              '') |>  sample(1)
+ques_vec <- c('Neben der klassischen Regression kann die Funktion \\texttt{lm()} in \\Rlogo auch für welche andere Art von Anwendung genutzt werden?',
+              'Nachdem Sie Ihr Experiment abgeschlossen haben, stehen Sie vor der Frage wie Sie Ihre Daten modellieren sollen. In der Beispielauswertung von Ihrem Betreuenden finden Sie die Funktion \\texttt{lm()} in \\Rlogo. Welche Aussage ist richtig?',
+              'Sie wollen nach der explorativen Datenanalyse (EDA) Ihre Daten in der Abschlussarbeit auswerten. Nach einiger Rechereche finden Sie heraus, dass Sie zuerst die Daten mit der Funktion \\texttt{lm()} in \\Rlogo modellieren müssen. Welche Anwendung folgt drauf?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -15,14 +13,16 @@ Modellierung?',
 
 <<mc-regression-02, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(0, s^2)$.',
-               '',
-               '') |> sample(1)
+right_vec <- c('Die Funktion \\texttt{lm()} in \\Rlogo wird klassischerweise für die lineare Regression genutzt. Ist die Einflussvariable $X$ ein Faktor so werden die Gruppenmittelwerte geschätzt und eine anschließende ANOVA sowie multipler Gruppenvergleich mit \\{emmeans\\} ist möglich.',
+               'Ist die Einflussvariable $X$ ein Faktor so werden die Gruppenmittelwerte geschätzt und eine anschließende ANOVA sowie multipler Gruppenvergleich mit \\{emmeans\\} ist möglich. Dennoch muss zuerst ein lineares Modell mit der Funktion \\texttt{lm()} in \\Rlogo gerechnet werden.',
+               'Die Funktion \\texttt{lm()} in \\Rlogo ist der erste Schritt für einen Gruppenvergleich. Danach kann eine ANOVA oder aber ein multipler Vergleich in \\{emmeans\\} gerechnet werden. In der Funktion  \\texttt{lm()} werden die Gruppenmittelwerte bestimmt.') |> sample(1)
 
-wrong_vec <- c('Die Residuen sind normalverteilt mit $\\mathcal{N}(\\bar{y}, s^2)$.',
-                   'Die Residuen sind normalverteilt mit $\\mathcal{N}(0, 1)$.',
-                   'Die Residuen sind binomialverteilt.',
-                   'Die Residuen folgen einer Poissonverteilung.') %>%
+wrong_vec <- c('Die Funktion \\texttt{lm()} in \\Rlogo wird klassischerweise für die nicht-lineare Regression genutzt. Ist die Einflussvariable $X$ numerisch so werden die Gruppenmittelwerte geschätzt.',
+               'Ist die Einflussvariable $X$ ein Faktor so werden die Gruppenmittelwerte geschätzt und eine anschließende ANOVA sowie multipler Gruppenvergleich mit \\{emmeans\\} ist möglich. Die Funktion \\texttt{lm()} kann dabei eigentlich weggelassen werden, wird aber traditionell gerechnet.',
+               'Die Funktion \\texttt{lm()} in \\Rlogo ist der letzte Schritt für einen Gruppenvergleich. Vorher kann eine ANOVA oder aber ein multipler Vergleich in \\{emmeans\\} gerechnet werden. In der Funktion  \\texttt{lm()} werden die Gruppenvarianzen bestimmt.',
+               'Die Funktion \\texttt{lm()} berechnet die Varianzstruktur für eine ANOVA. Dannach kann dann über eine explorative Datenalayse nochmal eine Signifikanz berechnet werden. Sollte vor der Verwendung der Funktion \\texttt{lm()} schon eine EDA gerechnet worden sein, so ist die Analyse wertlos.',
+               'Neben der klassichen Verwendung der Funktion \\texttt{lm()} in der linearen Regression kann auch ein Gruppenvergleich gerechnet werden. Dafür müssen aber alle Faktoren aus den Daten entfernt und numerishc umgewandelt werden. Dann kann das R Paket \\{emmeans\\} genutzt werden um die Korrelation zu berechnen. Eine Adjustierung ist dann nicht mehr notwendig.',
+               'Ist die Einflussvariable $X$ numerisch so werden die Gruppenmittelwerte geschätzt und eine anschließende ANOVA sowie multipler Gruppenvergleich mit \\{emmeans\\} ist möglich.') %>%
   sample(4)
 
 questions_vec <- c(right_vec,

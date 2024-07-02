@@ -12,7 +12,7 @@ ques_vec <- c(str_c('Die folgende Abbildung enthält die Daten aus einer Studie 
 
 \Sexpr{ques_vec}
 
-<<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+<<mc-anova-02-a, results='asis', echo = FALSE, fig.height = 2.25, fig.width = 3, fig.align = "center", message = FALSE>>=
 pacman::p_load(ggpattern)
 
 data_tbl <- tibble(mean = sample(c(10, 15, 20, 22, 25, 30)),

@@ -3,13 +3,13 @@
 <<>>=
 
 ques_vec <- c('Sie rechnen in eine linearen Regression und erhalten folgenden QQ Plot um die Annahme der normalverteilten Residuen zu überprüfen. Welche Aussage ist richtig?',
-              'Nach der Modellierung einer Regression stellt sich die Frage, ob die Residuen approximatic einer Normalverteilung folgen. Sie können einen QQ-Plot für die visuelle Überprüfung der Annahme an die Residuen nutzen. Welche Aussage ist riechtig?',
+              'Nach der Modellierung einer Regression stellt sich die Frage, ob die Residuen approximativ einer Normalverteilung folgen. Sie können einen QQ-Plot für die visuelle Überprüfung der Annahme an die Residuen nutzen. Welche Aussage ist richtig?',
               'Nach einer Regressions sollten die Residuen normalverteilt sein. Was bei einer simplen Regression noch relativ einfach visuell in einem Scatterplot zu überprüfen ist. Für komplexere Modell liefert der QQ-Plot die notwendigen Informationen über die Normalverteilung. Welche Aussage ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
-<<mc-regression-05-a, results='asis', echo = FALSE, fig.height = 3, fig.width = 3, fig.align = "center", message = FALSE>>=
+<<mc-regression-05-a, results='asis', echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 
 
 data_tbl <- tibble(y_1 = rt(500, df = 1),

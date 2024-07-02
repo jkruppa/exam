@@ -2,9 +2,16 @@
 
 <<>>=
 
-ques_vec <- c(str_c('Nach einer simplen linearen Regression zur Untersuchung vom Einfluss der $CO_2$-Konzentration [$\\mu g$] im Wasser auf das Wachstum von Wasserlinsen [$kg$] erhalten Sie einen $\\beta_1$ Koeffizienten von $0.00001$ und einen hoch signifikanten $p$-Wert mit $2.3\\cdot 10^{-9}$. Warum sehen Sie so einen kleinen Effekt bei einer so deutlichen Signifikanz?'),
-              '',
-              '') |>  sample(1)
+plant <- c("Wasserlinsen", "Spitzkohl", "Brokkoli", "Erbsen") |> sample(1)
+x_var <- c("CO_2", "Fe_3O_4", "PO_2", "NO_3") |> sample(1)
+y_var <- c("das Wachstum", "das Trockengewicht", "den absoluten Proteingehalt") |> sample(1)
+p_val <- c(0.00010, 0.00032, 0.00051, 0.00020) |> sample(1)
+coef_val <- c("2.3\\times 10^{-9}", "7.4\\times 10^{-6}",
+              "1.1\\times 10^{-5}", "6.9\\times 10^{-7}") |> sample(1)
+
+ques_vec <- c(str_c('Nach einer simplen linearen Regression zur Untersuchung vom Einfluss der $', x_var, '$-Konzentration in [$\\mu g$] im Wasser auf ', y_var, ' von ', plant, ' in [$kg$] erhalten Sie einen $\\beta_{', x_var, '}$ Koeffizienten von $', coef_val, '$ und einen hoch signifikanten $p$-Wert mit $', p_val, '$. Warum sehen Sie so einen kleinen Effekt bei einer so deutlichen Signifikanz?'),
+              str_c('Sie haben ein Feldexperiment mit ', plant, ' durchgeführt und wollen nun in einer simplen linearen Regression den Einfluss der $', x_var, '$-Konzentration in [$\\mu g$] im Wasser auf ', y_var, ' in [$kg$] untersuchen. Sie erhalten einen $\\beta_{', x_var, '}$ Koeffizienten von $', coef_val, '$ und einen $p$-Wert mit $', p_val, '$. Welche Aussage zu der Signifikanz und dem Effekt ist richtig?'),
+              str_c('In einer lineren Regression kann es vorkommen, dass der Effekt repräsentiert durch den $\\beta$ Koeffizienten nicht so richtig von der Größenordnung zu dem p-Wert passen will. So liefert eine Untersuchung des Einflusses von der $', x_var, '$-Konzentration in [$\\mu g$] im Wasser auf ', y_var, ' in [$kg$] an ', plant, ' folgende Effekte und p-Werte: $', p_val, '$ als p-Wert und einen $\\beta_{', x_var, '}$ Koeffizienten von $', coef_val, '$. Welche Aussage ist richtig?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -12,15 +19,16 @@ ques_vec <- c(str_c('Nach einer simplen linearen Regression zur Untersuchung vom
 
 <<mc-distribution-01, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Annahme der normalverteilten Residuen ist erf{\"u}llt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
-               '',
-               '') |> sample(1)
+right_vec <- c(str_c('Die Einheit der $', x_var, '$-Konzentration ist zu klein gewählt. Die Erhöhung der $', x_var, '$-Konzentration um 1 Einheit führt nur zu einem sehr winzigen Anstieg von $\\beta_{', x_var, '}$ im Gewicht der Wasserlinsen. Die Einheit [$\\mu g$] muss besser gewählt werden.'),
+               str_c('Manchmal ist die Einheit der Einflussvariable $X$ zu klein gewählt, so dass der Ansteig von 1 Einheit in $X$ zu einer zu kleinen Änderung in $y$ führt. Daher kann der Effekt $\\beta_{', x_var, '}$ sehr klein wirken, aber auf einer anderen Einheit sehr viel größer sein. Der p-Wert wird auf einer einheitslosen Teststatistik bestimmt.'),
+               str_c('Wenn der Effekt $\\beta_{', x_var, '}$ sehr klein ist, dann kann es an einer falsch gewählten Einheit liegen. Der Anstieg von einer Einheit in $X$ führt ja zu einer Änderung von $\\beta_{', x_var, '}$ in $y$. Daher ist hier mit einer anderen Einheit in den Daten zu rechnen, so dass wir hier einen besser formatierten Effekt sehen. Der p-Wert stammt aus einer einheitslosen Teststatistik.')) |> sample(1)
 
-wrong_vec <- c("Die Einheit der $CO_2$-Konzentration ist zu klein gewählt. Die Erh öhung der $CO_2$-Konzentration um 1 führt nur zu einem sehr winzigen Anstieg im Gewicht der Wasserlinsen. Die Einheit muss besser gewählt werden.",
-                   "Die Einheit der $CO_2$-Konzentration ist zu klein gewählt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $CO_2$-Konzentration hängen zusammen.",
-                   "Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto h öher ist die Teststatsitik und damit auch der $p$-Wert kleiner. ",
-                   "Die Fallzahl ist zu hoch angesetzt. Je h öher die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein.",
-                   "Das Gewicht und die $CO_2$-Konzentration korrelieren sehr stark, deshalb wird der $\\beta_1$ Koeffizient sehr klein.") %>%
+wrong_vec <- c(str_c('Die Einheit der $', x_var, '$-Konzentration ist zu klein gewählt. Dadurch sehen wir den sehr kleinen $p$-Wert. Der $p$-Wert und die Einheit von der $', x_var, '$-Konzentration hängen antiproportional zusammen.'),
+                   "Die Fallzahl ist zu klein angesetzt. Je kleiner die Fallzahl ist, desto höher ist die Teststatsitik und damit auch der $p$-Wert kleiner. Wir brauchen also mehr Fallzahl um den geringen Effekt noch signifikant zu krigen.",
+                   "Die Fallzahl ist zu hoch angesetzt. Je höher die Fallzahl ist, desto kleiner ist die Teststatistik und damit ist dann auch der $p$-Wert sehr klein. Es sollte über eine Reduzierung der Fallzahl nachgedacht werden. Dann sollte der Effekt zum p-Wert passen.",
+                   str_c('Das Gewicht und die $', x_var, '$-Konzentration korrelieren sehr stark, deshalb wird der $\\beta_{', x_var, '}$ Koeffizient sehr klein. Mit einer ANOVA kann für die Korrelation korrigiert werden und der Effektschätzer passt dann zum p-Wert.'),
+               str_c('Wenn der Effekt $\\beta_{', x_var, '}$ winzig ist, dann kann es an einer falsch gewählten Einheit liegen. Der Anstieg von einer Einheit in $X$ führt ja zu einer Änderung von $\\beta_{', x_var, '}$ in $x$. Wir müssen daher die Einheit von $y$ entsprechend anpassen.'),
+               str_c('Manchmal ist die Einheit der Einflussvariable $X$ zu groß gewählt, so dass der Ansteig von 1 Einheit in $X$ zu einer zu großen Änderung in $y$ führt. Daher kann der Effekt $\\beta_{', x_var, '}$ sehr klein wirken, da der p-Wert wird auf einer einheitslosen Teststatistik bestimmt wird.')) %>%
   sample(4)
 
 questions_vec <- c(right_vec,
