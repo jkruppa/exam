@@ -23,7 +23,7 @@ outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
   sample(1) |> 
   set_names("pflanze")
-animal <- c("Puten", "Schweine", "Flesichrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
+animal <- c("Puten", "Schweine", "Fleischrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
   sample(1) |> 
   set_names("tier")
 obser <- c(plant, animal) |> sample(1)
@@ -47,12 +47,15 @@ cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
                     "die Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
   sample(1)
 
-count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(30, 27, 33), 1), 4), collapse = ", ")) |> 
-  str_replace("^die ", "")
+count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(30, 33, 36), 1), 4), collapse = ", ")) |> 
+  str_replace("^die ", "Die ")
 limit <- c(4, 5, 6) %>% sample(1)
 lim_word <- c("gleich oder mehr", "mehr") %>% sample(1)
 
-ques_vec <- str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ".")
+ques_vec <- c(str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, "."), 
+              str_c("In einem Gespräch mit ", betreuer, " wird ", name, " gebeten seine Daten aus ", exp, " mit ", obser, " in einem Histogramm darzustellen. In ", pronom[1], " Experiment hat er ",  cnt, " erst fotographiert und dann ausgezählt. Laut ", betreuer, " soll das Histogramm helfen, die Verteilung der ", cnt, " zu bestimmen."),
+              str_c("In ", project, " möchte ", name, " gerne die Daten aus ", exp, " mit ", obser, " in einem Histogramm darstellen. Das Histogramm erlaubt ", pronom[4], " dabei Rückschlüsse auf die Verteilung über ", outcome_name, " zu treffen. In seinem Experiment hat ", name, " ",  cnt, " gezählt.")) |> 
+  sample(1)
 
 @
 
@@ -70,10 +73,10 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt ni
 \item Ergänzen Sie die absoluten und relativen Häufigkeiten in der
   Abbildung! \textbf{(1 Punkt)}
 \item Berechnen Sie aus den Daten die \textit{Wahrscheinlichkeit}
-  \Sexpr{lim_word} als \Sexpr{limit} Läsionen zu beobachten! \textbf{(1
+  \Sexpr{lim_word} als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1
     Punkt)}
 \item Berechnen Sie aus den Daten die \textit{Chance} \Sexpr{lim_word}
-  als \Sexpr{limit} Läsionen zu beobachten! \textbf{(1 Punkt)}
+  als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1 Punkt)}
 \end{enumerate}
 
 

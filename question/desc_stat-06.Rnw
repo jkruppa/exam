@@ -13,8 +13,8 @@ name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
           "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
   set_names(c("sie", "sie", "sie", "sie", "sie",
               "er", "er", "er", "er", "er")) |> sample(1)
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
@@ -23,7 +23,7 @@ outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
   sample(1) |> 
   set_names("pflanze")
-animal <- c("Puten", "Schweine", "Flesichrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
+animal <- c("Puten", "Schweine", "Fleischrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
   sample(1) |> 
   set_names("tier")
 obser <- c(plant, animal) |> sample(1)
@@ -37,20 +37,23 @@ exp <- lst(pflanze = c("einem Gewächshausexperiment",
                     "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
-                       "die Mehltauspots",
-                       "die seltsamen Verdickungen",
-                       "die Knötchen"),
-           tier = c("die auffälligen Hautflecken", 
-                    "die dunklen Pigmentstörungen",
-                    "die Anzahl an weißen Blutkörperchen",
-                    "die Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
+cnt <- lst(pflanze = c("die mittleren Läsionen auf den Blättern",
+                       "die mittleren Mehltauspots",
+                       "die mittleren seltsamen Verdickungen",
+                       "die mittleren Knötchen"),
+           tier = c("die mittleren auffälligen Hautflecken", 
+                    "die mittleren dunklen Pigmentstörungen",
+                    "die mittlere Anzahl an weißen Blutkörperchen",
+                    "die mittlere Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
   sample(1)
 
-cont_vec <- str_c(cnt, ": ", str_c(round(rnorm(sample(c(20, 23, 17), 1), 10, 2), 1), collapse = ", ")) |> 
-  str_replace("^die ", "")
+count_vec <- str_c(cnt, ": ", str_c(round(rnorm(sample(c(25, 28, 22), 1), 10, 2), 1), collapse = ", ")) |> 
+  str_replace("^die ", "Die ")
 
-ques_vec <- str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ".")
+ques_vec <- c(str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, "."), 
+              str_c("In einem Gespräch mit ", betreuer, " wird ", name, " gebeten seine Daten aus ", exp, " mit ", obser, " in einem Histogramm darzustellen. In ", pronom[1], " Experiment hat er ",  cnt, " erst fotographiert und dann ausgezählt. Laut ", betreuer, " soll das Histogramm helfen, die Verteilung der ", cnt, " zu bestimmen."),
+              str_c("In ", project, " möchte ", name, " gerne die Daten aus ", exp, " mit ", obser, " in einem Histogramm darstellen. Das Histogramm erlaubt ", pronom[4], " dabei Rückschlüsse auf die Verteilung über ", outcome_name, " zu treffen. In seinem Experiment hat ", name, " ",  cnt, " gezählt.")) |> 
+  sample(1)
 
 @
 
