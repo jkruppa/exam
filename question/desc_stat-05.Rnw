@@ -1,65 +1,79 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/0xc0jIPeiyw}{\includegraphics[width =
+\hfill\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-exp <- c("einem Gew{\"a}chshausexperiment",
-         "einem Freilandversuch",
-         "einem Versuch in einer Klimakammer",
-         "einem Feldexperiment") %>% sample(1)
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-type <- c("D{\"u}ngestufen ($ctrl$ und $high$)",
-          "Lichtstufen ($none$ und $600lm$)",
-          "L{\"u}ftungssystemen und Folientunneln ($ctrl$ und $tornado$)",
-          "Substrattypen ($torf$ und $70p30n$)",
-          "Bew{\"a}sserungstypen ($low$ und $high$)",
-          "Genotypen ($AA$ und $BB$)") %>% sample(1)
-groups_vec <- type %>% 
-  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
-  str_subset("\\$") %>% 
-  str_replace_all("\\$", "")
-gen_data <- function(...){
-  n_vec <- c(7:10) %>% sample(1)
-  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
-  sd_vec <- c(4:8) %>% sample(1)
-  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
-    mutate(temp = round(temp, 1)) %>% 
-    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
-    gather
-  return(temp_tbl)
-}
-@ 
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
 
-Nach \Sexpr{exp} mit zwei \Sexpr{type} als Behandlung
-(\textit{treatment}) ergibt sich die folgende Datentabelle mit dem
-gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
+  sample(1) |> 
+  set_names("pflanze")
+animal <- c("Puten", "Schweine", "Flesichrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
+  sample(1) |> 
+  set_names("tier")
+obser <- c(plant, animal) |> sample(1)
 
-<<boxplot-01, results='asis', echo = FALSE>>=
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%  
-  set_names(c("treatment", "drymatter")) %>%
-  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
-  sample_n(size = nrow(.))
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
 
-kable(data_tbl, booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
+cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
+                       "die Mehltauspots",
+                       "die seltsamen Verdickungen",
+                       "die Knötchen"),
+           tier = c("die auffälligen Hautflecken", 
+                    "die dunklen Pigmentstörungen",
+                    "die Anzahl an weißen Blutkörperchen",
+                    "die Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
+  sample(1)
+
+count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(30, 27, 33), 1), 4), collapse = ", ")) |> 
+  str_replace("^die ", "")
+limit <- c(4, 5, 6) %>% sample(1)
+lim_word <- c("gleich oder mehr", "mehr") %>% sample(1)
+
+ques_vec <- str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ".")
+
 @
 
+\Sexpr{ques_vec}
+
+\begin{center}
+\Sexpr{count_vec}
+\end{center}
+
+Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 \begin{enumerate}
-\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots f{\"u}r die
-  zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
-  \textbf{(5 Punkte)} 
-\item Wie ist Ihr Vorgehen, wenn Sie eine \textit{gerade} Anzahl an
-  Beobachtungen pro Gruppe haben? \textbf{(1 Punkt)}
-\item Beschriften Sie \textit{einen} der beiden Boxplots mit den g{\"a}ngigen
-  statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
-  \Sexpr{plant} erwarten w{\"u}rden, wie sehen dann die beiden Boxplots aus?
-  \textit{Antworten Sie mit einer Skizze der Boxplots!}
-  \textbf{(1 Punkt)}
+\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
+\item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
+\item Ergänzen Sie die absoluten und relativen Häufigkeiten in der
+  Abbildung! \textbf{(1 Punkt)}
+\item Berechnen Sie aus den Daten die \textit{Wahrscheinlichkeit}
+  \Sexpr{lim_word} als \Sexpr{limit} Läsionen zu beobachten! \textbf{(1
+    Punkt)}
+\item Berechnen Sie aus den Daten die \textit{Chance} \Sexpr{lim_word}
+  als \Sexpr{limit} Läsionen zu beobachten! \textbf{(1 Punkt)}
 \end{enumerate}
+
+

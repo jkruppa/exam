@@ -1,33 +1,92 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (7 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/oMdtYbDInYE}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\hfill\href{https://youtu.be/t0WYa_LVc5o}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Sie haben folgende Zahlenreihe $y$ vorliegen
-$y = \{\Sexpr{round(rnorm(n = sample(c(5,6,7), 1), mean = sample(c(15, 17,
-  19), 1), sd = sample(c(2, 3, 4), 1)))}\}$.
+<<>>=
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer"),
+              er = c("seinem", "seiner"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[2], " Betreuer")) |> sample(1)
+exp <- c("einem Gewächshausexperiment",
+         "einem Freilandversuch",
+         "einer Klimakammer",
+         "einem Feldexperiment") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+type <- c("Düngestufen ($ctrl$, $low$ und $high$)",
+          "Lichtstufen ($none$, $200lm$ und $600lm$)",
+          "Lüftungssysteme und Folientunnel ($ctrl$, $storm$ und $tornado$)",
+          "Substrattypen ($torf$, $40p60n$ und $70p30n$)",
+          "Bewässerungstypen ($low$, $mid$ und $high$)",
+          "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
+outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
+  set_names("freshmatter", "drymatter", "yield", "protein") |> 
+  sample(1)
+outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+groups_vec <- type %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  n_vec <- c(3, 4, 5) %>% sample(1)
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(4, 6, 8, 10) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 1)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather
+  return(temp_tbl)
+}
+
+ques_vec <- c(str_c("Anschauen, was andere vor einem gemacht haben, ist eine Möglichkeit schnell ans Ziel zu gelangen. ", name, " soll in ", project, " ", plant, " untersuchen. Die Behandlung in ", project, " werden verschiedene ", type, " sein. Erheben wird ", name, " als ", outcome_name, " \\textit{", outcome, "} benannt als ", "\\textit{", names(outcome), "} in ", pronom[2], " Exceldatei. Von ", betreuer, " erhält ", names(name), " nun folgende Abbildung von Barplots, die ", names(name), " erstmal zur Übung nachbauen soll, bevor ", names(name), " mit dem eigentlichen Versuch beginnt."),
+              str_c(name, " steht vor einem ersten Problem, denn wenn es nach ", betreuer, " geht, soll ", names(name), " in einem ", exp, " ", plant, " auswertet. Soweit eigentlich alles passend. Die Behandlung werden verschiedene ", type, " sein. In ", pronom[2], " Exceldatei wird ", names(name), " den ", outcome_name, " \\textit{", outcome, "} als ", "\\textit{", names(outcome), "} aufnehmen. Vorab soll ", name, " aber eimal die folgenden Barplots ", betreuer, " nachbauen, damit ", names(name), " den \\Rlogo Code schonmal für später vorliegen hat. Damit geht das Problem schon los."),
+              str_c("Barplots sind bedeutend in der Darstellung von wissenschaftlichen Ergebnissen. Leider hat sich ", name, " nicht gemerkt, welche statistischen Maßzahlen für einen Barplot erhoben werden müssen. Das ist in soweit doof, da nach ", betreuer, " erstmal ein Barplot nachgebaut werden soll, bevor es mit ", project, " losgeht. Dann hat ", names(name), " schonmal den \\Rlogo Code vorliegen und nachher geht dann alles schneller. Die Behandlung für ", plant, " werden verschiedene ", type, " sein. Erfasst wird als ", outcome_name, " \\textit{", outcome, "}. ", name, " soll dann \\textit{", names(outcome), "} in ", pronom[2], " Exceldatei eintragen.")) |> sample(1)
+
+@ 
+
+\Sexpr{ques_vec}
+
+<<barplot-02, results='asis', echo = FALSE, fig.height = 4, fig.width = 4.5, fig.align = "center", message = FALSE>>=
+
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
+  set_names(c("treatment", "freshmatter")) %>%
+  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
+  sample_n(size = nrow(.))
+
+stat_tbl <- data_tbl %>% 
+  group_by(treatment) %>% 
+  dplyr::summarise(mean = mean(freshmatter),
+            sd = sd(freshmatter))
+
+ggplot(stat_tbl, aes(x = treatment, y = mean, fill = treatment)) + 
+  theme_minimal() +
+  geom_bar(stat = "identity", width = 0.5) +
+  labs(x = "", y = str_c(outcome, " in [kg])")) +
+  theme(legend.position = "none") +
+  geom_errorbar(aes(ymin = mean-sd, ymax = mean+sd),
+                width = 0.2) +
+  scale_fill_grey(start = 0.4)
+
+@
+
+Leider kennt sich \Sexpr{name} mit der Erstellung von Barplots in \Rlogo nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Visualisierung Ihre Hilfe!
 
 \begin{enumerate}
-\item Visualisieren Sie den Mittelwert von $y$ in der untenstehenden
-  Abbildung! \textbf{(4 Punkte)}
-\item Beschriften Sie die $Y$ und $X$-Achse entsprechend! \textbf{(2 Punkte)}
-\item F{\"u}r die Berechnung der Varianz wird der Abstand der einzelnen Werte $y_i$
-  zum Mittelwert $\bar{y}$ quadriert. Warum muss der Abstand, $y_i -
-  \bar{y}$, in der Varianzformel quadriert werden?
-  Erkl{\"a}ren Sie den Zusammenhang unter Ber{\"u}cksichtigung der Abbildung!
-  \textbf{(2 Punkte)}  
+\item Erstellen Sie eine Tabelle mit den statistischen Maßzahlen aus der
+  obigen Abbildung der drei Barplots! \textit{Beachten Sie die korrekte
+    Darstellungsform der statistischen Maßzahlen!} \textbf{(3 Punkte)}
+\item Erstellen Sie einen beispielhaften Datensatz, aus dem die drei
+  Barplots \textit{möglicherweise} erstellt wurden, im \Rlogo üblichen Format! \textbf{(2 Punkte)}
+\item Erwarten Sie einen Unterschied zwischen den Behandlungen? Begründen
+  Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
-
-<<desc-01, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
-df <- data.frame()
-ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  xlab("") + ylab("") +
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-@

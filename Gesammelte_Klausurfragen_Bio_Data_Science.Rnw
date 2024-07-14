@@ -1,5 +1,6 @@
 \documentclass[a4paper, 9pt]{scrartcl}
 \usepackage[ngerman]{babel}
+
 % -----------------------------------------------------------------------
 <<init, echo = FALSE>>=
 pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
@@ -292,15 +293,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Deskriptive Statistik \& Explorative Datenanalyse}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/eda-descriptive.html}{Kapitel - Deskriptive Statistik}
-  \item \href{https://jkruppa.github.io/eda-ggplot.html}{Kapitel - Visualisierung von Daten}
-  \item \href{https://jkruppa.github.io/eda-distribution.html}{Kapitel - Verteilung von Daten}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(desc_stat_questions_vec[1])} 
 \clearpage
@@ -338,14 +331,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(desc_stat_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Statistisches Testen}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-basic.html}{Kapitel - Die Testentscheidung}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel - Die Testtheorie}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Statistisches Testen}
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(stat_test_questions_vec[1])} 
 \clearpage
@@ -362,13 +348,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(stat_test_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Der t-Test}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-ttest.html}{Kapitel - Der t-Test}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Der t-Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(ttest_questions_vec[1])} 
 \clearpage
@@ -394,13 +374,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(ttest_questions_vec[8])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Die ANOVA}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-anova.html}{Kapitel - Die ANOVA}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Die ANOVA}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(anova_questions_vec[1])} 
 \clearpage
@@ -429,14 +403,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(anova_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Multiple Gruppenvergleiche}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-theorie.html}{Kapitel - Adjustierung für multiple Vergleiche}
-  \item \href{https://jkruppa.github.io/stat-tests-posthoc.html}{Kapitel - Compact letter display}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Multiple Gruppenvergleiche}
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(multcomp_questions_vec[1])} 
 \clearpage
@@ -447,14 +414,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(multcomp_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-  \begin{graybox}{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-chi-test.html}{Kapitel - Der $\mathcal{X}^2$-Test}
-  \item \href{https://jkruppa.github.io/stat-tests-diagnostic.html}{Kapitel - Der diagnostische Test}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(chisquare_questions_vec[1])} 
 \clearpage
@@ -471,14 +431,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(chisquare_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Nicht parametrische Tests}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-tests-utest.html}{Kapitel - Der Wilcoxon-Mann-Whitney-Test}
-  \item \href{https://jkruppa.github.io/stat-tests-kruskal.html}{Kapitel - Der Kruskal-Wallis-Test}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Nicht parametrische Tests}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(nonpar_questions_vec[1])} 
 \clearpage
@@ -489,15 +442,7 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(nonpar_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Simple lineare Regression \& Korrelation}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-basic.html}{Kapitel - Simple lineare Regression}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-quality.html}{Kapitel - Ma{\ss}zahlen der Modelgüte}
-  \item \href{https://jkruppa.github.io/stat-linear-reg-corr.html}{Kapitel - Korrelation}
-  \end{itemize}
-\end{graybox}
-\clearpage
+\section*{Lineare Regression \& Korrelation}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(linreg_questions_vec[1])} 
 \clearpage
@@ -526,28 +471,12 @@ Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio 
 \Sexpr{knit_child(linreg_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Experimentelles Design}
-Mehr Informationen zu den Aufgaben in den folgenden Kapiteln aus dem Skript Bio Data Science.
-  \begin{itemize}
-  \item \href{https://jkruppa.github.io/experimental-design-preface.html}{Kapitel - Experimentelle Designs}
-  \end{itemize}  
-\end{graybox}
-\clearpage
+\section*{Experimentelles Design}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(experimental_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Mathematik}
-Die Formeln und weitere Informationen zu den Aufgaben gibt es in \href{https://jkruppa.github.io/math/}{Mathematik für Agrarwissenschaften}. Alle Matheaufgaben sind mehr oder weniger \href{https://de.wikipedia.org/wiki/Fermi-Problem}{Fermi Probleme} und werden daher auch so gelöst. Wir machen Annahmen an die Umstände und rechnen mit diesen Annahmen dann die Aufgaben durch. Manchmal passen die Annahmen besser und manchmal schlechter. Wie eben auch im echten Leben.
-
-Die Inspirationen und Ideen sind dann teilweise bei den jeweiligen Aufgaben in den Fußnoten ergänzt oder aber auch bei den YouTube Videos zu finden. Nicht immer gibt es die eine Inspiration, dann habe ich auch keine angegeben. Dann kam mir die Idee eher einfach so. Wer mehr Lesen möchte und sich auch die ein oder andere Inspiration holen möchte, kann die Arbeiten von Harte (1988, 2001) aufarbeiten. In der älteren Arbeit von Harte (1988) sind die Beispiele natürlich veraltet, lassen sich aber mit wenig Aufwand auf heutige, aktuelle Beispiele anpassen. In dem Sinne, viel Spaß bei den Aufgaben.
-
-\begin{itemize}
-\item Harte, J. (1988). Consider a spherical cow: A course in environmental problem solving. University Science Books.
-\item Harte, J. (2001). Consider a cylindrical cow: more adventures in environmental problem solving. University Science Books.
-\end{itemize}
-\end{graybox}
-\clearpage
+\section*{Mathematik}
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(math_questions_vec[1])} 
 \clearpage

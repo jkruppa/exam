@@ -1,68 +1,83 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Xf0yE-o7bEU}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex] %%youtube
+\hfill\href{https://youtu.be/0xc0jIPeiyw}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-exp <- c("einem Gew{\"a}chshausexperiment",
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+norm <- c("die Normalverteilung von $Y$", "die Varianzhomogenität über die Behandlungsgruppen") |> sample(1)
+outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
+  set_names("freshmatter", "drymatter", "yield", "protein") |> 
+  sample(1)
+outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+exp <- c("einem Gewächshausexperiment",
          "einem Freilandversuch",
          "einem Versuch in einer Klimakammer",
          "einem Feldexperiment") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-type <- c("D{\"u}ngestufen ($ctrl$, $low$ und $high$)",
-          "Lichtstufen ($none$, $200lm$ und $600lm$)",
-          "L{\"u}ftungssystemen und Folientunneln ($ctrl$, $storm$ und $tornado$)",
-          "Substrattypen ($torf$, $40p60n$ und $70p30n$)",
-          "Bew{\"a}sserungstypen ($low$, $mid$ und $high$)",
-          "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
+type <- c("Düngestufen ($ctrl$ und $high$)",
+          "Lichtstufen ($none$ und $600lm$)",
+          "Lüftungssystemen und Folientunneln ($ctrl$ und $tornado$)",
+          "Substrattypen ($torf$ und $70p30n$)",
+          "Bewässerungstypen ($low$ und $high$)",
+          "Genotypen ($AA$ und $BB$)") %>% sample(1)
 groups_vec <- type %>% 
   str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
 gen_data <- function(...){
-  n_vec <- c(7:11) %>% sample(1)
+  n_vec <- c(7:10) %>% sample(1)
   mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
-  sd_vec <- c(4, 6, 8, 10) %>% sample(1)
+  sd_vec <- c(4:8) %>% sample(1)
   temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
     mutate(temp = round(temp, 1)) %>% 
     set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
     gather
   return(temp_tbl)
 }
+
+ques_vec <- c(str_c("Anschauen, was andere vor einem gemacht haben, ist eine Möglichkeit schnell ans Ziel zu gelangen. Deshalb hat sich ", name, " viele Poster in der Fakultät angeschaut und ist zum Schluß gekommen, dass Boxplots eine häufig genutzte Abbildung sind. ", name, " soll nun in ", project, " ", plant, " untersuchen. Die Behandlung in ", project, " sind verschiedene ", type, ". Erhoben wurden von ", name, " als ", outcome_name, " \\textit{", outcome, "} benannt als ", "\\textit{", names(outcome), "} in ", pronom[2], " Exceldatei. Erwartungsgemäß erhält ", names(name), " von ", betreuer, " den Auftrag die erhobenen Daten als Boxplots darzustellen. Dann kann ", name, " auch schonmal abschätzen, was bei einem statistischen Test rauskommen könnte. Darüber hinaus kann ", name, " anhand Boxplots eine Aussage über ", norm, " treffen."),
+              str_c(name, " steht vor einem ersten Problem, denn wenn es nach ", betreuer, " geht, soll ", names(name), " in einem ", exp, " ", plant, " auswertet. Soweit eigentlich alles passend. Die Behandlung waren verschiedene ", type, ". In ", pronom[2], " Exceldatei hat ", names(name), " den ", outcome_name, " \\textit{", outcome, "} als ", "\\textit{", names(outcome), "} aufgenommen. Nun soll ", name, " die Daten eimal als Boxplots in einer Präsentation visualisieren, damit ", betreuer, " wieder klar wird, was ", names(name), " eigentlich nochmal gemacht hat und was für ein Ergbnis in einem statistischen Test zu erwarten wäre. Anhand von Boxplots lässt sich eine Aussage über ", norm, " treffen."),
+              str_c("Boxplots sind bedeutend in der Darstellung von wissenschaftlichen Ergebnissen. Leider hat sich ", name, " nicht gemerkt, welche statistischen Maßzahlen für einen Boxplot erhoben werden müssen. Das ist in soweit doof, da nach ", betreuer, " nun Boxplots aus ", pronom[3], " Daten gebaut werden sollen, bevor es mit dem statistischen Testen weitergeht. Anhand von Boxplots lässt sich eine Aussage über ", norm, " treffen. Die Behandlung für ", plant, " waren verschiedene ", type, ". Erfasst wurde von ", name, " als ", outcome_name, " \\textit{", outcome, "}. ", name, " hat dann \\textit{", names(outcome), "} in ", pronom[2], " Exceldatei eintragen.")) |> sample(1)
+
 @ 
 
-Nach \Sexpr{exp} mit drei \Sexpr{type} als Behandlung
-(\textit{treatment}) ergeben sich die folgenden Boxplots mit dem
-gemessenen Trockengewicht (\textit{drymatter}) von \Sexpr{plant}.
+\Sexpr{ques_vec}
 
-<<boxplot-02-zer, results='asis', echo = FALSE, fig.height = 4, fig.width = 4.5, fig.align = "center", message = FALSE>>=
-
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
-  set_names(c("treatment", "freshmatter")) %>%
+<<boxplot-01, results='asis', echo = FALSE>>=
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%  
+  set_names(c("treatment", "drymatter")) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
-ggplot(data_tbl, aes(x = treatment, y = freshmatter, fill = treatment)) + 
-  theme_minimal() +
-  geom_boxplot(width = 0.5, coef = 10) +
-  labs(x = "", y = "Trockengewicht in [kg]") +
-  theme(legend.position = "none") +
-  scale_fill_grey(start = 0.4)
-
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
 @
 
+Leider kennt sich \Sexpr{name} mit der Erstellung von Boxplots nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Visualisierung Ihre Hilfe!
+
 \begin{enumerate}
-\item Erstellen Sie eine Tabelle mit den statistischen Ma{\ss}zahlen aus der
-  obigen Abbildung der drei Boxplots! \textit{Beachten Sie die korrekte
-    Darstellungsform der statistischen Ma{\ss}zahlen!} \textbf{(3 Punkte)}
-\item Beschriften Sie \textit{einen} der Boxplots mit den g{\"a}ngigen
-  statistischen Ma{\ss}zahlen! \textbf{(2 Punkte)}
-\item Erstellen Sie einen beispielhaften Datensatz, aus dem die drei
-  Boxplots \textit{m{\"o}glicherweise} erstellt wurden, im \Rlogo {\"u}blichen Format! \textbf{(2 Punkte)}
-\item Erwarten Sie einen Unterschied zwischen den Behandlungen? Begr{\"u}nden
-  Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots für die
+  zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
+  \textbf{(5 Punkte)} 
+\item Wie ist Ihr Vorgehen, wenn Sie eine \textit{gerade} Anzahl an
+  Beobachtungen pro Gruppe haben? \textbf{(1 Punkt)}
+\item Beschriften Sie \textit{einen} der beiden Boxplots mit den gängigen
+  statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
+  \Sexpr{plant} erwarten würden, wie sehen dann die beiden Boxplots aus?
+  \textit{Antworten Sie mit einer Skizze der Boxplots!}
+  \textbf{(1 Punkt)}
 \end{enumerate}

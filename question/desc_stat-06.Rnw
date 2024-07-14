@@ -1,38 +1,75 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width =
+\hfill\href{https://youtu.be/ORHSPTCdfeY}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-count_vec <- rpois(sample(c(30, 27, 33), 1), 4)
-limit <- c(4, 5, 6) %>% sample(1)
-lim_word <- c("gleich oder mehr", "mehr") %>% sample(1)
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
+  sample(1) |> 
+  set_names("pflanze")
+animal <- c("Puten", "Schweine", "Flesichrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
+  sample(1) |> 
+  set_names("tier")
+obser <- c(plant, animal) |> sample(1)
+
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
+                       "die Mehltauspots",
+                       "die seltsamen Verdickungen",
+                       "die Knötchen"),
+           tier = c("die auffälligen Hautflecken", 
+                    "die dunklen Pigmentstörungen",
+                    "die Anzahl an weißen Blutkörperchen",
+                    "die Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
+  sample(1)
+
+cont_vec <- str_c(cnt, ": ", str_c(round(rnorm(sample(c(20, 23, 17), 1), 10, 2), 1), collapse = ", ")) |> 
+  str_replace("^die ", "")
+
+ques_vec <- str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ".")
 
 @
 
-Nach einem Gew{\"a}chshausexperiment z{\"a}hlen Sie folgende Anzahl an L{\"a}sionen auf den
-Bl{\"a}ttern von \Sexpr{plant} nach einer durchgestandenen Infektion der Pflanze. 
+\Sexpr{ques_vec}
 
 \begin{center}
-$\Sexpr{count_vec}$
+\Sexpr{count_vec}
 \end{center}
 
+Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 \begin{enumerate}
-\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
+\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu
+  visualisieren! (\textbf{3 Punkte})
+ \item Erläutern Sie Ihr Vorgehen um ein Histogramm für kontinuierliche
+  Daten zu zeichnen!  (\textbf{2 Punkte})
 \item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
-\item Erg{\"a}nzen Sie die absoluten und relativen H{\"a}ufigkeiten in der
-  Abbildung! \textbf{(1 Punkt)}
-\item Berechnen Sie aus den Daten die \textit{Wahrscheinlichkeit}
-  \Sexpr{lim_word} als \Sexpr{limit} L{\"a}sionen zu beobachten! \textbf{(1
-    Punkt)}
-\item Berechnen Sie aus den Daten die \textit{Chance} \Sexpr{lim_word}
-  als \Sexpr{limit} L{\"a}sionen zu beobachten! \textbf{(1 Punkt)}
+\item Ergänzen Sie die relativen Häufigkeiten in der Abbildung! \textbf{(1
+    Punkt)}  
 \end{enumerate}
 
 

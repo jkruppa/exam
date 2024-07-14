@@ -4,31 +4,49 @@
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/ZrJhn2wPbq4}{\includegraphics[width =
+\hfill\href{https://youtu.be/MiD42k4l5Ag}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
 
-n <- c(2,3,4) %>%
-  sample(1)
+mean_vec <- c(0, 1, 2, 3, 4) %>%
+  sample(2)
 
-sd_vec <- str_c(rep("s_", times = n), 1:n, collapse = sample(c(" = ", " \\neq "), 1))
+sd_vec <- c(0.5^2, 1^2, 2^2, 3^2) %>%
+  sample(2, replace = TRUE)
 
-mu_vec <- str_c(rep("\\bar{y}_", times = n), 1:n, collapse = " \\neq ")
-
+lambda_vec <- c(sample(c(1,2,3), 1), sample(c(15, 20, 25), 1)) %>% sample()
 
 @
 
 \begin{enumerate}
-\item Skizieren Sie $\Sexpr{n}$ Normalverteilungen \textit{in einer
-    Abbildung} mit $\Sexpr{mu_vec}$ und $\Sexpr{sd_vec}$! \textbf{(3 Punkte)}
-\item Beschriften Sie die Normalverteilungen mit den entsprechenden
-  Parametern! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie die Bereiche in der 68\% und 95\% der Beobachtungen
-  fallen! Beschriften Sie die Grenzen der Bereiche mit der statistischen Ma{\ss}zahl! \textbf{(2 Punkte)}
-\item Liegt Varianzhomogenit{\"a}t oder Varianzheterogenit{\"a}t vor? Begr{\"u}nden Sie
-  Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizieren Sie in die unten stehenden, freien Abbildungen die
+  Verteilungen, die sich nach der Abbildungs{\"u}berschrift ergeben! \textbf{(6
+    Punkte)}
+\item Beschriften Sie die Achsen der Abbildungen entsprechend! \textbf{(1
+    Punkt)}
+\item Achten Sie auf die entsprechende Skalierung der beiden Verteilungen
+  in den Abbildungen! \textbf{(2 Punkte)}
 \end{enumerate}
 
+<<histogram-01, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+
+df <- data.frame()
+p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  # xlab("Y") + ylab("H{\"a}ufigkeit") +
+  ggtitle(str_c("N(", mean_vec[1], ", ", sd_vec[1], ") und ",
+                "N(", mean_vec[2], ", ", sd_vec[2], ")")) + 
+  theme_minimal() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  # xlab("Y") + ylab("H{\"a}ufigkeit") +
+  ggtitle(str_c("Pois(", lambda_vec[1], ") und ",
+                "Pois(", lambda_vec[2], ")")) + 
+  theme_minimal() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+grid.arrange(p1, p3, nrow = 2)
+@
 
