@@ -1,6 +1,6 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
@@ -8,33 +8,117 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-Nach einem Feldexperiment mit zwei Pestiziden (\textit{RoundUp} und
-\textit{OutEx}) ergibt sich die folgende Datentabelle mit dem jeweiligen
-beobachteten Infektionsstatus bei Spargel.
+<<>>=
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli", "Spargel") %>% 
+  sample(1) |> 
+  set_names("pflanze")
+animal <- c("Puten", "Schweine", "Fleischrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
+  sample(1) |> 
+  set_names("tier")
+obser <- c(plant, animal) |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Pestizideinsatz [ja/nein]",
+                         "Herbizideinsatz [ja/nein]",
+                         "Mechanische Bearbeitung [ja/nein]",
+                         "KI-gesteuert [ja/nein]"),
+             tier = c("Automatische Fütterung [ja/nein]", 
+                      "Klimakontrolle [ja/nein]",
+                      "Außenklimakontakt [ja/nein]",
+                      "Ökologisch [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
+                         "Trockengewicht über Zielwert [ja/nein]",
+                         "Chlorophyllgehalt unter Zielwert [ja/nein]",
+                         "Proteingehalt im Zielbereich [ja/nein]"),
+             tier = c("Schlachtgewicht im Zielbereich [ja/nein]", 
+                      "Protein/Fettrate im Zielbereich [ja/nein]",
+                      "Fettgehalt erreicht [ja/nein]",
+                      "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+effect <- c("ein", "kein") |> sample(1)
+
+ques_vec <- c(str_c("'Uff!', denkt sich ", name, ". Jetzt hat ", names(name), " doch tatsächlich zwei kategoriale Variablen in ", project, " gemessen. Zum einen ", x_val, " und zum anderen ", y_val, " im Kontext von ", obser, ". Hierfür hat ", names(name) , " ", exp, " ", ort, " durchgeführt. Jetzt möchte ", name, " die Daten einmal in einer explorativen Datenanalyse darstellen. Danach kann ", names(name), " dann über den passenden statistischen Test nachdenken. Dabei unterstützt ", betreuer, " diesen Ansatz bevor es in der Datenanalyse weiter geht.")) |> 
+  sample(1)
+
+
+
+
+@
+
+\Sexpr{ques_vec}
 
 <<mosaic-01, results='asis', echo = FALSE>>=
-data_tbl <- rbind(tibble(RoundUp = round(rnorm(n = sample(c(9, 11), 1),
-                                         mean = sample(c(19, 20, 21), 1),
+x_val <- str_replace(x_val, "\\[ja/nein\\]$", "") |> str_trim()
+y_val <- str_replace(y_val, "\\[ja/nein\\]$", "") |> str_trim()
+data_tbl <- rbind(tibble(ja = round(rnorm(n = sample(c(14, 16, 18), 1),
+                                         mean = sample(c(18, 20, 22), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather,
-                  tibble(OutEx = round(rnorm(n = sample(c(9, 11), 1),
-                                         mean = sample(c(19, 20, 21), 1),
+                  tibble(nein = round(rnorm(n = sample(c(14, 16, 18), 1),
+                                         mean = sample(c(18, 20, 22), 1),
                                          sd = sample(c(2, 3, 4), 1)))) %>%
                   gather) %>%
   set_names(c("pesticide", "rsp")) %>%
-  mutate(infected = ifelse(rsp >= 20, "yes", "no")) %>%
+  mutate(infected = ifelse(rsp >= 20, "ja", "nein")) %>%
   select(-rsp) %>% 
-  sample_n(size = nrow(.))
+  sample_n(size = nrow(.)) |> 
+  set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
+                     str_replace(y_val, "^\\w{1}", toupper))))
 
-kable(data_tbl, booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
 @
 
+\vspace{1Ex}
+
+\begin{center}
+\begin{minipage}[t]{0.45\textwidth}
+\small
+\begin{center}
+<<mosaic-01-tab-a, results='asis', echo = FALSE>>=
+kable(data_tbl[1:(nrow(data_tbl)/2),], booktabs = TRUE, align = "c", format = "latex") 
+@
+\end{center}
+\end{minipage}
+\begin{minipage}[t]{0.45\textwidth}
+\small
+\begin{center}
+<<mosaic-01-tab-b, results='asis', echo = FALSE>>=
+kable(data_tbl[(nrow(data_tbl)/2+1):(nrow(data_tbl)),], booktabs = TRUE, align = "c", 
+      format = "latex") 
+@
+\end{center}
+\end{minipage}
+\end{center}
+
+\vspace{2Ex}
+
+Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 \begin{enumerate}
-\item Stellen Sie in einer 2x2 Tafel den Zusammenhang zwischen dem
-  Pestizid und dem Infektionsstatus dar! \textbf{(4 Punkte)}
-\item Zeichnen Sie den zugeh{\"o}rigen Mosaic-Plot. Berechnen Sie das
-  Verh{\"a}ltnis pro Spalte! \textbf{(2 Punkte)}
-\item Wenn das Pestizid keine Auswirkung auf den Infektionsstatus h{\"a}tte, wie
-  sehe dann der Mosaic-Plot aus? \textbf{(2 Punkte)}
+\item Stellen Sie den Zusammenhang zwischen den beiden kategorialen Variablen in einer Tabelle dar! \textbf{(3 Punkte)}
+\item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(3 Punkte)}
+\item Berechnen Sie die Verhältnis! Welche Annahme haben Sie getroffen? \textbf{(2 Punkte)}
+\item Wenn \textit{\Sexpr{effect}} Effekt von der Behandlung vorliegen würde, wie würde die Tabelle und die Visualisierung aussehen? \textbf{(2 Punkt)}
 \end{enumerate}

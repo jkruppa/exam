@@ -13,12 +13,13 @@ name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
           "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
   set_names(c("sie", "sie", "sie", "sie", "sie",
               "er", "er", "er", "er", "er")) |> sample(1)
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr"),
-              er = c("seinem", "seiner", "seinen", "ihm"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
   sample(1) |> 
@@ -28,23 +29,23 @@ animal <- c("Puten", "Schweine", "Fleischrinder", "Lamas", "Hühner", "Zander", 
   set_names("tier")
 obser <- c(plant, animal) |> sample(1)
 
-exp <- lst(pflanze = c("einem Gewächshausexperiment",
-                       "einem Freilandversuch",
-                       "einem Versuch in einer Klimakammer",
-                       "einem Feldexperiment"),
-           tier = c("einem Stallexperiment", 
-                    "einem Kreuzungsexperiment",
-                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
-                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
-                         "Anteil an Ton [%/l]",
+x_val <- lst(pflanze = c("durschnittlichen Niederschlag [ml/w]",
+                         "durchschnittlicher Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlichen Anteil an Ton [\\%/l]",
                          "durchschnittliche UV Einstrahlung [UV/d]"),
-             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
-                      "durchschnittliche Tagestemperatur [C/d]",
-                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
-                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+             tier = c("durchschnittlichen Bewegungsscore [Movement/h]", 
+                      "durchschnittlicher Tagestemperatur [C/d]",
+                      "mittlerer Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlerer Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
   sample(1)
 
 y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
@@ -52,26 +53,31 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                          "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
                          "Proteingehalt [g/kg]"),
              tier = c("Schlachtgewicht [kg]", 
-                      "Protein/Fettrate [%/kg]",
-                      "Fettgehalt [%/kg]",
-                      "Gewichtszuwachs in der 1LW]"))[[names(obser)]] %>% 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-ques_vec <- str_c("In einem Feldexperiment für die Bodendurchlässigkeit wurde der Niederschlag
-pro Parzelle sowie der durchschnittliche Ertrag gemessen. Es ergibt sich
-folgende Datentabelle. ")
-
 effect <- c("ein", "kein") |> sample(1)
+
+ques_vec <- c(str_c(name, " möchte gerne den Zusammenhang zwischen ", x_val, " und ", y_val, " im Kontext von ", obser, " herausfinden. Hierfür hat ", name , " ", exp, " ", ort, " durchgeführt. Nach einigen unvorgesehenen Ereignissen hat ", names(name), " es geschafft folgende Datentabelle zu erstellen. Nun stellt sich die Frage für ", pronom[5], ", ob es überhaupt einen Zusammenhang zwischen den gemessenen Variablen gibt. Deshalb möchte ", name, " als erstes eine explorative Datenanalyse durchführen."),
+              str_c(name, " liest laut: 'Wenn zwei kontinuierliche Variablen vorliegen, können diese in einer exploartiven Datenanalyse...'. ", name , " stoppt. Was waren noch gleich kontinuierliche Variablen? In ", project, " hatte ", names(name) , " ", exp, " ", ort, " durchgeführt. Dabei ging es um den Zusammenhang zwischen ", y_val, " und ", x_val, " im groben Kontext von ", obser, ". Nun stellt sich die Frage für ", pronom[5], ", ob es überhaupt einen Zusammenhang zwischen den gemessenen Variablen gibt. Dafür war eine explorative Datenanalyse gut!"),
+              str_c("Wenn es nach ", name , " ginge, wäre ", names(name) , " schon längst fertig mit ", project, ". In ", project, " hatte ", names(name) , " ", exp, " ", ort, " durchgeführt. Nach der Meinung ", betreuer, " sieht das jedoch etwas anders aus. Jetzt soll ", names(name) , " doch noch eine explorative Datenanalyse für den Zusammenhang zwischen ", x_val, " und ", y_val, " in ", obser, " durchführen. Wie nervig! Da zwei kontinuierliche Variablen vorliegen, geht die explorative Datenanalyse leider nicht mit Boxplots oder Barplots.")) |> 
+  sample(1)
+
+
+
 @
 
 \Sexpr{ques_vec}
 
-
-
 <<scatter-01, results='asis', echo = FALSE>>=
+x_val <- str_replace(x_val, "\\\\", "")
+y_val <- str_replace(y_val, "\\\\", "")
+
 data_tbl <- tibble(x = round(rnorm(sample(9:12, 1), sample(c(15, 20, 25), 1), sample(c(2, 4, 6), 1)), 1),
                    y = round(sample(c(2:10), 1) + sample(c(0.5, 0.75, 1, 1.15, 1.25), 1) * x + rnorm(length(x), 0, 2), 1)) |>   set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
-                     str_replace(y_val, "^\\w{1}", toupper)))) 
+                     str_replace(y_val, "^\\w{1}", toupper))))
 
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
@@ -83,7 +89,6 @@ Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalys
 \item Erstellen Sie eine Visualisierung für die Datentabelle. Beschriften Sie
   die Achsen entsprechend! \textbf{(4 Punkte)}
 \item Schätzen Sie eine Gerade durch die Punkte! \textbf{(1 Punkt)}
-\item Beschriften Sie die Gerade mit den gängigen statistischen Maßzahlen!
-  Geben Sie die numerischen Zahlenwerte mit an! \textbf{(3 Punkte)}
+\item Beschriften Sie die Gerade mit den gängigen statistischen Maßzahlen! Geben Sie die numerischen Zahlenwerte mit an! \textbf{(3 Punkte)}
 \item Wenn \textit{\Sexpr{effect}} Effekt von $x$ auf $y$ vorhanden wäre, wie würde die Gerade verlaufen und welche Werte würden die statistischen Maßzahlen annehmen? \textbf{(2 Punkt)}
 \end{enumerate}
