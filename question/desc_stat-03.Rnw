@@ -66,7 +66,7 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
 ggplot(data_tbl, aes(x = treatment, y = freshmatter, fill = treatment)) + 
   theme_minimal() +
   geom_boxplot(width = 0.5, coef = 10) +
-  labs(x = "", y = "Trockengewicht in [kg]") +
+  labs(x = "", y = str_c(outcome, " in [kg])")) +
   theme(legend.position = "none") +
   scale_fill_grey(start = 0.4)
 

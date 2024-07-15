@@ -13,8 +13,8 @@ name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
           "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
   set_names(c("sie", "sie", "sie", "sie", "sie",
               "er", "er", "er", "er", "er")) |> sample(1)
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
