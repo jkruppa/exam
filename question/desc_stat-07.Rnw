@@ -1,6 +1,6 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
@@ -8,31 +8,82 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
-In einem Feldexperiment f{\"u}r die Bodendurchl{\"a}ssigkeit wurde der Niederschlag
+<<>>=
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
+  sample(1) |> 
+  set_names("pflanze")
+animal <- c("Puten", "Schweine", "Fleischrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
+  sample(1) |> 
+  set_names("tier")
+obser <- c(plant, animal) |> sample(1)
+
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
+                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
+                         "Anteil an Ton [%/l]",
+                         "durchschnittliche UV Einstrahlung [UV/d]"),
+             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
+                      "durchschnittliche Tagestemperatur [C/d]",
+                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [%/kg]",
+                      "Fettgehalt [%/kg]",
+                      "Gewichtszuwachs in der 1LW]"))[[names(obser)]] %>% 
+  sample(1)
+
+ques_vec <- str_c("In einem Feldexperiment für die Bodendurchlässigkeit wurde der Niederschlag
 pro Parzelle sowie der durchschnittliche Ertrag gemessen. Es ergibt sich
-folgende Datentabelle. 
+folgende Datentabelle. ")
+
+effect <- c("ein", "kein") |> sample(1)
+@
+
+\Sexpr{ques_vec}
+
+
 
 <<scatter-01, results='asis', echo = FALSE>>=
-n <- sample(c(5,7,9), 1)
-data_tbl <- tibble(A = round(rnorm(n = n,
-                                   mean = sample(c(15, 20, 25), 1),
-                                   sd = sample(c(2, 4, 6), 1))),
-                   B = round(rnorm(n = n,
-                                   mean = sample(c(15, 20, 25), 1),
-                                   sd = sample(c(2, 4, 6), 1)))) %>%
-  set_names(c("water", "drymatter")) 
+data_tbl <- tibble(x = round(rnorm(sample(9:12, 1), sample(c(15, 20, 25), 1), sample(c(2, 4, 6), 1)), 1),
+                   y = round(sample(c(2:10), 1) + sample(c(0.5, 0.75, 1, 1.15, 1.25), 1) * x + rnorm(length(x), 0, 2), 1)) |>   set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
+                     str_replace(y_val, "^\\w{1}", toupper)))) 
 
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 @
 
+Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kontinuierliche Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 \begin{enumerate}
-\item Erstellen Sie den Scatter-Plot f{\"u}r die Datentabelle. Beschriften Sie
+\item Erstellen Sie eine Visualisierung für die Datentabelle. Beschriften Sie
   die Achsen entsprechend! \textbf{(4 Punkte)}
-\item Zeichnen Sie eine Gerade durch die Punkte! \textbf{(1 Punkt)}
-\item Beschriften Sie die Gerade mit den g{\"a}ngigen statistischen Ma{\ss}zahlen!
+\item Schätzen Sie eine Gerade durch die Punkte! \textbf{(1 Punkt)}
+\item Beschriften Sie die Gerade mit den gängigen statistischen Maßzahlen!
   Geben Sie die numerischen Zahlenwerte mit an! \textbf{(3 Punkte)}
-\item Wenn kein Effekt von dem Niederschlag auf das Trockengewicht
-  vorhanden w{\"a}re, wie w{\"u}rde die Gerade verlaufen und welche Werte w{\"u}rden die
-  statistischen Ma{\ss}zahlen annehmen? \textbf{(2 Punkt)}
+\item Wenn \textit{\Sexpr{effect}} Effekt von $x$ auf $y$ vorhanden wäre, wie würde die Gerade verlaufen und welche Werte würden die statistischen Maßzahlen annehmen? \textbf{(2 Punkt)}
 \end{enumerate}
