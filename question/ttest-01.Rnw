@@ -1,25 +1,25 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
-\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Cq_rF_z4xOk}{\includegraphics[width =
+\hfill\href{https://youtu.be/eejS2uG4o-M}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
 
 name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
-          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+          "Mark", "Jonas", "Eric", "Nikolas", "Manuel") |> 
   set_names(c("sie", "sie", "sie", "sie", "sie",
               "er", "er", "er", "er", "er")) |> sample(1)
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
-project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
-outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli", "Spargel") %>% 
@@ -84,49 +84,46 @@ ques_vec <- c("foo") |>
 
 effect_test <- c("die Teststatistik $T_{D}$", "der Effekt") |> sample(1)
 
-str_c("Der t-Test. ", name, " erschaudert. Ein mächtiges Werkzeug in den Händen desjenigen, der ein normalverteiltes ", outcome_name, " hat. Aber erstmal überhaupt rechnen können. ", name, " hat ", exp, " mit ", obser, " durchgeführt. Dabei wurde die Behandlung ", x_val, " an den ", obser, " getestet. Gemessen hat ", name, " dann als Messwert ", y_val, " ausgewählt. Warum der Versuch ", ort, " in ", project, " stattfinden musste, ist ", pronom[4], " bis heute ein Rätsel.")
+type <- c("Student t-Tests", "Welch t-Tests") %>% sample(1)
+
+hypo <- c("Formulieren Sie die wissenschaftliche Fragestellung!", 
+          "Formulieren Sie das statistische Hypothesenpaar!") |> 
+  sample(1)
+
+
+ques_vec <- c(str_c("Der t-Test. ", name, " erschaudert. Ein mächtiges Werkzeug in den Händen desjenigen, der ", outcome_name, " hat. Aber erstmal überhaupt den t-Test rechnen können. Wie sah das Experiment von ", name, " überhaupt aus? ", name, " hat ", exp, " mit ", obser, " durchgeführt um eine neue technische Versuchsanlage zu testen. Bei dem Pilotexperiment mit sehr geringer Fallzahl $(n_1 = n_2 = 3)$ wurde die Behandlung ", x_val, " an den ", obser, " getestet und dabei wurde geschaut, ob der Versuch überhaupt technisch klappen könnte. Gemessen hat ", name, " dann als Messwert ", y_val, ". Warum der Versuch ", ort, " für ", project, " stattfinden musste, ist ", pronom[4], " bis heute ein Rätsel. Egal. Gibt es jetzt einen Zusammenhang zwischen der Behandlung und ", y_val, "?"),
+              str_c(name, " ist ", ort, " für einen Pilotexperiment mit sehr geringer Fallzahl $(n_1 = n_2 = 3)$ mit ", obser, ". Allein diese Tatsache ist für ", pronom[5], " eine Erzählung wert. Für ", project, " musste ", names(name), " ", exp, " mit ", obser, " durchführen und das sollte laut ", betreuer, " an diesem Ort besonders gut gelingen, da man hier gut neue technische Anlagen und Behandlungen fernab der Bevölkerung testen könne. Zeugen gibt es hier jedenfalls keine. Gar keine. Alleine sein hilft jetzt aber nur bedingt, denn ", pronom[6], " Behandlung ", x_val, " und der Messwert ", y_val, " sollen mit einem t-Test ausgewertet werden. Immerhin weiß ", names(name), ", dass ", pronom[7], " Messwert einer Normalverteilung folgt. "),
+              str_c("'Der t-Test testet ", outcome_name, ".', liest ", name, " laut. Das hilft jetzt auch nur bedingt weiter. Laut ", betreuer, " ist zwar ", pronom[4], " Messwert ", y_val, " normalverteilt, aber wie rechnet ", names(name), " jetzt einen t-Test? Für ", project, " zum Testen einer neuen technischen Anlage musste ", names(name), " ", exp, " mit ", obser, " ", ort, " durchführen. Als wäre das nicht schon anstrengend genug gewesen bei dem anspruchsvollen Pilotprojekt mit sehr geringer Fallzahl $(n_1 = n_2 = 3)$. Jetzt soll ", names(name), " auch noch testen, ob die Behandlung ", x_val, " ein signifikantes Ergebnis liefert.")) |> sample(1)
+
 
 @ 
 
 \Sexpr{ques_vec}
 
-<<ttest-01, results='asis', echo = FALSE>>=
-
-x_val <- str_replace(x_val, "\\\\", "")
-y_val <- str_replace(y_val, "\\\\", "")
-
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
-  set_names(c("treatment", "freshmatter")) %>%
-  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
-  sample_n(size = nrow(.)) 
-
-t_calc <- t.test(freshmatter ~ treatment, data_tbl)$statistic
+<<ttest-08, results='asis', echo = FALSE>>=
+data_tbl <- rbind(tibble(ctrl = round(rnorm(n = 3,
+                                         mean = sample(c(14, 17, 20), 1),
+                                         sd = sample(c(3, 2), 1)), 1)) %>%
+                  gather,
+                  tibble(dose = round(rnorm(n = 3,
+                                         mean = sample(c(16, 18, 22), 1),
+                                         sd = sample(c(4, 5), 1)), 1)) %>%
+                  gather) %>%
+  set_names(c("treatment", "weight")) %>% 
+  sample_n(size = nrow(.))
 
 t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
 
-if(t_calc >= 2.04){
-  textsig <- "keinen"
-} else {
-  textsig <- "einen"
-}
-
-x_val <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
-y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
-
-data_tbl %>% 
-  set_names(c(x_val, y_val)) |> 
-  kable(booktabs = TRUE, align = "c") %>% 
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 @
 
 Leider kennt sich \Sexpr{name} mit der Berechnung eines t-Tests überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Berechnung Ihre Hilfe!
 
 \begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-  \item Bestimmen Sie die Teststatistik $T_{D}$ eines Student t-Tests! \textbf{(3 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Berechnen Sie den Effekt des Student t-Tests! \textbf{(1 Punkt)}
-\item Wenn Sie \textit{\Sexpr{textsig}} Unterschied zwischen den Behandlungsgruppen erwarten würden, wie groß wäre dann \Sexpr{effect_test}? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Formulieren Sie einen Antwort an \Sexpr{name} über das Ergebnis der statistischen Analyse! \textbf{(2 Punkte)}
+  \item \Sexpr{hypo} \textbf{(1 Punkt)}
+  \item Bestimmen Sie die Teststatistik $T_{D}$ eines \Sexpr{type}! \textbf{(3 Punkte)}
+  \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+  \item Berechnen Sie den Effekt des \Sexpr{type}! \textbf{(1 Punkt)}
+  \item Formulieren Sie eine Antwort an \Sexpr{name} über das Ergebnis Ihrer statistischen Analyse! \textbf{(2 Punkte)}
 \end{enumerate}

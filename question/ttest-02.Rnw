@@ -1,56 +1,137 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/eejS2uG4o-M}{\includegraphics[width =
+\hfill\href{https://youtu.be/Cq_rF_z4xOk}{\includegraphics[width =
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
-exp <- c("einem Gew{\"a}chshausexperiment",
-         "einem Freilandversuch",
-         "einer Klimakammer",
-         "einem Feldexperiment") %>% sample(1)
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
-           "Brokoli") %>% sample(1)
-type <- c("Student t-Tests", "Welch t-Tests") %>% sample(1)
+jahr <- "2024"
+name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
+          "Mark", "Jonas", "Eric", "Nikolas", "Manuel") |> 
+  set_names(c("sie", "sie", "sie", "sie", "sie",
+              "er", "er", "er", "er", "er")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
+
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli", "Spargel") %>% 
+  sample(1) |> 
+  set_names("pflanze")
+animal <- c("Puten", "Schweinen", "Fleischrindern", "Lamas", "Hühnern", "Zandern", "Milchvieh") |> 
+  sample(1) |> 
+  set_names("tier")
+obser <- c(plant, animal) |> sample(1)
+
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngestufen ($ctrl$ und $high$)",
+                       "Lichtstufen ($none$ und $600lm$)",
+                       "Lüftungssystemen und Folientunneln ($ctrl$ und $tornado$)",
+                       "Substrattypen ($torf$ und $70p30n$)",
+                       "Bewässerungstypen ($low$ und $high$)",
+                       "Genotypen ($AA$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$ und $fedX$)", 
+                    "Flüssignahrung ($ctrl$ und $flOw$)",
+                    "Genotypen ($AA$ und $BB$)",
+                    "Elterlinie ($Standard$ und $Xray$)",
+                    "Lüftungssystem ($keins$ und $vorhanden$)",
+                    "Bestandsdichte ($Verordnung$ und $Leicht erhöht$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  n_vec <- c(7:11) %>% sample(1)
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(4, 6, 8, 10) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 1)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather
+  return(temp_tbl)
+}
+ques_vec <- c("foo") |> 
+  sample(1)
+
+effect_test <- c("die Teststatistik $T_{D}$", "der Effekt") |> sample(1)
+
+ques_vec <- c(str_c("Der t-Test. ", name, " erschaudert. Ein mächtiges Werkzeug in den Händen desjenigen, der ", outcome_name, " hat. Aber erstmal überhaupt den t-Test rechnen können. Wie sah das Experiment von ", name, " überhaupt aus? ", name, " hat ", exp, " mit ", obser, " durchgeführt. Dabei wurde die Behandlung ", x_val, " an den ", obser, " getestet. Gemessen hat ", name, " dann als Messwert ", y_val, ". Warum der Versuch ", ort, " für ", project, " stattfinden musste, ist ", pronom[4], " bis heute ein Rätsel. Egal. Gibt es jetzt einen Zusammenhang zwischen der Behandlung und ", y_val, "?"),
+              str_c(name, " ist ", ort, " für einen Versuch mit ", obser, ". Allein diese Tatsache ist für ", pronom[5], " eine Erzählung wert. Für ", project, " musste ", names(name), " ", exp, " mit ", obser, " durchführen und das sollte laut ", betreuer, " an diesem Nichtort besonders gut gelingen. Ablenkung gibt es jedenfalls keine. Gar keine. Alleine sein hilft jetzt aber nur bedingt, denn ", pronom[6], " Behandlung ", x_val, " und der Messwert ", y_val, " sollen mit einem t-Test ausgewertet werden. Immerhin weiß ", names(name), ", dass ", pronom[7], " Messwert einer Normalverteilung folgt. "),
+              str_c("'Der t-Test testet ", outcome_name, ".', liest ", name, " laut. Das hilft jetzt auch nur bedingt weiter. Laut ", betreuer, " ist zwar ", pronom[4], " Messwert ", y_val, " normalverteilt, aber wie rechnet ", names(name), " jetzt einen t-Test? Für ", project, " musste ", names(name), " ", exp, " mit ", obser, " ", ort, " durchführen. Als wäre das nicht schon anstrengend genug gewesen. Jetzt soll ", names(name), " auch noch testen, ob die Behandlung ", x_val, " ein signifikantes Ergebnis liefert."),
+              str_c(ort_2, ", unendliche Weiten. Wir schreiben das Jahr ", jahr, ". Dies sind die Abenteuer von ", name, ", ", pronom[8], " mit ", pronom[2], " 1 ", pronom[9], " starken Besatzung 12 Wochen lang unterwegs ist, um neue Welten zu erforschen, neues Leben und neue Zivilisationen. 'Oder nennen wir es Ödnis und Verzweiflung', denkt ", name, ". Für ", project, " ist ", name, " ins Nichts gezogen. Was macht ", names(name), " nun? ", name, " hat ", exp, " mit ", obser, " durchgeführt. Die Behandlung ", x_val, " wurde an ", obser, " getestet. Gemessen hat ", names(name), " dann als ", outcome_name, " ", y_val, ". Jetzt soll ", names(name), " ", betreuer, " nach testen, ob die Behandlung ", x_val, " ein signifikantes Ergebnis liefert.")) |> sample(1)
+
 @ 
 
-In \Sexpr{exp} wurde eine neue technische Versuchsanlage getestet. Bei dem
-Pilotexperiment mit sehr geringer Fallzahl $(n_1 = n_2 = 3)$ kamen zwei
-Behandlungen (\textit{ctrl} und \textit{dose}) zur Wachstumskontrolle zum
-Einsatz. Es ergibt sich die folgende Datentabelle mit dem gemessenen
-Gewicht (\textit{weight}) von \Sexpr{plant}.
+\Sexpr{ques_vec}
 
-<<ttest-08, results='asis', echo = FALSE>>=
-data_tbl <- rbind(tibble(ctrl = round(rnorm(n = 3,
-                                         mean = sample(c(14, 17, 20), 1),
-                                         sd = sample(c(3, 2), 1)), 1)) %>%
-                  gather,
-                  tibble(dose = round(rnorm(n = 3,
-                                         mean = sample(c(16, 18, 22), 1),
-                                         sd = sample(c(4, 5), 1)), 1)) %>%
-                  gather) %>%
-  set_names(c("treatment", "weight")) %>% 
-  sample_n(size = nrow(.))
+<<ttest-01, results='asis', echo = FALSE>>=
+
+x_val <- str_replace(x_val, "\\\\", "")
+y_val <- str_replace(y_val, "\\\\", "")
+
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
+  set_names(c("treatment", "freshmatter")) %>%
+  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
+  sample_n(size = nrow(.)) 
+
+t_calc <- t.test(freshmatter ~ treatment, data_tbl)$statistic
 
 t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
 
-kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+if(t_calc >= 2.04){
+  textsig <- "keinen"
+} else {
+  textsig <- "einen"
+}
+
+x_val <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+data_tbl %>% 
+  set_names(c(x_val, y_val)) |> 
+  kable(booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 @
 
+Leider kennt sich \Sexpr{name} mit der Berechnung eines t-Tests überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Berechnung Ihre Hilfe!
+
 \begin{enumerate}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2
-      Punkte)}
-  \item Bestimmen Sie die Teststatistik $T_{calc}$ eines
-    \textit{\Sexpr{type}} f{\"u}r den Vergleich der beiden Behandlungen!
-    \textbf{(4 Punkte)}
-\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ und dem
-  berechneten $T_{D}$ eine Aussage zur Nullhypothese! Begr{\"u}nden Sie Ihre
-  Antwort!  \textbf{(2 Punkte)}
-\item Berechnen Sie den Effekt der Behandlungen \textit{ctrl} und
-  \textit{dose} auf das Gewicht von \Sexpr{plant}! \textbf{(1 Punkt)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+  \item Bestimmen Sie die Teststatistik $T_{D}$ eines Student t-Tests! \textbf{(3 Punkte)}
+\item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Berechnen Sie den Effekt des Student t-Tests! \textbf{(1 Punkt)}
+\item Wenn Sie \textit{\Sexpr{textsig}} Unterschied zwischen den Behandlungsgruppen erwarten würden, wie groß wäre dann \Sexpr{effect_test}? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Formulieren Sie eine Antwort an \Sexpr{name} über das Ergebnis Ihrer statistischen Analyse! \textbf{(2 Punkte)}
 \end{enumerate}

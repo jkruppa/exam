@@ -10,7 +10,7 @@
 
 <<>>=
 name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
-          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
+          "Mark", "Jonas", "Eric", "Nikolas", "Manuel") |> 
   set_names(c("sie", "sie", "sie", "sie", "sie",
               "er", "er", "er", "er", "er")) |> sample(1)
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie"),
