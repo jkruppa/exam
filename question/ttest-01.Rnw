@@ -84,7 +84,7 @@ ques_vec <- c("foo") |>
 
 effect_test <- c("die Teststatistik $T_{D}$", "der Effekt") |> sample(1)
 
-str_c("Der t-Test. ", name, " erschaudert. Ein mächtiges Werkzeug in den Händen desjenigen, der ein normalverteiltes ", outcome_name, " hat. Aber erstmal überhaupt rechnen können. ", name, " hat ", exp, " mit ", obser, " durchgeführt. Dabei wurde die Behandlung ", x_val, " an den ", obser, " getestet. Gemessen hat ", name, " dann als Messwert ", y_val, ".")
+str_c("Der t-Test. ", name, " erschaudert. Ein mächtiges Werkzeug in den Händen desjenigen, der ein normalverteiltes ", outcome_name, " hat. Aber erstmal überhaupt rechnen können. ", name, " hat ", exp, " mit ", obser, " durchgeführt. Dabei wurde die Behandlung ", x_val, " an den ", obser, " getestet. Gemessen hat ", name, " dann als Messwert ", y_val, " ausgewählt. Warum der Versuch ", ort, " in ", project, " stattfinden musste, ist ", pronom[4], " bis heute ein Rätsel.")
 
 @ 
 
@@ -123,9 +123,10 @@ Leider kennt sich \Sexpr{name} mit der Berechnung eines t-Tests überhaupt nicht
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2 Punkte)}
-  \item Bestimmen Sie die Teststatistik $T_{D}$ eines Student t-Tests! \textbf{(4 Punkte)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+  \item Bestimmen Sie die Teststatistik $T_{D}$ eines Student t-Tests! \textbf{(3 Punkte)}
 \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie den Effekt des Student t-Tests! \textbf{(1 Punkt)}
 \item Wenn Sie \textit{\Sexpr{textsig}} Unterschied zwischen den Behandlungsgruppen erwarten würden, wie groß wäre dann \Sexpr{effect_test}? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Formulieren Sie einen Antwort an \Sexpr{name} über das Ergebnis der statistischen Analyse! \textbf{(2 Punkte)}
 \end{enumerate}

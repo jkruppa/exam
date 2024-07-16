@@ -14,7 +14,7 @@ name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
               "er", "er", "er", "er", "er")) |> sample(1)
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
               er = c("seinem", "seiner", "seinen"))[[names(name)]]
-project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
