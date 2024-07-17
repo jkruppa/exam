@@ -2,37 +2,31 @@
 
 \textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
   Teilaufgaben mit an!} \\[1Ex]
-
+ 
+<<>>=
+name <- par_lst$naming
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\includegraphics[width = 1.2cm]{\Sexpr{avatar_file}}\hfill\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
 <<>>=
 
-jahr <- "2024"
-name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
-          "Mark", "Jonas", "Eric", "Nikolas", "Manuel") |> 
-  set_names(c("sie", "sie", "sie", "sie", "sie",
-              "er", "er", "er", "er", "er")) |> sample(1)
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
-              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
-
-
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli", "Spargel") %>% 
-  sample(1) |> 
-  set_names("pflanze")
-animal <- c("Puten", "Schweinen", "Fleischrindern", "Lamas", "Hühnern", "Zandern", "Milchvieh") |> 
-  sample(1) |> 
-  set_names("tier")
-obser <- c(plant, animal) |> sample(1)
-
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -63,7 +57,6 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-
 groups_vec <- x_val %>% 
   str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
   str_subset("\\$") %>% 
@@ -82,7 +75,10 @@ gen_data <- function(...){
 ques_vec <- c("foo") |> 
   sample(1)
 
-ques_vec <- c("foo")
+ques_vec <- c(str_c("Alles voll mit ", obser, ". Das hat ", name, " in ", project, " gemacht. ", obser, ". Worum ging es aber konkret? ", name, " hat als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten hat er in einem ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, "eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden."))
+
+str_c("Als ", name, " ", betreuer, " zugehört hatte, klang das mit der Messung an der gleichen Beobachtung irgendwie einfacher als es jetzt in der Praxis ist.")
+
 
 @
 

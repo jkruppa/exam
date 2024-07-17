@@ -9,7 +9,7 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-jahr <- "2024"
+jahr <- par_lst$year
 name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
           "Mark", "Jonas", "Eric", "Nikolas", "Manuel") |> 
   set_names(c("sie", "sie", "sie", "sie", "sie",
@@ -24,7 +24,7 @@ ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Em
 ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
 
 
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli", "Spargel") %>% 
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokkoli", "Spargel") %>% 
   sample(1) |> 
   set_names("pflanze")
 animal <- c("Puten", "Schweinen", "Fleischrindern", "Lamas", "Hühnern", "Zandern", "Milchvieh") |> 

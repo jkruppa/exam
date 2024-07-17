@@ -87,6 +87,27 @@ grade_tbl <- pre_grade_tbl %>%
 exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |> 
   str_c(collapse = "\\!")
 
+## global parameters
+naming_global <- c("Jessica", "Paula", "Tina", "Nilufar",
+                   "Mark", "Jonas", "Alex", "Steffen") |> 
+  set_names(c("sie", "sie", "sie", "sie", 
+              "er", "er", "er", "er")) 
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", 
+           "Erdbeeren", "Brokkoli", "Spargel") %>% 
+  sample(1) |> 
+  set_names("pflanze")
+animal <- c("Puten", "Schweinen", "Fleischrindern", 
+            "Lamas", "Hühnern", "Zandern", "Milchvieh") |> 
+  sample(1) |> 
+  set_names("tier")
+obser <- c(plant, animal) |> sample(1)
+
+par_lst <- lst(year = "2024",
+               naming = naming_global |> sample(1),
+               naming_sec = str_subset(naming_global, naming, negate = TRUE) |> sample(1),
+               obser = c(plant, animal) |> sample(1))
+
 @ 
 % -----------------------------------------------------------------------
 \input{\Sexpr{init_path}}
