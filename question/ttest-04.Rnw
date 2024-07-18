@@ -1,18 +1,27 @@
 \section{Aufgabe \hfill (11 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
 <<>>=
-name <- par_lst$naming
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
-  str_subset(name)
+  str_subset(str_c(name, name_sec, sep = "|"))
 jahr <- par_lst$year
 obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
  
 %% --------------------------------------------------------------------
-\includegraphics[width = 1.2cm]{\Sexpr{avatar_file}}\hfill\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -21,20 +30,20 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr",
                       "sie", "ihre", "ihr", "die", "Frau"),
               er = c("seinem", "seiner", "seinen", "ihm", 
                      "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
-project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektbericht"),
-             str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+project <- c(str_c("einer Abschlussarbeit"), str_c("einem Projektbericht"),
+             str_c("einer Hausarbeit")) |> sample(1)
+betreuer <- c(str_c("der Betreuerin"), str_c("des Betreuers")) |> sample(1)
 outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("ein Gewächshausexperiment",
-                       "ein Freilandversuch",
-                       "einen Versuch in einer Klimakammer",
-                       "ein Feldexperiment"),
-           tier = c("ein Stallexperiment", 
-                    "ein Kreuzungsexperiment",
-                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
 x_val <- lst(pflanze = c("Düngung ($vorher$ und $nachher$)",
@@ -72,24 +81,15 @@ gen_data <- function(...){
     mutate(ID = 1:n_vec)
   return(temp_tbl)
 }
-ques_vec <- c("foo") |> 
+
+ques_vec <- c(str_c("Alles voll mit ", obser, ". Das haben ", name, " und ", name_sec, " gemeinsam in ", project, " gemacht! Worum ging es aber konkret? Beide haben als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten haben beide zusammen in ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, " eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden."),
+              str_c(name, " und ", name_sec, " haben sich dazu entschieden zusammenzuarbeiten. Das sollte alles etwas einfacher machen. Jeder hat zwar ein getrenntes Themenfeld aber den Hauptversuch machen beide gemeinsam. Das hat sich schonmal als gut Idee soweit herausgestellt. In ", project, " sollen beide herausfinden, ob es einen Zusammenhang zwischen ", x_val, " und ", y_val, " gibt. Die Besonderheit ist hierbei, dass die Messungen an der gleichen Beobachtung stattfinden. Beide messen also zweimal an den gleichen ", obser, ". Hier muss dann wohl auf ", outcome_name, " ein gepaarter t-Test gerechnet werden."),
+              str_c("Es gibt ja immer die Möglichkeit sich Hilfe zu holen. Das geht natürlich auch immer in ", project, ". Deshalb arbeiten ", name, " und ", name_sec, " gemeinsam an ", project, ". Das macht dann auch die Analyse ihres Hauptversuches einfacher. Zwar hat jeder von ihnen noch ein Subthema, aber auch da kann man sich ja helfen. In dem Hauptversuch wurde Folgendes von den beiden gemacht. ", name, " und ", name_sec, " haben sich ", obser, " angeschaut. Dabei geht um Zusammenhang zwischen ", x_val, " und ", y_val, ". Jetzt sollen beide einen gepaarten t-Test rechnen.")) |> 
   sample(1)
-
-ques_vec <- c(str_c("Alles voll mit ", obser, ". Das hat ", name, " in ", project, " gemacht. ", obser, ". Worum ging es aber konkret? ", name, " hat als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten hat er in einem ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, "eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden."))
-
-str_c("Als ", name, " ", betreuer, " zugehört hatte, klang das mit der Messung an der gleichen Beobachtung irgendwie einfacher als es jetzt in der Praxis ist.")
-
 
 @
 
 \Sexpr{ques_vec}
-
-Das Schlachtgewicht von wölfen h{\"a}ngt ma{\ss}geblich von der
-Gewichtszunahme in den ersten sieben Tagen hab. Um einen F{\"u}tterungsversuch
-in verschiedenen St{\"a}llen zu planen w{\"u}rde ein Pilotversuch durchgef{\"u}hrt. Das
-Gewicht von wölfen wurde \textit{vor} der Behandlung mit
-xxx und 1 Woche \textit{nach} der Behandlung gemessen. Es ergibt
-sich die folgende Datentabelle.
 
 <<ttest-02, results='asis', echo = FALSE>>=
 t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
@@ -105,7 +105,7 @@ data_tbl |>
   kable_styling(latex_options = "hold_position")
 @
 
-Leider kennt sich \Sexpr{name} mit der Berechnung eines gepaarten t-Tests überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Berechnung Ihre Hilfe!
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Berechnung eines gepaarten t-Tests überhaupt nicht aus. Deshalb brauchen sie beide bei der Berechnung Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}

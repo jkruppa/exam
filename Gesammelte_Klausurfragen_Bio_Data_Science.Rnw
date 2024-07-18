@@ -104,8 +104,7 @@ animal <- c("Puten", "Schweinen", "Fleischrindern",
 obser <- c(plant, animal) |> sample(1)
 
 par_lst <- lst(year = "2024",
-               naming = naming_global |> sample(1),
-               naming_sec = str_subset(naming_global, naming, negate = TRUE) |> sample(1),
+               naming = naming_global,
                obser = c(plant, animal) |> sample(1))
 
 @ 
@@ -114,8 +113,17 @@ par_lst <- lst(year = "2024",
 % -----------------------------------------------------------------------
 \begin{document}
 \date{Wintersemester 2024/25 
-\vfill 
+\vfill
 \begin{center}
+\includegraphics[width = 1.9cm]{avatare/Alex}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Jessica}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Jonas}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Mark}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Nilufar}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Paula}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Steffen}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Tina}\\
+\vspace{1.5Ex}
 \small
 \textit{"`The test of a student is not how much he knows,\\ but how much he wants to know."'\\ --- Alice W. Rollins}
 \end{center}}

@@ -1,64 +1,138 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(2)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/w62HJlbN28U}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/w62HJlbN28U}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
-<<ttest-R-03-0,  echo = FALSE>>=
+<<>>=
 
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
-           "Brokoli") %>% sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c("einer Abschlussarbeit"), str_c("einem Projektbericht"),
+             str_c("einer Hausarbeit")) |> sample(1)
+betreuer <- c(str_c("der Betreuerin"), str_c("des Betreuers")) |> sample(1)
+outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
+
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngestufen ($ctrl$ und $high$)",
+                       "Lichtstufen ($none$ und $600lm$)",
+                       "Lüftungssystemen und Folientunneln ($ctrl$ und $tornado$)",
+                       "Substrattypen ($torf$ und $70p30n$)",
+                       "Bewässerungstypen ($low$ und $high$)",
+                       "Genotypen ($AA$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$ und $fedX$)", 
+                    "Flüssignahrung ($ctrl$ und $flOw$)",
+                    "Genotypen ($AA$ und $BB$)",
+                    "Elterlinie ($Standard$ und $Xray$)",
+                    "Lüftungssystem ($keins$ und $vorhanden$)",
+                    "Bestandsdichte ($Verordnung$ und $Erhöht$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  n_vec <- c(7:11) %>% sample(1)
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(4, 6, 8, 10) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 1)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather 
+  return(temp_tbl)
+}
+
+
+ques_vec <- c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich Hilfe in \\Rlogo zu holen. Die beiden hatten zwar schon erste Kontakte mit \\Rlogo sind sich aber unsicher bei der Interpetierung der Ausgabe eines t-Tests für ihren gemeinsamen Versuch. In ", project, " haben sie zusammen ", obser, " untersucht. Dabei ging es um den Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, ". Der Versuch wurde in ", exp, " ", ort, " durchgeführt. Nach ", betreuer, " ist der Messwert ", y_val, " normalverteilt und ein t-Test passt daher. Das wird jetzt nicht mehr angezweifel..."),
+              str_c("\\Rlogo ist schon ein tolles Programm, wenn man mit dem Ding umgehen kann. Super umgehen kann damit ", name, ". Deshalb sind auch ", name_sec[1], " und ", name_sec[2], " bei ", pronom[4], " um sich bei einem gemeinsamen Projekt helfen zu lassen. Beide arbeiten gemeinsam an ", project, ". In dem zu beschreibenden Versuch geht es ", ort, " um ", exp, " mit ", obser, ". Dabei ging darum herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Da der Messwert ", y_val, " normalverteilt ist kann ein t-Test gerechnet werden."),
+              str_c("'Wir waren ", ort, " um ", obser, " in ", exp, " zu messen.', ", name, " legt das Dokument auf den Tisch und schaut ", name_sec[1], " und ", name_sec[2], " fragend an. Beide schauen fragend zurück. Die beiden sind zu ", pronom[4], " gekommen, da sie sich nicht mit \\Rlogo auskennen und daher Hilfe bei der Interpretation des t-Tests brauchen. Kein Problem. Aber worum es in dem Versuch geht, lässt sich nur aus dem Text in seiner Hand erahnen. Vielleicht hilft da ja die Ausgabe des t-Tests in R weiter."),
+              str_c("'Wir sind uns relativ sicher, dass unser Messwert ", y_val, " ist!', ruft ", name_sec[1], " wild gestikulierend. Als würde sowas die Ausgabe von \\Rlogo interessieren. ", name_sec[1], " und ", name_sec[2], " sind in einem Cafè mit ", name, " um sich Hilfe von ", pronom[4], " in \\Rlogo zu holen. Während ", name, " Kirschstreuselkuchen mampft, versuchen die beiden ihren Versuch ", ort, " mit ", obser, " in ", exp, " zu erklären. ", name, " hofft, dass die \\Rlogo Ausgabe des t-Tests ", pronom[4], " mehr Informationen liefert." ),
+              str_c("Almería. Spanien. Sonne und Strand. ", name_sec[1], " und ", name_sec[2], " haben ihren gemeinsamen Auslandsaufenthalt sichtlich genossen. Dann hatte sich auch noch angeboten ihre Abschlussarbeit gemeinsam in Almería durchzuführen. Nur muss jetzt alles in \\Rlogo gerechnet werden, da \\Rlogo international der Standard in der Datenauswertung ist und die Betreuer in Spanien nur \\Rlogo können. Während beide ", name, " Oliven füttern, hoffen sie mehr Informationen von ihr über ", pronom[4], " seltsamen \\Rlogo Ausgabe des t-Tests. Immerhin erinnern beide sich an die Behandlung ", x_val, " und das es um ", obser, " ging."),
+              str_c("'Programmieren ist wie eine Sprache lernen. Man muss es nur machen, dann wird man mit der Zeit immer besser!', gibt ", name, " zwinkernd zu Protokoll. Das hilft jetzt ", name_sec[1], " und ", name_sec[2], " nur bedingt, da beide jetzt die \\Rlogo Ausgabe interpretieren müssen und nicht vor drei Wochen, wo noch Zeit gewesen wäre. Die beiden hatten ", ort, " einen Versuch mit ", obser, " in ", exp, " durchgeführt. Das war schon anstrengend genug! 'Wir haben ", y_val, " gemessen, vieleicht hilft das ja...', meint ", name_sec[sample(1:2, 1)], " leicht genervt. Alle starren auf die \\Rlogo Ausgabe des t-Tests."), 
+              str_c("'Mit dem R Paket \\texttt{\\{emmeans\\}} können wir gleich die Gruppenvergleiche rechnen und uns das \\textit{compact letter displac}' ausgeben lassen!', verkündet ", name, " sichtlich stolz. 'Nach Meinung ", betreuer, " soll es aber nur erstmal ein t-Test sein. Und die Ausgabe ist schon wirr genug.', merkt ", name_sec[sample(1:2, 1)], " an. ", name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich in \\Rlogo helfen zu lassen. Die beiden waren ", sample(1:3)," Monate ", ort, " um einen Versuch mit ", obser, " in ", exp, " durchzuführen. Ziel war es das Outcome ($Y$) ", y_val, " zu bestimmen.")) |> sample(1)
+
+
+
 @
 
-Sie erhalten folgende \Rlogo Ausgabe der Funktion \texttt{t.test()} zu einem Versuch mit \Sexpr{plant}.
+\Sexpr{ques_vec}
 
 <<ttest-R-03-a,  echo = FALSE>>=
 
-question_vec <- c("das statistische Hypothesenpaar",
-                  "die wissenschaftliche Fragestellung") %>% sample(1)
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
+  set_names(c("treatment", "freshmatter")) %>% 
+  select(treatment, freshmatter) |> 
+  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
+  sample_n(size = nrow(.)) 
 
-data_tbl <- rbind(tibble(low = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather,
-                  tibble(high = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather) %>%
-  set_names(c("P", "drymatter")) %>%
-  sample_n(size = nrow(.))
-
-
-preprint <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
+preprint <- t.test(freshmatter ~ treatment, data_tbl, var.equal = TRUE) 
 preprint$null.value <- "[condensed]"
 
-preprint$data.name <- c("drymatter [kg/ha] by Fe", "freshmatter [kg/qm] by N", "weight [g/qm] by group", "waterintake [ml/d] by infusion") %>% 
-  sample(1)
-preprint$method <- c("Two Sample t-test", "Welch t-Test") %>% sample(1)
+x_val <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 
-first_vec <- c("high", "ctrl", "mid") %>% sample(1)
-second_vec <- c("low", "trt1", "trt2") %>% sample(1)
-
-names(preprint$estimate) <- c(str_c("mean in group ", first_vec),
-                              str_c("mean in group ", second_vec))
-
+preprint$data.name <- str_c(y_val, " by ", x_val)
 preprint
 
-ttest <- t.test(drymatter ~ P, data_tbl, var.equal = TRUE)
-tk <- qt(0.975, df=ttest$parameter)
+ttest <- t.test(freshmatter ~ treatment, data_tbl, var.equal = TRUE)
+t_crit <- qt(0.975, df=ttest$parameter) |> round(2)
 @
 
-
+Helfen Sie \Sexpr{name} bei der Interpretation des t-Tests! Sonst geht es auch für \Sexpr{name_sec[1]} und \Sexpr{name_sec[2]} nicht weiter.
+  
 \begin{enumerate}
-  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(2
-Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+  Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Skizieren Sie die sich ergebenden Boxplot!
-  Welche Annahmen an die Daten haben Sie getroffen? Begr{\"u}nden Sie Ihre
+  Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre
   Antwort! \textbf{(2 Punkte)} 
 \item Skizieren Sie die sich ergebenden Barplots! \textbf{(2 Punkte)}
-\item Berechnen Sie den Effekt der Behandlungen! \textbf{(1 Punkt)} 
+\item Berechnen Sie den Effekt des t-Tests! \textbf{(1 Punkt)}
 \end{enumerate}
 

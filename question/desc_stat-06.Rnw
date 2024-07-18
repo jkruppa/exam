@@ -1,32 +1,34 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
-\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/ORHSPTCdfeY}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/ORHSPTCdfeY}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
-name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
-          "Mark", "Noa", "Eric", "Nikolas", "Manuel") |> 
-  set_names(c("sie", "sie", "sie", "sie", "sie",
-              "er", "er", "er", "er", "er")) |> sample(1)
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr"),
               er = c("seinem", "seiner", "seinen", "ihm"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% 
-  sample(1) |> 
-  set_names("pflanze")
-animal <- c("Puten", "Schweine", "Fleischrinder", "Lamas", "Hühner", "Zander", "Milchvieh") |> 
-  sample(1) |> 
-  set_names("tier")
-obser <- c(plant, animal) |> sample(1)
 
 exp <- lst(pflanze = c("einem Gewächshausexperiment",
                        "einem Freilandversuch",

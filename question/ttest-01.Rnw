@@ -1,19 +1,29 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/eejS2uG4o-M}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/eejS2uG4o-M}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
 
-name <- c("Jessica", "Paula", "Tina", "Sabine", "Adele",
-          "Mark", "Jonas", "Eric", "Nikolas", "Manuel") |> 
-  set_names(c("sie", "sie", "sie", "sie", "sie",
-              "er", "er", "er", "er", "er")) |> sample(1)
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektbericht"),
@@ -21,15 +31,6 @@ project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektber
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
-
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli", "Spargel") %>% 
-  sample(1) |> 
-  set_names("pflanze")
-animal <- c("Puten", "Schweinen", "Fleischrindern", "Lamas", "Hühnern", "Zandern", "Milchvieh") |> 
-  sample(1) |> 
-  set_names("tier")
-obser <- c(plant, animal) |> sample(1)
-
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -51,7 +52,7 @@ x_val <- lst(pflanze = c("Düngestufen ($ctrl$ und $high$)",
                     "Genotypen ($AA$ und $BB$)",
                     "Elterlinie ($Standard$ und $Xray$)",
                     "Lüftungssystem ($keins$ und $vorhanden$)",
-                    "Bestandsdichte ($Verordnung$ und $Leicht erhöht$)"))[[names(obser)]] %>% 
+                    "Bestandsdichte ($Verordnung$ und $Erhöht$)"))[[names(obser)]] %>% 
   sample(1)
 
 y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
