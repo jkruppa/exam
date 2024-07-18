@@ -78,9 +78,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 Leider kennt sich \Sexpr{name} mit der Erstellung von Boxplots nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Visualisierung Ihre Hilfe!
 
 \begin{enumerate}
-\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots für die
-  zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
-  \textbf{(5 Punkte)} 
+\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots für die zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend! \textbf{(5 Punkte)} 
 \item Wie ist Ihr Vorgehen, wenn Sie eine \textit{gerade} Anzahl an
   Beobachtungen pro Gruppe haben? \textbf{(1 Punkt)}
 \item Beschriften Sie \textit{einen} der beiden Boxplots mit den gängigen

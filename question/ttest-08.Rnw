@@ -71,28 +71,26 @@ groups_vec <- x_val %>%
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
 gen_data <- function(...){
-  n_vec <- c(7:11) %>% sample(1)
   mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
   sd_vec <- c(4, 6, 8, 10) %>% sample(1)
-  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+  temp_tbl <- tibble(temp = rnorm(n = 9, mean = mean_vec, sd = sd_vec)) %>%
     mutate(temp = round(temp, 1)) %>% 
     set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
     gather |> 
-    mutate(ID = 1:n_vec)
+    mutate(ID = 1:9)
   return(temp_tbl)
 }
 
-ques_vec <- c(str_c("Alles voll mit ", obser, ". Das haben ", name, " und ", name_sec, " gemeinsam in ", project, " gemacht! Worum ging es aber konkret? Beide haben als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten haben beide zusammen in ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, " eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden."),
-              str_c(name, " und ", name_sec, " haben sich dazu entschieden zusammenzuarbeiten. Das sollte alles etwas einfacher machen. Jeder hat zwar ein getrenntes Themenfeld aber den Hauptversuch machen beide gemeinsam. Das hat sich schonmal als gut Idee soweit herausgestellt. In ", project, " sollen beide herausfinden, ob es einen Zusammenhang zwischen ", x_val, " und ", y_val, " gibt. Die Besonderheit ist hierbei, dass die Messungen an der gleichen Beobachtung stattfinden. Beide messen also zweimal an den gleichen ", obser, ". Hier muss dann wohl auf ", outcome_name, " ein gepaarter t-Test gerechnet werden."),
-              str_c("Es gibt ja immer die Möglichkeit sich Hilfe zu holen. Das geht natürlich auch immer in ", project, ". Deshalb arbeiten ", name, " und ", name_sec, " gemeinsam an ", project, ". Das macht dann auch die Analyse ihres Hauptversuches einfacher. Zwar hat jeder von ihnen noch ein Subthema, aber auch da kann man sich ja helfen. In dem Hauptversuch wurde Folgendes von den beiden gemacht. ", name, " und ", name_sec, " haben sich ", obser, " angeschaut. Dabei geht um Zusammenhang zwischen ", x_val, " und ", y_val, ". Jetzt sollen beide einen gepaarten t-Test rechnen.")) |> 
+ques_vec <- c(str_c("Alles voll mit ", obser, ". Aber das haben ", name, " und ", name_sec, " eben gemeinsam in ", project, " gemacht! Worum ging es aber konkret? Beide haben als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten haben beide zusammen in ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, " eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden. Leider kennen sich beide nicht sehr gut in \\Rlogo aus."),
+              str_c(name, " und ", name_sec, " haben sich dazu entschieden zusammenzuarbeiten. Das sollte alles etwas einfacher machen. Jeder hat zwar ein getrenntes Themenfeld aber den Hauptversuch machen beide gemeinsam. Das hat sich schonmal als gut Idee soweit herausgestellt. In ", project, " sollen beide herausfinden, ob es einen Zusammenhang zwischen ", x_val, " und ", y_val, " gibt. Die Besonderheit ist hierbei, dass die Messungen an der gleichen Beobachtung stattfinden. Beide messen also zweimal an den gleichen ", obser, ". Hier muss dann wohl auf ", outcome_name, " ein gepaarter t-Test gerechnet werden. Leider kennen sich beide nicht sehr gut in \\Rlogo aus."),
+              str_c("Es gibt ja immer die Möglichkeit sich Hilfe zu holen. Das geht natürlich auch immer in ", project, ". Deshalb arbeiten ", name, " und ", name_sec, " gemeinsam an ", project, ". Das macht dann auch die Analyse ihres Hauptversuches einfacher. Zwar hat jeder von ihnen noch ein Subthema, aber auch da kann man sich ja helfen. In dem Hauptversuch wurde Folgendes von den beiden gemacht. ", name, " und ", name_sec, " haben sich ", obser, " angeschaut. Dabei geht um Zusammenhang zwischen ", x_val, " und ", y_val, ". Jetzt sollen beide einen gepaarten t-Test rechnen. Leider kennen sich beide nicht sehr gut in \\Rlogo aus.")) |> 
   sample(1)
 
 @
 
 \Sexpr{ques_vec}
 
-<<ttest-02, results='asis', echo = FALSE>>=
-t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
+<<ttest-R-04-a,  echo = FALSE>>=
 
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
   set_names(c("treatment", "freshmatter", "ID")) %>% 
@@ -100,22 +98,8 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.)) 
 
-data_tbl |> 
-  kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
-@
-
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Berechnung eines gepaarten t-Tests in \Rlogo überhaupt nicht aus. Deshalb brauchen sie beide bei der Berechnung Ihre Hilfe!
-
-<<ttest-R-04-a,  echo = FALSE>>=
-
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
-  set_names(c("treatment", "freshmatter")) %>% 
-  select(treatment, freshmatter) |> 
-  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
-  sample_n(size = nrow(.)) 
-
-preprint <- t.test(freshmatter ~ treatment, data_tbl, var.equal = TRUE) 
+preprint <- t.test(filter(data_tbl, as.numeric(treatment) == 1)$freshmatter, 
+                   filter(data_tbl, as.numeric(treatment) == 2)$freshmatter, paired = TRUE)
 preprint$null.value <- "[condensed]"
 
 x_val <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
@@ -124,53 +108,16 @@ y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 preprint$data.name <- str_c(y_val, " by ", x_val)
 preprint
 
-## old
-
-question_vec <- c("das statistische Hypothesenpaar",
-                  "die wissenschaftliche Fragestellung") %>% sample(1)
-
-n_vec <- sample(c(5,7,9), 1)
-
-data_tbl <- cbind(tibble(low = round(rnorm(n = n_vec,
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))),
-                  tibble(high = round(rnorm(n = n_vec,
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1))))) 
-
-
-preprint <- t.test(data_tbl$low, data_tbl$high, var.equal = TRUE,
-                   paired = TRUE)
-preprint$null.value <- "[condensed]"
-
-preprint$data.name <- c("low and high", "before and after", "t0 and t1", "ctrl and trt") %>% 
-  sample(1)
-
-
-preprint
-
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Berechnung eines gepaarten t-Tests überhaupt nicht aus. Deshalb brauchen sie beide bei der Berechnung Ihre Hilfe!
+Jetzt brauchen \Sexpr{name} und \Sexpr{name_sec} Ihre Hilfe bei der Berechnung eines gepaarten t-Tests in \Rlogo um ihre Arbeit dann in diesem Semester noch abschließen zu können.
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
   Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie die sich ergebenden Boxplot!
-  Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre
-  Antwort! \textbf{(2 Punkte)} 
-\item Skizieren Sie die sich ergebenden Barplots! \textbf{(2 Punkte)}
-\item Berechnen Sie den Effekt des t-Tests! \textbf{(1 Punkt)}
-%% old
-  \item Formulieren Sie \Sexpr{question_vec}! \textbf{(2
-Punkte)}
-\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizzieren Sie den sich ergebenden Datensatz mit $n = 4$
-  Beobachtungen! Die Daten m{\"u}ssen \textit{nicht} die Mittelwertsdifferenz
-  $d$ erf{\"u}llen! \textbf{(2 Punkte)} 
-\item Skizieren Sie den sich ergebenden Boxplot der Differenzen! Welche Annahmen an die Daten haben Sie getroffen? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Skizzieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
+\item Skizzieren Sie den sich ergebenden Boxplot der Differenzen! Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
 

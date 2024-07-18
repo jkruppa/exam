@@ -1,63 +1,98 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Q7xtQJoOmQI}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
-exp <- c("einem Gew{\"a}chshausexperiment",
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
+  set_names("freshmatter", "drymatter", "yield", "protein") |> 
+  sample(1)
+outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+exp <- c("einem Gewächshausexperiment",
          "einem Freilandversuch",
-         "einem Experiment in einer Klimakammer",
+         "einem Versuch in einer Klimakammer",
          "einem Feldexperiment") %>% sample(1)
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren",
-           "Brokoli") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
+type <- c("Düngestufen ($ctrl$, $low$ und $high$)",
+          "Lichtstufen ($none$, $200lm$ und $600lm$)",
+          "Lüftungssystemen und Folientunneln ($ctrl$, $storm$ und $tornado$)",
+          "Substrattypen ($torf$, $40p60n$ und $70p30n$)",
+          "Bewässerungstypen ($low$, $mid$ und $high$)",
+          "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
+norm <- c("die Normalverteilung von $Y$", "die Varianzhomogenität über die Behandlungsgruppen") |> sample(1)
+groups_vec <- type %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  n_vec <- c(5:8) %>% sample(1)
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(0.5, 1, 1.5, 2) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 0)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather
+  return(temp_tbl)
+}
+
+ques_vec <- c("foo") |> sample(1)
+
 @ 
 
-In \Sexpr{exp} wurde der Ertrag von \Sexpr{plant} unter drei verschiedenen
-Pestizid-Dosen $0.5 g/l$, $1.5 g/l$ und $2.5 g/l$ gemessen. Im Folgenden ist der
-Datensatz einmal visualisiert.
+\Sexpr{ques_vec}
 
 <<anova-01-a,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
-data_tbl <- rbind(tibble(dose1 = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(10, 15, 20), 1),
-                                         sd = sample(c(1, 1, 2), 1)))) %>%
-                  gather,
-                  tibble(dose2 = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 15, 20), 1),
-                                         sd = sample(c(1, 2, 1), 1)))) %>%
-                  gather,
-                  tibble(dose3 = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(10, 15, 20), 1),
-                                         sd = sample(c(2, 2, 2), 1)))) %>%
-                  gather) %>%
-  set_names(c("dose", "activity")) %>%
-  sample_n(size = nrow(.)) %>%
-  mutate(dose = revalue(dose, c("dose1" = "0.5",
-                                "dose2" = "1.5",
-                                "dose3" = "2.5")))
 
-ggplot(data_tbl, aes(dose, activity, shape = dose)) +
-  geom_point(size = 2) +
-  labs(x = "Dosisstufen", y = "Trockengewicht") +
-  ylim(min(data_tbl$activity - 2), max(data_tbl$activity + 2)) +
-  scale_shape_discrete(name = "Dosis") +
-  theme_minimal() +
-  theme(legend.position = "none")
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
+  set_names(c("treatment", "freshmatter")) %>%
+  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
+  sample_n(size = nrow(.))
+
+data_tbl |> 
+  set_names(c(x_val, y_val)) |> 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
 
 @
 
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Darstellung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe! 
+
 \begin{enumerate}
-\item Zeichnen Sie folgende statistischen Ma{\ss}zahlen in die Abildung ein!
-  Beschriften Sie die statistischen Ma{\ss}zahlen! \textbf{(6 Punkte)}
+\item Erstellen  Sie  eine  Visualisierung  für  die  Datentabelle! \textit{Die richtige Visualisierung bedingt die Beantwortung der folgenden Fragen!} Beschriften  Sie  die  Achsen  entsprechend! \textbf{(2 Punkte)}
+\item Benennen Sie die Abbildung mit dem korrekten Fachbegriff! \textbf{(1 Punkt)}
+\item Zeichnen Sie folgende statistischen Maßzahlen passend ein! Beschriften Sie die statistischen Maßzahlen! 
   \begin{itemize}
-  \item Globale Mittelwert: $\beta_0$
-  \item Mittelwerte der einzelnen Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$
-  \item Effekt der einzelnen Dosen: $\beta_{0.5}$, $\beta_{1.5}$,
-    und $\beta_{2.5}$
-  \item Residuen oder Fehler: $\epsilon$
+  \item Globale Mittelwert: $\beta_0$ \textbf{(1 Punkt)}
+  \item Mittelwerte der einzelnen Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$ \textbf{(2 Punkte)}
+  \item Effekt der einzelnen Dosen: $\beta_{0.5}$, $\beta_{1.5}$ und $\beta_{2.5}$ \textbf{(2 Punkte)}
+  \item Residuen oder Fehler: $\epsilon$ \textbf{(1 Punkt)}
   \end{itemize}
-\item Liegt ein \textit{vermutlicher} signifikanter Unterschied zwischen
-  den Dosisstufen vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Liegt ein \textit{vermutlicher} signifikanter Unterschied vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 

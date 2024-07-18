@@ -1,42 +1,96 @@
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (9 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/2dUJcYK9RgU}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
-In einer Studie zur "`Arbeitssicherheit auf dem Feld"' wurde gemessen wie viele
-Stunden auf einem Feld gefahren wurden und wie oft der Fahrer dabei drohte
-einzunicken. Es ergab sich folgende Abbildung. 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-<<scatter-02, results='asis', echo = FALSE, fig.height = 5, fig.width = 5, fig.align = "center", message = FALSE>>=
-intercept_vec <- c(1, 1.5, 2, 2.5) %>% sample(1)
-slope_vec <- c(0.5, 1, 1.5, 2) %>% sample(1)
-n <- sample(c(5,7,9), 1)
-data_tbl <- tibble(x = c(1, 1.25, 1.5, 2, 2.25, 2.5, 3, 3.25, 3.5, 4),
-                   y = intercept_vec + slope_vec * x + rnorm(length(x), 0, 0.5)) %>%
-  set_names(c("rounds", "doze")) 
-##
-ggplot(data_tbl, aes(rounds, doze)) +
-  geom_point(size = 4, shape = 8) +
-  labs(x = "Number of hours", y = "Number of doze") +
-  geom_abline(intercept = intercept_vec, slope = slope_vec, size = 1, alpha = 0.5) +
-  ## stat_smooth(method="lm", se=FALSE, color = "blue") +
-  theme_minimal() +
-  ## xlim(0, NA) + ylim(0, NA) +
-  scale_x_continuous(breaks = 0:10, limits = c(0,5), expand = c(0, 0)) +
-  scale_y_continuous(breaks = 0:(max(data_tbl$doze)+1), limits = c(0,(max(data_tbl$doze))+1), expand = c(0, 0))   
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("durschnittlichen Niederschlag [ml/w]",
+                         "durchschnittlicher Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlichen Anteil an Ton [\\%/l]",
+                         "durchschnittliche UV Einstrahlung [UV/d]"),
+             tier = c("durchschnittlichen Bewegungsscore [Movement/h]", 
+                      "durchschnittlicher Tagestemperatur [C/d]",
+                      "mittlerer Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlerer Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+ques_vec <- c("foo") |> 
+  sample(1)
+
+
+
 @
 
+\Sexpr{ques_vec}
+
+<<scatter-02, results='asis', echo = FALSE>>=
+x_val <- str_replace(x_val, "\\\\", "")
+y_val <- str_replace(y_val, "\\\\", "")
+
+data_tbl <- tibble(x = round(rnorm(sample(9:12, 1), sample(c(15, 20, 25), 1), sample(c(2, 4, 6), 1)), 1),
+                   y = round(sample(c(2:10), 1) + sample(c(0.5, 0.75, 1, 1.15, 1.25), 1) * x + rnorm(length(x), 0, 2), 1)) |>   set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
+                     str_replace(y_val, "^\\w{1}", toupper))))
+
+data_tbl |> 
+  set_names(c(x_val, y_val)) |> 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Erstellung einer Datenanalyse für kontinuierliche Daten überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
+
 \begin{enumerate}
-\item Erstellen Sie die Regressionsgleichung aus der obigen Abbildung in
-  der Form $y \sim \beta_0 + \beta_1 \cdot x$! \textbf{(2 Punkte)}
-\item Beschriften Sie die Grade mit den Parametern der linearen
-  Regressionsgleichung! \textbf{(2 Punkte)}
-\item Liegt ein Zusammenhang zwischen der Anzahl an gefahrenen Runden und
-  der M{\"u}digkeit vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Wenn kein Zusammenhang zu beobachten w{\"a}re, wie w{\"u}rde die Grade aussehen? \textbf{(1 Punkt)}
+\item Erstellen  Sie  eine  Visualisierung  für  die  Datentabelle.  Beschriften  Sie  die  Achsen! \textbf{(2 Punkte)}
+\item Erstellen Sie die Regressionsgleichung aus der obigen Abbildung mit den statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Beschriften Sie die Grade mit den statistischen Maßzahlen der linearen Regressionsgleichung! \textbf{(2 Punkte)}
+\item Liegt ein Zusammenhang zwischen $x$ und $y$ vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wenn kein Zusammenhang zu beobachten wäre, wie würde die Grade aussehen? \textit{Antworten Sie mit einer Skizze der Geraden!} \textbf{(1 Punkt)}
 \end{enumerate}
