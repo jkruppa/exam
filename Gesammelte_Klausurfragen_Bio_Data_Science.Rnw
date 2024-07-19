@@ -322,7 +322,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Deskriptive Statistik \& Explorative Datenanalyse}
+\part{Deskriptive Statistik \& Explorative Datenanalyse}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(desc_stat_questions_vec[1])} 
 \clearpage
@@ -360,7 +360,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(desc_stat_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Statistisches Testen}
+\part{Statistisches Testen \& statistische Testtheorie}
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(stat_test_questions_vec[1])} 
 \clearpage
@@ -377,7 +377,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(stat_test_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Der t-Test}
+\part{Der Student t-Test, Welch t-Test \& gepaarter t-Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(ttest_questions_vec[1])} 
 \clearpage
@@ -403,7 +403,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(ttest_questions_vec[8])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Die ANOVA}
+\part{Die einfaktorielle \& zweifaktorielle ANOVA}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(anova_questions_vec[1])} 
 \clearpage
@@ -432,7 +432,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(anova_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Multiple Gruppenvergleiche}
+\part{Multiple Gruppenvergleiche}
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(multcomp_questions_vec[1])} 
 \clearpage
@@ -443,7 +443,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(multcomp_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Der $\mathcal{X}^2$-Test \& Der diagnostische Test}
+\part{Der Chi-Quadrat-Test \& Der diagnostische Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(chisquare_questions_vec[1])} 
 \clearpage
@@ -460,7 +460,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(chisquare_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Nicht parametrische Tests}
+\part{Nicht parametrische Tests}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(nonpar_questions_vec[1])} 
 \clearpage
@@ -471,7 +471,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(nonpar_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Lineare Regression \& Korrelation}
+\part{Lineare Regression \& Korrelation}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(linreg_questions_vec[1])} 
 \clearpage
@@ -500,12 +500,12 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(linreg_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Experimentelles Design}
+\part{Experimentelles Design}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(experimental_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\section*{Mathematik}
+\part{Mathematik}
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(math_questions_vec[1])} 
 \clearpage
@@ -570,13 +570,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(math_questions_vec[21])} 
 \clearpage
 % -----------------------------------------------------------------------
-\begin{graybox}{Angewandte Nutztier- und Pflanzenwissenschaften (M.Sc.)}
-  Im Rahmen der Klausur zu dem Modul Biostatistik werden auch Fragen
-  nur für die Studierenden des Schwerpunktes Nutztierwissenschaften
-  gestellt. Im Folgenden daher eine lose Sammlung von möglichen Fragen zu
-  diesem Themenkomplex.
-\end{graybox}
-\clearpage
+\part{Angewandte Nutztier- und Pflanzenwissenschaften (M.Sc.)}
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(tier_questions_vec[1])}
 \Sexpr{knit_child(tier_questions_vec[2])}

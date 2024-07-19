@@ -83,7 +83,7 @@ gen_data <- function(...){
 }
 
 ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wir können jetzt anhand der Visualisuierung sehen, ob da schon was signifikant ist?', ", name, " hebt die Augenbraue. 'Ja, können wir. Dafür müssen wir aber erstmal in \\texttt{\\{ggplot\\}} uns die Daten anschauen. Oder wir zeichnen es flott mit der Hand. Geht auch.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
-               str_c("'Als erstes visualiseren wir unsere Daten und dann können wir schon abschätzen, ob unser Gruppenvergleich in der ANOVA signifikant werden würde.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c("'Als erstes visualiseren wir unsere Daten und dann können wir schon abschätzen, ob unser Gruppenvergleich in der ANOVA signifikant werden würde?', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
                str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten visualisieren damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse zu erwarten sind. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
   sample(1)
 
@@ -115,7 +115,7 @@ Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Darstellung einer ei
 \begin{enumerate}
 \item Erstellen  Sie  eine  Visualisierung  für  die  Datentabelle! \textit{Die richtige Visualisierung bedingt die Beantwortung der folgenden Fragen!} Beschriften  Sie  die  Achsen  entsprechend! \textbf{(2 Punkte)}
 \item Benennen Sie die Visualisierung mit dem korrekten Fachbegriff! \textbf{(1 Punkt)}
-\item Zeichnen Sie folgende statistischen Maßzahlen passend ein! Beschriften Sie die statistischen Maßzahlen! 
+\item Zeichnen Sie folgende statistischen Maßzahlen passend ein! Beschriften Sie die Abbildung mit den folgenden statistischen Maßzahlen! 
   \begin{itemize}
   \item Globale Mittelwert: $\beta_0$ \textbf{(1 Punkt)}
   \item Mittelwerte der einzelnen Behandlungsstufen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$ \textbf{(1 Punkt)}
