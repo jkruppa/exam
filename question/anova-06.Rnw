@@ -1,28 +1,95 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/rWTyHXXlYjY}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/rWTyHXXlYjY}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
-animal <- c("Puten", "Mastschweinen", "Rindern", "H{\"u}hnern", "Ziegen",
-            "H{\"a}ngebauchschweinen") %>% sample(1)
-n_ani <- rpois(1, 60)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x1_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$, $400lm$ und $600lm$)",
+                         "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Substrattypen ($torf$, $40p60n$, $30p20n$ und $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Genotypen ($AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
+                    "Genotypen ($AA$, $AB$ und $BB$)",
+                    "Elterlinie ($ctrl$, $Standard$, $Yray$ und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$)",
+                    "Bestandsdichte ($standard$, $eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+x1_val_pre <- x1_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+
+x2_val <- lst(pflanze = c("Düngestufen ($ctrl$, und $high$)",
+                         "Lichtstufen ($none$, und $600lm$)",
+                         "Lüftungssystemen und Folientunneln ($ctrl$, und $tornado$)",
+                         "Substrattypen ($torf$, $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, und $high$)",
+                         "Genotypen ($AA$, und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$ und $flOw$)",
+                    "Genotypen ($AA$ und $BB$)",
+                    "Elterlinie ($ctrl$, und $Xray$)",
+                    "Lüftungssystem ($keins$ und $thunder$)",
+                    "Bestandsdichte ($standard$ und $kontakt$)"))[[names(obser)]] 
+
+x2_val <- str_subset(x2_val, x1_val_pre, negate = TRUE) |> sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+ques_vec <-  str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt.") |> 
+  sample(1)
+
+
+
 @ 
 
-Der Datensatz \textit{gain\_weight\_tbl} enth{\"a}lt Daten aus einer Studie zur Bewertung
-der Wirkung vom Vitamin Selen auf das Wachstum von \Sexpr{animal}. Der
-Versuch wurde an \Sexpr{n_ani} \Sexpr{animal} durchgef{\"u}hrt, wobei
-jedes Tier eine von drei Selen-Dosen $dose$ ($\Sexpr{sample(c("0.1", "0.2",
-  "0.5"), 1)}$ ng/Tag, $\Sexpr{sample(c("1", "2",
-  "3"), 1)}$ ng/Tag und $\Sexpr{sample(c("10", "15",
-  "20"), 1)}$ ng/Tag)
-{\"u}ber eine von zwei Verabreichungsmethoden $form$ erhielt (Wasser oder
-Festnahrung). Sie erhalten folgende Ausgabe in \Rlogo.
+\Sexpr{ques_vec}
 
 <<anova-R-05-a,  echo = FALSE>>=
-
 
 data_tbl <- tibble(mean = sample(c(12, 15, 17, 20, 22, 25)),
                    dose = rep(c(0.5, 1, 1.5), each = 2),
@@ -45,22 +112,24 @@ data_tbl <- bind_cols(data_pre_tbl, rsp_tbl) %>%
 anova_mdl <- lm(gain ~ dose + form + dose:form, data = data_tbl) %>%
   anova 
 
-attr(anova_mdl, "heading")[2] <- c("Response: gain",
-                                   "Response: weight",
-                                   "Response: fat_perc") %>% sample(1)
+x1_val_name <- x1_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+x2_val_name <- x2_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 
+
+row.names(anova_mdl) <- c(x1_val_name, x2_val_name, str_c(x1_val_name, ":", x2_val_name), "Residuals")
+
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+attr(anova_mdl, "heading")[2] <- str_c("Response: ", y_val)
 anova_mdl
 
 @
 
 \begin{enumerate}
-\item Stellen Sie die statistische $H_0$ und $H_A$ Hypothese f{\"u}r die obige
-  zweifaktorielle ANOVA f{\"u}r den Faktor $\Sexpr{sample(c("form", "dose"), 1)}$
-  auf! \textbf{(2 Punkte)}
-\item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA. Gehen Sie
-  im besonderen auf den Term $dose:form$ ein! \textbf{(2 Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+\item Interpretieren Sie das Ergebnis der einfaktoriellen ANOVA! \textbf{(3 Punkte)} 
 \item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
-  zweifaktoriellen ANOVA n{\"a}herungsweise entspricht! \textbf{(4 Punkte)}
-\item Beschriften Sie die Abbildung entsprechend der \Rlogo Ausgabe! \textbf{(2 Punkte)}
+  zweifaktoriellen ANOVA näherungsweise entspricht! \textbf{(5 Punkte)}
 \end{enumerate}
 

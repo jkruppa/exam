@@ -1,116 +1,173 @@
 \section{Aufgabe \hfill (12 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/49hvImMwVyE}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/49hvImMwVyE}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
-exp <- c("einem Gew{\"a}chshausexperiment",
-         "einem Freilandversuch",
-         "einem Experiment in einer Klimakammer",
-         "einem Feldexperiment") %>% sample(1)
-plant <- c("Maisspflanzen", "Erbsenschoten", "Kartoffeln", "Lauchstangen", "Erdbeerenpflanzen",
-           "Brokolik{\"o}pfe") %>% sample(1)
-resp <- c("das Trockengewicht", "das Frischgewicht", "den Ertrag pro Hektar") %>%
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
+  set_names("freshmatter", "drymatter", "yield", "protein") |> 
   sample(1)
-trt_lvl <- c("ctrl", "low", "mid", "high", "extreme", "pos", "neg", "lethal") %>% sample(3)
+outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$, $400lm$ und $600lm$)",
+                         "Lüftungssystemen und Folientunneln ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Substrattypen ($torf$, $40p60n$, $30p20n$ und $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Genotypen ($AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
+                    "Genotypen ($AA$, $AB$ und $BB$)",
+                    "Elterlinie ($ctrl$, $Standard$, $Yray$ und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$)",
+                    "Bestandsdichte ($standard$, $eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  n_vec <- c(5:10) %>% sample(1)
+  mean_vec <- c(25, 30, 35, 40, 45)/10 %>% sample(1)
+  sd_vec <- c(2, 4, 6) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 0)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather
+  return(temp_tbl)
+}
+
+ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wie füllen wir jetzt die Tabelle der ANOVA aus und schauen, ob da was signifikant ist?', ", name, " hebt die Augenbraue. 'Das ist eine sehr gute Frage. Ich glaube man kann alles in der Tabelle relativ einfach mit wenigen Informationen berechnen.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c("'Als erstes bauen wir uns aus unsere Daten die ANOVA Tabelle dann sehen wir schon, ob unser Gruppenvergleich in der ANOVA signifikant ist.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten mit eine einfaktoriellen ANOVA auswerten damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse in den multipen Gruppenvergleichen zu erwarten sind. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
+  sample(1)
 
 @ 
 
+\Sexpr{ques_vec}
 
-Der Datensatz \texttt{fertilizer\_growth\_tbl} enth{\"a}lt \Sexpr{resp} der
-\Sexpr{plant}, die unter einer Kontrolle und zwei
-verschiedenen Behandlungsbedingungen erzielt wurden. Dabei wurden die
-\Sexpr{plant} unter verschiedenen Konzentrationen von einem alternativen
-D{\"u}nger angebaut. Als Behandlung haben Sie daher den Faktor \textit{group} mit den
-Faktorstufen \textit{\Sexpr{trt_lvl[1]}}, \textit{\Sexpr{trt_lvl[2]}} und
-\textit{\Sexpr{trt_lvl[3]}} vorliegen.
+<<anova-R-09-c,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
 
-<<anova-R-01-a,  echo = FALSE>>=
-
-data_tbl <- rbind(tibble(ctrl = round(rnorm(n = sample(c(7,9), 1),
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(1, 3, 2), 1)))) %>%
-                  gather,
-                  tibble(trt1 = round(rnorm(n = sample(c(7,9), 1),
-                                         mean = sample(c(18, 20, 22), 1),
-                                         sd = sample(c(1, 2, 1), 1)))) %>%
-                  gather,
-                  tibble(trt2 = round(rnorm(n = sample(c(7,9), 1),
-                                         mean = sample(c(14, 22, 24), 1),
-                                         sd = sample(c(4, 2, 3), 1)))) %>%
-                  gather) %>%
-  set_names(c("group", "weight")) %>%
+data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
+  set_names(c("treatment", "freshmatter")) %>%
+  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
-#data_tbl <- PlantGrowth %>%
-#  as_tibble %>%
-#  mutate(group = ordered(group, levels = c("ctrl", "trt1", "trt2")),
-#         weight = weight + rnorm(n = nrow(.), 0, 0.1))
+x1_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 
-anova_mdl <- lm(weight ~ group, data = data_tbl) %>%
+anova_mdl <- lm(freshmatter ~ treatment, data = data_tbl) %>%
   anova
+
+total_df <- anova_mdl$Df %>% sum
+total_ss <- anova_mdl$"Sum Sq" %>% sum
+
+ss_vec <- c(round(anova_mdl[[2]][1], 2),
+            round(anova_mdl[[2]][2], 2),
+            round(total_ss, 2))
+empty <- 1:3 %>% sample(1)
+ss_vec[empty] <- ""
 
 @
 
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Berechnung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe! 
+
 \begin{enumerate}
-\item F{\"u}llen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle
-  mit den gegebenen Informationen von \textbf{Df} und \textbf{Sum Sq} aus!
-  \textbf{(3 Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+\item Füllen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus! \textbf{(3 Punkte)}
 \end{enumerate}
 
 \vspace{1Ex}
 
 \begin{center}
   \Large
-  \begin{tabular}{l|c|c|c|c|c}
+  \begin{tabular}{lccccc}
+\toprule
      & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
-    \hline
-   \textbf{group}  & 2 & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
-    \hline
-   \textbf{error}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
+    \midrule
+   \textbf{\Sexpr{x1_val_name}}  & \Sexpr{length(groups_vec)-1} & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
+   \textbf{Error}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
+\bottomrule
   \end{tabular}
 \end{center}
 
 \vspace{1Ex}
 
 \begin{enumerate}
-  \setcounter{enumi}{1}
-\item Sch{\"a}tzen Sie den p-Wert der Tabelle mit der Information von
-  $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 =
-    anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begr{\"u}nden Sie Ihre
-  Antwort! \textbf{(2 Punkte)}
-\item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen
-  ANOVA im Bezug auf die m{\"o}glichen Unterschiede zwischen den Gruppen?
-  Beziehen Sie sich auf den obigen Fragetext bei Ihrer Antwort!  \textbf{(2
-    Punkte)}
-\item Berechnen Sie \textit{einen} Student t-Test mit f{\"u}r den \textit{vermutlich}
-  signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit
-  $T_{\alpha = 5\%} = 2.03$. Begr{\"u}nden Sie Ihre Auswahl! \textbf{(3 Punkte)}
+  \setcounter{enumi}{3}
+\item Schätzen Sie den p-Wert der Tabelle mit $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 = anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen ANOVA? \textbf{(1 Punkt)}
+\item Berechnen Sie \textit{einen} Student t-Test für den \textit{vermutlich} signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit $T_{\alpha = 5\%} = 2.03$. Begründen Sie Ihre Auswahl! \textbf{(3 Punkte)}
 \end{enumerate}
+
 
 <<anova-R-01-b,  echo = FALSE>>=
 
-group_by(data_tbl, group) %>%
+group_by(data_tbl, treatment) %>%
   dplyr::summarise(
            n = n(),
-    mean = round(mean(weight, na.rm = TRUE), 2),
-    sd = round(sd(weight, na.rm = TRUE), 2),
+    mean = round(mean(freshmatter, na.rm = TRUE), 2),
+    sd = round(sd(freshmatter, na.rm = TRUE), 2),
     ) %>%
-  mutate(group = trt_lvl) %>% 
+  set_names(c(x1_val_name, "Fallzahl (n)", "Mittelwert", "Standardabweichung")) |> 
+  #mutate(group = trt_lvl) %>% 
   kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
+    row_spec(0,bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 11)
 
 @
 
+
 \begin{enumerate}
-  \setcounter{enumi}{4}
-\item Gegebenen der ANOVA Tabelle war das Ergebnis des t-Tests zu erwarten?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+  \setcounter{enumi}{6}
+\item Gegebenen der ANOVA Tabelle war das Ergebnis des t-Tests zu erwarten? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

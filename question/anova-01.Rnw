@@ -34,19 +34,40 @@ outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |>
   set_names("freshmatter", "drymatter", "yield", "protein") |> 
   sample(1)
 outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
-exp <- c("einem Gewächshausexperiment",
-         "einem Freilandversuch",
-         "einem Versuch in einer Klimakammer",
-         "einem Feldexperiment") %>% sample(1)
-plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", "Erdbeeren", "Brokoli") %>% sample(1)
-type <- c("Düngestufen ($ctrl$, $low$ und $high$)",
-          "Lichtstufen ($none$, $200lm$ und $600lm$)",
-          "Lüftungssystemen und Folientunneln ($ctrl$, $storm$ und $tornado$)",
-          "Substrattypen ($torf$, $40p60n$ und $70p30n$)",
-          "Bewässerungstypen ($low$, $mid$ und $high$)",
-          "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
-norm <- c("die Normalverteilung von $Y$", "die Varianzhomogenität über die Behandlungsgruppen") |> sample(1)
-groups_vec <- type %>% 
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$ und $600lm$)",
+                         "Lüftungssystemen und Folientunneln ($ctrl$, $storm$ und $tornado$)",
+                         "Substrattypen ($torf$, $40p60n$ und $70p30n$)",
+                         "Bewässerungstypen ($low$, $mid$ und $high$)",
+                         "Genotypen ($AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
+                    "Genotypen ($AA$, $AB$ und $BB$)",
+                    "Elterlinie ($Standard$, $Yray$ und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$ und $thunder$)",
+                    "Bestandsdichte ($eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+groups_vec <- x_val %>% 
   str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
@@ -61,7 +82,12 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
-ques_vec <- c("foo") |> sample(1)
+ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wir können jetzt anhand der Visualisuierung sehen, ob da schon was signifikant ist?', ", name, " hebt die Augenbraue. 'Ja, können wir. Dafür müssen wir aber erstmal in \\texttt{\\{ggplot\\}} uns die Daten anschauen. Oder wir zeichnen es flott mit der Hand. Geht auch.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c("'Als erstes visualiseren wir unsere Daten und dann können wir schon abschätzen, ob unser Gruppenvergleich in der ANOVA signifikant werden würde.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten visualisieren damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse zu erwarten sind. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
+  sample(1)
+
+
 
 @ 
 
@@ -74,6 +100,9 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
+x_val <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
 data_tbl |> 
   set_names(c(x_val, y_val)) |> 
   kable(booktabs = TRUE, align = "c") %>% 
@@ -81,18 +110,19 @@ data_tbl |>
 
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Darstellung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe! 
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Darstellung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
 \item Erstellen  Sie  eine  Visualisierung  für  die  Datentabelle! \textit{Die richtige Visualisierung bedingt die Beantwortung der folgenden Fragen!} Beschriften  Sie  die  Achsen  entsprechend! \textbf{(2 Punkte)}
-\item Benennen Sie die Abbildung mit dem korrekten Fachbegriff! \textbf{(1 Punkt)}
+\item Benennen Sie die Visualisierung mit dem korrekten Fachbegriff! \textbf{(1 Punkt)}
 \item Zeichnen Sie folgende statistischen Maßzahlen passend ein! Beschriften Sie die statistischen Maßzahlen! 
   \begin{itemize}
   \item Globale Mittelwert: $\beta_0$ \textbf{(1 Punkt)}
-  \item Mittelwerte der einzelnen Dosen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$ \textbf{(2 Punkte)}
-  \item Effekt der einzelnen Dosen: $\beta_{0.5}$, $\beta_{1.5}$ und $\beta_{2.5}$ \textbf{(2 Punkte)}
+  \item Mittelwerte der einzelnen Behandlungsstufen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$ \textbf{(1 Punkt)}
+  \item Mittelwertsdifferenz der einzelnen Behandlungsstufen: $\beta_{0.5}$, $\beta_{1.5}$ und $\beta_{2.5}$ \textbf{(1 Punkt)}
   \item Residuen oder Fehler: $\epsilon$ \textbf{(1 Punkt)}
   \end{itemize}
 \item Liegt ein \textit{vermutlicher} signifikanter Unterschied vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Schätzen Sie die Effekte der Behandlungsstufen! \textbf{(2 Punkte)}
 \end{enumerate}
 
