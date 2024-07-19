@@ -1,13 +1,80 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
- \hfill\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width =
-   2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
+             str_c(pronom[6], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$, $400lm$ und $600lm$)",
+                         "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Substrattypen ($torf$, $40p60n$, $30p20n$ und $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Genotypen ($AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
+                    "Genotypen ($AA$, $AB$ und $BB$)",
+                    "Elterlinie ($ctrl$, $Standard$, $Yray$ und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$)",
+                    "Bestandsdichte ($standard$, $eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+
+ques_vec <-  c("foo") |> 
+  sample(1)
+
+@ 
+
+\Sexpr{ques_vec}
 
 <<>>=
 outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
@@ -15,7 +82,7 @@ outcome <- c("den Zuckergehalt von Erdbeeren in g/kg",
              "den Proteingehalt von Wasserlinsen in g/l") %>% sample(1)
 @ 
  
- In einem Experiment f{\"u}r \Sexpr{outcome} mit vier
+ In einem Experiment für \Sexpr{outcome} mit vier
  Dosisstufen (ctrl, low, mid und high) erhalten Sie folgende Matrix als
  \Rlogo Ausgabe mit den rohen, unadjustierten $p$-Werten.
 
@@ -31,14 +98,18 @@ data_tbl <- tibble(ctrl = rnorm(9, sample(c(10, 11), 1), 1),
 
 <<multcomp-02-b,  echo = FALSE>>=
 pacman::p_load(rcompanion, magrittr)
-pairwise.t.test(data_tbl$rsp, data_tbl$trt,
+pair_wise_mat <- pairwise.t.test(data_tbl$rsp, data_tbl$trt,
                 p.adjust.method = "none") %>% 
   extract2("p.value") %>% 
   fullPTable() %>%
   round(7)
+
+pair_wise_mat |> 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position", font_size = 12)
 @
 
-Im Weiteren erhalten Sie folgende Informationen {\"u}ber die Fallzahl $n$, den
+Im Weiteren erhalten Sie folgende Informationen über die Fallzahl $n$, den
 Mittelwert $mean$ und die Standardabweichung $sd$ in den jeweiligen Dosisstufen.
 
 <<multcomp-02-c,  echo = FALSE>>=
@@ -50,15 +121,16 @@ group_by(data_tbl, trt) %>%
            sd = round(sd(rsp, na.rm = TRUE), 2),
            ) %>%
   kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
+  kable_styling(latex_options = "hold_position", font_size = 12)
 
 @
 
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Zeichnen Sie in eine Abbildung, die sich ergebenden Barplots! \textit{Sortieren Sie dabei die Gruppen nach absteigender Effektstärke!} \textbf{(3 Punkte)}
-\item Adjustieren Sie die rohen $p$-Werte nach Bonferroni. Begr{\"u}nden Sie Ihre Antwort! \textbf{(3 Punkte)}
-\item Erg{\"a}nzen Sie das \textit{Compact letter display (CLD)} zu der
+\item Adjustieren Sie die rohen $p$-Werte nach Bonferroni. Begründen Sie Ihre Antwort! \textbf{(3 Punkte)}
+\item Ergänzen Sie das \textit{Compact letter display (CLD)} zu der
   Abbildung. Nutzen Sie dazu die rohen $p$-Werte! \textbf{(2 Punkte)}
 \item Interpretieren Sie das \textit{Compact letter display (CLD)}! \textbf{(2 Punkte)} 
 \end{enumerate}

@@ -23,8 +23,8 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
@@ -80,9 +80,10 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-ques_vec <-  str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt.") |> 
+ques_vec <- c(str_c("In ", exp, " wurden ", obser, " mit dem Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. ", name, " ahnte schon, dass es komplexer wird, als ", names(name), " mit ", project, " angefangen hat. Das es jetzt aber so kompliziert wird, hätte ", names(name), " jetzt aber auch nicht gedacht. ", name, " kratzt sich am Kopf. Eventuell muss ", names(name), " dann doch nochmal Hilfe in der statistischen Beratung holen. Jetzt versucht ", names(name), " es aber erstmal selber."),
+              str_c("Wie absolut ärgerlich. Jetzt stellt sich tatsächlich heraus, dass ", betreuer, " keine Anhnung von der zweifaktoriellen ANOVA hat. Woher soll ", name, " jetzt das Wissen nehmen? Immerhin muss ", names(name), " ja noch mit ", project, " dieses Jahr fertig werden. In ", exp, " hatte ", names(name), " ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " ", ort, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt muss ", names(name), " erstmal die zweifaktorielle ANOVA verstehen."),
+              str_c(name, " steht ", ort, ". Und das ist noch langweiliger als es sich anhört. Wäre es nur so spannend wie bei ", pronom[3], " Kommilitonen, die in Almería waren. Ödnis wohin man nur blickt. Oder eben ", obser, ". Ja, darum geht es in ", project, ". Und wäre das nicht noch alles genug, ist ", pronom[7], " Experiment auch noch als ", exp, " komplex geraten. Es wurde der Messwert ", y_val, " mit dem Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. 'Hmpf', denkt ", name, " und ruft 'Und jetzt!?' in die Leere.")) |> 
   sample(1)
-
 
 
 @ 
@@ -122,6 +123,9 @@ dose_num <- 2
 int_num <- (supp_num - 1)*(dose_num-1)
 @
 
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}

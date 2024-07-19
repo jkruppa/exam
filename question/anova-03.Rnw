@@ -25,11 +25,11 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
   set_names("freshmatter", "drymatter", "yield", "protein") |> 
   sample(1)
@@ -82,9 +82,9 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
-ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wie füllen wir jetzt die Tabelle der ANOVA aus und schauen, ob da was signifikant ist?', ", name, " hebt die Augenbraue. 'Das ist eine sehr gute Frage. Ich glaube man kann alles in der Tabelle relativ einfach mit wenigen Informationen berechnen.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
-               str_c("'Als erstes bauen wir uns aus unsere Daten die ANOVA Tabelle dann sehen wir schon, ob unser Gruppenvergleich in der ANOVA signifikant ist.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
-               str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten mit eine einfaktoriellen ANOVA auswerten damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse in den multipen Gruppenvergleichen zu erwarten sind. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
+ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wie füllen wir jetzt \textit{genau} die Tabelle der ANOVA aus und schauen, ob da was signifikant ist?', ", name, " hebt die Augenbraue. 'Das ist eine sehr gute Frage. Ich glaube man kann alles in der Tabelle relativ einfach mit wenigen Informationen berechnen.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Nun möchte erstmal ", betreuer, " eine ANOVA Tabelle sehen. Was immer da auch drin zu erkennen sein mag."),
+               str_c("'Als erstes bauen wir uns aus unsere Daten die ANOVA Tabelle dann sehen wir schon, ob unser Gruppenvergleich in der ANOVA signifikant ist.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Nun möchte erstmal ihre Betreuung der Arbeit eine ANOVA Tabelle sehen. Was immer da auch drin zu erkennen sein mag. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten mit eine einfaktoriellen ANOVA auswerten damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse in den multipen Gruppenvergleichen zu erwarten sind. Nun möchte erstmal ihre Betreuung der Arbeit eine ANOVA Tabelle sehen. Was immer da auch drin zu erkennen sein mag. ", name, " schaut ", name_sec, " sehen erstmla gar nichts. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
   sample(1)
 
 @ 
@@ -128,7 +128,7 @@ Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Berechnung einer ein
 
 \begin{center}
   \Large
-  \begin{tabular}{lccccc}
+  \begin{tabular}{lccccp{3cm}}
 \toprule
      & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
     \midrule
@@ -167,7 +167,7 @@ group_by(data_tbl, treatment) %>%
 
 \begin{enumerate}
   \setcounter{enumi}{6}
-\item Gegebenen der ANOVA Tabelle war das Ergebnis des t-Tests zu erwarten? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Gegebenen der ANOVA Tabelle war das Ergebnis des Student t-Tests zu erwarten? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

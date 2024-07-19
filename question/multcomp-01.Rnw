@@ -1,67 +1,108 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
- \hfill\href{https://youtu.be/hr_jPd1hpKY}{\includegraphics[width =
-   2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
+             str_c(pronom[6], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
-In einem Experiment zur Dosiswirkung wurden verschiedene Dosisstufen mit
-einer Kontrollgruppe vergleichen. Es wurden verschiedene t-Test f{\"u}r den
-Mittelwertsvergleich gerechnet und es ergab sich folgende Tabelle mit den
-rohen p-Werten (\textit{Raw p-value}).
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
 
+study <- c("Almar et al. (2012)", "Totsdorf et al. (2018)", "Meyer et al. (2021)", "Qui et al. (2017)") |> 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$, $400lm$, $600lm$, $700lm$ und $800lm$)",
+                         "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Substrattypen ($kompost$, $torf$, $40p60n$, $30p20n$ und $70p30n$)",
+                         "Bewässerungstypen ($none$, $ctrl$, $low$, $mid$ und $high$)",
+                         "Genotypen ($00$, $AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$, $proteinX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$, $compostIn$ und $flOw$)",
+                    "Genotypen ($00$, $AA$, $AB$ und $BB$)",
+                    "Elterlinie ($ctrl$, $Standard$, $TOP$, $Yray$, $SLOW$, und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$)",
+                    "Bestandsdichte ($effizient$, $standard$, $eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+
+ques_vec <-  c(str_c("In ", exp, " mit ", obser, " wurde die Behandlung ", x_val, " gegen die Ergebnisse einer früheren Studie von ", study, " verglichen. Im Rahmen des Experiments haben ", name, " und ", name_sec, " verschiedene Student t-Tests für den Mittelwertsvergleich für den Messwert ", y_val, " gerechnet. Es ergab sich dann die folgende Tabelle der rohen p-Werte für die Vergleiche zu ", study, ".")) |> 
+  sample(1)
+
+@ 
+
+\Sexpr{ques_vec}
 
 <<multcomp-01-a, echo = FALSE>>=
 
 pval_vec <- c(0.001, 0.02, 0.012, 0.03,
               0.34, 0.76, 0.06, 0.08,
               0.0012, 0.23, 0.002, 0.07) %>%
-  set_names(c("dose 10 - ctrl", "dose 15 - ctrl", "dose 20 - ctrl", "dose 25 - ctrl",
-          "dose 30 - ctrl", "dose 35 - ctrl", "dose 40 - ctrl", "dose 50 - ctrl",
-          "dose 60 - ctrl", "dose 70 - ctrl", "dose 80 - ctrl", "dose 90 - ctrl")) %>% 
-  sample(sample(c(4, 5, 6), 1))
+  sample(length(groups_vec))
 
-tibble(Vergleich = names(pval_vec),
+tibble(#Vergleich = str_c(groups_vec, " - [", study, "]"),
        pval = pval_vec,
        adj = c(""),
        reject = c("")) %>%
-  set_names(c("Vergleich", "Raw p-value", "Adjusted p-value", "Reject Null")) %>% 
+  set_names(c("Rohen p-Werte", "Adjustierte p-Werte", "Nullhypothese ablehnen?")) %>% 
   kable(booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position", font_size = 12)
 
 @
 
-
-%\begin{center}
-%  \Large
-%  \begin{tabular}{c|c|c|c}
-%    \textbf{Vergleich} & \textbf{Raw p-val} & \textbf{Adjusted p-val} &
-%                                                                        \textbf{Reject $\boldsymbol{H_0}$} \strut\\
-%    \hline
-%    dose 10 - ctrl  & \Sexpr{pval_vec[1]} &  &\strut\\
-%    \hline
-%    dose 15 - ctrl  & \Sexpr{pval_vec[2]} & &\strut\\
-%    \hline
-%    dose 20 - ctrl  & \Sexpr{pval_vec[3]} & &\strut\\
-%    \hline
-%    dose 40 - ctrl  & \Sexpr{pval_vec[4]} & &\strut\\
-%  \end{tabular}
-%\end{center}
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Adjustierung von $p$-Werten überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
-\item F{\"u}llen Sie die Spalte "`Adjusted p-value"' mit den adjustierten
-  p-Werten nach Bonferoni aus! \textbf{(4 Punkte)}
-\item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese weiter
-  abgelehnt werden kann. Tragen Sie Ihre Entscheidung in die obige Tabelle
-  ein. Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie warum die p-Werte bei multiplen Vergleichen
-  adjustiert werden m{\"u}ssen! \textbf{(2 Punkte)}
+\item Füllen Sie die Spalte "Adjusted p-value" mit den adjustierten p-Werten nach Bonferoni aus! \textbf{(4 Punkte)}
+\item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese weiter abgelehnt werden kann. Tragen Sie Ihre Entscheidung in die obige Tabelle ein. Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie warum die p-Werte bei multiplen Vergleichen adjustiert werden müssen! \textbf{(2 Punkte)}
 \end{enumerate}
 
-\vspace{1Ex}
 
 

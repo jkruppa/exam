@@ -23,15 +23,11 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
-outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
-  set_names("freshmatter", "drymatter", "yield", "protein") |> 
-  sample(1)
-outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -80,9 +76,9 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
-ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wie füllen wir jetzt die Tabelle der ANOVA aus und schauen, ob da was signifikant ist?', ", name, " hebt die Augenbraue. 'Das ist eine sehr gute Frage. Ich glaube man kann alles in der Tabelle relativ einfach mit wenigen Informationen berechnen.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
-               str_c("'Als erstes bauen wir uns aus unsere Daten die ANOVA Tabelle dann sehen wir schon, ob unser Gruppenvergleich in der ANOVA signifikant ist.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
-               str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten mit eine einfaktoriellen ANOVA auswerten damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse in den multipen Gruppenvergleichen zu erwarten sind. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
+ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA und \\Rlogo. Nicht so einfach... Was sagt mir jetzt die Ausgabe der ANOVA und wo sehe ich, ob da was signifikant ist?', denkt ", name, " und hebt die Augenbraue. ", name, " hatte sich ", exp, " mit ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Nun möchte ", betreuer, " ", project, " erstmal eine ANOVA sehen und die Ergebnisse präsentiert bekommen."),
+               str_c(name, " schaut sich fragend in der Bibliothek um. ", name, " hatte gehofft, dass jemand hier sein würde, den ", names(name), " kennt und sich mit \\Rlogo auskennt. Wird aber enttäuscht. ", name, " war ", ort, " um ", exp, " mit ", obser, " durchzuführen. Nun möchte ", betreuer, " ", project, " erstmal eine ANOVA sehen und die Ergebnisse präsentiert bekommen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
+               str_c(name, " schaut entnervt auf und klappt den Laptop zu. Nun möchte ", betreuer, " ", project, " erstmal eine ANOVA sehen und \\textit{dann} die Ergebnisse präsentiert bekommen bevor es überhaupt mit der Abschlussarbeit weitergeht. Dabei war ", names(name), " extra ", ort, " um ", exp, " mit ", obser, " durchzuführen. Und dort was es wirklich nicht schön geschweige denn spannend wie bei ", pronom[3], " Kommilitonen, die in Almería waren. Hätte ", names(name), " es vorher gewusst, dann hätte ", names(name), " die Abschlussarbeit bei wem anders geschrieben. Aber gut, jetzt als die ANOVA in \\Rlogo.")) |> 
   sample(1)
 
 @ 
@@ -99,7 +95,9 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
 x_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 
-anova_mdl <- lm(freshmatter ~ treatment, data = data_tbl) %>%
+
+lm_fit <- lm(freshmatter ~ treatment, data = data_tbl)
+anova_mdl <- lm_fit %>%
   anova
 
 attr(anova_mdl, "heading")[2] <- str_c("Response: ", y_val)
@@ -108,6 +106,10 @@ row.names(anova_mdl) <- c(x_val_name, "Residuals")
 
 anova_mdl
 @
+
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} mit Berechnung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}

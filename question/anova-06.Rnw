@@ -23,11 +23,11 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
-project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
-             str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
+             str_c(pronom[6], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -80,8 +80,11 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-ques_vec <-  str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt.") |> 
+ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer zweifaktoriellen ANOVA. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. Das wird ein langer Nachmmittag, denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein?"),
+               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch seine E-Sport Qualifikation schauen. Stattdessen versucht ", betreuer, " die Ausgabe der zweifaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Es gab dabei zwei Behandlungen. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein!"),
+               str_c("'Mit der zweifaktoriellen ANOVA lässt sich die Interaktion zwischen den beiden Behandlungen nachweisen!', ", betreuer, " scheint die zweifaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? ", name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Nur jetzt muss eben das Experiment fertig ausgewertet werden. ", name, " hatte zwei Behandlungen auf ", obser, " angewendet. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". Jetzt muss das hier zu einem Ende kommen!")) |> 
   sample(1)
+
 
 
 
@@ -124,6 +127,10 @@ attr(anova_mdl, "heading")[2] <- str_c("Response: ", y_val)
 anova_mdl
 
 @
+
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
