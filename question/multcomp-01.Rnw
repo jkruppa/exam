@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -96,12 +96,16 @@ tibble(#Vergleich = str_c(groups_vec, " - [", study, "]"),
 
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Adjustierung von $p$-Werten überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Adjustierung von $p$-Werten und dem Signifikanzniveau $\alpha$ überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
-\item Füllen Sie die Spalte "Adjusted p-value" mit den adjustierten p-Werten nach Bonferoni aus! \textbf{(4 Punkte)}
-\item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese weiter abgelehnt werden kann. Tragen Sie Ihre Entscheidung in die obige Tabelle ein. Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erklären Sie warum die p-Werte bei multiplen Vergleichen adjustiert werden müssen! \textbf{(2 Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie die statistischen Hypothesen! \textbf{(1 Punkt)}
+\item Füllen Sie die Spalte \textit{Adjustierte p-Werte} nach der Bonferoni-Methode aus! \textbf{(2 Punkte)}
+\item Entscheiden Sie, ob nach der Adjustierung die Nullhypothese abgelehnt werden kann! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wie ist Ihr Vorgehen, wenn Sie anstatt der $p$-Werte das Signifikanzniveau $\alpha$ adjustieren? \textbf{(2 Punkte)}
+\item Erklären Sie warum die $p$-Werte oder das Signifikanzniveau $\alpha$ bei multiplen Vergleichen adjustiert werden müssen! \textbf{(2 Punkte)}
+\item Würden Sie die Adjustierung der $p$-Werte oder die Adjustierung des Signifikanzniveaus $\alpha$ vorziehen? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 
