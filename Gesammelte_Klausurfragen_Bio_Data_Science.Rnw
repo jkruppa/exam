@@ -88,10 +88,9 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
   str_c(collapse = "\\!")
 
 ## global parameters
-naming_global <- c("Jessica", "Paula", "Tina", "Nilufar",
-                   "Mark", "Jonas", "Alex", "Steffen") |> 
-  set_names(c("sie", "sie", "sie", "sie", 
-              "er", "er", "er", "er")) 
+naming_global <- c(rep(c("Jessica", "Paula", "Tina", "Nilufar"), each = 2), "Yuki",
+                   rep(c("Mark", "Jonas", "Alex", "Steffen"), each = 2), "Yuki") |> 
+  set_names(c(rep("sie", 9), rep("er", 9))) 
 
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", 
            "Erdbeeren", "Brokkoli", "Spargel") %>% 
@@ -122,9 +121,10 @@ par_lst <- lst(year = "2024",
 \includegraphics[width = 1.9cm]{avatare/Nilufar}\hspace{-8mm}
 \includegraphics[width = 1.9cm]{avatare/Paula}\hspace{-8mm}
 \includegraphics[width = 1.9cm]{avatare/Steffen}\hspace{-8mm}
-\includegraphics[width = 1.9cm]{avatare/Tina}\\
-\vspace{1.5Ex}
+\includegraphics[width = 1.9cm]{avatare/Tina}\hspace{-8mm}
+\includegraphics[width = 1.9cm]{avatare/Yuki}\\
 \small
+\vspace{1.5Ex}
 \textit{"`The test of a student is not how much he knows,\\ but how much he wants to know."'\\ --- Alice W. Rollins}
 \end{center}}
 % -----------------------------------------------------------------------
@@ -441,6 +441,9 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(multcomp_questions_vec[3])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(multcomp_questions_vec[4])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Der Chi-Quadrat-Test \& Der diagnostische Test}
