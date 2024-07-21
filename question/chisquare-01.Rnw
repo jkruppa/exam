@@ -1,13 +1,73 @@
 \section{Aufgabe \hfill (11 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Pestizideinsatz [ja/nein]",
+                         "Herbizideinsatz [ja/nein]",
+                         "Mechanische Bearbeitung [ja/nein]",
+                         "KI-gesteuert [ja/nein]"),
+             tier = c("Automatische Fütterung [ja/nein]", 
+                      "Klimakontrolle [ja/nein]",
+                      "Außenklimakontakt [ja/nein]",
+                      "Ökologisch [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
+                         "Trockengewicht über Zielwert [ja/nein]",
+                         "Chlorophyllgehalt unter Zielwert [ja/nein]",
+                         "Proteingehalt im Zielbereich [ja/nein]"),
+             tier = c("Schlachtgewicht im Zielbereich [ja/nein]", 
+                      "Protein/Fettrate im Zielbereich [ja/nein]",
+                      "Fettgehalt erreicht [ja/nein]",
+                      "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+effect <- c("ein", "kein") |> sample(1)
+
+ques_vec <- c("foo") |> 
+  sample(1)
+
+@
+
+\Sexpr{ques_vec}
 
 <<chisquare-01-a, echo = FALSE>>=
 
@@ -40,19 +100,23 @@ den Spalten. Insgesamt wurden $n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
   \end{tabular}
 \end{center}
 
+
+Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 \vspace{5Ex}
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-\item Erg{\"a}nzen Sie die Tabelle um die Randsummen! \textbf{(1 Punkt)} 
+\item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
+\item Ergänzen Sie die Tabelle um die Randsummen! \textbf{(1 Punkt)} 
 \item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test auf der 2x2
   Tafel! \textbf{(3 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! Begr{\"u}nden Sie Ihre Antwort!
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
 \item Skizzieren Sie die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr
-  ist! Erg{\"a}nzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und
+  ist! Ergänzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und
   $\mathcal{X}^2_{calc}$ in der Abbildung! \textbf{(2 Punkte)}
-\item Berechnen Sie den Effektsch{\"a}tzer $Cramers\; V$! Interpretieren Sie den
-  Effektsch{\"a}tzer! \textbf{(2 Punkte)}
+\item Berechnen Sie den Effektschätzer $Cramers\; V$! Interpretieren Sie den
+  Effektschätzer! \textbf{(2 Punkte)}
 \end{enumerate}

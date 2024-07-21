@@ -1,9 +1,73 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/ghArbetOr_E}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/ghArbetOr_E}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
+
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Pestizideinsatz [ja/nein]",
+                         "Herbizideinsatz [ja/nein]",
+                         "Mechanische Bearbeitung [ja/nein]",
+                         "KI-gesteuert [ja/nein]"),
+             tier = c("Automatische Fütterung [ja/nein]", 
+                      "Klimakontrolle [ja/nein]",
+                      "Außenklimakontakt [ja/nein]",
+                      "Ökologisch [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
+                         "Trockengewicht über Zielwert [ja/nein]",
+                         "Chlorophyllgehalt unter Zielwert [ja/nein]",
+                         "Proteingehalt im Zielbereich [ja/nein]"),
+             tier = c("Schlachtgewicht im Zielbereich [ja/nein]", 
+                      "Protein/Fettrate im Zielbereich [ja/nein]",
+                      "Fettgehalt erreicht [ja/nein]",
+                      "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+effect <- c("ein", "kein") |> sample(1)
+
+ques_vec <- c("foo") |> 
+  sample(1)
+
+@
+
+\Sexpr{ques_vec}
 
 Nach einem Experiment erhalten Sie folgende 2x2 Kreuztabelle aus Ihren
 erhobenen Daten.
@@ -37,15 +101,15 @@ Aus der 2x2 Kreuztabelle erhalten Sie folgende \Rlogo Ausgabe der Funktion
 fisher.test(mat)
 @
 
+Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 
 \begin{enumerate}
-\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(2 Punkte)}
-\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
-\item Beschriften Sie die Abbildung und
-  das 95\% Konfidenzintervall entsprechend! \textbf{(2 Punkte)} 
-\item Interpretieren Sie das \textit{Odds ratio} im Kontext der
-  wissenschaftlichen Fragestellung! \textbf{(2 Punkte)} 
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizzieren Sie das sich ergebende 95\% Konfidenzintervall! \textbf{(2 Punkte)}
+\item Beschriften Sie die Abbildung des 95\% Konfidenzintervalls! \textbf{(1 Punkt)} 
+\item Interpretieren Sie das \textit{Odds ratio} im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)} 
 \end{enumerate}
 
