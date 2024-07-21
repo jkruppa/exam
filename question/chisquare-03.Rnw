@@ -62,14 +62,15 @@ y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
 
 effect <- c("ein", "kein") |> sample(1)
 
-ques_vec <- c("foo") |> 
+ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
+                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
+                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doff, da er sich auf eine ANOVA gefreut hatte. Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
+              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten.")) |> 
   sample(1)
 
 @
 
 \Sexpr{ques_vec}
-
-Nach einem Experiment erhalten Sie folgende $2x2$ Kreuztabelle aus Ihren erhobenen Daten.
 
 <<chisquare-R-03-a,  echo = FALSE>>=
 
@@ -94,8 +95,7 @@ dimnames(mat) <- c(row, col)
 mat 
 @
 
-Aus der 2x2 Kreuztabelle erhalten Sie folgende \Rlogo Ausgabe der Funktion
-\texttt{fisher.test()}.
+Dann rechnete \Sexpr{name} den Fisher-Exakt-Test auf der $2x2$-Kreuztabelle in \Rlogo und erhielt folgende \Rlogo Ausgabe der Funktion \texttt{fisher.test()}.
 
 <<chisquare-R-03-b,  echo = FALSE>>=
 print_fisher <- stats::fisher.test(mat)
@@ -103,7 +103,7 @@ print_fisher$data.name <- y_val
 print_fisher
 @
 
-Leider kennt sich \Sexpr{name} mit der Berechnung eines $\\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
