@@ -4,22 +4,20 @@
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
-  str_subset(str_c(name, name_sec, sep = "|"))
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
 jahr <- par_lst$year
 obser <- par_lst$obser
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
-avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\Sexpr{avatar1file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
 \vspace{1ex}
 %% --------------------------------------------------------------------
@@ -69,8 +67,8 @@ groups_vec <- x_val %>%
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
 gen_data <- function(...){
-  n_vec <- c(4:8) %>% sample(1)
-  mean_vec <- c(8, 10, 12, 13) %>% sample(1)
+  n_vec <- c(7:9) %>% sample(1)
+  mean_vec <- c(5, 10, 15) %>% sample(1)
   sd_vec <- c(2, 2.5, 3) %>% sample(1)
   temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
     mutate(temp = round(temp, 1)) %>% 
@@ -105,19 +103,19 @@ group_by(data_tbl, treatment) %>%
   set_names(c(x_val_name, "Fallzahl (n)", "Mittelwert", "Standardabweichung")) |> 
   kable(booktabs = TRUE, align = "c") %>% 
   row_spec(0,bold=TRUE) |> 
-  kable_styling(latex_options = "hold_position", font_size = 12)
+  kable_styling(latex_options = "hold_position", font_size = 10)
 
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!  
+Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie die statistischen Hypothesen! \textbf{(1 Punkt)}
 \item Zeichnen Sie die sich ergebenden Barplots! \textbf{(1 Punkt)}
 \item Berechnen Sie die Matrix der $p$-Werte anhand von Student t-Tests! \textbf{(4 Punkte)}
-\item Ergänzen Sie das \textit{Compact letter display (CLD)} zu den Barplots! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
-\item Interpretieren Sie das \textit{Compact letter display (CLD)}! \textbf{(1 Punkt)} 
+\item Ergänzen Sie das \textit{Compact letter display (CLD)} zu den gezeichneten Barplots! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
+\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name} und \Sexpr{name_sec[1]}! \textbf{(1 Punkt)} 
 \end{enumerate}
 
 

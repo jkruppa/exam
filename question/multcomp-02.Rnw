@@ -4,18 +4,16 @@
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
-  str_subset(str_c(name, name_sec, sep = "|"))
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
 jahr <- par_lst$year
 obser <- par_lst$obser
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
-avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\Sexpr{avatar1file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -27,9 +25,9 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 <<>>=
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
-project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
-             str_c(pronom[6], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -79,7 +77,7 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
-ques_vec <-  c("foo") |> 
+ques_vec <-  c(str_c(name, " sitzt schon etwas länger bei ", betreuer, ". So langsam macht ", name, " sich Gedanken, ob ", names(name), " nicht doch mal anmerken sollte, dass ", names(name), " von CLD noch nie was gehört hat. Aber noch kann gelauscht werden, ein Ende ist erstmal nicht in Sicht! ", name, " hatte in ", project, " ", exp, " durchgeführt. Deshalb sitzt ", names(name), " hier. Also eigentlich nein, deshalb nicht. ", name, " will fertig werden. Hat ", names(name), " sich doch mit ", x_val, " und ", y_val, " schon eine Menge angeschaut. ", name, " beugt sich leicht nach vorne. Nein, doch keine Pause. Weiter warten auf eine Lücke im Fluss...")) |> 
   sample(1)
 
 @ 
@@ -104,11 +102,12 @@ cld_vec <- pairwise.t.test(data_tbl$freshmatter, data_tbl$treatment,
 cld_vec$Letters |> 
   enframe(name = "Behandlung", value = "Compact letter display") |> 
   kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position", font_size = 12)
+      row_spec(0,bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
 
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
+Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}

@@ -43,6 +43,8 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
 study <- c("Almar et al. (2012)", "Totsdorf et al. (2018)", "Meyer et al. (2021)", "Qui et al. (2017)") |> 
   sample(1)
 
+stoerung <- c("Krähen", "Würmer", "Hunde", "Katzen", "Wölfe") |> sample(1)
+
 x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
                          "Lichtstufen ($none$, $200lm$, $400lm$, $600lm$, $700lm$ und $800lm$)",
                          "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
@@ -72,8 +74,10 @@ groups_vec <- x_val %>%
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
 
-ques_vec <-  c(str_c("In ", exp, " mit ", obser, " wurde die Behandlung ", x_val, " gegen die Ergebnisse einer früheren Studie von ", study, " verglichen. Im Rahmen des Experiments haben ", name, " und ", name_sec, " verschiedene Student t-Tests für den Mittelwertsvergleich für den Messwert ", y_val, " gerechnet. Es ergab sich dann die folgende Tabelle der rohen p-Werte für die Vergleiche zu ", study, ".")) |> 
-  sample(1)
+ques_vec <-  c(str_c("In ", exp, " mit ", obser, " wurde die Behandlung ", x_val, " gegen die Ergebnisse einer früheren Studie von ", study, " verglichen. Im Rahmen des Experiments haben ", name, " und ", name_sec, " verschiedene Student t-Tests für den Mittelwertsvergleich für den Messwert ", y_val, " gerechnet. Es ergab sich dann die folgende Tabelle der rohen p-Werte für die Vergleiche zu ", study, ". Jetzt sollen die beiden einmal schauen, was in den Daten so drin ist."),
+               str_c("'Moment, die haben ja das Gleiche gemacht wie wir!', ruft ", name, " laut aus. ", name_sec, " schaut etwas verwundert. 'Das glaube ich eher nicht. Lass uns mal unsere Daten mit den Ergebnissen von ", study, " vergleichen.', antwortet ", name_sec, ". In ", exp, " mit ", obser, " wurde die Behandlung ", x_val, " auf den Messwert ", y_val, " untersucht. Jetzt müssen die beiden mal schauen, ob sie wirklich was Neues gefunden haben oder ob die Ergebnisse alle die gleichen sind wie schon bei ", study, ". Es ergab sich dann die folgende Tabelle der rohen p-Werte für die Vergleiche zu ", study, "."),
+               str_c(name, " und ", name_sec, " untersuchen gemeinsam in ihrer Abschlussarbeit den Messwert ", y_val, " in ", obser, ". Es ist einiges schiefgelaufen, wie es immer so passiert. Hauptsächlich waren es ", stoerung, ", auch wenn man erstmal bei dem Messwert nicht unbedingt an ", stoerung, " denken würde. Aber das ist eine andere Geschichte. Jetzt wollen ", name, " und ", name_sec, " ihre Ergebnisse nochmal mit einer Studie von ", study, " vergleichen und schauen, ob was ähnliches rauskommt. Angeschaut wurde sich als Behandlung ", x_val, ". Es ergab sich dann die folgende Tabelle der rohen p-Werte für die Vergleiche zu ", study, ".")
+               ) |>   sample(1)
 
 @ 
 
@@ -92,11 +96,12 @@ tibble(#Vergleich = str_c(groups_vec, " - [", study, "]"),
        reject = c("")) %>%
   set_names(c("Rohen p-Werte", "Adjustierte p-Werte", "Nullhypothese ablehnen?")) %>% 
   kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position", font_size = 12)
+      row_spec(0,bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
 
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Adjustierung von $p$-Werten und dem Signifikanzniveau $\alpha$ überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Adjustierung von $p$-Werten und dem Signifikanzniveau $\alpha$ überhaupt nicht aus. Deshalb brauchen die beiden bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
