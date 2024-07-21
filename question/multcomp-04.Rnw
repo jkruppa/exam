@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -17,7 +17,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/caution}}
+\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{1ex}
 %% --------------------------------------------------------------------
@@ -84,7 +84,7 @@ ques_vec <-  str_c("'Wir müssen als erstes die Gruppen nach absteigender Effekt
 
 \Sexpr{ques_vec}
 
-<<multcomp-04-a, echo = FALSE>>=
+<<multcomp-02-a, echo = FALSE>>=
 
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
   set_names(c("treatment", "freshmatter")) %>% 
@@ -94,17 +94,23 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
 
 x_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 
-group_by(data_tbl, treatment) %>%
-  dplyr::summarise(
-           n = n(),
-           mean = round(mean(freshmatter, na.rm = TRUE), 2),
-           sd = round(sd(freshmatter, na.rm = TRUE), 2),
-           ) %>%
-  set_names(c(x_val_name, "Fallzahl (n)", "Mittelwert", "Standardabweichung")) |> 
-  kable(booktabs = TRUE, align = "c") %>% 
-  row_spec(0,bold=TRUE) |> 
-  kable_styling(latex_options = "hold_position", font_size = 10)
+pacman::p_load(rcompanion, magrittr, scales)
+pair_wise_mat <- pairwise.t.test(data_tbl$freshmatter, data_tbl$treatment,
+                p.adjust.method = "none") %>% 
+  extract2("p.value") %>% 
+  fullPTable() #%>%
+#  pvalue(accuracy = 0.0001) |> 
+  #matrix(ncol = 4, nrow = 4, byrow = TRUE,
+        # dimnames = list(groups_vec,
+       #                  groups_vec)) 
 
+#diag(pair_wise_mat) <- ("1.0000")
+
+pair_wise_mat |> 
+  kable(booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position", font_size = 10) |> 
+    row_spec(0,bold=TRUE) |> 
+    column_spec(1,bold=TRUE) 
 @
 
 Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
@@ -112,10 +118,9 @@ Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} ü
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie die statistischen Hypothesen! \textbf{(1 Punkt)}
-\item Zeichnen Sie die sich ergebenden Barplots! \textbf{(1 Punkt)}
-\item Berechnen Sie die Matrix der $p$-Werte anhand von Student t-Tests! \textbf{(4 Punkte)}
-\item Ergänzen Sie das \textit{Compact letter display (CLD)} zu den gezeichneten Barplots! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
-\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name} und \Sexpr{name_sec[1]}! \textbf{(1 Punkt)} 
+\item Zeichnen Sie die sich anhand der Matrix der $p$-Werte ergebenden Barplots! \textbf{(2 Punkte)}
+\item Ergänzen Sie das \textit{Compact letter display (CLD)}! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
+\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name} und \Sexpr{name_sec[1]}! \textbf{(2 Punkte)} 
 \end{enumerate}
 
 

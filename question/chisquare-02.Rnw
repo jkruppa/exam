@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -60,17 +60,6 @@ y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
                       "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
   sample(1)
 
-effect <- c("ein", "kein") |> sample(1)
-
-ques_vec <- c("foo") |> 
-  sample(1)
-
-@
-
-\Sexpr{ques_vec}
-
-<<chisquare-02-a, echo = FALSE>>=
-
 a <- round(rnorm(n = 1,
                   mean = sample(c(30, 40, 50), 1),
                   sd = sample(c(2, 4, 5), 1))) 
@@ -93,43 +82,45 @@ bd <- b+d
 ab <- a+b
 cd <- c+d
 
+effect_vec <- sample(c("ein", "kein"), 1)
+
+
+ques_vec <- c(str_c("Gegeben sind folgende Randsummen in einer $2x2$ Kreuztabelle aus einem
+Experiment mit $n = ", abcd, "$ Sauen. In dem Experiment wurde gemessen,
+ob eine Sau nach einer Behandlung mit einem Medikament (ja/nein)
+mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).")) |> 
+  sample(1)
+
+
+
 @
 
-Gegeben sind folgende Randsummen in einer 2x2 Kreuztabelle aus einem
-Experiment mit $n = \Sexpr{abcd}$ Sauen. In dem Experiment wurde gemessen,
-ob eine Sau nach einer Behandlung mit einem Medikament (ja/nein)
-mehr als 30 Ferkel pro Jahr bekommen konnte (ja/nein).
-
-Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
-
+\Sexpr{ques_vec}
 
 \vspace{5Ex}
 
 \begin{center}
-  \Large
+  \huge
   \begin{tabular}{c|c|c|c}
-     & \textbf{>30 Ferkel (ja)} & \textbf{$\leq$30 Ferkel (nein)} &  \strut\\
+     & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
     \hline
-    \textbf{Medikament (ja)} & \phantom{100}  & \phantom{100}  &   \Sexpr{ab}  \strut\\
+   \phantom{\textbf{Pestizid (ja)}} & \phantom{100}  & \phantom{100}  &   \Sexpr{ab}  \strut\\
     \hline
-    \textbf{Medikament (nein)} & \phantom{100}  & \phantom{100}  &   \Sexpr{cd}   \strut\\
+    \phantom{\textbf{Pestizid (ja)}} & \phantom{100}  & \phantom{100}  &   \Sexpr{cd}   \strut\\
     \hline
      &  \Sexpr{ac} &  \Sexpr{bd} &  \Sexpr{abcd}  \strut\\
   \end{tabular}
 \end{center}
 
-<<chisquare-02-b, results='asis', echo = FALSE>>=
-
-effect_vec <- sample(c("ein", "kein"), 1)
-
-@
-
 \vspace{5Ex}
+
+Leider kennt sich \Sexpr{name} mit der Berechnung eines $\\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-\item Ergänzen Sie die Felder innerhalb der 2x2 Kreuztabelle in dem Sinne, dass \textit{\Sexpr{effect_vec}} signifikanter Effekt zu erwarten wäre! \textbf{(2 Punkte)}
+\item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
+\item Ergänzen Sie die Felder innerhalb der $2x2$ Kreuztabelle, so dass \textit{\Sexpr{effect_vec}} signifikanter Effekt zu erwarten wäre! \textbf{(2 Punkte)}
 \item Begründen Sie Ihr Vorgehen an der Formel des Chi-Quadrat-Tests. Erklären Sie Ihr Vorgehen an einem Beispiel! \textbf{(2 Punkte)}
 \item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
-\item Was ist die Mindestanzahl an Beobachtungen je Zelle? Wenn in einer der Zellen weniger Beobachtungen auftreten, welchen Test können Sie anstatt des "`normalen"' Chi-Quadrat-Tests anwenden? \textbf{(2 Punkte)}
+\item Was ist die Mindestanzahl an Beobachtungen je Zelle? Wenn in einer der Zellen weniger Beobachtungen auftreten, welchen Test können Sie anstatt des Standard Chi-Quadrat-Tests anwenden? \textbf{(2 Punkte)}
 \end{enumerate}

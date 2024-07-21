@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -60,63 +60,47 @@ y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
                       "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
   sample(1)
 
-effect <- c("ein", "kein") |> sample(1)
+a <- c(24, 38, 56) %>% sample(1)
+b <- c(11, 19, 21) %>% sample(1)
+c <- c(13, 23, 27) %>% sample(1)
+d <- c(38, 44, 52) %>% sample(1)
 
-ques_vec <- c("foo") |> 
+ques_vec <- str_c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen. Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\text{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen.")) |> 
   sample(1)
 
 @
 
 \Sexpr{ques_vec}
 
-<<chisquare-01-a, echo = FALSE>>=
 
-plant <- c("Weizen", "Mais", "Kohl") %>% sample(1)
-pest <- c("RoundUp", "KillAll", "CleanX") %>% sample(1)
-
-a <- c(24, 38, 56) %>% sample(1)
-b <- c(11, 19, 21) %>% sample(1)
-c <- c(13, 23, 27) %>% sample(1)
-d <- c(38, 44, 52) %>% sample(1)
-
-@
-
-Nach einem Feldexperiment ergibt sich die folgende 2x2 Datentabelle mit einem
-Pestizid (ja/nein) der Marke \Sexpr{pest}, dargestellt in den Zeilen, und
-dem infizierten Pflanzenstatus (ja/nein) von \Sexpr{plant}, dargesellt in
-den Spalten. Insgesamt wurden $n = \Sexpr{a+b+c+d}$ Pflanzen untersucht.
 \vspace{5Ex}
 
 \begin{center}
-  \Large
+  \huge
   \begin{tabular}{c|c|c|c}
-     & \textbf{Erkrankt (ja)} & \textbf{Erkrankt (nein)} &  \strut\\
+     & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
     \hline
-    \textbf{Pestizid (ja)} & \Sexpr{a}  & \Sexpr{b}  &     \strut\\
+    \phantom{\textbf{Pestizid (ja)}} & \Sexpr{a}  & \Sexpr{b}  &     \strut\\
     \hline
-    \textbf{Pestizid (nein)} & \Sexpr{c}  & \Sexpr{d}  &      \strut\\
+    \phantom{\textbf{Pestizid (ja)}} & \Sexpr{c}  & \Sexpr{d}  &      \strut\\
     \hline
      \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
   \end{tabular}
 \end{center}
 
-
-Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
-
 \vspace{5Ex}
+
+Leider kennt sich \Sexpr{name} mit der Berechnung eines $\\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
 \item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
-\item Ergänzen Sie die Tabelle um die Randsummen! \textbf{(1 Punkt)} 
-\item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test auf der 2x2
-  Tafel! \textbf{(3 Punkte)}
+\item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test! \textbf{(2 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
   einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
-\item Skizzieren Sie die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr
-  ist! Ergänzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und
-  $\mathcal{X}^2_{calc}$ in der Abbildung! \textbf{(2 Punkte)}
+\item Skizzieren Sie die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr ist! Ergänzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und $\mathcal{X}^2_{D}$ in der Abbildung! \textbf{(2 Punkte)}
 \item Berechnen Sie den Effektschätzer $Cramers\; V$! Interpretieren Sie den
   Effektschätzer! \textbf{(2 Punkte)}
 \end{enumerate}
