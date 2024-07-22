@@ -62,8 +62,7 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-ques_vec <- c("foo") |> 
-  sample(1)
+ques_vec <- c(str_c("'Hä? Hatten wir das als Aufgabe nicht schon mal, das wir aus kontinuierlichen Daten eine Abbildung bauen sollten?', fragt ", name, ". ", name_sec, " schaut fragend zurück. 'Kann mich wie immer an nichts erinnern. Können wir trotzdem jetzt erstmal die Daten auswerten? Columbo?', antwortet ", name_sec, " leicht angespannt. Die beiden hatten ", exp, " in ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt haben die beiden eigentlich alles zusammen. \\textit{Eigentlich...}"))
 
 
 
