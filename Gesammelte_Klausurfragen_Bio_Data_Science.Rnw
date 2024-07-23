@@ -41,6 +41,7 @@ linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
 nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
+forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
 
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
@@ -508,12 +509,28 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(experimental_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
-\part{Vertiefende Aufgaben der Biostatistik}
+\part{Forschendes Lernen}
 
-Die folgenden Aufgaben basieren auf den wissenschaftlichen Veröffentlichungen von X, Y, Z und W. Für die Prüfung wird die Kenntnis der vier Veröffentlichungen vorausgesetzt. Die Teilaufgaben der folgenden Aufgaben stellen nur eine zufällige Auswahl an möglichen Fragen dar.
+Die folgenden Aufgaben basieren auf den wissenschaftlichen Veröffentlichungen von X, Y, Z und W. Für die Prüfung wird die vertiefende Kenntnis der vier Veröffentlichungen vorausgesetzt. Die Teilaufgaben der Aufgaben stellen nur eine zufällige Auswahl an möglichen Fragen dar.
 
+\begin{itemize}[noitemsep]
+\item Sánchez, M., Velásquez, Y., González, M., \& Cuevas, J. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation. Scientia Horticulturae, 304, 111320. [\href{https://www.sciencedirect.com/science/article/pii/S0304423822004411}{Link}]
+\item Salinas, I., Hueso, J. J., Força Baroni, D., \& Cuevas, J. (2023). Plant growth, yield, and fruit size improvements in ‘Alicia’papaya multiplied by grafting. Plants, 12(5), 1189. [\href{https://www.mdpi.com/2223-7747/12/5/1189}{Link}]
+\end{itemize}
 
+Folgende vier Datensätze und deren vertiefende Analyse werden als bekannt vorausgesetzt. Die folgenden Aufgaben nehmen Teilaspekte der Datenanalyse auf. Die Teilaufgaben der Aufgaben stellen nur eine zufällige Auswahl an möglichen Fragen dar.
 
+\begin{itemize}[noitemsep]
+\item bar
+\end{itemize}
+
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(forsch_lern_questions_vec[1])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(forsch_lern_questions_vec[2])} 
+\clearpage
 % -----------------------------------------------------------------------
 \part{Mathematik}
 % -----------------------------------------------------------------------  
