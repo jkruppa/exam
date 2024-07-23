@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -62,7 +62,11 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-ques_vec <- c(str_c("'Hä? Hatten wir das als Aufgabe nicht schon mal, das wir aus kontinuierlichen Daten eine Abbildung bauen sollten?', fragt ", name, ". ", name_sec, " schaut fragend zurück. 'Kann mich wie immer an nichts erinnern. Können wir trotzdem jetzt erstmal die Daten auswerten? Columbo?', antwortet ", name_sec, " leicht angespannt. Die beiden hatten ", exp, " in ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt haben die beiden eigentlich alles zusammen. \\textit{Eigentlich...}"))
+ques_vec <- c(str_c("'Hä? Hatten wir das als Aufgabe nicht schon mal, das wir aus kontinuierlichen Daten eine Abbildung bauen sollten?', fragt ", name, ". ", name_sec, " schaut fragend zurück. 'Kann mich wie immer an nichts erinnern. Können wir trotzdem jetzt erstmal die Daten auswerten? Columbo?', antwortet ", name_sec, " leicht angespannt. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt haben die beiden eigentlich alles zusammen. \\textit{Eigentlich...}"),
+              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen!', ruft ", name, ". 'Ich sehe nur eine Zahlen und keine Punkte. Wie soll ich da denn jetzt eine Gerade durchzeichnen?', fragt ", name_sec, ". ", name, " atmet schwer ein. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von den beiden einmal die Visualisierung der Daten und auch gleich noch die lineare Regression gerechnet bekommen."),
+              str_c("'Ich glaube du bringst da was durcheinander. Wir nutzen zwar auch für die ANOVA die Funktion \\texttt{lm()} aber hier wollen wir, glaube ich, eine Gerade durch die Punkte zeichnen.', merkt ", name, " an. 'Ich sehe keine Punkte...', antwortet ", name_sec, " sichtlich übernächtigt. 'Wir müssen die Daten ja auch erst visualisieren!', spricht ", name, " sehr deutlich und langsam. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt wollen sie erstmal schauen, ob es einen Zusammenhang gibt.")) |> 
+  sample(1)
+
 
 
 
@@ -79,16 +83,16 @@ data_tbl <- tibble(x = round(rnorm(sample(9:12, 1), sample(c(15, 20, 25), 1), sa
                      str_replace(y_val, "^\\w{1}", toupper))))
 
 data_tbl |> 
-  set_names(c(x_val, y_val)) |> 
   kable(booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der Erstellung einer Datenanalyse für kontinuierliche Daten überhaupt nicht aus. Deshalb brauchen bei der Erstellung Ihre Hilfe!
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der linearen Regression für kontinuierliche Daten überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
 \item Erstellen  Sie  eine  Visualisierung  für  die  Datentabelle.  Beschriften  Sie  die  Achsen! \textbf{(2 Punkte)}
-\item Erstellen Sie die Regressionsgleichung aus der obigen Abbildung mit den statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Schätzen Sie die Regressionsgleichung aus der obigen Abbildung ab! \textbf{(2 Punkte)}
 \item Beschriften Sie die Grade mit den statistischen Maßzahlen der linearen Regressionsgleichung! \textbf{(2 Punkte)}
 \item Liegt ein Zusammenhang zwischen $x$ und $y$ vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Wenn kein Zusammenhang zu beobachten wäre, wie würde die Grade aussehen? \textit{Antworten Sie mit einer Skizze der Geraden!} \textbf{(1 Punkt)}

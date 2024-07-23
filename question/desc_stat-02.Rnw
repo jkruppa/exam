@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (7 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -79,13 +79,9 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
 Leider kennt sich \Sexpr{name} mit der Erstellung von Barplots nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Visualisierung Ihre Hilfe!
 
 \begin{enumerate}
-\item Zeichnen Sie in \textit{einer} Abbildung die Barplots für die
-  Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!
-  \textbf{(4 Punkte)}
-\item Beschriften Sie \textit{einen} Barplot mit den gängigen
-  statistischen Maßzahlen! \textbf{(2 Punkte)}
-\item Wenn Sie \textit{keinen Effekt} zwischen den Behandlungen von
-  \Sexpr{plant} erwarten würden, wie sehen dann die Barplots aus?
-  \textit{Antworten Sie mit einer Skizze der Barplots!}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Zeichnen Sie in \textit{einer} Abbildung die Barplots für die Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!\textbf{(4 Punkte)}
+\item Beschriften Sie \textit{einen} Barplot mit den gängigen statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Wenn \Sexpr{name} \textit{keinen Effekt} zwischen den Behandlungen von \Sexpr{plant} erwarten würde, wie sehen dann die Barplots aus? \textit{Antworten Sie mit einer Skizze der Barplots!}
   \textbf{(1 Punkt)}
 \end{enumerate}

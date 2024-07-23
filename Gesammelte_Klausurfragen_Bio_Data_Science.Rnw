@@ -508,6 +508,13 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(experimental_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
+\part{Vertiefende Aufgaben der Biostatistik}
+
+Die folgenden Aufgaben basieren auf den wissenschaftlichen Veröffentlichungen von X, Y, Z und W. Für die Prüfung wird die Kenntnis der vier Veröffentlichungen vorausgesetzt. Die Teilaufgaben der folgenden Aufgaben stellen nur eine zufällige Auswahl an möglichen Fragen dar.
+
+
+
+% -----------------------------------------------------------------------
 \part{Mathematik}
 % -----------------------------------------------------------------------  
 \Sexpr{knit_child(math_questions_vec[1])} 

@@ -1,46 +1,113 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/fB6nF4dxodA}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-Im folgenden sehen Sie drei leere Scatterplots. F{\"u}llen Sie diese
-Scatterplots nach folgenden Anweisungen.
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
 
-\begin{enumerate}
-\item Zeichnen Sie f{\"u}r die angegebene $\rho$-Werte eine Gerade in die
-  entsprechende Abbildung! \textbf{(3 Punkte)}
-\item Zeichnen Sie f{\"u}r die angegebenen $R^2$-Werte die entsprechende
-  Punktewolke um die Gerade. \textbf{(3 Punkte)}
-\item Sie rechnen ein statistisches Modell. Was sagen Ihnen die $R^2$-Werte
-  {\"u}ber das jeweilige Modell? \textbf{(3 Punkte)}
-\end{enumerate}
+x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
+                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlicher Anteil an Ton [\\%/l]",
+                         "durchschnittliche UV-Einstrahlung [UV/d]"),
+             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
+                      "durchschnittliche Tagestemperatur [C/d]",
+                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+  sample(1)
 
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Proteianteil [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
 
-<<correlation-01, results='asis', echo = FALSE, fig.height = 7, fig.width = 7, fig.align = "center", message = FALSE>>=
+n_obs <- rpois(1, 30)
 
-corr_vec <- c(-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1) %>%
-  sample(size = 3)
-r2_vec <- c(0.25, 0.5, 0.75, 1) %>%
-  sample(size = 3)
-df <- data.frame()
-p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  ggtitle(bquote(Pearsons~rho ==.(corr_vec[1])), 
-          bquote(R^{2}==.(r2_vec[1]))) +
-          theme_minimal() ## +
-  ## xlab( bquote(Value~is~sigma~R^{2}==.(r2.value)))
-p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  ggtitle(bquote(Pearsons~rho ==.(corr_vec[2])), 
-          bquote(R^{2}==.(r2_vec[2]))) +
-  theme_minimal()
-p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  ggtitle(bquote(Pearsons~rho ==.(corr_vec[3])), 
-          bquote(R^{2}==.(r2_vec[3]))) +
-  theme_minimal()
-##
-grid.arrange(p1, p2, p3, ncol = 2)
+ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wir das als Aufgabe eine lineare Regression zu rechnen? Wir bauen aus kontinuierlichen Daten eine Abbildung und interpretieren diese dann?', fragt ", name, ". ", name_sec, " schaut fragend zurück. 'Keine Ahnung... das ist jetzt jedenfalls keine Abbildung von irgendwas sondern eine \\Rlogo Ausgabe mit ganz wilden Bezeichnungen...', antwortet ", name_sec, " leicht angespannt. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt haben die beiden eigentlich alles zusammen. \\textit{Eigentlich...}, denn mit der \\Rlogo Ausgabe haben beide jetzt ein Problem."),
+              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen!', ruft ", name, ". 'Ich sehe nur Kauderwelsch und keine Punkte. Wie soll ich da denn jetzt eine Gerade durchzeichnen? Und warum überhaupt? War das unsere Fragestellung?', fragt ", name_sec, ". ", name, " atmet schwer ein und starrt auf die \\Rlogo Ausgabe der Funktion \\texttt{lm()}. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von den beiden die Interpretierung der Daten in Form einer linearen Regression gerechnet bekommen. Das haben beide in \\Rlogo gemacht, aber wie soll das jetzt gehen? Das mit der Interpretation?"),
+              str_c("'Ich glaube du bringst da was durcheinander. Wir nutzen zwar auch für die ANOVA die Funktion \\texttt{lm()} aber hier wollen wir, glaube ich, eine Gerade durch die Punkte zeichnen.', merkt ", name, " an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \\Rlogo. Überhaupt, darum geht es doch gar nicht in unserem Versuch. Wir wollen doch keine Gerade zeichnen?.', antwortet ", name_sec, " sichtlich übernächtigt. 'Doch wir müssen nur die Koeffizienten der linearen Regression erst richtig interpretieren und vor unserem geistigen Auge erscheint eine Gerade!', spricht ", name, " sehr deutlich und langsam. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt wollen sie erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \\Rlogo Ausgabe möglich sein.")) |> 
+  sample(1)
 
 @
 
+\Sexpr{ques_vec}
+
+
+<<correlation-03,  echo = FALSE>>=
+
+
+question_vec <- c("das statistische Hypothesenpaar",
+                  "die wissenschaftliche Fragestellung") %>% sample(1)
+
+visual_vec <- c("das 95\\% Konfidenzintervall!",
+                "die Teststatistik und den p-Wert!") %>% sample(1)
+
+cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
+
+data_tbl <- tibble(x = rnorm(10, 5, 2),
+                   y = cor_vec * x + rnorm(10, 0, 1))
+
+print_obj <- cor.test(~ y + x, data_tbl)
+
+print_obj$method  <- c("Pearson's correlation", "Spearman's correlation", "Kendall's correlation") %>% sample(1)
+
+print_obj$data.name  <- c("weight and fertilizer",
+                          "drymatter and water",
+                          "height and food") %>% sample(1)
+
+store_vec <- print_obj$data.name 
+
+print_obj
+
+@
+
+Leider kennt sich \Sexpr{name} mit der Korrelationsanalyse in \Rlogo überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
+\begin{enumerate}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
+\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
+  Effekts und der Signifikanz! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
+\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt? Begründen Sie Ihre Antwort! \textbf{(1 Punkt)}
+\end{enumerate}

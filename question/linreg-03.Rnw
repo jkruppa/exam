@@ -1,45 +1,121 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/tNNzcndrpSk}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/tNNzcndrpSk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
-Sie rechnen eine lineare Regression um nach einem Feldexperiment den
-Zusammenhang zwischen Trockengewicht kg/m$^2$ (\textit{weight}) und
-Wassergabe l/m$^2$ (\textit{water}) bei Erdbeerpflanzen zu bestimmen. Sie
-erhalten folgende \Rlogo Ausgabe.
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-<<regression-R-01,  echo = FALSE>>=
-data_tbl <- rbind(tibble(A = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(15, 17, 19), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather,
-                  tibble(B = round(rnorm(n = sample(c(5,7,9), 1),
-                                         mean = sample(c(12, 24, 27), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather) %>%
-  set_names(c("water", "weight")) %>%
-  sample_n(size = nrow(.))
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
 
-sum_lm <- summary(lm(weight ~ water, data_tbl))
+x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
+                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlicher Anteil an Ton [\\%/l]",
+                         "durchschnittliche UV-Einstrahlung [UV/d]"),
+             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
+                      "durchschnittliche Tagestemperatur [C/d]",
+                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+  sample(1)
 
-r2 <- sum_lm$r.squared %>% round(4)
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Proteianteil [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
 
-sum_lm
+n_obs <- rpois(1, 30)
+
+ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wir das als Aufgabe eine lineare Regression zu rechnen? Wir bauen aus kontinuierlichen Daten eine Abbildung und interpretieren diese dann?', fragt ", name, ". ", name_sec, " schaut fragend zurück. 'Keine Ahnung... das ist jetzt jedenfalls keine Abbildung von irgendwas sondern eine \\Rlogo Ausgabe mit ganz wilden Bezeichnungen...', antwortet ", name_sec, " leicht angespannt. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt haben die beiden eigentlich alles zusammen. \\textit{Eigentlich...}, denn mit der \\Rlogo Ausgabe haben beide jetzt ein Problem."),
+              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen!', ruft ", name, ". 'Ich sehe nur Kauderwelsch und keine Punkte. Wie soll ich da denn jetzt eine Gerade durchzeichnen? Und warum überhaupt? War das unsere Fragestellung?', fragt ", name_sec, ". ", name, " atmet schwer ein und starrt auf die \\Rlogo Ausgabe der Funktion \\texttt{lm()}. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von den beiden die Interpretierung der Daten in Form einer linearen Regression gerechnet bekommen. Das haben beide in \\Rlogo gemacht, aber wie soll das jetzt gehen? Das mit der Interpretation?"),
+              str_c("'Ich glaube du bringst da was durcheinander. Wir nutzen zwar auch für die ANOVA die Funktion \\texttt{lm()} aber hier wollen wir, glaube ich, eine Gerade durch die Punkte zeichnen.', merkt ", name, " an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \\Rlogo. Überhaupt, darum geht es doch gar nicht in unserem Versuch. Wir wollen doch keine Gerade zeichnen?.', antwortet ", name_sec, " sichtlich übernächtigt. 'Doch wir müssen nur die Koeffizienten der linearen Regression erst richtig interpretieren und vor unserem geistigen Auge erscheint eine Gerade!', spricht ", name, " sehr deutlich und langsam. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt wollen sie erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \\Rlogo Ausgabe möglich sein.")) |> 
+  sample(1)
 
 @
 
+\Sexpr{ques_vec}
+
+<<regression-R-01,  echo = FALSE>>=
+eff_vec <- sample(c(0.1, 0.5, 1.0, 1.5, 2, 2.5), 1)
+n_obs <- rpois(1, 30)
+
+x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
+  str_split(" ", simplify = TRUE) |> 
+  magrittr::extract(1, 1:2) |> 
+  str_c(collapse = " ")
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+
+def <- defData(varname = "light", dist = "normal", formula = 10,
+    variance = 2)
+def <- defData(def, varname = "weight", dist = "normal",
+    formula = str_c("2 + light * ", eff_vec), variance = 2)
+dd <- genData(n_obs, def) |> 
+  as_tibble() |> 
+  set_names(c("id", str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_")))
+  
+
+preprint <- lm(reformulate(str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_")), data = dd) |> 
+  summary()
+  
+preprint$call <- reformulate(str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_"))
+
+preprint 
+
+r2 <- preprint$r.squared %>% round(2)
+if(is.na(r2))
+  r2 <- 0
+
+
+@
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit der linearen Regression für kontinuierliche Daten in \Rlogo überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe!
+
 
 \begin{enumerate}
-\item Ist die Annahme der Normalverteilung an das Outcome \textit{water}
-  erf{\"u}llt?  Begr{\"u}nden Sie die Antwort! \textbf{(2 Punkte)}
-\item Wie gro{\ss} ist der Effekt der Wassergabe?  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
-\item Liegt ein signifikanter
-  Effekt vor? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie \textit{kurz} den Begriff \texttt{R-squared}!
-  Was sagt Ihnen der Wert $\Sexpr{r2}$ aus? \textbf{(2 Punkte)}
-\item Schreiben Sie das Ergebnis der \Rlogo Ausgabe in zwei S{\"a}tzen auf, der die
-  Information zum Effekt und der Signifikanz enth{\"a}lt! \textbf{(2 Punkte)} 
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Wie groß ist der Effekt im Kontext der wissenschaftlichen Fragestellung? \textbf{(2 Punkte)} 
+\item Interpretieren Sie die $p$-Werte im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
+\item Visualisieren Sie die Verteilung der Residuen! \textbf{(2 Punkte)} 
+\item Ist die Annahme der Normalverteilung erfüllt? Begründen Sie die Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie \textit{kurz} den Begriff \texttt{R-squared}! Was sagt Ihnen der Wert $\Sexpr{r2}$ aus? \textbf{(2 Punkte)}
 \end{enumerate}
 
