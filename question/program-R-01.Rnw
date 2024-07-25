@@ -73,8 +73,13 @@ ques_8 <- c(str_c("Hä? Warum ändert sich nichts an meinen Daten? In R sehe ich
             str_c("Ich habe doch die Spalte mutiert und geändert. Warum sehe ich das in R aber mein Datensatz ändert sich nicht?")) |> 
   sample(1)
 
+ques_9 <- c(str_c("Wie heißen nochmal die beiden \\Rlogo Pakete, die wir fast immer laden, wenn wir \\Rlogo nutzen wollen?"),
+            str_c("Ich habe die Namen der beiden \\Rlogo Pakete vergessen, die wir eigentlich immer laden. Wie heißen die noch gleich?"),
+            str_c("Wenn ich was in \\Rlogo machen möchte, dann lade ich nochmal welche zwei \\Rlogo Pakete sehr häufig?")) |> 
+  sample(1)
 
-ques_random <- c(ques_1, ques_2, ques_3, ques_4, ques_5, ques_6, ques_7, ques_8) |> sample()
+
+ques_random <- c(ques_1, ques_2, ques_3, ques_4, ques_5, ques_6, ques_7, ques_8, ques_9) |> sample()
 
 @
 
@@ -104,4 +109,5 @@ Sie antworten:\\[2Ex]
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[8]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[9]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
