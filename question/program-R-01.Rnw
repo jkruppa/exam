@@ -1,7 +1,6 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
- 
+
 <<>>=
 name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
@@ -27,24 +26,82 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
-ques_tbl <- read_excel(file.path(exam_path, "questions_R.xlsx"))
+ques_vec <- c(str_c(name, " muss ", project , " mit \\Rlogo arbeiten. Deshalb sitzt ", names(name), " jetzt mit Ihnen zusammen und hat einige Fragen zu den \\textbf{Grundlagen} in \\Rlogo an Sie! Na dann wollen Sie mal helfen. Immerhin will ", betreuer, ", dass \\Rlogo genutzt wird."),
+              str_c("'Unter den Blinden ist der Einäuge König!', ruft Ihnen ", name, " entgegen. Leider kennt sich ", name, " überhaupt nicht mit den \\textbf{Grundlagen} in \\Rlogo aus aber ", betreuer, " möchte gerne, dass die Auswertung in \\Rlogo gemacht wird. Da müssen Sie dann wohl mal ran und helfen."),
+              str_c("'Hm. \\Rlogo ist eigentlich gar nicht so schwer, wenn man die Grundlagen kann.', meint  ", name, " ganz zuversichtlich. Nur leider kennt ", names(name), " sich überhaupt nicht mit \\Rlogo aus! Das heißt, Sie müssen hier einmal Rede und Antwort stehen und helfen.")) |> 
+  sample(1)
 
-anser_vec <- c("Sie:")
+ques_1 <- c(str_c("Was ist der Unterschied zwischen einem Objekt, einem Wort und einer Funktion?"),
+            str_c("In R gibt es Objekte, Wörter und Funktionen. Wie unterscheiden sich diese voneinander?"),
+            str_c("Warum gibt es eigentlich Objekte, Wörter und Funktionen in R? Wie unterscheiden sich diese überhaupt?")) |> 
+  sample(1)
 
-ques_str <- str_c("\\textit{",
-                  ques_tbl$text_1[1],
-                  "}\\\\ ",
-                  anser_vec)
+ques_2 <- c(str_c("Was ist der Unterschied zwischen dem RStudio und R?"),
+            str_c("Warum brauche ich eigentlich das RStudio und R? Wo ist denn da der Unterschied?"),
+            str_c("Warum gibt es eigentlich das RStudio und R? Wie unterscheiden sich beide voneinander?")) |> 
+  sample(1)
 
+ques_3 <- c(str_c("Wie sieht der Pipe-Operator aus und was ist seine Funktion? Gerne mit Beispiel!"),
+            str_c("Ich verstehe den Pipe-Operator nicht. Wie sieht der aus und was macht der? Gebe mal ein Beispiel!"),
+            str_c("Der Pipe-Operator wird sehr häufig genutzt. Wie sieht der aus und wie funktioniert der an einem Beispiel?")) |> 
+  sample(1)
+
+ques_4 <- c(str_c("Wie sieht der Zuweisungs-Operator aus und was ist seine Funktion? Gerne mit Beispiel!"),
+            str_c("Ich verstehe den Zuweisungs-Operator nicht. Wie sieht der aus und was macht der? Gebe mal ein Beispiel!"),
+            str_c("Der Zuweisungs-Operator wird sehr häufig genutzt. Wie sieht der aus und wie funktioniert der an einem Beispiel?")) |> 
+  sample(1)
+
+ques_5 <- c(str_c("Wie speichern wir in R intern Daten ab? Ich brauche nochmal den Namen der Funktion. Was sind den die Vorteile von dieser Art der Speicherung?"),
+            str_c("Wie war nochmal der Name der Funktion in dem wir in R Daten intern abspeichern? Was waren da nochmal die Vorteile?"),
+            str_c("Ich habe den Namen der Funktion, die intern Daten speichert, vergessen. Was waren da nochmal die Vorteile?")) |> 
+  sample(1)
+
+ques_6 <- c(str_c("Wo nutzen wir nochmal die Tilde ($\\sim$) in R. Das war irgendwie voll wichtig. Wo wird diese genutzt?"),
+            str_c("Wir brauchen recht häufig die Tilde ($\\sim$) in R. Wo wird die nochmal angewandt und genutzt?"), 
+            str_c("Jetzt sehe ich wieder diese Tilde ($\\sim$) in R. Wo brauchen wir diese denn nochmal?")) |> 
+  sample(1)
+
+ques_7 <- c(str_c("Was ist der Unterschied zwischen \\texttt{library()} und \\texttt{Packages} und warum brauche ich sowas in \\Rlogo?"),
+            str_c("Es gibt ja in R unter anderem \\texttt{library()} und \\texttt{Packages}. Was ist de Unterschied und wozu brauche ich die?"), 
+            str_c("Ich verstehe den Unterschied zwischen \\texttt{library()} und \\texttt{Packages} nicht. Warum gibt es die?")) |> 
+  sample(1)
+
+ques_8 <- c(str_c("Hä? Warum ändert sich nichts an meinen Daten? In R sehe ich doch die Änderungen aber irgendwie speicher R meine Änderungen meines Datensatzes ab. Was ist da los?"),
+            str_c("In R hat sich doch mein Datensatz geändert. Warum ist er jetzt wieder so wie vorher, wenn ich den Datensatz wieder aufrufe? Was mache ich falsch?"), 
+            str_c("Ich habe doch die Spalte mutiert und geändert. Warum sehe ich das in R aber mein Datensatz ändert sich nicht?")) |> 
+  sample(1)
+
+
+ques_random <- c(ques_1, ques_2, ques_3, ques_4, ques_5, ques_6, ques_7, ques_8) |> sample()
 
 @
 
+\Sexpr{ques_vec}\\[1Ex]
 
-<<results='asis'>>=
-ques_str
-@
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[1]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
 
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[2]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[3]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[4]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[5]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[6]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[7]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[8]}} \textbf{(1 Punkt)}\\[1ex]
+Sie antworten:\\[2Ex]
 
 
