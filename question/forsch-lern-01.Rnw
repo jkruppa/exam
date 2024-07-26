@@ -31,11 +31,11 @@ betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |>
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation.",
-           "Salinas, I., et al. (2023). Plant growth, yield, and fruit size improvements in ‘Alicia’ papaya multiplied by grafting.",
-           "Petersen, F., et al. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm.",
-           "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs.") |> 
-  set_names("mango", "papaya", "duckweed", "pigs") |> sample(1)
+paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation",
+           "Salinas, I., et al. (2023). Plant growth, yield, and fruit size improvements in ‘Alicia’ papaya multiplied by grafting",
+           "Petersen, F., et al. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm",
+           "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs") |> 
+  set_names(c("mango", "papaya", "duckweed", "pigs")) |> sample(1)
 
 n_obs <- rpois(1, 30)
 
@@ -55,12 +55,3 @@ ques_vec <- c(str_c(name, " hält die wissenschaftliche Veröffentlichung \\text
 
 Leider kennt sich \Sexpr{name} mit dem Lesen einer wissenschaftlichen Veröffentlichung mit Fokus auf die Statistik überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
-\begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
-\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
-  Effekts und der Signifikanz! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
-\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt? Begründen Sie Ihre Antwort! \textbf{(1 Punkt)}
-\end{enumerate}

@@ -42,7 +42,7 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
                     "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
+x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
                          "durchschnittliche Regenwurmdichte [Anzahl/l]",
                          "durchschnittlicher Anteil an Ton [\\%/l]",
                          "durchschnittliche UV-Einstrahlung [UV/d]"),

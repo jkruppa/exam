@@ -78,12 +78,3 @@ ques_vec <- c(str_c("'Hä?")) |>
 
 Leider kennt sich \Sexpr{name} mit dem Lesen einer wissenschaftlichen Veröffentlichung mit Fokus auf die Statistik überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
-\begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
-\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
-  Effekts und der Signifikanz! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
-\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt? Begründen Sie Ihre Antwort! \textbf{(1 Punkt)}
-\end{enumerate}

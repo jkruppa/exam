@@ -40,7 +40,7 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
                     "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
+x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
                          "durchschnittliche Regenwurmdichte [Anzahl/l]",
                          "durchschnittlicher Anteil an Ton [\\%/l]",
                          "durchschnittliche UV-Einstrahlung [UV/d]"),
@@ -62,9 +62,9 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
 
 n_obs <- rpois(1, 30)
 
-ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wir das als Aufgabe eine lineare Regression zu rechnen? Wir bauen aus kontinuierlichen Daten eine Abbildung und interpretieren diese dann?', fragt ", name, ". ", name_sec, " schaut fragend zurück. 'Keine Ahnung... das ist jetzt jedenfalls keine Abbildung von irgendwas sondern eine \\Rlogo Ausgabe mit ganz wilden Bezeichnungen...', antwortet ", name_sec, " leicht angespannt. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt haben die beiden eigentlich alles zusammen. \\textit{Eigentlich...}, denn mit der \\Rlogo Ausgabe haben beide jetzt ein Problem."),
-              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen!', ruft ", name, ". 'Ich sehe nur Kauderwelsch und keine Punkte. Wie soll ich da denn jetzt eine Gerade durchzeichnen? Und warum überhaupt? War das unsere Fragestellung?', fragt ", name_sec, ". ", name, " atmet schwer ein und starrt auf die \\Rlogo Ausgabe der Funktion \\texttt{lm()}. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von den beiden die Interpretierung der Daten in Form einer linearen Regression gerechnet bekommen. Das haben beide in \\Rlogo gemacht, aber wie soll das jetzt gehen? Das mit der Interpretation?"),
-              str_c("'Ich glaube du bringst da was durcheinander. Wir nutzen zwar auch für die ANOVA die Funktion \\texttt{lm()} aber hier wollen wir, glaube ich, eine Gerade durch die Punkte zeichnen.', merkt ", name, " an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \\Rlogo. Überhaupt, darum geht es doch gar nicht in unserem Versuch. Wir wollen doch keine Gerade zeichnen?.', antwortet ", name_sec, " sichtlich übernächtigt. 'Doch wir müssen nur die Koeffizienten der linearen Regression erst richtig interpretieren und vor unserem geistigen Auge erscheint eine Gerade!', spricht ", name, " sehr deutlich und langsam. Die beiden hatten ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt wollen sie erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \\Rlogo Ausgabe möglich sein.")) |> 
+ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wir als Aufgabe eine Korrelation zu berechnen? Wir bauen aus kontinuierlichen Daten eine Abbildung und interpretieren diese dann?', fragt sich ", name, " laut. 'Keine Ahnung... das ist jetzt jedenfalls keine Abbildung von irgendwas sondern eine \\Rlogo Ausgabe mit ganz wilden Bezeichnungen...', denkt ", names(name), ". ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt hat ", names(name), " eigentlich alles zusammen. \\textit{Eigentlich...}, denn mit der \\Rlogo Ausgabe hat ", name, " jetzt ein Problem."),
+              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen...', denkt ", name, ". 'Ich sehe nur Kauderwelsch und keine Punkte. Ich glaube das war jetzt doch eine Korrelation, die ich rechnen sollte. Und warum überhaupt? War das unsere Fragestellung?', denkt sich ", name, ". ", name, " atmet schwer ein und starrt auf die \\Rlogo Ausgabe der Funktion \\texttt{cor.test()}. ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von ", pronom[4], " die Interpretierung der Daten in Form einer Korrelation berechnet bekommen. Das hat ", name, " in \\Rlogo gemacht, aber wie soll das jetzt gehen? Das mit der Interpretation?"),
+              str_c("'Ich glaube ich bringe da was durcheinander. Ich möchte eine Gerade durch die Punkte zeichnen oder doch eine Korrelation berechnen?', merkt ", name, " laut an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \\Rlogo. Überhaupt, darum geht es doch gar nicht in meinem Versuch. Ich wollte doch keine Gerade zeichnen?.', antwortet ", name, " sich sichtlich übernächtigt selber. Die Nacht war zu lang und überhaupt. ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will ", names(name), " erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \\Rlogo Ausgabe möglich sein.")) |> 
   sample(1)
 
 @
@@ -74,12 +74,10 @@ ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wi
 
 <<correlation-03,  echo = FALSE>>=
 
-
-question_vec <- c("das statistische Hypothesenpaar",
-                  "die wissenschaftliche Fragestellung") %>% sample(1)
-
-visual_vec <- c("das 95\\% Konfidenzintervall!",
-                "die Teststatistik und den p-Wert!") %>% sample(1)
+x_val <- str_replace(x_val, "\\\\", "") |>  
+  str_replace("^\\w{1}", toupper)
+y_val <- str_replace(y_val, "\\\\", "") |> 
+  str_replace("^\\w{1}", toupper)
 
 cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
 
@@ -88,13 +86,9 @@ data_tbl <- tibble(x = rnorm(10, 5, 2),
 
 print_obj <- cor.test(~ y + x, data_tbl)
 
-print_obj$method  <- c("Pearson's correlation", "Spearman's correlation", "Kendall's correlation") %>% sample(1)
+print_obj$method  <- c("Pearson's correlation") %>% sample(1)
 
-print_obj$data.name  <- c("weight and fertilizer",
-                          "drymatter and water",
-                          "height and food") %>% sample(1)
-
-store_vec <- print_obj$data.name 
+print_obj$data.name  <- str_c(x_val, " and ", y_val)
 
 print_obj
 
@@ -105,9 +99,9 @@ Leider kennt sich \Sexpr{name} mit der Korrelationsanalyse in \Rlogo überhaupt 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+\item Erstellen Sie eine Visualisierung für den Korrelationskoeffizienten! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
 \item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
 \item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
   Effekts und der Signifikanz! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Visualisieren Sie \Sexpr{visual_vec} Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
-\item Sind die Variablen \texttt{\Sexpr{store_vec}} normalverteilt? Begründen Sie Ihre Antwort! \textbf{(1 Punkt)}
+\item Visualisieren Sie das 95\% Konfidenzintervall! Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
 \end{enumerate}

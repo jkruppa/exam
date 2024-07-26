@@ -4,7 +4,7 @@
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(2)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(2)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
   str_subset(str_c(c(name, name_sec), collapse = "|"))
 jahr <- par_lst$year

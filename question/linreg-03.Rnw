@@ -42,7 +42,7 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
                     "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
+x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
                          "durchschnittliche Regenwurmdichte [Anzahl/l]",
                          "durchschnittlicher Anteil an Ton [\\%/l]",
                          "durchschnittliche UV-Einstrahlung [UV/d]"),
@@ -74,7 +74,7 @@ ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wi
 \Sexpr{ques_vec}
 
 <<regression-R-01,  echo = FALSE>>=
-eff_vec <- sample(c(0.1, 0.5, 1.0, 1.5, 2, 2.5), 1)
+eff_vec <- sample(c(0.1, 0.5, 1.1, 1.5, 2, 2.5), 1)
 n_obs <- sample(35:45) |> sample(1)
 
 x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
