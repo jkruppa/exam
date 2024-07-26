@@ -38,7 +38,7 @@ ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
 anova_questions_vec <- str_subset(questions_vec, "/anova-", negate = FALSE)
 chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FALSE)
 linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
-nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
+## nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
@@ -465,17 +465,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(chisquare_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\part{Nicht parametrische Tests}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(nonpar_questions_vec[1])} 
-\clearpage
-% ----------------------------------------------------------------------- 
-\Sexpr{knit_child(nonpar_questions_vec[2])} 
-\clearpage
-% -----------------------------------------------------------------------  
-\Sexpr{knit_child(nonpar_questions_vec[3])} 
-\clearpage
-% -----------------------------------------------------------------------
 \part{Lineare Regression \& Korrelation}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(linreg_questions_vec[1])} 
@@ -511,7 +500,11 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % -----------------------------------------------------------------------
 \part{Programmieren in R}
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(program_questions_vec[1])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(program_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Forschendes Lernen}
@@ -521,6 +514,8 @@ Die folgenden Aufgaben basieren auf den wissenschaftlichen Veröffentlichungen v
 \begin{itemize}[noitemsep]
 \item Sánchez, M., Velásquez, Y., González, M., \& Cuevas, J. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation. Scientia Horticulturae, 304, 111320. [\href{https://www.sciencedirect.com/science/article/pii/S0304423822004411}{Link}]
 \item Salinas, I., Hueso, J. J., Força Baroni, D., \& Cuevas, J. (2023). Plant growth, yield, and fruit size improvements in ‘Alicia’papaya multiplied by grafting. Plants, 12(5), 1189. [\href{https://www.mdpi.com/2223-7747/12/5/1189}{Link}]
+\item Petersen, F., Demann, J., Restemeyer, D., Olfs, H. W., Westendarp, H., Appenroth, K. J., \& Ulbrich, A. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm. Plants, 11(8), 1010. [\href{https://www.mdpi.com/2223-7747/11/8/1010}{Link}]
+\item Wu, G., Knabe, D. A., \& Kim, S. W. (2004). Arginine nutrition in neonatal pigs. The Journal of Nutrition, 134(10), 2783S-2790S. [\href{https://www.sciencedirect.com/science/article/pii/S0022316623031279}{Link}]
 \end{itemize}
 
 Folgende vier Datensätze und deren vertiefende Analyse werden als bekannt vorausgesetzt. Die folgenden Aufgaben nehmen Teilaspekte der Datenanalyse auf. Die Teilaufgaben der Aufgaben stellen nur eine zufällige Auswahl an möglichen Fragen dar.

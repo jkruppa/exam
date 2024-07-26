@@ -1,0 +1,110 @@
+\section{Aufgabe \hfill (9 Punkte)}
+
+
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/caution}}
+\end{minipage}
+\vspace{1ex}
+%% --------------------------------------------------------------------
+
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+
+ques_vec <- c(str_c(name, " muss ", project , " mit \\Rlogo arbeiten. Leider ist die Analyse etwas komplexer, so dass es eben in Excel dann nicht mehr geht. Deshalb also gleich alles in \\Rlogo. Das ist auch der Grund warum ", names(name), " jetzt mit Ihnen in der Küche sitzt und einige vertiefende Fragen zu \\Rlogo an Sie hat! Na dann wollen Sie mal helfen. Immerhin will ", betreuer, ", dass \\Rlogo genutzt wird und die Abgabe ist dann auch schon in gut einem Monat."),
+              str_c("'Unter den Blinden ist der Einäuge König!', ruft Ihnen ", name, " entgegen. Das können Sie schon nicht mehr hören. Nur weil Sie einmal gesagt haben, dass Sie sich schonmal mit \\Rlogo beschäftigt haben, stehen hier alle Schlange. Aber gut, das hat Sie dann doch vorangebracht. Leider kennt sich ", name, " auch wieder überhaupt nicht mit \\Rlogo aus aber ", betreuer, " möchte gerne, dass die Auswertung in \\Rlogo gemacht wird. Da müssen Sie dann wohl mal nochmal ran und helfen."),
+              str_c("'Hm...am Ende ist dann \\Rlogo eigentlich gar nicht so schwer, wenn ich Hilfe habe.', meint  ", name, " stolz und lacht Sie an. Nur leider kennt ", names(name), " sich überhaupt nicht mit \\Rlogo aus! Das heißt, Sie müssen hier einmal Rede und Antwort stehen und helfen. Sonst wird es für ", name, " dann in ", project , " nichts mit der Auswertung und Abgabe. Das kann auch keine Lösung für ", name, " und Sie sein. Immerhin haben Sie schon so viel gelernt.")) |> 
+  sample(1)
+
+ques_1 <- c(str_c("Ich will eine ANOVA in R rechnen. Dazu brauche ich zwei Funktionen. Welche waren das noch gleich und wie war die Reihenfolge? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_2 <- c(str_c("Wie spezifizieren wir nochmal eine Interaktion in einem Modell mit zwei Faktoren $f_1$ und $f_2$? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_3 <- c(str_c("Ich möchte in der Funktion \\texttt{emmeans()} den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auswerten. Was muss ich da in de Funktion \\texttt{emmeans()} angeben? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_4 <- c(str_c("Man kann doch die Funktion \\texttt{emmeans()} von Varianzhomogenität auf Varianzherterogenität umstellen. Wie ging das noch gleich? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_5 <- c(str_c("Wie verbindet \\texttt{\\{ggplot\\}} die einzelnen Ebenen einer Abbildung? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_6 <- c(str_c("Wozu nutze ich die Funktion \\texttt{mutate()} hauptsächlich? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_7 <- c(str_c("Was muss ich bei der Benennung von Spalten in Excel beachten? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_8 <- c(str_c("Wie nennt sich das Datenformat in \\Rlogo? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_9 <- c(str_c("Was muss ich bei der Eingabe eines Datums in Excel beachten, wenn ich später die Exceldatei in \\Rlogo einlesen will? \\textbf{(1 Punkt)}")) |> 
+  sample(1)
+
+ques_long_1 <- c(str_c("Wie ist noch gleich die Reihenfolge der Funktionen für die Erstellung eines CLD in \\Rlogo. Welche Funktionen brauche ich da? \\textbf{(2 Punkte)}")) |> 
+  sample(1)
+
+ques_long_2 <- c(str_c("Okay, und für was brauche ich nochmal die \\Rlogo Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\}}? \\textbf{(2 Punkte)}")) |> 
+  sample(1)
+
+ques_long_3 <- c(str_c("Ich will das \\Rlogo-Paket \\texttt{\\{ggplot\\}} nutzen, da war so eine Analogie an die ich mich nicht erinnern kann. Was war noch gleich das Prinzip von \\texttt{\\{ggplot\\}}? Wie funktioniert \\texttt{\\{ggplot\\}} konzeptionell? \\textbf{(2 Punkte)}")) |> 
+  sample(1)
+
+ques_long_4 <- c(str_c("Wenn ich Daten in \\Rlogo mit Gruppen eingelesen habe, welche Funktion nutze ich dann meistens als erstes und warum muss ich das machen? Was muss ich da machen? \\textbf{(2 Punkte)}")) |> 
+  sample(1)
+
+ques_short <- c(ques_1, ques_2, ques_3, 
+                ques_4, ques_5, ques_6,
+                ques_7, ques_8, ques_9) |> sample(5)
+ques_long <- c(ques_long_1, ques_long_2, 
+               ques_long_3, ques_long_4) |> sample(2)
+
+ques_random <- c(ques_short, ques_long) |> sample()
+
+@
+
+\Sexpr{ques_vec}\\[1Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[1]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[2]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[3]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[4]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[5]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[6]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+\Sexpr{name} fragt: \textit{\Sexpr{ques_random[7]}}\\[1ex]
+Sie antworten:\\[2Ex]
+
+
+
+

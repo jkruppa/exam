@@ -31,38 +31,15 @@ betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |>
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("ein Gewächshausexperiment",
-                       "ein Freilandversuch",
-                       "einen Versuch in einer Klimakammer",
-                       "ein Feldexperiment"),
-           tier = c("ein Stallexperiment", 
-                    "ein Kreuzungsexperiment",
-                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
-  sample(1)
-
-x_val <- lst(pflanze = c("durschnittlicher Niederschlag [ml/w]",
-                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
-                         "durchschnittlicher Anteil an Ton [\\%/l]",
-                         "durchschnittliche UV-Einstrahlung [UV/d]"),
-             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
-                      "durchschnittliche Tagestemperatur [C/d]",
-                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
-                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
-  sample(1)
-
-y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
-                         "Trockengewicht [kg/ha]",
-                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
-                         "Proteingehalt [g/kg]"),
-             tier = c("Schlachtgewicht [kg]", 
-                      "Proteianteil [\\%/kg]",
-                      "Fettgehalt [\\%/kg]",
-                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
-  sample(1)
+paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation.",
+           "Salinas, I., et al. (2023). Plant growth, yield, and fruit size improvements in ‘Alicia’ papaya multiplied by grafting.",
+           "Petersen, F., et al. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm.",
+           "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs.") |> 
+  set_names("mango", "papaya", "duckweed", "pigs") |> sample(1)
 
 n_obs <- rpois(1, 30)
 
-ques_vec <- c(str_c("'Hä?")) |> 
+ques_vec <- c(str_c(name, " hält die wissenschaftliche Veröffentlichung \\textit{", paper, "} unter einem Schnaufen in die Luft. 'Worum geht es denn eigentlich in dieser Arbeit?', fragt ", names(name), " stirnrunzelnd. ")) |> 
   sample(1)
 
 @

@@ -28,8 +28,8 @@ project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektber
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
-ques_vec <- c(str_c(name, " muss ", project , " mit \\Rlogo arbeiten. Deshalb sitzt ", names(name), " jetzt mit Ihnen zusammen und hat einige Fragen zu den \\textbf{Grundlagen} in \\Rlogo an Sie! Na dann wollen Sie mal helfen. Immerhin will ", betreuer, ", dass \\Rlogo genutzt wird."),
-              str_c("'Unter den Blinden ist der Einäuge König!', ruft Ihnen ", name, " entgegen. Leider kennt sich ", name, " überhaupt nicht mit den \\textbf{Grundlagen} in \\Rlogo aus aber ", betreuer, " möchte gerne, dass die Auswertung in \\Rlogo gemacht wird. Da müssen Sie dann wohl mal ran und helfen."),
+ques_vec <- c(str_c(name, " muss ", project , " mit \\Rlogo arbeiten. Deshalb sitzt ", names(name), " jetzt mit Ihnen zusammen und hat einige Fragen zu den Grundlagen in \\Rlogo an Sie! Na dann wollen Sie mal helfen. Immerhin will ", betreuer, ", dass \\Rlogo genutzt wird."),
+              str_c("'Unter den Blinden ist der Einäuge König!', ruft Ihnen ", name, " entgegen. Leider kennt sich ", name, " überhaupt nicht mit den Grundlagen in \\Rlogo aus aber ", betreuer, " möchte gerne, dass die Auswertung in \\Rlogo gemacht wird. Da müssen Sie dann wohl mal ran und helfen."),
               str_c("'Hm. \\Rlogo ist eigentlich gar nicht so schwer, wenn man die Grundlagen kann.', meint  ", name, " ganz zuversichtlich. Nur leider kennt ", names(name), " sich überhaupt nicht mit \\Rlogo aus! Das heißt, Sie müssen hier einmal Rede und Antwort stehen und helfen.")) |> 
   sample(1)
 
@@ -78,36 +78,53 @@ ques_9 <- c(str_c("Wie heißen nochmal die beiden \\Rlogo Pakete, die wir fast i
             str_c("Wenn ich was in \\Rlogo machen möchte, dann lade ich nochmal welche zwei \\Rlogo Pakete sehr häufig?")) |> 
   sample(1)
 
+ques_10 <- c(str_c("Was war eigentlich nochmal ein Vorteil von der Nutzng von \\Rlogo?"),
+             str_c("Gibt es einen Vorteil von der Nutzung von \\Rlogo?"),
+             str_c("Ich habe gehört, dass es Vorteile gibt \\Rlogo zu nutzen. Nenne mir mal einen Vorteil!")) |> 
+  sample(1)
 
-ques_random <- c(ques_1, ques_2, ques_3, ques_4, ques_5, ques_6, ques_7, ques_8, ques_9) |> sample()
+ques_11 <- c(str_c("Was macht überhaupt dieses \\texttt{c()} hier überall im \\Rlogo Code?"),
+             str_c("Warum nutzen wir eigentlich dieses \\texttt{c()} in \\Rlogo?"),
+             str_c("Ich sehe überall dieses \\texttt{c()}. Was ist denn deren Nutzen? ")) |> 
+  sample(1)
+
+ques_12 <- c(str_c("Was ist eigentlich ein Faktor in \\Rlogo?"),
+             str_c("Jetzt lese ich hier von einem Faktor. Was ist ein Faktor in \\Rlogo?"),
+             str_c("Teilweise brauche ich das Konzept des Faktors in \\Rlogo. Was ist ein Faktor?")) |> 
+  sample(1)
+
+ques_random <- c(ques_1, ques_2, ques_3, 
+                 ques_4, ques_5, ques_6, 
+                 ques_7, ques_8, ques_9, 
+                 ques_10, ques_11, ques_12) |> sample(9)
 
 @
 
 \Sexpr{ques_vec}\\[1Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[1]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[1]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[2]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[2]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[3]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[3]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[4]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[4]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[5]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[5]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[6]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[6]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[7]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[7]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[8]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[8]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
 
-\Sexpr{name} fragt: \textit{\Sexpr{ques_random[9]}} \textbf{(1 Punkt)}\\[1ex]
+\Sexpr{name}: \textit{\Sexpr{ques_random[9]}} \textbf{(1 Punkt)}\\[1ex]
 Sie antworten:\\[2Ex]
