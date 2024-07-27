@@ -41,7 +41,9 @@ ques_2 <- c(str_c("Wie spezifizieren wir nochmal eine Interaktion in einem Model
             str_c("Nach der EDA zu urteilen liegt eine Interakton vor, wie spezifiziere ich diese im Modell, so dass ich die interaktion zwischen zwei Faktoren $f_1$ und $f_2$ testen kann? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_3 <- c(str_c("Ich möchte in der Funktion \\texttt{emmeans()} den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auswerten. Was muss ich da in de Funktion \\texttt{emmeans()} angeben? \\textbf{(1 Punkt)}")) |> 
+ques_3 <- c(str_c("Ich möchte in der Funktion \\texttt{emmeans()} den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auswerten. Was muss ich da in de Funktion \\texttt{emmeans()} angeben? \\textbf{(1 Punkt)}"),
+            str_c("Die Funktion \\texttt{emmeans()} erlaubt es den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auszuwerten. Wie mache ich das? \\textbf{(1 Punkt)}"),
+            str_c("Ich habe den Faktor $f_1$ und $f_2$ und möchte den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auszuwerten. Wie geht das in der Funktion \\texttt{emmeans()}? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
 ques_4 <- c(str_c("Man kann doch die Funktion \\texttt{emmeans()} von Varianzhomogenität auf Varianzherterogenität umstellen. Wie ging das noch gleich? \\textbf{(1 Punkt)}")) |> 
