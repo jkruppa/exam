@@ -3,7 +3,7 @@
 
 <<>>=
 name <- par_lst$naming |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
   str_subset(name)
 jahr <- par_lst$year
 obser <- par_lst$obser

@@ -33,7 +33,9 @@ ques_vec <- c(str_c(name, " muss ", project , " mit \\Rlogo arbeiten. Leider ist
               str_c("'Hm...am Ende ist dann \\Rlogo eigentlich gar nicht so schwer, wenn ich Hilfe habe.', meint  ", name, " stolz und lacht Sie an. Nur leider kennt ", names(name), " sich überhaupt nicht mit \\Rlogo aus! Das heißt, Sie müssen hier einmal Rede und Antwort stehen und helfen. Sonst wird es für ", name, " dann in ", project , " nichts mit der Auswertung und Abgabe. Das kann auch keine Lösung für ", name, " und Sie sein. Immerhin haben Sie schon so viel gelernt.")) |> 
   sample(1)
 
-ques_1 <- c(str_c("Ich will eine ANOVA in R rechnen. Dazu brauche ich zwei Funktionen. Welche waren das noch gleich und wie war die Reihenfolge? \\textbf{(1 Punkt)}")) |> 
+ques_1 <- c(str_c("Ich will eine ANOVA in R rechnen. Dazu brauche ich zwei Funktionen. Welche waren das noch gleich und wie war die Reihenfolge? \\textbf{(1 Punkt)}"),
+            str_c("Welche Funktionen brauche ich in welcher Reihenfolge um eine ANOVA zu rechnen? \\textbf{(1 Punkt)}"),
+            str_c("ANOVA in R ist ja nicht so kompliziert. Welche beiden Funktionen brauche ich nochmal in welcher Reihenfolge? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
 ques_2 <- c(str_c("Wie spezifizieren wir nochmal eine Interaktion in einem Modell mit zwei Faktoren $f_1$ und $f_2$? \\textbf{(1 Punkt)}"),
@@ -46,34 +48,54 @@ ques_3 <- c(str_c("Ich möchte in der Funktion \\texttt{emmeans()} den Faktor $f
             str_c("Ich habe den Faktor $f_1$ und $f_2$ und möchte den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auszuwerten. Wie geht das in der Funktion \\texttt{emmeans()}? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_4 <- c(str_c("Man kann doch die Funktion \\texttt{emmeans()} von Varianzhomogenität auf Varianzherterogenität umstellen. Wie ging das noch gleich? \\textbf{(1 Punkt)}")) |> 
+ques_4 <- c(str_c("Man kann doch die Funktion \\texttt{emmeans()} von Varianzhomogenität auf Varianzheterogenität umstellen. Wie ging das noch gleich? \\textbf{(1 Punkt)}"),
+            str_c("Nach der EDA zu urteilen, habe ich Varianzheterogenität zwischen den Gruppen vorliegen. Wie kann ich da die Funktion \\texttt{emmeans()} umstellen. \\textbf{(1 Punkt)}"),
+            str_c("Ich glaube ich habe Varianzheterogenität zwischen den Gruppen vorliegen. Wie funktioniert die Adjustierung dafür nochmal in  \\texttt{emmeans()}? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_5 <- c(str_c("Wie verbindet \\texttt{\\{ggplot\\}} die einzelnen Ebenen einer Abbildung? \\textbf{(1 Punkt)}")) |> 
+ques_5 <- c(str_c("Wie verbindet \\texttt{\\{ggplot\\}} die einzelnen Ebenen einer Abbildung? \\textbf{(1 Punkt)}"),
+            str_c("Viele Abbildungen gehen ja auch in Excel, aber \\texttt{\\{ggplot\\}} ist schon besser. Wie verbindet \\texttt{\\{ggplot\\}} eigentlich nochmal die einzelnen Ebenen? \\textbf{(1 Punkt)}"),
+            str_c("Das R Paket \\texttt{\\{ggplot\\}} erlaubt es ja schöne Abbildungen zu bauen. Wie verbindet das Paket nochmal die einzelnen Ebenen einer Abbildung? \\textbf{(1 Punkt)}"))|> 
   sample(1)
 
-ques_6 <- c(str_c("Wozu nutze ich die Funktion \\texttt{mutate()} hauptsächlich? \\textbf{(1 Punkt)}")) |> 
+ques_6 <- c(str_c("Wozu nutze ich die Funktion \\texttt{mutate()} hauptsächlich? \\textbf{(1 Punkt)}"),
+            str_c("Wozu war nochmal die Funktion \\texttt{mutate()} gut?  \\textbf{(1 Punkt)}"),
+            str_c("Warum wurde jetzt nach dem Laden der Daten die Funktion \\texttt{mutate()} genutzt? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_7 <- c(str_c("Was muss ich bei der Benennung von Spalten in Excel beachten? \\textbf{(1 Punkt)}")) |> 
+ques_7 <- c(str_c("Was muss ich bei der Benennung von Spalten in Excel beachten? \\textbf{(1 Punkt)}"),
+            str_c("Ich baue mir ja meinen Datensatz in Excel. Was muss ich da im Bezug auf die Namen der Spalten beachten? \\textbf{(1 Punkt)}"),
+            str_c("Wenn ich die Spalten in Excel benenne, was muss ich da beachten? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_8 <- c(str_c("Wie nennt sich das Datenformat in \\Rlogo? \\textbf{(1 Punkt)}")) |> 
+ques_8 <- c(str_c("Wie nennt sich das Datenformat in R? Bitte mit kurzem Beispiel! \\textbf{(1 Punkt)}"),
+            str_c("Oh, wie baue ich mir nochmal die Daten in R? Wie heißt das Dateiformat? Gerne einmal mit Beispiel! \\textbf{(1 Punkt)}"),
+            str_c("Das Dateiformat in R hat einen Namen. Wie heißt der und gerne mit Beispiel! \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_9 <- c(str_c("Was muss ich bei der Eingabe eines Datums in Excel beachten, wenn ich später die Exceldatei in \\Rlogo einlesen will? \\textbf{(1 Punkt)}")) |> 
+ques_9 <- c(str_c("Was muss ich bei der Eingabe eines Datums in Excel beachten, wenn ich später die Exceldatei in R einlesen will? Wie lautet das Format? \\textbf{(1 Punkt)}"),
+            str_c("Es gibt ja nur ein richtiges Format für die Eingabe eines Datums. Wie lautet das Format? \\textbf{(1 Punkt)}"),
+            str_c("Datumsangaben sind schwierig, da es nur ein gültiges Format gibt, was zwischen Programmen funktioniert. Wie lautet das Format? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_long_1 <- c(str_c("Wie ist noch gleich die Reihenfolge der Funktionen für die Erstellung eines CLD in \\Rlogo. Welche Funktionen brauche ich da? \\textbf{(2 Punkte)}")) |> 
+ques_long_1 <- c(str_c("Wie ist noch gleich die Reihenfolge der Funktionen für die Erstellung eines CLD in R. Welche Funktionen brauche ich da? \\textbf{(2 Punkte)}"),
+                 str_c("Welche Funktionen brauche ich nochmal für die Erstellung eines CLD und was war noch gleich die Reihenfolge? \\textbf{(2 Punkte)}"),
+                 str_c("Ich möchte ein CLD erstellen. Welche Funktionen muss ich in welcher Reihenfolge nutzen? \\textbf{(2 Punkte)}")) |> 
   sample(1)
 
-ques_long_2 <- c(str_c("Okay, und für was brauche ich nochmal die \\Rlogo Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\}}? \\textbf{(2 Punkte)}")) |> 
+ques_long_2 <- c(str_c("Okay, und für was brauche ich nochmal die R Pakete  \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\}}? \\textbf{(2 Punkte)}"),
+                 str_c("Die R Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\} sind für was nochmal gut? \\textbf{(2 Punkte)}"),
+                 str_c("Warum wurden jeweils die R Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\} geladen? \\textbf{(2 Punkte)}")) |> 
   sample(1)
 
-ques_long_3 <- c(str_c("Ich will das \\Rlogo-Paket \\texttt{\\{ggplot\\}} nutzen, da war so eine Analogie an die ich mich nicht erinnern kann. Was war noch gleich das Prinzip von \\texttt{\\{ggplot\\}}? Wie funktioniert \\texttt{\\{ggplot\\}} konzeptionell? \\textbf{(2 Punkte)}")) |> 
+ques_long_3 <- c(str_c("Ich will das R Paket \\texttt{\\{ggplot\\}} nutzen, da war so eine Analogie an die ich mich nicht erinnern kann. Was war noch gleich das Prinzip von \\texttt{\\{ggplot\\}}? Wie funktioniert \\texttt{\\{ggplot\\}} konzeptionell? \\textbf{(2 Punkte)}"),
+                 str_c("Ich hatte mir eine Analogie für das R Paket \\texttt{\\{ggplot\\}} gemerkt. Wie war noch gleich die Analogie und das damit verbundene Prinzip von \\texttt{\\{ggplot\\}}? \\textbf{(2 Punkte)}"),
+                 str_c("Ich bräuchte mal eine Analogie für das Prinzip von dem r Paket \\texttt{\\{ggplot\\}}. Wie funktioniert das Paket nochmal? So konzeptionell? \\textbf{(2 Punkte)}")) |> 
   sample(1)
 
-ques_long_4 <- c(str_c("Wenn ich Daten in \\Rlogo mit Gruppen eingelesen habe, welche Funktion nutze ich dann meistens als erstes und warum muss ich das machen? Was muss ich da machen? \\textbf{(2 Punkte)}")) |> 
+ques_long_4 <- c(str_c("Wenn ich Daten in R mit Gruppen eingelesen habe, welche Funktion nutze ich dann meistens als erstes und warum muss ich das machen? Was muss ich da machen? \\textbf{(2 Punkte)}"),
+                 str_c("Hm... wenn ich in R Daten mit Gruppen eingelesen habe, was muss ich dann nochmal als erstes machen? Und warum? \\textbf{(2 Punkte)}"),
+                 str_c("Ich habe hier einen Gruppenvergleich als Expriment durchgeführt. Wenn ich jetzt die Daten in R reingeladen habe, was muss ich dann als erstes machen und warum nochmal? \\textbf{(2 Punkte)}")) |> 
   sample(1)
 
 ques_short <- c(ques_1, ques_2, ques_3, 

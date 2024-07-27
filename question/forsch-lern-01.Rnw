@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (15 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -25,19 +25,12 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 <<>>=
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
-project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
-             str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
-outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation",
-           "Salinas, I., et al. (2023). Plant growth, yield, and fruit size improvements in ‘Alicia’ papaya multiplied by grafting",
            "Petersen, F., et al. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm",
+           "Selle, P. H., et al. (2010). Implications of sorghum in broiler chicken nutrition",
            "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs") |> 
-  set_names(c("mango", "papaya", "duckweed", "pigs")) |> sample(1)
-
-n_obs <- rpois(1, 30)
+  set_names(c("mango", "duckweed", "chicken", "pigs")) |> sample(1)
 
 ques_vec <- c(str_c(name, " hält die wissenschaftliche Veröffentlichung \\textit{", paper, "} unter einem Schnaufen in die Luft. 'Worum geht es denn eigentlich in dieser Arbeit?', fragt ", names(name), " stirnrunzelnd. ")) |> 
   sample(1)
