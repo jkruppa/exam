@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (15 Punkte)}
+\section{Aufgabe \hfill (20 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -25,6 +25,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 <<>>=
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
 paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation",
            "Petersen, F., et al. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm",
@@ -32,19 +33,29 @@ paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and
            "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs") |> 
   set_names(c("mango", "duckweed", "chicken", "pigs")) |> sample(1)
 
-ques_vec <- c(str_c(name, " hält die wissenschaftliche Veröffentlichung \\textit{", paper, "} unter einem Schnaufen in die Luft. 'Worum geht es denn eigentlich in dieser Arbeit?', fragt ", names(name), " stirnrunzelnd. ")) |> 
+ques_vec <- c(str_c(name, " hält die wissenschaftliche Veröffentlichung \\textit{", paper, "} unter einem Schnaufen in die Luft. 'Worum geht es denn eigentlich in dieser Arbeit?', fragt ", names(name), " stirnrunzelnd. ", name, " soll die Veröffentlichung nutzen um das eigene Experiment zu planen. Als eine Vorlage sozusagen. Daher möchte ", betreuer, ", dass ", names(name), " einmal die Veröffentlichung sinnvoll zusammenfasst. Das sollte dann doch etwas aufwendiger werden."),
+              str_c("Vor dem Start der eigenen Arbeit möchte ", betreuer, ", dass ", name, " einmal die wissenschaftliche Veröffentlichung \\textit{", paper, "} sinnvoll zusammenfasst. Dann würde die eigene Arbeit auch leichter von der Hand gehen und ", name, " hätte dann schon eine Vorlage. 'Das ist jetzt aber umfangreicher als gedacht!', schnauft ", names(name), " und runzelt die Stirn."),
+              str_c("'Uff', denkt ", name, " Das ist jetzt doch etwas umfangreicher. ", name, " soll die wissenschaftliche Veröffentlichung \\textit{", paper, "} einmal zusammenfassen. Die Arbeit soll als eine Vorlage für ", pronom[6], " eigene Arbeit dienen. Daher möchte ", betreuer, ", dass ", names(name), " einmal die Veröffentlichung in einer PowerPoint Präsentation zusammenfasst. 'Das ist jetzt aber doch umfangreicher als gedacht.', mault ", name, " in sich hinein.")) |> 
   sample(1)
 
-@
 
-\Sexpr{ques_vec}
-
-
-<<forsch-lern-01,  echo = FALSE>>=
-
-"foo"
 
 @
 
-Leider kennt sich \Sexpr{name} mit dem Lesen einer wissenschaftlichen Veröffentlichung mit Fokus auf die Statistik überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+\Sexpr{ques_vec}\\
 
+Leider kennt sich \Sexpr{name} mit dem Lesen einer wissenschaftlichen Veröffentlichung mit Fokus auf die Statistik überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! Glücklicherweise kennen Sie die wissenschaftliche Veröffentlichung schon im Detail und können sofort helfen.
+
+\begin{enumerate}
+  \setcounter{enumi}{0}
+  \item Erläutern Sie die wissenschaftliche Fragestellung der wissenschaftlichen Veröffentlichung anhand des OCAR Prinzips nach Schimel (2012)\footnote{Schimel, J. (2012). Writing science: how to write papers that get cited and proposals that get funded. OUP USA.} \textbf{(4 Punkte)}
+  \item Nennen Sie die untersuchten Endpunkte in der wissenschaftlichen Veröffentlichung! Wie lautet der primäre Enpunkt? \textbf{(2 Punkte)} 
+\item Erstellen Sie das lineare Modell in der in \Rlogo üblichen schreibweise! \textbf{(2 Punkte)}
+  \item Nennen Sie eine Auswahl an bedeutenden statistischen Maßzahlen in der wissenschaftlichen Veröffentlichung! \textbf{(1 Punkt)}
+  \item Interpretieren Sie die Hauptaussage der wissenschaftlichen Veröffentlichung hinsichtlich der Signifkanz für den primären Endpunkt! \textbf{(2 Punkte)}
+  \item Interpretieren Sie die Hauptaussage der wissenschaftlichen Veröffentlichung hinsichtlich der Effektstärke für den primären Endpunkt! \textbf{(2 Punkte)}
+  \item Diskutieren Sie die ökonomische Relevanz der Hauptaussage der wissenschaftlichen Veröffentlichung im Bezug auf Signifikanz und Effektstärke für den primären Endpunkt! \textbf{(1 Punkt)}
+  \item Skizzieren Sie für den primären Endpunkt den sich ergebenden Datensatz in \Rlogo für eine ausgewählte Abbildung! \textbf{(2 Punkte)}
+\item Skizzieren Sie einen möglichen Versuchsplan für den primären Endpunkt! \textbf{(2 Punkte)}
+  \item Schätzen Sie die benötigte Fallzahl für ein zukünftiges Experiment anhand der Ergebnisse in der wisenschaftlichen Veröffentlichung für den primären Endpunkt! \textbf{(2 Punkte)}
+\end{enumerate}
