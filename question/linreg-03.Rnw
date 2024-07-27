@@ -103,7 +103,8 @@ preprint
 fit <- lm(reformulate(str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_")), data = dd)
 r2 <- r2(fit)$R2 |> round(2)
 
-
+if(r2<=0.05)
+  r2 <- 0.05
 
 @
 

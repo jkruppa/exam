@@ -36,7 +36,9 @@ ques_vec <- c(str_c(name, " muss ", project , " mit \\Rlogo arbeiten. Leider ist
 ques_1 <- c(str_c("Ich will eine ANOVA in R rechnen. Dazu brauche ich zwei Funktionen. Welche waren das noch gleich und wie war die Reihenfolge? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
-ques_2 <- c(str_c("Wie spezifizieren wir nochmal eine Interaktion in einem Modell mit zwei Faktoren $f_1$ und $f_2$? \\textbf{(1 Punkt)}")) |> 
+ques_2 <- c(str_c("Wie spezifizieren wir nochmal eine Interaktion in einem Modell mit zwei Faktoren $f_1$ und $f_2$? \\textbf{(1 Punkt)}"),
+            str_c("Wenn ich zwei Faktoren $f_1$ und $f_2$ habe, wie spezifiziere ich nochmal eine Interaktion in einem Modell? \\textbf{(1 Punkt)}"),
+            str_c("Nach der EDA zu urteilen liegt eine Interakton vor, wie spezifiziere ich diese im Modell, so dass ich die interaktion zwischen zwei Faktoren $f_1$ und $f_2$ testen kann? \\textbf{(1 Punkt)}")) |> 
   sample(1)
 
 ques_3 <- c(str_c("Ich möchte in der Funktion \\texttt{emmeans()} den Faktor $f_1$ getrennt in jedem Level des Faktors $f_2$ auswerten. Was muss ich da in de Funktion \\texttt{emmeans()} angeben? \\textbf{(1 Punkt)}")) |> 
