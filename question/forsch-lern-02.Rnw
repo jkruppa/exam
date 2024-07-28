@@ -31,7 +31,8 @@ paper <- c("data1",
            "data2",
            "data3",
            "data4") |> 
-  set_names(c("mango", "duckweed", "chicken", "pigs")) |> sample(1)
+  set_names(c("groups", "causal", 
+              "predictive", "cluster")) |> sample(1)
 
 ques_vec <- c(str_c("Unter einem langen Schnaufen starrt ", name, " auf den wissenschaftlichen Datensatz \\textit{", paper, "} in ", pronom[1], " Laptop. 'Worum geht es denn eigentlich in diesem Datensatz?', fragt ", names(name), " kopfschüttelnd. ", name, " soll die Datentabelle nutzen um das eigene Experiment zu planen und eine Blaupause zu haben. Als eine Vorlage sozusagen, die ", names(name), " nur noch ausfüllen muss. Daher möchte ", betreuer, ", dass ", names(name), " einmal die Daten sinnvoll zusammenfasst. Das sollte dann doch etwas aufwendiger werden."),
               str_c("Vor dem Start der eigenen Arbeit möchte ", betreuer, ", dass ", name, " einmal die wissenschaftlichen Daten \\textit{", paper, "} sinnvoll zusammenfasst. Dann würde die eigene Arbeit auch leichter von der Hand gehen und ", name, " hätte dann schon eine Vorlage um die eigenen erhobenen Daten in eine Tabelle eintragen zu können. 'Das ist jetzt aber umfangreicher als gedacht!', schnauft ", names(name), " und runzelt die Stirn als ", names(name), " in ", pronom[3], " Laptop starrt."),
@@ -47,8 +48,8 @@ Leider kennt sich \Sexpr{name} mit der Analyse eines wissenschaftlichen Datensat
 \begin{enumerate}
   \setcounter{enumi}{0}
   \item Formulieren Sie die wissenschaftliche Fragestellung des Datensatzes in Form einer PowerPoint Folie! \textbf{(2 Punkte)}
-  \item In welchen der vier großen Analysebereiche der Statistik fällt die Auswertung des primären Endpunktes? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
-  \item Nennen Sie die untersuchten Endpunkte in dem Datensatz! Wie lautet der primäre Endpunkt? \textbf{(2 Punkte)} 
+  \item Nennen Sie die untersuchten Endpunkte in dem Datensatz! Wie lautet der primäre Endpunkt? \textbf{(2 Punkte)}
+  \item In welchen der vier großen Analysebereiche der Statistik fällt die Auswertung des primären Endpunktes? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
   \item Skizzieren Sie eine ikonische Abbildung für den primären Endpunkt im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
   \item Erstellen Sie das statistische Modell in der in \Rlogo üblichen Schreibweise! \textbf{(2 Punkte)}
   \item Skizzieren Sie die Datenanalyse hinsichtlich der Signifkanz für den primären Endpunkt! \textbf{(2 Punkte)}
