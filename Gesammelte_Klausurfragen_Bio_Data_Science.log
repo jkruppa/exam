@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  27 JUL 2024 21:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  28 JUL 2024 09:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1637,11 +1637,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 266.
 
+<~/work/GitHub/exam/img/Rlogo.png, id=55, 2569.6pt x 1991.44pt>
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
+71.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 283.
 
-<img/mc-anova-02-a-1.pdf, id=55, 216.81pt x 162.6075pt>
+<img/mc-anova-02-a-1.pdf, id=56, 216.81pt x 162.6075pt>
 File: img/mc-anova-02-a-1.pdf Graphic file (type pdf)
 <use img/mc-anova-02-a-1.pdf>
 Package pdftex.def Info: img/mc-anova-02-a-1.pdf  used on input line 291.
@@ -1650,7 +1656,8 @@ Package pdftex.def Info: img/mc-anova-02-a-1.pdf  used on input line 291.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 310.
 
-[5 <./img/mc-anova-02-a-1.pdf>]
+[5 </Users/kruppajo/work/GitHub/exam/img/Rlogo.png> <./img/mc-anova-02-a-1.pdf>
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 327.
@@ -1680,18 +1687,17 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 427.
 
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 446.
 
-[7]
-<img/mc-distribution-02-a-1.pdf, id=86, 361.35pt x 144.54pt>
+<img/mc-distribution-02-a-1.pdf, id=88, 361.35pt x 144.54pt>
 File: img/mc-distribution-02-a-1.pdf Graphic file (type pdf)
 <use img/mc-distribution-02-a-1.pdf>
 Package pdftex.def Info: img/mc-distribution-02-a-1.pdf  used on input line 454
 .
 (pdftex.def)             Requested size: 361.34912pt x 144.53963pt.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 473.
@@ -1700,7 +1706,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 489.
 
-<img/mc-regression-05-a-1.pdf, id=87, 216.81pt x 180.675pt>
+<img/mc-regression-05-a-1.pdf, id=89, 216.81pt x 180.675pt>
 File: img/mc-regression-05-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-05-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 497.
@@ -1715,7 +1721,7 @@ LaTeX Font Info:    Trying to load font information for T1+fvm on input line 51
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
-<img/mc-regression-06-a-1.pdf, id=101, 216.81pt x 180.675pt>
+<img/mc-regression-06-a-1.pdf, id=102, 216.81pt x 180.675pt>
 File: img/mc-regression-06-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-06-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-06-a-1.pdf  used on input line 523.
@@ -1733,7 +1739,6 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 576.
 
-<~/work/GitHub/exam/img/Rlogo.png, id=118, 2569.6pt x 1991.44pt>
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
@@ -1742,9 +1747,9 @@ Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
-87.
+88.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[10 </Users/kruppajo/work/GitHub/exam/img/Rlogo.png>]
+[10]
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
@@ -1760,6 +1765,21 @@ Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 594.
 
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+05.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+05.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+06.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 612.
@@ -1773,17 +1793,17 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
 31.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
-36.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
-36.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [11]
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+36.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+37.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
@@ -1792,7 +1812,17 @@ Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
-40.
+38.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+39.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+39.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 
@@ -1803,6 +1833,11 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
 47.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 6
+53.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1843,6 +1878,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 792.
 
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 7
+97.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 810.
@@ -1858,425 +1898,435 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 860.
+(hyperref)                removing `\hfill' on input line 859.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 879.
+(hyperref)                removing `\hfill' on input line 878.
 
 [16]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 900.
+(hyperref)                removing `\hfill' on input line 898.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 916.
+(hyperref)                removing `\hfill' on input line 914.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 932.
+(hyperref)                removing `\hfill' on input line 930.
 
 [17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 948.
+(hyperref)                removing `\hfill' on input line 946.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 964.
+(hyperref)                removing `\hfill' on input line 962.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 980.
+(hyperref)                removing `\hfill' on input line 978.
 
 [18]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 996.
+(hyperref)                removing `\hfill' on input line 994.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1013.
+(hyperref)                removing `\hfill' on input line 1011.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1030.
+(hyperref)                removing `\hfill' on input line 1028.
 
 [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1046.
+(hyperref)                removing `\hfill' on input line 1044.
 
 <img/mc-testing-ttest-02-1.pdf, id=195, 216.81pt x 144.54pt>
 File: img/mc-testing-ttest-02-1.pdf Graphic file (type pdf)
 <use img/mc-testing-ttest-02-1.pdf>
-Package pdftex.def Info: img/mc-testing-ttest-02-1.pdf  used on input line 1054
+Package pdftex.def Info: img/mc-testing-ttest-02-1.pdf  used on input line 1052
 .
 (pdftex.def)             Requested size: 216.80946pt x 144.54623pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1072.
+(hyperref)                removing `\hfill' on input line 1070.
 
 [20 <./img/mc-testing-ttest-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1089.
+(hyperref)                removing `\hfill' on input line 1087.
 
 [21]
 part I.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 1109.
+(scrkbase)              on input line 1107.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1112.
+(hyperref)                removing `\hfill' on input line 1110.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1114--1115
+Underfull \hbox (badness 10000) in paragraph at lines 1112--1113
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Mark.png, id=214, 529.98pt x 562.1pt>
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 1120.
+</Users/kruppajo/work/GitHub/exam/avatare/Jessica.png, id=214, 529.98pt x 562.1
+pt>
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 1118.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 <img/youtube.png, id=216, 755.82375pt x 318.18875pt>
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1124.
+Package pdftex.def Info: img/youtube.png  used on input line 1122.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1123--1125
+Underfull \hbox (badness 10000) in paragraph at lines 1121--1123
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1119--1128
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1117--1126
 [][] []
  []
 
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
+129.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 <img/barplot-02-1.pdf, id=217, 325.215pt x 289.08pt>
 File: img/barplot-02-1.pdf Graphic file (type pdf)
 <use img/barplot-02-1.pdf>
-Package pdftex.def Info: img/barplot-02-1.pdf  used on input line 1135.
+Package pdftex.def Info: img/barplot-02-1.pdf  used on input line 1133.
 (pdftex.def)             Requested size: 325.2142pt x 289.10133pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
-142.
+140.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
-147.
+145.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [22
 
- </Users/kruppajo/work/GitHub/exam/avatare/Mark.png> <./img/youtube.png> <./img
-/barplot-02-1.pdf>]
+ </Users/kruppajo/work/GitHub/exam/avatare/Jessica.png> <./img/youtube.png> <./
+img/barplot-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1153.
+(hyperref)                removing `\hfill' on input line 1151.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1155--1156
+Underfull \hbox (badness 10000) in paragraph at lines 1153--1154
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 1161.
+</Users/kruppajo/work/GitHub/exam/avatare/Paula.png, id=235, 529.98pt x 562.1pt
+>
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 1159.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1165.
+Package pdftex.def Info: img/youtube.png  used on input line 1163.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1164--1166
+Underfull \hbox (badness 10000) in paragraph at lines 1162--1164
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1160--1169
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1158--1167
 [][] []
  []
 
 [23
 
-]
+ </Users/kruppajo/work/GitHub/exam/avatare/Paula.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1211.
+(hyperref)                removing `\hfill' on input line 1207.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1213--1214
+Underfull \hbox (badness 10000) in paragraph at lines 1209--1210
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 1219.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 1215.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1223.
+Package pdftex.def Info: img/youtube.png  used on input line 1219.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1222--1224
+Underfull \hbox (badness 10000) in paragraph at lines 1218--1220
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1218--1227
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1214--1223
 [][] []
  []
 
-<img/boxplot-02-zer-1.pdf, id=246, 325.215pt x 289.08pt>
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
+226.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+<img/boxplot-02-zer-1.pdf, id=248, 325.215pt x 289.08pt>
 File: img/boxplot-02-zer-1.pdf Graphic file (type pdf)
 <use img/boxplot-02-zer-1.pdf>
-Package pdftex.def Info: img/boxplot-02-zer-1.pdf  used on input line 1234.
+Package pdftex.def Info: img/boxplot-02-zer-1.pdf  used on input line 1230.
 (pdftex.def)             Requested size: 325.2142pt x 289.10133pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
-241.
+237.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
-246.
+242.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [24
 
  <./img/boxplot-02-zer-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1252.
+(hyperref)                removing `\hfill' on input line 1248.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1254--1255
+Underfull \hbox (badness 10000) in paragraph at lines 1250--1251
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Steffen.png, id=261, 529.98pt x 562.1
-pt>
-File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
-used on input line 1260.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 1256.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1264.
+Package pdftex.def Info: img/youtube.png  used on input line 1260.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1263--1265
+Underfull \hbox (badness 10000) in paragraph at lines 1259--1261
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1259--1268
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1255--1264
 [][] []
  []
 
 [25
 
- </Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>]
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1318.
+(hyperref)                removing `\hfill' on input line 1320.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1320--1321
+Underfull \hbox (badness 10000) in paragraph at lines 1322--1323
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Jessica.png, id=274, 529.98pt x 562.1
-pt>
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
-used on input line 1326.
+</Users/kruppajo/work/GitHub/exam/avatare/Tina.png, id=274, 529.98pt x 562.1pt>
+
+File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
+d on input line 1328.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1330.
+Package pdftex.def Info: img/youtube.png  used on input line 1332.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1329--1331
+Underfull \hbox (badness 10000) in paragraph at lines 1331--1333
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1325--1334
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1327--1336
 [][] []
  []
 
 [26
 
- </Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>]
+ </Users/kruppajo/work/GitHub/exam/avatare/Tina.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1361.
+(hyperref)                removing `\hfill' on input line 1363.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1363--1364
+Underfull \hbox (badness 10000) in paragraph at lines 1365--1366
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Yuki.png, id=287, 529.98pt x 562.1pt>
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 1369.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 1371.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1373.
+Package pdftex.def Info: img/youtube.png  used on input line 1375.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1372--1374
+Underfull \hbox (badness 10000) in paragraph at lines 1374--1376
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1368--1377
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1370--1379
 [][] []
  []
 
 [27
 
- </Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>]
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1402.
+(hyperref)                removing `\hfill' on input line 1404.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1404--1405
+Underfull \hbox (badness 10000) in paragraph at lines 1406--1407
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Alex.png, id=300, 529.98pt x 562.1pt>
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
-d on input line 1410.
+</Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png, id=298, 529.98pt x 562.1
+pt>
+File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
+used on input line 1412.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1414.
+Package pdftex.def Info: img/youtube.png  used on input line 1416.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1413--1415
+Underfull \hbox (badness 10000) in paragraph at lines 1415--1417
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1409--1418
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1411--1420
 [][] []
  []
 
 [28
 
- </Users/kruppajo/work/GitHub/exam/avatare/Alex.png>]
+ </Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1462.
+(hyperref)                removing `\hfill' on input line 1460.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1464--1465
+Underfull \hbox (badness 10000) in paragraph at lines 1462--1463
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
-d on input line 1470.
+</Users/kruppajo/work/GitHub/exam/avatare/Jonas.png, id=310, 529.98pt x 562.1pt
+>
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
+ed on input line 1468.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1474.
+Package pdftex.def Info: img/youtube.png  used on input line 1472.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1473--1475
+Underfull \hbox (badness 10000) in paragraph at lines 1471--1473
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1469--1478
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1467--1476
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1494--1495
-[]|\T1/fav/m/n/8 Chlorophyllgehalt
+Underfull \hbox (badness 10000) in paragraph at lines 1492--1493
+[]|\T1/fav/m/n/8 Schlachtgewicht
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1524--1525
-[]|\T1/fav/m/n/8 Chlorophyllgehalt
+Underfull \hbox (badness 10000) in paragraph at lines 1526--1527
+[]|\T1/fav/m/n/8 Schlachtgewicht
  []
 
 [29
 
-]
+ </Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1563.
+(hyperref)                removing `\hfill' on input line 1569.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1566--1567
+Underfull \hbox (badness 10000) in paragraph at lines 1572--1573
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1570.
+Package pdftex.def Info: img/youtube.png  used on input line 1576.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1569--1572
+Underfull \hbox (badness 10000) in paragraph at lines 1575--1578
 
  []
 
 <img/desc-stat-11-1.pdf, id=323, 722.7pt x 433.62pt>
 File: img/desc-stat-11-1.pdf Graphic file (type pdf)
 <use img/desc-stat-11-1.pdf>
-Package pdftex.def Info: img/desc-stat-11-1.pdf  used on input line 1590.
+Package pdftex.def Info: img/desc-stat-11-1.pdf  used on input line 1596.
 (pdftex.def)             Requested size: 483.69687pt x 290.21953pt.
 [30
 
  <./img/desc-stat-11-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1601.
+(hyperref)                removing `\hfill' on input line 1607.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1604--1605
+Underfull \hbox (badness 10000) in paragraph at lines 1610--1611
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1608.
+Package pdftex.def Info: img/youtube.png  used on input line 1614.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1607--1610
+Underfull \hbox (badness 10000) in paragraph at lines 1613--1616
 
  []
 
@@ -2285,52 +2335,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 1607--1610
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1628.
+(hyperref)                removing `\hfill' on input line 1634.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1631--1632
+Underfull \hbox (badness 10000) in paragraph at lines 1637--1638
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1635.
+Package pdftex.def Info: img/youtube.png  used on input line 1641.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1634--1637
+Underfull \hbox (badness 10000) in paragraph at lines 1640--1643
 
  []
 
 <img/histogram-01-1.pdf, id=348, 433.62pt x 433.62pt>
 File: img/histogram-01-1.pdf Graphic file (type pdf)
 <use img/histogram-01-1.pdf>
-Package pdftex.def Info: img/histogram-01-1.pdf  used on input line 1652.
+Package pdftex.def Info: img/histogram-01-1.pdf  used on input line 1658.
 (pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
 [32
 
  <./img/histogram-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1662.
+(hyperref)                removing `\hfill' on input line 1668.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1665--1666
+Underfull \hbox (badness 10000) in paragraph at lines 1671--1672
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1669.
+Package pdftex.def Info: img/youtube.png  used on input line 1675.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1668--1671
+Underfull \hbox (badness 10000) in paragraph at lines 1674--1677
 
  []
 
 <img/desc-01-1.pdf, id=363, 433.62pt x 433.62pt>
 File: img/desc-01-1.pdf Graphic file (type pdf)
 <use img/desc-01-1.pdf>
-Package pdftex.def Info: img/desc-01-1.pdf  used on input line 1688.
+Package pdftex.def Info: img/desc-01-1.pdf  used on input line 1694.
 (pdftex.def)             Requested size: 433.61894pt x 433.63878pt.
 [33
 
@@ -2338,17 +2388,17 @@ Package pdftex.def Info: img/desc-01-1.pdf  used on input line 1688.
 part II.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 1696.
+(scrkbase)              on input line 1702.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1699.
+(hyperref)                removing `\hfill' on input line 1705.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1703.
+Package pdftex.def Info: img/youtube.png  used on input line 1709.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1702--1705
+Underfull \hbox (badness 10000) in paragraph at lines 1708--1711
 
  []
 
@@ -2357,14 +2407,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1702--1705
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1726.
+(hyperref)                removing `\hfill' on input line 1732.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1730.
+Package pdftex.def Info: img/youtube.png  used on input line 1736.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1729--1732
+Underfull \hbox (badness 10000) in paragraph at lines 1735--1738
 
  []
 
@@ -2373,19 +2423,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 1729--1732
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1772.
+(hyperref)                removing `\hfill' on input line 1778.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
+Underfull \hbox (badness 10000) in paragraph at lines 1781--1782
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1779.
+Package pdftex.def Info: img/youtube.png  used on input line 1785.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1778--1781
+Underfull \hbox (badness 10000) in paragraph at lines 1784--1787
 
  []
 
@@ -2393,21 +2443,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 1778--1781
 File: img/statistisches-testen-3-1.pdf Graphic file (type pdf)
 <use img/statistisches-testen-3-1.pdf>
 Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 1
-804.
+810.
 (pdftex.def)             Requested size: 483.69687pt x 362.76945pt.
 [36
 
  <./img/statistisches-testen-3-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1813.
+(hyperref)                removing `\hfill' on input line 1819.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1817.
+Package pdftex.def Info: img/youtube.png  used on input line 1823.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1816--1819
+Underfull \hbox (badness 10000) in paragraph at lines 1822--1825
 
  []
 
@@ -2418,26 +2468,26 @@ File: /Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png
 <use /Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png>
 
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/question/img/statisti
-sches-testen-04.png  used on input line 1845.
+sches-testen-04.png  used on input line 1851.
 (pdftex.def)             Requested size: 42.37154pt x 341.43306pt.
 [37
 
  </Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1853.
+(hyperref)                removing `\hfill' on input line 1859.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1856--1857
+Underfull \hbox (badness 10000) in paragraph at lines 1862--1863
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1860.
+Package pdftex.def Info: img/youtube.png  used on input line 1866.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1859--1862
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1868
 
  []
 
@@ -2447,33 +2497,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 1859--1862
 part III.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 1909.
+(scrkbase)              on input line 1915.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1912.
+(hyperref)                removing `\hfill' on input line 1918.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1914--1915
+Underfull \hbox (badness 10000) in paragraph at lines 1920--1921
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 1920.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 1926.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1924.
+Package pdftex.def Info: img/youtube.png  used on input line 1930.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1923--1925
+Underfull \hbox (badness 10000) in paragraph at lines 1929--1931
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1919--1928
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1925--1934
 [][] []
  []
 
@@ -2482,219 +2532,78 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 1919--1928
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1964.
+(hyperref)                removing `\hfill' on input line 1970.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1966--1967
+Underfull \hbox (badness 10000) in paragraph at lines 1972--1973
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Jonas.png, id=448, 529.98pt x 562.1pt
->
 File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
 )
 <use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 1972.
+ed on input line 1978.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 1976.
+Package pdftex.def Info: img/youtube.png  used on input line 1982.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1975--1977
+Underfull \hbox (badness 10000) in paragraph at lines 1981--1983
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 1971--1980
+Overfull \hbox (2.169pt too wide) in paragraph at lines 1977--1986
 [][] []
  []
 
+
+LaTeX Warning: Command \" invalid in math mode on input line 1989.
+
+Missing character: There is no ö in font zavmr7t!
 [40
 
- </Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>]
+]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2037.
+(hyperref)                removing `\hfill' on input line 2038.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2039--2040
+Underfull \hbox (badness 10000) in paragraph at lines 2040--2041
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png, id=463, 529.98pt x 562.1
-pt>
 File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
 ng)
 <use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 2045.
+used on input line 2046.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2049.
+Package pdftex.def Info: img/youtube.png  used on input line 2050.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2048--2050
+Underfull \hbox (badness 10000) in paragraph at lines 2049--2051
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2044--2053
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2045--2054
 [][] []
  []
 
 [41
 
- </Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2109.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2111--2112
-
- []
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 2117.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 2117.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: img/youtube.png Graphic file (type png)
-<use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2121.
-(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
-
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2116--2125
-[][] []
- []
-
-[42
-
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2184.
+(hyperref)                removing `\hfill' on input line 2102.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2186--2187
-
- []
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 2192.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-</Users/kruppajo/work/GitHub/exam/avatare/Paula.png, id=490, 529.98pt x 562.1pt
->
-File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
-ed on input line 2192.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-</Users/kruppajo/work/GitHub/exam/avatare/Tina.png, id=491, 529.98pt x 562.1pt>
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
-d on input line 2192.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: img/youtube.png Graphic file (type png)
-<use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2196.
-(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
-
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2191--2200
-[][] []
- []
-
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-203.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-203.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-203.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-203.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[43
-
- </Users/kruppajo/work/GitHub/exam/avatare/Paula.png> </Users/kruppajo/work/Git
-Hub/exam/avatare/Tina.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2236.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2238--2239
-
- []
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 2244.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 2244.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
-ed on input line 2244.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: img/youtube.png Graphic file (type png)
-<use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2248.
-(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
-
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2243--2252
-[][] []
- []
-
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-255.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[44
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2287.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 2289--2290
+Underfull \hbox (badness 10000) in paragraph at lines 2104--2105
 
  []
 
@@ -2702,76 +2611,212 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
 ng)
 <use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
-used on input line 2295.
+used on input line 2110.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
+</Users/kruppajo/work/GitHub/exam/avatare/Yuki.png, id=474, 529.98pt x 562.1pt>
 
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 2295.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 2110.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 2114.
+(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
+
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2109--2118
+[][] []
+ []
+
+[42
+
+ </Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2177.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2179--2180
+
+ []
+
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 2185.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+</Users/kruppajo/work/GitHub/exam/avatare/Steffen.png, id=488, 529.98pt x 562.1
+pt>
 File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
 ng)
 <use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
-used on input line 2295.
+used on input line 2185.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 2185.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2299.
+Package pdftex.def Info: img/youtube.png  used on input line 2189.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2294--2303
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2184--2193
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-306.
+196.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+
+LaTeX Warning: Command \" invalid in math mode on input line 2196.
+
+Missing character: There is no ö in font zavmr7t!
+[43
+
+ </Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2229.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2231--2232
+
+ []
+
+</Users/kruppajo/work/GitHub/exam/avatare/Mark.png, id=503, 529.98pt x 562.1pt>
+
+File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
+d on input line 2237.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
+used on input line 2237.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 2237.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 2241.
+(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
+
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2236--2245
+[][] []
+ []
+
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
+248.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
+248.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+[44
+
+ </Users/kruppajo/work/GitHub/exam/avatare/Mark.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 2280.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2282--2283
+
+ []
+
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 2288.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
+used on input line 2288.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
+d on input line 2288.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 2292.
+(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
+
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2287--2296
+[][] []
+ []
+
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
+299.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [45
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2343.
+(hyperref)                removing `\hfill' on input line 2336.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2345--2346
+Underfull \hbox (badness 10000) in paragraph at lines 2338--2339
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
-used on input line 2351.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
+ed on input line 2344.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 
 <use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 2351.
+d on input line 2344.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2355.
+Package pdftex.def Info: img/youtube.png  used on input line 2348.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2350--2359
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2343--2352
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-362.
+355.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-382.
+375.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [46
 
@@ -2779,34 +2824,34 @@ Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
 part IV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 2395.
+(scrkbase)              on input line 2388.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2398.
+(hyperref)                removing `\hfill' on input line 2391.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2400--2401
+Underfull \hbox (badness 10000) in paragraph at lines 2393--2394
 
  []
 
+File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
+d on input line 2399.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
 
 <use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
-d on input line 2406.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 2406.
+d on input line 2399.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2410.
+Package pdftex.def Info: img/youtube.png  used on input line 2403.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2405--2414
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2398--2407
 [][] []
  []
 
@@ -2815,31 +2860,31 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2405--2414
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2468.
+(hyperref)                removing `\hfill' on input line 2465.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2470--2471
+Underfull \hbox (badness 10000) in paragraph at lines 2467--2468
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
-d on input line 2476.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 2473.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
-d on input line 2476.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
+used on input line 2473.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2480.
+Package pdftex.def Info: img/youtube.png  used on input line 2477.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2475--2484
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2472--2481
 [][] []
  []
 
@@ -2848,93 +2893,95 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2475--2484
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2530.
+(hyperref)                removing `\hfill' on input line 2527.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2532--2533
+Underfull \hbox (badness 10000) in paragraph at lines 2529--2530
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 2538.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
+ed on input line 2535.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
+File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
 
-<use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
-d on input line 2538.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
+d on input line 2535.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2542.
+Package pdftex.def Info: img/youtube.png  used on input line 2539.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2537--2546
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2534--2543
 [][] []
  []
 
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 2591.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 2588.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 10.56007pt on input line 2591.
+(Font)              scaled to size 10.56007pt on input line 2588.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 8.02559pt on input line 2591.
+(Font)              scaled to size 8.02559pt on input line 2588.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 6.3361pt on input line 2591.
+(Font)              scaled to size 6.3361pt on input line 2588.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 10.56007pt on input line 2591.
+(Font)              scaled to size 10.56007pt on input line 2588.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 8.02559pt on input line 2591.
+(Font)              scaled to size 8.02559pt on input line 2588.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 6.3361pt on input line 2591.
+(Font)              scaled to size 6.3361pt on input line 2588.
 [49
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2616.
+(hyperref)                removing `\hfill' on input line 2612.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2618--2619
+Underfull \hbox (badness 10000) in paragraph at lines 2614--2615
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+</Users/kruppajo/work/GitHub/exam/avatare/Alex.png, id=578, 529.98pt x 562.1pt>
 
-<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 2624.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
+d on input line 2620.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2628.
+Package pdftex.def Info: img/youtube.png  used on input line 2624.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2627--2629
+Underfull \hbox (badness 10000) in paragraph at lines 2623--2625
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2623--2632
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2619--2628
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
-635.
+631.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [50
 
-]
+ </Users/kruppajo/work/GitHub/exam/avatare/Alex.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2667.
+(hyperref)                removing `\hfill' on input line 2663.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2669--2670
+Underfull \hbox (badness 10000) in paragraph at lines 2665--2666
 
  []
 
@@ -2942,56 +2989,67 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
 
 <use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
-d on input line 2675.
+d on input line 2671.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2679.
+Package pdftex.def Info: img/youtube.png  used on input line 2675.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2678--2680
+Underfull \hbox (badness 10000) in paragraph at lines 2674--2676
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2674--2683
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2670--2679
 [][] []
  []
 
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 2728.
+(Font)              scaled to size 10.51207pt on input line 2724.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 7.68005pt on input line 2728.
+(Font)              scaled to size 7.68005pt on input line 2724.
 [51
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2746.
+(hyperref)                removing `\hfill' on input line 2742.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2748--2749
+Underfull \hbox (badness 10000) in paragraph at lines 2744--2745
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 2754.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 2750.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2758.
+Package pdftex.def Info: img/youtube.png  used on input line 2754.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2757--2759
+Underfull \hbox (badness 10000) in paragraph at lines 2753--2755
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2753--2762
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2749--2758
 [][] []
+ []
+
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
+761.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+
+Overfull \hbox (0.86594pt too wide) in paragraph at lines 2780--2781
+[]\T1/fav/m/n/9 Leider ken-nen sich Pau-la mit Be-rech-nung ei-ner zwei-fak-to-
+ri-el-len ANO-VA über-haupt nicht aus. Des-halb braucht
  []
 
 [52
@@ -2999,14 +3057,14 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2753--2762
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2797.
+(hyperref)                removing `\hfill' on input line 2793.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2802.
+Package pdftex.def Info: img/youtube.png  used on input line 2798.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2801--2804
+Underfull \hbox (badness 10000) in paragraph at lines 2797--2800
 
  []
 
@@ -3015,14 +3073,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 2801--2804
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2834.
+(hyperref)                removing `\hfill' on input line 2830.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2838.
+Package pdftex.def Info: img/youtube.png  used on input line 2834.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2837--2840
+Underfull \hbox (badness 10000) in paragraph at lines 2833--2836
 
  []
 
@@ -3031,14 +3089,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 2837--2840
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2864.
+(hyperref)                removing `\hfill' on input line 2860.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2868.
+Package pdftex.def Info: img/youtube.png  used on input line 2864.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 2867--2870
+Underfull \hbox (badness 10000) in paragraph at lines 2863--2866
 
  []
 
@@ -3048,34 +3106,34 @@ Underfull \hbox (badness 10000) in paragraph at lines 2867--2870
 part V.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 2896.
+(scrkbase)              on input line 2892.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2899.
+(hyperref)                removing `\hfill' on input line 2895.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2901--2902
+Underfull \hbox (badness 10000) in paragraph at lines 2897--2898
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
+File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
 
-<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
-d on input line 2907.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
+d on input line 2903.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
-ed on input line 2907.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 2903.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2911.
+Package pdftex.def Info: img/youtube.png  used on input line 2907.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2906--2915
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2902--2911
 [][] []
  []
 
@@ -3084,25 +3142,25 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2906--2915
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 2959.
+(hyperref)                removing `\hfill' on input line 2952.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2961--2962
+Underfull \hbox (badness 10000) in paragraph at lines 2954--2955
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
+File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
 ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
-used on input line 2967.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
+used on input line 2960.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 2971.
+Package pdftex.def Info: img/youtube.png  used on input line 2964.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 2966--2975
+Overfull \hbox (2.169pt too wide) in paragraph at lines 2959--2968
 [][] []
  []
 
@@ -3111,26 +3169,26 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2966--2975
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3014.
+(hyperref)                removing `\hfill' on input line 3007.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3016--3017
+Underfull \hbox (badness 10000) in paragraph at lines 3009--3010
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
-ed on input line 3022.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
+used on input line 3015.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 <img/caution.png, id=673, 1927.2pt x 1084.05pt>
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
-Package pdftex.def Info: img/caution.png  used on input line 3026.
+Package pdftex.def Info: img/caution.png  used on input line 3019.
 (pdftex.def)             Requested size: 56.9055pt x 32.00731pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3021--3030
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3014--3023
 [][] []
  []
 
@@ -3139,102 +3197,102 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3021--3030
  <./img/caution.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3069.
+(hyperref)                removing `\hfill' on input line 3062.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3071--3072
+Underfull \hbox (badness 10000) in paragraph at lines 3064--3065
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 3077.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 3070.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3081.
+Package pdftex.def Info: img/youtube.png  used on input line 3074.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3076--3085
-[][] []
- []
-
-[59
-
-]
-part VI.
-Package scrkbase Info: You've told me to use the font selection of the element
-(scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 3122.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3125.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3127--3128
-
- []
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 3133.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: img/youtube.png Graphic file (type png)
-<use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3137.
-(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3136--3138
-
- []
-
-
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3132--3141
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3069--3078
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-144.
+081.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+[59
+
+]
+part VI.
+Package scrkbase Info: You've told me to use the font selection of the element
+(scrkbase)             `partprefix' that is an alias of element `partnumber'
+(scrkbase)              on input line 3115.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 3118.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3120--3121
+
+ []
+
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 3126.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 3130.
+(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3129--3131
+
+ []
+
+
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3125--3134
+[][] []
+ []
+
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 3151.
+(Font)              scaled to size 13.82408pt on input line 3144.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 13.82408pt on input line 3151.
+(Font)              scaled to size 13.82408pt on input line 3144.
 [60
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3181.
+(hyperref)                removing `\hfill' on input line 3174.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3183--3184
+Underfull \hbox (badness 10000) in paragraph at lines 3176--3177
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
 
-<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 3189.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
+d on input line 3182.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3193.
+Package pdftex.def Info: img/youtube.png  used on input line 3186.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3192--3194
+Underfull \hbox (badness 10000) in paragraph at lines 3185--3187
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3188--3197
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3181--3190
 [][] []
  []
 
@@ -3243,45 +3301,45 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3188--3197
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3232.
+(hyperref)                removing `\hfill' on input line 3225.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3234--3235
+Underfull \hbox (badness 10000) in paragraph at lines 3227--3228
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 
-<use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
-d on input line 3240.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 3233.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3244.
+Package pdftex.def Info: img/youtube.png  used on input line 3237.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3243--3245
+Underfull \hbox (badness 10000) in paragraph at lines 3236--3238
 
  []
 
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3239--3248
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3232--3241
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-264.
+257.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-264.
+257.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 3
-270.
+263.
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bera/ts1fvm.fd
 File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 ) [62
@@ -3289,14 +3347,14 @@ File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3298.
+(hyperref)                removing `\hfill' on input line 3291.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3302.
+Package pdftex.def Info: img/youtube.png  used on input line 3295.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3301--3304
+Underfull \hbox (badness 10000) in paragraph at lines 3294--3297
 
  []
 
@@ -3306,21 +3364,21 @@ File: /Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum.png Graphic
  file (type png)
 <use /Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/question/img/diag-dop
-pelbaum.png  used on input line 3326.
+pelbaum.png  used on input line 3319.
 (pdftex.def)             Requested size: 483.69684pt x 304.93373pt.
 [63
 
  </Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3335.
+(hyperref)                removing `\hfill' on input line 3328.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3340.
+Package pdftex.def Info: img/youtube.png  used on input line 3333.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3339--3342
+Underfull \hbox (badness 10000) in paragraph at lines 3332--3335
 
  []
 
@@ -3328,10 +3386,10 @@ File: /Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum.png Graphic
  file (type png)
 <use /Users/kruppajo/work/GitHub/exam/question/img/diag-doppelbaum.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/question/img/diag-dop
-pelbaum.png  used on input line 3365.
+pelbaum.png  used on input line 3358.
 (pdftex.def)             Requested size: 483.69687pt x 304.93373pt.
 
-Overfull \hbox (5.99936pt too wide) in paragraph at lines 3371--3372
+Overfull \hbox (5.99936pt too wide) in paragraph at lines 3364--3365
 [][] 
  []
 
@@ -3341,34 +3399,34 @@ Overfull \hbox (5.99936pt too wide) in paragraph at lines 3371--3372
 part VII.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 3379.
+(scrkbase)              on input line 3372.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3382.
+(hyperref)                removing `\hfill' on input line 3375.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3384--3385
+Underfull \hbox (badness 10000) in paragraph at lines 3377--3378
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
 )
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 3390.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 3383.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 3390.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 3383.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3394.
+Package pdftex.def Info: img/youtube.png  used on input line 3387.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3389--3398
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3382--3391
 [][] []
  []
 
@@ -3377,10 +3435,62 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3389--3398
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3438.
+(hyperref)                removing `\hfill' on input line 3432.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3440--3441
+Underfull \hbox (badness 10000) in paragraph at lines 3434--3435
+
+ []
+
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 3440.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
+d on input line 3440.
+(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 3444.
+(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
+
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3439--3448
+[][] []
+ []
+
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+451.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+451.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 11.52008pt on input line 3456.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 11.52008pt on input line 3456.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+469.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+[66
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 3484.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3486--3487
 
  []
 
@@ -3388,46 +3498,47 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
 )
 <use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 3446.
+ed on input line 3492.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
-d on input line 3446.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 3492.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3450.
+Package pdftex.def Info: img/youtube.png  used on input line 3496.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3445--3454
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3491--3500
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-457.
+503.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 11.52008pt on input line 3462.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 11.52008pt on input line 3462.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-475.
+503.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[66
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+528.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
+[67
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3490.
+(hyperref)                removing `\hfill' on input line 3543.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3492--3493
+Underfull \hbox (badness 10000) in paragraph at lines 3545--3546
 
  []
 
@@ -3435,135 +3546,87 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
 ng)
 <use /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png  
-used on input line 3498.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
-ed on input line 3498.
+used on input line 3551.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3502.
+Package pdftex.def Info: img/youtube.png  used on input line 3555.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3497--3506
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3550--3559
 [][] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-509.
+562.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-509.
+562.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-534.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-[67
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3549.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3551--3552
-
- []
-
-File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
-used on input line 3557.
-(pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: img/youtube.png Graphic file (type png)
-<use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3561.
-(pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
-
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3556--3565
-[][] []
- []
-
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-568.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-568.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-589.
+583.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [68
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3603.
+(hyperref)                removing `\hfill' on input line 3597.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3607.
+Package pdftex.def Info: img/youtube.png  used on input line 3601.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3606--3609
+Underfull \hbox (badness 10000) in paragraph at lines 3600--3603
 
  []
 
 <img/correlation-01-1.pdf, id=812, 505.89pt x 505.89pt>
 File: img/correlation-01-1.pdf Graphic file (type pdf)
 <use img/correlation-01-1.pdf>
-Package pdftex.def Info: img/correlation-01-1.pdf  used on input line 3626.
+Package pdftex.def Info: img/correlation-01-1.pdf  used on input line 3620.
 (pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
 [69
 
  <./img/correlation-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3636.
+(hyperref)                removing `\hfill' on input line 3630.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3640.
+Package pdftex.def Info: img/youtube.png  used on input line 3634.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3639--3642
+Underfull \hbox (badness 10000) in paragraph at lines 3633--3636
 
  []
 
 <img/correlation-02-1.pdf, id=828, 505.89pt x 505.89pt>
 File: img/correlation-02-1.pdf Graphic file (type pdf)
 <use img/correlation-02-1.pdf>
-Package pdftex.def Info: img/correlation-02-1.pdf  used on input line 3659.
+Package pdftex.def Info: img/correlation-02-1.pdf  used on input line 3653.
 (pdftex.def)             Requested size: 483.69687pt x 483.70361pt.
 [70
 
  <./img/correlation-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3669.
+(hyperref)                removing `\hfill' on input line 3663.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3673.
+Package pdftex.def Info: img/youtube.png  used on input line 3667.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3672--3675
+Underfull \hbox (badness 10000) in paragraph at lines 3666--3669
 
  []
 
@@ -3572,52 +3635,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 3672--3675
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3718.
+(hyperref)                removing `\hfill' on input line 3712.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3722.
+Package pdftex.def Info: img/youtube.png  used on input line 3716.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3721--3724
+Underfull \hbox (badness 10000) in paragraph at lines 3715--3718
 
  []
 
 <img/regression-01-1.pdf, id=853, 650.43pt x 216.81pt>
 File: img/regression-01-1.pdf Graphic file (type pdf)
 <use img/regression-01-1.pdf>
-Package pdftex.def Info: img/regression-01-1.pdf  used on input line 3740.
+Package pdftex.def Info: img/regression-01-1.pdf  used on input line 3734.
 (pdftex.def)             Requested size: 483.69687pt x 161.23747pt.
 [72
 
  <./img/regression-01-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3750.
+(hyperref)                removing `\hfill' on input line 3744.
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 3754.
+Package pdftex.def Info: img/youtube.png  used on input line 3748.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3753--3756
+Underfull \hbox (badness 10000) in paragraph at lines 3747--3750
 
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-766.
+760.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-769.
+763.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 <img/modeling-R-01-1.pdf, id=867, 361.35pt x 361.35pt>
 File: img/modeling-R-01-1.pdf Graphic file (type pdf)
 <use img/modeling-R-01-1.pdf>
-Package pdftex.def Info: img/modeling-R-01-1.pdf  used on input line 3779.
+Package pdftex.def Info: img/modeling-R-01-1.pdf  used on input line 3773.
 (pdftex.def)             Requested size: 361.34912pt x 361.34912pt.
 [73
 
@@ -3625,45 +3688,45 @@ Package pdftex.def Info: img/modeling-R-01-1.pdf  used on input line 3779.
 part VIII.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 3787.
+(scrkbase)              on input line 3781.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3790.
+(hyperref)                removing `\hfill' on input line 3784.
 
 File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
 
 <use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
-d on input line 3796.
+d on input line 3790.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
-used on input line 3796.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
+
+<use /Users/kruppajo/work/GitHub/exam/avatare/Mark.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
+d on input line 3790.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
 )
-<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
-ed on input line 3796.
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 3790.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
-Package pdftex.def Info: img/caution.png  used on input line 3800.
+Package pdftex.def Info: img/caution.png  used on input line 3794.
 (pdftex.def)             Requested size: 56.9055pt x 32.00731pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3795--3804
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3789--3798
 [] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-807.
+801.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3809--3810
+Underfull \hbox (badness 10000) in paragraph at lines 3803--3804
 
  []
 
@@ -3673,43 +3736,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 3809--3810
 part IX.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 3828.
+(scrkbase)              on input line 3822.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3831.
+(hyperref)                removing `\hfill' on input line 3825.
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
-ng)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png  
-used on input line 3838.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
+ed on input line 3832.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
-Package pdftex.def Info: img/caution.png  used on input line 3842.
+Package pdftex.def Info: img/caution.png  used on input line 3836.
 (pdftex.def)             Requested size: 56.9055pt x 32.00731pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3837--3846
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3831--3840
 [] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-849.
+843.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-849.
+843.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-849.
+843.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3849--3850
+Underfull \hbox (badness 10000) in paragraph at lines 3843--3844
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3845--3847
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3848--3850
 
  []
 
@@ -3718,13 +3791,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 3851--3853
 
  []
 
-LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
-(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 3854.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3854--3856
 
  []
 
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+857.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3857--3859
 
@@ -3735,48 +3811,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 3860--3862
 
  []
 
+LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <9> not available
+(Font)              Font shape `T1/fvm/m/sl' tried instead on input line 3863.
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+863.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3863--3865
 
  []
 
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-866.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3866--3868
 
  []
 
+File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
+<use ~/work/GitHub/exam/img/Rlogo.png>
+Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
+869.
+(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3869--3871
-
- []
-
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-872.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-872.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3872--3874
-
- []
-
-File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
-<use ~/work/GitHub/exam/img/Rlogo.png>
-Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-875.
-(pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3875--3877
 
  []
 
@@ -3785,45 +3843,55 @@ Underfull \hbox (badness 10000) in paragraph at lines 3875--3877
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3880.
+(hyperref)                removing `\hfill' on input line 3874.
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
-)
-<use /Users/kruppajo/work/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png  us
-ed on input line 3887.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
+ng)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png  
+used on input line 3881.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
-Package pdftex.def Info: img/caution.png  used on input line 3891.
+Package pdftex.def Info: img/caution.png  used on input line 3885.
 (pdftex.def)             Requested size: 56.9055pt x 32.00731pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3886--3895
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3880--3889
 [] []
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-898.
+892.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-898.
+892.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-898.
+892.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-898.
+892.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3898--3899
+Underfull \hbox (badness 10000) in paragraph at lines 3892--3893
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3894--3896
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3897--3899
 
  []
 
@@ -3852,30 +3920,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 3912--3914
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 3915--3917
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3918--3920
-
- []
-
 [76
 
 ]
 part X.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 3926.
+(scrkbase)              on input line 3920.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3928--3929
+Underfull \hbox (badness 10000) in paragraph at lines 3922--3923
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3940--3941
+Underfull \hbox (badness 10000) in paragraph at lines 3934--3935
 
  []
 
@@ -3884,52 +3942,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 3940--3941
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3951.
+(hyperref)                removing `\hfill' on input line 3945.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3953--3954
+Underfull \hbox (badness 10000) in paragraph at lines 3947--3948
 
  []
 
-File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
-
-<use /Users/kruppajo/work/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png  use
-d on input line 3959.
+File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
+)
+<use /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>
+Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
+ed on input line 3953.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
-Package pdftex.def Info: img/caution.png  used on input line 3963.
+Package pdftex.def Info: img/caution.png  used on input line 3957.
 (pdftex.def)             Requested size: 56.9055pt x 32.00731pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3958--3967
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3952--3961
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3970--3971
+Underfull \hbox (badness 10000) in paragraph at lines 3964--3965
 
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-978.
+972.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
-983.
+977.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [78
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 3990.
+(hyperref)                removing `\hfill' on input line 3984.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 3992--3993
+Underfull \hbox (badness 10000) in paragraph at lines 3986--3987
 
  []
 
@@ -3937,26 +3995,26 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
 
 <use /Users/kruppajo/work/GitHub/exam/avatare/Tina.png>
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png  use
-d on input line 3998.
+d on input line 3992.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
-Package pdftex.def Info: img/caution.png  used on input line 4002.
+Package pdftex.def Info: img/caution.png  used on input line 3996.
 (pdftex.def)             Requested size: 56.9055pt x 32.00731pt.
 
-Overfull \hbox (2.169pt too wide) in paragraph at lines 3997--4006
+Overfull \hbox (2.169pt too wide) in paragraph at lines 3991--4000
 [][] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4009--4010
+Underfull \hbox (badness 10000) in paragraph at lines 4003--4004
 
  []
 
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 4
-019.
+015.
 (pdftex.def)             Requested size: 14.22636pt x 11.00005pt.
 [79
 
@@ -3964,27 +4022,27 @@ Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 4
 part XI.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 4026.
+(scrkbase)              on input line 4022.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4029.
+(hyperref)                removing `\hfill' on input line 4025.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4032--4033
+Underfull \hbox (badness 10000) in paragraph at lines 4028--4029
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4036.
+Package pdftex.def Info: img/youtube.png  used on input line 4032.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4042--4053
+Underfull \hbox (badness 10000) in paragraph at lines 4038--4049
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4057--4058
+Underfull \hbox (badness 10000) in paragraph at lines 4053--4054
 
  []
 
@@ -3993,56 +4051,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 4057--4058
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4097.
+(hyperref)                removing `\hfill' on input line 4093.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4100--4101
+Underfull \hbox (badness 10000) in paragraph at lines 4096--4097
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4104.
+Package pdftex.def Info: img/youtube.png  used on input line 4100.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 [81
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4142.
+(hyperref)                removing `\hfill' on input line 4138.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4145--4146
+Underfull \hbox (badness 10000) in paragraph at lines 4141--4142
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4149.
+Package pdftex.def Info: img/youtube.png  used on input line 4145.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 [82
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4199.
+(hyperref)                removing `\hfill' on input line 4195.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4202--4203
+Underfull \hbox (badness 10000) in paragraph at lines 4198--4199
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4205.
+Package pdftex.def Info: img/youtube.png  used on input line 4201.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4218--4233
+Underfull \hbox (badness 10000) in paragraph at lines 4214--4229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4234--4235
+Underfull \hbox (badness 10000) in paragraph at lines 4230--4231
 
  []
 
@@ -4051,24 +4109,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 4234--4235
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4278.
+(hyperref)                removing `\hfill' on input line 4274.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4281--4282
+Underfull \hbox (badness 10000) in paragraph at lines 4277--4278
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4284.
+Package pdftex.def Info: img/youtube.png  used on input line 4280.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4296--4299
+Underfull \hbox (badness 10000) in paragraph at lines 4292--4295
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4312--4313
+Underfull \hbox (badness 10000) in paragraph at lines 4308--4309
 
  []
 
@@ -4077,67 +4135,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 4312--4313
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4329.
+(hyperref)                removing `\hfill' on input line 4325.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4332--4333
+Underfull \hbox (badness 10000) in paragraph at lines 4328--4329
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4335.
+Package pdftex.def Info: img/youtube.png  used on input line 4331.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 [85
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4432.
+(hyperref)                removing `\hfill' on input line 4428.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4435--4436
+Underfull \hbox (badness 10000) in paragraph at lines 4431--4432
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4439.
+Package pdftex.def Info: img/youtube.png  used on input line 4435.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 [86
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4495.
+(hyperref)                removing `\hfill' on input line 4491.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4498--4499
+Underfull \hbox (badness 10000) in paragraph at lines 4494--4495
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4502.
+Package pdftex.def Info: img/youtube.png  used on input line 4498.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 [87
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4564.
+(hyperref)                removing `\hfill' on input line 4560.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4567--4568
+Underfull \hbox (badness 10000) in paragraph at lines 4563--4564
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4571.
+Package pdftex.def Info: img/youtube.png  used on input line 4567.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4579--4588
+Underfull \hbox (badness 10000) in paragraph at lines 4575--4584
 
  []
 
@@ -4146,19 +4204,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 4579--4588
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4620.
+(hyperref)                removing `\hfill' on input line 4616.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4623--4624
+Underfull \hbox (badness 10000) in paragraph at lines 4619--4620
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4627.
+Package pdftex.def Info: img/youtube.png  used on input line 4623.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4635--4645
+Underfull \hbox (badness 10000) in paragraph at lines 4631--4641
 
  []
 
@@ -4167,19 +4225,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 4635--4645
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4697.
+(hyperref)                removing `\hfill' on input line 4693.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4700--4701
+Underfull \hbox (badness 10000) in paragraph at lines 4696--4697
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4704.
+Package pdftex.def Info: img/youtube.png  used on input line 4700.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4740--4753
+Underfull \hbox (badness 10000) in paragraph at lines 4736--4749
 
  []
 
@@ -4188,56 +4246,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 4740--4753
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4780.
+(hyperref)                removing `\hfill' on input line 4776.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4783--4784
+Underfull \hbox (badness 10000) in paragraph at lines 4779--4780
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4787.
+Package pdftex.def Info: img/youtube.png  used on input line 4783.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
-<img/math-10-1.pdf, id=1131, 216.81pt x 180.675pt>
+<img/math-10-1.pdf, id=1133, 216.81pt x 180.675pt>
 File: img/math-10-1.pdf Graphic file (type pdf)
 <use img/math-10-1.pdf>
-Package pdftex.def Info: img/math-10-1.pdf  used on input line 4809.
+Package pdftex.def Info: img/math-10-1.pdf  used on input line 4805.
 (pdftex.def)             Requested size: 216.80946pt x 180.68282pt.
 [91
 
  <./img/math-10-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4886.
+(hyperref)                removing `\hfill' on input line 4882.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4889--4890
+Underfull \hbox (badness 10000) in paragraph at lines 4885--4886
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4893.
+Package pdftex.def Info: img/youtube.png  used on input line 4889.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 [92
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 4978.
+(hyperref)                removing `\hfill' on input line 4974.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 4981--4982
+Underfull \hbox (badness 10000) in paragraph at lines 4977--4978
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 4985.
+Package pdftex.def Info: img/youtube.png  used on input line 4981.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 4993--5007
+Underfull \hbox (badness 10000) in paragraph at lines 4989--5003
 
  []
 
@@ -4246,19 +4304,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 4993--5007
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5078.
+(hyperref)                removing `\hfill' on input line 5074.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5081--5082
+Underfull \hbox (badness 10000) in paragraph at lines 5077--5078
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5085.
+Package pdftex.def Info: img/youtube.png  used on input line 5081.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5135--5140
+Underfull \hbox (badness 10000) in paragraph at lines 5131--5136
 
  []
 
@@ -4267,19 +4325,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 5135--5140
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5163.
+(hyperref)                removing `\hfill' on input line 5159.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5166--5167
+Underfull \hbox (badness 10000) in paragraph at lines 5162--5163
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5170.
+Package pdftex.def Info: img/youtube.png  used on input line 5166.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5178--5189
+Underfull \hbox (badness 10000) in paragraph at lines 5174--5185
 
  []
 
@@ -4288,56 +4346,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 5178--5189
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5228.
+(hyperref)                removing `\hfill' on input line 5224.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5231--5232
+Underfull \hbox (badness 10000) in paragraph at lines 5227--5228
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5234.
+Package pdftex.def Info: img/youtube.png  used on input line 5230.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5241--5254
+Underfull \hbox (badness 10000) in paragraph at lines 5237--5250
 
  []
 
-<img/math-14-a-1.pdf, id=1220, 578.16pt x 180.675pt>
+<img/math-14-a-1.pdf, id=1222, 578.16pt x 180.675pt>
 File: img/math-14-a-1.pdf Graphic file (type pdf)
 <use img/math-14-a-1.pdf>
-Package pdftex.def Info: img/math-14-a-1.pdf  used on input line 5262.
+Package pdftex.def Info: img/math-14-a-1.pdf  used on input line 5258.
 (pdftex.def)             Requested size: 483.69687pt x 151.15392pt.
-<img/math-14-b-1.pdf, id=1221, 578.16pt x 158.5925pt>
+<img/math-14-b-1.pdf, id=1223, 578.16pt x 158.5925pt>
 File: img/math-14-b-1.pdf Graphic file (type pdf)
 <use img/math-14-b-1.pdf>
-Package pdftex.def Info: img/math-14-b-1.pdf  used on input line 5284.
+Package pdftex.def Info: img/math-14-b-1.pdf  used on input line 5280.
 (pdftex.def)             Requested size: 483.69687pt x 132.67953pt.
 [96
 
  <./img/math-14-a-1.pdf> <./img/math-14-b-1.pdf>]
-<img/math-14-c-1.pdf, id=1245, 650.43pt x 650.43pt>
+<img/math-14-c-1.pdf, id=1247, 650.43pt x 650.43pt>
 File: img/math-14-c-1.pdf Graphic file (type pdf)
 <use img/math-14-c-1.pdf>
-Package pdftex.def Info: img/math-14-c-1.pdf  used on input line 5307.
+Package pdftex.def Info: img/math-14-c-1.pdf  used on input line 5303.
 (pdftex.def)             Requested size: 483.69687pt x 483.71245pt.
  [97 <./img/math-14-c-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5346.
+(hyperref)                removing `\hfill' on input line 5342.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5349--5350
+Underfull \hbox (badness 10000) in paragraph at lines 5345--5346
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5352.
+Package pdftex.def Info: img/youtube.png  used on input line 5348.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5361--5367
+Underfull \hbox (badness 10000) in paragraph at lines 5357--5363
 
  []
 
@@ -4346,19 +4404,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 5361--5367
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5419.
+(hyperref)                removing `\hfill' on input line 5415.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5422--5423
+Underfull \hbox (badness 10000) in paragraph at lines 5418--5419
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5425.
+Package pdftex.def Info: img/youtube.png  used on input line 5421.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5434--5447
+Underfull \hbox (badness 10000) in paragraph at lines 5430--5443
 
  []
 
@@ -4367,19 +4425,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 5434--5447
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5517.
+(hyperref)                removing `\hfill' on input line 5513.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5520--5521
+Underfull \hbox (badness 10000) in paragraph at lines 5516--5517
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5524.
+Package pdftex.def Info: img/youtube.png  used on input line 5520.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 5532--5538
+Underfull \hbox (badness 10000) in paragraph at lines 5528--5534
 
  []
 
@@ -4388,19 +4446,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 5532--5538
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5586.
+(hyperref)                removing `\hfill' on input line 5582.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 5589--5590
+Underfull \hbox (badness 10000) in paragraph at lines 5585--5586
 
  []
 
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
-Package pdftex.def Info: img/youtube.png  used on input line 5593.
+Package pdftex.def Info: img/youtube.png  used on input line 5589.
 (pdftex.def)             Requested size: 56.9055pt x 23.95537pt.
 
-Overfull \hbox (0.48553pt too wide) in paragraph at lines 5653--5656
+Overfull \hbox (0.48553pt too wide) in paragraph at lines 5649--5652
 \T1/fav/m/n/9 schein-lich-keit wird je-weils ei-ne der drei Tü-ren aus-ge-wählt
 ? Zeich-nen Sie ein Baum-dia-gramm! \T1/fav/b/n/9 (1 Punkt) 
  []
@@ -4411,18 +4469,18 @@ Overfull \hbox (0.48553pt too wide) in paragraph at lines 5653--5656
 part XII.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 5682.
+(scrkbase)              on input line 5678.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5685.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5691.
+(hyperref)                removing `\hfill' on input line 5681.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 5722.
+(hyperref)                removing `\hfill' on input line 5687.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 5718.
 
 
 AED: lastpage setting LastPage
@@ -4431,11 +4489,11 @@ AED: lastpage setting LastPage
 ]
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     5728.
+(LaTeX3)     5724.
 
 
 LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     5728.
+(LaTeX3)     5724.
 
  (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
 
@@ -4446,9 +4504,9 @@ t' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29422 strings out of 478994
- 542537 string characters out of 5858183
- 983972 words of memory out of 5000000
+ 29424 strings out of 478994
+ 542553 string characters out of 5858183
+ 985972 words of memory out of 5000000
  45521 multiletter control sequences out of 15000+600000
  550651 words of font info for 281 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -4471,11 +4529,11 @@ type1/public/mathdesign/mdbch/md-chbma.pfb></usr/local/texlive/2021/texmf-dist/
 fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/local/texlive/2021/texmf
 -dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2021/texmf-d
 ist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (102 pages, 136
-6563 bytes).
+Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (102 pages, 138
+1211 bytes).
 PDF statistics:
- 1977 PDF objects out of 2073 (max. 8388607)
- 1758 compressed objects within 18 object streams
- 712 named destinations out of 1000 (max. 500000)
+ 1979 PDF objects out of 2073 (max. 8388607)
+ 1760 compressed objects within 18 object streams
+ 714 named destinations out of 1000 (max. 500000)
  1367 words of extra memory for PDF output out of 10000 (max. 10000000)
 
