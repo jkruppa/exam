@@ -499,6 +499,9 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(experimental_questions_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(experimental_questions_vec[2])} 
+\clearpage
+% -----------------------------------------------------------------------
 \part{Programmieren in R}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(program_questions_vec[1])} 
