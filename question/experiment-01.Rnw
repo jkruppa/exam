@@ -94,7 +94,7 @@ simple <- c("Complete randomized design (CRD)",
 rep <- c("zwei", "drei", "vier") %>% sample(1)
 
 
-ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich Hilfe in \\Rlogo zu holen. Dabei ging es um den Zusammenhang zwischen der Behandlung ", x1_val, " und dem Messwert ", y_val, ". Der Versuch wurde in ", exp, " ", ort, " durchgeführt. Nach ", betreuer, " ist der Messwert ", y_val, " normalverteilt.")) |> 
+ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich Hilfe in \\Rlogo zu holen. Dabei ging es um den Zusammenhang zwischen der Behandlung ", x1_val, " sowie ", x2_val, " und dem Messwert ", y_val, ". Der Versuch wurde in ", exp, " ", ort, " durchgeführt. Nach ", betreuer, " ist der Messwert ", y_val, " normalverteilt.")) |> 
   sample(1)
 @ 
 
@@ -112,6 +112,9 @@ Leider kennen sich \Sexpr{name} mit dem \textit{experimentelles Design} überhau
   \item Skizzieren Sie das \textit{\Sexpr{simple}} für Ihren Versuch! \textbf{(4 Punkte)}
   \item Skizzieren Sie eine Datentabelle für den Versuch mit \Sexpr{rep} Wiederholungen! \textbf{(2 Punkte)}
   \item Skizzieren Sie eine Abbildung zur Überprfüung der Annahme an Normalverteilung und Varianzhmogenität! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
+\item Erstellen Sie das statistische Modell in der in \Rlogo üblichen Schreibweise! \textbf{(2 Punkte)}
+  \item Skizzieren Sie die Datenanalyse hinsichtlich der Signifkanz für den primären Endpunkt! \textbf{(2 Punkte)}
+  \item Skizzieren Sie für den primären Endpunkt den sich ergebenden Datensatz in \Rlogo für eine ausgewählte Abbildung! \textbf{(2 Punkte)}
 \end{enumerate}
 
 
