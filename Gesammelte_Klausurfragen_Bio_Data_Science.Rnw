@@ -108,6 +108,41 @@ par_lst <- lst(year = "2024",
                naming = naming_global,
                obser = c(plant, animal) |> sample(1))
 
+attr_lst <- lst(Alex = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Jessica = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Jonas = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Mark = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Nilufar = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Paula = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Steffen = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Tina = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""),
+                Yuki = c(flaw = "", sweet = "", animal = "", sport = "",
+                         hobby = "", music = "", film = ""))
+
+
+sentence_func <- \(name, attr_vec){
+  sentence_lst <- lst(flaw = c(str_c("")) |> sample(1),
+                      sweet = c(str_c("")) |> sample(1),
+                      animal = c(str_c("")) |> sample(1),
+                      sport = c(str_c("")) |> sample(1),
+                      hobby = c(str_c("")) |> sample(1),
+                      music = c(str_c("")) |> sample(1),
+                      film = c(str_c("")) |> sample(1))
+  return(sentence_lst)
+}
+
+attr_vec <- attr_lst[[name]]
+sentence_vec <- sentence_func(name = "Alex", attr_vec) 
+sentence_vec
+sentence_vec |> sample(2)
 @ 
 % -----------------------------------------------------------------------
 \input{\Sexpr{init_path}}
