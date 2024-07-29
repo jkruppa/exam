@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (20 Punkte)}
 
 <<>>=
 name <- par_lst$naming |> sample(1)
@@ -28,17 +28,18 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
              str_c(pronom[6], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+betreuer <- c("dem Dozenten", "der Dozentin") |> sample(1)
 
 ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("ein Gewächshausexperiment",
-                       "ein Freilandversuch",
-                       "einen Versuch in einer Klimakammer",
-                       "ein Feldexperiment"),
-           tier = c("ein Stallexperiment", 
-                    "ein Kreuzungsexperiment",
-                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch",
+                    "einem Stallversuch"))[[names(obser)]] %>% 
   sample(1)
 
 x1_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
@@ -83,36 +84,28 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
-f1 <- c("Pestiziden", "Fe-Düngern", "Bodenbehandlungen", "Nützlingen",
-        "P-Düngern", "Lichtregimen", "Belüftungen") %>% sample(1)
-f1_lev <- c(3, 4) %>% sample(1)
-f2 <- c("dem Block", "dem Feld", "dem Tisch", "dem Gewächshaus", "dem Tunnel", "der Hanglage", "der Sorte", "dem Hitzestress", "dem Trockenstress") %>% sample(1)
-f2_lev <- c(3, 4) %>% sample(1)
-simple <- c("Complete randomized design (CRD)",
-            "Latin square design",
-            "Randomized complete block design (RCBD)")  %>% sample(1)
-rep <- c("zwei", "drei", "vier") %>% sample(1)
+block <- c("zwei Blöcken", "drei Blöcken") |>  sample(1)
 
+simple <- c("Split plot design oder auch Spaltanlage",
+            "Strip plot design oder auch Streifenanlage",
+            "Randomized complete block design")  %>% sample(1)
 
-ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich Hilfe in \\Rlogo zu holen. Dabei ging es um den Zusammenhang zwischen der Behandlung ", x1_val, " und dem Messwert ", y_val, ". Der Versuch wurde in ", exp, " ", ort, " durchgeführt. Nach ", betreuer, " ist der Messwert ", y_val, " normalverteilt.")) |> 
+ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich Hilfe für eine Versuchsplanung in \\Rlogo zu holen. Dabei geht es um den Zusammenhang zwischen der Behandlung ", x1_val, " sowie ", x2_val, " sowie ", block ," und dem Messwert ", y_val, " in ", obser, ". Der Versuch soll in ", exp, " ", ort, " durchgeführt werden. Nach ", betreuer, " ist der Messwert ", y_val, " normalverteilt. Die beiden entschieden sich für ein faktorielles Versuchsdesign. Im ersten Schritt überlegt ", name, " ein komplexeres experimentelles Design zu probieren. Daher entscheiden sich alle drei für ein \\textit{", simple, "} mit Berücksichtigung einer Interaktion. Das sollte für den anfang erstmal reichen. 'Und jetzt, was machen wir jetzt?', ", name_sec[2], " schaut die anderen beiden mit großen Augen an. Die zucken mit der Schulter.")) |> 
   sample(1)
 @ 
 
-\Sexpr{ques_vec}
+\Sexpr{ques_vec}\\
 
-Nach einem erfolgreichen Pilotversuch zur Wirksamkeit von \Sexpr{f1} bei \Sexpr{obser} in \Sexpr{exp} wollen Sie nun den Versuch eine Nummer größer anlegen. Dafür entscheiden Sie sich für ein faktorielles Versuchsdesign. In Ihrem Hauptversuch stellt die Wirksamkeit von \Sexpr{f1} den ersten Faktor mit insgesamt \Sexpr{f1_lev} Leveln dar. Der zweite Faktor mit \Sexpr{f2} beinhaltet \Sexpr{f2_lev} Level. \\
-
-Im ersten Schritt überlegen Sie ein einfaches experimentelles Design zu probieren. Sie entscheiden sich für das \textit{\Sexpr{simple}}.
-
-Leider kennen sich \Sexpr{name} mit dem \textit{experimentelles Design} überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+Leider kennen sich \Sexpr{name}, \Sexpr{name_sec[1]} und \Sexpr{name_sec[2]} mit dem \textit{\Sexpr{simple}} überhaupt nicht aus. Deshalb brauchen die Drei bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \setcounter{enumi}{0}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Skizzieren Sie das \textit{\Sexpr{simple}} für Ihren Versuch! \textbf{(4 Punkte)}
-  \item Skizzieren Sie eine Datentabelle für den Versuch mit \Sexpr{rep} Wiederholungen! \textbf{(2 Punkte)}
-  \item Skizzieren Sie eine Abbildung zur Überprfüung der Annahme an Normalverteilung und Varianzhmogenität! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
+  \item Formulieren Sie die statistische Hypothesenpaare! \textbf{(2 Punkte)}
+  \item Skizzieren Sie das faktorielle Versuchsdesign! \textbf{(3 Punkte)}
+  \item Skizzieren Sie eine Datentabelle für das faktorielle Versuchsdesign in \Rlogo! \textbf{(2 Punkte)}
+  \item Erstellen Sie das statistische Modell in der in \Rlogo üblichen Schreibweise für eine ANOVA! Skizzieren Sie die notwendige Funktionen in \Rlogo! \textbf{(4 Punkte)}
+  \item Skizzieren Sie die weitere Datenanalyse hinsichtlich eines multiplen Gruppenvergleiches! \textbf{(2 Punkte)}
+  \item Skizzieren Sie eine mögliche Abbildung im Kontext der wissenschaftlichen Fragestellung! Beschriften Sie die Abbildung! \textbf{(3 Punkte)}
+  \item Ergänzen Sie zu der Abbildung ein mögliches Ergebnis des multiplen Gruppenvergleichs! Welche Annahme hinsichtlich der Modellierung haben Sie getroffen? Begründen Sie Ihre Antwort! \textbf{(3 Punkte)}
 \end{enumerate}
-
-
-
