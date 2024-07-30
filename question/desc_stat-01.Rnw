@@ -21,8 +21,10 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer"),
-              er = c("seinem", "seiner"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[2], " Betreuer")) |> sample(1)
@@ -57,9 +59,11 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
-ques_vec <- c(str_c("Anschauen, was andere vor einem gemacht haben, ist eine Möglichkeit schnell ans Ziel zu gelangen. ", name, " soll in ", project, " ", plant, " untersuchen. Die Behandlung in ", project, " werden verschiedene ", type, " sein. Erheben wird ", name, " als ", outcome_name, " \\textit{", outcome, "} benannt als ", "\\textit{", names(outcome), "} in ", pronom[2], " Exceldatei. Von ", betreuer, " erhält ", names(name), " nun folgende Abbildung von Barplots, die ", names(name), " erstmal zur Übung nachbauen soll, bevor ", names(name), " mit dem eigentlichen Versuch beginnt."),
-              str_c(name, " steht vor einem ersten Problem, denn wenn es nach ", betreuer, " geht, soll ", names(name), " in einem ", exp, " ", plant, " auswertet. Soweit eigentlich alles passend. Die Behandlung werden verschiedene ", type, " sein. In ", pronom[2], " Exceldatei wird ", names(name), " den ", outcome_name, " \\textit{", outcome, "} als ", "\\textit{", names(outcome), "} aufnehmen. Vorab soll ", name, " aber eimal die folgenden Barplots ", betreuer, " nachbauen, damit ", names(name), " den \\Rlogo Code schonmal für später vorliegen hat. Damit geht das Problem schon los."),
-              str_c("Barplots sind bedeutend in der Darstellung von wissenschaftlichen Ergebnissen. Leider hat sich ", name, " nicht gemerkt, welche statistischen Maßzahlen für einen Barplot erhoben werden müssen. Das ist in soweit doof, da nach ", betreuer, " erstmal ein Barplot nachgebaut werden soll, bevor es mit ", project, " losgeht. Dann hat ", names(name), " schonmal den \\Rlogo Code vorliegen und nachher geht dann alles schneller. Die Behandlung für ", plant, " werden verschiedene ", type, " sein. Erfasst wird als ", outcome_name, " \\textit{", outcome, "}. ", name, " soll dann \\textit{", names(outcome), "} in ", pronom[2], " Exceldatei eintragen.")) |> sample(1)
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]]) 
+
+ques_vec <- c(str_c(sentence_name_vec$flaw, " Deshalb gilt anschauen, was andere vor einem gemacht haben. Für ", name, " ist es eine Möglichkeit schneller ans Ziel zu gelangen. ", name, " soll in ", project, " ", plant, " untersuchen. Die Behandlung in ", project, " werden verschiedene ", type, " sein. Erheben wird ", name, " als ", outcome_name, " \\textit{", outcome, "} benannt als ", "\\textit{", names(outcome), "} in ", pronom[2], " Exceldatei. Von ", betreuer, " erhält ", names(name), " nun folgende Abbildung von Barplots, die ", names(name), " erstmal zur Übung nachbauen soll, bevor ", names(name), " mit dem eigentlichen Versuch beginnt."),
+              str_c(name, " steht vor einem ersten Problem, denn wenn es nach ", betreuer, " geht, soll ", names(name), " in einem ", exp, " ", plant, " auswertet. Soweit eigentlich alles passend. Besser wäre was anderes gewesen. ", sentence_name_vec$hobby, " Das heißt erstmal überlegen für ", name, ". ", sentence_name_vec$sweet_music, " Die Behandlung werden verschiedene ", type, " sein. In ", pronom[2], " Exceldatei wird ", names(name), " den ", outcome_name, " \\textit{", outcome, "} als ", "\\textit{", names(outcome), "} aufnehmen. Vorab soll ", name, " aber eimal die folgenden Barplots ", betreuer, " nachbauen, damit ", names(name), " den \\Rlogo Code schonmal für später vorliegen hat. Damit geht das Problem schon los. ", sentence_name_vec$flaw),
+              str_c("Barplots sind bedeutend in der Darstellung von wissenschaftlichen Ergebnissen. Leider hat sich ", name, " nicht gemerkt, welche statistischen Maßzahlen für einen Barplot erhoben werden müssen. Besser wäre was anderes gewesen. ", sentence_name_vec$hobby, " Das ist in soweit doof, da nach ", betreuer, " erstmal ein Barplot nachgebaut werden soll, bevor es mit ", project, " losgeht. Dann hat ", names(name), " schonmal den \\Rlogo Code vorliegen und nachher geht dann alles schneller. Na dann mal los. ", name, " schafft sich die nötige Stimmung. ", sentence_name_vec$animal_music, " In der Behandlung für ", plant, " werden verschiedene ", type, " sein. Erfasst wird als ", outcome_name, " \\textit{", outcome, "}. ", name, " soll dann \\textit{", names(outcome), "} in ", pronom[2], " Exceldatei eintragen.")) |> sample(1)
 
 @ 
 
