@@ -23,8 +23,10 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
-              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
@@ -56,9 +58,9 @@ lim_word <- c("gleich oder mehr", "mehr") %>% sample(1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]]) 
 
-ques_vec <- c(str_c(name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, "."), 
-              str_c("In einem Gespräch mit ", betreuer, " wird ", name, " gebeten seine Daten aus ", exp, " mit ", obser, " in einem Histogramm darzustellen. In ", pronom[1], " Experiment hat er ",  cnt, " erst fotographiert und dann ausgezählt. Laut ", betreuer, " soll das Histogramm helfen, die Verteilung der ", cnt, " zu bestimmen."),
-              str_c("In ", project, " möchte ", name, " gerne die Daten aus ", exp, " mit ", obser, " in einem Histogramm darstellen. Das Histogramm erlaubt ", pronom[4], " dabei Rückschlüsse auf die Verteilung über ", outcome_name, " zu treffen. In seinem Experiment hat ", name, " ",  cnt, " gezählt.")) |> 
+ques_vec <- c(str_c(sentence_name_vec$sweet_music, " ", name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ". Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music), 
+              str_c("In einem Gespräch mit ", betreuer, " wird ", name, " gebeten seine Daten aus ", exp, " mit ", obser, " in einem Histogramm darzustellen. ", sentence_name_vec$sweet_music, " In ", pronom[1], " Experiment hat er ",  cnt, " erst fotographiert und dann ausgezählt. Laut ", betreuer, " soll das Histogramm helfen, die Verteilung der ", cnt, " zu bestimmen. Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music),
+              str_c("In ", project, " möchte ", name, " gerne die Daten aus ", exp, " mit ", obser, " in einem Histogramm darstellen. Das Histogramm erlaubt ", pronom[4], " dabei Rückschlüsse auf die Verteilung über ", outcome_name, " zu treffen. ", sentence_name_vec$sweet_music, " In seinem Experiment hat ", name, " ",  cnt, " gezählt. Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music)) |> 
   sample(1)
 
 @

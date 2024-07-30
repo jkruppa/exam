@@ -85,7 +85,7 @@ ques_long_1 <- c(str_c("Wie ist noch gleich die Reihenfolge der Funktionen für 
 
 ques_long_2 <- c(str_c("Okay, und für was brauche ich nochmal die R Pakete  \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\}}? \\textbf{(2 Punkte)}"),
                  str_c("Die R Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\}} sind für was nochmal gut? \\textbf{(2 Punkte)}"),
-                 str_c("Warum wurden jeweils die R Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\} geladen? \\textbf{(2 Punkte)}")) |> 
+                 str_c("Warum wurden jeweils die R Pakete \\texttt{\\{emmeans\\}}, \\texttt{\\{ggplot\\}} und \\texttt{\\{readxl\\}} geladen? \\textbf{(2 Punkte)}")) |> 
   sample(1)
 
 ques_long_3 <- c(str_c("Ich will das R Paket \\texttt{\\{ggplot\\}} nutzen, da war so eine Analogie an die ich mich nicht erinnern kann. Was war noch gleich das Prinzip von \\texttt{\\{ggplot\\}}? Wie funktioniert \\texttt{\\{ggplot\\}} konzeptionell? \\textbf{(2 Punkte)}"),
