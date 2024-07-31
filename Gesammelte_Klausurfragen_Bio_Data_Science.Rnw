@@ -115,7 +115,7 @@ attr_lst <- lst(Alex = lst(flaw = "das Aufstehen", sweet = "Gummibärchen", anim
                          hobby = "Warhammer", music = "David Bowie", film = "Herr der Ringe"),
                 Jonas = lst(flaw = "die Unpünktlichkeit", sweet = "Werther's Popcorn", animal = "das Meerschweinchen", sport = "zu Schwimmen",
                          hobby = "Stricken", music = "Iron Maiden", film = "Mission Impossible"),
-                Mark = lst(flaw = "die Angst", sweet = "Marzipankugeln", animal = "der Hamster", sport = "zu Reiten",
+                Mark = lst(flaw = "der Suff", sweet = "Marzipankugeln", animal = "der Hamster", sport = "zu Reiten",
                          hobby = "Geocaching", music = "Andrea Berg", film = "Columbo"),
                 Nilufar = lst(flaw = "die Erwartung", sweet = "Takis Blue Heat", animal = "das Huhn", sport = "zu Kicken",
                          hobby = "Blasmusik", music = "Deichkind", film = "Star Trek"),
@@ -123,7 +123,7 @@ attr_lst <- lst(Alex = lst(flaw = "das Aufstehen", sweet = "Gummibärchen", anim
                          hobby = "Harry Potter", music = "White Lies", film = "Jagd auf roter Oktober"),
                 Steffen = lst(flaw = "die innere Leere", sweet = "Oreos", animal = "der Leguan", sport = "zu Ringen",
                          hobby = "Klemmbausteine", music = "Taylor Swift", film = "Harry Potter"),
-                Tina = lst(flaw = "die Vergesslichkeit", sweet = "Katjes", animal = "die Spinne", sport = "zu Boxen",
+                Tina = lst(flaw = "die Wut", sweet = "Katjes", animal = "die Spinne", sport = "zu Boxen",
                          hobby = "Astronomie", music = "Tocotronic", film = "Indiana Jones"),
                 Yuki = lst(flaw = "die Faulheit", sweet = "Reese's Peanut Butter Cups", animal = "das Minischwein", sport = "zu Boldern",
                          hobby = "Orchideen", music = "London Grammar", film = "Matrix"))
@@ -131,10 +131,10 @@ attr_lst <- lst(Alex = lst(flaw = "das Aufstehen", sweet = "Gummibärchen", anim
 
 sentence_func <- \(name, pronom, attr_vec){
   sentence_lst <- lst(flaw = c(str_c(name, " und ", attr_vec$flaw ,", eine unendliche Geschichte mit kniffeligen Wendungen."),
-                               str_c("Eine echte Herausforderung für ", pronom[5] ," war schon immer ", attr_vec$flaw ,". Ein leidiges Lied."),
+                               str_c("Eine echte Herausforderung für ", pronom[5] ," war schon immer ", attr_vec$flaw ," gewesen. Ein leidiges Lied."),
                                str_c("Wenn ", attr_vec$flaw ," nicht wäre, ja dann wäre wohl vieles möglich für ", name ,"! Aber so...")) |> sample(1),
                       sweet_music = c(str_c(name, " schmeißt noch eine Handvoll ", attr_vec$sweet ," in ", pronom[3] ," Rachen. Im Hintergrund klirrt leise der Spiegel zum Sound von ", attr_vec$music ,"."),
-                                      str_c("Hm..., ", attr_vec$sweet ," und ", attr_vec$music ,". Das ist und bleibt die beste Kombination zum Nachdenken für ", name ,"."),
+                                      str_c("'Hm...', ", attr_vec$sweet ," und ", attr_vec$music ,". Das ist und bleibt die beste Kombination zum Nachdenken für ", name ,"."),
                                       str_c("Aus den Boxen wummert ", attr_vec$music ," und ", pronom[7] ," Mund ist verklebt von ", attr_vec$sweet ,". 'Herrlich', denkt ", name ,".")) |> sample(1),
                       animal_music = c(str_c(name, " streichelt liebevoll ", attr_vec$animal ,". Der Kopf ist in ", pronom[1] ," Schloß vergraben um den Klang von ", attr_vec$music ," zu dämpfen."),
                                        str_c("Wenn ", attr_vec$music ," ertönt, dann sucht ", attr_vec$animal ," schleunigst Schutz unter dem Sofa. ", name ," schüttelt den Kopf."),

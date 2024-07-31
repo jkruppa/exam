@@ -24,8 +24,10 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 
 <<>>=
 
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
-              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[3], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
@@ -91,6 +93,7 @@ hypo <- c("Formulieren Sie die wissenschaftliche Fragestellung!",
           "Formulieren Sie das statistische Hypothesenpaar!") |> 
   sample(1)
 
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]]) 
 
 ques_vec <- c(str_c("Der t-Test. ", name, " erschaudert. Ein mächtiges Werkzeug in den Händen desjenigen, der ", outcome_name, " hat. Aber erstmal überhaupt den t-Test rechnen können. Wie sah das Experiment von ", name, " überhaupt aus? ", name, " hat ", exp, " mit ", obser, " durchgeführt um eine neue technische Versuchsanlage zu testen. Bei dem Pilotexperiment mit sehr geringer Fallzahl $(n_1 = n_2 = 3)$ wurde die Behandlung ", x_val, " an den ", obser, " getestet und dabei wurde geschaut, ob der Versuch überhaupt technisch klappen könnte. Gemessen hat ", name, " dann als Messwert ", y_val, ". Warum der Versuch ", ort, " für ", project, " stattfinden musste, ist ", pronom[4], " bis heute ein Rätsel. Egal. Gibt es jetzt einen Zusammenhang zwischen der Behandlung und ", y_val, "?"),
               str_c(name, " ist ", ort, " für einen Pilotexperiment mit sehr geringer Fallzahl $(n_1 = n_2 = 3)$ mit ", obser, ". Allein diese Tatsache ist für ", pronom[5], " eine Erzählung wert. Für ", project, " musste ", names(name), " ", exp, " mit ", obser, " durchführen und das sollte laut ", betreuer, " an diesem Ort besonders gut gelingen, da man hier gut neue technische Anlagen und Behandlungen fernab der Bevölkerung testen könne. Zeugen gibt es hier jedenfalls keine. Gar keine. Alleine sein hilft jetzt aber nur bedingt, denn ", pronom[6], " Behandlung ", x_val, " und der Messwert ", y_val, " sollen mit einem t-Test ausgewertet werden. Immerhin weiß ", names(name), ", dass ", pronom[7], " Messwert einer Normalverteilung folgt. "),
