@@ -1,16 +1,100 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/ZrJhn2wPbq4}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/ZrJhn2wPbq4}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
 
-n <- c(2,3,4) %>%
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c("einer Abschlussarbeit"), str_c("einem Projektbericht"),
+             str_c("einer Hausarbeit")) |> sample(1)
+betreuer <- c(str_c("der Betreuerin"), str_c("des Betreuers")) |> sample(1)
+outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
+
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngung ($vorher$ und $nachher$)",
+                         "Beschattung ($7d$ und $14d$)",
+                         "Ausgeizen ($ctrl$ und $28d$)",
+                         "Jäten ($Aussaat$ und $Ernte$)"),
+           tier = c("Ernährungszusatz ($ohne$ und $14d$)", 
+                    "Flüssignahrung ($1l/d$ und $5l/d$)",
+                    "Genotypisierung ($0d$ und $14d$)",
+                    "Bestandsdichte ($hoch$ und $niedrig$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(4, 6, 8, 10) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = 9, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 1)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather |> 
+    mutate(ID = 1:9)
+  return(temp_tbl)
+}
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+ques_vec <- c(str_c(name, " und ", attr_name_vec$flaw, " machen die Sache mit dem Studium nicht einfacher. Immerhin ist noch ", name_sec, " zur Hilfe mit dabei. ", name_sec, " hat ", attr_name_vec$sweet, " mitgebracht und ", attr_name_vec$music, " aufgedreht. Das ist immerhin eine Ablenkung. Nicht so gut wie ", attr_name_vec$hobby, ", aber immerhin etwas. Jetzt sollen die beiden diese komische Aufgabe lösen. Es geht um verschiedene Normalverteilungen. Anscheinend hängen Normalverteilungen vom Mittelwert $\\bar{y}$ und der Standardabweichung $s$ ab. 'Wozu brauchen wir nochmal Normalverteilungen?', entfährt es ", name, ". Durch das Mampfen von ", name_sec, " versteht ", names(name), " kein Wort der Antwort. ", name_sec, " lächelt.")) |> 
+  sample(1)
+@
+
+\Sexpr{ques_vec}\\
+
+<<>>=
+
+n <- c(2, 3, 4) %>%
+  set_names("zwei", "drei", "vier") |> 
   sample(1)
 
 sd_vec <- str_c(rep("s_", times = n), 1:n, collapse = sample(c(" = ", " \\neq "), 1))
@@ -20,15 +104,14 @@ mu_vec <- str_c(rep("\\bar{y}_", times = n), 1:n, collapse = " \\neq ")
 
 @
 
+Jetzt brauchen \Sexpr{name} und \Sexpr{name_sec} Ihre Hilfe bei der Abschätzung einer Verteilung um ihre Arbeit dann in diesem Semester noch abschließen zu können.
+
 \begin{enumerate}
-\item Skizieren Sie $\Sexpr{n}$ Normalverteilungen \textit{in einer
-    Abbildung} mit $\Sexpr{mu_vec}$ und $\Sexpr{sd_vec}$! \textbf{(3 Punkte)}
-\item Beschriften Sie die Normalverteilungen mit den entsprechenden
-  Parametern! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie die Bereiche in der 68\% und 95\% der Beobachtungen
-  fallen! Beschriften Sie die Grenzen der Bereiche mit der statistischen Ma{\ss}zahl! \textbf{(2 Punkte)}
-\item Liegt Varianzhomogenit{\"a}t oder Varianzheterogenit{\"a}t vor? Begr{\"u}nden Sie
-  Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizzieren Sie \Sexpr{names(n)} Normalverteilungen mit $\Sexpr{mu_vec}$ und $\Sexpr{sd_vec}$! \textbf{(3 Punkte)}
+\item Beschriften Sie die Normalverteilungen mit den statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Liegt Varianzhomogenität oder Varianzheterogenität vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item In welchen Bereich fallen 68\% bzw. 95\% der Beobachtungen in einer Normalverteilung? Ergänzen Sie die Bereiche in \underline{einer} Normalverteilung! \textbf{(2 Punkte)}
+\item Ergänzen Sie unter \underline{einer} der Normalverteilungen den entsprechenden Boxplot! \textbf{(1 Punkt)}
 \end{enumerate}
 
 

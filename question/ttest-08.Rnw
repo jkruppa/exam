@@ -81,6 +81,10 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
 ques_vec <- c(str_c("Alles voll mit ", obser, ". Aber das haben ", name, " und ", name_sec, " eben gemeinsam in ", project, " gemacht! Worum ging es aber konkret? Beide haben als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten haben beide zusammen in ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, " eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden. Leider kennen sich beide nicht sehr gut in \\Rlogo aus."),
               str_c(name, " und ", name_sec, " haben sich dazu entschieden zusammenzuarbeiten. Das sollte alles etwas einfacher machen. Jeder hat zwar ein getrenntes Themenfeld aber den Hauptversuch machen beide gemeinsam. Das hat sich schonmal als gut Idee soweit herausgestellt. In ", project, " sollen beide herausfinden, ob es einen Zusammenhang zwischen ", x_val, " und ", y_val, " gibt. Die Besonderheit ist hierbei, dass die Messungen an der gleichen Beobachtung stattfinden. Beide messen also zweimal an den gleichen ", obser, ". Hier muss dann wohl auf ", outcome_name, " ein gepaarter t-Test gerechnet werden. Leider kennen sich beide nicht sehr gut in \\Rlogo aus."),
               str_c("Es gibt ja immer die Möglichkeit sich Hilfe zu holen. Das geht natürlich auch immer in ", project, ". Deshalb arbeiten ", name, " und ", name_sec, " gemeinsam an ", project, ". Das macht dann auch die Analyse ihres Hauptversuches einfacher. Zwar hat jeder von ihnen noch ein Subthema, aber auch da kann man sich ja helfen. In dem Hauptversuch wurde Folgendes von den beiden gemacht. ", name, " und ", name_sec, " haben sich ", obser, " angeschaut. Dabei geht um Zusammenhang zwischen ", x_val, " und ", y_val, ". Jetzt sollen beide einen gepaarten t-Test rechnen. Leider kennen sich beide nicht sehr gut in \\Rlogo aus.")) |> 

@@ -1,29 +1,98 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Op-gjzASH9I}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/Op-gjzASH9I}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
-sd_range <- c("$\\pm 2s$", "$\\pm 1s$") %>% sample(1)
-@ 
 
-\begin{enumerate}
-\item Zeichnen Sie {\"u}ber die untenstehenden Boxplots die entsprechende
-  zugeh{\"o}rige Verteilung! \textbf{(3 Punkte)} 
-\item Zeichnen Sie unter die untenstehenden Boxplots die entsprechende
-  zugeh{\"o}rige Beobachtungen als Stiche! \textbf{(3 Punkte)}
-\item Wieviel Prozent der Beobachtungen fallen in das IQR? Erg{\"a}nzen Sie die
-  Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
-\item Wieviel Prozent der Beobachtungen fallen in \Sexpr{sd_range} unter
-  der Annahme einer Normalverteilung?  \textit{Wenn m{\"o}glich}, erg{\"a}nzen Sie
-  die Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
-\end{enumerate}
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c("einer Abschlussarbeit"), str_c("einem Projektbericht"),
+             str_c("einer Hausarbeit")) |> sample(1)
+betreuer <- c(str_c("der Betreuerin"), str_c("des Betreuers")) |> sample(1)
+outcome_name <- c("ein normalverteiltes Outcome ($Y$)", "einen normalverteilten Endpunkt ($Y$)", "einen normalverteilten Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+ort_2 <- c("Die Uckermark", "Das Oldenburger Land", "Der Teuteburgerwald", "Das Emsland", "Das Wendland") |> sample(1)
 
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("Düngung ($vorher$ und $nachher$)",
+                         "Beschattung ($7d$ und $14d$)",
+                         "Ausgeizen ($ctrl$ und $28d$)",
+                         "Jäten ($Aussaat$ und $Ernte$)"),
+           tier = c("Ernährungszusatz ($ohne$ und $14d$)", 
+                    "Flüssignahrung ($1l/d$ und $5l/d$)",
+                    "Genotypisierung ($0d$ und $14d$)",
+                    "Bestandsdichte ($hoch$ und $niedrig$)"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+groups_vec <- x_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "")
+gen_data <- function(...){
+  mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
+  sd_vec <- c(4, 6, 8, 10) %>% sample(1)
+  temp_tbl <- tibble(temp = rnorm(n = 9, mean = mean_vec, sd = sd_vec)) %>%
+    mutate(temp = round(temp, 1)) %>% 
+    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
+    gather |> 
+    mutate(ID = 1:9)
+  return(temp_tbl)
+}
+
+footnote_str <- c("\\footnote{Oschmann, A. (2024) Mädchen stärken: Stärken fördern, Selbstwert erhöhen und liebevoll durch Krisen begleiten. Goldegg Verlag}")
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+ques_vec <- c(str_c("'Was soll das denn jetzt schon wieder sein? Drei Boxplot, die auf der Seite liegen?', entfährt es ", name, " und schaut dabei ", name_sec, " an. 'Keine Ahnung. Es ist bestimmt wieder so ein Lernziel mit der Verteilung und so.', meint ", name_sec, " sichtlich genervt und mampft noch ein paar ", attr_name_sec1_vec$sweet, ". 'Du weißt doch wie es heißt, \\textit{Frei ist, wer missfallen kann.}", footnote_str, "', merkt ", name, " nickend an. Die beiden schauen angestrengt auf die drei Boxplots. Das Ziel ist es zu verstehen, wie eine Verteilung anhand eines Boxplots bewertet werden kann. ", name_sec, " und ", attr_name_vec$flaw, " machen die Sache nicht einfacher.")) |> 
+  sample(1)
+
+@
+
+\Sexpr{ques_vec}
 
 <<desc-stat-11, results='asis', echo = FALSE, fig.height = 6, fig.width = 10, fig.align = "center", message = FALSE>>=
 data_tbl <- lst(a = tibble(value = rexp(20, 2)),
@@ -44,4 +113,11 @@ ggplot(data_tbl, aes(1, value)) +
         strip.text.x = element_blank())
 @ 
 
+Jetzt brauchen \Sexpr{name} und \Sexpr{name_sec} Ihre Hilfe bei der Abschätzung einer Verteilung anhand von Boxplots um ihre Arbeit dann in diesem Semester noch abschließen zu können.
 
+\begin{enumerate}
+\item Zeichnen Sie über die Boxplots die entsprechende zugehörige Verteilung! \textbf{(3 Punkte)} 
+\item Zeichnen Sie unter die Boxplots die entsprechende zugehörige Beobachtungen als Stiche! \textbf{(3 Punkte)}
+\item Wie viel Prozent der Beobachtungen fallen in das IQR? Ergänzen Sie die Abbildung entsprechend um den Bereich! \textbf{(2 Punkte)}
+\item Wie viel Prozent der Beobachtungen fallen in $\bar{y} \pm 1s$ und $\bar{y} \pm 2s$  unter der Annahme einer Normalverteilung? \textbf{(2 Punkte)}
+\end{enumerate}

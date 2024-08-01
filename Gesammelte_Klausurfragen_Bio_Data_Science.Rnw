@@ -109,7 +109,7 @@ par_lst <- lst(year = "2024",
                obser = c(plant, animal) |> sample(1))
 
 ## Monster des Alltags
-attr_lst <- lst(Alex = lst(flaw = "das Aufstehen", sweet = "Gummibärchen", animal = "die Katze", sport = "zu Laufen",
+attr_lst <- lst(Alex = lst(flaw = "die Gefälligkeit", sweet = "Gummibärchen", animal = "die Katze", sport = "zu Laufen",
                          hobby = "Starcraft", music = "Abba", film = "Alien"),
                 Jessica = lst(flaw = "der Mangel", sweet = "Schokobons", animal = "der Hund", sport = "Rad zu fahren",
                          hobby = "Warhammer", music = "David Bowie", film = "Herr der Ringe"),
@@ -149,7 +149,7 @@ sentence_func <- \(name, pronom, attr_vec){
                                      str_c("Auf seinem Second Screen läuft ", attr_vec$film ," und ", name ," schaufelt ", attr_vec$sweet ,". Nicht effizient, aber gut."),
                                      str_c("Schon dutzende Male gesehen: ", attr_vec$film ,". Aber immer noch großartig zusammen mit ", attr_vec$sweet ,".")) |> sample(1),
                       animal_film = c(str_c("Das Verrückte ist, dass ", attr_vec$animal ," ", attr_vec$film ," wirklich liebt. Das ist ", name ," sehr recht, denn ", names(name) ," braucht Entspannung."),
-                                      str_c("Wenn ", attr_vec$film ," läuft, dann findet ", name ," ", attr_vec$animal ," nicht mehr. Aber jetzt braucht ", names(name) ," mal Entspannung!"),
+                                      str_c("Wenn ", attr_vec$film ," läuft, dann ist ", attr_vec$animal ," nicht mehr da. Aber jetzt braucht ", names(name) ," mal Entspannung!"),
                                       str_c("Irgendwie komisch, wenn ", names(name) ," ", attr_vec$film ," anmacht, dann ist ", attr_vec$animal ," eigentlich sofort vor dem Bildschirm und starrt hinein.")) |> sample(1))
   return(sentence_lst)
 }
@@ -403,9 +403,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(desc_stat_questions_vec[11])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[12])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Statistisches Testen \& statistische Testtheorie}

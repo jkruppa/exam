@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -19,7 +19,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/MiD42k4l5Ag}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/oMdtYbDInYE}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{1ex}
 %% --------------------------------------------------------------------
@@ -85,48 +85,26 @@ sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-mean_vec <- c(0, 1, 2, 3, 4) %>%
-  sample(2)
-
-sd_vec <- c(0.5^2, 1^2, 2^2, 3^2) %>%
-  sample(2, replace = TRUE)
-
-lambda_vec <- c(sample(c(1,2,3), 1), sample(c(15, 20, 25), 1)) %>% sample()
-
-
-ques_vec <- c(str_c("'Was sollen wir hier dann noch zeichnen?!', entfährt es ", name, " und schaut dabei ", name_sec, " an. 'Wir sollen eine Normalverteilung mit einem Mittelwert von $\\bar{y}_1 = ", mean_vec[1], "$ und einer Standardabweichung von $s_1 = ", sd_vec[1], "$ zeichnen. Sowie eine weitere Normalverteilung mit einem Mittelwert von $\\bar{y}_2 = ", mean_vec[2], "$ und einer Standardabweichung von $s_2 = ", sd_vec[1], "$. Keine Ahnung wie das geht. Darunter sollen dann noch eine Poissonverteilung mit einem Mittelwert von $\\lambda_1 = ", lambda_vec[1], "$ sowie einer weiteren Poissonverteilung mit einem Mittelwert von $\\lambda_2 = ", lambda_vec[2], "$ gezeichnet werden.', meint ", name_sec, " sichtlich genervt und mampft noch ein paar ", attr_name_sec1_vec$sweet, ". Im Hintergrund spielt leise ", attr_name_sec1_vec$music, ". 'Wirre Geschichte...', merkt ", name, " nickend an. Die beiden schauen angestrengt auf die leeren Flächen für die Abbildungen. ", name_sec, " und ", attr_name_vec$flaw, " machen die Suche nach der Lösung nicht einfacher.")) |> 
+ques_vec <- c(str_c("foo")) |> 
   sample(1)
+
 @
 
-\Sexpr{ques_vec}\\
+\Sexpr{ques_vec}
 
-
-<<histogram-01, results='asis', echo = FALSE, fig.height = 4.5, fig.width = 7, fig.align = "center", message = FALSE>>=
-
-df <- data.frame()
-p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  # xlab("Y") + ylab("H{\"a}ufigkeit") +
-  ggtitle("Zwei Normalverteilungen") + 
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  # xlab("Y") + ylab("H{\"a}ufigkeit") +
-  ggtitle("Zwei Poissonverteilungen") + 
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-grid.arrange(p1, p3, nrow = 2)
-@
-
-Jetzt brauchen \Sexpr{name} und \Sexpr{name_sec} Ihre Hilfe bei der Abschätzung einer Verteilung um ihre Arbeit dann in diesem Semester noch abschließen zu können.
-
+Sie haben folgende Zahlenreihe $y$ vorliegen $y = \{\Sexpr{round(rnorm(n = sample(c(5,6,7), 1), mean = sample(c(15, 17, 19), 1), sd = sample(c(2, 3, 4), 1)))}\}$.
 
 \begin{enumerate}
-\item Skizzieren Sie die zwei Normalverteilungen und zwei Poissonverteilungen! \textbf{(4 Punkte)}
-\item Achten Sie auf die entsprechende Skalierung in den jeweiligen Abbildungen! \textbf{(2 Punkte)}
-\item Ergänzen Sie unter \underline{einer} Normalverteilung den entsprechenden Boxplot! \textbf{(1 Punkt)}
-\item Ergänzen Sie unter \underline{einer} Poissonverteilung den entsprechenden Boxplot! \textbf{(1 Punkt)}
-\item Geben Sie ein Beispiel für ein Outcome $y$, welches einer Normalverteilung folgt! \textbf{(1 Punkt)}
-\item Geben Sie ein Beispiel für ein Outcome $y$, welches einer Poissonverteilung folgt! \textbf{(1 Punkt)}
+\item Visualisieren Sie den Mittelwert von $y$ in der untenstehenden Abbildung! \textbf{(4 Punkte)}
+\item Beschriften Sie die $Y$ und $X$-Achse entsprechend! \textbf{(2 Punkte)}
+\item Für die Berechnung der Varianz wird der Abstand der einzelnen Werte $y_i$ zum Mittelwert $\bar{y}$ quadriert. Warum muss der Abstand, $y_i - \bar{y}$, in der Varianzformel quadriert werden? Erklären Sie den Zusammenhang unter Berücksichtigung der Abbildung! \textbf{(2 Punkte)}  
 \end{enumerate}
+
+<<desc-01, results='asis', echo = FALSE, fig.height = 6, fig.width = 6, fig.align = "center", message = FALSE>>=
+df <- data.frame()
+ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
+  xlab("") + ylab("") +
+  theme_minimal() + theme(
+  axis.text.x = element_blank(),
+  axis.text.y = element_blank())
+@
