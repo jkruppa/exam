@@ -27,7 +27,10 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
              str_c(pronom[6], " Hausarbeit")) |> sample(1)
+project_2 <- c("einer Abschlussarbeit", "eines Projektberichts", "einer Hausarbeit") |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+
+
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -83,7 +86,7 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. ", name, " schaut konzentriert auf die Formeln der ANOVA und des t-Tests. In ", pronom[1], " Experiment wurde als Messwert ", y_val, " bestimmt. ", sentence_name_vec$flaw, " Dann wäre es nicht noch komplizierter. Was war da jetzt nochmal der Zusammenhang zwischen den beiden statistischen Verfahren? Beide Verfahren haben ja irgendwie etwas miteinander zu tun und ", betreuer, " möchte das jetzt auch noch verstehen. Muss das nicht eigentlich klar sein? Immerhin ist ", name, " nicht die erste Betreuung. Immerhin hat ", names(name), " die beiden Formeln vorliegen. ", sentence_name_vec$sweet_film, "")) |> 
+ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. ", name, " schaut konzentriert auf die Formeln der ANOVA und des t-Tests. In ", pronom[1], " Experiment wurde als Messwert ", y_val, " bestimmt. ", sentence_name_vec$flaw, " Dann wäre es nicht noch komplizierter. Was war da jetzt nochmal der Zusammenhang zwischen den beiden statistischen Verfahren? Beide Verfahren haben ja irgendwie etwas miteinander zu tun und ", betreuer, " möchte das jetzt auch noch verstehen. Muss das nicht eigentlich klar sein? Immerhin ist ", name, " nicht die erste Betreuung ", project_2, ". Immerhin hat ", names(name), " die beiden Formeln vorliegen. ", sentence_name_vec$sweet_film, "")) |> 
   sample(1)
 
 @ 
@@ -102,10 +105,11 @@ Leider kennen sich \Sexpr{name} mit dem Zusammenhang zwischen der ANOVA und dem 
 
 \begin{enumerate}
 \item Was testet der t-Test und was testet die ANOVA? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erklären Sie den konzeptionellen Zusammenhang zwischen der Berechnung der $F_{D}$ Statistik und $T_{D}$ Statistik! \textbf{(3 Punkte)}
-\item Visualisieren Sie eine nicht signifikante $F_{D}$ Statistik sowie eine signifikante $F_{D}$ Statistik anhand von $MS_{treatment}$ und $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(3 Punkte)}
-\item Nennen Sie das Minimum der F-Statistik! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Wenn die F-Statistik minimal ist, welche Aussage erhalten Sie über die Nullhypothese? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie den Zusammenhang zwischen der $F_{D}$ Statistik und $T_{D}$ Statistik! \textbf{(2 Punkte)}
+\item Visualisieren Sie in einer 2x2 Tafel den Zusammenhang von $MS_{treatment}$ und $MS_{error}$! \textbf{(2 Punkte)}
+\item Beschriften Sie die 2x2 Tafel mit \underline{signifikant} und \underline{nicht signifikant}! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Nennen Sie das Minimum der F-Statistik $F_D$! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wenn die F-Statistik $F_D$ minimal ist, welche Aussage erhalten Sie über die Nullhypothese? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 
