@@ -1,34 +1,111 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
+             str_c(pronom[6], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 
-In der untenstehenden Tabelle ist die Formel f{\"u}r den F-Test aus der ANOVA
-und die Formel f{\"u}r den Student t-Test dargestellt. In der ANOVA berechnen
-Sie die F-Statistik $F_{calc}$ und in dem Student t-Test die T-Statistik
-$T_{calc}$.
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
 
+x1_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$, $400lm$ und $600lm$)",
+                         "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Substrattypen ($torf$, $40p60n$, $30p20n$ und $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Genotypen ($AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
+                    "Genotypen ($AA$, $AB$ und $BB$)",
+                    "Elterlinie ($ctrl$, $Standard$, $Yray$ und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$)",
+                    "Bestandsdichte ($standard$, $eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+x1_val_pre <- x1_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+
+x2_val <- lst(pflanze = c("Düngestufen ($ctrl$, und $high$)",
+                         "Lichtstufen ($none$, und $600lm$)",
+                         "Lüftungssystemen und Folientunneln ($ctrl$, und $tornado$)",
+                         "Substrattypen ($torf$, $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, und $high$)",
+                         "Genotypen ($AA$, und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$ und $flOw$)",
+                    "Genotypen ($AA$ und $BB$)",
+                    "Elterlinie ($ctrl$, und $Xray$)",
+                    "Lüftungssystem ($keins$ und $thunder$)",
+                    "Bestandsdichte ($standard$ und $kontakt$)"))[[names(obser)]] 
+
+x2_val <- str_subset(x2_val, x1_val_pre, negate = TRUE) |> sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+
+ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. ", name, " schaut konzentriert auf die Formeln der ANOVA und des t-Tests. In ", pronom[1], " Experiment wurde als Messwert ", y_val, " bestimmt. ", sentence_name_vec$flaw, " Dann wäre es nicht noch komplizierter. Was war da jetzt nochmal der Zusammenhang zwischen den beiden statistischen Verfahren? Beide Verfahren haben ja irgendwie etwas miteinander zu tun und ", betreuer, " möchte das jetzt auch noch verstehen. Muss das nicht eigentlich klar sein? Immerhin ist ", name, " nicht die erste Betreuung. Immerhin hat ", names(name), " die beiden Formeln vorliegen. ", sentence_name_vec$sweet_film, "")) |> 
+  sample(1)
+
+@ 
+
+\Sexpr{ques_vec}
+
+\begin{graybox}{Gegebene Formeln für $\boldsymbol{F_D}$ und $\boldsymbol{T_D}$}
 \begin{center}
   \begin{tabular}{cc}
-    $F_{calc} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{calc} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
+    $F_{D} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{D} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
   \end{tabular}
 \end{center}
+\end{graybox}
 
+Leider kennen sich \Sexpr{name} mit dem Zusammenhang zwischen der ANOVA und dem t-Test nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
-\item Erkl{\"a}ren Sie den konzeptionellen Zusammenhang zwischen der $F_{calc}$
-  Statistik und $T_{calc}$ Statistik! \textbf{(2 Punkte)}
-\item Visualisieren Sie eine nicht signifikante $F_{calc}$ Statistik sowie
-  eine signifikante $F_{calc}$ Statistik anhand von $MS_{treatment}$ und
-  $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
-\item Erkl{\"a}ren Sie an der Formel des F-Tests sowie an der Abbildung warum
-  das Minimum der F-Statistik 0 ist! \textbf{(2 Punkte)}
-\item Wenn die F-Statistik 0 ist, spricht dies eher f{\"u}r oder gegen die
-  Nullhypothese? Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Was testet der t-Test und was testet die ANOVA? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie den konzeptionellen Zusammenhang zwischen der Berechnung der $F_{D}$ Statistik und $T_{D}$ Statistik! \textbf{(3 Punkte)}
+\item Visualisieren Sie eine nicht signifikante $F_{D}$ Statistik sowie eine signifikante $F_{D}$ Statistik anhand von $MS_{treatment}$ und $MS_{error}$! Beschriften Sie die Abbildung! \textbf{(3 Punkte)}
+\item Nennen Sie das Minimum der F-Statistik! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wenn die F-Statistik minimal ist, welche Aussage erhalten Sie über die Nullhypothese? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

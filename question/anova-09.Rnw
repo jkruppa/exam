@@ -5,29 +5,124 @@
   2cm]{img/youtube}}\\[1Ex]
 %% --------------------------------------------------------------------
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/M9Uhm67ndxM}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\end{minipage}
+\vspace{1ex}
+%% --------------------------------------------------------------------
 
 <<>>=
-level_num <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
+             str_c(pronom[6], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x1_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Lichtstufen ($none$, $200lm$, $400lm$ und $600lm$)",
+                         "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Substrattypen ($torf$, $40p60n$, $30p20n$ und $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Genotypen ($AA$, $AB$ und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
+                    "Genotypen ($AA$, $AB$ und $BB$)",
+                    "Elterlinie ($ctrl$, $Standard$, $Yray$ und $Xray$)",
+                    "Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$)",
+                    "Bestandsdichte ($standard$, $eng$, $weit$ und $kontakt$)"))[[names(obser)]] %>% 
+  sample(1)
+
+x1_val_pre <- x1_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+
+x2_val <- lst(pflanze = c("Düngestufen ($ctrl$, und $high$)",
+                         "Lichtstufen ($none$, und $600lm$)",
+                         "Lüftungssystemen und Folientunneln ($ctrl$, und $tornado$)",
+                         "Substrattypen ($torf$, $70p30n$)",
+                         "Bewässerungstypen ($ctrl$, und $high$)",
+                         "Genotypen ($AA$, und $BB$)"),
+           tier = c("Ernährungszusatz ($ctrl$ und $getIt$)", 
+                    "Flüssignahrung ($ctrl$ und $flOw$)",
+                    "Genotypen ($AA$ und $BB$)",
+                    "Elterlinie ($ctrl$, und $Xray$)",
+                    "Lüftungssystem ($keins$ und $thunder$)",
+                    "Bestandsdichte ($standard$ und $kontakt$)"))[[names(obser)]] 
+
+x2_val <- str_subset(x2_val, x1_val_pre, negate = TRUE) |> sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+
+ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer zweifaktoriellen ANOVA. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. Das wird ein langer Nachmmittag, denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein?"),
+               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch seine E-Sport Qualifikation schauen. Stattdessen versucht ", betreuer, " die Ausgabe der zweifaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Es gab dabei zwei Behandlungen. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein!"),
+               str_c("'Mit der zweifaktoriellen ANOVA lässt sich die Interaktion zwischen den beiden Behandlungen nachweisen!', ", betreuer, " scheint die zweifaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? ", name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Nur jetzt muss eben das Experiment fertig ausgewertet werden. ", name, " hatte zwei Behandlungen auf ", obser, " angewendet. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". Jetzt muss das hier zu einem Ende kommen!")) |> 
+  sample(1)
+
+
+
+
+@ 
+
+\Sexpr{ques_vec}
+
+
+<<>>=
+level_num <- c("drei", "vier", "fünf") %>% sample(1)
 which_one <- c("ersten", "zweiten", "dritten") %>% sample(2)
 @
 
 Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit
 \Sexpr{level_num} Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet
 haben, erhalten Sie einen p-Wert von $0.078$ und eine F Statistik mit
-$F_{calc} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen,
+$F_{D} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen,
 stellen Sie fest, dass es eigentlich einen Mittelwertsunterschied zwischen
-dem \Sexpr{which_one[1]} und \Sexpr{which_one[2]} Level geben m{\"u}sste. Die
-$IQR$-Bereiche {\"u}berlappen sich nicht und die Mediane liegen auch weit vom
+dem \Sexpr{which_one[1]} und \Sexpr{which_one[2]} Level geben müsste. Die
+$IQR$-Bereiche überlappen sich nicht und die Mediane liegen auch weit vom
 globalen Mittel entfernt.
 
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
-\item Erkl{\"a}ren Sie die Annahme der Normalverteilung und die Annahme der
-  Varianzhomogenit{\"a}t f{\"u}r eine ANOVA an einer passenden Abbildung! \textbf{(3 Punkte)}
-\item Visualisieren Sie die Berechnung von $F_{calc}$ am obigen Beispiel!
-  \textbf{(3 Punkte)}
-\item Erkl{\"a}ren Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der
-  Ber{\"u}cksichtigung der Annahmen an eine ANOVA! \textbf{(3 Punkte)}
+\item Erklären Sie die Annahme der Normalverteilung und die Annahme der Varianzhomogenität für eine ANOVA an einer passenden Abbildung! \textbf{(3 Punkte)}
+\item Visualisieren Sie die Berechnung von $F_{D}$ am obigen Beispiel! \textbf{(3 Punkte)}
+\item Erklären Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der Berücksichtigung der Annahmen an eine ANOVA! \textbf{(3 Punkte)}
 \end{enumerate}
 
 
