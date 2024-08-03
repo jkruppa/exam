@@ -111,7 +111,7 @@ par_lst <- lst(year = "2024",
 ## Monster des Alltags
 attr_lst <- lst(Alex = lst(flaw = "die Gefälligkeit", sweet = "Gummibärchen", animal = "die Katze", sport = "zu Laufen",
                          hobby = "Starcraft", music = "Abba", film = "Alien"),
-                Jessica = lst(flaw = "der Mangel", sweet = "Schokobons", animal = "der Hund", sport = "Rad zu fahren",
+                Jessica = lst(flaw = "der Mangel", sweet = "Schokobons", animal = "die Hündin", sport = "Rad zu fahren",
                          hobby = "Warhammer", music = "David Bowie", film = "Herr der Ringe"),
                 Jonas = lst(flaw = "die Erschöpfung", sweet = "Snickers", animal = "das Meerschweinchen", sport = "zu Schwimmen",
                          hobby = "Stricken", music = "Iron Maiden", film = "Mission Impossible"),
@@ -121,7 +121,7 @@ attr_lst <- lst(Alex = lst(flaw = "die Gefälligkeit", sweet = "Gummibärchen", 
                          hobby = "Blasmusik", music = "Deichkind", film = "Star Trek"),
                 Paula = lst(flaw = "der Perfektionismus", sweet = "Smarties", animal = "die Ratte", sport = "zu Fechten",
                          hobby = "Harry Potter", music = "White Lies", film = "Jagd auf roter Oktober"),
-                Steffen = lst(flaw = "die Romantik", sweet = "Oreos", animal = "der Leguan", sport = "zu Ringen",
+                Steffen = lst(flaw = "die Romantik", sweet = "Oreos", animal = "die Schlange", sport = "zu Ringen",
                          hobby = "Klemmbausteine", music = "Taylor Swift", film = "Harry Potter"),
                 Tina = lst(flaw = "die Wut", sweet = "Katjes", animal = "die Spinne", sport = "zu Boxen",
                          hobby = "Astronomie", music = "Tocotronic", film = "Indiana Jones"),
@@ -532,9 +532,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(linreg_questions_vec[8])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(linreg_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Experimentelles Design}

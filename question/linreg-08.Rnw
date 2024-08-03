@@ -1,9 +1,74 @@
 \section{Aufgabe \hfill (12 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/lHzRgm7hPw0}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/lHzRgm7hPw0}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
+
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
+                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlicher Anteil an Ton [\\%/l]",
+                         "durchschnittliche UV-Einstrahlung [UV/d]"),
+             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
+                      "durchschnittliche Tagestemperatur [C/d]",
+                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Proteianteil [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+n_obs <- rpois(1, 30)
+
+ques_vec <- c(str_c("foo.")) |> 
+  sample(1)
+
+@
+
+\Sexpr{ques_vec}
+
 
 <<>>=
 
@@ -38,7 +103,10 @@ p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
   axis.text.x = element_blank(),
   axis.text.y = element_blank())
 ##
-grid.arrange(p1, p2, p3, nrow = 1)
+grid.arrange(p1, p2, p3, 
+             #p1, p2, p3,
+            # p1, p2, p3,
+             nrow = 1)  
 
 @
 

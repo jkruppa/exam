@@ -83,9 +83,9 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer zweifaktoriellen ANOVA. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. Es liegt anscheinend eine signifikante Interaktion vor. 'Das wird ein langer Nachmmittag.', denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein?"),
-               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch seine E-Sport Qualifikation schauen. Stattdessen versucht ", betreuer, " die Ausgabe der zweifaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. Es liegt anscheinend eine signifikante Interaktion vor. ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Es gab dabei zwei Behandlungen. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein!"),
-               str_c("'Mit der zweifaktoriellen ANOVA lässt sich die Interaktion zwischen den beiden Behandlungen nachweisen!', ", betreuer, " scheint die zweifaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? ", name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Nur jetzt muss eben das Experiment fertig ausgewertet werden. Es liegt anscheinend eine signifikante Interaktion vor. ", name, " hatte zwei Behandlungen auf ", obser, " angewendet. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". Jetzt muss das hier zu einem Ende kommen!")) |> 
+ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer zweifaktoriellen ANOVA. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. Es liegt anscheinend eine signifikante Interaktion vor? 'Das wird ein langer Nachmmittag.', denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein?"),
+               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch ", pronom[6], " E-Sport Qualifikation schauen und dann zum Sport. Stattdessen versucht ", betreuer, " die Ausgabe der zweifaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. Es liegt anscheinend eine signifikante Interaktion vor? ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Es gab dabei zwei Behandlungen. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein!"),
+               str_c("'Mit der zweifaktoriellen ANOVA lässt sich die Interaktion zwischen den beiden Behandlungen nachweisen!', ", betreuer, " scheint die zweifaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? ", name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Nur jetzt muss eben das Experiment fertig ausgewertet werden. Es liegt anscheinend eine signifikante Interaktion vor? ", name, " hatte zwei Behandlungen auf ", obser, " angewendet. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". Jetzt muss das hier zu einem Ende kommen!")) |> 
   sample(1)
 
 @ 
@@ -94,14 +94,14 @@ ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_v
 
 \vspace{1ex}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{betreuer} mit der Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion zwischen zwei Behandlungsfaktoren. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe, sonst wird es heute Abend mit seinem Hobby \Sexpr{attr_name_vec$hobby} nichts mehr! 
+Leider kennen sich \Sexpr{name} und \Sexpr{betreuer} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe, sonst wird es heute Abend mit seinem Hobby \Sexpr{attr_name_vec$hobby} nichts mehr! 
 
 \begin{enumerate}
-\item Visualisieren Sie folgende Interaktionen zwischen den Behandlungen! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
+\item Visualisieren Sie folgende mögliche Interaktionen zwischen den Behandlungen! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
 \begin{enumerate}
-\item \underline{Keine} Interaktion. 
-\item Eine \underline{schwache} Interaktion. 
-\item Eine \underline{starke} Interaktion. 
+\item \underline{Keine} Interaktion liegt vor.
+\item Eine \underline{schwache} Interaktion liegt vor. 
+\item Eine \underline{starke} Interaktion liegt vor. 
 \end{enumerate}
 \item Erklären Sie den Unterschied zwischen den verschiedenen Interaktionen! \textbf{(2 Punkte)}
 \item Welche statistische Maßzahl betrachten Sie für die Bewertung der Interaktion? \textbf{(1 Punkt)}

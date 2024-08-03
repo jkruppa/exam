@@ -1,9 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
-
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/M9Uhm67ndxM}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
-%% --------------------------------------------------------------------
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -85,44 +80,48 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
 
+groups_vec <- x1_val %>% 
+  str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
+  str_subset("\\$") %>% 
+  str_replace_all("\\$", "") |> 
+  sample(2)
+
+p_emmeans <- c(0.045, 0.049, 0.036, 0.021) |> sample(1)
+p_anova <- c(0.052, 0.061, 0.058, 0.071) |> sample(1)
+f_anova <- c(1.2, 1.78, 1.61, 1.51) |> sample(1)
+
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer zweifaktoriellen ANOVA. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. Das wird ein langer Nachmmittag, denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein?"),
-               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch seine E-Sport Qualifikation schauen. Stattdessen versucht ", betreuer, " die Ausgabe der zweifaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Es gab dabei zwei Behandlungen. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein!"),
-               str_c("'Mit der zweifaktoriellen ANOVA lässt sich die Interaktion zwischen den beiden Behandlungen nachweisen!', ", betreuer, " scheint die zweifaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? ", name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Nur jetzt muss eben das Experiment fertig ausgewertet werden. ", name, " hatte zwei Behandlungen auf ", obser, " angewendet. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". Jetzt muss das hier zu einem Ende kommen!")) |> 
+ques_vec <-  c(str_c("In ", exp, " wurden die Daten $D$ von ", obser, " mit der Behandlung ", x1_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer einfaktoriellen ANOVA. Anscheinend gibt es ein Problem mit der Annahme der Normalverteilung und der Varianzhomogenität der ANOVA in den Daten. 'Wir haben jetzt bei der ANOVA einen p-Wert mit ", p_anova, " raus sowie eine F-Statistik $F_D$ mit ", f_anova, " berechnet. Nach den Boxplots müsste sich eigentlich ein Unterschied zwischen $", groups_vec[1], "$ und $", groups_vec[2], "$ ergeben. Der Unterschied ist in \\texttt{\\{emmeans\\}} auch signifikant mit einem p-Wert von ", p_emmeans, ". Wie kann das sein?', meint ", name, " ungläubig. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. ", name, " hat schon genug Probleme. Wenn ", attr_name_vec$flaw, " nicht wäre, dann wäre es einfacher. Das wird ein langer Nachmmittag, denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein? Hoffentlich kommt ", names(name), " noch zum Konzert von ", attr_name_vec$music, ". Nervös krault ", names(name), " ", attr_name_vec$animal, "."),
+               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch ", pronom[6], " E-Sport Qualifikation schauen. Hoffentlich kommt ", names(name), " noch rechtzeitig zum Streamen. Angestrengend krault ", names(name), " ", attr_name_vec$animal, ". Stattdessen versucht ", betreuer, " die Ausgabe der einfaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. Anscheinend gibt es ein Problem mit der Annahme der Normalverteilung und der Varianzhomogenität der ANOVA in den Daten. 'Wir haben jetzt bei der ANOVA einen p-Wert mit ", p_anova, " raus sowie eine F-Statistik $F_D$ mit ", f_anova, " berechnet. Nach den Boxplots müsste sich eigentlich ein Unterschied zwischen $", groups_vec[1], "$ und $", groups_vec[2], "$ ergeben. Der Unterschied ist in \\texttt{\\{emmeans\\}} auch signifikant mit einem p-Wert von ", p_emmeans, ". Wie kann das sein?', grummelt ", betreuer, ". ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Dabei wurden die Daten $D$ erhoben. Es gab dabei eine Behandlungen ", x1_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein! ", name, " hat schon genug Probleme. Wenn ", attr_name_vec$flaw, " nicht wäre, dann wäre es einfacher."),
+               str_c("'Mit der einfaktoriellen ANOVA lassen sich flott die Gruppen in einer Behandlungen vergleichen, wenn wir normalverteilte Daten und Varianzhomogenität vorliegen haben!', ", betreuer, " scheint die einfaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? 'Wir haben jetzt bei der ANOVA einen p-Wert mit ", p_anova, " raus sowie eine F-Statistik $F_D$ mit ", f_anova, " berechnet. Nach den Boxplots müsste sich eigentlich ein Unterschied zwischen $", groups_vec[1], "$ und $", groups_vec[2], "$ ergeben. Der Unterschied ist in \\texttt{\\{emmeans\\}} auch signifikant mit einem p-Wert von ", p_emmeans, ". Wie kann das sein?', fragt ",  name, " etwas provokant und dreht ", attr_name_vec$music, " leiser. ",  name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Dort gab es selbstgemachte ", attr_name_vec$sweet, " aus Vollkorn! Nur jetzt muss eben das Experiment fertig ausgewertet werden. ", name, " hatte eine Behandlungen ", x1_val, " auf ", obser, " angewendet. Gemessen wurde der Messwert ($Y$) ", y_val, ". Dabei wurden die Daten $D$ erhoben. Jetzt muss das hier zu einem Ende kommen! ", name, " hat schon genug Probleme. Wenn ", attr_name_vec$flaw, " nicht wäre, dann wäre es einfacher.")) |> 
   sample(1)
-
-
-
 
 @ 
 
 \Sexpr{ques_vec}
 
+\begin{graybox}{Gegebene Formeln}
+\begin{center}
+  \begin{tabular}{ccc}
+    $MS_{treatment} = \cfrac{SS_{treatment}}{df_{treatment}}$ &
+    $MS_{error} = \cfrac{SS_{error}}{df_{error}}$ &
+    $F_{D} = \cfrac{MS_{treatment}}{MS_{error}}$ \\
+  \end{tabular}
+\end{center}
+\end{graybox}
 
-<<>>=
-level_num <- c("drei", "vier", "fünf") %>% sample(1)
-which_one <- c("ersten", "zweiten", "dritten") %>% sample(2)
-@
-
-Sie rechnen eine einfaktorielle ANOVA mit einem Faktor $f_1$ mit
-\Sexpr{level_num} Leveln. Nachdem Sie die einfaktorielle ANOVA gerechnet
-haben, erhalten Sie einen p-Wert von $0.078$ und eine F Statistik mit
-$F_{D} = 1.2$. Als Sie sich die Boxplots der Behandlungen anschauen,
-stellen Sie fest, dass es eigentlich einen Mittelwertsunterschied zwischen
-dem \Sexpr{which_one[1]} und \Sexpr{which_one[2]} Level geben müsste. Die
-$IQR$-Bereiche überlappen sich nicht und die Mediane liegen auch weit vom
-globalen Mittel entfernt.
-
-\vspace{1ex}
-
-Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
+Leider kennen sich \Sexpr{name} und \Sexpr{betreuer} mit der Interpretation einer ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe und die Zeit wird knapp. 
 
 \begin{enumerate}
-\item Erklären Sie die Annahme der Normalverteilung und die Annahme der Varianzhomogenität für eine ANOVA an einer passenden Abbildung! \textbf{(3 Punkte)}
-\item Visualisieren Sie die Berechnung von $F_{D}$ am obigen Beispiel! \textbf{(3 Punkte)}
-\item Erklären Sie das Ergebnis der obigen einfaktoriellen ANOVA unter der Berücksichtigung der Annahmen an eine ANOVA! \textbf{(3 Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+\item Was bedeutet eine signifkante ANOVA für die beobachteten Daten $D$? \textbf{(1 Punkt)}
+\item Visualisieren Sie den Unterschied zwischen Varianzhomogenität und Varianzheterogenität anhand der Daten $D$! Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
+\item Visualisieren Sie für die Daten $D$ die Verletzung der Annahme der Varianzhomogenität der ANOVA unter zu Hilfenahme von Boxplots! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
+\item Welche Auswirkung hat die Verletzung der Annahme der Varianzhomogenität für die Teststatistik $F_D$ der ANOVA? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie abschließend die Diskrepanz zwischen den Ergebnis der ANOVA und dem paarweisen Gruppenvergleich in \texttt{\{emmeans\}}! \textbf{(2 Punkte)}
 \end{enumerate}
 
 
