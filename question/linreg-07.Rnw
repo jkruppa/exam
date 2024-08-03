@@ -1,9 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
-
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/dyQlYV9nOqY}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
-%% --------------------------------------------------------------------
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -12,7 +7,7 @@ name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
   str_subset(name)
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
@@ -22,7 +17,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/fB6nF4dxodA}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/dyQlYV9nOqY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{1ex}
 %% --------------------------------------------------------------------
@@ -48,7 +43,7 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
 x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
                          "durchschnittliche Regenwurmdichte [Anzahl/l]",
                          "durchschnittlicher Anteil an Ton [\\%/l]",
-                         "durchschnittliche UV-Einstrahlung [UV/d]"),
+                         "durchschnittliche UV Einstrahlung [UV/d]"),
              tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
                       "durchschnittliche Tagestemperatur [C/d]",
                       "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
@@ -60,7 +55,7 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                          "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
                          "Proteingehalt [g/kg]"),
              tier = c("Schlachtgewicht [kg]", 
-                      "Proteianteil [\\%/kg]",
+                      "Proteinanteil [\\%/kg]",
                       "Fettgehalt [\\%/kg]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
@@ -74,35 +69,40 @@ ques_vec <- c(str_c("foo.")) |>
 
 \Sexpr{ques_vec}
 
-
-Sie rechnen eine lineare Regression um nach einem Feldexperiment den
-Zusammenhang zwischen Trockengewicht kg/m$^2$ (\textit{drymatter}) und
-Wassergabe l/m$^2$ (\textit{water}) bei Spargel zu bestimmen. Sie erhalten
-folgende Datentabelle.
-
 <<>>=
 
-data_tbl <- tibble(water = rnorm(sample(c(9,11,13), 1), 10, 4),
+x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
+  str_split(" ", simplify = TRUE) |> 
+  magrittr::extract(1, 1:2) |> 
+  str_c(collapse = " ")
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+names_vec <- c(x_val, y_val) |> sample()
+
+
+data_tbl <- tibble(water = rnorm(sample(c(8:12), 1), 10, 4),
                    drymatter = 10 + 1.5 * water + rnorm(length(water), 0, 2))
 
 fit <- lm(drymatter ~ water, data_tbl)
 
 fit %>% augment %>%
   mutate_all(round, 1) %>%
-  mutate(.id = 1:n()) %>% 
-  select(.id, drymatter, water, .fitted) %>%
-  mutate(.resid = "") %>% 
-  kable(booktabs = TRUE, align = "c") %>% 
+  select(drymatter, water, .fitted) %>%
+  mutate(resid = "") |> 
+  set_names(c(names_vec[1], names_vec[2], "$\\hat{y}$", "$\\phantom{ttt}\\epsilon\\phantom{ttt}$")) |> 
+  kable(booktabs = TRUE, align = "cccc", escape = FALSE) %>% 
   kable_styling(latex_options = "hold_position", font_size = 12)
 
 @ 
 
+Leider kennt sich \Sexpr{name} mit der linearen Regression überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe!
+
 \begin{enumerate}
-\item Erg{\"a}nzen Sie die Werte in der Spalte \texttt{.resid} in der obigen
-  Tabelle. Geben Sie den Rechenweg und Formel mit an! \textbf{(4 Punkte)}
-\item Zeichnen Sie den sich aus der obigen Tabelle ergebenden
-  Residualplot. Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
-\item Gibt es auff{\"a}llige Werte anhand des Residualplots? Begr{\"u}nden Sie Ihre
-  Antwort! \textbf{(2 Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Ergänzen Sie die Werte der Residuen $\epsilon$ in der obigen Tabelle! \textbf{(2 Punkte)}
+\item Zeichnen Sie den Boxplot der Residuen $\epsilon$. Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
+\item Zeichnen Sie den Residualplot. Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
+\item Gibt es auffällige Werte anhand des Residualplots? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie die Eigenschaft eines statistischen Modells, welche mit dem Residualplot überprüft wird! Begründen Sie Ihre Antwort anhand einer Visualisierung! \textbf{(2 Punkte)}
 \end{enumerate}
 

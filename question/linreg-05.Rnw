@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -7,7 +7,7 @@ name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
   str_subset(name)
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
@@ -55,7 +55,7 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                          "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
                          "Proteingehalt [g/kg]"),
              tier = c("Schlachtgewicht [kg]", 
-                      "Proteianteil [\\%/kg]",
+                      "Proteinanteil [\\%/kg]",
                       "Fettgehalt [\\%/kg]",
                       "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
   sample(1)
@@ -69,20 +69,7 @@ ques_vec <- c(str_c("foo.")) |>
 
 \Sexpr{ques_vec}
 
-In den folgenden Abbildungen sehen Sie drei leere Scatterplots. F{\"u}llen Sie diese
-Scatterplots nach folgenden Anweisungen.
-
-\begin{enumerate}
-\item Zeichnen Sie f{\"u}r die angegebene $\rho$-Werte eine Gerade in die
-  entsprechende Abbildung! \textbf{(3 Punkte)}
-\item Zeichnen Sie f{\"u}r die angegebenen $R^2$-Werte die entsprechende
-  Punktewolke um die Gerade. \textbf{(3 Punkte)}
-\item Sie rechnen ein statistisches Modell. Was sagen Ihnen die $R^2$-Werte
-  {\"u}ber das jeweilige Modell? \textbf{(3 Punkte)}
-\end{enumerate}
-
-
-<<correlation-01, results='asis', echo = FALSE, fig.height = 3, fig.width = 7, fig.align = "center", message = FALSE>>=
+<<correlation-01, results='asis', echo = FALSE, fig.height = 2.75, fig.width = 7, fig.align = "center", message = FALSE>>=
 
 corr_vec <- c(-1, -0.75, -0.5, -0.25, 0, 0.25, 0.5, 0.75, 1) %>%
   sample(size = 3)
@@ -106,4 +93,14 @@ p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
 grid.arrange(p1, p2, p3, ncol = 3)
 
 @
+
+Leider kennt sich \Sexpr{name} mit der Korrelationsanalyse und der linearen Regression überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe!
+
+\begin{enumerate}
+\item Zeichnen Sie für die $\rho$-Werte eine Gerade in die entsprechende Abbildung! \textbf{(3 Punkte)}
+\item Zeichnen Sie für die $R^2$-Werte die entsprechende Punktewolke um die Gerade! \textbf{(3 Punkte)}
+\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
+\item Interpretieren Sie die $R^2$-Werte für die jeweilige Gerade! \textbf{(2 Punkte)}
+\item Warum müssen Sie ein $R^2$-Wert berechnen, wenn Sie die einfachere Möglichkeit der visuellen Überprüfung haben? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\end{enumerate}
 

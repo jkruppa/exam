@@ -1,38 +1,80 @@
 \section{Aufgabe \hfill (11 Punkte)}
 
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/VQlNl8hvRII}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/VQlNl8hvRII}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+\vspace{1ex}
 %% --------------------------------------------------------------------
-
-
-Die Pr{\"a}valenz von Klauenseuche bei Wollschweinen wird mit
-\Sexpr{sample(c(2,3,4), 1)}\% angenommen. In \Sexpr{sample(c(75,80,85),
-  1)}\% der F{\"a}lle ist ein Test positiv, wenn das Wollschwein erkrankt
-ist. In \Sexpr{sample(c(7.5,8.0,8.5), 1)}\% der F{\"a}lle ist ein Test positiv,
-wenn das Wollschwein \textit{nicht} erkrankt ist und somit gesund ist. Sie
-werten \Sexpr{sample(c(1000,2000,4000), 1)} Wollschweine mit einem
-diagnostischen Test auf Klauenseuche aus.
 
 <<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+
+y_val <- lst(pflanze = c("Mehltau",
+                         "Kräuselkrankheit",
+                         "Schorf",
+                         "Gelbmosaikvirus"),
+             tier = c("Tuberkulose", 
+                      "West-Nil-Virus",
+                      "Maul- und Klauenseuche",
+                      "Escherichia coli (E. coli)"))[[names(obser)]] %>% 
+  sample(1)
 
 diag_doppelbaum_file <- file.path(img_path, "diag-doppelbaum")
+prae_vec <- c("2\\%", "3\\%", "4\\%") |>  sample(1) 
+pos_krank_vec <- c("75\\%", "80\\%", "85\\%") |> sample(1)
+pos_gesund_vec <- c("7.5\\%", "8.0\\%", "8.5\\%") |> sample(1)
+n_vec <- c(1000, 2000, 4000) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+
+ques_vec <-  c(str_c(name, " liest laut vor. 'Die Prävalenz von Klauenseuche bei ", obser, " wird mit ", prae_vec, " angenommen. In ", pos_krank_vec, " der Fälle ist ein Test positiv, wenn das ", str_to_sentence(names(obser)), " erkrankt ist. In ", pos_gesund_vec, " der Fälle ist ein Test positiv, wenn das ", str_to_sentence(names(obser)), " \\underline{nicht} erkrankt ist und somit gesund ist. Wir führen einen Test auf ", y_val, " an ", n_vec, " ", obser, " mit einem diagnostischen Test durch.' ", name_sec, " klappt die Kinnlade runter. In der Stille duddelt ", attr_name_vec$music, ". ", name, " schaut kompetent und schmeißt sich mit offenen Mund ", attr_name_sec1_vec$sweet, " an den Kopf vorbei.")) |> 
+  sample(1)
 
 @ 
 
-\begin{enumerate}
-\item F{\"u}llen und beschriften Sie den untenstehenden Doppelbaum! Beschriften
-  Sie auch die {\"A}ste des Doppelbaumes, mit denen Ihnen bekannten
-  Informationen!  \textbf{(8 Punkte)}
-\item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
-\item Was sagt Ihnen die Wahrscheinlichkeit $Pr(K^+|T^+)$ aus? \textbf{(1 Punkt)}
-\end{enumerate}
-
-\vspace{1cm}
+\Sexpr{ques_vec}
 
 \begin{center}
   \includegraphics[width=17cm]{\Sexpr{diag_doppelbaum_file}}
 \end{center}
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit dem diagnostischen Testen überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe! 
+    
+\begin{enumerate}
+\item Beschriften Sie die Äste des Doppelbaumes, mit denen Ihnen bekannten Informationen! \textbf{(2 Punkte)}
+\item Beschriften Sie den Doppelbaum! \textbf{(2 Punkte)}
+\item Füllen Sie freien Felder des Doppelbaums aus! \textbf{(4 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
+\item Was sagt Ihnen die Wahrscheinlichkeit $Pr(K^+|T^+)$ aus? \textbf{(1 Punkt)}
+\end{enumerate}
+
+
+
 
 
 

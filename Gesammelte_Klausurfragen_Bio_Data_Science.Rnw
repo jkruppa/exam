@@ -95,18 +95,17 @@ naming_global <- c(rep(c("Jessica", "Paula", "Tina", "Nilufar"), each = 2), "Yuk
   set_names(c(rep("sie", 9), rep("er", 9))) 
 
 plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", 
-           "Erdbeeren", "Brokkoli", "Spargel") %>% 
-  sample(1) |> 
-  set_names("pflanze")
+           "Erdbeeren", "Brokkoli", "Spargel") 
+names(plant) <- rep("pflanze", length(plant))
 animal <- c("Puten", "Schweinen", "Fleischrindern", 
-            "Lamas", "Hühnern", "Zandern", "Milchvieh") |> 
-  sample(1) |> 
-  set_names("tier")
-obser <- c(plant, animal) |> sample(1)
+            "Lamas", "Hühnern", "Zandern", "Milchvieh") 
+names(animal) <- rep("tier", length(animal))
+obser_lst <- lst(pfanze = plant, 
+                 tier = animal) 
 
 par_lst <- lst(year = "2024",
                naming = naming_global,
-               obser = c(plant, animal) |> sample(1))
+               obser = obser_lst)
 
 ## Monster des Alltags
 attr_lst <- lst(Alex = lst(flaw = "die Gefälligkeit", sweet = "Gummibärchen", animal = "die Katze", sport = "zu Laufen",

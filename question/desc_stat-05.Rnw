@@ -7,7 +7,7 @@ name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
   str_subset(name)
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
@@ -48,7 +48,7 @@ cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
            tier = c("die auffälligen Hautflecken", 
                     "die dunklen Pigmentstörungen",
                     "die Anzahl an weißen Blutkörperchen",
-                    "die Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
+                    "die Anzahl an gedrehten Haaren/Federn pro $cm^2$"))[[names(obser)]] %>% 
   sample(1)
 
 count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(30, 33, 36), 1), 4), collapse = ", ")) |> 

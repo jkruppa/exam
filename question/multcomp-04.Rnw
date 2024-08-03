@@ -7,7 +7,7 @@ name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
   str_subset(name)
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  

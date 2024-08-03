@@ -8,7 +8,7 @@ name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
   str_subset(str_c(name, name_sec, sep = "|"))
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
 avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
@@ -90,13 +90,13 @@ def <- defData(def, varname = "weight", dist = "normal",
     formula = str_c("2 + light * ", eff_vec), variance = 2)
 dd <- genData(n_obs, def) |> 
   as_tibble() |> 
-  set_names(c("id", str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_")))
+  set_names(c("id", str_replace_all(x_val, "\\s|-", "_"), str_c(y_val, collapse = "_")))
   
 
-preprint <- lm(reformulate(str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_")), data = dd) |> 
+preprint <- lm(reformulate(str_replace_all(x_val, "\\s|-", "_"), str_c(y_val, collapse = "_")), data = dd) |> 
   summary()
   
-preprint$call <- reformulate(str_replace(x_val, " ", "_"), str_c(y_val, collapse = "_"))
+preprint$call <- reformulate(str_replace_all(x_val, "\\s|-", "_"), str_c(y_val, collapse = "_"))
 
 preprint 
 

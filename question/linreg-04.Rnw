@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -7,7 +7,7 @@ name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
   str_subset(name)
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
@@ -78,6 +78,13 @@ x_val <- str_replace(x_val, "\\\\", "") |>
   str_replace("^\\w{1}", toupper)
 y_val <- str_replace(y_val, "\\\\", "") |> 
   str_replace("^\\w{1}", toupper)
+
+x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
+  str_split(" ", simplify = TRUE) |> 
+  magrittr::extract(1, 1:2) |> 
+  str_c(collapse = " ")
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
 
 cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
 

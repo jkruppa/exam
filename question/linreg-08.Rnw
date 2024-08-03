@@ -7,7 +7,7 @@ name <- par_lst$naming |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
   str_subset(name)
 jahr <- par_lst$year
-obser <- par_lst$obser
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
 avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
@@ -29,7 +29,6 @@ project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektber
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -40,27 +39,14 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
                     "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
-                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
-                         "durchschnittlicher Anteil an Ton [\\%/l]",
-                         "durchschnittliche UV-Einstrahlung [UV/d]"),
-             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
-                      "durchschnittliche Tagestemperatur [C/d]",
-                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
-                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
-  sample(1)
-
 y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
-                         "Trockengewicht [kg/ha]",
-                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
-                         "Proteingehalt [g/kg]"),
+                          "Chlorophyllgehalt unter Zielwert [ja/nein]",
+                          "Anzahl Läsionen auf den Blättern"),
              tier = c("Schlachtgewicht [kg]", 
-                      "Proteianteil [\\%/kg]",
-                      "Fettgehalt [\\%/kg]",
-                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+                      "Gewichtszuwachs erreicht [ja/nein]",
+                      "Anzahl dunkle Pigmentstörungen"))[[names(obser)]] %>% 
   sample(1)
 
-n_obs <- rpois(1, 30)
 
 ques_vec <- c(str_c("foo.")) |> 
   sample(1)
@@ -69,44 +55,15 @@ ques_vec <- c(str_c("foo.")) |>
 
 \Sexpr{ques_vec}
 
+\vspace{1Ex}
 
-<<>>=
-
-reg_row <- sample(c("Normalverteilung", "Poissonverteilung", "Binomialverteilung"), 1)
-
-@
+Leider kennt sich \Sexpr{name} mit dem Kontext der linearen Regression überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe!
 
 \begin{enumerate}
-\item Zeichen Sie in die drei untenstehenden, leeren Abbilungen die Zeile des
-  Regressionskreuzes der \Sexpr{reg_row}. W{\"a}hlen Sie die Beschriftung der
-  y-Achse sowie der x-Achse entsprechend aus! \textbf{(6 Punkte)}
-\item Erg{\"a}nzen Sie die jeweiligen statistischen Methoden zu der Abbildung! \textbf{(2 Punkte)}
-\item Welchen Effektsch{\"a}tzer erhalten Sie aus der entsprechend linearen
-  Regression bzw. den Gruppenvergleich? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
-\item Wenn Sie keinen Effekt erwarten, welchen \textit{Zahlenraum} nimmt dann
-  der Effektsch{\"a}tzer ein? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Zeichen Sie die Zeile des Regressionskreuzes für den Endpunkt mit \underline{drei} Feldern! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
+\item Ergänzen Sie die entsprechenden statistische Methoden zur Analyse in jedem Feld! \textbf{(2 Punkte)}
+\item Formulieren Sie die Nullhypothese für die statistische Methode in jedem Feld! \textbf{(2 Punkte)}
+\item Ergänzen Sie die entsprechenden Funktionen in \Rlogo zur Analyse in jedem Feld! \textbf{(2 Punkte)}
+\item Welchen Effekt erhalten Sie in jedem Feld? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
 \end{enumerate}
-
-<<regression-01, results='asis', echo = FALSE, fig.height = 3, fig.width = 9, fig.align = "center", message = FALSE>>=
-
-df <- data.frame()
-p1 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  theme_minimal() + theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-p2 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  theme_minimal()+ theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-p3 <- ggplot(df) + geom_point() + xlim(0, 10) + ylim(0, 10) +
-  theme_minimal()+ theme(
-  axis.text.x = element_blank(),
-  axis.text.y = element_blank())
-##
-grid.arrange(p1, p2, p3, 
-             #p1, p2, p3,
-            # p1, p2, p3,
-             nrow = 1)  
-
-@
-
