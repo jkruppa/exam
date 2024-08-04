@@ -4,20 +4,22 @@
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
-  str_subset(name)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
 jahr <- par_lst$year
 obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
  
 %% --------------------------------------------------------------------
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/lHzRgm7hPw0}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{1ex}
 %% --------------------------------------------------------------------
@@ -47,8 +49,10 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
                       "Anzahl dunkle Pigmentstörungen"))[[names(obser)]] %>% 
   sample(1)
 
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
 
-ques_vec <- c(str_c("foo.")) |> 
+ques_vec <- c(str_c(name, " hat ", exp, " mit ", obser, " duchgeführt. Soweit so gut. Dann war ", names(name), " bei ", betreuer, ". Leider war der Schritt nicht so hilfreich.  ", sentence_name_vec$flaw, " Aber es muss ja weitergehen. ", name, " hatte dann in ", pronom[2], " Abschlusarbeit einfach zu viele Endpunkte gemessen und ist jetzt vollkommen durcheinander, welche Analyse ", names(name), " nun wie rechnen soll. Naja, dann heißt es jetzt eben ", attr_name_vec$music, " aufdrehen und darüber nachdenken, was hier eigentlich gemacht wurde. ", name, " fängt einfach an und nimmt den ersten Endpunkt ", y_val, ". Dann kann ", names(name), " sich voran arbeiten. Später dann noch raus um ", attr_name_vec$sport, " um mal zu entspannen und vielleicht ist ", name_sec, " auch da. Wäre toll.")) |> 
   sample(1)
 
 @

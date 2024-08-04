@@ -62,7 +62,10 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
 
 n_obs <- rpois(1, 30)
 
-ques_vec <- c(str_c("foo.")) |> 
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+
+ques_vec <- c(str_c("'Oh! Residuen. Die waren wichtig um zu wissen, ob eine Modellierung funktioniert hat! Da schauen wir uns dann mit der Funktion \\texttt{augment()} die Werte der einzelnen Residuen an. Oder gleich den Residuenplot...da sehen wir dann... ja was eigentlich?', verkündet ", name, " stolz. Leider hat ", name, " vergessen wie der \\Rlogo Code für den Residuenplot geht. ", name, " hatte anderes im Kopf. ", sentence_name_vec$sweet_film, " Aber sowas hilft ", pronom[4], " natürlich hier nicht. Da schmeißt sich ", name, " noch ein paar ", attr_name_vec$sweet, " in den Mund und kaut los.")) |> 
   sample(1)
 
 @
@@ -89,7 +92,7 @@ fit %>% augment %>%
   mutate_all(round, 1) %>%
   select(drymatter, water, .fitted) %>%
   mutate(resid = "") |> 
-  set_names(c(names_vec[1], names_vec[2], "$\\hat{y}$", "$\\phantom{ttt}\\epsilon\\phantom{ttt}$")) |> 
+  set_names(c(names_vec[1], names_vec[2], "$\\hat{y}$", "$\\phantom{ttttt}\\epsilon\\phantom{ttttt}$")) |> 
   kable(booktabs = TRUE, align = "cccc", escape = FALSE) %>% 
   kable_styling(latex_options = "hold_position", font_size = 12)
 

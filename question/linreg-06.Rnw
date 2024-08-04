@@ -25,49 +25,17 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 <<>>=
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
-project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
-             str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
-outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("ein Gewächshausexperiment",
-                       "ein Freilandversuch",
-                       "einen Versuch in einer Klimakammer",
-                       "ein Feldexperiment"),
-           tier = c("ein Stallexperiment", 
-                    "ein Kreuzungsexperiment",
-                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
-  sample(1)
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
 
-x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
-                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
-                         "durchschnittlicher Anteil an Ton [\\%/l]",
-                         "durchschnittliche UV-Einstrahlung [UV/d]"),
-             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
-                      "durchschnittliche Tagestemperatur [C/d]",
-                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
-                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
-  sample(1)
-
-y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
-                         "Trockengewicht [kg/ha]",
-                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
-                         "Proteingehalt [g/kg]"),
-             tier = c("Schlachtgewicht [kg]", 
-                      "Proteinanteil [\\%/kg]",
-                      "Fettgehalt [\\%/kg]",
-                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
-  sample(1)
-
-n_obs <- rpois(1, 30)
-
-ques_vec <- c(str_c("foo.")) |> 
+ques_vec <- c(str_c("Der Bildschirm strahlt blau in das Gesicht von ", name, ". Es ist schon spät. Und das hat einen Grund. ", sentence_name_vec$sweet_film," . ", name, " überlegt, aber ", pronom[6], " Gedaken sind etwas zäh. 'Was soll das hier alles bedeuten?', fragt sich ", name, ". Irgendwie ist ", pronom[4], " nicht klar wie ", names(name), " $\\rho$-Werte oder $R^2$-Werte abschätzen soll. Alles nicht so einfach. ", sentence_name_vec$flaw, " ")) |> 
   sample(1)
 
 @
 
 \Sexpr{ques_vec}
+\vspace{2Ex}
 
 <<correlation-02, results='asis', echo = FALSE, fig.height = 2.75, fig.width = 7, fig.align = "center", message = FALSE>>=
 
