@@ -82,6 +82,10 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
 ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wie füllen wir jetzt die Tabelle der ANOVA aus und schauen, ob da was signifikant ist?', ", name, " hebt die Augenbraue. 'Das ist eine sehr gute Frage. Ich glaube man kann alles in der Tabelle relativ einfach mit wenigen Informationen berechnen.', meint ", name_sec, " dazu. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
                str_c("'Als erstes bauen wir uns aus unsere Daten die ANOVA Tabelle dann sehen wir schon, ob unser Gruppenvergleich in der ANOVA signifikant ist.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " tut sich auch sehr schwer mit der einfaktoriellen ANOVA. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt."),
                str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten mit eine einfaktoriellen ANOVA auswerten damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse in den multipen Gruppenvergleichen zu erwarten sind. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt.")) |> 
