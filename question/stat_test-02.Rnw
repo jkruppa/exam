@@ -1,47 +1,72 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Ric8ne39DtI}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/Ric8ne39DtI}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
-
 
 <<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
 time_vec <- sample(c("Monat", "Jahr", "halben Jahr"), 1)
 words <- c("(Unbekannte) Wahrheit", "H$_0$ wahr", "H$_0$ falsch",
            "H$_0$ abgelehnt", "H$_0$ beibehalten", "Testentscheidung",
            "$\\alpha$-Fehler", "$\\beta$-Fehler", "Richtige Entscheidung",
            "5\\%", "20\\%") %>% sample(4)
+
+ques_vec <-  c(str_c("foo")) |> 
+  sample(1)
+
 @ 
 
-F{\"u}r ein besseres Verst{\"a}ndnis der statistischen Testtheorie, auch
-Null-Ritual genannt, kann eine Visualisierung als Kreuztabelle genutzt werden.  
+\paragraph{Das Nullritual - Die statistische Testtheorie}
+
+\Sexpr{ques_vec}
+
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
+
+Für ein besseres Verständnis der statistischen Testtheorie, auch Null-Ritual genannt, kann eine Visualisierung als Kreuztabelle genutzt werden.  
 
 \begin{enumerate}
-\item Tragen Sie folgende statistische Fachbegriffe zur statistischen
-  Testtheorie korrekt eine selbst erstellte Kreuztabelle ein! \textbf{(3
-    Punkte)}
+\item Tragen Sie folgende statistische Fachbegriffe zur statistischen Testtheorie korrekt eine selbst erstellte Kreuztabelle ein! \textbf{(3 Punkte)}
   \begin{center}
   \begin{tabular}{cccc}
   \Sexpr{words[1]} & \Sexpr{words[2]} & \Sexpr{words[3]} & \Sexpr{words[4]} \\
   \end{tabular}
   \end{center}
-\item Erg{\"a}nzen Sie Ihre erstellte Kreuztabelle um vier weitere, passende
-  Fachbegriffe zur statistischen Testtheorie! \textbf{(2 Punkte)}
+\item Ergänzen Sie Ihre erstellte Kreuztabelle um vier weitere, passende Fachbegriffe zur statistischen Testtheorie! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Die Entscheidungsfindung durch einen statistischen Test kann auch durch die
-Analogie zu einem Feuermelder abgebildet werden. Dabei symbolisiert der
-Feuermelder den statistischen Test und es soll getestet werden, ob ein Feuer
-ausgebrochen ist.
+Die Entscheidungsfindung durch einen statistischen Test kann auch durch die Analogie zu einem Feuermelder abgebildet werden. Dabei symbolisiert der Feuermelder den statistischen Test und es soll getestet werden, ob ein Feuer ausgebrochen ist.
 
 \begin{enumerate}
   \setcounter{enumi}{2}    
 \item In der Analogie des Feuermelders, wie lautet der $\alpha$-Fehler? \textbf{(1 Punkt)}
 \item In der Analogie des Feuermelders, wie lautet der $\beta$-Fehler? \textbf{(1 Punkt)}
-\item Wenn der Feuermelder einmal pro Tag messen w{\"u}rde, wie oft w{\"u}rde der
-  Feuermelder mit einem $\alpha$ von 5\% in einem \Sexpr{time_vec} Alarm schlagen?
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wenn der Feuermelder einmal pro Tag messen würde, wie oft würde der Feuermelder mit einem $\alpha$ von 5\% in einem \Sexpr{time_vec} Alarm schlagen? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

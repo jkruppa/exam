@@ -21,7 +21,6 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/MiD42k4l5Ag}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -97,6 +96,8 @@ lambda_vec <- c(sample(c(1,2,3), 1), sample(c(15, 20, 25), 1)) %>% sample()
 ques_vec <- c(str_c("'Was sollen wir hier dann noch zeichnen?!', entfährt es ", name, " und schaut dabei ", name_sec, " an. 'Wir sollen eine Normalverteilung mit einem Mittelwert von $\\bar{y}_1 = ", mean_vec[1], "$ und einer Standardabweichung von $s_1 = ", sd_vec[1], "$ zeichnen. Sowie eine weitere Normalverteilung mit einem Mittelwert von $\\bar{y}_2 = ", mean_vec[2], "$ und einer Standardabweichung von $s_2 = ", sd_vec[1], "$. Keine Ahnung wie das geht. Darunter sollen dann noch eine Poissonverteilung mit einem Mittelwert von $\\lambda_1 = ", lambda_vec[1], "$ sowie einer weiteren Poissonverteilung mit einem Mittelwert von $\\lambda_2 = ", lambda_vec[2], "$ gezeichnet werden.', meint ", name_sec, " sichtlich genervt und mampft noch ein paar ", attr_name_sec1_vec$sweet, ". Im Hintergrund spielt leise ", attr_name_sec1_vec$music, ". 'Wirre Geschichte...', merkt ", name, " nickend an. Die beiden schauen angestrengt auf die leeren Flächen für die Abbildungen. ", name_sec, " und ", attr_name_vec$flaw, " machen die Suche nach der Lösung nicht einfacher.")) |> 
   sample(1)
 @
+
+\paragraph{Visualisierung der Normalverteilung und der Poissonverteilung}
 
 \Sexpr{ques_vec}\\
 

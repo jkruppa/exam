@@ -1,41 +1,68 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/32JjH1eyuTU}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/32JjH1eyuTU}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
 <<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
 sig_vec <- c("signifikant", "nicht signifikant") %>%
   sample(1)
 sign_vec  <- c("+", "-") %>%
   sample(1)
 a_vec <- c("A = 0.95", "A = 95\\%", "95\\%") %>% sample(1)
+
+ques_vec <-  c(str_c("foo")) |> 
+  sample(1)
+
 @ 
 
-Abgebildet ist die t-Verteilung unter der Anahme der G{\"u}ltigkeit der
-Nullhypothese. \textit{Beachten Sie, dass im Folgenden keine
-  numerisch korrekte Darstellung verlangt wird! Es gilt Erkennbarkeit vor
-  Genauigkeit!}
+\paragraph{Visualisierung der Teststatistik $T_D$ umd dem p-Wert}
+
+\Sexpr{ques_vec}
+
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
+
+Abgebildet ist die t-Verteilung unter der Annahme der Gültigkeit der Nullhypothese. \textit{Beachten Sie, dass im Folgenden keine numerisch korrekte Darstellung verlangt wird! Es gilt Erkennbarkeit vor Genauigkeit!}
 
 \begin{enumerate}
-\item Erg{\"a}nzen Sie eine beschriftete $x$-Achse! \textbf{(1 Punkt)}
-\item Erg{\"a}nzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
-\item Erg{\"a}nzen Sie "`$\Sexpr{a_vec}$"'! \textbf{(1 Punkt)}
+\item Ergänzen Sie eine beschriftete $x$-Achse! \textbf{(1 Punkt)}
+\item Ergänzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
+\item Ergänzen Sie "`$\Sexpr{a_vec}$"'! \textbf{(1 Punkt)}
 \item Zeichnen Sie $T_{\alpha=5\%}$ in die Abbildung! \textbf{(1 Punkt)} 
-\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! Begr{\"u}nden
-  Sie Ihre Antwort! \textbf{(2 Punkte)} 
-\item Zeichnen Sie $\Sexpr{sign_vec}T_{D}$ in die Abbildung! \textbf{(1
-    Punkt)}
-\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! Begr{\"u}nden
-  Sie Ihre Antwort! \textbf{(2 Punkte)}   
+\item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Zeichnen Sie $\Sexpr{sign_vec}T_{D}$ in die Abbildung! \textbf{(1 Punkt)}
+\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}   
 \end{enumerate}
 
-<<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
+<<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 5, fig.width = 8, fig.align = "center", message = FALSE>>=
 
 ggplot(data.frame(x = c(-5, 5)), aes(x = x)) +
   stat_function(fun = dt, args = list(df = 3)) +

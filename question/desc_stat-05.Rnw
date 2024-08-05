@@ -17,9 +17,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -64,6 +64,8 @@ ques_vec <- c(str_c(sentence_name_vec$sweet_music, " ", name, " betrachtet die f
   sample(1)
 
 @
+
+\paragraph{Visualisierung des Histogramm für kategoriale Daten}
 
 \Sexpr{ques_vec}
 

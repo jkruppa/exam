@@ -1,24 +1,52 @@
 \section{Aufgabe \hfill (9 Punkte)}
 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/aHVYuFKTqZs}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/aHVYuFKTqZs}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
-Grundlage des statistischen Testen ist das Verst{\"a}ndnis von der
-Grundgesamtheit (eng. \textit{population} oder \textit{ground truth}) und
-der experimentellen Stichprobe (eng. \textit{sample}). 
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+ques_vec <-  c(str_c("foo")) |> 
+  sample(1)
+
+@ 
+
+\paragraph{Grundgesamtheit und experimentelle Stichprobe}
+
+\Sexpr{ques_vec}
+
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
+
+Grundlage des statistischen Testen ist das Verständnis von der Grundgesamtheit (eng. \textit{population} oder \textit{ground truth}) und der experimentellen Stichprobe (eng. \textit{sample}). 
 
 \begin{enumerate}
-\item Nennen Sie das statistische Verfahren und zwei konkrete Beispiele zur
-  Durchf{\"u}hrung um von einer Grundgesamtheit auf eine Stichprobe zu
-  gelangen! \textbf{(3 Punkte)}
-\item Erkl{\"a}ren Sie den Zusammenhang zwischen Stichprobe und Grundgesamtheit
-  an einem Schaubild! Beschriften Sie das Schaubild entsprechend!
-  \textit{Nutzen Sie hierf{\"u}r als Veranschaulichung die K{\"o}rpergr{\"o}{\ss}e von
-    M{\"a}nnern oder Frauen aus den Gummib{\"a}rchendaten!}  \textbf{(3 Punkte)}
-\item Erweitern Sie das Schaubild um die Entstehung von $Pr(D|H_0)$!
-  \textit{Nutzen Sie hierf{\"u}r als Veranschaulichung zus{\"a}tzlich die
-    Gruppierungsvariable "`Modul"' aus den Gummib{\"a}rchendaten!}  \textbf{(3
-    Punkte)}
+\item Nennen Sie das statistische Verfahren und zwei konkrete Beispiele zur Durchführung um von einer Grundgesamtheit auf eine Stichprobe zu gelangen! \textbf{(3 Punkte)}
+\item Erklären Sie den Zusammenhang zwischen Stichprobe und Grundgesamtheit an einem Schaubild! Beschriften Sie das Schaubild entsprechend!
+  \textit{Nutzen Sie hierfür als Veranschaulichung die Körpergröße von Männern oder Frauen aus den Gummibärchendaten!}  \textbf{(3 Punkte)}
+\item Erweitern Sie das Schaubild um die Entstehung von $Pr(D|H_0)$! \textit{Nutzen Sie hierfür als Veranschaulichung zusätzlich die Gruppierungsvariable "`Modul"' aus den Gummibärchendaten!}  \textbf{(3 Punkte)}
 \end{enumerate}

@@ -21,7 +21,6 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/ZrJhn2wPbq4}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -88,6 +87,8 @@ attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 ques_vec <- c(str_c(name, " und ", attr_name_vec$flaw, " machen die Sache mit dem Studium nicht einfacher. Immerhin ist noch ", name_sec, " zur Hilfe mit dabei. ", name_sec, " hat ", attr_name_vec$sweet, " mitgebracht und ", attr_name_vec$music, " aufgedreht. Das ist immerhin eine Ablenkung. Nicht so gut wie ", attr_name_vec$hobby, ", aber immerhin etwas. Jetzt sollen die beiden diese komische Aufgabe lösen. Es geht um verschiedene Normalverteilungen. Anscheinend hängen Normalverteilungen vom Mittelwert $\\bar{y}$ und der Standardabweichung $s$ ab. 'Wozu brauchen wir nochmal Normalverteilungen?', entfährt es ", name, ". Durch das Mampfen von ", name_sec, " versteht ", names(name), " kein Wort der Antwort. ", name_sec, " lächelt.")) |> 
   sample(1)
 @
+
+\paragraph{Visualisierung der Normalverteilung}
 
 \Sexpr{ques_vec}\\
 

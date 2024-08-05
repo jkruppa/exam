@@ -1,11 +1,33 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/CN_O4fYPbhs}{\includegraphics[width =
-  2cm]{img/youtube}}\\[1Ex]
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/CN_O4fYPbhs}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
 <<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
+              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
 img_file <- file.path(img_path, "statistisches-testen-04")
 
@@ -21,23 +43,29 @@ ki_sample <- c("Ein signifikantes, relevantes 95\\% Konfidenzintervall",
                str_c("Ein signifikantes, relevantes ", alpha,"\\% Konfidenzintervall.")) %>%
   sample
 
-effect <- c("dem mittleren Trockengewicht nach D{\"u}ngergabe",
+effect <- c("dem mittleren Trockengewicht nach Düngergabe",
             "dem mittleren Befall mit Parasiten") %>%
+  sample(1)
+
+ques_vec <-  c(str_c("foo")) |> 
   sample(1)
 
 @ 
 
-Sie rechnen einen t-Test f{\"u}r Gruppenvergleiche der Mittelwerte. Sie
-sch{\"a}tzen den Unterschied zwischen \Sexpr{effect} zu einer unbehandelten
-Kontrolle.
+\paragraph{Visualisierung des 95\% Konfidenzintervalls}
+
+\Sexpr{ques_vec}
+
+\vspace{1ex}
+
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
+
+Sie rechnen einen t-Test für Gruppenvergleiche der Mittelwerte. Sie schätzen den Unterschied zwischen \Sexpr{effect} zu einer unbehandelten Kontrolle.
 
 \begin{enumerate}
-\item Beschriften Sie die untenstehende Abbildung mit der
-  Signifikanzschwelle! Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie eine \textit{in den Kontext passende} Relevanzschwelle!
-  Begr{\"u}nden Sie Ihre Antwort! \textbf{(2 Punkte)} 
-\item Skizieren Sie in die
-  untenstehende Abbildung sechs einzelne Konfidenzintervalle (a-f) mit den
+\item Beschriften Sie die untenstehende Abbildung mit der Signifikanzschwelle! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Ergänzen Sie eine \textit{in den Kontext passende} Relevanzschwelle! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Skizieren Sie in die untenstehende Abbildung sechs einzelne Konfidenzintervalle (a-f) mit den
   jeweiligen Eigenschaften! \textbf{(6 Punkte)}
   \begin{itemize}
   \item[(a)] \Sexpr{ki_sample[1]} 	
@@ -50,7 +78,7 @@ Kontrolle.
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[height = 12cm]{\Sexpr{img_file}}
+  \includegraphics[height = 10cm]{\Sexpr{img_file}}
 \end{center}
 
 
