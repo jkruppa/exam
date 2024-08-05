@@ -82,8 +82,7 @@ gen_data <- function(...){
     gather
   return(temp_tbl)
 }
-ques_vec <- c("foo") |> 
-  sample(1)
+
 
 effect_test <- c("die Teststatistik $T_{D}$", "der Effekt") |> sample(1)
 

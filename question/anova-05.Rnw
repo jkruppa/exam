@@ -17,9 +17,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3Ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -90,6 +90,8 @@ ques_vec <- c(str_c("In ", exp, " wurden ", obser, " mit dem Behandlung ", x1_va
 
 
 @ 
+
+\paragraph{Ergebnistabelle der zweifaktoriellen ANOVA}
 
 \Sexpr{ques_vec}
 

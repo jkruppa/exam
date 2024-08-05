@@ -17,9 +17,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3Ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -65,18 +65,22 @@ b <- c(11, 19, 21) %>% sample(1)
 c <- c(13, 23, 27) %>% sample(1)
 d <- c(38, 44, 52) %>% sample(1)
 
-ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen."),
-                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen."),
-                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doff, da er sich auf eine ANOVA gefreut hatte. Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet."),
-              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage.")) |> 
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+
+ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Eigentlich wollte ", name, " nachher noch einen Film schauen. ", sentence_name_vec$animal_film),
+                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Eigentlich wollte ", name, " nachher noch zum Sport. ", sentence_name_vec$sport),
+                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doof, da er sich auf eine ANOVA gefreut hatte. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet. Eigentlich wollte ", name, " nachher noch zum Sport. ", sentence_name_vec$sport),
+              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage. Eigentlich wollte ", name, " nachher noch einen Film schauen. ", sentence_name_vec$animal_film)) |> 
   sample(1)
 
 
 
 @
 
-\Sexpr{ques_vec}
+\paragraph{Den Chi-Quadrat-Test berechnen}
 
+\Sexpr{ques_vec}
 
 \vspace{5Ex}
 

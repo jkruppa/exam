@@ -17,9 +17,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3Ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -94,6 +94,8 @@ ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_v
 
 
 @ 
+
+\paragraph{Zusammenhang zwischen der ANOVA und dem t-Test}
 
 \Sexpr{ques_vec}
 

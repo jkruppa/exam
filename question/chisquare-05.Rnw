@@ -21,7 +21,6 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/_7s44pbOc00}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -52,11 +51,12 @@ sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-
 ques_vec <-  c(str_c("'Was ist denn das?', entfährt es ", name, ". 'Hm... ich glaube es handelt sich um einen Doppelbaum, den wir beim diagnostischen Testen brauchen.', meint ", name_sec, " und dreht ", attr_name_vec$film, " auf dem Second Screen etwas leiser. Was jetzt beide von einem diagnostischen Test haben, ist ihnen auch nicht klar. Es ist ja schon alles komplex genug und ", attr_name_vec$flaw, " von ", name, " macht es heute auch nicht mehr einfacher. 'Es geht um ", y_val, " an ", obser, ".', stellt ", name_sec, " fest. Eigentlich wollte ", name_sec, " eher los um ", attr_name_sec1_vec$sport, ". Das wird aber wohl nichts mehr.")) |> 
   sample(1)
 
 @ 
+
+\paragraph{Der diagnostische Test und statistische Maßzahlen}
 
 \Sexpr{ques_vec}
 

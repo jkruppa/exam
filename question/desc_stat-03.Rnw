@@ -15,9 +15,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/Xf0yE-o7bEU}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/Xf0yE-o7bEU}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -66,6 +66,8 @@ ques_vec <- c(str_c(sentence_name_vec$flaw, " Deshalb gilt anschauen, was andere
               str_c("Boxplots sind bedeutend in der Darstellung von wissenschaftlichen Ergebnissen. Leider hat sich ", name, " nicht gemerkt, welche statistischen Maßzahlen für einen Barplot erhoben werden müssen. Besser wäre was anderes gewesen. ", sentence_name_vec$hobby, " Das ist in soweit doof, da nach ", betreuer, " erstmal ein Barplot nachgebaut werden soll, bevor es mit ", project, " losgeht. Dann hat ", names(name), " schonmal den \\Rlogo Code vorliegen und nachher geht dann alles schneller. Na dann mal los. ", name, " schafft sich die nötige Stimmung. ", sentence_name_vec$animal_music, " In der Behandlung für ", plant, " werden verschiedene ", type, " sein. Erfasst wird als ", outcome_name, " \\textit{", outcome, "}. ", name, " soll dann \\textit{", names(outcome), "} in ", pronom[2], " Exceldatei eintragen. Aber nur in passender Atmospäre! " , sentence_name_vec$sweet_film)) |> sample(1)
 
 @ 
+
+\paragraph{Zerforschen des Boxplots}
 
 \Sexpr{ques_vec}
 
