@@ -19,7 +19,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://youtu.be/xq29O8qDrg0}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -85,6 +85,8 @@ ques_vec <-  c(str_c(name, " sitzt schon etwas länger bei ", betreuer, ". So la
 
 
 @ 
+
+\paragraph{Visualisierung des Compact Letter Displays (CLD)}
 
 \Sexpr{ques_vec}
 

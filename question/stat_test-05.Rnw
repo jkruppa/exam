@@ -35,7 +35,13 @@ d_vec <- c("\\Delta\\uparrow", "\\Delta\\downarrow") %>% sample(1)
 s_vec <- c("s\\uparrow", "s\\downarrow") %>% sample(1)
 ci <- c("99\\%-igen Konfidenzintervall", "90\\%-igen Konfidenzintervall") %>% sample(1)
 
-ques_vec <-  c(str_c("foo")) |> 
+quote_block <- c("\\begin{quote}
+                 \\textit{
+                 Beim statistischen Testen gibt es einen Zusammenhang zwischen dem Effekt, der Streuung sowie der Fallzahl. Gegeben sei die Formel für den Student t-Test auf den die folgenden Überlegungen basieren sollen. Welche Auswirkung hat die Änderungen der jeweiligen statistischen Maßzahl des Effekts $\\Delta$, der Streuung $s$ und der Fallzahl $n$ auf die Teststistik $T_{D}$, den p-Wert $Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\\alpha}$?
+                 }
+                 \\end{quote}")
+
+ques_vec <-  c(str_c("An einem kalten Dezembermorgen haben sich ", name, " und ", name_sec, " zum Lernen verabredet. Eine große Kanne Tee und Berge von ", attr_name_vec$sweet, " warten darauf gegessen zu werden. ", name, " liest laut vor:", quote_block, name_sec, " hebt die Augenbraue. 'Irgendwie sagt mir die Aufgabe jetzt mal so gar nichts. Was soll da gemacht werden?', merkt ", name_sec, " an und ergänzt: 'Schauen wir doch erstmal zur Entspannung ", attr_name_sec1_vec$film, ", den Film habe ich extra nochmal mitgebracht.' ", name, " ist der Idee nicht abgeneigt und auch ", attr_name_vec$animal, " kommt unter dem Sofa hervor um mitzuschauen. ")) |> 
   sample(1)
 
 @ 
@@ -46,11 +52,8 @@ ques_vec <-  c(str_c("foo")) |>
 
 \vspace{1ex}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit dem Zusammenhang zwischen dem Effekt, der Streuung sowie der Fallzahl überhaupt nicht aus. 
 
-
-
-Beim statistischen Testen gibt es einen Zusammenhang zwischen dem Effekt, der Streuung sowie der Fallzahl. Gegeben sei die Formel für den Student t-Test auf den die folgenden Überlegungen basieren sollen. Welche Auswirkung hat die Änderungen der jeweiligen statistischen Maßzahl des Effekts $\Delta$, der Streuung $s$ und der Fallzahl $n$ auf die Teststistik $T_{D}$, den p-Wert $Pr(D|H_0)$ sowie dem Konfidenzintervall $KI_{1-\alpha}$?
 
 \begin{enumerate}
 \item Visualisieren Sie den Zusammenhang zwischen der Teststatiatik $T_{D}$ und dem p-Wert $Pr(D|H_0)$ für sich verändernde $T_{D}$-Werte!\textit{Geben Sie dafür ein numerisches Beispiel in dem Sie drei $T_{D}$-Werte und deren Einfluss auf den p-Wert vergleichen!} \textbf{(3 Punkte)}  

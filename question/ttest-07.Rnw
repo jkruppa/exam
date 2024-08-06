@@ -22,7 +22,6 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 \hfill
 \href{https://youtu.be/w62HJlbN28U}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -94,7 +93,7 @@ attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
 
 ques_vec <- c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um sich Hilfe in \\Rlogo zu holen.  Im Hintergrund wummert ", attr_name_vec$music, ". Die beiden hatten zwar schon erste Kontakte mit \\Rlogo sind sich aber unsicher bei der Interpetierung der Ausgabe eines t-Tests für ihren gemeinsamen Versuch. Es würde auch besser funktionieren, wenn ", name, " nicht ", attr_name_vec$flaw, " im Weg stehen würde und ", name_sec, " nicht das Problem hätte ", attr_name_sec1_vec$flaw, " zu händeln. In ", project, " haben beide zusammen ", obser, " untersucht. Dabei ging es um den Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, ". Der Versuch wurde in ", exp, " ", ort, " durchgeführt. Nach ", betreuer, " ist der Messwert ", y_val, " normalverteilt und ein t-Test passt daher. Das wird jetzt nicht mehr angezweifel...", name, " überlegt, ob ", names(name), " die beiden nicht noch auf den Film \\textit{", attr_name_vec$film, "} einlädt."),
-              str_c("\\Rlogo ist schon ein tolles Programm, wenn man mit dem Ding umgehen kann. Super umgehen kann damit ", name, ". Eine echte Herausforderung für ", name, " ist ", attr_name_vec$flaw, ", aber das ist noch eine andere Sache. Deshalb sind aber ", name_sec[1], " und ", name_sec[2], " nicht bei ", pronom[4], ". Sondern um sich bei einem gemeinsamen Projekt helfen zu lassen. Im Hintergrund wummert ", attr_name_vec$music, ". Beide arbeiten gemeinsam an ", project, ". In dem zu beschreibenden Versuch geht es ", ort, " um ", exp, " mit ", obser, ". Dabei ging darum herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Da der Messwert ", y_val, " normalverteilt ist kann ein t-Test gerechnet werden. ", name_sec[1], " möchte dann später noch mehr über ", name, "s Hobby ", attr_name_vec$hobby, " erfahren."),
+              str_c("Programmieren ist nicht so einfach. \\Rlogo ist schon ein tolles Programm, wenn man mit dem Ding umgehen kann. Super umgehen kann damit ", name, ". Eine echte Herausforderung für ", name, " ist ", attr_name_vec$flaw, ", aber das ist noch eine andere Sache. Deshalb sind aber ", name_sec[1], " und ", name_sec[2], " nicht bei ", pronom[4], ". Sondern um sich bei einem gemeinsamen Projekt helfen zu lassen. Im Hintergrund wummert ", attr_name_vec$music, ". Beide arbeiten gemeinsam an ", project, ". In dem zu beschreibenden Versuch geht es ", ort, " um ", exp, " mit ", obser, ". Dabei ging darum herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Da der Messwert ", y_val, " normalverteilt ist kann ein t-Test gerechnet werden. ", name_sec[1], " möchte dann später noch mehr über ", name, "s Hobby ", attr_name_vec$hobby, " erfahren."),
               str_c("'Wir waren ", ort, " um ", obser, " in ", exp, " zu messen.', ", name, " legt das Dokument auf den Tisch und schaut ", name_sec[1], " und ", name_sec[2], " fragend an. Beide schauen fragend zurück. Gäbe es ", attr_name_sec2_vec$flaw, " nicht, dann wäre es für ", name_sec[2], " irgendwie einfacher hier zu helfen. Echt unangenehm. Die beiden sind zu ", name, " gekommen, da sie sich nicht mit \\Rlogo auskennen und daher Hilfe bei der Interpretation des t-Tests brauchen. Im Hintergrund wummert ", attr_name_vec$music, " und leere ", attr_name_vec$sweet, " Packungen stappeln sich auf dem Boden. 'Kein Problem', sagt ", name, " und streichelt langsam ", attr_name_vec$animal, ". 'Aber worum es in dem Versuch geht, lässt sich nur aus dem Text in seiner Hand erahnen.' merkt ", names(name), " an. Vielleicht hilft da ja die Ausgabe des t-Tests in R weiter. Draußen geht blutrot die Sonne unter."),
               str_c("'Wir sind uns relativ sicher, dass unser Messwert ", y_val, " ist!', ruft ", name_sec[1], " wild gestikulierend. ", name_sec[1], " wäre mehr präsent, wenn es ", attr_name_sec1_vec$flaw, " nicht gäbe. Als würde sowas die Ausgabe von \\Rlogo interessieren. ", name_sec[1], " und ", name_sec[2], " sind in einem Cafè mit ", name, " um sich Hilfe von ", pronom[4], " in \\Rlogo zu holen. Während ", name, " Kirschstreuselkuchen und ", attr_name_vec$sweet, " mampft, versuchen die ", name_sec[1], " und ", name_sec[2], " ihren Versuch ", ort, " mit ", obser, " in ", exp, " zu erklären. ", name, " hofft insgeheim, dass die \\Rlogo Ausgabe des t-Tests ", pronom[4], " mehr Informationen liefert. Eigentlich würde ", names(name), " dann doch lieber raus um ", attr_name_vec$sport, " vielleicht mit ", name_sec[2], "?"),
               str_c("Almería. Spanien. Sonne und Strand. ", name_sec[1], " und ", name_sec[2], " haben ihren gemeinsamen Auslandsaufenthalt sichtlich genossen. Dann hatte sich auch noch angeboten ihre Abschlussarbeit gemeinsam in Almería durchzuführen. Es hätte sogar noch bessser funktionieret, wenn ", name, " nicht ", attr_name_vec$flaw, " ein paar Mal im Weg gestanden hätte und ", name_sec, " nicht das Problem gehabt hätte ", attr_name_sec_vec$flaw, " zu händeln. Nun müssen jetzt alle Daten in \\Rlogo ausgewertet werden, da \\Rlogo international der Standard in der Datenauswertung ist und die Betreuer in Spanien nur \\Rlogo können. Während beide ", name, " Oliven mit ", attr_name_vec$sweet, " füttern, hoffen ", name_sec[1], " und ", name_sec[2], " mehr Informationen von ", name, " über die seltsame \\Rlogo Ausgabe des t-Tests. Immerhin erinnern beide sich an die Behandlung ", x_val, " und das es um ", obser, " ging. Im Hintergrund wummert ", attr_name_vec$music, " und Fotos zeigen ", name, " mit dem Hobby ", attr_name_vec$hobby, "."),
@@ -103,6 +102,8 @@ ques_vec <- c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um 
   sample(1)
 
 @
+
+\paragraph{Interpretation des t-Tests in \Rlogo - die Visualisierung}
 
 \Sexpr{ques_vec}
 
@@ -132,10 +133,8 @@ Helfen Sie \Sexpr{name} bei der Interpretation des t-Tests! Sonst geht es auch f
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
-  Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizieren Sie die sich ergebenden Boxplot!
-  Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizieren Sie die sich ergebenden Boxplot! Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre
   Antwort! \textbf{(2 Punkte)} 
 \item Skizieren Sie die sich ergebenden Barplots! \textbf{(2 Punkte)}
 \item Berechnen Sie den Effekt des t-Tests! \textbf{(1 Punkt)}

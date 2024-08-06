@@ -21,7 +21,6 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -92,6 +91,8 @@ ques_vec <- c(str_c("Alles voll mit ", obser, ". Das haben ", name, " und ", nam
   sample(1)
 
 @
+
+\paragraph{Berechnung des gepaarten t-Test}
 
 \Sexpr{ques_vec}
 

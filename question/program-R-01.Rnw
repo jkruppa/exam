@@ -18,7 +18,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://www.youtube.com/playlist?list=PLe51bCp9JvEFUnFqaJG5aRmON9i1ZbOYC}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -99,6 +99,8 @@ ques_random <- c(ques_1, ques_2, ques_3,
                  ques_10, ques_11, ques_12) |> sample(9)
 
 @
+
+\paragraph{Grundlegende Kenntnisse der Programierung in \Rlogo}
 
 \Sexpr{ques_vec}\\[1Ex]
 

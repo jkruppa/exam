@@ -35,8 +35,15 @@ words <- c("(Unbekannte) Wahrheit", "H$_0$ wahr", "H$_0$ falsch",
            "$\\alpha$-Fehler", "$\\beta$-Fehler", "Richtige Entscheidung",
            "5\\%", "20\\%") %>% sample(4)
 
-ques_vec <-  c(str_c("foo")) |> 
+footnote_str <- c("\\footnote{Yang, P. J., et al. (2014). Duration of urination does not change with body size. Proceedings of the National Academy of Sciences, 111(33), 11932-11937.}")
+
+ques_vec <-  c(str_c("'", str_replace(attr_name_vec$sport, "zu ", ""), " ist der beste Sport, den es gibt.', meint ", name, ". ", name_sec, " entgegnet, ' Ich empfehle ja immer allen ", str_replace(attr_name_sec1_vec$sport, "zu ", ""), ".' Die beiden sind im Zoo und diskutieren, ob Pinguine Knie haben. Eigentlich wollten beide nochmal die statistische Testheorie durchgehen, sind dann aber auf abenteuerlichen Wege im Zoo gelandet. ", name, " starrt wie hypnotisiert auf einen strullenden Elefanten und stopt die Zeit.", footnote_str, " 'Du bist so peinlich.', entfährt es ", name_sec, "."),
+               str_c("'", attr_name_vec$film, " ist der beste Film, den es gibt.', meint ", name, ". ", name_sec, " entgegnet, ' Ich empfehle ja immer allen ", attr_name_sec1_vec$film, ".'Die beiden sind im Zoo und diskutieren, ob Pinguine Knie haben. Eigentlich wollten beide nochmal die statistische Testheorie durchgehen, sind dann aber auf abenteuerlichen Wege im Zoo gelandet. ", name, " starrt wie hypnotisiert auf einen strullenden Elefanten und stopt die Zeit.", footnote_str, " 'Du bist so peinlich.', entfährt es ", name_sec, " und schmeißt sich noch ein paar überteuerte ", attr_name_sec1_vec$sweet, " rein."),
+               str_c("'Das Känguruh hat mir gerade zugezwinkert. Das macht mir Angst', bemerkt ", name, ". Es reicht ja schon ein Problem. ", sentence_name_vec$flaw, " Da braucht es nicht noch Wahnvorstellungen. 'Ich glaube nicht, das Känguruhs zwinkern. Aber was Wichtigeres. Wo hast du eigentlich meine Schnapspralinen hingetan? Wir haben nur noch ", attr_name_vec$sweet, " von dir. Bäh!', antwortet ", name_sec, ". Beide sind im Zoo und wollen sich von der statistische Testheorie ablenken lassen. Eigentlich wollte ja ", name, " stoppen wie lange Tiere pinkeln", footnote_str, ", scheiterte aber an einer Oma mit Stock, die die beiden beschimpfte.")) |> 
   sample(1)
+
+
+
 
 @ 
 
@@ -46,9 +53,7 @@ ques_vec <-  c(str_c("foo")) |>
 
 \vspace{1ex}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
-
-Für ein besseres Verständnis der statistischen Testtheorie, auch Null-Ritual genannt, kann eine Visualisierung als Kreuztabelle genutzt werden.  
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit statistischen Testtheorie, auch Null-Ritual genannt, überhaupt nicht aus. Geschweige denn mit der Visualisierung als Kreuztabelle.  
 
 \begin{enumerate}
 \item Tragen Sie folgende statistische Fachbegriffe zur statistischen Testtheorie korrekt eine selbst erstellte Kreuztabelle ein! \textbf{(3 Punkte)}

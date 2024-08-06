@@ -20,7 +20,6 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 \hfill
 \href{https://youtu.be/wJqsNV1hOW8}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -95,6 +94,8 @@ ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um
                str_c(str_replace(attr_name_vec$animal, "^\\w{1}", toupper), " macht mal wieder Randale in ", name, "s Zimmer und rennt davon! ", name_sec[1], " und ", name_sec[2], " sind bei ", name, " in ", ort, " wo der neue, bessere Versuch stattfinden soll. Dabei soll in ", exp, " ", ort, " mit ", obser, " durchgeführt werden. Auf dem Tisch stapeln sich ", attr_name_vec$sweet , " aus Vollkorndinkelmehl. Eine Spezialtät der Komune hier. ", name_sec[1], " hasst Vollkorn wie ", attr_name_sec2_vec$sweet , " geliebt werden. In dem neuen Versuch geht es um den Zusammenhang zwischen der Behandlung ", x1_val, " sowie ", x2_val, " sowie ", block ," und dem Messwert ", y_val, ". Immerhin ist der Messswert normalverteilt, was einges einfacher macht. Was es nicht so einfacher macht ist, dass ", name_sec[2], " als zusätzliche Herausforderung noch ", attr_name_sec2_vec$flaw , " mitgebracht hat. Daher entscheiden sich alle drei für ein \\textit{", simple, "}. 'Naja, so viel einfacher ist es dann doch nicht...', merkt ", name_sec[2], " an und sucht ", attr_name_vec$animal, ".")) |> 
   sample(1)
 @ 
+
+\paragraph{Fortgeschrittene experimentelle Designs}
 
 \Sexpr{ques_vec}\\
 

@@ -29,8 +29,12 @@ sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-ques_vec <-  c(str_c("foo")) |> 
+ques_vec <-  c(str_c("'Grundlage des statistischen Testen ist das Verständnis von der Grundgesamtheit (eng. \\textit{population} oder \\textit{ground truth}) und der experimentellen Stichprobe (eng. \\textit{sample}). ', liest ", name, " laut aus dem Skript vor. ", name_sec, " war kurz eingenickt und wird mit einem Stoß geweckt. 'Reiz dich zusammen und iss noch ein paar ", attr_name_vec$sweet, " das hilft mir immer. Alleine komme ich hier nicht weiter.', tadelt ", name, " ", name_sec, " etwas zu forsch. 'War ne lange Nacht', mault ", name_sec, ". Beide sollen in ihrer Abschlussarbeit einen statistischen Test interpretieren und versuchen die Grundlagen zu wiederholen. ", name_sec, " war auf einem Konzert von ", attr_name_sec1_vec$music, "."),
+               str_c("'Schnapspraline?', räuspert sich das Känguruh und schaukelt in der Wippe. ", name, " und ", name_sec, " schauen erschrocken auf. 'Ähm, das ist hier eine Klausuraufgabe...', merkt ", name, " mit leicht schrägen Blick an. 'Ich mache hier ein Praktikum und schreibe Teile der Aufgaben.', gähnt das Känguruh. 'Also, ich glaube das ist so nicht gedacht. Und das sind die Schnapspralinen für den Geburtstag meiner Oma!', ruft ", name_sec, ". 'Pillepalle! Meins, deins, das sind doch alles bürgerliche Kategorien!', entgegnet das Känguruh und liest von einem zerknitterten Stück Papier ab: 'Was ist der Unterschied zwischen dem Einen und dem Anderen. Steht alles unten in den Fragen. Einfach selber lesen...'."),
+               str_c("An einem schwülem Sommernachmittag sitzen ", name, " und ", name_sec, " in einem Eiskaffee und wollen sich auf die Klausur vorbereiten. In fast allen Fragen geht es ja um die Interpretation eines statistischen Tests. Daher wollen die beiden jetzt nochmal nacharbeiten, was die Grundlagen der Stichprobe (eng. \\textit{sample}) und der Grundgesamtheit (eng. \\textit{population} oder \\textit{ground truth}) sind. ", name, " hat sich ", attr_name_vec$sweet, " Eisbecher bestellt und ", name_sec, " bleibt lieber bei einem ", attr_name_sec1_vec$sweet, " Eis. 'Irre, was die Lebensmittelindustrie alles auf die Beine kriegt', merk ", name_sec, " an und ", name, " schüttelt anerkennend den Kopf.")) |> 
   sample(1)
+
+
 
 @ 
 
@@ -40,9 +44,7 @@ ques_vec <-  c(str_c("foo")) |>
 
 \vspace{1ex}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
-
-Grundlage des statistischen Testen ist das Verständnis von der Grundgesamtheit (eng. \textit{population} oder \textit{ground truth}) und der experimentellen Stichprobe (eng. \textit{sample}). 
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Grundgesamtheit und der Stuchprobe überhaupt nicht aus. Daher sind Sie gefragt!
 
 \begin{enumerate}
 \item Nennen Sie das statistische Verfahren und zwei konkrete Beispiele zur Durchführung um von einer Grundgesamtheit auf eine Stichprobe zu gelangen! \textbf{(3 Punkte)}

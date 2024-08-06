@@ -108,6 +108,8 @@ ques_random <- c(ques_short, ques_long) |> sample()
 
 @
 
+\paragraph{Fortgeschrittene Kenntnisse der Programierung in \Rlogo}
+
 \Sexpr{ques_vec}\\[1Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[1]}}\\[1ex]

@@ -20,7 +20,6 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 \hfill
 \href{https://youtu.be/wJqsNV1hOW8}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -103,6 +102,8 @@ ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um
 
 
 @ 
+
+\paragraph{Einfache experimentelle Designs}
 
 \Sexpr{ques_vec}\\
 

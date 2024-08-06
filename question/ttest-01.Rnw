@@ -17,9 +17,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/eejS2uG4o-M}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/eejS2uG4o-M}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -100,6 +100,8 @@ ques_vec <- c(str_c("Der t-Test. ", name, " erschaudert. ", sentence_name_vec$fl
 
 
 @ 
+
+\paragraph{Berechnung des Student t-Test \underline{oder} Welch t-Test}
 
 \Sexpr{ques_vec}
 

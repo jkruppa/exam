@@ -43,12 +43,18 @@ ki_sample <- c("Ein signifikantes, relevantes 95\\% Konfidenzintervall",
                str_c("Ein signifikantes, relevantes ", alpha,"\\% Konfidenzintervall.")) %>%
   sample
 
-effect <- c("dem mittleren Trockengewicht nach Düngergabe",
-            "dem mittleren Befall mit Parasiten") %>%
+effect <- c("Trockengewicht nach Düngergabe",
+            "Frischegewicht nach Bewässerung",
+            "Chlorophyllgehalt nach Subsitution",
+            "Wasserverbrauch der Bewässerung",
+            "Pilzbefall nach Fungizid",
+            "Energieverbrauch der Klimakammer") %>%
   sample(1)
 
-ques_vec <-  c(str_c("foo")) |> 
+ques_vec <-  c(str_c("'So, was haben wir gemacht? Wir haben einen t-test für den Vergleich der Mittelwerte gerechnet.', meint ", name, ". ", name_sec, " schaut fragend. 'Hatten wir nicht alles zu einer Kontrolle verglichen? Das war doch so!', ruft ", name_sec, " laut aus. 'Wir haben doch Messwert \\textit{", effect, "} erhoben.', stellt ", name, " fest. Jetzt haben beide das Problem, die möglichen 95\\% Konfidenzintervalle zu interpretieren.")) |> 
   sample(1)
+
+
 
 @ 
 
@@ -58,9 +64,7 @@ ques_vec <-  c(str_c("foo")) |>
 
 \vspace{1ex}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. 
-
-Sie rechnen einen t-Test für Gruppenvergleiche der Mittelwerte. Sie schätzen den Unterschied zwischen \Sexpr{effect} zu einer unbehandelten Kontrolle.
+Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Visualisierung des 95\% Konfidenzintervall überhaupt nicht aus. 
 
 \begin{enumerate}
 \item Beschriften Sie die untenstehende Abbildung mit der Signifikanzschwelle! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}

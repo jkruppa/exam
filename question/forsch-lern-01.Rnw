@@ -19,7 +19,6 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -44,6 +43,8 @@ ques_vec <- c(str_c(name, " hält die wissenschaftliche Veröffentlichung \\text
 
 
 @
+
+\paragraph{Zerforschen einer wissenschaftlichen Veröffentlichung}
 
 \Sexpr{ques_vec}\\
 

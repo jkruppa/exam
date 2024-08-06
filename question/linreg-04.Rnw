@@ -19,7 +19,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -71,6 +71,8 @@ ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wi
   sample(1)
 
 @
+
+\paragraph{Interpretation der Ergebnisse einer Korrelationsanalyse in \Rlogo}
 
 \Sexpr{ques_vec}
 

@@ -21,7 +21,6 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -71,6 +70,8 @@ ques_vec <- c(str_c("'Hä? Hatten wir das als Aufgabe nicht schon mal, das wir a
 
 
 @
+
+\paragraph{Visualisierung der linearen Regression}
 
 \Sexpr{ques_vec}
 

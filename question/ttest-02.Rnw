@@ -17,9 +17,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/Cq_rF_z4xOk}{\includegraphics[width = 2cm]{img/youtube}}\\[1Ex]
+\href{https://youtu.be/Cq_rF_z4xOk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
+\vspace{-3ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -94,6 +94,8 @@ ques_vec <- c(str_c("Der t-Test. ", name, " erschaudert. ", sentence_name_vec$fl
               str_c(ort_2, ", unendliche Weiten. Wir schreiben das Jahr ", jahr, ". Dies sind die Abenteuer von ", name, ", ", pronom[8], " mit ", pronom[2], " 1 ", pronom[9], " starken Besatzung 12 Wochen lang unterwegs ist, um neue Welten zu erforschen, neues Leben und neue Zivilisationen. 'Oder nennen wir es Ödnis und Verzweiflung', denkt ", name, ". Für ", project, " ist ", name, " ins Nichts gezogen. ", sentence_name_vec$flaw, " Was macht ", names(name), " nun? ", name, " hat ", exp, " mit ", obser, " durchgeführt. Die Behandlung ", x_val, " wurde an ", obser, " getestet. Gemessen hat ", names(name), " dann als ", outcome_name, " ", y_val, ". Jetzt soll ", names(name), " ", betreuer, " nach testen, ob die Behandlung ", x_val, " ein signifikantes Ergebnis liefert. Hm..., was entspannendes wäre gut. ", sentence_name_vec$sweet_music)) |> sample(1)
 
 @ 
+
+\paragraph{Berechnung des Student t-Test}
 
 \Sexpr{ques_vec}
 

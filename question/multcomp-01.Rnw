@@ -21,7 +21,6 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{1ex}
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -80,6 +79,8 @@ ques_vec <-  c(str_c("In ", exp, " mit ", obser, " wurde die Behandlung ", x_val
                ) |>   sample(1)
 
 @ 
+
+\paragraph{Adjustierung multipler Vergleiche}
 
 \Sexpr{ques_vec}
 
