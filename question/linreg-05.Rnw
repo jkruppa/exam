@@ -29,7 +29,9 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <- c(str_c("'Hm..., drei leere Abbildungen. Was soll ich da hetzt machen?', fragt sich ", name, ". ", name, " kennt sich nur begrenzt bis gar nicht mit der linearen Regresion und Korrelation aus. Dafür mit etwas anderem. ", sentence_name_vec$hobby," Aber das hilft hier auch nur so halb, die Aufgabe zu lösen und mehr über den Korrelationskoeffizienten zu erfahren.")) |> 
+ques_vec <- c(str_c("'Hm..., drei leere Abbildungen. Was soll ich da jetzt machen?', fragt sich ", name, ". ", name, " kennt sich nur begrenzt bis gar nicht mit der linearen Regresion und Korrelation aus. Dafür mit etwas anderem. ", sentence_name_vec$hobby," Aber das hilft hier auch nur so halb, die Aufgabe zu lösen und mehr über den Korrelationskoeffizienten zu erfahren."),
+              str_c("'Im Folgenden sind die drei leeren Abbildungen zu füllen.', liest ", name, " und denkt nach. ", name, " kennt sich nur begrenzt bis gar nicht mit der linearen Regresion und Korrelation aus. Dafür mit etwas anderem. ", sentence_name_vec$hobby," Aber das hilft hier auch nur so halb. Daher mampft ", names(name), " noch ein paar ", attr_name_vec$sweet),
+              str_c(sentence_name_vec$animal_film, " Da hilft dann die Aufgabe auch nur bedingt. 'Hm..., drei leere Abbildungen. Was soll ich da jetzt machen?', fragt sich ", name, " und mampft noch ein paar ", attr_name_vec$sweet, " in sich hinein. ", name, " kennt sich nur begrenzt bis gar nicht mit der linearen Regresion und Korrelation aus.")) |> 
   sample(1)
 
 @
