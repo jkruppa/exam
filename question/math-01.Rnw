@@ -1,27 +1,51 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/Fu8kN0Uj13Y}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Fu8kN0Uj13Y}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Deich",
+                "Sinnlos im Studium") |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
 
 \paragraph{Herodot – der Schimmel aus Ivenack}
 
-W{\"a}hrend der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die
-Geschichten des ber{\"u}hmten Apfelschimmels Herodot aus Ivenack zu
-Geh{\"o}r. Herodot lief zwar niemals Rennen, war aber eines der ber{\"u}hmtesten
-Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen
-Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach
-sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-j{\"a}hrigen Eiche aus Ivenack vor
-den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch
-lautes Wiehern, woraufhin die franz{\"o}sische Armee den Schimmel
-beschlagnahmte und nach Frankreich f{\"u}hrte\footnote{Die Quelle der Inspiration
-  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
-  \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. \\
+Die Lerngruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} waren auf Exkursion in Mecklenburg-Vorpommern und haben dort Folgendes erarbeitet. Während der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die Geschichten des berühmten Apfelschimmels Herodot aus Ivenack zu Gehör. Herodot lief zwar niemals Rennen, war aber eines der berühmtesten Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-jährigen Eiche aus Ivenack vor den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch lautes Wiehern, woraufhin die französische Armee den Schimmel beschlagnahmte und nach Frankreich führte\footnote{Die Quelle der Inspiration  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
+  \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. Jetzt wollen die vier herausfinden: \textit{"Konnten die Ivenacker den Apfelschimmel Herodot vor dem Zugriff von Napoleon in der 1000-jährigen Eiche verstecken?"} 
 
 <<>>=
 mm_wachstum <- c(0.8, 0.9, 1.0, 1.1, 1.2) %>% sample(1)
@@ -31,45 +55,31 @@ horse_h <- c(180, 185, 190, 195) %>% sample(1)
 horse_b <- c(85, 90, 95, 75, 80) %>% sample(1)
 horse_l <- c(230, 240, 250, 220) %>% sample(1)
 crit_width <- c(10, 15, 20, 30, 25) %>% sample(1)
-fitting <- c("m{\"u}hsam", "bequem") %>% sample(1)
+fitting <- c("mühsam", "bequem") %>% sample(1)
 
 @
 
-\textit{Forschungsfrage: "Konnten die Ivenacker den Apfelschimmel Herodot
-  vor dem Zugriff von Napoleon in der 1000-j{\"a}hrigen Eiche verstecken?"} \\
+\vspace{1Ex}
 
-Gehen Sie von einem radialen Wachstum der 1000-j{\"a}hrigen Eiche von
-$\Sexpr{mm_wachstum}mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im
-Jahr 2022 einen Umfang von $\Sexpr{brust_umfang}m$ in Brusth{\"o}he hatte.
+Helfen Sie der Lerngruppe \textit{\Sexpr{lerngruppe}} bei der Beantwortung der Forschungsfrage! Gehen Sie von einem radialen Wachstum der 1000-jährigen Eiche von $\Sexpr{mm_wachstum}mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im Jahr 2022 einen Umfang von $\Sexpr{brust_umfang}m$ in Brusthöhe hatte.
 
 \begin{enumerate}
-\item Wie gro{\ss} war der Durchmesser in $m$ der Eiche im Jahr $\Sexpr{year_stolen}$ als
-  Herodot in der Eiche versteckt werden sollte?
-  \textbf{(2 Punkte)}
-\item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen
-exponentiellen Zusammenhang f{\"u}r das Wachstum der 1000-j{\"a}hrigen Eiche. Erkl{\"a}ren Sie die
-Auswirkungen der Entscheidung f{\"u}r linear oder exponentiell auf Ihre
-Berechnungen! \textbf{(2 Punkte)}
+\item Wie groß war der Durchmesser in $m$ der Eiche im Jahr $\Sexpr{year_stolen}$ als Herodot in der Eiche versteckt werden sollte? \textbf{(2 Punkte)}
+\item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen exponentiellen Zusammenhang für das Wachstum der 1000-jährigen Eiche. Erklären Sie die Auswirkungen der Entscheidung für linear oder exponentiell auf Ihre Berechnungen! \textbf{(2 Punkte)}
 \end{enumerate}
  
-Herodot hatte eine Schulterh{\"o}he von $\Sexpr{horse_h}$cm, eine Breite von
-$\Sexpr{horse_b}$cm sowie eine L{\"a}nge von  $\Sexpr{horse_l}$cm.
+Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexpr{horse_b}$cm sowie eine Länge von  $\Sexpr{horse_l}$cm.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches
-  Herodot in der 1000-j{\"a}hrigen Eiche einnehmen w{\"u}rde! \textbf{(2 Punkte)}
+\item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches Herodot in der 1000-jährigen Eiche einnehmen würde! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Es wurde berichtet, dass sich Herodot in der 1000-j{\"a}hrigen Eiche
-$\Sexpr{fitting}$ um die eigene Achse drehen konnte.
+Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $\Sexpr{fitting}$ um die eigene Achse drehen konnte.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre
-  Berechnungen an einer aussagekr{\"a}ftigen Skizze f{\"u}r Pferd und Eiche! \textbf{(2 Punkte)} 
-\item Unter einer Dicke der Eichenwand von $\Sexpr{crit_width}cm$ bricht
-  die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begr{\"u}nden Sie
-  Ihre Antwort! \textbf{(2 Punkte)} 
+\item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre Berechnungen an einer aussagekräftigen Skizze für Pferd und Eiche! \textbf{(2 Punkte)} 
+\item Unter einer Dicke der Eichenwand von $\Sexpr{crit_width}cm$ bricht die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
 

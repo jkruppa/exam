@@ -1,15 +1,48 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/57B-yYoFSk0}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/57B-yYoFSk0}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
-\paragraph{Von T{\"o}pfen auf Tischen}
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
+
+
+\paragraph{Von Töpfen auf Tischen}
 
 <<>>=
 n_plant <- c(120, 180, 240, 160, 200) %>% sample(1)
@@ -21,28 +54,19 @@ torf_cost <- c(280, 290, 310, 270, 260) %>% sample(1)
 type <- c("Pflanztopf", "Tisch") %>% sample(1)
 @
 
-In einem Experiment wollen Sie die Wuchsh{\"o}he von \Sexpr{n_plant}
-\Sexpr{type_plant} bestimmen. Bevor Sie {\"u}berhaupt mit dem Experiment beginnen
-k{\"o}nnen, gibt es aber ein paar Absch{\"a}tzungen {\"u}ber die Kosten und den Aufwand
-zu treffen. Zum einen m{\"u}ssen Sie die \Sexpr{type_plant} einpflanzen und m{\"u}ssen
-daf{\"u}r Substrat bestellen. Zum anderen m{\"u}ssen Sie die \Sexpr{type_plant} auch
-bewegen und in ein Gew{\"a}chshaus platzieren. Die T{\"o}pfe f{\"u}r die Keimung haben
-einen Durchmesser von \Sexpr{topf_d}cm und eine H{\"o}he von \Sexpr{topf_h}cm. Der
-Kubikmeterpreis f{\"u}r Torf liegt bei \Sexpr{torf_cost} EUR.
+Die Projektgruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} hat sich zusammengefunden um den ersten Versuch zu planen. In einem Experiment wollen sie die Wuchshöhe von \Sexpr{n_plant} \Sexpr{type_plant} bestimmen. Bevor die Vier überhaupt mit dem Experiment beginnen können, gibt es aber ein paar Abschätzungen über die Kosten und den Aufwand zu treffen. Zum einen müssen sie die \Sexpr{type_plant} einpflanzen und müssen dafür Substrat bestellen. Zum anderen muss die Projektgruppe die \Sexpr{type_plant} auch bewegen und in ein Gewächshaus platzieren. Die Töpfe für die Keimung haben
+einen Durchmesser von \Sexpr{topf_d}cm und eine Höhe von \Sexpr{topf_h}cm. Der Kubikmeterpreis für Torf liegt bei \Sexpr{torf_cost} EUR.
+
+\vspace{1Ex}
+
+Helfen Sie der Projektgruppe \textit{\Sexpr{lerngruppe}} bei der Planung des Versuches!
 
 \begin{enumerate}
-\item Skizzieren Sie den Versuchsplan auf \textit{\Sexpr{n_tisch}} Tischen im
-  Gew{\"a}chshaus! \textbf{(2 Punkte)}
-\item Berechnen Sie die ben{\"o}tigte Anzahl an Pflanzt{\"o}pfen, wenn Sie
-  Randpflanzen mit ber{\"u}cksichtigen wollen! \textbf{(1 Punkt)}
-\item Welche $\Sexpr{type}$fl{\"a}che in $m^2$ gegeben der Anzahl an
-  Pflanzt{\"o}pfen inklusive Randpflanzen ben{\"o}tigen Sie im Gew{\"a}chshaus am
-  Anfang der Keimungsphase?  \textbf{(3 Punkte)}
-\item Berechnen Sie die ben{\"o}tigte Menge an Torf in Liter $l$, die Sie f{\"u}r
-  das Bef{\"u}llen der Pflanzt{\"o}pfe ben{\"o}tigen! Gehen Sie von \textit{einem
-    Zylinder} f{\"u}r die Pflanzt{\"o}pfe aus!  \textbf{(3 Punkte)}
-\item Berechnen Sie die Kosten in EUR f{\"u}r Ihre Torfbestellung! \textbf{(1
-    Punkt)}
+\item Skizzieren Sie den Versuchsplan auf \textit{\Sexpr{n_tisch}} Tischen im Gewächshaus! \textbf{(2 Punkte)}
+\item Berechnen Sie die benötigte Anzahl an Pflanztöpfen, wenn Sie Randpflanzen mit berücksichtigen wollen! \textbf{(1 Punkt)}
+\item Welche $\Sexpr{type}$fläche in $m^2$ gegeben der Anzahl an Pflanztöpfen inklusive Randpflanzen benötigen Sie im Gewächshaus am Anfang der Keimungsphase?  \textbf{(3 Punkte)}
+\item Berechnen Sie die benötigte Menge an Torf in Liter $l$, die Sie für das Befüllen der Pflanztöpfe benötigen! Gehen Sie von \textit{einem Zylinder} für die Pflanztöpfe aus!  \textbf{(3 Punkte)}
+\item Berechnen Sie die Kosten in EUR für Ihre Torfbestellung! \textbf{(1 Punkt)}
 \end{enumerate}
 
 
