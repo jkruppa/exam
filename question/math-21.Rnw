@@ -57,15 +57,16 @@ spieler <- c("einem einäugen Piraten", "einem Typen in einem Tentakelkostüm", 
 
 @
 
-"`Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit dabei, wenn es wieder heißt: Der Preis ist heiß!"', ertönt es und Sie fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch hätten sein sollten. Aber Sie brauchen das Geld und jetzt heißt es Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden \Sexpr{names[1]} und \Sexpr{names[2]} das Team der drei Kandidaten.
+
+Das war zu viel für \Sexpr{name} gestern. Die Lerngruppe mit \Sexpr{name_sec[1]} und \Sexpr{name_sec[2]} ging viel zu lang. Während \Sexpr{names(name)} wegdämmert, kommen in \Sexpr{pronom[4]} seltsame Bilder hoch. 'Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit dabei, wenn es wieder heißt: Der Preis ist heiß!', ertönt es und \Sexpr{name} fragt sich, ob \Sexpr{names(name)} nicht doch lieber bezahlter Gast bei Barbara Salesch hätten sein sollten. Aber \Sexpr{name} braucht das Geld und jetzt heißt es Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden \Sexpr{name_sec[1]} und \Sexpr{name_sec[2]} das Team der drei Kandidaten. \Sexpr{name} braucht dringend Ihre Hilfe in \Sexpr{pronom[3]} Wahnträumen. Sie gehen wie in \textit{Interception} rein!\footnote{\href{https://www.youtube.com/watch?v=3RhxyHMs-w8}{South Park Inception Spoof} -- Wunderbare South Park Folge}
 
 \begin{center}
 \begin{tabular}{ccc}
   \toprule
   Name & $P(win)$ & $P(outbid)$\\
   \midrule
-  \Sexpr{names[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_uber[1]}\\
-  \Sexpr{names[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_uber[2]} \\
+  \Sexpr{name_sec[1]} & \Sexpr{p_gewinn[1]} & \Sexpr{p_uber[1]}\\
+  \Sexpr{name_sec[2]} & \Sexpr{p_gewinn[2]} & \Sexpr{p_uber[2]} \\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -75,7 +76,7 @@ spieler <- c("einem einäugen Piraten", "einem Typen in einem Tentakelkostüm", 
 \item Wenn Ihre überbietungswahrscheinlichkeit $P(outbid)$ bei \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit \Sexpr{spieler} um das große Geld. Das Glücksrad hat \Sexpr{feld_rad} Felder. Sie drehen das Glücksrad zweimal. Auf \Sexpr{enough} Feldern gewinnen Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz schön viel Geld und ganz schön zwielichtig hier...
+Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gereicht. Deshalb sind Sie jetzt mit \Sexpr{name} auf der Kirmes und spielen mit \Sexpr{spieler} um das große Geld. Das Glücksrad hat \Sexpr{feld_rad} Felder. Sie beide drehen das Glücksrad zweimal. Auf \Sexpr{enough} Feldern gewinnen \Sexpr{name} und Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz schön viel Geld und ganz schön zwielichtig hier...
 
 \begin{enumerate}
   \setcounter{enumi}{2}  
@@ -84,7 +85,7 @@ Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gerei
 \item Mir welcher Wahrscheinlichkeit gewinnen Sie \Sexpr{win_3}EUR? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Nach Ihrem Fiebertraum reisen Sie im Zug nach Köln um bei >>Geh aufs Ganze!<< mitzuspielen. Sie schaffen es tatsächlich ins Finale und können als Hauptgewinn ein Auto hinter einer der drei Türen gewinnen. 
+Im Fiebertraum von \Sexpr{name} reisen sie beide im Zug nach Köln um bei >>Geh aufs Ganze!<< mitzuspielen. \Sexpr{name} und Sie schaffen es tatsächlich ins Finale und können als Hauptgewinn ein Auto hinter einer der drei Türen gewinnen. Und was braucht man mehr als ein Auto in einem Fiebertraum? 
 
 \begin{enumerate}
   \setcounter{enumi}{5}  
