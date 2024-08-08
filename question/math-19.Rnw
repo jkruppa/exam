@@ -41,10 +41,7 @@ attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
 
 @
 
-
-
 \paragraph{Network-Marketing oder Schneeballschlacht!}
-
 
 <<>>=
 firma <- c("KH Gesund und Schön Components (KH-GSC)",
@@ -71,9 +68,7 @@ month <- c(36, 48, 60, 72) %>% sample(1)
 
 @
 
-\Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]}
-
-Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne viel Aufwand und ortsunabhängig. Dann wollen wir mal loslegen. Schnell ein YouTube-Werbevideo gedreht und auf geht es mit unserem Network-Marketing. Aber Moment, wie funktioniert Network-Marketing eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Wir wollen hier einmal in die Untiefen des >>passiven Einkommens<< abtauchen\footnote{Die Quellen der Inspiration für die Aufgabe waren folgendes YouTube Video: \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus -- Die meistgesuchte Betrügerin der Welt} und der Artikel: \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
+\Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} sitzen bei \Sexpr{name} und hören sich etwas über Network-Marketing an. \Sexpr{name} ist jetzt im Network-Marketing tätig. 'Jetzt reicht es. Wir sind eine Lerngruppe und du versuchst uns hier abzuziehen!', poltert \Sexpr{name_sec[1]} und fährt fort, 'Ich erklär dir mal, wie falsch du liegst!'. Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne viel Aufwand und ortsunabhängig. Schnell ein YouTube-Werbevideo gedreht und auf geht es mit unserem Network-Marketing. Aber Moment, wie funktioniert Network-Marketing eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? \Sexpr{name_sec[1]} und Sie wollen hier einmal in die Untiefen des >>passiven Einkommens<< abtauchen und die Lerngruppe vor Schlimmeren bewahren\footnote{Die Quellen der Inspiration für die Aufgabe waren folgendes YouTube Video: \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus -- Die meistgesuchte Betrügerin der Welt} und der Artikel: \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}!\\
 
 Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von \Sexpr{firma}. Das Unternehmen steigerte den Umsatz um rund \Sexpr{steigerung} Prozent von \Sexpr{umsatz} Millionen Euro im Jahr \Sexpr{year - 1}. Doch wie viel kommt bei den Partnern an? Laut \Sexpr{names(firma)} habe das Unternehmen \Sexpr{partner} aktive Partner.
 
@@ -83,7 +78,7 @@ Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von \Sexpr{f
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im Durchschnitt für jeden aktiven Partner bei einer direkten Provision von \Sexpr{prov}\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet \Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision für die erste Stufe beträgt \Sexpr{prov_1}\%. Für die zweite, dritte und vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%, \Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen >>Partner<< wirbt wiederum \Sexpr{n_partner} Partner für sich selbst an. Pro Monat werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun \Sexpr{income}EUR im Monat \textit{passiv} -- also durch indirekte Provisionen -- erwirtschaften.
+Das von \Sexpr{name} zu vermarkende Produkt, hinter dem \Sexpr{name} voll steht, kostet \Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision für die erste Stufe beträgt \Sexpr{prov_1}\%. Für die zweite, dritte und vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%, \Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder von \Sexpr{name} angeworbener >>Partner<< wirbt wiederum \Sexpr{n_partner} Partner für sich selbst an. Pro Monat werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. \Sexpr{name} will nun \Sexpr{income}EUR im Monat \textit{passiv} -- also durch indirekte Provisionen -- erwirtschaften. Kann das klappen? Sie sind zusammen mit \Sexpr{name_sec[1]} skeptisch.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -108,7 +103,7 @@ Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet \Sexpr{cost_prod
 \item Wie viele Partner müssen Sie auf der 2 Stufe anwerben um Ihr passives Einkommen durch indirekte Provision zu erreichen? Wie viele Menschen arbeiten am Ende indirekt für Sie? Stellen Sie den Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Sie mussten zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts für \Sexpr{einstieg}EUR kaufen. Diese Einheiten können Sie nur direkt verkaufen. Leider mussten Sie den Kauf über einen Kredit über \Sexpr{zins}\% p.a. über \Sexpr{month} Monate finanzieren.
+\Sexpr{name} musste zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts für \Sexpr{einstieg}EUR kaufen. Diese Einheiten kann \Sexpr{name} nur direkt verkaufen. Das ganze Wohnzimmer ist voll davon. Leider musste \Sexpr{name} den Kauf über einen Kredit über \Sexpr{zins}\% p.a. über \Sexpr{month} Monate finanzieren. Sie schütteln den Kopf und klären \Sexpr{name} über Zinsen auf.
 
 \begin{enumerate}
   \setcounter{enumi}{5}

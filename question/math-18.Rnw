@@ -4,7 +4,10 @@
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+switch_name <- "sie"
+if(names(name) == "sie")
+  switch_name <- "er"
+name_sec <- str_subset(par_lst$naming[str_detect(names(par_lst$naming), switch_name)], name, negate = TRUE) |> sample(1)
 avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
   str_subset(str_c(name, name_sec, sep = "|"))
 jahr <- par_lst$year
@@ -22,6 +25,11 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \href{https://youtu.be/flRBo1FWQy0}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 %% --------------------------------------------------------------------
+
+%% --------------------------------------------------------------------
+{\tiny\textbf{Stichworte:} Immunsystem -- Muskel vs. Interpol $\bullet$ Inzidenz $\bullet$ Prävalenz}
+%% --------------------------------------------------------------------
+
 
 <<>>=
 
@@ -43,9 +51,8 @@ attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
 
 <<>>=
-arzt <- c("Ihrem Hautarzt", "Ihrem Hausarzt", "Ihrem Augenarzt",
-          "Ihrem HNO-Arzt", "Ihrem Orthopäden") %>% sample(1)
-partner <- c("Ihre Partnerin", "Ihr Partner") %>% sample(1)
+arzt <- c("ihrem Hautarzt", "ihrem Hausarzt", "ihrem Augenarzt",
+          "ihrem HNO-Arzt", "ihrem Orthopäden") %>% sample(1)
 praev <- sample(c(0.01, 0.1, 0.5, 0.75, 0.8), 1)
 pos_1_rate <- sample(c(90, 92, 95, 96), 1)
 pos_2_rate <- sample(c(0.5, 2.5, 1, 3, 4), 1)
@@ -53,11 +60,10 @@ n_animal <- sample(c(10000, 20000, 40000, 30000), 1)
 
 @
 
-\Sexpr{name}, \Sexpr{name_sec[1]}
-
-Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern beiseite. Sie sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen lassen. Woanders leider keinen Termin gekriegt... Immerhin denken Sie und \Sexpr{partner} über Nachwuchs nach und da geht es eben nur durch ungeschützten Sex. Was wissen Sie nun aber über AIDS und dem diagnostischen AIDS-Test, den Sie nun machen werden?\\
+Irritiert legt \Sexpr{name} die historische Ausgabe des Spiegels aus den 80zigern beiseite. \Sexpr{name} und \Sexpr{name_sec[1]} sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen lassen. Woanders leider keinen Termin gekriegt... Immerhin denken die beiden über Nachwuchs nach und da geht es eben nur durch ungeschützten Sex. Was wissen \Sexpr{name} und \Sexpr{name_sec[1]} nun aber über AIDS und dem diagnostischen AIDS-Test, den die beiden nun machen werden? Leider zu wenig. Da brauchen dann \Sexpr{name} und \Sexpr{name_sec[1]} mal wieder Ihre Hilfe bei der Interpretation eines diagnostischen Tests!\\
 
 Die Prävalenz von AIDS bei einem Menschen in Europa wird mit \Sexpr{praev}\% angenommen. In \Sexpr{pos_1_rate}\% der Fälle ist ein HIV-Test positiv, wenn der Patient erkrankt ist. In \Sexpr{pos_2_rate}\% der Fälle ist ein HIV-Test positiv, wenn der Patient \textit{nicht} erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven AIDS-Test vorliegen haben $(T^+)$? Gehen Sie für die folgenden Berechnungen von $n = \Sexpr{n_animal}$ Patienten mit einem diagnostischen Test für AIDS aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et al. (2022) Von Baumdiagrammen über Doppelbäume zu Häufigkeitsnetzen -- kognitive überlastung oder didaktische Unterstützung? Journal für Mathematik-Didaktik, 1-33}}.
+
 
 \begin{enumerate}
 \item Welche Wahrscheinlichkeit $Pr$ wollen Sie berechnen? \textbf{(1 Punkt)}
@@ -66,7 +72,7 @@ Die Prävalenz von AIDS bei einem Menschen in Europa wird mit \Sexpr{praev}\% an
 \item Berechnen Sie die gesuchte Wahrscheinlichkeit $Pr$! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Bei dem folgenden Arztgespräch erfahren Sie, dass beim diagnostischen Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten. Das verstehen Sie so noch nicht und deshalb stellen Sie für sich den Zusammenhang in einer 2x2 Kreuztabelle dar.
+Bei dem folgenden Arztgespräch erfahren \Sexpr{name} und \Sexpr{name_sec[1]}, dass beim diagnostischen Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten. Das verstehen beiden so noch nicht und deshalb stellen Sie für \Sexpr{name} und \Sexpr{name_sec[1]} den Zusammenhang in einer 2x2 Kreuztabelle dar.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
