@@ -74,55 +74,30 @@ num_erfolge <- num_dice - sample(c(1,2), 1)
 
 @
 
-Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
-haben, wollen Sie bei \Sexpr{gender} einmal \textit{Höhlen \& Drachen}
-ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
-Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz schön viele
-unterschiedliche Würfel durch die Gegend fliegen. Daher müssen Sie sich
-jetzt einiges an Fragen stellen. \\%[-1ex]
+Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren haben, wollen Sie bei \Sexpr{gender} einmal \textit{Höhlen \& Drachen} ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz schön viele unterschiedliche Würfel durch die Gegend fliegen. Daher müssen Sie sich jetzt einiges an Fragen stellen. \\%[-1ex]
 
-In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1,
-  1)} zum würfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} würfeln,
-haben Sie einen Erfolg.
+In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1, 1)} zum würfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} würfeln, haben Sie einen Erfolg.
 
 \begin{enumerate}
-\item Berechnen Sie die Wahrscheinlichkeit \textit{genau}
-  \Sexpr{num_erfolge} Erfolge zu erzielen!  \textbf{(2 Punkte)}
-\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen!
-  \textbf{(1 Punkt)}
+\item Berechnen Sie die Wahrscheinlichkeit \textit{genau} \Sexpr{num_erfolge} Erfolge zu erzielen!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Sie betrachten nun aufmerksam die ausufernden Ausrüstungstabellen. Ihnen
-wird aber geholfen und Sie müssen sich jetzt nur zwischen der Axt oder dem
-Schwert entscheiden.
+Sie betrachten nun aufmerksam die ausufernden Ausrüstungstabellen. Ihnen wird aber geholfen und Sie müssen sich jetzt nur zwischen der Axt oder dem Schwert entscheiden.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Würden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
-  das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
-  Begründen Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+\item Würden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen? Begründen Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Jetzt wird es immer wilder, da Sie sich jetzt überlegen müssen, wie
-wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
-funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
-Wahrscheinlichkeit für das Ereignis $A$, der Rettungswurf ist erfolgreich,
-ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit für das Ereignis $B$,
-der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie
-haben mitgezählt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 Fällen
-Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
+Jetzt wird es immer wilder, da Sie sich jetzt überlegen müssen, wie wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die Wahrscheinlichkeit für das Ereignis $A$, der Rettungswurf ist erfolgreich, ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit für das Ereignis $B$, der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie haben mitgezählt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 Fällen Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
-  sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
-  $\Omega = 100$. Beachten Sie hierbei die entsprechenden
-  Wahrscheinlichkeiten für die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+\item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$ sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen $\Omega = 100$. Beachten Sie hierbei die entsprechenden Wahrscheinlichkeiten für die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
 \item Bestimmen Sie $Pr(A \cap B)$! \textbf{(1 Punkt)}
-\item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2
-  Kreuztabelle! \textbf{(2 Punkte)}
-\item Bestimmen Sie Wahrscheinlichkeit $Pr(A|B)$, dass Ihr Rettungswurf gelingt, wenn
-  der Hexer erfolgreich gezaubert hat! \textbf{(1 Punkt)}
+\item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2 Kreuztabelle! \textbf{(2 Punkte)}
+\item Bestimmen Sie Wahrscheinlichkeit $Pr(A|B)$, dass Ihr Rettungswurf gelingt, wenn der Hexer erfolgreich gezaubert hat! \textbf{(1 Punkt)}
 \end{enumerate}
 
  

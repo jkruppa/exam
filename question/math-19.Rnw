@@ -73,45 +73,17 @@ month <- c(36, 48, 60, 72) %>% sample(1)
 
 \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]}
 
-Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld
-zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne
-viel Aufwand und ortsunabhängig. Dann wollen wir mal loslegen. Schnell
-ein YouTube-Werbevideo gedreht und auf geht es mit unserem
-Network-Marketing. Aber Moment, wie funktioniert Network-Marketing
-eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Wir
-wollen hier einmal in die Untiefen des >>passiven Einkommens<<
-abtauchen\footnote{Die Quellen der Inspiration für die Aufgabe waren
-  folgendes YouTube Video:
-  \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus --
-    Die meistgesuchte Betrügerin der Welt} und der Artikel:
-  \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{
-    Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
+Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne viel Aufwand und ortsunabhängig. Dann wollen wir mal loslegen. Schnell ein YouTube-Werbevideo gedreht und auf geht es mit unserem Network-Marketing. Aber Moment, wie funktioniert Network-Marketing eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Wir wollen hier einmal in die Untiefen des >>passiven Einkommens<< abtauchen\footnote{Die Quellen der Inspiration für die Aufgabe waren folgendes YouTube Video: \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus -- Die meistgesuchte Betrügerin der Welt} und der Artikel: \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
 
-Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
-\Sexpr{firma}. Das Unternehmen steigerte den Umsatz um rund
-\Sexpr{steigerung} Prozent von \Sexpr{umsatz} Millionen Euro im Jahr
-\Sexpr{year - 1}. Doch wie viel kommt bei den Partnern an? Laut
-\Sexpr{names(firma)} habe das Unternehmen \Sexpr{partner} aktive Partner.
+Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von \Sexpr{firma}. Das Unternehmen steigerte den Umsatz um rund \Sexpr{steigerung} Prozent von \Sexpr{umsatz} Millionen Euro im Jahr \Sexpr{year - 1}. Doch wie viel kommt bei den Partnern an? Laut \Sexpr{names(firma)} habe das Unternehmen \Sexpr{partner} aktive Partner.
 
 \begin{enumerate}
-\item Berechnen Sie zuerst den Umsatz der Firma \Sexpr{names(firma)} im
-  Jahr \Sexpr{year}! \textbf{(1 Punkt)}
-\item Wie viel von dem Umsatz im Jahr \Sexpr{year} wird im Durchschnitt von jedem
-  aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
-\item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
-  Durchschnitt für jeden aktiven Partner bei einer direkten Provision von
-  \Sexpr{prov}\%? \textbf{(1 Punkt)}
+\item Berechnen Sie zuerst den Umsatz der Firma \Sexpr{names(firma)} im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
+\item Wie viel von dem Umsatz im Jahr \Sexpr{year} wird im Durchschnitt von jedem aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
+\item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im Durchschnitt für jeden aktiven Partner bei einer direkten Provision von \Sexpr{prov}\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet
-\Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision
-für die erste Stufe beträgt \Sexpr{prov_1}\%. Für die zweite, dritte und
-vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%,
-\Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen >>Partner<<
-wirbt wiederum \Sexpr{n_partner} Partner für sich selbst an. Pro Monat
-werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun
-\Sexpr{income}EUR im Monat \textit{passiv} -- also durch indirekte
-Provisionen -- erwirtschaften.
+Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet \Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision für die erste Stufe beträgt \Sexpr{prov_1}\%. Für die zweite, dritte und vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%, \Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen >>Partner<< wirbt wiederum \Sexpr{n_partner} Partner für sich selbst an. Pro Monat werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun \Sexpr{income}EUR im Monat \textit{passiv} -- also durch indirekte Provisionen -- erwirtschaften.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -133,23 +105,14 @@ Provisionen -- erwirtschaften.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Wie viele Partner müssen Sie auf der 2 Stufe anwerben um Ihr passives
-  Einkommen durch indirekte Provision zu erreichen? Wie viele Menschen
-  arbeiten am Ende indirekt für Sie? Stellen Sie den
-  Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
+\item Wie viele Partner müssen Sie auf der 2 Stufe anwerben um Ihr passives Einkommen durch indirekte Provision zu erreichen? Wie viele Menschen arbeiten am Ende indirekt für Sie? Stellen Sie den Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Sie mussten zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts
-für \Sexpr{einstieg}EUR kaufen. Diese Einheiten können Sie nur direkt
-verkaufen. Leider mussten Sie den Kauf über einen Kredit über
-\Sexpr{zins}\% p.a. über \Sexpr{month} Monate finanzieren.
+Sie mussten zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts für \Sexpr{einstieg}EUR kaufen. Diese Einheiten können Sie nur direkt verkaufen. Leider mussten Sie den Kauf über einen Kredit über \Sexpr{zins}\% p.a. über \Sexpr{month} Monate finanzieren.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
 \item Berechnen Sie die Gesamtsumme, die Sie als Kredit abbezahlen müssen! \textbf{(2 Punkte)}
-\item Wie viele Einheiten müssen Sie pro Monat verkaufen um die anfallenden Zinsen
-  durch die direkte Provision zu erwirtschaften? \textbf{(1 Punkt)}
-\item Wie lange in
-  Monaten benötigen Sie um den Kredit durch die direkte
-  Provision abzubezahlen? \textbf{(1 Punkt)}
+\item Wie viele Einheiten müssen Sie pro Monat verkaufen um die anfallenden Zinsen durch die direkte Provision zu erwirtschaften? \textbf{(1 Punkt)}
+\item Wie lange in Monaten benötigen Sie um den Kredit durch die direkte Provision abzubezahlen? \textbf{(1 Punkt)}
 \end{enumerate}

@@ -4,20 +4,24 @@
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
-  str_subset(name)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(2)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
 jahr <- par_lst$year
 obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+
 @
  
 %% --------------------------------------------------------------------
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/9DQKaXdxT_g}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 %% --------------------------------------------------------------------
 
@@ -53,14 +57,7 @@ spieler <- c("einem einäugen Piraten", "einem Typen in einem Tentakelkostüm", 
 
 @
 
-"`Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit
-dabei, wenn es wieder heißt: Der Preis ist heiß!"', ertönt es und Sie
-fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch
-hätten sein sollten. Aber Sie brauchen das Geld und jetzt heißt es
-Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa
-gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle
-Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden
-\Sexpr{names[1]} und \Sexpr{names[2]} das Team der drei Kandidaten.
+"`Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit dabei, wenn es wieder heißt: Der Preis ist heiß!"', ertönt es und Sie fragen sich, ob Sie nicht doch lieber bezahlter Gast bei Barbara Salesch hätten sein sollten. Aber Sie brauchen das Geld und jetzt heißt es Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden \Sexpr{names[1]} und \Sexpr{names[2]} das Team der drei Kandidaten.
 
 \begin{center}
 \begin{tabular}{ccc}
@@ -74,51 +71,27 @@ Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden
 \end{center}
 
 \begin{enumerate}
-\item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von
-  Mitropa, wenn keiner der Kandidaten überbietet? \textbf{(1 Punkt)}
-\item Wenn Ihre überbietungswahrscheinlichkeit $P(outbid)$ bei
-  \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt
-  \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
+\item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von Mitropa, wenn keiner der Kandidaten überbietet? \textbf{(1 Punkt)}
+\item Wenn Ihre überbietungswahrscheinlichkeit $P(outbid)$ bei \Sexpr{p_uber[3]} liegt, mit welcher Wahrscheinlichkeit gewinnt \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht
-gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit
-\Sexpr{spieler} um das große Geld. Das Glücksrad hat \Sexpr{feld_rad}
-Felder. Sie drehen das Glücksrad zweimal. Auf \Sexpr{enough} Feldern
-gewinnen Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz schön viel Geld
-und ganz schön zwielichtig hier...
+Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gereicht. Deshalb sind Sie jetzt auf der Kirmes und spielen mit \Sexpr{spieler} um das große Geld. Das Glücksrad hat \Sexpr{feld_rad} Felder. Sie drehen das Glücksrad zweimal. Auf \Sexpr{enough} Feldern gewinnen Sie \Sexpr{win_1}EUR sonst \Sexpr{win_2}EUR. Ganz schön viel Geld und ganz schön zwielichtig hier...
 
 \begin{enumerate}
   \setcounter{enumi}{2}  
-\item Skizzieren Sie das Glücksrad und ergänzen Sie die
-  Wahrscheinlichkeiten! \textbf{(1 Punkt)}
-\item Zeichnen Sie das zugehörige Baumdiagramm für das zweimalige Drehen!
-  Ergänzen Sie die Wahrscheinlichkeiten und die entsprechenden Ereignisse
-  \textbf{(2 Punkte)}
-\item Mir welcher Wahrscheinlichkeit gewinnen Sie \Sexpr{win_3}EUR? \textbf{(1
-    Punkt)}
+\item Skizzieren Sie das Glücksrad und ergänzen Sie die Wahrscheinlichkeiten! \textbf{(1 Punkt)}
+\item Zeichnen Sie das zugehörige Baumdiagramm für das zweimalige Drehen! Ergänzen Sie die Wahrscheinlichkeiten und die entsprechenden Ereignisse \textbf{(2 Punkte)}
+\item Mir welcher Wahrscheinlichkeit gewinnen Sie \Sexpr{win_3}EUR? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Nach Ihrem Fiebertraum reisen Sie im Zug nach Köln um bei >>Geh aufs
-Ganze!<< mitzuspielen. Sie schaffen es tatsächlich ins Finale und können
-als Hauptgewinn ein Auto hinter einer der drei Türen gewinnen. 
+Nach Ihrem Fiebertraum reisen Sie im Zug nach Köln um bei >>Geh aufs Ganze!<< mitzuspielen. Sie schaffen es tatsächlich ins Finale und können als Hauptgewinn ein Auto hinter einer der drei Türen gewinnen. 
 
 \begin{enumerate}
   \setcounter{enumi}{5}  
-\item Bevor die Show beginnt, wird das Auto hinter eine zufällig bestimmte
-  Tür gestellt. Mit welcher Wahrscheinlichkeit wird jeweils eine der drei
-  Türen ausgewählt? Zeichnen Sie ein Baumdiagramm! \textbf{(1 Punkt)}
-\item Mit welcher Wahrscheinlichkeit wählen Sie sofort die Tür mit
-  dem Auto? Erweitere Sie das Baumdiagramm entsprechend! \textbf{(1
-    Punkt)}
-\item Der Moderator öffnet nun eine der nicht gewählten Türen, aber
-  natürlich nicht die mit dem Auto. Mit welcher Wahrscheinlichkeit steht
-  das Auto hinter der anderen Tür? Erweitern Sie das Baumdiagramm
-  entsprechend! \textbf{(2 Punkte)}
-\item Lösen Sie nun das >>Ziegenproblem<<! Berechne Sie dazu die
-  Wahrscheinlichkeiten der einzelnen Pfade. Lohnt sich ein Wechsel der
-  anfangs gewählte Tür? Begründen Sie Ihre Antwort mathematisch!
-  \textbf{(2 Punkte)}
+\item Bevor die Show beginnt, wird das Auto hinter eine zufällig bestimmte Tür gestellt. Mit welcher Wahrscheinlichkeit wird jeweils eine der drei Türen ausgewählt? Zeichnen Sie ein Baumdiagramm! \textbf{(1 Punkt)}
+\item Mit welcher Wahrscheinlichkeit wählen Sie sofort die Tür mit dem Auto? Erweitere Sie das Baumdiagramm entsprechend! \textbf{(1 Punkt)}
+\item Der Moderator öffnet nun eine der nicht gewählten Türen, aber natürlich nicht die mit dem Auto. Mit welcher Wahrscheinlichkeit steht das Auto hinter der anderen Tür? Erweitern Sie das Baumdiagramm entsprechend! \textbf{(2 Punkte)}
+\item Lösen Sie nun das >>Ziegenproblem<<! Berechne Sie dazu die Wahrscheinlichkeiten der einzelnen Pfade. Lohnt sich ein Wechsel der anfangs gewählte Tür? Begründen Sie Ihre Antwort mathematisch! \textbf{(2 Punkte)}
 \end{enumerate}
  
 
