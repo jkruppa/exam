@@ -1,13 +1,38 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/Bbu6n8MXxQk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Bbu6n8MXxQk}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+@
+
 
 \paragraph{Armee der Finsternis}
 
@@ -15,7 +40,7 @@
 job <- c("Aldi", "IKEA", "Kaufland", "Penny") %>% sample(1)
 mage <- c("ein Magier", "eine Magierin") %>% sample(1)
 year <- sample(1201, 1145, 976)  %>%  sample(1)
-lehnsherr <- c("F{\"u}rsten Arthur", "Henry dem Roten")  %>%  sample(1)
+lehnsherr <- c("Fürsten Arthur", "Henry dem Roten")  %>%  sample(1)
 v_blei <- c(10, 11, 12, 13, 14) %>% sample(1)
 l_tropf <- c(3.2, 3.5, 3.1, 4.1, 2.8) %>% sample(1)
 d_tropf <- c(2, 1.8, 1.7, 1.5, 1.6, 2.1) %>% sample(1)
@@ -26,17 +51,8 @@ dist <- c(0.5, 0.8, 1.2, 1.4) %>% sample(1)
 g_schrott <- c(10, 20, 30, 40) %>% sample(1)
 @
 
-Ihr Studentenjob war nach Ladenschluss bei \Sexpr{job} die Regale
-einzur{\"a}umen. Dabei ist Ihnen in der Auslage der Sonderangebote das
-Necronomicon\footnote{Ein wirklich gef{\"a}hrliches Buch ist:
-  \textit{Du bist genug: Vom Mut, gl{\"u}cklich zu sein} von Fumitake Koga und
-  Ichiro Kishimi} in die H{\"a}nde gefallen. Nun sind Sie \Sexpr{mage} der
-Zeichen geworden! Also eigentlich k{\"o}nnen Sie nur Mathe und das d{\"a}mliche
-Necronomicon hat Sie in die Vergangenheit geschleudert... aber gut, was tut
-man nicht alles im Jahr \Sexpr{year} n. Chr. f{\"u}r den neuen Lehnsherren
-\Sexpr{lehnsherr}. Sie bauen nat{\"u}rlich einen Schrottkugelturm um sich den
-Horden der Finsternis mit genug Schrott erwehren zu k{\"o}nnen! Ihnen stehen
-zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
+Der Studentenjob von \Sexpr{name} war nach Ladenschluss bei \Sexpr{job} die Regale einzuräumen. Dabei ist \Sexpr{name} in der Auslage der Sonderangebote das Necronomicon\footnote{Ein wirklich gefährliches Buch ist: \textit{Du bist genug: Vom Mut, glücklich zu sein} von Fumitake Koga und Ichiro Kishimi} in die Hände gefallen. Nun ist \Sexpr{names(name)} \Sexpr{mage} der Zeichen geworden! Also eigentlich kann \Sexpr{name} nur Mathe und das dämliche Necronomicon hat \Sexpr{pronom[5]} in die Vergangenheit geschleudert... aber gut, was tut man nicht alles im Jahr \Sexpr{year} n. Chr. für den neuen Lehnsherren \Sexpr{lehnsherr}. \Sexpr{name} baut natürlich einen Schrottkugelturm um sich den
+Horden der Finsternis mit genug Schrott erwehren zu können! \Sexpr{name} stehen zwei mächtige magische Formeln zur Unterstützung zu Verfügung. Leider wird das nicht reichen, deshalb müssen Sie hier auch noch durch Zeit und Raum helfen!
 
 \begin{center}
   \begin{tabular}{cc}
@@ -46,38 +62,25 @@ zwei m{\"a}chtige magische Formeln zur Unterst{\"u}tzung zu Verf{\"u}gung.
 
 mit
 
-\begin{itemize}
+\begin{itemize}[noitemsep]
 \item $m$, gleich der Masse [kg] des Objekts
-\item $h$, gleich der H{\"o}he [m] des ruhenden Objekts
+\item $h$, gleich der Höhe [m] des ruhenden Objekts
 \item $v$, gleich der Geschwindigkeit [m/s] des Objekts
 \item $g$, gleich der Erdbeschleunigung mit $9.81 \tfrac{m}{s^2}$ 
 \end{itemize}
 
-Als erstes m{\"u}ssen Sie die H{\"o}he des zu bauenden Schrottkugelturmes
-bestimmen. Hierf{\"u}r ist wichtig zu wissen, dass sich die
-Blei\textit{tropfen} mit einem Gewicht von $\Sexpr{g_schrott}mg$ zu
-gleichf{\"o}rmigen Blei\textit{kugeln} bei einer Geschwindigkeit von
-$\Sexpr{v_blei}m/s$ bilden.
+Als erstes müssen Sie die Höhe des zu bauenden Schrottkugelturmes bestimmen. Hierfür ist wichtig zu wissen, dass sich die Blei\textit{tropfen} mit einem Gewicht von $\Sexpr{g_schrott}mg$ zu gleichförmigen Blei\textit{kugeln} bei einer Geschwindigkeit von $\Sexpr{v_blei}m/s$ bilden.
 
 \begin{enumerate}
-\item Wie hoch m{\"u}ssen Sie den Schrottkugelturm bauen lassen, damit sich
-  runde Bleikugeln durch die Fallgeschwindigkeit von $\Sexpr{v_blei}m/s$ bilden?
-  \textbf{(3 Punkte)}
+\item Wie hoch müssen Sie den Schrottkugelturm bauen lassen, damit sich runde Bleikugeln durch die Fallgeschwindigkeit von $\Sexpr{v_blei}m/s$ bilden? \textbf{(3 Punkte)}
 \end{enumerate}
 
-Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige
-Schrottkugeln in einer Ladung. Damit k{\"o}nnen Sie die Armee der Finsternis
-nicht aufhalten. Die Sachlage m{\"u}ssen Sie einmal mathematisch untersuchen.
+Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige Schrottkugeln in einer Ladung. Damit können Sie die Armee der Finsternis nicht aufhalten. Die Sachlage müssen Sie einmal mathematisch untersuchen.
 
 \begin{enumerate}
   \setcounter{enumi}{1}
-\item Nennen Sie die beiden geometrischen Formen aus denen sich
-  n{\"a}herungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete 
-  Skizze des Tropfens!
-  \textbf{(2 Punkte)}
-\item Sie messen eine L{\"a}nge des Tropfens von \Sexpr{l_tropf}mm. Die L{\"o}cher
-  im Sieb erlauben ein Tropfendurchmesser von \Sexpr{d_tropf}mm. Welchen
-  Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
+\item Nennen Sie die beiden geometrischen Formen aus denen sich näherungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete Skizze des Tropfens! \textbf{(2 Punkte)}
+\item Sie messen eine Länge des Tropfens von \Sexpr{l_tropf}mm. Die Löcher im Sieb erlauben ein Tropfendurchmesser von \Sexpr{d_tropf}mm. Welchen Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
 \end{enumerate}
 
 Sie haben jetzt die \Sexpr{n_blei} Bleikugeln zusammen. Blei hat eine Dichte
@@ -86,17 +89,17 @@ von $\Sexpr{d_blei}g/cm^3$.
 \begin{enumerate}
   \setcounter{enumi}{3}
 \item Wie schwer in Kilogramm $kg$ sind die \Sexpr{n_blei} produzierten
-  Bleikugeln, die Sie jetzt auf die Burgmauer transportieren m{\"u}ssen?
+  Bleikugeln, die Sie jetzt auf die Burgmauer transportieren müssen?
   \textbf{(1 Punkt)}
 \end{enumerate}
 
-Am Ende m{\"u}ssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
+Am Ende müssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
   wenn Sie pro Fall ca. \Sexpr{n_prod} Bleikugeln produzieren wollen und
-  die Bleikugel im Fall \Sexpr{dist}cm Abstand haben m{\"u}ssen?  \textbf{(1
+  die Bleikugel im Fall \Sexpr{dist}cm Abstand haben müssen?  \textbf{(1
     Punkt)}
 \end{enumerate}
 

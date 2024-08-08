@@ -1,13 +1,44 @@
 \section{Aufgabe \hfill (8 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/1B53cVFIU7Q}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/1B53cVFIU7Q}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Deich",
+                "Sinnlos im Studium") |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+
+@
+
 
 \paragraph{Nelken von den Molukken}
 
@@ -24,48 +55,26 @@ unit <- c("kg", "t") %>% sample(1)
 gramm <- c(150, 100, 50, 10) %>% sample(1)
 @
 
-In der Ausstellung "`Europa und das Meer"' im Deutschen Historischen Museum in
-Berlin gab es folgendes Zitat {\"u}ber die Probleme der fr{\"u}hen Hochseeschifffahrt.
+\Sexpr{name} und \Sexpr{name_sec[1]} waren gemeinsam in Berlin und sitzen nun im IC nach Amsterdam um zurück nach Osnabrück zu fahren. 'Weißt du was ich mich frage?', entfährt es \Sexpr{name} ziemlich plötzlich, so dass \Sexpr{name_sec[1]} die \Sexpr{attr_name_sec1_vec$sweet} aus dem Mund fallen. 'Nein, und ehrlich gesagt bin ich auch ziemlich müde...'. Das ist jetzt aber \Sexpr{name} egal, denn \Sexpr{names(name)} möchte folgende Sachlage diskutieren. Und \Sexpr{name} hat jetzt 3 Stunden Zeit. Plus Verspätung. In der Ausstellung \textit{Europa und das Meer} im Deutschen Historischen Museum in Berlin gab es folgendes Zitat über die Probleme der frühen Hochseeschifffahrt.
 
 \begin{quote}
-  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach \Sexpr{day1} Tagen die
-  ersten Symptome ein; die ersten Toten sind nach \Sexpr{day2} Tagen zu beklagen;
-  nach \Sexpr{day3} Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
+  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach \Sexpr{day1} Tagen die ersten Symptome ein; die ersten Toten sind nach \Sexpr{day2} Tagen zu beklagen; nach \Sexpr{day3} Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
 \end{quote}
 
-Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den
-s{\"u}damerikanischen Kontinent zu finden. Zu seiner Flotte geh{\"o}rten
-f{\"u}nf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die
-Concepci{\'o}n und die Santiago - mit einer Besatzung von insgesamt
-\Sexpr{people} Mann. 
+Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den südamerikanischen Kontinent zu finden. Zu seiner Flotte gehörten fünf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die Concepciön und die Santiago - mit einer Besatzung von insgesamt \Sexpr{people} Mann. 
 
 \begin{enumerate}
-\item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der
-  Flotte in der Form einer {\"U}berlebenszeitkurve dar! Beschriften Sie die
-  Achsen entsprechend! \textbf{(2 Punkte)} 
+\item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der Flotte in der Form einer überlebenszeitkurve dar! Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)} 
 \item Was ist die Besonderheit der Überlebenszeitkurve? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
-\item Sch{\"a}tzen Sie die {\"U}berlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen
-  aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
+\item Schätzen Sie die überlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
 \end{enumerate}
 
-Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem
-Bericht "`[...] Um nicht Hungers zu sterben, a{\ss}en wir das Leder, mit dem
-die gro{\ss}e Rahe zum Schutz der Taue umwunden war."' Insbesondere die
-Mannschaft der Concepci{\'o}n erlitt gro{\ss}e Verluste durch die Skrobut bei der
-{\"U}berquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um
-wilden Sellerie aufzunehmen. Wilder Sellerie enth{\"a}lt
-$\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}mg$ Vitamin C. Der Bedarf liegt bei
-$\Sexpr{vit_c_bedarf}mg$ pro Tag f{\"u}r M{\"a}nner.
+Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht '[...] Um nicht Hungers zu sterben, aßen wir das Leder, mit dem die große Rahe zum Schutz der Taue umwunden war.' Insbesondere die Mannschaft der Concepciön erlitt große Verluste durch die Skrobut bei der überquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um wilden Sellerie aufzunehmen. Wilder Sellerie enthält $\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}mg$ Vitamin C. Der Bedarf liegt bei $\Sexpr{vit_c_bedarf}mg$ pro Tag für Männer.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie die notwendige Menge in $\Sexpr{unit}$ an
-  aufzunehmenden wilden Sellerie auf die Concepci{\'o}n f{\"u}r die ununterbrochene
-  Fahrt von drei Monate und \Sexpr{day_journey} Tage {\"u}ber den Pazifik!
-  \textbf{(3 Punkte)}
-\item Skizzieren Sie die {\"U}berlebenszeitkurve f{\"u}r die Concepci{\'o}n im
-  Vergleich zu der {\"U}berlebenszeitkurve der Trinidad! Beschriften Sie die
-  Achsen! \textbf{(2 Punkte)}
+\item Berechnen Sie die notwendige Menge in $\Sexpr{unit}$ an aufzunehmenden wilden Sellerie auf die Concepciön für die ununterbrochene Fahrt von drei Monate und \Sexpr{day_journey} Tage über den Pazifik! \textbf{(3 Punkte)}
+\item Skizzieren Sie die überlebenszeitkurve für die Concepciön im Vergleich zu der überlebenszeitkurve der Trinidad! Beschriften Sie die Achsen! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

@@ -1,17 +1,46 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/4-dSaPMhK9s}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/4-dSaPMhK9s}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
 %% --------------------------------------------------------------------
 {\tiny\textbf{Stichworte:} Brot aus Luft $\bullet$ Walöl $\bullet$ Haber-Bosch-Verfahren $\bullet$ 1. Weltkrieg $\bullet$ 40\% N im menschlichen Körper $\bullet$ Positivist}
 %% --------------------------------------------------------------------
+
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Deich",
+                "Sinnlos im Studium") |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+
+@
+
 
 \paragraph{Die atmende Wand und Brot aus Luft}
 
@@ -32,12 +61,7 @@ upper_str <- str_c(upper, ":00")
 mid_str <- str_c(((upper-7)/2+7), ":00")
 @
 
-Als Kellerkind vom Dorf wollen das Ausmaß der Radonbelastung in ihrem Kellerzimmer bestimmen und
-lüften daher nicht. Spart dann auch Energie und lüften wird sowieso überschätzt. Während einer Messperiode von 7:00 Uhr bis
-\Sexpr{upper_str} bestimmen Sie dreimal automatisch die Radonbelastung in
-Ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Quelle der Inspiration
-  für die Aufgabe war folgender Artikel:
-  \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}}.
+Als Kellerkind\footnote{\href{https://www.youtube.com/watch?v=54H0HAJexVI}{Tocotronic - Electric Guitar} als passende Untermalung für diese Aufgabe.} vom Dorf will \Sexpr{name} das Ausmaß der Radonbelastung in \Sexpr{pronom[1]} Kellerzimmer bestimmen und lüften daher nicht. Passt schon. Spart dann auch Energie und lüften wird sowieso überschätzt. Während einer Messperiode von 7:00 Uhr bis \Sexpr{upper_str} bestimmt \Sexpr{names(name)} dreimal automatisch die Radonbelastung in \Sexpr{pronom[1]} Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Artikel: \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}}. Leider helfen die Messwerte \Sexpr{name} überhaupt nicht weiter. Sie müssen also helfen! 
 
 <<math-10,  echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(time = as_factor(1:3),
@@ -56,15 +80,10 @@ ggplot(plot_tbl, aes(time, rsp)) +
 \vspace{-0.75cm}
 
 \begin{enumerate}
-\item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von
-  \Sexpr{crit_ra}$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben?
-  \textbf{(2 Punkte)}
+\item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von \Sexpr{crit_ra}$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Radon zerfällt mit einer Halbwertszeit von \Sexpr{radon_t}d zu
-Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von
-\Sexpr{polo_t}d zu Blei. Nur Radon und Polonium tragen zur
-radioaktiven Strahlenbelastung bei.
+Radon zerfällt mit einer Halbwertszeit von \Sexpr{radon_t}d zu Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von \Sexpr{polo_t}d zu Blei. Nur Radon und Polonium tragen zur radioaktiven Strahlenbelastung bei.
 
 \begin{enumerate}
   \setcounter{enumi}{1}
@@ -73,8 +92,7 @@ radioaktiven Strahlenbelastung bei.
   \textbf{(4 Punkte)}
 \end{enumerate}
 
-Folgende Tabelle enthält die Informationen zur Zusammensetzung der
-normalen Umgebungsluft.
+Folgende Tabelle enthält die Informationen zur Zusammensetzung der normalen Umgebungsluft.
 
 \begin{center}
   \begin{tabular}{ c|c|c|c }
@@ -93,30 +111,22 @@ normalen Umgebungsluft.
 
 \begin{enumerate}
    \setcounter{enumi}{2}
-\item Rechnen Sie die Volumenprozente (Vol-\%) der Umgebungsluft in die
-  entsprechenden ppm-Werte um und ergänzen Sie die berechneten ppm-Werte in
-  die Tabelle!  \textbf{(1 Punkt)}
+\item Rechnen Sie die Volumenprozente (Vol-\%) der Umgebungsluft in die entsprechenden ppm-Werte um und ergänzen Sie die berechneten ppm-Werte in die Tabelle!  \textbf{(1 Punkt)}
 \end{enumerate}
 
-Während Sie Ihr etwas pappiges Toastbrot mampfen kommt Ihnen die Dokumentation über Brot aus Luft in den Sinn. Sie denken darüber ein wenig nach. Für die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak
-$NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration
-  für die Aufgabe war folgender Artikel:
-  \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}:
+Während \Sexpr{name} \Sexpr{pronom[7]} etwas pappiges Toastbrot mampfen kommt \Sexpr{name} die Dokumentation über Brot aus Luft in den Sinn. \Sexpr{name} denkt darüber ein wenig nach. Für die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak $NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Artikel: \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}:
 
 \begin{equation*}
   N_2 + 3H_2 \rightarrow 2NH_3
 \end{equation*}  
 
-Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein
-Volumen von 22.4 Liter. % Ein Mol enthält $6 \cdot 10^{23}$ Teilchen.
+Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein Volumen von 22.4 Liter. % Ein Mol enthält $6 \cdot 10^{23}$ Teilchen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Welche Masse an Ammoniak in Kilogramm $kg$ können Sie aus einem
-  Kubikmeter $m^3$ Luft unter normalen Umweltbedingungen gewinnen?
+\item Welche Masse an Ammoniak in Kilogramm $kg$ können Sie aus einem Kubikmeter $m^3$ Luft unter normalen Umweltbedingungen gewinnen?
   \textbf{(2 Punkte)}
-\item Wieviel Ammoniak in $mol$ erhalten Sie aus einem Kubikmeter Luft?
-  \textbf{(1 Punkt)}
+\item Wieviel Ammoniak in $mol$ erhalten Sie aus einem Kubikmeter Luft? \textbf{(1 Punkt)}
 \end{enumerate}
 
 

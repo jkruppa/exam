@@ -1,24 +1,49 @@
 \section{Aufgabe \hfill (12 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/fiWGgCX-cE4}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/fiWGgCX-cE4}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
 <<>>=
-ort <- c("Ostfriesland", "L{\"u}neburger Heide", "Uckermark") %>% sample(1)
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+@
+
+
+<<>>=
+ort <- c("Ostfriesland", "Lüneburger Heide", "Uckermark") %>% sample(1)
 @ 
 
 \paragraph{\Sexpr{ort}. Unendliche Weiten.}
 
 <<>>=
 today_year <- lubridate::year(Sys.Date())
-name <- c("Frida", "Fridolin") %>% sample(1)
-animal <- c("des Esels", " des Schafs", "des H{\"a}ngebauchschweins", "der Kuh") %>% sample(1)
+name_animal <- c("Frida", "Fridolin") %>% sample(1)
+animal <- c("des Esels", " des Schafs", "des Hängebauchschweins", "der Kuh") %>% sample(1)
 apfel <- c("Jonagoldp", "Boskoopp", "Pink Lady P") %>% sample(1)
 jan <- c(0.4, 0.5, 0.6) %>% sample(1)
 feb <- c(0.75, 0.7, 0.8) %>% sample(1)
@@ -34,19 +59,8 @@ weight <- c(1.2, 1.3, 1.5) %>% sample(1)
 glt <- c(190, 200, 210) %>% sample(1)
 @
 
-Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer
-\Sexpr{animal} \Sexpr{name} und Ihnen. Gr{\"u}nes Gras unter Ihren F{\"u}{\ss}en und
-ein strammer Wind im Gesicht, egal wohin Sie schauen. Ein schmatzendes
-Ger{\"a}usch ert{\"o}nt unter Ihnen. Sie sinnieren, sollten Sie Ihre weiten
-Graslandschaften jetzt schon d{\"u}ngen?  Daf{\"u}r ben{\"o}tigen Sie die
-\textit{Gr{\"u}nlandtemperatur}! Die Gr{\"u}nlandtemperatur (GLT) ist die Summe aller
-positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von
-200$^\circ$ kann mit der Stickstoffd{\"u}ngung begonnen werden. Sie sehen nicht
-ein, Geld f{\"u}r einen Agrarmetrologen zu bezahlen. Also rechnen Sie mit
-folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit
-$\Sexpr{jan}\times$, Februar mit $\Sexpr{feb}\times$ und M{\"a}rz mit
-$\Sexpr{mrz}\times$. Sie haben noch im letzten Jahr folgende Temperaturen
-gemessen.
+Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer \Sexpr{animal} \Sexpr{name_animal} und \Sexpr{name}. Grünes Gras unter \Sexpr{name}s Füßen und ein strammer Wind im Gesicht, egal wohin \Sexpr{names(name)} schaut. Ein schmatzendes Geräusch ertönt unter \Sexpr{name}. \Sexpr{name} sinniert, sollte \Sexpr{names(name)} \Sexpr{pronom[6]} weiten Graslandschaften jetzt schon düngen? Dafür benötigt \Sexpr{name} die \textit{Grünlandtemperatur}! Die Grünlandtemperatur (GLT) ist die Summe aller positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von 200$^\circ$ kann mit der Stickstoffdüngung begonnen werden. \Sexpr{name} sieht nicht ein, Geld für einen Agrarmetrologen zu bezahlen, wenn auch Sie mitrechnen können. Also rechnen Sie beide mit folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit $\Sexpr{jan}\times$, Februar mit $\Sexpr{feb}\times$ und März mit
+$\Sexpr{mrz}\times$. Sie haben noch im letzten Jahr folgende Temperaturen gemessen.
 
 \begin{center}
 \begin{tabular}{cc}
@@ -62,40 +76,21 @@ gemessen.
 \end{center}
 
 \begin{enumerate}
-\item Erstellen Sie eine Skizze aus den Informationen aus der
-  Temperaturtabelle!  \textbf{(1 Punkt)}
-\item Stellen Sie die linearen Funktionen $f_1(t)$, $f_2(t)$ und
-  $f_3(t)$ aus der obigen Temperaturtabelle auf!  \textbf{(1 Punkt)}
-\item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ f{\"u}r
-  Ihre linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(1
-    Punkt)}
-\item Osterglocken beginnen ab einer GLT von \Sexpr{glt}$^\circ C$ zu bl{\"u}hen. An
-  welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der
-  Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(4 Punkte)}
+\item Erstellen Sie eine Skizze aus den Informationen aus der Temperaturtabelle!  \textbf{(1 Punkt)}
+\item Stellen Sie die linearen Funktionen $f_1(t)$, $f_2(t)$ und $f_3(t)$ aus der obigen Temperaturtabelle auf!  \textbf{(1 Punkt)}
+\item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ für Ihre linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(1 Punkt)}
+\item Osterglocken beginnen ab einer GLT von \Sexpr{glt}$^\circ C$ zu blühen. An welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(4 Punkte)}
 \end{enumerate}
 
-Auf dem Weg zu Ihrer \Sexpr{apfel}lantage wurden Sie mit Ihrem Trecker von
-einer Gruppe elektrifizierter Renter abgedr{\"a}ngt. Der Trecker muss wieder
-aus dem Graben! \Sexpr{name} und die elektrifizierten Rentner ziehen an zwei,
-separaten Seilen. Dabei zieht \Sexpr{name} mit $\Sexpr{n_frid}N$. Die
-elektrifizierter Renter  bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
+Auf dem Weg zu \Sexpr{name}s \Sexpr{apfel}lantage werden Sie beide auf dem Trecker von einer Gruppe elektrifizierter Renter abgedrängt. Der Trecker muss wieder aus dem Graben! \Sexpr{name_animal} und die elektrifizierten Rentner ziehen an zwei, separaten Seilen. Dabei zieht \Sexpr{name_animal} mit $\Sexpr{n_frid}N$. Die elektrifizierter Renter  bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
 
-\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer aussagekr{\"a}ftigen Skizze der
-  Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer
-  Skizze entsprechend!}
+\textit{Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer Skizze entsprechend!}
 
 \begin{enumerate}
   \setcounter{enumi}{4}  
-\item Im ersten Versuch legen Sie das Seil f{\"u}r \Sexpr{name} lotrecht {\"u}ber einen
-  Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie {\"u}ber
-  die B{\"o}schung hinweg am anderen Seil. Welche Kraft wird aufgebracht?
-  \textbf{(2 Punkte)}
-\item Im zweiten Versuch ziehen \Sexpr{name} und die Rentner mit einem
-  $\Sexpr{gamma}^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft
-  wird aufgebracht? \textbf{(2 Punkte)}
-\item Mit welcher Beschleunigung ziehen Sie den $\Sexpr{weight}t$ schweren
-  Trecker \textit{jeweils} aus dem Graben, wenn $F = m \cdot a$ gilt?
-  \textbf{(1 Punkt)}
+\item Im ersten Versuch legen Sie das Seil für \Sexpr{name_animal} lotrecht über einen Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie über die Böschung hinweg am anderen Seil. Welche Kraft wird aufgebracht?  \textbf{(2 Punkte)}
+\item Im zweiten Versuch ziehen \Sexpr{name_animal} und die Rentner mit einem $\Sexpr{gamma}^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft wird aufgebracht? \textbf{(2 Punkte)}
+\item Mit welcher Beschleunigung ziehen Sie den $\Sexpr{weight}t$ schweren Trecker \textit{jeweils} aus dem Graben, wenn $F = m \cdot a$ gilt? \textbf{(1 Punkt)}
 \end{enumerate}
 
 

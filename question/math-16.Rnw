@@ -1,13 +1,46 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/RuzMjwvwT-4}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/RuzMjwvwT-4}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
+
 
 \paragraph{In der Kartonagenfabrik}
 
@@ -20,50 +53,24 @@ zaun <- c(100, 120, 130, 90, 110) %>% sample(1)
 
 @
 
-Wenn man sich zu sp{\"a}t anmeldet, dann ist die Exkursion nicht so toll. Also
-geht es mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie
-schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren
-Sie, dass die Kartons zum Versand von N{\"a}geln nicht hier zusammengebaut
-werden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter
-anderem wird dort der ber{\"u}hmte \textit{Doppelt gewellte,
-  \Sexpr{fold}-mal-gefaltete, \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch
-Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu
-schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gel{\"o}st
-sind. Martin gef{\"a}llt das. An dem Vorrat
-an Zigaretten von Mrs. Krabappel meinen Sie wenig Zuversicht zu erkennen.\\
+\Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} sitzen im Bus. Wenn man sich zu spät anmeldet, dann ist die Exkursion nicht so toll. \Sexpr{name} hatte den Anderen in der Lerngruppe zu spät Bescheid gesagt. 'Was denn, bin ich eure Nanny oder was?!', entfährt es \Sexpr{name} nachdem die vorwurfsvollen Blicke schon eine Weile auf \Sexpr{pronom[4]} lasten. Also geht es eben mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren die Vier, dass die Kartons zum Versand von Nägeln nicht hier zusammengebautwerden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter anderem wird dort der berühmte \textit{Doppelt gewellte, \Sexpr{fold}-mal-gefaltete, \Sexpr{mm}mm, \Sexpr{karton}-cm-Karton} durch
+Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gelöst sind. Martin gefällt das. An dem Vorrat an Zigaretten von Mrs. Krabappel meinen alle wenig Zuversicht zu erkennen.\\
 
-Jetzt hei{\ss}t es Kartons optimieren. Der nun zu optimierende, flache Karton
-hat eine L{\"a}nge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die
-Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt
-der L{\"a}nge $x$ falzen.
+Jetzt heißt es Kartons optimieren, wenn Sie auch nochmal nach Hause wollen. Warum jetzt \textit{Sie} mit dabei sind, lassen wir mal weg. Der nun zu optimierende, flache Karton hat eine Länge von \Sexpr{karton}cm und eine Breite von \Sexpr{sb}cm. Die Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt der Länge $x$ falzen.
 
 \begin{enumerate}
-\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings!
-  Beschriften Sie die Skizze mit den entsprechenden L{\"a}ngenangaben
-  \textbf{(1 Punkt)}
-\item Berechnen Sie die Falztiefe $x$ f{\"u}r ein maximales Volumen des flachen
-  Kartons! \textbf{(3 Punkte)}
-\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten
-  Falztiefe $x$?  \textbf{(1 Punkt)}
-\item Sie wollen noch einen b{\"u}ndig mit dem Boden abschlie{\ss}enden Deckel f{\"u}r
-  den Karton stanzen lassen. Wie gro{\ss} ist die Fl{\"a}che des
-  Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
+\item Erstellen Sie eine Skizze des Karton\textit{blatt}rohlings! Beschriften Sie die Skizze mit den entsprechenden Längenangaben \textbf{(1 Punkt)}
+\item Berechnen Sie die Falztiefe $x$ für ein maximales Volumen des flachen Kartons! \textbf{(3 Punkte)}
+\item Welches Volumen in Liter ergibt sich mit der von Ihnen berechneten Falztiefe $x$?  \textbf{(1 Punkt)}
+\item Sie wollen noch einen bündig mit dem Boden abschließenden Deckel für den Karton stanzen lassen. Wie groß ist die Fläche des Kartondeckel\textit{blatt}rohlings in $cm^2$? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Rektor Skinner m{\"o}chte sich gerne wieder in seinem Vorgarten aufhalten und
-nicht die ganze Zeit von Bart mit Erdn{\"u}ssen beworfen werden. Deshalb m{\"o}chte
-er einen ger{\"a}umigen Teil seines Vorgartens einz{\"a}unen. Ein Teil der
-Umz{\"a}unung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen
-Rektor Skinner nur \Sexpr{zaun}m Zaun zu Verf{\"u}gung. Sie wollen nun die
-maximale Fl{\"a}che des abgeschirmten Vorgartens in Abh{\"a}ngigkeit der
-Seitenl{\"a}ngen bei der Verwendung von \Sexpr{zaun}m Zaun bestimmen!
+Rektor Skinner möchte sich gerne wieder in seinem Vorgarten aufhalten und nicht die ganze Zeit von Bart mit Erdnüssen beworfen werden. Deshalb möchte er einen geräumigen Teil seines Vorgartens einzäunen. Ein Teil der Umzäunung bildet seine Vorderhauswand. Wegen Lieferschwierigkeiten stehen Rektor Skinner nur \Sexpr{zaun}m Zaun zu Verfügung. Auch hier sollen Sie mal helfen, sonst fährt der Bus Sie nicht nach Hause. Sie wollen nun die maximale Fläche des abgeschirmten Vorgartens in Abhängigkeit der Seitenlängen bei der Verwendung von \Sexpr{zaun}m Zaun bestimmen!
 
 \begin{enumerate}
   \setcounter{enumi}{4}  
-\item  Welche Seitenl{\"a}ngen f{\"u}r den Zaun ergeben sich f{\"u}r die
-  maximale Fl{\"a}che des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
-\item Berechnen Sie die Fl{\"a}che des abgeschirmten Vorgartens! \textbf{(1
-    Punkt)}
+\item  Welche Seitenlängen für den Zaun ergeben sich für die maximale Fläche des abgeschirmten Vorgartens? \textbf{(2 Punkte)}
+\item Berechnen Sie die Fläche des abgeschirmten Vorgartens! \textbf{(1 Punkt)}
 \end{enumerate}
 
 

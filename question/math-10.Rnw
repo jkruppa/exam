@@ -1,18 +1,47 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/tDgr6fpkkYA}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/tDgr6fpkkYA}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Deich",
+                "Sinnlos im Studium") |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+
+@
+
 
 \paragraph{Pyramiden bauen}
 
 <<>>=
-land <- c("nieders{\"a}chsichen", "mecklemburgischen", "bayrischen",
+land <- c("niedersächsichen", "mecklemburgischen", "bayrischen",
           "oldenburgischen") %>% sample(1)
 land_e <- str_replace(land, "n$", "")
 m_grad <- c(70, 71, 72, 73, 74) %>% sample(1)
@@ -20,69 +49,40 @@ dick_torf <- c(3, 4, 5, 6, 7) %>% sample(1)
 a_grad <- c(54, 53, 52, 51, 55, 60) %>% sample(1)
 elle <- c(52.2, 52.4, 52.6)  %>% sample(1)
 side <- round(c(17, 20, 23)*100/elle) %>% sample(1)
-beruf <- c("Mittelst{\"a}ndler", "Chefredaktuer", "Versicherungsverteter",
+beruf <- c("Mittelständler", "Chefredaktuer", "Versicherungsverteter",
            "Finanzbeamter") %>% sample(1)
 winkel <- c("steil", "flach") %>% sample(1)
 n_slave <- c(2,3,4,5) %>% sample(1)
-krank <- c("R{\"u}cken", "Knie", "Schulter") %>% sample(1)
+krank <- c("Rücken", "Knie", "Schulter") %>% sample(1)
 effizienz <- c(80, 90, 70, 75, 85) %>% sample(1)
 schubkarre <- c(90, 100, 110, 95) %>% sample(1)
 winkel_rampe <- c(9, 10, 11, 12, 14) %>% sample(1)
 winkel_neu <- c(5, 6, 7, 8) %>% sample(1)
 @
 
-Es stehen die \Sexpr{land} Pyramidentage an und Sie sind auf
-abenteuerlichen Wegen f{\"u}r den Bau der Pyramiden zust{\"a}ndig. Zu allem
-{\"U}berfluss handelt es sich auch noch eine \textit{Reenactment}
-Veranstaltung. Thema der diesj{\"a}hrigen Pyramidentage sind die Pyramiden von
-Meroe, die den K{\"o}nigen und K{\"o}niginnen des historischen Reiches von Kusch in
-Nubien, dem heutigen Sudan, als Grabst{\"a}tten dienten. Die Pyramiden in Meroe
-fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu
-den {\"a}gyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche
-Seitenl{\"a}nge der Grundfl{\"a}che einer Pyramide betr{\"a}gt \Sexpr{side} K{\"o}nigsellen. Eine K{\"o}nigselle
-misst \Sexpr{elle}cm.\\
+Es stehen die \Sexpr{land} Pyramidentage! Sie und \Sexpr{name} sind auf abenteuerlichen Wegen für den Bau der Pyramiden zuständig. Zu allem Überfluss handelt es sich auch noch eine \textit{Reenactment} Veranstaltung. Thema der diesjährigen Pyramidentage sind die Pyramiden von Meroe, die den Königen und Königinnen des historischen Reiches von Kusch in Nubien, dem heutigen Sudan, als Grabstätten dienten. Die Pyramiden in Meroe fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu den ägyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche Seitenlänge der Grundfläche einer Pyramide beträgt \Sexpr{side} Königsellen. Eine Königselle misst \Sexpr{elle}cm.\\
 
-\textit{L{\"o}sen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen
-  Sie Seiten und die Winkel der Pyramide entsprechend!}
+\textit{Lösen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
-\item Bei der K{\"o}nigspyramide von Meroe soll eine Seitenl{\"a}nge der Grundfl{\"a}che
-  \Sexpr{side} K{\"o}nigsellen lang sein. Welche H{\"o}he der K{\"o}nigspyramide in $m$
-  ergibt sich? \textbf{(1 Punkt)}
-\item Die Au{\ss}enfl{\"a}chen der Pyramide soll begr{\"u}nt werden. F{\"u}r die
-  Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die
-  Pyramide aufgebracht werden. Berechnen Sie die ungef{\"a}hre Menge an
-  ben{\"o}tigten Torf in $m^3$! \textbf{(2 Punkte)}
+\item Bei der Königspyramide von Meroe soll eine Seitenlänge der Grundfläche \Sexpr{side} Königsellen lang sein. Welche Höhe der Königspyramide in $m$ ergibt sich? \textbf{(1 Punkt)}
+\item Die Außenflächen der Pyramide soll begrünt werden. Für die Bepflanzung muss eine \Sexpr{dick_torf}cm dicke Torfschicht auf die Pyramide aufgebracht werden. Berechnen Sie die ungefähre Menge an benötigten Torf in $m^3$! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur
-\Sexpr{n_slave} Sklaven, die Ihnen bei dem Bef{\"u}llen der Pyramide mit Schutt
-zu Seite stehen. Leider haben Ihre Sklaven zu allem {\"U}berfluss auch noch
-chronische \Sexpr{krank}schmerzen entwickelt, als sie von der
-anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der
-Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen
-\Sexpr{schubkarre} Liter.
+Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur \Sexpr{n_slave} Sklaven, die Ihnen und \Sexpr{name} bei dem Befüllen der Pyramide mit Schutt zu Seite stehen. Leider haben Ihre Sklaven zu allem Überfluss auch noch chronische \Sexpr{krank}schmerzen entwickelt, als die Sklaven von der anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der Sklaven von \Sexpr{effizienz}\% aus. In eine Schubkarre passen \Sexpr{schubkarre} Liter.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Wie oft m{\"u}ssen Ihre maladen Sklaven die Rampe mit der Schubkarre
-  zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu f{\"u}llen? \textbf{(1 Punkt)}
-\item Berechnen Sie die L{\"a}nge der Rampe zur Spitze der Pyramide mit einem
-  Anstellwinkel von $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
-\item Wie weit reicht Ihre Rampe vom Fu{\ss} der Pyramide in die \Sexpr{land_e}
-  Landschaft?  \textbf{(2 Punkte)}
+\item Wie oft müssen Ihre maladen Sklaven die Rampe mit der Schubkarre zur Spitze der Pyramide hochfahren um die Pyramide mit Schutt zu füllen? \textbf{(1 Punkt)}
+\item Berechnen Sie die Länge der Rampe zur Spitze der Pyramide mit einem Anstellwinkel von $\Sexpr{winkel_rampe}^\circ$! \textbf{(2 Punkte)}
+\item Wie weit reicht Ihre Rampe vom Fuß der Pyramide in die \Sexpr{land_e} Landschaft?  \textbf{(2 Punkte)}
 \end{enumerate}
 
-Bei der Besichtigung der Pyramide teilt Ihnen der leicht {\"u}bergewichtige
-Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu
-\Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen
-w{\"u}rde. Sie m{\"u}ssen nochmal ran.
+Bei der Besichtigung der Pyramide teilt Ihnen der leicht übergewichtige Pharao (Nebenberuf \textit{\Sexpr{beruf}}) mit, das die Pyramide zu \Sexpr{winkel} sei und somit nicht in die \Sexpr{land_e} Landschaft passen würde. Sie müssen nochmal ran.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
-\item Die Grundfl{\"a}che der Pyramide {\"a}ndert sich nicht. Berechnen Sie die
-  {\"A}nderung der H{\"o}he in K{\"o}nigsellen, wenn sich der Anstellwinkel der
-  Pyramide um $\Sexpr{winkel_neu}^\circ$ {\"a}ndert!  \textbf{(2 Punkte)}
+\item Die Grundfläche der Pyramide ändert sich nicht. Berechnen Sie die Änderung der Höhe in \underline{Königsellen}, wenn sich der Anstellwinkel der Pyramide um $\Sexpr{winkel_neu}^\circ$ ändert!  \textbf{(2 Punkte)}
 \end{enumerate}
 
 

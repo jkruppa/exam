@@ -1,17 +1,52 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/n451XnhtSh4}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/n451XnhtSh4}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
-
-\paragraph{Entschuldigung, ist das Ihre Feder in meinem Auge?}
 
 <<>>=
-type_chick <- c("H{\"u}hner", "Puten", "Enten", "G{\"a}nse")
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Deich",
+                "Sinnlos im Studium") |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
+
+
+\paragraph{'Entschuldigung, ist das Ihre Feder in meinem Auge?'}
+
+<<>>=
+type_chick <- c("Hühner", "Puten", "Enten", "Gänse")
 names(type_chick) <- c("Huhn", "Pute", "Ente", "Gans")
 type_chick <- type_chick %>% sample(1)
 
@@ -61,20 +96,7 @@ data_dfr <- tibble(behav = behaviour_vec,
 row.names(data_dfr) <- type_i
 @
 
-So h{\"o}rt man h{\"a}ufiger h{\"o}fliche \Sexpr{type_chick} in Mastst{\"a}llen sagen. Das
-ist nat{\"u}rlich etwas ung{\"u}nstig, den dann kommt es zu Picken und
-Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Ma{\ss}nahmen
-gegriffen werden. Kennt jeder aus einer mittelm{\"a}{\ss}igen Wohngemeinschaft. Das
-wollen wir aber als vorsorgliche \Sexpr{type_chick}-Halter:innen
-nicht\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
-  wissenschaftliche Artikel:
-  \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on
-    Animal Health and Welfare, et al. (2023) Welfare of broilers on
-    farm. EFSA Journal 21.2}.}. Betrachten wir also einmal das Platzangebot
-(eng. \textit{space allowance}, abk. \textit{SA}) der \Sexpr{type_chick}
-f{\"u}r vier T{\"a}tigkeiten und versuchen die notwendige Fl{\"a}che zu optimieren. Wie
-immer gibt es daf{\"u}r eine mathematische Formel:
-
+So hört man häufiger höfliche \Sexpr{type_chick} in Mastställen sagen. Das ist natürlich etwas ungünstig, den dann kommt es zu Picken und Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Maßnahmen gegriffen werden. Kennt jeder aus einer mittelmäßigen Wohngemeinschaft. Das wollen \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} aber als vorsorgliche \Sexpr{type_chick}-Halter:innen nicht\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftliche Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers on farm. EFSA Journal 21.2}.}. Gemeinsam sind die Vier in einer Projektgruppe gelandet. Betrachten wir also gemeinsam einmal das Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der \Sexpr{type_chick} für vier Tätigkeiten und versuchen die notwendige Fläche zu optimieren. Wie immer gibt es dafür eine mathematische Formel:
 
 \begin{center}
   \begin{tabular}{cc}
@@ -87,18 +109,16 @@ immer gibt es daf{\"u}r eine mathematische Formel:
 mit
 
 \begin{itemize}[noitemsep]
-\item $SA$ dem ben{\"o}tigten Platzangebot aller aufsummierten Verhalten $i$.
-\item $A_i$ dem ben{\"o}tigten Platz f{\"u}r ein Verhalten $i$. 
+\item $SA$ dem benötigten Platzangebot aller aufsummierten Verhalten $i$.
+\item $A_i$ dem benötigten Platz für ein Verhalten $i$. 
 \item $PB_i$ dem Anteil des Auftretens eines Verhaltens $i$.
-\item $r_i$ dem Radius \Sexpr{names(type_chick)} plus dem ben{\"o}tigten Radius f{\"u}r das Verhalten $i$.
-\item $R_i$ dem notwendigen Abstand zu den Nachbarn f{\"u}r das Verhalten $i$.    
+\item $r_i$ dem Radius \Sexpr{names(type_chick)} plus dem benötigten Radius für das Verhalten $i$.
+\item $R_i$ dem notwendigen Abstand zu den Nachbarn für das Verhalten $i$.    
 \item $i$ dem Verhalten: (1) \Sexpr{type_i[1]}, (2) \Sexpr{type_i[2]}, (3)
   \Sexpr{type_i[3]} und (4) \Sexpr{type_i[4]}.
 \end{itemize}
 
-In der folgenden Tabelle 1 sind die Werte f{\"u}r $r_i$, $R_i$ und $PB_i$ f{\"u}r
-ein spezifisches Verhalten $i$ aus drei wissenschaftlichen
-Ver{\"o}ffentlichungen dargestellt.
+In der folgenden Tabelle 1 sind die Werte für $r_i$, $R_i$ und $PB_i$ für ein spezifisches Verhalten $i$ aus drei wissenschaftlichen Veröffentlichungen dargestellt.
 
 \vspace{-1Ex}
 
@@ -109,27 +129,16 @@ data_dfr %>% kable(booktabs = TRUE, align = c("lllll")) %>%
 @ 
 }
 
+Leider kennen sich die Vier nicht so gut mit der Berechnung aus! Daher brauchen die Vier Ihre Hilfe!
+
 \begin{enumerate}
-\item Erstellen Sie eine zusammenfassende Tabelle mit den mittleren Werten
-  f{\"u}r $r$, $R$ und $PB$ aus der obigen Tabelle 1 f{\"u}r die jeweiligen
-  Verhalten! \textbf{(3 Punkte)}
-\item Erg{\"a}nzen Sie eine Spalte mit dem ben{\"o}tigten Platz $A$ f{\"u}r das jeweilige
-  Verhalten, welches sich aus den mittleren Werten ergibt! \textbf{(1 Punkt)}
-\item Berechnen Sie das ben{\"o}tigte Platzangebot $SA$ f{\"u}r alle betrachteten
-  Verhalten! \textbf{(1 Punkt)}
-\item Skizzieren Sie die Werte $r_i$, $R_i$ und $A_i$ f{\"u}r zwei
-  nebeneinander agierende \Sexpr{type_chick} f{\"u}r ein Verhalten $i$. Nutzen
-  Sie hierf{\"u}r vereinfachte geometrische Formen! \textbf{(2 Punkte)}
-\item Sie entnehmen der Literatur folgende Aussage zur Verteilung der
-  \Sexpr{type_chick} in der Fl{\"a}che $A$: \textit{"`Assuming, that the
-    animals will optimally and equally distribute in an area $A$, we observe a
-    small part, which is not covered. This area is called
-    $\omega$ and is calculated with $\omega = \tfrac{A}{0.9069}$."'
-  } Veranschaulichen Sie die Fl{\"a}che $\omega$ in einer aussagekr{\"a}ftigen
-  Abbildung!  \textbf{(1 Punkt)}
-\item Ein Tier braucht Platz f{\"u}r sich selbst. Berechnen Sie nun die
-  K{\"o}rperfl{\"a}che $a$, die ein Tier einnimmt. Welche Annahmen haben Sie f{\"u}r
-  die Berechnung der K{\"o}rperfl{\"a}che getroffen? \textbf{(2 Punkte)}
+\item Erstellen Sie eine zusammenfassende Tabelle mit den mittleren Werten für $r$, $R$ und $PB$ aus der obigen Tabelle 1 für die jeweiligen Verhalten! \textbf{(3 Punkte)}
+\item Ergänzen Sie eine Spalte mit dem benötigten Platz $A$ für das jeweilige Verhalten, welches sich aus den mittleren Werten ergibt! \textbf{(1 Punkt)}
+\item Berechnen Sie das benötigte Platzangebot $SA$ für alle betrachteten Verhalten! \textbf{(1 Punkt)}
+\item Skizzieren Sie die Werte $r_i$, $R_i$ und $A_i$ für zwei nebeneinander agierende \Sexpr{type_chick} für ein Verhalten $i$. Nutzen Sie hierfür vereinfachte geometrische Formen! \textbf{(2 Punkte)}
+\item Sie entnehmen der Literatur folgende Aussage zur Verteilung der \Sexpr{type_chick} in der Fläche $A$: \textit{"`Assuming, that the animals will optimally and equally distribute in an area $A$, we observe a
+    small part, which is not covered. This area is called $\omega$ and is calculated with $\omega = \tfrac{A}{0.9069}$."'} Veranschaulichen Sie die Fläche $\omega$ in einer aussagekräftigen Abbildung!  \textbf{(1 Punkt)}
+\item Ein Tier braucht Platz für sich selbst. Berechnen Sie nun die Körperfläche $a$, die ein Tier einnimmt. Welche Annahmen haben Sie für die Berechnung der Körperfläche getroffen? \textbf{(2 Punkte)}
 \end{enumerate}
 
 

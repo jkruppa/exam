@@ -1,22 +1,47 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/Mr6eslls4J0}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/Mr6eslls4J0}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+@
+
 
 \paragraph{Armee der Kaninchen}
 
 <<>>=
-job <- c("Ihrer Surfschule", "Ihrem Krokodilreservat",
-         "Ihrer Koalakuschelschule", "Ihrer Faultierpension") %>% sample(1)
+job <- c("der Surfschule", "dem Krokodilreservat",
+         "der Koalakuschelschule", "der Faultierpension") %>% sample(1)
 year_out <- c(1859, 1860, 1875) %>% sample(1)
 release <- c(28, 26, 30, 32) %>% sample(1)
-release_point <- c("Norden", "Osten", "S{\"u}den", "Westen")  %>% sample(1)
+release_point <- c("Norden", "Osten", "Süden", "Westen")  %>% sample(1)
 westost <- c(4000, 4100, 4200, 4300, 4400) %>% sample(1)
 start_inf <- c(12, 14, 16, 18, 20) %>% sample(1)
 base_inf <- c(1.2, 1.4, 1.6, 1.8, 2, 2.2) %>% sample(1)
@@ -35,42 +60,20 @@ plus  <- c(2.4, 3.2, 3.1, 4.1, 2.7) %>% sample(1)
 base <- c(1.9, 2, 2.1, 2.2, 2.3, 1.7) %>% sample(1)
 @
 
-Leider hat es mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht
-auch nicht \textit{so} die beste Idee... aber daf{\"u}r haben Sie eine Neue!
-Oder wie es Mike Tyson zugeschrieben wird: "`Ich wurde nie
-niedergeschlagen, ich war immer am Aufstehen!"'. Daher machen Sie jetzt
-einen Gro{\ss}handel mit Kaninchenfleisch und damit dem teuersten Fleisch in
-Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr
-\Sexpr{year_out} ungef{\"a}hr \Sexpr{release} Kaninchen entlassen hat,
-Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so
-exklusiv? Dem wollen wir mal mathematisch nachgehen!\footnote{Die Quelle
-  der Inspiration f{\"u}r die Aufgabe war der folgendes YouTube Video:
-  \href{https://youtu.be/38fuOr3tdgc?si=Li7NL_FoByML8JtT}{ Incredible
-    Stories -- Why don't they eat wild rabbits in Australia? They have
-    millions of them! The reason is surprising...}}
-\\
+Leider hat es bei \Sexpr{name} mit \Sexpr{job} in Down Under nicht geklappt. War vielleicht auch nicht \textit{so} die beste Idee... aber dafür hat \Sexpr{name} eine neue Eingebung! Oder wie es Mike Tyson zugeschrieben wird: >>Ich wurde nie niedergeschlagen, ich war immer am Aufstehen!<<. Daher macht \Sexpr{name} jetzt einen Großhandel mit Kaninchenfleisch und damit dem teuersten Fleisch in Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr \Sexpr{year_out} ungefähr \Sexpr{release} Kaninchen entlassen hat, Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? \Sexpr{name} wird stutzig und frag Sie, dem mal mathematisch nachzugehen!\footnote{Die Quelle der Inspiration für die Aufgabe war der folgendes YouTube Video: \href{https://youtu.be/38fuOr3tdgc?si=Li7NL_FoByML8JtT}{ Incredible Stories -- Why don't they eat wild rabbits in Australia? They have    millions of them! The reason is surprising...}} \\
 
-Forscherinnen fand folgende S{\"a}ttigungsfunktion f{\"u}r das j{\"a}hrliche Wachstum
-der gesamten Kaninchenpopulation im westlichen Australien.
+Forscherinnen fand folgende Sättigungsfunktion für das jährliche Wachstum der gesamten Kaninchenpopulation im westlichen Australien.
 \begin{equation*}
   f(t) = \Sexpr{A_formula} - \Sexpr{a_formula} \cdot \Sexpr{base}^{\Sexpr{upp} \cdot t + \Sexpr{plus}}
 \end{equation*}
 
 \begin{enumerate}
-\item Skizzieren Sie die S{\"a}ttigungsfunktion \textit{ann{\"a}herungsweise} in einer Abbildung! \textbf{(1
-    Punkt)}
-\item Wie viele Kaninchen k{\"o}nnen nach der S{\"a}ttigungsfunktion maximal im
-  westlichen Australien leben? Erg{\"a}nzen Sie den Wert in Ihrer Abbildung! \textbf{(2 Punkte)}
-\item Wie viele Millionen Kaninchen leben nach der S{\"a}ttigungsfunktion
-  nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1
-    Punkt)}
+\item Skizzieren Sie die Sättigungsfunktion \textit{annäherungsweise} in einer Abbildung! \textbf{(1 Punkt)}
+\item Wie viele Kaninchen können nach der Sättigungsfunktion maximal im westlichen Australien leben? Ergänzen Sie den Wert in Ihrer Abbildung! \textbf{(2 Punkte)}
+\item Wie viele Millionen Kaninchen leben nach der Sättigungsfunktion nach \Sexpr{satt_year} Jahren auf dem australischen Kontinent? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit
-Haemorrhagic Disease Virus (RHDV) in \Sexpr{start_inf} Kaninchen
-ausgebracht. Da die Kaninchen keine Ma{\ss}nahmen gegen die Ausbreitung
-vornehmen k{\"o}nnen, verl{\"a}uft die Ausbreitung mit einem w{\"o}chentlichen
-Wachstumsfakor von \Sexpr{base_inf} nach folgender Formel.
+Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV) in \Sexpr{start_inf} Kaninchen ausgebracht. Da die Kaninchen keine Maßnahmen gegen die Ausbreitung vornehmen können, verläuft die Ausbreitung mit einem wöchentlichen Wachstumsfakor von \Sexpr{base_inf} nach folgender Formel.
 
 \begin{equation*}
   N(t) = N(0) \cdot a^t
@@ -78,42 +81,27 @@ Wachstumsfakor von \Sexpr{base_inf} nach folgender Formel.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Wie viele Wochen ben{\"o}tigen die Viren um theoretisch die gesamte
-  Kaninchenpopulation nach \Sexpr{satt_year - 2} Jahren Wachstum zu
-  durchseuchen? \textbf{(1 Punkt)}
+\item Wie viele Wochen benötigen die Viren um theoretisch die gesamte Kaninchenpopulation nach \Sexpr{satt_year - 2} Jahren Wachstum zu durchseuchen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das Myxoma Virus und das RHDV t{\"o}ten \Sexpr{percent}\% der
-Kaninchenpopulation innerhalb weniger Wochen.
+Das Myxoma Virus und das RHDV töten \Sexpr{percent}\% der Kaninchenpopulation innerhalb weniger Wochen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}  
-\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer
-  Viruspandemie wieder auf \Sexpr{recover}\% der ges{\"a}ttigten
-  Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
+\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer Viruspandemie wieder auf \Sexpr{recover}\% der gesättigten Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
 \end{enumerate}
 
-Thomas Austin entlie{\ss} die Kaninchen im {\"a}u{\ss}ersten \Sexpr{release_point} von
-Australien. Australien hat eine West-Ost-Ausdehnung von \Sexpr{westost}km
-und eine Nord-S{\"u}d-Ausdehnung von knapp \Sexpr{nordsued}km. Die Kaninchen
-breiten sich radial mit einer Geschwindigkeit von \Sexpr{v_rabbit}km pro
-Jahr aus.
+Thomas Austin entließ die Kaninchen im äußersten \Sexpr{release_point} von Australien. Australien hat eine West-Ost-Ausdehnung von \Sexpr{westost}km und eine Nord-Süd-Ausdehnung von knapp \Sexpr{nordsued}km. Die Kaninchen breiten sich radial mit einer Geschwindigkeit von \Sexpr{v_rabbit}km pro Jahr aus.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort
-  in Australien erreicht haben? \textit{L{\"o}sen Sie die Aufgabe unter der
-    Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
+\item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort in Australien erreicht haben? \textit{Lösen Sie die Aufgabe unter der Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
 \end{enumerate}
 
-Eine j{\"a}hrliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic
-Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ pro Tier und der
-durchf{\"u}hrende Arzt verlangt ca. \Sexpr{dr_cost}\$ pro Tier.
+Eine jährliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV) kosten \Sexpr{impf_cost}\$ pro Tier und der durchführende Arzt verlangt ca. \Sexpr{dr_cost}\$ pro Tier.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
-\item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen
-  j{\"a}hrlichen Zusatzkosten f{\"u}r die Impfungen der Kaninchen m{\"u}ssen Sie daher
-  kalkulieren? \textbf{(1 Punkt)}
+\item In Ihrem Stall leben \Sexpr{pop} Mastkaninchen. Mit welchen jährlichen Zusatzkosten für die Impfungen der Kaninchen müssen Sie daher kalkulieren? \textbf{(1 Punkt)}
 \end{enumerate}
 

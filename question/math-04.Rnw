@@ -1,26 +1,46 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/https://youtu.be/k2G52hMIfqk}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/https://youtu.be/k2G52hMIfqk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
 %% --------------------------------------------------------------------
 {\tiny\textbf{Stichworte:} Riesenfaultier $\bullet$ Evolution der Avocado $\bullet$ Bluetooth $ \bullet$ Blauzahn $\bullet$ Colonia Dignidad $\bullet$ ODESSA $\bullet$ Rattenlinie $\bullet$ Adolf Eichmann}
 %% --------------------------------------------------------------------
 
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+
+@
 
 \paragraph{Aligatorenbirnen und Blaubeeren}
 
 <<>>=
 export_year <- c(2021, 2022, 2023, 2024) |> sample(1)
-person <- c("einer Rentnerin mit Monokel", "einem Studienrat mit Stock",
-            "einem M{\"a}dchen mit Z{\"o}pfen und Zahnspange", "einem Studenten im Karohemd",
-            "einer {\"a}ltern Dame mit aufgespannten Regenschirm") |> 
-  sample(1)
 markt <- c("Lidl", "Aldi", "Edeka", "Netto", "Rewe") |> sample(1)
 heidel_beere_pk <- c(3,4,5,6,7) %>% sample(1)
 heidel_beere_price <- c(1.59, 1.79, 1.89, 1.99) %>% sample(1)
@@ -56,23 +76,9 @@ blau_switch <- c("reduzierte", "steigerte") |> sample(1)
 avo_switch <- c("stiegen", "fielen") |> sample(1)
 @
 
-"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele
-Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um
-und blicken in das puderrote Gesicht von \Sexpr{person}. "'Wieso?"', entfährt es
-Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem
-Whiteboard voller roter Schnüre geschliffen und müssen folgenden
-mathematischen untermauerten Argumenten im \Sexpr{markt} über sich ergehen
-lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich
-mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration
-  für die Aufgabe waren folgende Reportagen:
-  \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis
-  zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August
-  2021} und
-\href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit
-  in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem
-  Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
+"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um und blicken in das puderrote Gesicht von \Sexpr{name}. "'Wieso?"', entfährt es Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem Whiteboard voller roter Schnüre geschliffen und müssen folgenden mathematischen untermauerten Argumenten im \Sexpr{markt} über sich ergehen lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration für die Aufgabe waren folgende Reportagen: \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August 2021} und \href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
 
-Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{person}?\\
+Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von \Sexpr{name}?\\
 
 \begin{enumerate}
 \item Wenn \Sexpr{heidel_beere_pk} Blaubeerschalen \Sexpr{heidel_beere_pk * heidel_beere_price} Euro kosten,  wie viel kosten \Sexpr{heidel_beere_kauf} Schalen? \textbf{(2 Punkte)}
@@ -107,7 +113,7 @@ Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisie
 \item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das alles hätten Sie nicht von \Sexpr{person} erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
+Das alles hätten Sie nicht von \Sexpr{name} erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
 
 \begin{enumerate}
   \setcounter{enumi}{5}  
