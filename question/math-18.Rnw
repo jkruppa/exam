@@ -1,19 +1,50 @@
 \section{Aufgabe \hfill (12 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/flRBo1FWQy0}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/flRBo1FWQy0}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
-\paragraph{T{\"o}dliche Seuche AIDS -- Die r{\"a}tselhafte Krankheit}
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Deich",
+                "Sinnlos im Studium") |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+
+
+@
+
+\paragraph{Tödliche Seuche AIDS -- Die rätselhafte Krankheit}
 
 
 <<>>=
 arzt <- c("Ihrem Hautarzt", "Ihrem Hausarzt", "Ihrem Augenarzt",
-          "Ihrem HNO-Arzt", "Ihrem Orthop{\"a}den") %>% sample(1)
+          "Ihrem HNO-Arzt", "Ihrem Orthopäden") %>% sample(1)
 partner <- c("Ihre Partnerin", "Ihr Partner") %>% sample(1)
 praev <- sample(c(0.01, 0.1, 0.5, 0.75, 0.8), 1)
 pos_1_rate <- sample(c(90, 92, 95, 96), 1)
@@ -22,56 +53,26 @@ n_animal <- sample(c(10000, 20000, 40000, 30000), 1)
 
 @
 
-Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern
-beiseite. Sie sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen
-lassen. Woanders leider keinen Termin gekriegt... Immerhin denken Sie und
-\Sexpr{partner} {\"u}ber Nachwuchs nach und da geht es eben nur durch
-ungesch{\"u}tzten Sex. Was wissen Sie nun aber {\"u}ber AIDS und dem diagnostischen
-AIDS-Test, den Sie nun machen werden?\\
+\Sexpr{name}, \Sexpr{name_sec[1]}
 
-Die Pr{\"a}valenz von AIDS bei einem Menschen in Europa wird mit
-\Sexpr{praev}\% angenommen. In \Sexpr{pos_1_rate}\% der F{\"a}lle ist ein
-HIV-Test positiv, wenn der Patient erkrankt ist. In \Sexpr{pos_2_rate}\%
-der F{\"a}lle ist ein HIV-Test positiv, wenn der Patient \textit{nicht}
-erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es
-denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven
-AIDS-Test vorliegen haben $(T^+)$? Gehen Sie f{\"u}r die folgenden Berechnungen
-von $n = \Sexpr{n_animal}$ Patienten mit einem diagnostischen Test f{\"u}r AIDS
-aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen
-Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration f{\"u}r die
-  Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et
-    al. (2022) Von Baumdiagrammen {\"u}ber Doppelb{\"a}ume zu H{\"a}ufigkeitsnetzen --
-    kognitive {\"U}berlastung oder didaktische Unterst{\"u}tzung? Journal f{\"u}r
-    Mathematik-Didaktik, 1-33}}.
+Irritiert legen Sie die historische Ausgabe des Spiegels aus den 80zigern beiseite. Sie sind bei \Sexpr{arzt} und wollen einen AIDS-Test machen lassen. Woanders leider keinen Termin gekriegt... Immerhin denken Sie und \Sexpr{partner} über Nachwuchs nach und da geht es eben nur durch ungeschützten Sex. Was wissen Sie nun aber über AIDS und dem diagnostischen AIDS-Test, den Sie nun machen werden?\\
+
+Die Prävalenz von AIDS bei einem Menschen in Europa wird mit \Sexpr{praev}\% angenommen. In \Sexpr{pos_1_rate}\% der Fälle ist ein HIV-Test positiv, wenn der Patient erkrankt ist. In \Sexpr{pos_2_rate}\% der Fälle ist ein HIV-Test positiv, wenn der Patient \textit{nicht} erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven AIDS-Test vorliegen haben $(T^+)$? Gehen Sie für die folgenden Berechnungen von $n = \Sexpr{n_animal}$ Patienten mit einem diagnostischen Test für AIDS aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et al. (2022) Von Baumdiagrammen über Doppelbäume zu Häufigkeitsnetzen -- kognitive überlastung oder didaktische Unterstützung? Journal für Mathematik-Didaktik, 1-33}}.
 
 \begin{enumerate}
 \item Welche Wahrscheinlichkeit $Pr$ wollen Sie berechnen? \textbf{(1 Punkt)}
-\item Zeichnen Sie einen H{\"a}ufigkeitsdoppelbaum zur Bestimmung der gesuchten
-  Wahrscheinlichkeit $Pr$! \textbf{(2 Punkte)} 
-\item Beschriften Sie den H{\"a}ufigkeitsdoppelbaum, mit denen Ihnen bekannten
-  Informationen zu der AIDS Erkrankung und dem AIDS-Test! \textbf{(1 Punkt)}
-\item F{\"u}llen Sie den H{\"a}ufigkeitsdoppelbaum mit den sich ergebenden,
-  absoluten Patientenzahlen $n$ aus! \textbf{(2 Punkte)}
+\item Zeichnen Sie einen Häufigkeitsdoppelbaum zur Bestimmung der gesuchten Wahrscheinlichkeit $Pr$! \textbf{(2 Punkte)} \item Beschriften Sie den Häufigkeitsdoppelbaum, mit denen Ihnen bekannten Informationen zu der AIDS Erkrankung und dem AIDS-Test! \textbf{(1 Punkt)}
+\item Füllen Sie den Häufigkeitsdoppelbaum mit den sich ergebenden, absoluten Patientenzahlen $n$ aus! \textbf{(2 Punkte)}
 \item Berechnen Sie die gesuchte Wahrscheinlichkeit $Pr$! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Bei dem folgenden Arztgespr{\"a}ch erfahren Sie, dass beim diagnostischen
-Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)},
-\textit{False Positives (FP)} und \textit{False Negatives (FN)}
-auftreten. Das verstehen Sie so noch nicht und deshalb stellen Sie f{\"u}r sich
-den Zusammenhang in einer 2x2 Kreuztabelle dar.
+Bei dem folgenden Arztgespräch erfahren Sie, dass beim diagnostischen Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten. Das verstehen Sie so noch nicht und deshalb stellen Sie für sich den Zusammenhang in einer 2x2 Kreuztabelle dar.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
-\item Tragen Sie \textit{TP}, \textit{TN}, \textit{FP} und \textit{FN} in
-  eine 2x2 Kreuztablle ein. Beschriften Sie die Tabelle entsprechend!
-  \textbf{(1 Punkt)}
-\item Berechnen Sie die Sensitivit{\"a}t und Spezifit{\"a}t des diagnostischen Tests
-  f{\"u}r AIDS! F{\"u}llen Sie daf{\"u}r die 2x2 Kreuztabelle mit den Informationen aus
-  dem H{\"a}ufigkeitsdoppelbaum aus! \textbf{(2 Punkte)}
-\item Was beschreibt die Sensitivit{\"a}t und die Spezifit{\"a}t im Bezug auf die
-  Gesunden und Kranken? Stellen Sie beide diagnostische Ma{\ss}zahlen als
-  Wahrscheinlichkeiten $Pr$ dar! \textbf{(2 Punkte)} 
+\item Tragen Sie \textit{TP}, \textit{TN}, \textit{FP} und \textit{FN} in eine 2x2 Kreuztablle ein. Beschriften Sie die Tabelle entsprechend! \textbf{(1 Punkt)}
+\item Berechnen Sie die Sensitivität und Spezifität des diagnostischen Tests für AIDS! Füllen Sie dafür die 2x2 Kreuztabelle mit den Informationen aus dem Häufigkeitsdoppelbaum aus! \textbf{(2 Punkte)}
+\item Was beschreibt die Sensitivität und die Spezifität im Bezug auf die Gesunden und Kranken? Stellen Sie beide diagnostische Maßzahlen als Wahrscheinlichkeiten $Pr$ dar! \textbf{(2 Punkte)} 
 \end{enumerate}
 
 

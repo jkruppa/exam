@@ -1,15 +1,49 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
-
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
 %% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width =
-  2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
 %% --------------------------------------------------------------------
 
-\paragraph{H{\"o}hlen \& Drachen}
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
+
+
+
+\paragraph{Höhlen \& Drachen}
 
 <<>>=
 gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)
@@ -21,34 +55,34 @@ ab_ba <- c("Pr(A|B)", "Pr(B|A)") %>% sample(1)
 
 num_dice <- c(4:7) %>% sample(1)
 
-type_dice_one <- lst(c(str_c("vierseitige W{\"u}rfel (", num_dice, "d4)"), 4),
-                     c(str_c("sechseitige W{\"u}rfel (", num_dice, "d6)"), 6),
-                     c(str_c("achtseitige W{\"u}rfel (", num_dice, "d8)"), 8),
-                     c(str_c("zw{\"o}lfseitige W{\"u}rfel (", num_dice, "d12)"), 12)) %>% sample(1)
+type_dice_one <- lst(c(str_c("vierseitige Würfel (", num_dice, "d4)"), 4),
+                     c(str_c("sechseitige Würfel (", num_dice, "d6)"), 6),
+                     c(str_c("achtseitige Würfel (", num_dice, "d8)"), 8),
+                     c(str_c("zwölfseitige Würfel (", num_dice, "d12)"), 12)) %>% sample(1)
 
-type_dice_two <- c("zwei vierseitigen W{\"u}rfeln (2d4)", "zwei sechseitigen W{\"u}rfeln (2d6)",
-                   "zwei achtseitigen W{\"u}rfeln (2d8)", "zwei zw{\"o}lfseitigen W{\"u}rfeln (2d12)") %>% sample(1)
+type_dice_two <- c("zwei vierseitigen Würfeln (2d4)", "zwei sechseitigen Würfeln (2d6)",
+                   "zwei achtseitigen Würfeln (2d8)", "zwei zwölfseitigen Würfeln (2d12)") %>% sample(1)
 
 add <- c(2, 3, 4, 5, 6, 7) %>% sample(1)
 
-type_dice_one_plus <- c(str_c("einem vierseitigen W{\"u}rfel plus ", add, " (1d4+", add, ")"),
-                        str_c("einem sechseitigen W{\"u}rfel plus ", add, " (1d6+", add, ")"),
-                        str_c("einem achtseitigen W{\"u}rfel plus ", add, " (1d8+", add, ")"),
-                        str_c("einem zw{\"o}lfseitigen W{\"u}rfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
+type_dice_one_plus <- c(str_c("einem vierseitigen Würfel plus ", add, " (1d4+", add, ")"),
+                        str_c("einem sechseitigen Würfel plus ", add, " (1d6+", add, ")"),
+                        str_c("einem achtseitigen Würfel plus ", add, " (1d8+", add, ")"),
+                        str_c("einem zwölfseitigen Würfel plus ", add, " (1d12+", add, ")")) %>% sample(1)
 
 num_erfolge <- num_dice - sample(c(1,2), 1)
 
 @
 
 Nachdem Sie sich begeistert in der Serie \textit{Stranger Thinks} verloren
-haben, wollen Sie bei \Sexpr{gender} einmal \textit{H{\"o}hlen \& Drachen}
+haben, wollen Sie bei \Sexpr{gender} einmal \textit{Höhlen \& Drachen}
 ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den
-Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz sch{\"o}n viele
-unterschiedliche W{\"u}rfel durch die Gegend fliegen. Daher m{\"u}ssen Sie sich
+Regeln gebastelt. Schnell stellen Sie fest, dass hier ganz schön viele
+unterschiedliche Würfel durch die Gegend fliegen. Daher müssen Sie sich
 jetzt einiges an Fragen stellen. \\%[-1ex]
 
 In dem Spiel haben Sie nun auf einmal \Sexpr{num_dice} \Sexpr{pluck(type_dice_one, 1,
-  1)} zum w{\"u}rfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} w{\"u}rfeln,
+  1)} zum würfeln in der Hand. Wenn Sie eine \Sexpr{pluck(type_dice_one, 1, 2)} würfeln,
 haben Sie einen Erfolg.
 
 \begin{enumerate}
@@ -58,24 +92,24 @@ haben Sie einen Erfolg.
   \textbf{(1 Punkt)}
 \end{enumerate}
 
-Sie betrachten nun aufmerksam die ausufernden Ausr{\"u}stungstabellen. Ihnen
-wird aber geholfen und Sie m{\"u}ssen sich jetzt nur zwischen der Axt oder dem
+Sie betrachten nun aufmerksam die ausufernden Ausrüstungstabellen. Ihnen
+wird aber geholfen und Sie müssen sich jetzt nur zwischen der Axt oder dem
 Schwert entscheiden.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item W{\"u}rden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
+\item Würden Sie die Axt mit \Sexpr{type_dice_two} als Schaden oder
   das Schwert mit \Sexpr{type_dice_one_plus} als Schaden bevorzugen?
-  Begr{\"u}nden Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+  Begründen Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Jetzt wird es immer wilder, da Sie sich jetzt {\"u}berlegen m{\"u}ssen, wie
+Jetzt wird es immer wilder, da Sie sich jetzt überlegen müssen, wie
 wahrscheinlich es ist, dass Ihr Rettungswurf gegen den zaubernden Hexer
 funktioniert. Sie haben folgende Wahrscheinlichkeiten gegeben. Die
-Wahrscheinlichkeit f{\"u}r das Ereignis $A$, der Rettungswurf ist erfolgreich,
-ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit f{\"u}r das Ereignis $B$,
+Wahrscheinlichkeit für das Ereignis $A$, der Rettungswurf ist erfolgreich,
+ist $Pr(A) = \Sexpr{pr_a}$, die Wahrscheinlichkeit für das Ereignis $B$,
 der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = \Sexpr{pr_b}$. Sie
-haben mitgez{\"a}hlt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 F{\"a}llen
+haben mitgezählt und festgestellt, dass in $\Sexpr{pr_ab}$ von 100 Fällen
 Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
 \begin{enumerate}
@@ -83,7 +117,7 @@ Ihr Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.
 \item Erstellen Sie eine 2x2 Kreuztabelle mit den Ereignissen $A$ und $B$
   sowie den Gegenereignissen $\bar{A}$ und $\bar{B}$ mit einen
   $\Omega = 100$. Beachten Sie hierbei die entsprechenden
-  Wahrscheinlichkeiten f{\"u}r die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
+  Wahrscheinlichkeiten für die Ereignisse $A$ und $B$! \textbf{(2 Punkte)}
 \item Bestimmen Sie $Pr(A \cap B)$! \textbf{(1 Punkt)}
 \item Erstellen Sie ein Baumdiagramm mit den passenden Informationen aus der 2x2
   Kreuztabelle! \textbf{(2 Punkte)}

@@ -1,18 +1,53 @@
 \section{Aufgabe \hfill (12 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/SZqp_vy3rgI}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
+
+
 
 \paragraph{Network-Marketing oder Schneeballschlacht!}
 
 
 <<>>=
-firma <- c("KH Gesund und Sch{\"o}n Components (KH-GSC)",
+firma <- c("KH Gesund und Schön Components (KH-GSC)",
            "Up/Down Systems and Networking (UDSysNet)",
            "Direct Finanzanlagen Left/Right (D-FL/R)",
            "Healthy Herbs Manufacture International (HeHeMan)")  %>%
@@ -27,26 +62,28 @@ prov_2 <- c(2, 2.5, 3, 1.75, 3.25) %>% sample(1)
 prov_3 <- prov_2 - 1
 prov_4 <- prov_3 - 0.5
 cost_prod <- c(50, 100, 150, 200, 75) %>% sample(1)
-n_partner <- c("drei", "vier", "f{\"u}nf") %>% sample(1)
+n_partner <- c("drei", "vier", "fünf") %>% sample(1)
 income <- c(1800, 2100, 2500, 3200, 4100, 5000) %>% sample(1)
-unit <- c("zwei", "drei", "vier", "f{\"u}nf") %>% sample(1)
+unit <- c("zwei", "drei", "vier", "fünf") %>% sample(1)
 einstieg <- c(cost_prod * 30, cost_prod * 35, cost_prod * 40, cost_prod * 45) %>% sample(1)
 zins <- c(4.7, 5.0, 5.5, 6.0, 5.1, 6.2) %>% sample(1)
 month <- c(36, 48, 60, 72) %>% sample(1)
 
 @
 
-Eine M{\"o}glichkeit, leicht Geld zu verdienen, ist es anderen Menschen f{\"u}r Geld
-zu versprechen, wie man leicht reich werden kann. Am besten nat{\"u}rlich ohne
-viel Aufwand und ortsunabh{\"a}ngig. Dann wollen wir mal loslegen. Schnell
+\Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]}
+
+Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld
+zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne
+viel Aufwand und ortsunabhängig. Dann wollen wir mal loslegen. Schnell
 ein YouTube-Werbevideo gedreht und auf geht es mit unserem
 Network-Marketing. Aber Moment, wie funktioniert Network-Marketing
 eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Wir
-wollen hier einmal in die Untiefen des "`passiven Einkommens"'
-abtauchen\footnote{Die Quellen der Inspiration f{\"u}r die Aufgabe waren
+wollen hier einmal in die Untiefen des >>passiven Einkommens<<
+abtauchen\footnote{Die Quellen der Inspiration für die Aufgabe waren
   folgendes YouTube Video:
   \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus --
-    Die meistgesuchte Betr{\"u}gerin der Welt} und der Artikel:
+    Die meistgesuchte Betrügerin der Welt} und der Artikel:
   \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{
     Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}.\\
 
@@ -62,23 +99,23 @@ Das Jahr \Sexpr{year} war das erfolgreichste Jahr in der Geschichte von
 \item Wie viel von dem Umsatz im Jahr \Sexpr{year} wird im Durchschnitt von jedem
   aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
 \item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im
-  Durchschnitt f{\"u}r jeden aktiven Partner bei einer direkten Provision von
+  Durchschnitt für jeden aktiven Partner bei einer direkten Provision von
   \Sexpr{prov}\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Ihr zu vermarkendes Produkt, hinter dem Sie voll stehen, kostet
 \Sexpr{cost_prod}EUR pro Einheit im Direktverkauf. Die direkte Provision
-f{\"u}r die erste Stufe betr{\"a}gt \Sexpr{prov_1}\%. F{\"u}r die zweite, dritte und
+für die erste Stufe beträgt \Sexpr{prov_1}\%. Für die zweite, dritte und
 vierte Stufe betragen die indirekten Provisionen jeweils \Sexpr{prov_2}\%,
-\Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen "`Partner"'
-wirbt wiederum \Sexpr{n_partner} Partner f{\"u}r sich selbst an. Pro Monat
+\Sexpr{prov_3}\% und \Sexpr{prov_4}\%. Jeder Ihrer angeworbenen >>Partner<<
+wirbt wiederum \Sexpr{n_partner} Partner für sich selbst an. Pro Monat
 werden im Schnitt \Sexpr{unit} Einheiten vom Produkt verkauft. Sie wollen nun
 \Sexpr{income}EUR im Monat \textit{passiv} -- also durch indirekte
 Provisionen -- erwirtschaften.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Erg{\"a}nzen Sie die folgende Tabelle mit den obigen Informationen! \textbf{(2 Punkte)}
+\item Ergänzen Sie die folgende Tabelle mit den obigen Informationen! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \begin{center}
@@ -96,23 +133,23 @@ Provisionen -- erwirtschaften.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Wie viele Partner m{\"u}ssen Sie auf der 2 Stufe anwerben um Ihr passives
+\item Wie viele Partner müssen Sie auf der 2 Stufe anwerben um Ihr passives
   Einkommen durch indirekte Provision zu erreichen? Wie viele Menschen
-  arbeiten am Ende indirekt f{\"u}r Sie? Stellen Sie den
+  arbeiten am Ende indirekt für Sie? Stellen Sie den
   Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
 \end{enumerate}
 
 Sie mussten zum Einstieg bei \Sexpr{names(firma)} Einheiten des Produkts
-f{\"u}r \Sexpr{einstieg}EUR kaufen. Diese Einheiten k{\"o}nnen Sie nur direkt
-verkaufen. Leider mussten Sie den Kauf {\"u}ber einen Kredit {\"u}ber
-\Sexpr{zins}\% p.a. {\"u}ber \Sexpr{month} Monate finanzieren.
+für \Sexpr{einstieg}EUR kaufen. Diese Einheiten können Sie nur direkt
+verkaufen. Leider mussten Sie den Kauf über einen Kredit über
+\Sexpr{zins}\% p.a. über \Sexpr{month} Monate finanzieren.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
-\item Berechnen Sie die Gesamtsumme, die Sie als Kredit abbezahlen m{\"u}ssen! \textbf{(2 Punkte)}
-\item Wie viele Einheiten m{\"u}ssen Sie pro Monat verkaufen um die anfallenden Zinsen
+\item Berechnen Sie die Gesamtsumme, die Sie als Kredit abbezahlen müssen! \textbf{(2 Punkte)}
+\item Wie viele Einheiten müssen Sie pro Monat verkaufen um die anfallenden Zinsen
   durch die direkte Provision zu erwirtschaften? \textbf{(1 Punkt)}
 \item Wie lange in
-  Monaten ben{\"o}tigen Sie um den Kredit durch die direkte
+  Monaten benötigen Sie um den Kredit durch die direkte
   Provision abzubezahlen? \textbf{(1 Punkt)}
 \end{enumerate}

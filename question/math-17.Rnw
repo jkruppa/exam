@@ -1,12 +1,46 @@
 \section{Aufgabe \hfill (10 Punkte)}
 
-\textit{Geben Sie grunds{\"a}tzlich Formeln und Rechenweg zur L{\"o}sung der
-  Teilaufgaben mit an!} \\[1Ex]
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+name_sec <- str_subset(unique(par_lst$naming), name, negate = TRUE) |> sample(3)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(c(name, name_sec), collapse = "|"))
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
+avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
+@
+ 
+%% --------------------------------------------------------------------
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/OhyuH6hzEhY}{\includegraphics[width = 2cm]{img/youtube}}
+\end{minipage}
+%% --------------------------------------------------------------------
 
-%% --------------------------------------------------------------------
-\hfill\href{https://youtu.be/OhyuH6hzEhY}{\includegraphics[width = 2cm]{img/youtube}} %%youtube
-\hspace{2Ex}
-%% --------------------------------------------------------------------
+<<>>=
+
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
+                      "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", 
+                     "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+lerngruppe <- c(LETTERS[1:12]) |> sample(1)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
+attr_name_sec2_vec <- attr_lst[[name_sec[2]]]
+attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
+
+@
+
 
 
 <<>>=
@@ -17,23 +51,9 @@ percent <- c(60, 70, 80) %>% sample(1)
 
 @
 
-\paragraph{Ein Pfund Insekten, bitte!} Das wird wohl h{\"a}ufiger geh{\"o}rt
-werden, wenn wir die Menschheit mit Proteinen ausreichend ern{\"a}hren
-wollen\footnote{Die Quelle der Inspiration f{\"u}r die Aufgabe war der folgende
-  Artikel aus dem Spiegel:
-  \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht
-    Milliarden - sind wir bald zu viele Menschen auf der Erde?}}. Schauen
-wir uns dazu einmal den Vergleich Deutschland zu Nigeria an. Nigeria hat
-eine der am schnellsten wachsenden Bev{\"o}lkerungen der Welt und wird
-vermutlich im Jahr 2100 zu den Top 5 der bev{\"o}lkerungsreichsten L{\"a}nder
-z{\"a}hlen. Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in
-Deutschland und ca. \Sexpr{n_nigeria} Menschen in Nigeria. Mit den
-Informationen wollen wir anfangen und dann eine Prognose f{\"u}r den
-Fleischkonsum im Jahr 2050 zu treffen. \\ 
+\paragraph{Ein Pfund Insekten, bitte!} 'Das wird wohl häufiger gehört werden, wenn wir die Menschheit mit Proteinen ausreichend ernähren wollen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen auf der Erde?}}.', merkt \Sexpr{name} an. Die Lerngruppe um \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} sind bei \Sexpr{name} um mal was außergewöhnliches zu essen. Um den Sinn der Nahrungsumstellung zu verdeutlichen, vergleicht \Sexpr{name} einmal Deutschland mit Nigeria. Nigeria hat eine der am schnellsten wachsenden Bevölkerungen der Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bevölkerungsreichsten Länder zählen. Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in Deutschland und ca. \Sexpr{n_nigeria} Menschen in Nigeria. Mit den Informationen wollen Sie und \Sexpr{name} mit der Überzeugungsarbeit anfangen und dann eine Prognose für den Fleischkonsum im Jahr 2050 zu treffen. \\ 
 
-
-Im folgenden ist Abbildung des Fleischkonsums im Jahr \Sexpr{year} in
-Deutschland und Nigeria in [kg] einmal dargestellt. 
+Im Folgenden ist Abbildung des Fleischkonsums im Jahr \Sexpr{year} in Deutschland und Nigeria in [kg] einmal dargestellt. 
 
 <<math-14-a,  echo = FALSE, fig.height = 2.5, fig.width = 8, fig.align = "center", message = FALSE>>=
 plot_animal_tbl <- tibble(animal = rep(c("pig", "chicken", "cow", "goat"), times = 2),
@@ -66,16 +86,11 @@ ggplot(plot_animal_tbl, aes(animal, eaten, fill = country)) +
 @
   
 \begin{enumerate}
-\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr
-  \Sexpr{year} \textit{pro Kopf} in einer aussagekr{\"a}ftigen Tabelle dar! 
-  \textbf{(2 Punkte)}
-\item Erg{\"a}nzen Sie in der Tabelle eine Spalte in der Sie f{\"u}r den
-  Fleischkonsum in Nigeria auf Deutschland normieren, daher ins Verh{\"a}ltnis
-  Nigeria/Deutschland, setzen! \textbf{(1 Punkt)}
+\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr \Sexpr{year} \textit{pro Kopf} in einer aussagekräftigen Tabelle dar! \textbf{(2 Punkte)}
+\item Ergänzen Sie in der Tabelle eine Spalte in der Sie für den Fleischkonsum in Nigeria auf Deutschland normieren, daher ins Verhältnis Nigeria/Deutschland, setzen! \textbf{(1 Punkt)}
 \end{enumerate}
 
-In der n{\"a}chsten Abbildung finden Sie die CO$_2$-Emission in [kg] nach
-Lebensmittel, die durch die Produktion entsteht, abgebildet.
+In der nächsten Abbildung finden Sie die CO$_2$-Emission in [kg] nach Lebensmittel, die durch die Produktion entsteht, abgebildet.
 
 <<math-14-b,  echo = FALSE, fig.height = 2.2, fig.width = 8, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(animal = c("pig", "chicken", "cow", "goat"),
@@ -104,16 +119,12 @@ ggplot(plot_tbl, aes(animal, eaten)) +
 
 \begin{enumerate}
   \setcounter{enumi}{2}  
-\item Stellen Sie in einer Tabelle die Treibhausgasemissionen an $CO_2$ pro
-  Kopf, die durch den Fleischkonsum in Deutschland und Nigeria im Jahr
-  \Sexpr{year} entstehen, dar! Erg{\"a}nzen Sie auch hier das Verh{\"a}ltnis
-  Nigeria zu Deutschland! \textbf{(2 Punkte)}
+\item Stellen Sie in einer Tabelle die Treibhausgasemissionen an $CO_2$ pro Kopf, die durch den Fleischkonsum in Deutschland und Nigeria im Jahr \Sexpr{year} entstehen, dar! Ergänzen Sie auch hier das Verhältnis Nigeria zu Deutschland! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \newpage
 
-In der folgenden Abbildung sehen Sie die
-Bev{\"o}lkerungsentwicklung [Millionen] in Nigeria von 1950 bis ins Jahr 2030 fortgef{\"u}hrt.
+In der folgenden Abbildung sehen Sie die Bevölkerungsentwicklung [Millionen] in Nigeria von 1950 bis ins Jahr 2030 fortgeführt.
 
 <<math-14-c,  echo = FALSE, fig.height = 9, fig.width = 9, fig.align = "center", message = FALSE>>=
 plot_tbl <- tibble(year = c(1950, 1960, 1970, 1980, 1990, 2000, 2010, 2015, 2020, 2022, 2025,
@@ -147,24 +158,14 @@ ggplot(plot_tbl, aes(year, people)) +
 
 \begin{enumerate}
   \setcounter{enumi}{3}  
-\item Sch{\"a}tzen Sie graphisch die zu erwartende Bev{\"o}lkerung [Millionen] in Nigeria im
-  Jahr 2050, die sich anhand der Informationen aus der Abbildung ergibt!
+\item Schätzen Sie graphisch die zu erwartende Bevölkerung [Millionen] in Nigeria im Jahr 2050, die sich anhand der Informationen aus der Abbildung ergibt!
 \begin{enumerate}
-\item Ohne Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
-    Punkt)}
-\item Unter Ber{\"u}cksichtigung der Covid-19-Pandemie! \textbf{(1
-    Punkt)}
+\item Ohne Berücksichtigung der Covid-19-Pandemie! \textbf{(1 Punkt)}
+\item Unter Berücksichtigung der Covid-19-Pandemie! \textbf{(1 Punkt)}
 \end{enumerate}
-\item Berechnen Sie den gesch{\"a}tzten Fleischkonsum von Nigeria im Jahr
-  2050 unter der Annahme \Sexpr{percent}\%-iger Angleichung der Lebensbedingungen zu
-  Deutschland im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr \Sexpr{year}, der
-  sich durch den angeglichenen Fleischkonsum ergibt! \textbf{(1 Punkt)}
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen
-  an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme 
-  durch Insekten ersetzt w{\"u}rde! \textbf{(1
-    Punkt)}
+\item Berechnen Sie den geschätzten Fleischkonsum von Nigeria im Jahr 2050 unter der Annahme \Sexpr{percent}\%-iger Angleichung der Lebensbedingungen zu Deutschland im Jahr \Sexpr{year}! \textbf{(1 Punkt)}
+\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr \Sexpr{year}, der sich durch den angeglichenen Fleischkonsum ergibt! \textbf{(1 Punkt)}
+\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme durch Insekten ersetzt würde! \textbf{(1 Punkt)}
 \end{enumerate}
 
 
