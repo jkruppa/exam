@@ -94,27 +94,39 @@ ques_vec <-  c(str_c("'Oh, nee!', ruft ", name, " aus und rollt entnervt mit ", 
 
 <<multcomp-02-a, echo = FALSE>>=
 
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
-  set_names(c("treatment", "freshmatter")) %>% 
-  select(treatment, freshmatter) |> 
-  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
-  sample_n(size = nrow(.)) 
+res_lst <- map(1:100, \(...){
 
-x_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
-
-pacman::p_load(rcompanion, magrittr, scales)
-pair_wise_mat <- pairwise.t.test(data_tbl$freshmatter, data_tbl$treatment,
-                p.adjust.method = "none") %>% 
-  extract2("p.value") %>% 
-  fullPTable() #%>%
-#  pvalue(accuracy = 0.0001) |> 
+  data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
+    set_names(c("treatment", "freshmatter")) %>% 
+    select(treatment, freshmatter) |> 
+    mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
+    sample_n(size = nrow(.)) 
+  
+  x_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+  
+  pacman::p_load(rcompanion, magrittr, scales)
+  pair_wise_mat <- pairwise.t.test(data_tbl$freshmatter, data_tbl$treatment,
+                                   p.adjust.method = "none") %>% 
+    extract2("p.value") %>% 
+    fullPTable() #%>%
+  #  pvalue(accuracy = 0.0001) |> 
   #matrix(ncol = 4, nrow = 4, byrow = TRUE,
-        # dimnames = list(groups_vec,
-       #                  groups_vec)) 
+  # dimnames = list(groups_vec,
+  #                  groups_vec)) 
+  
+  #diag(pair_wise_mat) <- ("1.0000")
+})
 
-#diag(pair_wise_mat) <- ("1.0000")
+ 
 
-pair_wise_mat |> 
+six_sig_lgl <- map_lgl(res_lst, \(x) {
+  if(sum(x < 0.05) %in% c(6, 8))
+    TRUE
+  else
+    FALSE
+})
+
+res_lst[six_sig_lgl] |> sample(1) |> magrittr::extract2(1) |> 
   kable(booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position", font_size = 10) |> 
     row_spec(0,bold=TRUE) |> 
