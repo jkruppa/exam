@@ -41,8 +41,14 @@ quote_block <- c("\\begin{quote}
                  }
                  \\end{quote}")
 
-ques_vec <-  c(str_c("An einem kalten Dezembermorgen haben sich ", name, " und ", name_sec, " zum Lernen verabredet. Eine große Kanne Tee und Berge von ", attr_name_vec$sweet, " warten darauf gegessen zu werden. ", name, " liest laut vor:", quote_block, name_sec, " hebt die Augenbraue. 'Irgendwie sagt mir die Aufgabe jetzt mal so gar nichts. Was soll da gemacht werden?', merkt ", name_sec, " an und ergänzt: 'Schauen wir doch erstmal zur Entspannung ", attr_name_sec1_vec$film, ", den Film habe ich extra nochmal mitgebracht.' ", name, " ist der Idee nicht abgeneigt und auch ", attr_name_vec$animal, " kommt unter dem Sofa hervor um mitzuschauen. ")) |> 
+ques_vec <-  c(str_c("An einem kalten Dezembermorgen haben sich ", name, " und ", name_sec, " zum Lernen verabredet. Eine große Kanne Tee und Berge von ", attr_name_vec$sweet, " warten darauf gegessen zu werden. ", name, " liest laut vor:", quote_block, name_sec, " hebt die Augenbraue. 'Irgendwie sagt mir die Aufgabe jetzt mal so gar nichts. Was soll da gemacht werden?', merkt ", name_sec, " an und ergänzt: 'Schauen wir doch erstmal zur Entspannung ", attr_name_sec1_vec$film, ", den Film habe ich extra nochmal mitgebracht.' ", name, " ist der Idee nicht abgeneigt und auch ", attr_name_vec$animal, " kommt unter dem Sofa hervor um mitzuschauen. "),
+               str_c("Es regnet. Wie immer. Aber dafür sind ", name, " und ", name_sec, " ja auch in Regenbrück zum Lernen verabredet. Gibt es dafür ein besseres Wetter? Eine große Kanne Kaffee und Berge von ", attr_name_vec$sweet, " liegen bereit und warten darauf gegessen zu werden. ", name, " liest laut vor:", quote_block, name_sec, " hebt die Augenbraue. 'Mir ist kalt und es zieht bei dir. Ich bleibe dabei. Wir sollten erstmal ", attr_name_sec1_vec$film, " schauen, bis dein Backofen hier mal die küche geheizt hat. Den Film habe ich doch extra mitgebracht! Genauso wie die Pizza!' ", name, " ist der Idee nicht abgeneigt und auch ", attr_name_vec$animal, " kommt in die Küche um sich zu wärmen."),
+               str_c("An einem heißen Juliabend haben sich ", name, " und ", name_sec, " zum Lernen verabredet. Eine große Kanne Eistee und Berge von ", attr_name_vec$sweet, " schmelzen in der Sonne  und warten darauf gegessen zu werden. ", name, " liest laut vor:", quote_block, name_sec, " hebt die Augenbraue. 'Ich bleibe dabei. Wir sollten erstmal ", attr_name_sec1_vec$film, " schauen, bis es kühler ist. Den Film habe ich doch extra mitgebracht!' ", name, " ist der Idee nicht abgeneigt und auch ", attr_name_vec$animal, " kommt auf die Terasse um dabei zu sein.")) |> 
   sample(1)
+
+
+
+
 
 @ 
 

@@ -24,8 +24,8 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
@@ -37,7 +37,9 @@ sign_vec  <- c("+", "-") %>%
   sample(1)
 a_vec <- c("A = 0.95", "A = 95\\%", "95\\%") %>% sample(1)
 
-ques_vec <-  c(str_c(str_c("'Wir sollen die Teststatistik $T_D$ umd dem p-Wert visualisieren, da mit einer Visualisierung vieles verständlicher wird!', ruft ", name, " um ", attr_name_vec$music, " zu übertönen. 'Ich weiß nicht, was das jetzt helfen soll. Können wir nicht einfach schauen, ob der p-Wert kleiner als das Signifikanzniveau  $\\alpha$ gleich 5\\% ist? Und gut ist?', merkt ", name_sec, " an, was aber im Refrain von ", attr_name_vec$music, " untergeht. ", name, " nickt im Beat. 'Wir haben hier eine t-verteilung unter der Annahme der Nullhypothese!', singt ", names(name), "."))) |> 
+ques_vec <-  c(str_c("'Wir sollen die Teststatistik $T_D$ umd dem p-Wert visualisieren, da mit einer Visualisierung vieles verständlicher wird!', ruft ", name, " um ", attr_name_vec$music, " zu übertönen. 'Ich weiß nicht, was das jetzt helfen soll. Können wir nicht einfach schauen, ob der p-Wert kleiner als das Signifikanzniveau  $\\alpha$ gleich 5\\% ist? Und gut ist?', merkt ", name_sec, " an, was aber im Refrain von ", attr_name_vec$music, " untergeht. ", name, " nickt im Beat. 'Wir haben hier eine t-verteilung unter der Annahme der Nullhypothese!', singt ", names(name), "."),
+               str_c("'Kannst du mir nochmal an einer Visualisierung erklären, wie der Zusammenhang zwischen der Teststatistik aus den Daten $T_D$ und dem p-Wert ist? Ich habe hier zig Fachbegriffe, kriege die abr nicht zusammen...', fragt ", name, " nachdrücklich  ", name_sec, ". Das hilft aber nur bedingt, denn ", name_sec, " hat wenig geschlafen und träumt zu den Klängen von ", attr_name_vec$music, ". ", name, " hatte den ganzen Abend mit ", name_sec, " über ", attr_name_vec$flaw, " diskutiert und nun sind beide voll neben der Spur. So wird es nichts mit der Klausur. ", name, " mampft noch ein paar ", attr_name_vec$sweet, " und nickt ein. Jetzt brauchen die beiden gesondert Hilfe!"),
+               str_c(name, " und ", name_sec, " wollten eigentlich einen Flug nach Mallorca buchen, sind jetzt aber dann doch dazu übergegangen nochmal die Aufgaben für die Statistikklausur durchzugehen. 'Kannst du mir nochmal an einer Visualisierung erklären, wie der Zusammenhang zwischen der Teststatistik aus den Daten $T_D$ und dem p-Wert ist? Ich habe hier zig Fachbegriffe, kriege die abr nicht zusammen...', fragt ", name, ". ", name_sec, " zuckt mit den Schultern. So genau hatte ", name_sec, " jetzt auch nicht aufgepasst. Da hilft dann eventuell das YouTube Video weiter. ", name, " mapmft ", attr_name_vec$sweet, " und fragt sich, was das alles soll.")) |> 
   sample(1)
 
 
