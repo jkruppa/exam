@@ -29,8 +29,9 @@ betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |>
 paper <- c("Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation",
            "Petersen, F., et al. (2022). Influence of light intensity and spectrum on duckweed growth and proteins in a small-scale, re-circulating indoor vertical farm",
            "Selle, P. H., et al. (2010). Implications of sorghum in broiler chicken nutrition",
-           "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs") |> 
-  set_names(c("mango", "duckweed", "chicken", "pigs")) |> sample(1)
+           "Wu, G., et al. (2004). Arginine nutrition in neonatal pigs",
+           "Edgar, G., J., et al. (2024) Stock assessment models overstate sustainability of the world’s fisheries") |> 
+  set_names(c("mango", "duckweed", "chicken", "pigs", "fish")) |> sample(1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
