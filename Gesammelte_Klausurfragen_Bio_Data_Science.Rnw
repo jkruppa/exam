@@ -9,7 +9,7 @@ pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
-##set.seed(20240701) ## savety seed 
+set.seed(20240915) ## savety seed 
 ##
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
@@ -217,7 +217,7 @@ sentence_func <- \(name, pronom, attr_vec){
 \includegraphics[width = 1.9cm]{avatare/Yuki}\\
 \small
 \vspace{1.5Ex}
-\textit{"`The test of a student is not how much he knows,\\ but how much he wants to know."'\\ --- Alice W. Rollins}
+\textit{"`The test of a student is not how much she or he knows,\\ but how much the student wants to know."'\\ --- Alice W. Rollins}
 \end{center}}
 % -----------------------------------------------------------------------
 \maketitle
