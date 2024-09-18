@@ -55,7 +55,7 @@ horse_h <- c(180, 185, 190, 195) %>% sample(1)
 horse_b <- c(85, 90, 95, 75, 80) %>% sample(1)
 horse_l <- c(230, 240, 250, 220) %>% sample(1)
 crit_width <- c(10, 15, 20, 30, 25) %>% sample(1)
-fitting <- c("mühsam", "bequem") %>% sample(1)
+fitting <- c("mit blutiger Nase", "sehr bequem mit Abstand") %>% sample(1)
 
 @
 
