@@ -51,7 +51,6 @@ type_plant <- c("Sonnenblumen", "Maispflanzen", "Stockrosen") %>% sample(1)
 topf_d <- (c(4, 4.5, 5, 4.25) * 2) %>% sample(1)
 topf_h <- c(7, 8, 9, 10) %>% sample(1)
 torf_cost <- c(280, 290, 310, 270, 260) %>% sample(1)
-type <- c("Pflanztopf", "Tisch") %>% sample(1)
 @
 
 Die Projektgruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} hat sich zusammengefunden um den ersten Versuch zu planen. In einem Experiment wollen sie die Wuchshöhe von \Sexpr{n_plant} \Sexpr{type_plant} bestimmen. Bevor die Vier überhaupt mit dem Experiment beginnen können, gibt es aber ein paar Abschätzungen über die Kosten und den Aufwand zu treffen. Zum einen müssen sie die \Sexpr{type_plant} einpflanzen und müssen dafür Substrat bestellen. Zum anderen muss die Projektgruppe die \Sexpr{type_plant} auch bewegen und in ein Gewächshaus platzieren. Die Töpfe für die Keimung haben
@@ -64,8 +63,8 @@ Helfen Sie der Projektgruppe \textit{\Sexpr{lerngruppe}} bei der Planung des Ver
 \begin{enumerate}
 \item Skizzieren Sie den Versuchsplan auf \textit{\Sexpr{n_tisch}} Tischen im Gewächshaus! \textbf{(2 Punkte)}
 \item Berechnen Sie die benötigte Anzahl an Pflanztöpfen, wenn Sie Randpflanzen mit berücksichtigen wollen! \textbf{(1 Punkt)}
-\item Welche $\Sexpr{type}$fläche in $m^2$ gegeben der Anzahl an Pflanztöpfen inklusive Randpflanzen benötigen Sie im Gewächshaus am Anfang der Keimungsphase?  \textbf{(3 Punkte)}
-\item Berechnen Sie die benötigte Menge an Torf in Liter $l$, die Sie für das Befüllen der Pflanztöpfe benötigen! Gehen Sie von \textit{einem Zylinder} für die Pflanztöpfe aus!  \textbf{(3 Punkte)}
+\item Berechnen Sie die benötigte (a) $Pflanztopf$fläche in $m^2$ sowie die (b) $Tischfläche$ in $m^2$ gegeben der Anzahl an Pflanztöpfen inklusive Randpflanzen am Anfang der Keimungsphase! \textbf{(4 Punkte)}
+\item Berechnen Sie die benötigte Menge an Torf in Liter $l$, die Sie für das Befüllen der Pflanztöpfe benötigen! Gehen Sie von \textit{einem Zylinder} für die Pflanztöpfe aus!  \textbf{(2 Punkte)}
 \item Berechnen Sie die Kosten in EUR für Ihre Torfbestellung! \textbf{(1 Punkt)}
 \end{enumerate}
 
