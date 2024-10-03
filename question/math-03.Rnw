@@ -72,14 +72,12 @@ Wenn die Lerngruppe nicht will, dann müssen Sie bei der Planung helfen!
 \item Berechnen Sie die Fläche der schrägen, neuen Solaranlage auf dem \Sexpr{type}! \textbf{(3 Punkte)}
 \end{enumerate}
 
-Ebenfalls plant \Sexpr{name} eine neue Biogasanlage für \Sexpr{pronom[3]} Betrieb. Der neue Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein paar bauliche Beschränkungen auf dem Grundstück. Ihr Fundament des
-zylindrischen Methantanks kann nur ein Gewicht von maximal $\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. \Sexpr{name} rechnen eine Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des
-Methantanks. In flüssiger Form hat Methan bei $-80^\circ\text{C}$ eine Dichte von $\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte von $\Sexpr{dichte_h}kg/m^3$. \Sexpr{name} betreibt \Sexpr{pronom[6]} Anlage bei $-\Sexpr{grad}^\circ\text{C}$.
+Ebenfalls plant \Sexpr{name} eine neue Biogasanlage für \Sexpr{pronom[3]} Betrieb. Der neue Methantank hat einen Radius $r$ von $\Sexpr{radius}m$. Leider gibt es ein paar bauliche Beschränkungen auf dem Grundstück. Das Fundament des zylindrischen Methantanks kann nur ein Gewicht von maximal $\Sexpr{beton_m}t$ aushalten bevor der Tank wegbricht. \Sexpr{name} rechnen eine Sicherheitstoleranz von $\Sexpr{save_m}\%$ ein beinhaltend das Gewicht des Methantanks. In flüssiger Form hat Methan bei $-80^\circ\text{C}$ eine Dichte von $\Sexpr{dichte_l}kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte von $\Sexpr{dichte_h}kg/m^3$. \Sexpr{name} betreibt \Sexpr{pronom[6]} Anlage bei $-\Sexpr{grad}^\circ\text{C}$.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Extrapolieren Sie die effektive Dichte des Methans in Ihrem Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
-\item Berechnen Sie wie viel Kubikmeter $m^3$ Sie in den Methantank füllen können, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
+\item Extrapolieren Sie die effektive Dichte des Methans in dem Methantank! Welche Annahme haben Sie getroffen? \textbf{(1 Punkt)}
+\item Berechnen Sie wie viel Kubikmeter $m^3$ in den Methantank gefüllen werden können, bevor das Fundament nachgibt! \textbf{(2 Punkte)}
 \item Berechnen Sie die maximale Höhe $h_{max}$ in $m$ für den gefüllten Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2 Punkte)}
 \end{enumerate}
 
