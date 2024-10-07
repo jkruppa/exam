@@ -57,8 +57,8 @@ behaviour_vec <-  c("standing", "sitting", "walking",
 type_i <- behaviour_vec %>% sample(4)
 
 get_values <- function(sample){
-str_c(round(rnorm(1, 35, 5)), "cm; ",
-      round(rnorm(1, 25, 5)), "cm; ",
+str_c(round(rnorm(1, sample(c(20, 25, 30, 35, 40), 1), 10)), "cm; ",
+      round(rnorm(1, sample(c(20, 25, 30, 35, 40), 1), 10)), "cm; ",
       sample, "%")
 }
 
