@@ -69,7 +69,7 @@ Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den südamer
 \item Schätzen Sie die überlebenswahrscheinlichkeit nach \Sexpr{surv_day} Tagen aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
 \end{enumerate}
 
-Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht '[...] Um nicht Hungers zu sterben, aßen wir das Leder, mit dem die große Rahe zum Schutz der Taue umwunden war.' Insbesondere die Mannschaft der Concepciön erlitt große Verluste durch die Skrobut bei der überquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um wilden Sellerie aufzunehmen. Wilder Sellerie enthält $\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}mg$ Vitamin C. Der Bedarf liegt bei $\Sexpr{vit_c_bedarf}mg$ pro Tag für Männer.
+Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht '[...] Um nicht Hungers zu sterben, aßen wir das Leder, mit dem die große Rahe zum Schutz der Taue umwunden war.' Insbesondere die Mannschaft der Concepciön erlitt große Verluste durch die Skrobut bei der überquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um wilden Sellerie aufzunehmen. Wilder Sellerie enthält $\Sexpr{vit_c_sellerie}\mu g/\Sexpr{gramm}g$ Vitamin C. Der Bedarf liegt bei $\Sexpr{vit_c_bedarf}mg$ pro Tag für Männer.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
