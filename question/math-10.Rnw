@@ -60,7 +60,7 @@ winkel_rampe <- c(9, 10, 11, 12, 14) %>% sample(1)
 winkel_neu <- c(5, 6, 7, 8) %>% sample(1)
 @
 
-Es stehen die \Sexpr{land} Pyramidentage! Sie und \Sexpr{name} sind auf abenteuerlichen Wegen für den Bau der Pyramiden zuständig. Zu allem Überfluss handelt es sich auch noch eine \textit{Reenactment} Veranstaltung. Thema der diesjährigen Pyramidentage sind die Pyramiden von Meroe, die den Königen und Königinnen des historischen Reiches von Kusch in Nubien, dem heutigen Sudan, als Grabstätten dienten. Die Pyramiden in Meroe fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu den ägyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche Seitenlänge der Grundfläche einer Pyramide beträgt \Sexpr{side} Königsellen. Eine Königselle misst \Sexpr{elle}cm.\\
+Es stehen die \Sexpr{land} Pyramidentage an! Sie und \Sexpr{name} sind auf abenteuerlichen Wegen für den Bau der Pyramiden zuständig. Zu allem Überfluss handelt es sich auch noch eine \textit{Reenactment} Veranstaltung. Thema der diesjährigen Pyramidentage sind die Pyramiden von Meroe, die den Königen und Königinnen des historischen Reiches von Kusch in Nubien, dem heutigen Sudan, als Grabstätten dienten. Die Pyramiden in Meroe fallen durch ihren steilen Winkel von \Sexpr{m_grad} Grad im Vergleich zu den ägyptischen Pyramiden mit \Sexpr{a_grad} Grad auf. Die durchschnittliche Seitenlänge der Grundfläche einer Pyramide beträgt \Sexpr{side} Königsellen. Eine Königselle misst \Sexpr{elle}cm.\\
 
 \textit{Lösen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen Sie Seiten und die Winkel der Pyramide entsprechend!}
 
