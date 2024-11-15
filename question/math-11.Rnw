@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -93,14 +93,14 @@ Im Weiteren sind den beiden folgende Informationen zu den Entfernungen der Orte 
 Leider sind die beiden sehr schlecht im Navigieren und Entfernungen ausrechnen. Die beiden brauchen Ihre Hilfe!
   
 \begin{enumerate}
-\item Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze entsprechend! \textbf{(2 Punkte)}
-\item Welche Strecke in $km$ legen Sie bei der Bewältigung der \Sexpr{direct} \Sexpr{type}challenge zurück? \textbf{(5    Punkte)}
+\item Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze entsprechend! \textbf{(5 Punkte)}
+\item Welche Strecke in $km$ legen Sie bei der Bewältigung der \Sexpr{direct} \Sexpr{type}challenge zurück? \textbf{(2 Punkte)}
 \item Gehen Sie von einer zusätzlichen Suchzeit in Stunden für die Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil aus. Die Suchzeit in Stunden für \textit{jeden einzelnen} Cache wird durch die Funktion  
   \begin{equation*}
     Suchzeit = \Sexpr{intercept} + \Sexpr{slope} \cdot Schwierigkeit
   \end{equation*}  
   beschreiben.  Wie lange in Stunden benötigen Sie um die \Sexpr{direct} \Sexpr{type}challenge zu erfüllen? \textbf{(3 Punkte)}
-\item An der höchsten Schwierigkeit müssen Sie angeln. Ihre Angel ist ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der Höhe von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale mögliche Angelhöhe! Welche Annahmen mussten Sie treffen um die Aufgabe zu lösen? \textbf{(2 Punkte)} 
+%\item An der höchsten Schwierigkeit müssen Sie angeln. Ihre Angel ist ausgefahren \Sexpr{l_angel}m lang. Erreichen Sie einen Cache in der Höhe von \Sexpr{h_angel}m?  Berechnen Sie dazu Ihre maximale mögliche Angelhöhe! Welche Annahmen mussten Sie treffen um die Aufgabe zu lösen? \textbf{(2 Punkte)} 
 \end{enumerate}
 
 
