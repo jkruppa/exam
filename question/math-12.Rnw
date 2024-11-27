@@ -36,9 +36,6 @@ lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Dei
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
-attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
-
-
 @
 
 
@@ -126,7 +123,7 @@ Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein Volumen vo
   \setcounter{enumi}{3}
 \item Welche Masse an Ammoniak in Kilogramm $kg$ können Sie aus einem Kubikmeter $m^3$ Luft unter normalen Umweltbedingungen gewinnen?
   \textbf{(2 Punkte)}
-\item Wieviel Ammoniak in $mol$ erhalten Sie aus einem Kubikmeter Luft? \textbf{(1 Punkt)}
+\item Wie viel Ammoniak in $mol$ erhalten Sie aus einem Kubikmeter Luft? \textbf{(1 Punkt)}
 \end{enumerate}
 
 
