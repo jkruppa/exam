@@ -52,7 +52,7 @@ x_val <- lst(pflanze = c("Düngestufen ($ctrl$ und $high$)",
                     "Genotypen ($AA$ und $BB$)",
                     "Elterlinie ($Standard$ und $Xray$)",
                     "Lüftungssystem ($keins$ und $vorhanden$)",
-                    "Bestandsdichte ($Verordnung$ und $Erhöht$)"))[[names(obser)]] %>% 
+                    "Bestandsdichte ($Verordnung$ und $Gesteigert$)"))[[names(obser)]] %>% 
   sample(1)
 
 y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
@@ -123,6 +123,8 @@ data_tbl %>%
   set_names(c(x_val, y_val)) |> 
   kable(booktabs = TRUE, align = "c") %>% 
   kable_styling(latex_options = "hold_position")
+
+t_crit <- c(1.96, 2.04, 2.86) |> sample(1)
 @
 
 Leider kennt sich \Sexpr{name} mit der Berechnung eines t-Tests überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Berechnung Ihre Hilfe!

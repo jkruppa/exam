@@ -54,7 +54,7 @@ x_val <- lst(pflanze = c("Düngestufen ($ctrl$ und $high$)",
                     "Genotypen ($AA$ und $BB$)",
                     "Elterlinie ($Standard$ und $Xray$)",
                     "Lüftungssystem ($keins$ und $vorhanden$)",
-                    "Bestandsdichte ($Verordnung$ und $Erhöht$)"))[[names(obser)]] %>% 
+                    "Bestandsdichte ($Verordnung$ und $Gesteigert$)"))[[names(obser)]] %>% 
   sample(1)
 
 y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",

@@ -44,9 +44,10 @@ ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
 anova_questions_vec <- str_subset(questions_vec, "/anova-", negate = FALSE)
 chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FALSE)
 linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
-nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
+forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
+program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
 
 ## glue them
 glue_questions_vec <- c(desc_stat_questions_vec,
@@ -55,9 +56,10 @@ glue_questions_vec <- c(desc_stat_questions_vec,
                         anova_questions_vec,
                         multcomp_questions_vec,
                         chisquare_questions_vec,
-                        nonpar_questions_vec,
                         linreg_questions_vec,
                         experimental_questions_vec,
+                        forsch_lern_questions_vec,
+                        program_questions_vec,
                         math_questions_vec,
                         tier_questions_vec)
 
@@ -110,6 +112,115 @@ grade_tbl <- pre_grade_tbl %>%
 ## random ID
 exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |> 
   str_c(collapse = "\\!")
+
+## global parameters
+naming_global <- c(rep(c("Jessica", "Paula", "Tina", "Nilufar"), each = 2), "Yuki",
+                   rep(c("Mark", "Jonas", "Alex", "Steffen"), each = 2), "Yuki") |> 
+  set_names(c(rep("sie", 9), rep("er", 9))) 
+
+plant <- c("Maiss", "Erbsen", "Kartoffeln", "Lauch", 
+           "Erdbeeren", "Brokkoli", "Spargel") 
+names(plant) <- rep("pflanze", length(plant))
+animal <- c("Puten", "Schweinen", "Fleischrindern", 
+            "Lamas", "Hühnern", "Zandern", "Milchvieh") 
+names(animal) <- rep("tier", length(animal))
+obser_lst <- lst(pfanze = plant, 
+                 tier = animal) 
+
+par_lst <- lst(year = "2024",
+               naming = naming_global,
+               obser = obser_lst)
+
+## Monster des Alltags
+attr_lst <- lst(Alex = lst(flaw = "die Gefälligkeit", 
+                           sweet = "Gummibärchen", 
+                           animal = "die Katze", 
+                           sport = "zu Laufen",
+                           hobby = "Starcraft", 
+                           music = "Abba", 
+                           film = "Alien"),
+                Jessica = lst(flaw = "der Mangel", 
+                              sweet = "Schokobons", 
+                              animal = "die Hündin", 
+                              sport = "Rad zu fahren",
+                              hobby = "Warhammer", 
+                              music = "David Bowie", 
+                              film = "Herr der Ringe"),
+                Jonas = lst(flaw = "die Erschöpfung", 
+                            sweet = "Snickers", 
+                            animal = "das Meerschweinchen", 
+                            sport = "zu Schwimmen",
+                            hobby = "Stricken", 
+                            music = "Iron Maiden", 
+                            film = "Mission Impossible"),
+                Mark = lst(flaw = "die Unsicherheit", 
+                           sweet = "Marzipankugeln", 
+                           animal = "der Hamster", 
+                           sport = "zu Reiten",
+                           hobby = "Geocaching",
+                           music = "Andrea Berg", 
+                           film = "Columbo"),
+                Nilufar = lst(flaw = "die Erwartung", 
+                              sweet = "Takis Blue Heat",
+                              animal = "das Huhn", 
+                              sport = "zu Kicken",
+                              hobby = "Hip Hop", 
+                              music = "Deichkind",
+                              film = "Star Trek"),
+                Paula = lst(flaw = "der Perfektionismus",
+                            sweet = "Smarties", 
+                            animal = "die Ratte",
+                            sport = "zu Fechten",
+                            hobby = "Harry Potter", 
+                            music = "White Lies", 
+                            film = "Jagd auf roter Oktober"),
+                Steffen = lst(flaw = "die Romantik", 
+                              sweet = "Oreos", 
+                              animal = "die Schlange", 
+                              sport = "zu Ringen",
+                              hobby = "Klemmbausteine", 
+                              music = "Taylor Swift",
+                              film = "Harry Potter"),
+                Tina = lst(flaw = "die Wut", 
+                           sweet = "Katjes", 
+                           animal = "die Spinne", 
+                           sport = "zu Boxen",
+                           hobby = "Astronomie",
+                           music = "Tocotronic", 
+                           film = "Indiana Jones"),
+                Yuki = lst(flaw = "die Faulheit", 
+                           sweet = "Reese's Peanut Butter Cups",
+                           animal = "das Minischwein", 
+                           sport = "zu Boldern",
+                           hobby = "Orchideen", 
+                           music = "London Grammar", 
+                           film = "Matrix"))
+
+
+sentence_func <- \(name, pronom, attr_vec){
+  sentence_lst <- lst(flaw = c(str_c(name, " und ", attr_vec$flaw ,", eine unendliche Geschichte mit kniffeligen Wendungen."),
+                               str_c("Eine echte Herausforderung für ", pronom[5] ," war schon immer ", attr_vec$flaw ," gewesen. Ein leidiges Lied."),
+                               str_c("Wenn ", attr_vec$flaw ," nicht wäre, ja dann wäre wohl vieles möglich für ", name ,"! Aber so..")) |> sample(1),
+                      sweet_music = c(str_c(name, " schmeißt noch eine Handvoll ", attr_vec$sweet ," in ", pronom[3] ," Rachen. Im Hintergrund klirrt leise der Spiegel zum Sound von ", attr_vec$music ,"."),
+                                      str_c("'Hm...', ", attr_vec$sweet ," und ", attr_vec$music ,". Das ist und bleibt die beste Kombination zum Nachdenken für ", name ,"."),
+                                      str_c("Aus den Boxen wummert ", attr_vec$music ," und ", pronom[7] ," Mund ist verklebt von ", attr_vec$sweet ,". 'Herrlich', denkt ", name ,".")) |> sample(1),
+                      animal_music = c(str_c(name, " streichelt liebevoll ", attr_vec$animal ,". Der Kopf ist in ", pronom[1] ," Schloß vergraben um den Klang von ", attr_vec$music ," zu dämpfen."),
+                                       str_c("Wenn ", attr_vec$music ," ertönt, dann sucht ", attr_vec$animal ," schleunigst Schutz unter dem Sofa. ", name ," schüttelt den Kopf."),
+                                       str_c(name, " nickt im Takt von ", attr_vec$music ," und bemerkt dabei gar nicht was ", attr_vec$animal ," schon wieder anstellt.")) |> sample(1),
+                      sport = c(str_c(name, " will später nochmal raus um ", attr_vec$sport ,". Druck ablassen, dass muss ", names(name) ," auch."),
+                                str_c("Um ", attr_vec$sport ," geht ", name ," dann später nochmal raus. Echte Entspannung."),
+                                str_c("Einfach mal raus um ", attr_vec$sport ,". Ohne Ziel und Uhr. Das ist was für ", name ,".")) |> sample(1),
+                      hobby = c(str_c(name, " liebt ", attr_vec$hobby ,". Darin kann ", names(name) ," sich wirklich verlieren und immer wieder neu begeistern."),
+                                str_c("", attr_vec$hobby ,". Ein wunderbares Hobby um sich drin zu verlieren und Abstand zu bekommen. ", name ," denkt gerne über ", attr_vec$hobby ," nach."),
+                                str_c("Am Ende dann doch besser ", attr_vec$hobby ,". Wunderbar. Eine echte Ablenkung für ", name ,".")) |> sample(1),
+                      sweet_film = c(str_c("Hm, lecker ", attr_vec$sweet ," und dazu dann im Hintergrund ", attr_vec$film ," laufen lassen."),
+                                     str_c("Auf seinem Second Screen läuft ", attr_vec$film ," und ", name ," schaufelt ", attr_vec$sweet ,". Nicht effizient, aber gut."),
+                                     str_c("Schon dutzende Male gesehen: ", attr_vec$film ,". Aber immer noch großartig zusammen mit ", attr_vec$sweet ,".")) |> sample(1),
+                      animal_film = c(str_c("Das Verrückte ist, dass ", attr_vec$animal ," ", attr_vec$film ," wirklich liebt. Das ist ", name ," sehr recht, denn ", names(name) ," braucht Entspannung."),
+                                      str_c("Wenn ", attr_vec$film ," läuft, dann ist ", attr_vec$animal ," nicht mehr da. Aber jetzt braucht ", names(name) ," mal Entspannung!"),
+                                      str_c("Irgendwie komisch, wenn ", names(name) ," ", attr_vec$film ," anmacht, dann ist ", attr_vec$animal ," eigentlich sofort vor dem Bildschirm und starrt hinein.")) |> sample(1))
+  return(sentence_lst)
+}
 
 @ 
 % -----------------------------------------------------------------------
