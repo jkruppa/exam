@@ -1,82 +1,122 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
-  str_subset(str_c(name, name_sec, sep = "|"))
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
 jahr <- par_lst$year
 obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
-avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\Sexpr{avatar1file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/VQlNl8hvRII}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/ghArbetOr_E}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\vspace{-3Ex}
 %% --------------------------------------------------------------------
 
 <<>>=
-pronom <- lst(sie = c("ihrem", "ihrer", "ihren"),
-              er = c("seinem", "seiner", "seinen"))[[names(name)]]
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein"))[[names(name)]]
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-y_val <- lst(pflanze = c("Mehltau",
-                         "Kräuselkrankheit",
-                         "Schorf",
-                         "Gelbmosaikvirus"),
-             tier = c("Tuberkulose", 
-                      "West-Nil-Virus",
-                      "Maul- und Klauenseuche",
-                      "Escherichia coli (E. coli)"))[[names(obser)]] %>% 
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-diag_doppelbaum_file <- file.path(img_path, "diag-doppelbaum")
-prae_vec <- c("2\\%", "3\\%", "4\\%") |>  sample(1) 
-pos_krank_vec <- c("75\\%", "80\\%", "85\\%") |> sample(1)
-pos_gesund_vec <- c("7.5\\%", "8.0\\%", "8.5\\%") |> sample(1)
-n_vec <- c(1000, 2000, 4000) |> sample(1)
+x_val <- lst(pflanze = c("Pestizideinsatz [ja/nein]",
+                         "Herbizideinsatz [ja/nein]",
+                         "Mechanische Bearbeitung [ja/nein]",
+                         "KI-gesteuert [ja/nein]"),
+             tier = c("Automatische Fütterung [ja/nein]", 
+                      "Klimakontrolle [ja/nein]",
+                      "Außenklimakontakt [ja/nein]",
+                      "Ökologisch [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
+                         "Trockengewicht über Zielwert [ja/nein]",
+                         "Chlorophyllgehalt unter Zielwert [ja/nein]",
+                         "Proteingehalt im Zielbereich [ja/nein]"),
+             tier = c("Schlachtgewicht im Zielbereich [ja/nein]", 
+                      "Protein/Fettrate im Zielbereich [ja/nein]",
+                      "Fettgehalt erreicht [ja/nein]",
+                      "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
+  sample(1)
+
+effect <- c("ein", "kein") |> sample(1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
-attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-
-ques_vec <-  c(str_c(name, " liest laut vor. 'Die Prävalenz von Klauenseuche bei ", obser, " wird mit ", prae_vec, " angenommen. In ", pos_krank_vec, " der Fälle ist ein Test positiv, wenn das ", str_to_sentence(names(obser)), " erkrankt ist. In ", pos_gesund_vec, " der Fälle ist ein Test positiv, wenn das ", str_to_sentence(names(obser)), " \\underline{nicht} erkrankt ist und somit gesund ist. Wir führen einen Test auf ", y_val, " an ", n_vec, " ", obser, " mit einem diagnostischen Test durch.' ", name_sec, " klappt die Kinnlade runter. In der Stille duddelt ", attr_name_vec$music, ". ", name, " schaut kompetent und schmeißt sich mit offenen Mund ", attr_name_sec1_vec$sweet, " an den Kopf vorbei.")) |> 
+ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
+                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
+                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doof, da er sich auf eine ANOVA gefreut hatte. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
+              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten.")) |> 
   sample(1)
 
-@ 
+@
 
-\paragraph{Den diagnostische Test am Doppelbaum berechnen}
+\paragraph{Der Chi-Quadrat-Test in \Rlogo}
+
 
 \Sexpr{ques_vec}
 
-\begin{center}
-  \includegraphics[width=17cm]{\Sexpr{diag_doppelbaum_file}}
-\end{center}
+<<chisquare-R-03-a,  echo = FALSE>>=
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit dem diagnostischen Testen überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe! 
-    
+mat_fill <- lst(c(13, 5, 7, 18),
+                c(17, 5, 4, 12),
+                c(6, 8, 6, 4),
+                c(6, 12, 10, 7)) %>% sample(1)
+
+mat <- matrix(unlist(mat_fill), 
+              byrow = TRUE, nrow = 2)
+
+x_val <- str_replace(x_val, "\\[ja/nein\\]$", "") |> str_trim()
+y_val <- str_replace(y_val, "\\[ja/nein\\]$", "") |> str_trim()
+
+col <- lst(c("ja", "nein")) 
+names(col) <- x_val
+
+row <- lst(c("ja", "nein")) 
+names(row) <- y_val
+
+dimnames(mat) <- c(row, col)
+mat 
+@
+
+Dann rechnete \Sexpr{name} den Fisher-Exakt-Test auf der $2x2$-Kreuztabelle in \Rlogo und erhielt folgende \Rlogo Ausgabe der Funktion \texttt{fisher.test()}.
+
+<<chisquare-R-03-b,  echo = FALSE>>=
+print_fisher <- stats::fisher.test(mat)
+print_fisher$data.name <- y_val
+print_fisher
+@
+
+Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+
 \begin{enumerate}
-\item Beschriften Sie die Äste des Doppelbaumes, mit denen Ihnen bekannten Informationen! \textbf{(2 Punkte)}
-\item Beschriften Sie den Doppelbaum! \textbf{(2 Punkte)}
-\item Füllen Sie freien Felder des Doppelbaums aus! \textbf{(4 Punkte)}
-\item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
-\item Was sagt Ihnen die Wahrscheinlichkeit $Pr(K^+|T^+)$ aus? \textbf{(1 Punkt)}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizzieren Sie das sich ergebende 95\% Konfidenzintervall! \textbf{(2 Punkte)}
+\item Beschriften Sie die Abbildung des 95\% Konfidenzintervalls! \textbf{(1 Punkt)} 
+\item Interpretieren Sie das \textit{Odds ratio} im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)} 
 \end{enumerate}
-
-
-
-
-
-
 

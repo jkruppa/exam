@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -61,9 +61,13 @@ y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
   sample(1)
 
 a <- c(24, 38, 56) %>% sample(1)
-b <- c(11, 19, 21) %>% sample(1)
-c <- c(13, 23, 27) %>% sample(1)
+b <- c(11, 19, 21, 51, 41) %>% sample(1)
+c <- c(13, 23, 27, 43, 61) %>% sample(1)
 d <- c(38, 44, 52) %>% sample(1)
+
+chimax <- c(3, 4, 5, 6) |> sample(1)
+chimin <- chimax + sample(c(3:5), 1)
+chicrit <- c(4.56, 5.61, 6.21, 3.83) |> sample(1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
@@ -86,7 +90,7 @@ ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten 
 
 \begin{center}
   \huge
-  \begin{tabular}{c|c|c|c}
+  \begin{tabular}{c|l|l|c}
      & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
     \hline
     \phantom{\textbf{Pestizid (ja)}} & \Sexpr{a}  & \Sexpr{b}  &     \strut\\
@@ -107,9 +111,7 @@ Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test fü
 \item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
 \item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test! \textbf{(2 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $\mathcal{X}^2_{\alpha = 5\%} = 3.841$! Begründen Sie Ihre Antwort!
+  einem $\mathcal{X}^2_{\alpha = 5\%} = \Sexpr{chicrit}$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
-\item Skizzieren Sie die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr ist! Ergänzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und $\mathcal{X}^2_{D}$ in der Abbildung! \textbf{(2 Punkte)}
-\item Berechnen Sie den Effektschätzer $Cramers\; V$! Interpretieren Sie den
-  Effektschätzer! \textbf{(2 Punkte)}
+\item Skizzieren Sie in einer Abbildung die $\mathcal{X}^2$-Verteilung, wenn die $H_0$ wahr ist! Ergänzen Sie  $\mathcal{X}^2_{\alpha = 5\%}$ und $\mathcal{X}^2_{D}$ in der Abbildung! \textit{Beachten Sie folgenden Informationen zur $\mathcal{X}^2$-Verteilung. Die $\mathcal{X}^2$-Verteilung hat ein Maxima bei $\mathcal{X}^2 = \Sexpr{chimax}$ sowie ein Minima bei $\mathcal{X}^2 = \Sexpr{chimin}$.} \textbf{(2 Punkte)}
 \end{enumerate}

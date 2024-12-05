@@ -19,7 +19,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/VQlNl8hvRII}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/_7s44pbOc00}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 %% --------------------------------------------------------------------
 
@@ -41,39 +41,46 @@ y_val <- lst(pflanze = c("Mehltau",
   sample(1)
 
 diag_doppelbaum_file <- file.path(img_path, "diag-doppelbaum")
-prae_vec <- c("2\\%", "3\\%", "4\\%") |>  sample(1) 
-pos_krank_vec <- c("75\\%", "80\\%", "85\\%") |> sample(1)
-pos_gesund_vec <- c("7.5\\%", "8.0\\%", "8.5\\%") |> sample(1)
-n_vec <- c(1000, 2000, 4000) |> sample(1)
+
+a <- c(180, 160, 200) %>% sample(1)
+b <- c(560, 850, 750) %>% sample(1)
+c <- c(40, 60, 20) %>% sample(1)
+d <- c(1800, 1450, 1600) %>% sample(1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-
-ques_vec <-  c(str_c(name, " liest laut vor. 'Die Prävalenz von Klauenseuche bei ", obser, " wird mit ", prae_vec, " angenommen. In ", pos_krank_vec, " der Fälle ist ein Test positiv, wenn das ", str_to_sentence(names(obser)), " erkrankt ist. In ", pos_gesund_vec, " der Fälle ist ein Test positiv, wenn das ", str_to_sentence(names(obser)), " \\underline{nicht} erkrankt ist und somit gesund ist. Wir führen einen Test auf ", y_val, " an ", n_vec, " ", obser, " mit einem diagnostischen Test durch.' ", name_sec, " klappt die Kinnlade runter. In der Stille duddelt ", attr_name_vec$music, ". ", name, " schaut kompetent und schmeißt sich mit offenen Mund ", attr_name_sec1_vec$sweet, " an den Kopf vorbei.")) |> 
+ques_vec <-  c(str_c("'Was ist denn das?', entfährt es ", name, ". 'Hm... ich glaube es handelt sich um einen Doppelbaum, den wir beim diagnostischen Testen brauchen.', meint ", name_sec, " und dreht ", attr_name_vec$film, " auf dem Second Screen etwas leiser. Was jetzt beide von einem diagnostischen Test haben, ist ihnen auch nicht klar. Es ist ja schon alles komplex genug und ", attr_name_vec$flaw, " von ", name, " macht es heute auch nicht mehr einfacher. 'Es geht um ", y_val, " an ", obser, ".', stellt ", name_sec, " fest. Eigentlich wollte ", name_sec, " eher los um ", attr_name_sec1_vec$sport, ". Das wird aber wohl nichts mehr.")) |> 
   sample(1)
 
 @ 
 
-\paragraph{Den diagnostische Test am Doppelbaum berechnen}
+\paragraph{Der diagnostische Test und statistische Maßzahlen}
 
 \Sexpr{ques_vec}
 
-\begin{center}
-  \includegraphics[width=17cm]{\Sexpr{diag_doppelbaum_file}}
-\end{center}
+\begin{tikzpicture}
+  \node (image) at (0,0) {
+    \includegraphics[width=\textwidth]{\Sexpr{diag_doppelbaum_file}}
+  };
+  \node[] at (-4.8,0) {\huge \Sexpr{a}};
+  \node[] at (-1.7,0) {\huge \Sexpr{c}};
+  \node[] at (1.7,0) {\huge \Sexpr{b}};
+  \node[] at (4.75,0) {\huge \Sexpr{d}};
+\end{tikzpicture}
 
 Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit dem diagnostischen Testen überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe! 
-    
+  
 \begin{enumerate}
-\item Beschriften Sie die Äste des Doppelbaumes, mit denen Ihnen bekannten Informationen! \textbf{(2 Punkte)}
 \item Beschriften Sie den Doppelbaum! \textbf{(2 Punkte)}
 \item Füllen Sie freien Felder des Doppelbaums aus! \textbf{(4 Punkte)}
 \item Berechnen Sie die Wahrscheinlichkeit $Pr(K^+|T^+)$! \textbf{(2 Punkte)}
-\item Was sagt Ihnen die Wahrscheinlichkeit $Pr(K^+|T^+)$ aus? \textbf{(1 Punkt)}
+\item Berechnen Sie die Prävalenz für Klauenseuche! \textbf{(1 Punkt)}
+\item Berechnen Sie die Sensifität und Spezifität des diagnostischen Tests! Erstellen Sie dafür zunächst eine 2x2 Kreuztabelle! \textbf{(2 Punkte)}
 \end{enumerate}
 
+ 
 
 
 

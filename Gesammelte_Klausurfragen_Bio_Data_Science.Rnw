@@ -617,6 +617,9 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(chisquare_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(chisquare_questions_vec[6])} 
+\clearpage
+% -----------------------------------------------------------------------
 \part{Lineare Regression \& Korrelation}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(linreg_questions_vec[1])} 
