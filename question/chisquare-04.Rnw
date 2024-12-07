@@ -17,7 +17,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/ghArbetOr_E}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/jakM7fHyZfU}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
 %% --------------------------------------------------------------------
@@ -60,63 +60,70 @@ y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
                       "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
   sample(1)
 
-effect <- c("ein", "kein") |> sample(1)
+a <- round(rnorm(n = 1,
+                  mean = sample(c(30, 40, 50), 1),
+                  sd = sample(c(2, 4, 5), 1))) 
+
+b <-  round(rnorm(n = 1,
+                   mean = sample(c(20, 30, 40), 1),
+                   sd = sample(c(2, 4, 5), 1))) 
+
+c <-  round(rnorm(n = 1,
+                   mean = sample(c(30, 40, 50), 1),
+                   sd = sample(c(2, 4, 5), 1)))
+
+d <-  round(rnorm(n = 1,
+                   mean = sample(c(20, 30, 40), 1),
+                   sd = sample(c(2, 4, 5), 1))) 
+
+abcd <- a + b + c +d
+ac <- a+c
+bd <- b+d
+ab <- a+b
+cd <- c+d
+
+effect_vec <- sample(c("ein", "kein"), 1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
-                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
-                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doof, da er sich auf eine ANOVA gefreut hatte. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten."),
-              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. Dann noch schnell ", attr_name_vec$film, " starten und los gehts mit der Kraft von ", attr_name_vec$sweet, ". ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage. Nach ", pronom[1], " Experiment erhielt ", names(name), " folgende $2x2$ Kreuztabelle aus ", pronom[3], " erhobenen Daten.")) |> 
+ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Dann noch schnell ", attr_name_vec$sweet, " zur Stärkung und los gehts. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Am Ende des Tages möchte ", names(name), " dann noch ", pronom[7], " Hobby ", attr_name_vec$hobby, " genießen. Das muss auch mal sein!"),
+                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. Dann noch schnell ", attr_name_vec$sweet, " zur Stärkung und los gehts. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Am Ende des Tages möchte ", names(name), " dann noch ", pronom[7], " Hobby ", attr_name_vec$hobby, " genießen. Das muss auch mal sein!"),
+                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doof, da er sich auf eine ANOVA gefreut hatte. Dann noch schnell ", attr_name_vec$sweet, " zur Stärkung und los gehts. Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet. Am Ende des Tages möchte ", names(name), " dann noch ", pronom[7], " Hobby ", attr_name_vec$hobby, " genießen. Das muss auch mal sein!"),
+              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. Dann noch schnell ", attr_name_vec$sweet, " zur Stärkung und los gehts. ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage. Am Ende des Tages möchte ", names(name), " dann noch ", pronom[7], " Hobby ", attr_name_vec$hobby, " genießen. Das muss auch mal sein!")) |> 
   sample(1)
+
 
 @
 
-\paragraph{Der Chi-Quadrat-Test in \Rlogo}
-
+\paragraph{Der Chi-Quadrat-Test konzeptionell verstehen}
 
 \Sexpr{ques_vec}
 
-<<chisquare-R-03-a,  echo = FALSE>>=
+\vspace{5Ex}
 
-mat_fill <- lst(c(13, 5, 7, 18),
-                c(17, 5, 4, 12),
-                c(6, 8, 6, 4),
-                c(6, 12, 10, 7)) %>% sample(1)
+\begin{center}
+  \huge
+  \begin{tabular}{c|c|c|c}
+     & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
+    \hline
+   \phantom{\textbf{Pestizid (ja)}} & \phantom{100}  & \phantom{100}  &   \Sexpr{ab}  \strut\\
+    \hline
+    \phantom{\textbf{Pestizid (ja)}} & \phantom{100}  & \phantom{100}  &   \Sexpr{cd}   \strut\\
+    \hline
+     &  \Sexpr{ac} &  \Sexpr{bd} &  \Sexpr{abcd}  \strut\\
+  \end{tabular}
+\end{center}
 
-mat <- matrix(unlist(mat_fill), 
-              byrow = TRUE, nrow = 2)
-
-x_val <- str_replace(x_val, "\\[ja/nein\\]$", "") |> str_trim()
-y_val <- str_replace(y_val, "\\[ja/nein\\]$", "") |> str_trim()
-
-col <- lst(c("ja", "nein")) 
-names(col) <- x_val
-
-row <- lst(c("ja", "nein")) 
-names(row) <- y_val
-
-dimnames(mat) <- c(row, col)
-mat 
-@
-
-Dann rechnete \Sexpr{name} den Fisher-Exakt-Test auf der $2x2$-Kreuztabelle in \Rlogo und erhielt folgende \Rlogo Ausgabe der Funktion \texttt{fisher.test()}.
-
-<<chisquare-R-03-b,  echo = FALSE>>=
-print_fisher <- stats::fisher.test(mat)
-print_fisher$data.name <- y_val
-print_fisher
-@
+\vspace{5Ex}
 
 Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
-\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
+\item Ergänzen Sie die Felder innerhalb der $2x2$ Kreuztabelle, so dass \textit{\Sexpr{effect_vec}} signifikanter Effekt zu erwarten wäre! \textbf{(2 Punkte)}
+\item Begründen Sie Ihr Vorgehen an der Formel des Chi-Quadrat-Tests. Erklären Sie Ihr Vorgehen an einem Beispiel! \textbf{(2 Punkte)}
 \item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(2 Punkte)}
-\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizzieren Sie das sich ergebende 95\% Konfidenzintervall! \textbf{(2 Punkte)}
-\item Beschriften Sie die Abbildung des 95\% Konfidenzintervalls! \textbf{(1 Punkt)} 
-\item Interpretieren Sie das \textit{Odds ratio} im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)} 
+\item Was ist die Mindestanzahl an Beobachtungen je Zelle? Wenn in einer der Zellen weniger Beobachtungen auftreten, welchen Test können Sie anstatt des Standard Chi-Quadrat-Tests anwenden? \textbf{(2 Punkte)}
 \end{enumerate}
-
