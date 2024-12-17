@@ -101,7 +101,7 @@ preprint$term[2] <- x_val
 
 preprint |> 
   kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position", font_size = 12)
+  kable_styling(latex_options = "hold_position", font_size = 11)
 
 @
 

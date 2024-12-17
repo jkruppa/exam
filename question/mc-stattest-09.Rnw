@@ -9,7 +9,7 @@ var_vec <- c("die untersuchte Population",
 
 ques_vec <- c(str_c('Sie wollen eine Aussage über ', var_vec, ' treffen. Dazu nutzen Sie einen statistischen Test. Können Sie eine valide Aussage aus einem statistischen Test erhalten?'),
               str_c('In Ihrer Abschlussarbeit wollen Sie eine Aussage über ', var_vec, ' treffen. Dazu nutzen Sie einen statistischen Test. Können Sie eine valide Aussage treffen?'),
-              str_c('In Ihrer Forschungsarbeit wollen Sie eine Aussage über ', var_vec, ' treffen. Dazu nutzen Sie eine ANOVA als statistischen Test. Erhalten Sie eine valide Aussage aus einem statistischen Test?')) |>  sample(1)
+              str_c('In Ihrer Forschungsarbeit wollen Sie eine Aussage über ', var_vec, ' treffen. Dazu nutzen Sie einen statistischen Test. Erhalten Sie eine valide Aussage aus einem statistischen Test?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}

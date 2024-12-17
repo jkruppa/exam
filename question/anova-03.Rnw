@@ -30,7 +30,7 @@ project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektber
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
 outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
-  set_names("freshmatter", "drymatter", "yield", "protein") |> 
+  set_names(c("freshmatter", "drymatter", "yield", "protein")) |> 
   sample(1)
 outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
 
