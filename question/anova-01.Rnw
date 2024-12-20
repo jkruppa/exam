@@ -122,10 +122,10 @@ Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Darstellung einer ei
 \item Benennen Sie die Visualisierung mit dem korrekten, statistischen Fachbegriff! \textbf{(1 Punkt)}
 \item Zeichnen Sie folgende statistischen Maßzahlen passend ein! 
   \begin{itemize}
-  \item Globale Mittelwert: $\beta_0$ \textbf{(1 Punkt)}
-  \item Mittelwerte der einzelnen Behandlungsstufen: $\bar{y}_{0.5}$, $\bar{y}_{1.5}$ und $\bar{y}_{2.5}$ \textbf{(1 Punkt)}
-  \item Mittelwertsdifferenz der einzelnen Behandlungsstufen: $\beta_{0.5}$, $\beta_{1.5}$ und $\beta_{2.5}$ \textbf{(1 Punkt)}
-  \item Residuen oder Fehler: $\epsilon$ \textbf{(1 Punkt)}
+  \item Globale Mittelwert mit $\beta_0$ \textbf{(1 Punkt)}
+  \item Mittelwerte der einzelnen Behandlungsstufen \textbf{(1 Punkt)}
+  \item Mittelwertsdifferenz der einzelnen Behandlungsstufen mit $\beta_{\Sexpr{x_val[1]}}$, $\beta_{\Sexpr{x_val[2]}}$ und $\beta_{\Sexpr{x_val[3]}}$ \textbf{(1 Punkt)}
+  \item Residuen oder Fehler mit $\epsilon$ \textbf{(1 Punkt)}
   \end{itemize}
 \item Liegt ein \textit{vermutlicher} signifikanter Unterschied vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Schätzen Sie die Effekte der Behandlungsstufen! \textbf{(2 Punkte)}
