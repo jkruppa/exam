@@ -33,6 +33,7 @@ outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |>
   set_names("freshmatter", "drymatter", "yield", "protein") |> 
   sample(1)
 outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -42,6 +43,7 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
                     "ein Kreuzungsexperiment",
                     "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
+
 
 x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$ und $high$)",
                          "Lichtstufen ($none$, $200lm$ und $600lm$)",
@@ -122,10 +124,10 @@ Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Darstellung einer ei
 \item Benennen Sie die Visualisierung mit dem korrekten, statistischen Fachbegriff! \textbf{(1 Punkt)}
 \item Zeichnen Sie folgende statistischen Maßzahlen passend ein! 
   \begin{itemize}
-  \item Globale Mittelwert mit $\beta_0$ \textbf{(1 Punkt)}
-  \item Mittelwerte der einzelnen Behandlungsstufen \textbf{(1 Punkt)}
-  \item Mittelwertsdifferenz der einzelnen Behandlungsstufen mit $\beta_{\Sexpr{x_val[1]}}$, $\beta_{\Sexpr{x_val[2]}}$ und $\beta_{\Sexpr{x_val[3]}}$ \textbf{(1 Punkt)}
-  \item Residuen oder Fehler mit $\epsilon$ \textbf{(1 Punkt)}
+  \item Den globalen Mittelwert $\beta_0$ \textbf{(1 Punkt)}
+  \item Die Mittelwerte der einzelnen Behandlungsstufen \textbf{(1 Punkt)}
+  \item Die Mittelwertsdifferenz der einzelnen Behandlungsstufen mit $\beta_{\Sexpr{groups_vec[1]}}$, $\beta_{\Sexpr{groups_vec[2]}}$ und $\beta_{\Sexpr{groups_vec[3]}}$ \textbf{(1 Punkt)}
+  \item Die Residuen oder Fehler mit $\epsilon$ \textbf{(1 Punkt)}
   \end{itemize}
 \item Liegt ein \textit{vermutlicher} signifikanter Unterschied vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Schätzen Sie die Effekte der Behandlungsstufen! \textbf{(2 Punkte)}

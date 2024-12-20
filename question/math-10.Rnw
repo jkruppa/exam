@@ -32,9 +32,6 @@ lerngruppe <- c("Die Pantoffeltieren", "Die Blattläuse", "Die Kühe auf dem Dei
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
-attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
-
-
 @
 
 
