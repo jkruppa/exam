@@ -418,13 +418,13 @@ sentence_func <- \(name, pronom, attr_vec){
 \begin{graybox}{Multiple Choice Aufgaben}
 Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihenfolge der Antworten ist zufällig. Die Fragen und Antworten sind semantisch zufällig und haben somit \textcolor{red}{verschiedene Textvarianten}. Insbesondere die reinen Textaufgaben haben verschiedene Textvarianten. Die Semeantik mag sich unterscheiden, die Inhalte sind aber gleich.
 \end{graybox}
-\section*{ANOVA}
+\section*{Programmieren in R} 
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 
 \Sexpr{knit_child(mc_questions_vec[3])} 
+\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 \Sexpr{knit_child(mc_questions_vec[4])} 
 \Sexpr{knit_child(mc_questions_vec[5])} 
-\section*{Deskriptive Statistik \& Explorative Datenanalyse}
 \Sexpr{knit_child(mc_questions_vec[6])} 
 \Sexpr{knit_child(mc_questions_vec[7])} 
 \Sexpr{knit_child(mc_questions_vec[8])}
@@ -432,9 +432,9 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(mc_questions_vec[10])}
 \Sexpr{knit_child(mc_questions_vec[11])}
 \Sexpr{knit_child(mc_questions_vec[12])}
+\section*{Statistische Testtheorie}  
 \Sexpr{knit_child(mc_questions_vec[13])} 
 \Sexpr{knit_child(mc_questions_vec[14])} 
-\section*{Lineare Regression \& Korrelation}
 \Sexpr{knit_child(mc_questions_vec[15])}
 \Sexpr{knit_child(mc_questions_vec[16])}
 \Sexpr{knit_child(mc_questions_vec[17])}
@@ -442,7 +442,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(mc_questions_vec[19])}
 \Sexpr{knit_child(mc_questions_vec[20])}
 \Sexpr{knit_child(mc_questions_vec[21])}
-\section*{Vermischte Themen}  
 \Sexpr{knit_child(mc_questions_vec[22])}
 \Sexpr{knit_child(mc_questions_vec[23])}
 \Sexpr{knit_child(mc_questions_vec[24])}
@@ -450,33 +449,42 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(mc_questions_vec[26])}
 \Sexpr{knit_child(mc_questions_vec[27])}
 \Sexpr{knit_child(mc_questions_vec[28])}
-\section*{Multiple Gruppenvergleiche}    
+\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[29])}
 \Sexpr{knit_child(mc_questions_vec[30])}
 \Sexpr{knit_child(mc_questions_vec[31])}
 \Sexpr{knit_child(mc_questions_vec[32])}
+\section*{ANOVA}
 \Sexpr{knit_child(mc_questions_vec[33])}
-\section*{Statistische Testtheorie}  
 \Sexpr{knit_child(mc_questions_vec[34])}
 \Sexpr{knit_child(mc_questions_vec[35])}
 \Sexpr{knit_child(mc_questions_vec[36])}
 \Sexpr{knit_child(mc_questions_vec[37])}
+\section*{Multiple Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[38])}
 \Sexpr{knit_child(mc_questions_vec[39])}
 \Sexpr{knit_child(mc_questions_vec[40])}
 \Sexpr{knit_child(mc_questions_vec[41])}
 \Sexpr{knit_child(mc_questions_vec[42])}
+\section*{Lineare Regression \& Korrelation}
 \Sexpr{knit_child(mc_questions_vec[43])}
 \Sexpr{knit_child(mc_questions_vec[44])}
 \Sexpr{knit_child(mc_questions_vec[45])}
 \Sexpr{knit_child(mc_questions_vec[46])}
-\section*{Statistische Tests für Gruppenvergleiche} 
 \Sexpr{knit_child(mc_questions_vec[47])}
 \Sexpr{knit_child(mc_questions_vec[48])}
 \Sexpr{knit_child(mc_questions_vec[49])}
 \Sexpr{knit_child(mc_questions_vec[50])}
     
 % -----------------------------------------------------------------------
+\clearpage
+% -----------------------------------------------------------------------
+\part{Programmieren in R}
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(program_questions_vec[1])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(program_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Deskriptive Statistik \& Explorative Datenanalyse}
@@ -506,12 +514,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(desc_stat_questions_vec[9])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[10])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[11])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Statistisches Testen \& statistische Testtheorie}
@@ -655,14 +657,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(experimental_questions_vec[2])} 
-\clearpage
-% -----------------------------------------------------------------------
-\part{Programmieren in R}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(program_questions_vec[1])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(program_questions_vec[2])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Forschendes Lernen}

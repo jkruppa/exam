@@ -1,0 +1,38 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+<<>>=
+
+ques_vec <- c("In \\Rlogo müssen die Daten eines Experiments in einem bestimmten Format vorliegen. Wir sprechen auch von dem log-Format der Daten. Welche Aussage zu dem Long-Format ist richtig?",
+              "Wenn wir ein Experiment in \\Rlogo auswerten wollen, dann müssen die Daten in Excel in einem besimmten Format angelegt werden. Wir sprechen auch vom Long-Format. Welche Aussage zum Long-Format ist richtig?",
+              "Die Ablage von Daten erfolgt normalerweise in Excel. Damit die Daten dann in \\Rlogo ausgewertet werden können, müssen die Daten in Excel im Long-Format angelegt werden. Welche Aussage ist zum Long-Format richtig?") |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
+<<mc-balance-01, results='asis', echo = FALSE>>=
+
+right_vec <- c("In den Zeile finden sich die einzelnen Beobachtungen und in den Spalten die gemessenen Variablen ($Y$) sowie die experimentellen Faktoren $X$.",
+               "In den Spalten finden sich die experimentellen Faktoren $X$ sowie die Messwerte $Y$. In den Zeilen finden sich dann die einzelnen Beobachtungen.",
+               "Wichtig ist, dass sich in den Zeilen die Beobachtungen finden und in den Spalten die Variablen, wie die Messwerte $Y$ sowie die experimentellen Faktoren $X$.") |> sample(1)
+
+wrong_vec <- c("In den Spalten finden sich die einzelnen Beobachtungen und in den Zeilen die gemessenen Variablen ($Y$) sowie die experimentellen Faktoren $X$.",
+               "Wichtig ist, dass sich in den Zeilen die Variablen finden, wie die Messwerte $Y$ sowie die experimentellen Faktoren $X$. In den Spalten stehen die Variablen.",
+               "In den Zeilen finden sich die experimentellen Faktoren $X$ sowie die Messwerte $Y$. In den Spalten finden sich dann die einzelnen Beobachtungen.",
+               "In den Spalten sind die Beobachtungen in den Zeilen die Variablen, wie die Messwerte und experiementellen Faktoren.",
+               "Das Long-Format hat die gleiche Anzahl an Spalten wie auch an Zeilen.",
+               "Das Long-Format beschreibt in den Spalten die Beobachtungen sowie in den Zeilen die \\textit{unabhängigen} Beobachtungen.") %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}

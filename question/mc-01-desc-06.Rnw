@@ -6,7 +6,7 @@ plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
 
 ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von ', plant, ' durchgeführt haben, berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
-              str_c('In Ihrer Abschlussarbeit zu', plant, ' finden Sie aufeinmal seltsame Daten. Jedenfalls kommt Ihnen das so vor. Daher berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
+              str_c('In Ihrer Abschlussarbeit zu ', plant, ' finden Sie aufeinmal seltsame Daten. Jedenfalls kommt Ihnen das so vor. Daher berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
               str_c('Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, ' in Ihren Feldexperiment zu Leistungssteigerung von ', plant, '.  Welche Aussage ist richtig?')) |>  sample(1)
 @
 
