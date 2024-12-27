@@ -1,44 +1,29 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
 <<>>=
-
-var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
-             "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
-  sample(1)
-
-ques_vec <- c('In der Theorie zur statistischen Testentscheidung kann folgende Aussage
-in welche richtige Analogie gesetzt werden?',
-              'Eine Analogie kann helfen einen Sachverhalt besser zu verstehen. Wie kann folgende Aussage richtig in die Analogie der statistischen Testtheorie gesetzt werden?',
-              'Sie versuchen folgende Aussage richtig in die Analogie der statistischen Testtheorie zu setzen. Welche Analogie ist richtig?') |>  sample(1)
-
-@  
+ques_vec <- c('Welche Aussage über den $p$-Wert und dem Signifikanzniveau $\\alpha$ gleich 5\\% ist richtig?',
+              'Sie haben ein Signifikanzniveau $\\alpha$ gleich 5\\% vorliegen. Welche Aussage zusammen mit dem $p$-Wert ist richtig?',
+              'Ein statistischer Test produziert für einen Gruppenvergleich einen $p$-Wert. Welche Aussage zusammen mit dem Signifikanzniveau $\\alpha$ gleich 5\\% stimmt?') |>  sample(1)
+@
 
 \Sexpr{ques_vec}
 
-\begin{center}
-\textit{\Sexpr{var_vec}}
-\end{center}
+<<mc-statistisches-testen-11, results='asis', echo = FALSE>>=
 
-<<mc-statistisches-testen-06, results='asis', echo = FALSE>>=
+right_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die Flächen unter der Kurve der Teststatistik, wenn die $H_0$ gilt.',
+               'Wir schauen, ob der $p$-Wert kleiner ist als das Signifikanzniveau $\\alpha$ und vergleichen somit Wahrscheinlichkeiten. Die Wahrscheinlichkeiten werden als Flächen unter der Kurve der Teststaistik dargestellt, wenn die $H_0$ gilt.',
+               'Wir machen ein Aussage über die Flächen und der Kurve der Teststatistik, wenn die $H_0$ gilt. Dabei werden Wahrscheinlichkeiten vergleichen, die durch die Flächen unter der Kurve repräsentiert werden.') |> sample(1)
 
-right_1_vec <- c('In die Analogie eines Rauchmelders: \\textit{Fire without alarm}, dem $\\beta$-Fehler.',
-                 '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie eines Rauchmelders.',
-                 'Dem $\\beta$-Fehler mit der Analogie eines Rauchmelders: \\textit{Fire without alarm}.') |> sample(1)
-right_2_vec <- c('In die Analogie eines Rauchmelders: \\textit{Alarm without fire}, dem $\\alpha$-Fehler.',
-                 '\\textit{Alarm without fire}, dem $\\alpha$-Fehler in der Analogie eines Rauchmelders.',
-                 'Dem $\\alpha$-Fehler in der Analogie eines Rauchmelder: \\textit{Alarm without fire}.') |> sample(1)
-
-wrong_vec <- c('In die Analogie eines brennenden Hauses ohne Rauchmelder: \\textit{House without noise}.',
-               'In die Analogie eines Feuerwehrautos: \\textit{Car without noise}.',
-               'In die Analogie eines Rauchmelders: \\textit{Alarm with fire}.',
-               'In die Analogie eines Rauchmelders: \\textit{Alarm without fire police}, dem $\\alpha$-Fehler.', 
-               'Dem $\\beta$-Fehler mit der Analogie eines brennenden Hauses: \\textit{Fire without alarm}.',
-               '\\textit{Alarm with fire}, dem $\\alpha$-Fehler in der Analogie von Feuer.',
-               '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie von Rauch im Haus.') %>%
-  sample(3)
+wrong_vec <- c('Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ absolute Werte auf einem Zahlenstrahl und damit den Unterschied der Teststatistiken, wenn die $H_0$ gilt.',
+               'Wir vergleichen mit dem $p$-Wert und dem Signifikanzniveau $\\alpha$ Wahrscheinlichkeiten und damit die absoluten Werte auf einem Zahlenstrahl, wenn die $H_0$ gilt.',
+               'Wir machen eine Aussage über die indivduelle Wahrscheinlichkeit des Eintretens der Nullhypothese $H_0$. Der $p$-Wert wird mit dem Signifikanzniveau verglichen und bewertet.',
+               'Wir vergleichen die Effekte des $p$-Wertes mit den Effekten der Signifikanzschwelle unter der Annahme der Nullhypothese. Dabei gilt, dass wir die Nullhypothese nur ablehnen können anhand des Falsifikationsprinzips.',
+               'Wir machen ein Aussage über die Flächen und zwischen den Kurve der Teststatistiken der Hypothesen $H_0$ und $H_A$, wenn die $H_0$ gilt. Dabei werden Wahrscheinlichkeiten vergleichen, die durch die Flächen unter der Kurve repräsentiert werden.',
+               'Wir schauen, ob der $p$-Wert größer ist als das Signifikanzniveau $\\alpha$ und vergleichen somit Wahrscheinlichkeiten. Die Wahrscheinlichkeiten werden als Flächen unter der Kurve der Teststaistik dargestellt, wenn die $H_A$ gilt.')  %>%
+  sample(4)
 
 
-questions_vec <- c(right_1_vec, right_2_vec,
+questions_vec <- c(right_vec,
                    wrong_vec) %>%
   sample
 
