@@ -13,7 +13,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \ifcollection
 \begin{flushright}
 \tiny\vspace{-3Ex}
-\textbf{Inhalt folgender Module:}
+\textbf{\examinhaltstart}
 \exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
 \exammodulestatbbv $\;\bullet$
