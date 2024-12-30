@@ -1,5 +1,18 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 
 n <- c(4,5,6) %>% sample(1)

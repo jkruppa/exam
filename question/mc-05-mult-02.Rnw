@@ -1,5 +1,18 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 ques_vec <- c('Die Abkürzung \\textit{CLD} steht für welches statistische Verfahren? Welche folgende Beschreibung der Interpretation ist korrekt?',
               'Sie rechnen einen PostHoc-Test. Nun sollen Sie ein \\textit{CLD} erstellen. Was bedeutet dieser Fachbegriff und welche folgende Beschreibung der Interpretation ist korrekt?',

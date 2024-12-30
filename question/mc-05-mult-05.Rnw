@@ -1,5 +1,17 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
 
 <<>>=
 ques_vec <- c('Sie rechnen mehrere t-Tests für einen multiplen Vergleich nachdem eine einfaktorielle ANOVA sich als signifikant herausgestellt hat. Welche Aussage im Bezug auf den Effekt ist richtig? ',

@@ -1,5 +1,18 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 n_pig <- rpois(1, 60)
 vit <- c("D", "E", "C") |> sample(1)

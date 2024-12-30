@@ -1,8 +1,19 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
-
-
 
 ques_vec <- c(str_c('Nach einem Experiment mit ', sample(c("drei", "vier", "fünf"), 1), ' Weizensorten ergibt eine ANOVA ($p = ', sample(c(0.049, 0.045, 0.048), 1), '$) einen signifikanten Unterschied für den Ertrag. Sie führen anschließend die paarweisen t-Tests für alle Vergleiche der verschiedenen Weizensorten durch. Nach der Adjustierung für multiples Testen ist kein p-Wert unter der $\\alpha$-Schwelle. Sie schauen sich auch die rohen, unadjustierten p-Werte an und finden hier als niedrigsten p-Wert $p_{3-2} = ', sample(c(0.051, 0.052, 0.053), 1), '$. Welche Aussage ist richtig?'),
               str_c('Sie führen paarweise t-Tests für alle Vergleiche der verschiedenen Rapssorten in Ihrem Experiment durch. Nach der Adjustierung für multiples Testen ist kein p-Wert unter der $\\alpha$-Schwelle. Ihr Experiment beinhaltet ', sample(c("drei", "vier", "fünf"), 1), ' Rapssorten und eine ANOVA ergibt $p = ', sample(c(0.049, 0.045, 0.048), 1), '$ für den Ertrag. Sie schauen sich auch die rohen, unadjustierten p-Werte an und finden hier als niedrigsten p-Wert $p_{3-2} = ', sample(c(0.051, 0.052, 0.053), 1), '$. Welche Aussage ist richtig?'),

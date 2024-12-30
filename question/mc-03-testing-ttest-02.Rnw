@@ -1,5 +1,22 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 n_pig <- rpois(1, 10)
 vit <- c("Eisen", "Nitrat", "Sulfit") |> sample(1)
