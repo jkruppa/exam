@@ -1,5 +1,20 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",

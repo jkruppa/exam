@@ -1,5 +1,18 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 type <- c("des p-Wertes", "der berechneten Teststatistik", "des 95\\%-Konfidenzintervalls") |> 
   set_names(c("der berrechnete Wert", "der berrechnete Wert", "das berechnete Intervall")) %>% sample(1)

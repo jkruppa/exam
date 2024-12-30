@@ -1,5 +1,21 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 ques_vec <- c('Der Fehler 1. Art oder auch Signifikanzniveau $\\alpha$ genannt, liegt bei
 5\\%. Welcher der folgenden Gründe für diese Festlegeung auf 5\\% als Signifikanzschwelle ist richtig?',

@@ -1,5 +1,17 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 ques_vec <- c('Welche Aussage über die \\textit{Power} ist richtig?',
               'In der statistischen Testtheorie gibt es den Begriff \\textit{Power}. Was sagt der statistische Begriff \\textit{Power} aus?',

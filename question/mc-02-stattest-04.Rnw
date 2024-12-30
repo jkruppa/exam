@@ -1,9 +1,22 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
-Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim
-statistischen Testen wird das \textit{"`signal"'} mit dem
-\textit{"`noise"'} aus den Daten $D$ zu einer Teststatistik $T_D$ verrechnet. Welche der Formel
-berechnet korrekt die Teststatistik $T_D$?
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
+Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim statistischen Testen wird das \textit{"`signal"'} mit dem \textit{"`noise"'} aus den Daten $D$ zu einer Teststatistik $T_D$ verrechnet. Welche der Formel berechnet korrekt die Teststatistik $T_D$?
 
 <<mc-statistisches-testen-05, results='asis', echo = FALSE>>=
 
