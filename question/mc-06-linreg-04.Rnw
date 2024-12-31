@@ -1,31 +1,68 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-2Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-1Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
 
-<<mc-corr-01a, results='markup', echo = FALSE>>=
 
-ques_vec <- c('Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
-              'Sie berechnen in Ihgrer Abschlussarbeit den Korrelationskoeffizienten $\\rho$. Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
-              'In den Humanwissenschaften wird der Korrelationskoeffizienten $\\rho$ sehr häufig verwendet. Daher ist es auch wichtig für andere Forschende den Korrelationskoeffizienten $\\rho$ zu verstehen. Welche Aussazu zu dem Korrelationskoeffizienten $\\rho$ ist richtig?') |>  sample(1)
+<<>>=
+
+ques_vec <- c('Sie rechnen eine linearen Regression und erhalten folgende Abbildung der Residuen (\\texttt{.resid}). Welche Aussage ist richtig?',
+              'Nach der Modellierung einer Regression stellt sich die Frage, ob die Residuen (\\texttt{.resid}) gleichmäßig um die gefitte Gerade liegen. Sie können folgende Abbildung für die visuelle Überprüfung der Residuen nutzen. Welche Aussage ist richtig?',
+              'Nach einer Regressions sollten die Residuen (\\texttt{.resid}) gleichmäßig um die Gerade verortet sein. Was bei einer simplen Regression noch relativ einfach visuell in einem Scatterplot zu überprüfen ist. Für komplexere Modell liefert der Residual Plot die notwendigen Informationen. Welche Aussage ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
+<<mc-regression-06-a, results='asis', echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 
-<<mc-corr-01b, results='asis', echo = FALSE>>=
+n <- rpois(1, 20)
+data_tbl <- tibble(x = 1:n,
+                   y_1 = rnorm(n, 0, 1),
+                   y_2 = rexp(n, rate = 1),
+                   y_3 = rexp(n, rate = 5),
+                   y_4 = c(rnorm(n-3, 0, 1), rnorm(3, 5, 4)),
+                   y_5 = c(rexp(n-3, rate = 1), rexp(3, 5))) %>%
+  select(x, sample(c("y_1", "y_2", "y_3", "y_4", "y_5"), 1)) %>%
+  set_names(c("x", "y"))
 
-right_vec <- c('Der Korrelationskoeffizienten $\\rho$ liegt zwischen -1 und 1. Darüber hinaus ist der Korrelationskoeffizienten $\\rho$ einheitslos und kann als standardisierte Steigung verstanden werden.',
-               'Der Korrelationskoeffizienten $\\rho$ ist eine standardisierte, statistische Maßzahl, die zwischen -1 und 1 liegt. Dabei ist Korrelationskoeffizienten $\\rho$ einheitslos.',
-               'Der Korrelationskoeffizienten $\\rho$ zeigt keinen Zusammenhang zwischen zwei Variablen $x$ und $y$ bei einem Wert von 0. Einen maximalen negativen Zusammenhang bei -1 und somit auch einen maximalen positiven Zusammenhang bei 1. Korrelationskoeffizienten $\\rho$ ist einheitslos.') |> sample(1)
 
-wrong_vec <- c('Korrelationskoeffizienten $\\rho$ liegt zwischen 0 und 1. Darüber hinaus ist der Korrelationskoeffizienten $\\rho$ einheitslos und kann als Standardisierung verstanden werden.',
-               'Der Korrelationskoeffizienten $\\rho$ ist eine standardisierte, statistische Maßzahl, die zwischen 0 und 1 liegt. Dabei ist Korrelationskoeffizienten $\\rho$ einheitslos. Eine Signifikanz kann nicht nachgewiesen werden.',
-               'Der Korrelationskoeffizienten $\\rho$ zeigt keinen Zusammenhang zwischen zwei Variablen $x$ und $y$ bei einem Wert von 0. Einen negativen Zusammenhang Richtung -1 und somit auch einen positiven Zusammenhang Richtung 1. Je größer die Zahl allgemein, desto stärker der Effekt.',
-               'Der Korrelationskoeffizienten $\\rho$ ist eine veraltete Darstellungsform von Effekten in der linearen Regression und wird wie das $\\eta^2$ aus der ANOVA interpretiert. Der Korrelationskoeffizienten $\\rho$ beschreibt den Anteil an erklärter Varianz durch die Regression.',
-               'Der Korrelationskoeffizienten $\\rho$ wird wie das $\\eta^2$ aus der ANOVA interpretiert. Der Korrelationskoeffizienten $\\rho$ beschreibt den Anteil an erklärter Varianz durch die Regression. Dabei gibt er jedoch eine Richtung an und kann auch negativ werden.',
-               'Der Korrelationskoeffizienten $\\rho$ liegt zwischen -1 und 1. Darüber hinaus ist der Korrelationskoeffizienten $\\rho$ als standardisierte Steigung zu verstehen, wenn eine Standardisierung durchgeführt wurde. Diese Adjustierung nach Fischer muss am Anschluß der Berechnung der Korrelation durchgeführt werden.') %>%
-  sample(4)
+mod <- lm(y ~ x, data_tbl)
+df <- augment(mod)
+ggplot(df, aes(x = .fitted, y = .resid)) +
+  geom_point() +
+    theme_minimal() 
 
-questions_vec <- c(right_vec,
+@ 
+
+
+<<mc-regression-06-b, results='asis', echo = FALSE>>=
+
+right_1_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Kein Muster ist zu erkennen und keine Outlier zu beobachten.',
+               'Wir betrachten die Nulllinie und alle Punkte sollten ohne Muster gleichmäßig um die Nulllinie liegen. Da dies der Fal ist, gehen wir von keinen Ausreißern aus.',
+               'Wenn die Punkte gleichmäßig in dem positiven wie auch negativen Bereich ohne ein klares Muster liegen, dann hat unsere Modellierung geklappt. Wir können mit dem Modell weitermachen.') |> sample(1)
+
+right_2_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Ein klares Muster ist zu erkennen und/oder einige Outlier sind zu beobachten.',
+               'Wenn wir die Nulllinie betrachten so liegen die Punkte nicht gleichmäßig über und unter der Nulllinie. Unser Modell erfüllt nicht die Annahme von normalverteilten Residuen mit einem Mittelwert von 0 und einer Streuung von $s^2$.',
+               'Die Punkte müssen gleichmäßig, mit ähnlichen Abständen, in dem positiven wie auch negativen Bereich liegen. Dies ist hier klar nicht der Fall. Einzelne Ausreißer können beobachtet werden. Wir können mit dem Model so nicht rechnen und müssen erst die auffälligen Werte gesondert betrachten.') |> sample(1)
+
+wrong_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Vereinzelte Punkte liegen oberhalb bzw. unterhalb der Geraden um die 0 Linie weiter entfernt. Ein klares Muster ist zu erkennen.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Diagonalen. Damit ist das Modell erfolgreich geschätzt worden.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erfüllt. Es ist kein Muster zu erkennen.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Es ist ein Muster zu erkennen und wir können damit auf die Signifkanz von $x_1, ..., x_p$ schließen.',
+               str_c('Wenn wir die Nulllinie betrachten so müssen die Punkte gleichmäßig ', sample(c("über", "unter"), 1),' der Nulllinie liegen. Unser Modell erfüllt somit nicht die Annahme von normalverteilten Residuen mit einem Mittelwert von $>0$ und einer Streuung von $s$.'),
+               str_c('Die Punkte müssen gleichmäßig in dem ', sample(c("positiven", "negativen"), 1),' Bereich liegen. Dies ist hier klar nicht der Fall. Einzelne Ausreißer können beobachtet werden. Die Analyse ist gescheitert.')) %>%
+  sample(3)
+
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
 

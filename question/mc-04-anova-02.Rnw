@@ -3,14 +3,14 @@
 %% --------------------------------------------------------------------
 \ifcollection
 \begin{flushright}
-\tiny\vspace{-3Ex}
+\tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
 \exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
 \exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
-\vspace{-4Ex}
+\vspace{-1Ex}
 \end{flushright}
 \fi
 %% --------------------------------------------------------------------
@@ -35,9 +35,9 @@ plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
 
 
 <<>>=
-ques_vec <- c(str_c('Sie führen ein Feldexperiment durch um das Gewicht von ', plant, ' zu steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein $\eta^2 = ', eta2_val, '$. Welche Aussage ist richtig?'),
-              str_c('In Ihrem Feldexperiment wollen Sie den Proteingehalt von ', plant, ' steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen. Um die Daten auszuwerten führen Sie eine einfaktoriellen ANOVA durch. Es ergibt sich ein $\eta^2 = ', eta2_val, '$. Welche Aussage ist richtig?'),
-              str_c('Nach einem Feldexperiment erhalten Sie ein $\eta^2 = ', eta2_val, '$. aus Ihrer einfaktoriellen ANOVA. Sie haben sich den Chlorophyllgehalt in ', plant, ' angeschaut und wollen nun das Ergebnis anhand des $\eta^2$ bewerten. Welche Aussage ist richtig?')) |>  sample(1)
+ques_vec <- c(str_c('Sie führen ein Feldexperiment durch um das Gewicht von ', plant, ' zu steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen. Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich ein $\\eta^2 = ', eta2_val, '$. Welche Aussage ist richtig?'),
+              str_c('In Ihrem Feldexperiment wollen Sie den Proteingehalt von ', plant, ' steigern. Die Pflanzen wachsen unter einer Kontrolle und zwei verschiedenen Behandlungsbedingungen. Um die Daten auszuwerten führen Sie eine einfaktoriellen ANOVA durch. Es ergibt sich ein $\\eta^2 = ', eta2_val, '$. Welche Aussage ist richtig?'),
+              str_c('Nach einem Feldexperiment erhalten Sie ein $\\eta^2 = ', eta2_val, '$. aus Ihrer einfaktoriellen ANOVA. Sie haben sich den Chlorophyllgehalt in ', plant, ' angeschaut und wollen nun das Ergebnis anhand des $\\eta^2$ bewerten. Welche Aussage ist richtig?')) |>  sample(1)
 @
 
 

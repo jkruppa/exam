@@ -3,41 +3,54 @@
 %% --------------------------------------------------------------------
 \ifcollection
 \begin{flushright}
-\tiny\vspace{-3Ex}
+\tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
-\vspace{-4Ex}
+\vspace{-1Ex}
 \end{flushright}
 \fi
 %% --------------------------------------------------------------------
 
 
 <<>>=
-ques_vec <- c('In der Bio Data Science wird häufig mit sehr großen Datensätzen gerechnet. Historisch ergibt sich nun ein Problem bei der Auswertung der Daten und deren Bewertung hinsichtlich der Signifikanz. Welche Aussage ist richtig?
-',
-              'Historisch gesehen ergibt sich ein Problem, wenn Sie mit sehr großen Datensätzen, wie in der Bio Data Sience üblich, rechnen. Warum ist es ein Problem, wenn Ihre Datensätze sehr groß werden hinsichtlich der Bewertung anhand der Signifikanz?',
-              'Sie werten in Ihrer Abschlussarbeit einen sehr großen Datensatz aus einer öffentlichen Datenbank aus. Nun stellen Sie fest, dass Sie ein Problem mit der Bewertung Ihrer Ergbnisse anhand der Signifikanz bekommen. Wie Sie herausfinden, scheint dies ein häufiges Problem in der Bio Data Science zu sein. Welche Aussage ist richtig?') |>  sample(1)
+type <- c("des p-Wertes", "der berechneten Teststatistik", "des 95\\%-Konfidenzintervalls") |> 
+  set_names(c("der berrechnete Wert", "der berrechnete Wert", "das berechnete Intervall")) %>% sample(1)
+
+@ 
+
+<<>>=
+ques_vec <- c(str_c('Welche Aussage über die Entscheidung anhand ', type, ' gegen die Nullhypothese ist richtig?'),
+              str_c('Sie rechnen einen statistischen Test und wollen anhand ', type, ' eine Entscheidung gegen die Nullhypothese treffen. Welche Aussage ist richtig?'),
+              str_c('Nachdem Sie einen t-Test gerechnet haben stehen Ihnen verschiedene statistische Maßzahlen zu Verfügung um eine Entscheidung gegen die Nullhypothese zu treffen. Sie entscheiden sich anhand ', type, ' eine Entscheidung zu treffen.')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
 
-<<mc-statistisches-testen-08, results='asis', echo = FALSE>>=
 
-right_vec <- c('Aktuell werden immer größere Datensätze erhoben. Eine erhöhte Fallzahl führt automatisch auch zu mehr signifikanten Ergebnissen, selbst wenn die eigentlichen Effekte nicht relevant sind.',
-               'Eine erhöhte Fallzahl führt automatisch zu mehr signifikanten Ergebnissen auch wenn der Effekt klein ist und damit nicht relevant. Dadurch sind die Informationen zur Signifikanz in riesigen Datensätzen schwer zu verwerten, da fast alle Vergleiche signifikant sind.',
-               'Eine große Fallzahl führt zu mehr signifikanten Ergebnissen auch bei kleinen Effekten. Daher werden fast alle Vergleich esignifikant, wenn die Fallzahl nur groß genug wird.') |> sample(1)
+<<mc-statistisches-testen-012, results='asis', echo = FALSE>>=
 
-wrong_vec <- c('Aktuell werden immer größere Datensätze erhoben. Dadurch wird auch die Varianz immer höher was automatisch zu mehr signifikanten Ergebnissen führt.',
-               'Big Data ist ein Problem der parametrischen Statistik. Parameter lassen sich nur auf kleinen Datensätzen berechnen, da es sich sonst nicht mehr um eine Stichprobe im engen Sinne der Statistik handelt.',
-               'Relevanz und Signifikanz haben nichts miteinander zu tun. Daher gibt es auch keinen Zusammenhang zwischen hoher Fahlzahl (n > 10000) und einem signifikanten Test. Ein Effekt ist immer relevant und somit signifikant.',
-               'Aktuell werden zu grosse Datensätze für die gänigige Statistik gemessen. Daher wendet man maschinelle Lernverfahren für kausale Modelle an. Hier ist die Relevanz gleich Signifikanz.',
-               'Riesige Datensätz haben mehr Fallzahl was zur $\\alpha$-Inflation führt. Durch eine Adjustoerung kann dem Problem entgegengewirkt werden.',
-               'Mehr Fallzahl in Datensätzen bedeutet mehr signifikante Ergebnisse, da in mehr Daten auch mehr Informationen beinhaltet sind. Deshalb lohnen sich riesige Datensätze, die durch die vielen signifikanten Ergebnisse auch eine Menge an relevanten Erkenntnissen liefern.') %>%
-  sample(4)
+right_1_vec <- c('Ist $Pr(D|H_0)$ kleiner als das Signifikanzniveau $\\alpha$ gleich $5\\%$ dann wird die Nullhypothese $H_0$ abgelehnt.',
+                 'Das Signifikanzniveau $\\alpha$ ist gleich $5\\%$. $Pr(D|H_0)$ muss kleiner sein als das Signifikanzniveau.',
+                 str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Ist der Wert kleiner dem Signifikanzniveau $\\alpha$ dann kann die Nullhypothese abgelehnt werden.')) |> sample(1) 
 
-questions_vec <- c(right_vec,
+right_2_vec <- c('Ist $T_{D}$ höher als der kritische Wert $T_{\\alpha = 5\\%}$ dann wird die Nullhypothese $H_0$ abgelehnt.',
+                 'Der kritische Wert $T_{\\alpha = 5\\%}$ ist tabelarisch festgelegt und gegeben. Ist $T_{D}$ größer als der kritische Wert, kann die Nullhypothese abgelehnt werden',
+                 str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Ist der Wert größer als der kritische Wert $T_{\\alpha = 5\\%}$ dann kann die Nullhypothese abgelehnt werden.')) |> sample(1)
+
+right_3_vec <- c('Ist in dem 95\\%-Konfidenzintervall nicht die Null enthalten dann wird die Nullhypothese $H_0$ abgelehnt.',
+                 'Wir betrachten das Ganze Intervall des 95\\%-Konfidenzintervalls. Liegt die Null mit in dem Intervall, dann kann die Nullhypothese abgelehnt werden.',
+                 str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Ist die Null mit enthalten, dann kann die Nullhypothese abgelehnt werden.')) |> sample(1) 
+
+wrong_vec <- c(str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Liegt der Wert über oder gleich dem Signifikanzniveau $\\alpha$ dann kann die Nullhypothese abgelehnt werden.'),
+               str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Liegt der Wert in dem Signifikanzniveauintervall $\\alpha$ dann kann die Nullhypothese abgelehnt werden.'),
+               str_c('Liegt ', names(type), ' über dem kritische Wert $T_{\\alpha = 5\\%}$, dann kann die Nullhypothese nicht abgelehnt werden.'),
+               str_c('Das Signifikanzniveauintervall $\\alpha$ ist gleich $5\\%$ und damit muss ', names(type), ' unter dem Signifikanzniveauintervall $\\alpha$ liegen, dann kann die Nullhypothese nicht abgelehnt werden.'),
+               str_c('Das Signifikanzniveau $\\alpha$ ist gleich $5\\%$ und ', names(type), ' muss gleich\\textit{er} als das Signifikanzniveau sein.')) %>%
+  sample(2)
+
+questions_vec <- c(right_1_vec, right_2_vec, right_3_vec,
                    wrong_vec) %>%
   sample
 

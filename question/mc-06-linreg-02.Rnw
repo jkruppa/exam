@@ -1,40 +1,70 @@
 \section{Aufgabe \hfill (2 Punkte)}
 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-2Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-1Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
 <<>>=
 
-variable_vec <- c("prädiktives", "kausales") %>%
-  sample(1)
-
-ques_vec <- c(str_c('Sie haben das Modell $Y \\sim X$ vorliegen und wollen nun ein ', variable_vec, ' Modell rechnen. Welche Aussage ist richtig?'),
-              str_c('Im Allgemeinen gibt es zwei mögliche Ziele für ein Regressionsmodell. Wir können eine Vorhersagemodell oder ein kausales Modell rechnen. Welche Aussage ist für ein ', variable_vec, ' Modell richtig?'),
-              str_c('In Ihrer Abschlussarbeit wollen Sie ein ', variable_vec, ' Modell rechnen. Jetzt stellt sich die Frage, was diese Entscheidung für Ihre Auswertung bedeutet. Welche Aussage ist richtig?')) |>  sample(1)
+ques_vec <- c('Sie rechnen in eine linearen Regression und erhalten folgenden QQ Plot um die Annahme der normalverteilten Residuen zu überprüfen. Welche Aussage ist richtig?',
+              'Nach der Modellierung einer Regression stellt sich die Frage, ob die Residuen approximativ einer Normalverteilung folgen. Sie können einen QQ-Plot für die visuelle Überprüfung der Annahme an die Residuen nutzen. Welche Aussage ist richtig?',
+              'Nach einer Regressions sollten die Residuen normalverteilt sein. Was bei einer simplen Regression noch relativ einfach visuell in einem Scatterplot zu überprüfen ist. Für komplexere Modell liefert der QQ-Plot die notwendigen Informationen über die Normalverteilung. Welche Aussage ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
-<<mc-modelling-02, results='asis', echo = FALSE>>=
+<<mc-regression-05-a, results='asis', echo = FALSE, fig.height = 2.5, fig.width = 3, fig.align = "center", message = FALSE>>=
 
-right_1_vec <- c(str_c("Ein ", variable_vec, " Modell basiert auf einem Traingsdatensatz und einem Testdatensatz. Auf dem Trainingsdatensatz wird das Modell trainiert und auf dem Testdatensatz validiert."),
-                 str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll, dann muss zum einen ein Traingsdatensatz sowie ein Testdatensatz definiert werden. Dabei ist der Trainingsdatensatz meist 2/3 und der Testdatensatz 1/3 der Fallzahl groß. Der Testdatensatz dient zur Validierung.'),
-                 str_c('Es wird ein Trainingsdatensatz zum Trainieren des Modells benötigt. Der Testdatensatz dient zur Validierung. Dies gilt insbesondere für ein ', variable_vec, ' Modell.')) |> sample(1)
 
-right_2_vec <- c(str_c("Ein ", variable_vec, " Modell möchte die Zusammenhänge von X auf Y modellieren. Hierbei geht es um die Effekte von $X$ auf $Y$. Man sagt, wenn $x_1$ um 1 ansteigt ändert sich $Y$ um einen Betrag $\\beta_1$."),
-                 str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll dann kann dies auf dem gesamten Datensatz geschehen. Das Ziel ist es einen Zusammenhang von $X$ auf $Y$ zu modellieren. Wie wirken sich die Einflussvariablen $X$ auf den gemessenen Endpunkt $Y$ aus?'),
-                 str_c('Wir modellieren den Zusammenhang zwischen $X$ und $Y$ wenn ein ', variable_vec, ' Modell rerechnet wird. Dabei kann der gesamte Datensatz genutzt werden. Eine Aufteilung wie in einem prädiktiven Modell ist nicht notwendig.')) |> sample(1)
+data_tbl <- tibble(y_1 = rt(500, df = 1),
+                   y_2 = rnorm(500, mean = 0, sd = 1),
+                   y_3 = rexp(500, rate = 1)) %>%
+  select(sample(c("y_1", "y_2", "y_3"), 1)) %>%
+  set_names("y")
 
-wrong_vec <- c( str_c("Ein ", variable_vec, " Modell benötigt mindestens eine Fallzahl von über 100 Beobachtungen und darf keine fehlenden Werte beinhalten. Die Varianzkomponenten müssen homogen sein."),
-                   str_c("Ein ", variable_vec, " Modell schliesst grundsätzlich lineare Modell aus. Es muss ein Graph gefunden werden, der alle Punkte beinhaltet. Erst dann kann das $R^2$ berechnet werden." ),
-                   str_c("Ein ", variable_vec, " Modell wird auf einem Trainingsdatensatz trainiert und anschliessend über eine explorative Datenanalyse validiert. Signifikanzen über $\\beta_i$ können hier nicht festgestellt werden."),
-                 str_c('Wir modellieren den Zusammenhang zwischen $X$ und $Y$ wenn ein ', variable_vec, ' Modell rerechnet wird. Dabei kann nicht der gesamte Datensatz genutzt werden. Es wird ein Trainingsdatensatz zum Trainieren des Modells benötigt.'),
-                 str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll dann kann dies auf dem gesamten Datensatz geschehen. Das Ziel ist es einen Zusammenhang von $X$ auf $Y$ zu modellieren. Wie wirken sich die Einflussvariablen $Y$ auf die gemessenen Endpunkte $X = x_1, ..., x_p$ aus?'),
-                str_c('Wenn ein ', variable_vec, ' Modell gerechnet werden soll, dann muss zum einen ein Traingsdatensatz sowie ein Testdatensatz definiert werden. Dabei ist der Trainingsdatensatz meist 1/10 und der Testdatensatz 1/3 der Fallzahl groß. Der Testdatensatz dient zur Validierung.'),
-                 str_c('Es wird ein Trainingsdatensatz zum Modellieren des Trainingsmodells benötigt. Der Testdatensatz dient rein zur Visualisierung. Dies gilt vor allem für ein ', variable_vec, ' Modell.')) %>%
-  sample(3)
 
-questions_vec <- c(right_1_vec, right_2_vec, 
+ggplot(data_tbl, aes(sample = y)) +
+  stat_qq() + stat_qq_line(color = "black") +
+    theme_minimal() 
+
+
+@ 
+
+
+<<mc-regression-05-b, results='asis', echo = FALSE>>=
+
+right_1_vec <- c('Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Geraden.',
+               'Wir betrachten die Punkte auf der Geraden. Wenn die Punkte einigermaßen auf der Geraden liegen, dann gehen wir von normalverteilten Residuen aus. Wir können hier von normalverteilten Residuen ausgehen.',
+               'Wir betrachten die Gerade und dabei insbesondere die beiden Enden der Gerade. Hier sollten die Punkte auf der Geraden liegen, dann ist die Annahme an die Normalverteilung der Residuen erfüllt.') |> sample(1)
+
+right_2_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden.',
+               'Wir betrachten die Gerade. Wenn die Punkte einigermaßen gleichmäßig um die Gerade verteilt liegen, dann gehen wir von normalverteilten Residuen aus. Dies ist hier nicht der Fall. Wir haben keine normalverteilten Residuen vorliegen.',
+               'Wir betrachten die Gerade und dabei insbesondere die beiden Enden der Gerade. Hier sollten die Punkte auf der Geraden liegen, dann ist die Annahme an die Normalverteilung der Residuen erfüllt. Diese Annahme ist nicht erfüllt.') |> sample(1)
+
+wrong_vec <- c('Die Annahme der normalverteilten Residuen ist nicht erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist nicht erfüllt. Die Punkte liegen zum überwiegenden Teil auf der Geraden.',
+                   'Die Annahme der normalverteilten Residuen ist erfüllt. Die Punkte liegen zum überwiegenden Teil nicht auf der Geraden und Korrelation ist negativ.',
+               'Wir betrachten die Punkte. Wenn die Punkte einigermaßen gleichmäßig verteilt liegen, dann gehen wir von normalen Residuen aus.',
+               'Wir betrachten insbesondere die beiden Enden der Gerade. Der Rest ist mehr oder minder egal, dann ist die Annahme an die Normalverteilung der Residuen erfüllt.',
+               'Wir betrachten die Gerade, die durch die einzelnen Punkte laufen sollte. Wenn die 95\\% der Punkte von der Geraden getroffen werden, dann gehen wir von normalverteilten Residuen aus.',
+               'Wir betrachten die Gerade und dabei insbesondere die beiden Enden der Gerade in dem IQR, also dem ersten und dritten Quartile. Hier sollten die Punkte auf der Geraden liegen, dann ist die Annahme an die Normalverteilung der Residuen erfüllt.') %>%
+  sample(4)
+
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
-
 
 @
 

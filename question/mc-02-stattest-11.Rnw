@@ -3,46 +3,60 @@
 %% --------------------------------------------------------------------
 \ifcollection
 \begin{flushright}
-\tiny\vspace{-3Ex}
+\tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
 \exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
 \exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
-\vspace{-4Ex}
+\vspace{-1Ex}
 \end{flushright}
 \fi
 %% --------------------------------------------------------------------
 
+
 <<>>=
-ques_vec <- c('Die Randomisierung von Beobachtungen zu den Versuchseinheiten ist bedeutend in der Versuchsplanung. Welche der folgenden Aussagen ist richtig?',
-              'Roland Fischer entwickelte Anfang des letzten Jahrhunderts als Grundlage für das experimentelle Design in der Statistik die Randomisierung. Warum ist die Randomisierung für die Entscheidung anhand einer statistischen Auswertung so wichtig?',
-              'Sie führen einen agrarwissenschaftlichen Versuch durch. Dafür müssen Sie als ersten Schritt Ihre Versuchseinheiten zufällig den Behandlungen zuordnen. Dieses zufällige Zuordnen nennt man in der Statistik eine Randomisierung. Warum ist die Randomisierung so wichtig für das Gelingen eines Versuchs?') |>  sample(1)
-@
+
+var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
+             "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
+  sample(1)
+
+ques_vec <- c('In der Theorie zur statistischen Testentscheidung kann folgende Aussage
+in welche richtige Analogie gesetzt werden?',
+              'Eine Analogie kann helfen einen Sachverhalt besser zu verstehen. Wie kann folgende Aussage richtig in die Analogie der statistischen Testtheorie gesetzt werden?',
+              'Sie versuchen folgende Aussage richtig in die Analogie der statistischen Testtheorie zu setzen. Welche Analogie ist richtig?') |>  sample(1)
+
+@  
 
 \Sexpr{ques_vec}
 
-<<mc-planing-01, results='asis', echo = FALSE>>=
+\begin{center}
+\textit{\Sexpr{var_vec}}
+\end{center}
 
-right_vec <- c('Randomisierung sorgt für Strukturgleichheit und erlaubt erst von der Stichprobe auf die Grundgesamtheit zurückzuschliessen.',
-               'Strukturgleichheit ist durch Randomisierung gegeben. Somit kann von der Stichprobe auf die Grundgesamtheit geschlossen werden',
-               'Durch eine Randomisierung können wir von Strukturgleichheit zwischen der Stichprobe und der Grundgesamtheit ausgehen.') |> sample(1)
+<<mc-statistisches-testen-06, results='asis', echo = FALSE>>=
 
-wrong_vec <- c('Randomisierung bringt starke Unstrukturiertheit in das Experiment und erlaubt erst von der Stichprobe auf die Grundgesamtheit zurückzuschliessen.',
-               'Randomisierung erlaubt erst die Varianzen zu schätzen. Ohne eine Randomisierung ist die Berechnung von Mittelwerten und Varianzen nicht möglich. Dadurch lässt sich erst ein Experiment auswerten.',
-               'Randomisierung war bis 1952 bedeutend, wurde dann aber in Folge besserer Rechnerleistung nicht mehr verwendet. Aktuelle Statistik nutzt keine Randomisierung mehr.',
-               'Randomisierung erlaubt erst die Mittelwerte zu schätzen. Ohne Randomisierung keine Mittelwerte. Ohne Mittelwerte keine Varianz und somit auch kein statistischer Test.',
-               'Durch eine Randomisierung können wir nicht von Strukturgleichheit zwischen der Stichprobe und der Grundgesamtheit ausgehen.',
-               'Randomisierung ist die direkte Folge von Strukturgleichheit. Die Strukturgleichheit erlaubt es erst von der Stichprobe auf die Grundgesamtheit zurückzuschliessen.',
-               'Strukturgleichheit ist durch Randomisierung gegeben. Leider hilft die Randomisierung noch nicht um von der Stichprobe auf die Grundgesamtheit zu schließen. Deshalb wurde das Falsifikationsprinzip entwickelt.') %>%
-  sample(4)
+right_1_vec <- c('In die Analogie eines Rauchmelders: \\textit{Fire without alarm}, dem $\\beta$-Fehler.',
+                 '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie eines Rauchmelders.',
+                 'Dem $\\beta$-Fehler mit der Analogie eines Rauchmelders: \\textit{Fire without alarm}.') |> sample(1)
+right_2_vec <- c('In die Analogie eines Rauchmelders: \\textit{Alarm without fire}, dem $\\alpha$-Fehler.',
+                 '\\textit{Alarm without fire}, dem $\\alpha$-Fehler in der Analogie eines Rauchmelders.',
+                 'Dem $\\alpha$-Fehler in der Analogie eines Rauchmelder: \\textit{Alarm without fire}.') |> sample(1)
+
+wrong_vec <- c('In die Analogie eines brennenden Hauses ohne Rauchmelder: \\textit{House without noise}.',
+               'In die Analogie eines Feuerwehrautos: \\textit{Car without noise}.',
+               'In die Analogie eines Rauchmelders: \\textit{Alarm with fire}.',
+               'In die Analogie eines Rauchmelders: \\textit{Alarm without fire police}, dem $\\alpha$-Fehler.', 
+               'Dem $\\beta$-Fehler mit der Analogie eines brennenden Hauses: \\textit{Fire without alarm}.',
+               '\\textit{Alarm with fire}, dem $\\alpha$-Fehler in der Analogie von Feuer.',
+               '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie von Rauch im Haus.') %>%
+  sample(3)
 
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
-
 
 @
 

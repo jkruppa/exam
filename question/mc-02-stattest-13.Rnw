@@ -3,60 +3,44 @@
 %% --------------------------------------------------------------------
 \ifcollection
 \begin{flushright}
-\tiny\vspace{-3Ex}
+\tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
-\exammodulemathstat $\;\bullet$
-\exammodulestat $\;\bullet$
-\exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
-\vspace{-4Ex}
+\vspace{-1Ex}
 \end{flushright}
 \fi
 %% --------------------------------------------------------------------
 
 
 <<>>=
-
-var_vec <- c("$H_0$ ablehnen obwohl die $H_0$ gilt",
-             "$H_0$ beibehalten obwohl die $H_0$ falsch ist") %>%
-  sample(1)
-
-ques_vec <- c('In der Theorie zur statistischen Testentscheidung kann folgende Aussage
-in welche richtige Analogie gesetzt werden?',
-              'Eine Analogie kann helfen einen Sachverhalt besser zu verstehen. Wie kann folgende Aussage richtig in die Analogie der statistischen Testtheorie gesetzt werden?',
-              'Sie versuchen folgende Aussage richtig in die Analogie der statistischen Testtheorie zu setzen. Welche Analogie ist richtig?') |>  sample(1)
-
-@  
+ques_vec <- c('In der Bio Data Science wird häufig mit sehr großen Datensätzen gerechnet. Historisch ergibt sich nun ein Problem bei der Auswertung der Daten und deren Bewertung hinsichtlich der Signifikanz. Welche Aussage ist richtig?
+',
+              'Historisch gesehen ergibt sich ein Problem, wenn Sie mit sehr großen Datensätzen, wie in der Bio Data Sience üblich, rechnen. Warum ist es ein Problem, wenn Ihre Datensätze sehr groß werden hinsichtlich der Bewertung anhand der Signifikanz?',
+              'Sie werten in Ihrer Abschlussarbeit einen sehr großen Datensatz aus einer öffentlichen Datenbank aus. Nun stellen Sie fest, dass Sie ein Problem mit der Bewertung Ihrer Ergbnisse anhand der Signifikanz bekommen. Wie Sie herausfinden, scheint dies ein häufiges Problem in der Bio Data Science zu sein. Welche Aussage ist richtig?') |>  sample(1)
+@
 
 \Sexpr{ques_vec}
 
-\begin{center}
-\textit{\Sexpr{var_vec}}
-\end{center}
 
-<<mc-statistisches-testen-06, results='asis', echo = FALSE>>=
+<<mc-statistisches-testen-08, results='asis', echo = FALSE>>=
 
-right_1_vec <- c('In die Analogie eines Rauchmelders: \\textit{Fire without alarm}, dem $\\beta$-Fehler.',
-                 '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie eines Rauchmelders.',
-                 'Dem $\\beta$-Fehler mit der Analogie eines Rauchmelders: \\textit{Fire without alarm}.') |> sample(1)
-right_2_vec <- c('In die Analogie eines Rauchmelders: \\textit{Alarm without fire}, dem $\\alpha$-Fehler.',
-                 '\\textit{Alarm without fire}, dem $\\alpha$-Fehler in der Analogie eines Rauchmelders.',
-                 'Dem $\\alpha$-Fehler in der Analogie eines Rauchmelder: \\textit{Alarm without fire}.') |> sample(1)
+right_vec <- c('Aktuell werden immer größere Datensätze erhoben. Eine erhöhte Fallzahl führt automatisch auch zu mehr signifikanten Ergebnissen, selbst wenn die eigentlichen Effekte nicht relevant sind.',
+               'Eine erhöhte Fallzahl führt automatisch zu mehr signifikanten Ergebnissen auch wenn der Effekt klein ist und damit nicht relevant. Dadurch sind die Informationen zur Signifikanz in riesigen Datensätzen schwer zu verwerten, da fast alle Vergleiche signifikant sind.',
+               'Eine große Fallzahl führt zu mehr signifikanten Ergebnissen auch bei kleinen Effekten. Daher werden fast alle Vergleich esignifikant, wenn die Fallzahl nur groß genug wird.') |> sample(1)
 
-wrong_vec <- c('In die Analogie eines brennenden Hauses ohne Rauchmelder: \\textit{House without noise}.',
-               'In die Analogie eines Feuerwehrautos: \\textit{Car without noise}.',
-               'In die Analogie eines Rauchmelders: \\textit{Alarm with fire}.',
-               'In die Analogie eines Rauchmelders: \\textit{Alarm without fire police}, dem $\\alpha$-Fehler.', 
-               'Dem $\\beta$-Fehler mit der Analogie eines brennenden Hauses: \\textit{Fire without alarm}.',
-               '\\textit{Alarm with fire}, dem $\\alpha$-Fehler in der Analogie von Feuer.',
-               '\\textit{Fire without alarm}, dem $\\beta$-Fehler als Analogie von Rauch im Haus.') %>%
-  sample(3)
+wrong_vec <- c('Aktuell werden immer größere Datensätze erhoben. Dadurch wird auch die Varianz immer höher was automatisch zu mehr signifikanten Ergebnissen führt.',
+               'Big Data ist ein Problem der parametrischen Statistik. Parameter lassen sich nur auf kleinen Datensätzen berechnen, da es sich sonst nicht mehr um eine Stichprobe im engen Sinne der Statistik handelt.',
+               'Relevanz und Signifikanz haben nichts miteinander zu tun. Daher gibt es auch keinen Zusammenhang zwischen hoher Fahlzahl (n > 10000) und einem signifikanten Test. Ein Effekt ist immer relevant und somit signifikant.',
+               'Aktuell werden zu grosse Datensätze für die gänigige Statistik gemessen. Daher wendet man maschinelle Lernverfahren für kausale Modelle an. Hier ist die Relevanz gleich Signifikanz.',
+               'Riesige Datensätz haben mehr Fallzahl was zur $\\alpha$-Inflation führt. Durch eine Adjustoerung kann dem Problem entgegengewirkt werden.',
+               'Mehr Fallzahl in Datensätzen bedeutet mehr signifikante Ergebnisse, da in mehr Daten auch mehr Informationen beinhaltet sind. Deshalb lohnen sich riesige Datensätze, die durch die vielen signifikanten Ergebnisse auch eine Menge an relevanten Erkenntnissen liefern.') %>%
+  sample(4)
 
-
-questions_vec <- c(right_1_vec, right_2_vec,
+questions_vec <- c(right_vec,
                    wrong_vec) %>%
   sample
+
 
 @
 
