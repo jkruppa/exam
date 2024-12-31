@@ -16,11 +16,8 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \begin{flushright}
 \tiny\vspace{-3Ex}
 \textbf{\examinhaltstart}
-\exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
-\exammodulestatbbv $\;\bullet$
-\exammodulestatversuch $\;\bullet$
-\exammodulebiostat
+\exammodulestatbbv 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}

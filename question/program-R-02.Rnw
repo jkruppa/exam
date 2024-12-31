@@ -11,6 +11,14 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -19,6 +27,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://www.youtube.com/playlist?list=PLe51bCp9JvEFUnFqaJG5aRmON9i1ZbOYC}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{1ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -108,30 +117,32 @@ ques_random <- c(ques_short, ques_long) |> sample()
 
 @
 
+\ifcollection
 \paragraph{Fortgeschrittene Kenntnisse der Programierung in \Rlogo}
+\fi
 
 \Sexpr{ques_vec}\\[1Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[1]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[2]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[3]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[4]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[5]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[6]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 \Sexpr{name} fragt: \textit{\Sexpr{ques_random[7]}}\\[1ex]
-Sie antworten:\\[2Ex]
+Sie antworten:\\[7Ex]
 
 
 

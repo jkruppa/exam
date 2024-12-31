@@ -15,13 +15,25 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/exDo7AyHl4Q}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/wJqsNV1hOW8}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -85,6 +97,7 @@ gen_data <- function(...){
   return(temp_tbl)
 }
 
+
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
@@ -101,12 +114,14 @@ ques_vec <- c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um 
 
 @
 
-\paragraph{Interpretation des t-Tests in \Rlogo - die Teststatistik und der p-Wert}
+\ifcollection
+\paragraph{Interpretation des t-Tests in \Rlogo - das 95\% Konfidenzintervall}
+\fi
 
 
 \Sexpr{ques_vec}
 
-<<ttest-R-01-a,  echo = FALSE>>=
+<<ttest-R-02-a,  echo = FALSE>>=
 
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
   set_names(c("treatment", "freshmatter")) %>% 
@@ -128,12 +143,12 @@ t_crit <- qt(0.975, df=ttest$parameter) |> round(2)
 @
 
 Helfen Sie \Sexpr{name} bei der Interpretation des t-Tests! Sonst geht es auch für \Sexpr{name_sec[1]} und \Sexpr{name_sec[2]} nicht weiter.
-  
+
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
 \item Liegt ein signifikanter Unterschied zwischen den Gruppen vor? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Skizzieren Sie eine Abbildung in der Sie $T_{D}$, $Pr(D|H_0)$, $A=0.95$, sowie $T_{\alpha=5\%} = |\Sexpr{t_crit}|$ einzeichnen! \textbf{(4 Punkte)}
-\item Beschriften Sie die Abbildung! \textbf{(1 Punkt)}  
-\item Berechnen Sie den Effekt des t-Tests! \textbf{(1 Punkt)}
+\item Skizieren Sie das sich ergebende 95\% Konifidenzintervall! \textbf{(2 Punkte)}
+\item Beschriften Sie die Abbildung und das 95\% Konfidenzintervall entsprechend! \textbf{(2 Punkte)}  
+\item Interpretieren Sie den Effekt des 95\% Konifidenzintervalls! \textbf{(2 Punkte)}
 \end{enumerate}
