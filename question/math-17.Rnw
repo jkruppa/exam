@@ -16,6 +16,13 @@ avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
 \end{minipage}
@@ -23,6 +30,7 @@ avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
 \hfill
 \href{https://youtu.be/OhyuH6hzEhY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -51,7 +59,11 @@ percent <- c(60, 70, 80) %>% sample(1)
 
 @
 
-\paragraph{Ein Pfund Insekten, bitte!} 'Das wird wohl häufiger gehört werden, wenn wir die Menschheit mit Proteinen ausreichend ernähren wollen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen auf der Erde?}}.', merkt \Sexpr{name} an. Die Lerngruppe um \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} sind bei \Sexpr{name} um mal was außergewöhnliches zu essen. Um den Sinn der Nahrungsumstellung zu verdeutlichen, vergleicht \Sexpr{name} einmal Deutschland mit Nigeria. Nigeria hat eine der am schnellsten wachsenden Bevölkerungen der Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bevölkerungsreichsten Länder zählen. Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in Deutschland und ca. \Sexpr{n_nigeria} Menschen in Nigeria. Mit den Informationen wollen Sie und \Sexpr{name} mit der Überzeugungsarbeit anfangen und dann eine Prognose für den Fleischkonsum im Jahr 2050 zu treffen. \\ 
+\ifcollection
+\paragraph{Ein Pfund Insekten, bitte!} 
+\fi
+
+'Das wird wohl häufiger gehört werden, wenn wir die Menschheit mit Proteinen ausreichend ernähren wollen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen auf der Erde?}}.', merkt \Sexpr{name} an. Die Lerngruppe um \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} sind bei \Sexpr{name} um mal was außergewöhnliches zu essen. Um den Sinn der Nahrungsumstellung zu verdeutlichen, vergleicht \Sexpr{name} einmal Deutschland mit Nigeria. Nigeria hat eine der am schnellsten wachsenden Bevölkerungen der Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bevölkerungsreichsten Länder zählen. Im Jahr \Sexpr{year} leben ca. \Sexpr{n_germany} Menschen in Deutschland und ca. \Sexpr{n_nigeria} Menschen in Nigeria. Mit den Informationen wollen Sie und \Sexpr{name} mit der Überzeugungsarbeit anfangen und dann eine Prognose für den Fleischkonsum im Jahr 2050 zu treffen. \\ 
 
 Im Folgenden ist Abbildung des Fleischkonsums im Jahr \Sexpr{year} in Deutschland und Nigeria in [kg] einmal dargestellt. 
 

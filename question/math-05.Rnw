@@ -12,6 +12,13 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -19,13 +26,16 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://youtu.be/WZSxntiNF8s}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 %% --------------------------------------------------------------------
 {\tiny\textbf{Stichworte:} Kardaschow-Skala $\bullet$ Dyson-Sphäre $\bullet$ Hohlerde $\bullet$ Entropie $\bullet$ Proton $r_P = 1.7 \times 10e-15$ $\bullet$ Wasserstoff $r_H = 5.3\times 10e-11$}
 %% --------------------------------------------------------------------
 
+\ifcollection
 \paragraph{Die Dampfnudelerde}
+\fi
 
 <<>>=
 dino_years <- c(66, 65, 67, 69) |> sample(1)

@@ -14,6 +14,13 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
 \end{minipage}
@@ -21,6 +28,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/q-qYK4Chslg}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -37,8 +45,9 @@ attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
 @
 
-
+\ifcollection
 \paragraph{Event Horizon -- Am Rande des Universums}
+\fi
 
 <<>>=
 m_sun <- c(2e30, 2e28, 2e31, 2e29, 2e27) %>% sample(1)

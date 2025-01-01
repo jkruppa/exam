@@ -13,6 +13,13 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}
 \end{minipage}
@@ -20,6 +27,7 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 \hfill
 \href{https://youtu.be/wJqsNV1hOW8}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
+\if
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -95,7 +103,9 @@ ques_vec <-  c(str_c(name_sec[1], " und ", name_sec[2], " sind bei ", name, " um
   sample(1)
 @ 
 
+\ifcollection
 \paragraph{Fortgeschrittene experimentelle Designs}
+\fi
 
 \Sexpr{ques_vec}\\
 

@@ -16,6 +16,13 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}
 \end{minipage}
@@ -23,6 +30,7 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 \hfill
 \href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -41,8 +49,9 @@ attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
 @
 
-
+\ifcollection
 \paragraph{Retrocheck im TV}
+\fi
 
 <<>>=
 names <- c("Helmut", "Frida", "Elke", "Annegret", "Günther", "Thorsten") %>% sample(2)

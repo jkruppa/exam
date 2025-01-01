@@ -16,6 +16,13 @@ avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
 \end{minipage}
@@ -23,6 +30,7 @@ avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
 \hfill
 \href{https://youtu.be/Fu8kN0Uj13Y}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -42,7 +50,9 @@ attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
 
 @
 
+\ifcollection
 \paragraph{Herodot – der Schimmel aus Ivenack}
+\fi
 
 Die Lerngruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} waren auf Exkursion in Brandenburg und haben dort Folgendes erarbeitet. Während der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die Geschichten des berühmten Apfelschimmels Herodot aus Ivenack zu Gehör. Herodot lief zwar niemals Rennen, war aber eines der berühmtesten Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-jährigen Eiche aus Ivenack vor den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch lautes Wiehern, woraufhin die französische Armee den Schimmel beschlagnahmte und nach Frankreich führte\footnote{Die Quelle der Inspiration  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
   \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. Jetzt wollen die vier herausfinden: \textit{"Konnten die Ivenacker den Apfelschimmel Herodot vor dem Zugriff von Napoleon in der 1000-jährigen Eiche verstecken?"} 

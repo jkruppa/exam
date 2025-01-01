@@ -12,6 +12,13 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -19,6 +26,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://youtu.be/https://youtu.be/k2G52hMIfqk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 %% --------------------------------------------------------------------
@@ -37,7 +45,9 @@ attr_name_vec <- attr_lst[[name]]
 
 @
 
+\ifcollection
 \paragraph{Aligatorenbirnen und Blaubeeren}
+\fi
 
 <<>>=
 export_year <- c(2021, 2022, 2023, 2024) |> sample(1)

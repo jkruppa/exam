@@ -14,6 +14,15 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch 
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
 \end{minipage}
@@ -21,6 +30,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -71,7 +81,9 @@ ques_vec <- c(str_c("'Hä? Hatten wir das als Aufgabe nicht schon mal, das wir a
 
 @
 
+\ifcollection
 \paragraph{Visualisierung der linearen Regression}
+\fi
 
 \Sexpr{ques_vec}
 

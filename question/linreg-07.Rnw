@@ -1,25 +1,34 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
-  str_subset(name)
+name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
+  str_subset(str_c(name, name_sec, sep = "|"))
 jahr <- par_lst$year
 obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
+avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}
+\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/dyQlYV9nOqY}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
-\vspace{-3ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -29,7 +38,6 @@ project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektber
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -40,74 +48,37 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
                     "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
-                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
-                         "durchschnittlicher Anteil an Ton [\\%/l]",
-                         "durchschnittliche UV Einstrahlung [UV/d]"),
-             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
-                      "durchschnittliche Tagestemperatur [C/d]",
-                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
-                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
-  sample(1)
-
 y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
-                         "Trockengewicht [kg/ha]",
-                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
-                         "Proteingehalt [g/kg]"),
+                          "Chlorophyllgehalt unter Zielwert [ja/nein]",
+                          "Anzahl Läsionen auf den Blättern"),
              tier = c("Schlachtgewicht [kg]", 
-                      "Proteinanteil [\\%/kg]",
-                      "Fettgehalt [\\%/kg]",
-                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+                      "Gewichtszuwachs erreicht [ja/nein]",
+                      "Anzahl dunkle Pigmentstörungen"))[[names(obser)]] %>% 
   sample(1)
-
-n_obs <- rpois(1, 30)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <- c(str_c("'Oh! Residuen. Die waren wichtig um zu wissen, ob eine Modellierung funktioniert hat! Da schauen wir uns dann mit der Funktion \\texttt{augment()} die Werte der einzelnen Residuen an. Oder gleich den Residuenplot...da sehen wir dann... ja was eigentlich?', verkündet ", name, " stolz. Leider hat ", name, " vergessen wie der \\Rlogo Code für den Residuenplot geht. ", name, " hatte anderes im Kopf. ", sentence_name_vec$sweet_film, " Aber sowas hilft ", pronom[4], " natürlich hier nicht. Da schmeißt sich ", name, " noch ein paar ", attr_name_vec$sweet, " in den Mund und kaut los.")) |> 
+ques_vec <- c(str_c(name, " hat ", exp, " mit ", obser, " duchgeführt. Soweit so gut. Dann war ", names(name), " bei ", betreuer, ". Leider war der Schritt nicht so hilfreich.  ", sentence_name_vec$flaw, " Aber es muss ja weitergehen. ", name, " hatte dann in ", pronom[2], " Abschlusarbeit einfach zu viele Endpunkte gemessen und ist jetzt vollkommen durcheinander, welche Analyse ", names(name), " nun wie rechnen soll. Naja, dann heißt es jetzt eben ", attr_name_vec$music, " aufdrehen und darüber nachdenken, was hier eigentlich gemacht wurde. ", name, " fängt einfach an und nimmt den ersten Endpunkt ", y_val, ". Dann kann ", names(name), " sich voran arbeiten. Später dann noch raus um ", attr_name_vec$sport, " um mal zu entspannen und vielleicht ist ", name_sec, " auch da. Wäre toll.")) |> 
   sample(1)
 
 @
 
-\paragraph{Modellgüte der linearen Regression}
+\ifcollection
+\paragraph{Visualisierung des Regressionskreuzes}
+\fi
 
 \Sexpr{ques_vec}
 
-<<>>=
+\vspace{1Ex}
 
-x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
-  str_split(" ", simplify = TRUE) |> 
-  magrittr::extract(1, 1:2) |> 
-  str_c(collapse = " ")
-y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
-
-names_vec <- c(x_val, y_val) |> sample()
-
-
-data_tbl <- tibble(water = rnorm(sample(c(8:12), 1), 10, 4),
-                   drymatter = 10 + 1.5 * water + rnorm(length(water), 0, 2))
-
-fit <- lm(drymatter ~ water, data_tbl)
-
-fit %>% augment %>%
-  mutate_all(round, 1) %>%
-  select(drymatter, water, .fitted) %>%
-  mutate(resid = "") |> 
-  set_names(c(names_vec[1], names_vec[2], "$\\hat{y}$", "$\\phantom{ttttt}\\epsilon\\phantom{ttttt}$")) |> 
-  kable(booktabs = TRUE, align = "cccc", escape = FALSE) %>% 
-  kable_styling(latex_options = "hold_position", font_size = 12)
-
-@ 
-
-Leider kennt sich \Sexpr{name} mit der linearen Regression überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe!
+Leider kennt sich \Sexpr{name} mit dem Kontext der linearen Regression überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-\item Ergänzen Sie die Werte der Residuen $\epsilon$ in der obigen Tabelle! \textbf{(2 Punkte)}
-\item Zeichnen Sie den Boxplot der Residuen $\epsilon$. Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
-\item Zeichnen Sie den Residualplot. Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
-\item Gibt es auffällige Werte anhand des Residualplots? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Erklären Sie die Eigenschaft eines statistischen Modells, welche mit dem Residualplot überprüft wird! Begründen Sie Ihre Antwort anhand einer Visualisierung! \textbf{(2 Punkte)}
+\item Zeichen Sie die Zeile des Regressionskreuzes für den Endpunkt mit \underline{drei} Feldern! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
+\item Ergänzen Sie die entsprechenden statistische Methoden zur Analyse in jedem Feld! \textbf{(2 Punkte)}
+\item Formulieren Sie die Nullhypothese für die statistische Methode in jedem Feld! \textbf{(2 Punkte)}
+\item Ergänzen Sie die entsprechenden Funktionen in \Rlogo zur Analyse in jedem Feld! \textbf{(2 Punkte)}
+\item Welchen Effekt erhalten Sie in jedem Feld? Geben Sie ein Beispiel! \textbf{(2 Punkte)}
 \end{enumerate}
-

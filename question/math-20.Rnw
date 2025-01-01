@@ -16,6 +16,13 @@ avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}\hspace{-4mm}\Sexpr{avatar3file}\hspace{-4mm}\Sexpr{avatar4file}
 \end{minipage}
@@ -23,6 +30,7 @@ avatar4file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[4], "}")
 \hfill
 \href{https://youtu.be/8Pb2sKUIMyk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -42,8 +50,9 @@ attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
 @
 
 
-
+\ifcollection
 \paragraph{Höhlen \& Drachen}
+\fi
 
 <<>>=
 gender <- c("einer Ihrer Freundinnen", "einem Ihrer Freunde") %>% sample(1)

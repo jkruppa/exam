@@ -12,6 +12,14 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv 
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -20,6 +28,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -82,7 +91,9 @@ ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten 
 
 @
 
+\ifcollection
 \paragraph{Den Chi-Quadrat-Test berechnen}
+\fi
 
 \Sexpr{ques_vec}
 

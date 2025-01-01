@@ -12,6 +12,13 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -19,6 +26,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \hfill
 \href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -43,7 +51,9 @@ ques_vec <- c(str_c("Unter einem langen Schnaufen starrt ", name, " auf den wiss
 
 @
 
+\ifcollection
 \paragraph{Zerforschen eines wissenschaftlichen Datensatzes}
+\fi
 
 \Sexpr{ques_vec}\\
 

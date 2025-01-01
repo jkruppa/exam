@@ -12,6 +12,13 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -20,6 +27,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -88,7 +96,9 @@ ques_vec <-  c(str_c("'Oh, nee!', ruft ", name, " aus und rollt entnervt mit ", 
 
 @ 
 
+\ifcollection
 \paragraph{Berechnung des Compact Letter Displays (CLD) anhand der Matrix der p-Werte}
+\fi
 
 \Sexpr{ques_vec}
 

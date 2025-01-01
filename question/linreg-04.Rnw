@@ -12,6 +12,16 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -20,6 +30,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -72,7 +83,9 @@ ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wi
 
 @
 
+\ifcollection
 \paragraph{Interpretation der Ergebnisse einer Korrelationsanalyse in \Rlogo}
+\fi
 
 \Sexpr{ques_vec}
 

@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -12,14 +12,22 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/2qG1Dws0MJo}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/FjjJXkFJfIY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -27,7 +35,10 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
               er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
              str_c(pronom[6], " Hausarbeit")) |> sample(1)
+project_2 <- c("einer Abschlussarbeit", "eines Projektberichts", "einer Hausarbeit") |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+
+
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -83,32 +94,38 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Es wurde als Messwert ", y_val, " bestimmt. Jetzt starrt ", name, " mit auf die \\Rlogo Ausgabe einer zweifaktoriellen ANOVA. Leider starrt ", betreuer, " in der gleichen Art ", name, " zurück an. Es liegt anscheinend eine signifikante Interaktion vor? 'Das wird ein langer Nachmmittag.', denkt ", names(name), " sich und kreuselt ", pronom[3], " Mund. 'Und was machen wir jetzt?' entfährt es ", pronom[4], " überrascht entnervt. Immerhin war geht es ja um ", project, ". ", name, " hätte doch nichts mit ", obser, " machen sollen. ", obser, " -- was soll das auch bedeutendes sein? Eigentlich wollte ", name, " nachher noch einen Film schauen. ", sentence_name_vec$animal_film),
-               str_c("Es ist schon kurz nach fünf und ", name, " wird langsam nervös. ", name, " wollte heute Abend noch ", pronom[6], " E-Sport Qualifikation schauen und dann zum Sport. Stattdessen versucht ", betreuer, " die Ausgabe der zweifaktoriellen ANOVA zu visualieren und zu überprüfen, ob es mit der Visualisierung der Daten als Boxplots zusammenpasst. Es liegt anscheinend eine signifikante Interaktion vor? ", name, " hatte ", ort, " ", exp, " mit ", obser, " durchgeführt. Es gab dabei zwei Behandlungen. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". So kompliziert kann das jetzt doch nicht sein! Eigentlich wollte ", name, " nachher noch zum Sport. ", sentence_name_vec$sport),
-               str_c("'Mit der zweifaktoriellen ANOVA lässt sich die Interaktion zwischen den beiden Behandlungen nachweisen!', ", betreuer, " scheint die zweifaktoriellen ANOVA zu verstehen. Warum jetzt ", names(name), " jetzt nochmal alles wiederkäuen muss, wird ", name, " echt nicht so klar. Wenn es doch so klar ist? ", name, " war ", ort, " und hatte dort ", exp, " mit ", obser, " durchgeführt. Die Komune wo ", names(name), " untergekommen war, war cool gewesen. Nur jetzt muss eben das Experiment fertig ausgewertet werden. Es liegt anscheinend eine signifikante Interaktion vor? ", name, " hatte zwei Behandlungen auf ", obser, " angewendet. Einmal ", x1_val, " sowie als zweite Behandlung ", x2_val, ". Gemessen wurde der Messwert ($Y$) ", y_val, ". Jetzt muss das hier zu einem Ende kommen! Eigentlich wollte ", name, " nachher noch einen Film schauen. ", sentence_name_vec$animal_film)) |> 
+ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. ", name, " schaut konzentriert auf die Formeln der ANOVA und des t-Tests. In ", pronom[1], " Experiment wurde als Messwert ", y_val, " bestimmt. ", sentence_name_vec$flaw, " Dann wäre es nicht noch komplizierter. Was war da jetzt nochmal der Zusammenhang zwischen den beiden statistischen Verfahren? Beide Verfahren haben ja irgendwie etwas miteinander zu tun und ", betreuer, " möchte das jetzt auch noch verstehen. Muss das nicht eigentlich klar sein? Immerhin ist ", name, " nicht die erste Betreuung ", project_2, ". Immerhin hat ", names(name), " die beiden Formeln vorliegen. ", sentence_name_vec$sweet_film, ""),
+               str_c(name, " schaut konzentriert auf die Formeln der ANOVA und des t-Tests. In ", pronom[1], " Experiment wurde als Messwert ", y_val, " bestimmt. ", sentence_name_vec$flaw, " Dann wäre es nicht noch komplizierter. In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Beide Verfahren müssen etwas miteinander zu tun haben und ", betreuer, " möchte das jetzt auch noch verstehen. Im Hintergrund läuft leise ", attr_name_vec$film, " auf ", pronom[1], " Second Screen. Immerhin hat ", names(name), " die beiden Formeln vorliegen."),
+               str_c(str_replace(attr_name_vec$animal, "^\\w{1}", toupper), " dreht durch und verwüstet ", name, "s Palme zu kleinen Schnetzeln. Aber dafür hat ", names(name), " jetzt keine Zeit. ", name, " muss verstehen wie die Formeln der ANOVA und des t-Tests miteinander zusammen hängen und was das verbindene Konzept ist. ", name, " dreht ", attr_name_vec$music, " lauter, damit ", attr_name_vec$animal, " sie nicht mehr stört. Die Palme leidet still. Was hat ", name, " eigentlich gemacht? In ", exp, " wurden ", obser, " mit der Behandlung ", x1_val, " sowie der Behandlung ", x2_val, " untersucht. Das hilft der Palme auch nicht mehr. Aber das ist nicht das einzige Problem von ", name, ". ", sentence_name_vec$flaw)) |> 
   sample(1)
+
+
 
 @ 
 
-\paragraph{Interaktion in der zweifaktoriellen ANOVA}
+\ifcollection
+\paragraph{Zusammenhang zwischen der ANOVA und dem t-Test}
+\fi
 
 \Sexpr{ques_vec}
 
-\vspace{1ex}
+\begin{graybox}{Gegebene Formeln}
+\begin{center}
+  \begin{tabular}{cc}
+    $F_{D} = \cfrac{MS_{treatment}}{MS_{error}}$ & $T_{D} = \cfrac{\bar{y}_1 - \bar{y}_2}{s_p \cdot \sqrt{2/n_g}}$\\
+  \end{tabular}
+\end{center}
+\end{graybox}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{betreuer} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe, sonst wird es heute Abend mit seinem Hobby \Sexpr{attr_name_vec$hobby} nichts mehr! 
+Leider kennen sich \Sexpr{name} mit dem Zusammenhang zwischen der ANOVA und dem t-Test nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
-\item Visualisieren Sie folgende mögliche Interaktionen zwischen den Behandlungen! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
-\begin{enumerate}
-\item \underline{Keine} Interaktion liegt vor.
-\item Eine \underline{schwache} Interaktion liegt vor. 
-\item Eine \underline{starke} Interaktion liegt vor. 
-\end{enumerate}
-\item Erklären Sie den Unterschied zwischen den verschiedenen Interaktionen! \textbf{(2 Punkte)}
-\item Welche statistische Maßzahl betrachten Sie für die Bewertung der Interaktion? \textbf{(1 Punkt)}
-\item Skizzieren Sie die notwendigen Funktionen in \Rlogo für eine Post-hoc Analyse! \textbf{(2 Punkte)} 
-\item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist dann das weitere Vorgehen? Berücksichtigen Sie auch die Funktion \texttt{emmeans()}! \textbf{(2 Punkte)}
+\item Welche statistische Maßzahl testet der t-Test, welche die ANOVA? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Erklären Sie den Zusammenhang zwischen der $F_{D}$ Statistik und $T_{D}$ Statistik! \textbf{(2 Punkte)}
+\item Visualisieren Sie in einer 2x2 Tafel den Zusammenhang von $MS_{treatment}$ und $MS_{error}$! \textbf{(2 Punkte)}
+\item Beschriften Sie die erstellte 2x2 Tafel mit \underline{signifikant} und \underline{nicht signifikant}! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Nennen Sie das numerische Minimum der F-Statistik $F_D$! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Wenn die F-Statistik $F_D$ minimal ist, welche Aussage erhalten Sie über die Nullhypothese? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

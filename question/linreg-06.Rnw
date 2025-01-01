@@ -12,6 +12,16 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -20,6 +30,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://youtu.be/2QJa19ZwLls}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -34,7 +45,9 @@ ques_vec <- c(str_c("Der Bildschirm strahlt blau in das Gesicht von ", name, ". 
 
 @
 
+\ifcollection
 \paragraph{Schätzen der Korrelation und des Bestimmtheitsmaßes}
+\fi
 
 \Sexpr{ques_vec}
 \vspace{2Ex}

@@ -14,6 +14,13 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulemathstat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
 \end{minipage}
@@ -21,6 +28,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \hfill
 \href{https://youtu.be/iCQogS6KhPM}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\fi
 %% --------------------------------------------------------------------
 
 %% --------------------------------------------------------------------
@@ -42,7 +50,9 @@ attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
 @
 
+\ifcollection
 \paragraph{Das Fermi Paradoxon}
+\fi
 
 <<>>=
 n_sonde <- c("drei", "vier", "zwei") %>% sample(1)

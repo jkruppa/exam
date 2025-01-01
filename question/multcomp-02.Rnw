@@ -12,6 +12,16 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -20,6 +30,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://youtu.be/xq29O8qDrg0}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -66,16 +77,7 @@ groups_vec <- x_val %>%
   str_split("\\(|\\s|,|\\)", simplify = TRUE) %>% 
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
-gen_data <- function(...){
-  n_vec <- c(4:8) %>% sample(1)
-  mean_vec <- c(8, 10, 12, 13) %>% sample(1)
-  sd_vec <- c(1, 1.5, 2) %>% sample(1)
-  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
-    mutate(temp = round(temp, 1)) %>% 
-    set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
-    gather 
-  return(temp_tbl)
-}
+
 
 ques_vec <-  c(str_c(name, " sitzt schon etwas länger bei ", betreuer, ". So langsam macht ", name, " sich Gedanken, ob ", names(name), " nicht doch mal anmerken sollte, dass ", names(name), " von CLD noch nie was gehört hat. Aber noch kann gelauscht werden, ein Ende ist erstmal nicht in Sicht! ", name, " hatte in ", project, " ", exp, " durchgeführt. Deshalb sitzt ", names(name), " hier. Also eigentlich nein, deshalb nicht. ", name, " will fertig werden. Hat ", names(name), " sich doch mit ", x_val, " und ", y_val, " schon eine Menge angeschaut. ", name, " beugt sich leicht nach vorne. Nein, doch keine Pause. Weiter warten auf eine Lücke im Fluss..."),
                str_c(name, " hatte in ", project, " ", exp, " durchgeführt. Soweit so gut. Dabei hat ", names(name), " sich mit ", obser, " beschäftigt. Angeblich der neueste heiße Kram... aber das ist wiederum was anderes. So richtig mitgenommen hat ", name, " das Thema dann doch nicht. Hat ", names(name), " sich doch mit ", x_val, " und ", y_val, " schon eine Menge an Daten angeschaut. Nach ", betreuer, " soll ", names(name), " nun ein CLD bestimmen. Weder weiß ", names(name), " was ein CLD ist, noch war ", pronom[7], " erster Gedanke mit Köln und die LGBTQ Community richtig..."),
@@ -86,31 +88,27 @@ ques_vec <-  c(str_c(name, " sitzt schon etwas länger bei ", betreuer, ". So la
 
 @ 
 
+\ifcollection
 \paragraph{Visualisierung des Compact Letter Displays (CLD)}
+\fi
 
 \Sexpr{ques_vec}
 
 <<multcomp-03-a, echo = FALSE>>=
 
-data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
-  set_names(c("treatment", "freshmatter")) %>% 
-  select(treatment, freshmatter) |> 
-  mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
-  sample_n(size = nrow(.)) 
+cld_vec <- lst(c("A", "AB", "B", "C"),
+             c("A", "A", "AB", "B"),
+             c("A", "AB", "AB", "B"),
+             c("A", "B", "BC", "C"),
+             c("A", "B", "B", "C")) |> 
+  sample(1) |> unlist() |> sample()
 
-pacman::p_load(rcompanion, magrittr, multcompView)
-cld_vec <- pairwise.t.test(data_tbl$freshmatter, data_tbl$treatment,
-                p.adjust.method = "none") %>% 
-  extract2("p.value") %>% 
-  fullPTable() %>%
-  multcompLetters()
-
-cld_vec$Letters |> 
-  enframe(name = "Behandlung", value = "Compact letter display") |> 
+tibble(Behandlung = groups_vec,
+       cld_vec) |> 
+  set_names(c("Behandlung", "Compact letter display")) |> 
   kable(booktabs = TRUE, align = "c") %>% 
       row_spec(0,bold=TRUE) |> 
   kable_styling(latex_options = "hold_position", font_size = 10)
-
 @
 
 Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!

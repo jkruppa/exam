@@ -12,6 +12,14 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
 \Sexpr{avatar1file}
 \end{minipage}
@@ -20,6 +28,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
 \vspace{-3ex}
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
@@ -84,7 +93,9 @@ ques_vec <-  c(str_c(name, " sitzt schon etwas länger bei ", betreuer, ". So la
 
 @ 
 
+\ifcollection
 \paragraph{Berechnung des Compact Letter Displays (CLD) anhand von t-Tests}
+\fi
 
 \Sexpr{ques_vec}
 
@@ -117,9 +128,9 @@ Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} ü
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie die statistischen Hypothesen! \textbf{(1 Punkt)}
 \item Zeichnen Sie die sich ergebenden Barplots! \textbf{(1 Punkt)}
-\item Berechnen Sie die Matrix der $p$-Werte anhand von Student t-Tests! \textbf{(4 Punkte)}
+\item Berechnen Sie die Matrix der $p$-Werte anhand von Student t-Tests! \textit{Nutzen Sie hierfür ein globales $s_p$ sowie eine gemittelte Fallzahl $n$ für die Berechnung der Teststatistik!} \textbf{(4 Punkte)}
 \item Ergänzen Sie das \textit{Compact letter display (CLD)} zu den gezeichneten Barplots! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
-\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name} und \Sexpr{name_sec[1]}! \textbf{(1 Punkt)} 
+\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name}! \textbf{(1 Punkt)} 
 \end{enumerate}
 
 
