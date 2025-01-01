@@ -27,13 +27,13 @@ ques_vec <- c("In \\Rlogo müssen die Daten eines Experiments in einem bestimmte
 
 <<mc-balance-01, results='asis', echo = FALSE>>=
 
-right_vec <- c("In den Zeile finden sich die einzelnen Beobachtungen und in den Spalten die gemessenen Variablen ($Y$) sowie die experimentellen Faktoren $X$.",
-               "In den Spalten finden sich die experimentellen Faktoren $X$ sowie die Messwerte $Y$. In den Zeilen finden sich dann die einzelnen Beobachtungen.",
-               "Wichtig ist, dass sich in den Zeilen die Beobachtungen finden und in den Spalten die Variablen, wie die Messwerte $Y$ sowie die experimentellen Faktoren $X$.") |> sample(1)
+right_vec <- c("In den Zeile finden sich die einzelnen Beobachtungen und in den Spalten die gemessenen Variablen ($Y$) sowie die experimentellen Faktoren ($X$).",
+               "In den Spalten finden sich die experimentellen Faktoren ($X$) sowie die Messwerte ($Y$). In den Zeilen finden sich dann die einzelnen Beobachtungen.",
+               "Wichtig ist, dass sich in den Zeilen die Beobachtungen finden und in den Spalten die Variablen, wie die Messwerte ($Y$) sowie die experimentellen Faktoren ($X$).") |> sample(1)
 
-wrong_vec <- c("In den Spalten finden sich die einzelnen Beobachtungen und in den Zeilen die gemessenen Variablen ($Y$) sowie die experimentellen Faktoren $X$.",
-               "Wichtig ist, dass sich in den Zeilen die Variablen finden, wie die Messwerte $Y$ sowie die experimentellen Faktoren $X$. In den Spalten stehen die Variablen.",
-               "In den Zeilen finden sich die experimentellen Faktoren $X$ sowie die Messwerte $Y$. In den Spalten finden sich dann die einzelnen Beobachtungen.",
+wrong_vec <- c("In den Spalten finden sich die einzelnen Beobachtungen und in den Zeilen die gemessenen Variablen ($Y$) sowie die experimentellen Faktoren ($X$).",
+               "Wichtig ist, dass sich in den Zeilen die Variablen finden, wie die Messwerte ($Y$) sowie die experimentellen Faktoren ($X$). In den Spalten stehen die Variablen.",
+               "In den Zeilen finden sich die experimentellen Faktoren ($X$) sowie die Messwerte ($Y$). In den Spalten finden sich dann die einzelnen Beobachtungen.",
                "In den Spalten sind die Beobachtungen in den Zeilen die Variablen, wie die Messwerte und experiementellen Faktoren.",
                "Das Long-Format hat die gleiche Anzahl an Spalten wie auch an Zeilen.",
                "Das Long-Format beschreibt in den Spalten die Beobachtungen sowie in den Zeilen die \\textit{unabhängigen} Beobachtungen.") %>%

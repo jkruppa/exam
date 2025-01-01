@@ -9,7 +9,7 @@ pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
-set.seed(20240915) ## savety seed 
+set.seed(20250101) ## savety seed 
 ##
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
@@ -203,7 +203,7 @@ sentence_func <- \(name, pronom, attr_vec){
 \input{\Sexpr{init_path}}
 % -----------------------------------------------------------------------
 \begin{document}
-\date{Wintersemester 2024/25 
+\date{\examsemester
 \vfill
 \begin{center}
 \includegraphics[width = 1.9cm]{avatare/Alex}\hspace{-8mm}

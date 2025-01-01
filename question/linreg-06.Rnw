@@ -40,7 +40,7 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <- c(str_c("Der Bildschirm strahlt blau in das Gesicht von ", name, ". Es ist schon spät. Und das hat einen Grund. ", sentence_name_vec$sweet_film," . ", name, " überlegt, aber ", pronom[6], " Gedaken sind etwas zäh. 'Was soll das hier alles bedeuten?', fragt sich ", name, ". Irgendwie ist ", pronom[4], " nicht klar wie ", names(name), " $\\rho$-Werte oder $R^2$-Werte abschätzen soll. Alles nicht so einfach. ", sentence_name_vec$flaw, " ")) |> 
+ques_vec <- c(str_c("Der Bildschirm strahlt blau in das Gesicht von ", name, ". Es ist schon spät. Und das hat einen Grund. ", sentence_name_vec$sweet_film," . ", name, " überlegt, aber ", pronom[6], " Gedanken sind etwas zäh. 'Was soll das hier alles bedeuten?', fragt sich ", name, ". Irgendwie ist ", pronom[4], " nicht klar wie ", names(name), " $\\rho$-Werte oder $R^2$-Werte abschätzen soll. Alles nicht so einfach. ", sentence_name_vec$flaw, " ")) |> 
   sample(1)
 
 @
