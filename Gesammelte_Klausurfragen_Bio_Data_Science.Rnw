@@ -38,7 +38,6 @@ ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
 anova_questions_vec <- str_subset(questions_vec, "/anova-", negate = FALSE)
 chisquare_questions_vec <- str_subset(questions_vec, "/chisquare-", negate = FALSE)
 linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
-## nonpar_questions_vec <- str_subset(questions_vec, "/nonpar-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
@@ -204,7 +203,9 @@ sentence_func <- \(name, pronom, attr_vec){
 \input{\Sexpr{init_path}}
 % -----------------------------------------------------------------------
 \begin{document}
-\date{\examsemester
+\date{
+\vspace{1.5Ex}
+\textbf{\Large\textcolor{red}{>>\underline{\underline{\examsemester}}<<}}
 \vfill
 \begin{center}
 \includegraphics[width = 1.9cm]{avatare/Alex}\hspace{-8mm}

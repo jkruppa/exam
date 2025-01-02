@@ -27,7 +27,7 @@ avatar3file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[3], "}")
 \hfill
 \href{https://youtu.be/wJqsNV1hOW8}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
-\if
+\fi
 %% --------------------------------------------------------------------
 
 <<>>=
