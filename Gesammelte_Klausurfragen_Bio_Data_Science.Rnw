@@ -660,20 +660,6 @@ Das forschende Lernen basiert zum einen auf den folgenden wissenschaftlichen Ver
 
 \textit{In der Prüfung erhalten Sie \underline{keinen Auszug} der wissenschaftlichen Veröffentlichung! Die Veröffentlichungen werden als \underline{bekannt} in der Prüfung vorgesetzt. Sie haben sich vorab Notizen und Anmerkungen auf Ihrem Spickzettel gemacht.}
 
-\subsection*{Zerforschen eines wissenschaftlichen Datensatzes}
-
-Das forschende Lernen basiert zum anderen auf den folgenden wissenschaftlichen Datensätzen und deren vertiefende Analyse werden als bekannt vorausgesetzt. Die Datensätze werden über ILIAS bereitgestellt.\\
-
-\begin{itemize}[noitemsep]
-\item \texttt{salad\_fert\_weight.xlsx} % Gruppenvergleich
-\item \texttt{weight\_gain\_pig.xlsx} % Regression - Prädiktion
-\item \texttt{flowercolor\_data.xlsx} % Regression - Kausal
-\item \texttt{chickentype\_class.xlsx} % Clusteranalyse -> kann raus
-\end{itemize}
-
-\textit{In der Prüfung erhalten Sie \underline{keinen Auszug} aus den wissenschaftlichen Daten. Die Datensätze werden als \underline{bekannt} in der Prüfung vorgesetzt. Sie haben sich vorab Notizen und Anmerkungen auf Ihrem Spickzettel gemacht.}
-
-
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(forsch_lern_questions_vec[1])} 
