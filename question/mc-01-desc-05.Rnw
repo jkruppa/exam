@@ -5,6 +5,7 @@
 \begin{flushright}
 \tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
+\exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
 \exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
@@ -16,57 +17,41 @@
 
 
 <<>>=
-ques_vec <- c("Im Folgenden sehen Sie ein Normalverteilung dargestellt. Welche Aussage zu der Normalvererteilung und der Standardabweichung $\\sigma$ ist richtig?",
-              "Die Normalverteilung wird durch den Mittelwert und die Standardabweichung definiert. Welche Aussage im Bezug zur Standardabweichung in einer Normalverteilung ist richtig?",
-              "In der hier dargestellten Abbildung sehen Sie eine Normalverteilung mit einem Mittelwert $\\mu$ von 0. Welche Aussage zu der Standardabweichung in der Abbildung ist richtig?") |>  sample(1)
+type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
+plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
+           "Brokoli") %>% sample(1)
+
+ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von ', plant, ' durchgeführt haben, berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
+              str_c('In Ihrer Abschlussarbeit zu ', plant, ' finden Sie aufeinmal seltsame Daten. Jedenfalls kommt Ihnen das so vor. Daher berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
+              str_c('Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, ' in Ihren Feldexperiment zu Leistungssteigerung von ', plant, '.  Welche Aussage ist richtig?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
-<<mc-distribution-02-a, results='asis', echo = FALSE, fig.height = 1.5, fig.width = 5, fig.align = "center", message = FALSE>>=
-
-ggplot(data.frame(x = c(-3.25, 3.25)), aes(x)) +
-  theme_minimal() +
-  #geom_vline(xintercept = 0) +
-  geom_segment(x = 0, y = -0.1, xend = 0, yend = 0.4) +
-  geom_segment(x = -3.25, y = 0, xend = 3.25, yend = 0) +
-  geom_segment(x = -2, y = 0, xend = -2, yend = 0.055, color = "black") +
-  geom_segment(x = -1, y = 0, xend = -1, yend = 0.24, color = "black") +
-  geom_segment(x = 1, y = 0, xend = 1, yend = 0.24, color = "black") +
-  geom_segment(x = 2, y = 0, xend = 2, yend = 0.055, color = "black") +
-  stat_function(fun = dnorm, linewidth = 1) + 
-  scale_x_continuous(breaks = c(-2, -1, 0, 1, 2), 
-                     labels = c(expression(-2*sigma), 
-                                expression(-1*sigma), 0, 
-                                expression(1*sigma), 
-                                expression(2*sigma))) +
-  theme(axis.text = element_text(size = 12),
-        axis.text.y = element_blank()) +
-  labs(x = "", y = "") 
-
-@
+<<mc-desc-07a, results='asis', echo = FALSE>>=
 
 
-<<mc-distribution-02-b, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Fläche zwischen $-2\\sigma$ und $2\\sigma$ ist 0.95 und 95\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Verteilung.',
-                'Die Fläche zwischen $-1\\sigma$ und $1\\sigma$ ist 0.68 und 68\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Abbildung.',
-               'Es liegen 95\\% der Beobachtungen zwischen $\\bar{y}\\pm 2 \\sigma$. Angezeigt durch die Fläche zwischen $-2\\sigma$ und $2\\sigma$ in der obigen Verteilung.',
-               'Es liegen 68\\% der Beobachtungen zwischen $\\bar{y}\\pm 1 \\sigma$. Angezeigt durch die Fläche zwischen $-1\\sigma$ und $1\\sigma$ in der obigen Abbildung.') |> sample(1)
+right_1_vec <- c('Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
+                 'Wenn sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor.',
+                 'Der Mittelwert und der Median sollten gleich sein, wenn keine Outlier in den Daten vorliegen. ') |> sample(1)
+right_2_vec <- c('Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
+                 'Wenn sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
+                 'Der Mittelwert und der Median sollten sich unterscheiden sein, wenn Outlier in den Daten vorliegen. ') |> sample(1)
 
 
-wrong_vec <- c('Die Fläche rechts von $2\\sigma$ ist der p-Wert mit $Pr(D|H_0)$ in der obigen Abbildung.',
-               'Die Fläche links von $-2\\sigma$ ist der p-Wert mit $Pr(D|H_0)$ in der obigen Abbildung.',
-               'Die Fläche zwischen $-2\\sigma$ und $2\\sigma$ ist 0.68 und 68\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Verteilung.',
-               'Die Fläche zwischen $-1\\sigma$ und $1\\sigma$ ist 0.95 und 95\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Verteilung.',
-               'Die Fläche unter der Kurve entspricht dem Signifikanzniveau $\\alpha$ von 5\\%. Damit ist die Standardabweichung $\\sigma$ gleich 1 in der obigen Abbildung.',
-               'Die Fläche unter der Kurve ist 1, wenn die Nullhypothese falsch ist. Wenn die Nullhypothese gilt, dann ist die Fläche $1-\\alpha$. Somit ergibt sich auch eine Standardabweichung $\\sigma$ mit $\\alpha$ gleich 0.05 in beiden Fällen.',
-               'Dargestellt ist eine Standardnormalverteilung.')  %>%
-  sample(4)
+wrong_vec <- c('Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
+               'Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
+               'Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median müssen gleich sein.',
+               'Wenn sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
+               'Wenn sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.',
+               'Der Mittelwert und der Median sollten gleich sein, wenn Outlier in den Daten vorliegen. ') %>%
+  sample(3)
 
-questions_vec <- c(right_vec,
+questions_vec <- c(right_1_vec, right_2_vec,
                    wrong_vec) %>%
   sample
+
 
 
 @
