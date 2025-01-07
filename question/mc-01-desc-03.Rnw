@@ -28,19 +28,19 @@ quest_vec <- c(str_c("Um die ", var_vec, " zu berechnen müssen wir folgende Rec
 
 <<mc-desc-06, results='asis', echo = FALSE>>=
 
-right_1_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl teilen.',
-                 'Wir berechnen erst den Mittelwert und dann die quadratischen Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl.',
-                 'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend teilen wir durch die Fallzahl.') |> sample(1)
+right_1_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl $(n-1)$ teilen.',
+                 'Wir berechnen erst den Mittelwert und dann die quadratischen Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl $(n-1)$.',
+                 'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend teilen wir durch die Fallzahl ($n-1$).') |> sample(1)
 
-right_2_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl teilen, dann die Wurzel ziehen.',
-                 'Wir berechnen erst den Mittelwert und dann die quadratischen Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl. Als letzten Schritt ziehen wir die quadratische Wurzel.',
-                 'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend teilen wir durch die Fallzahl. Nicht zu vergessen, am Ende dann noch die Wurzel zu ziehen.') |> sample(1)
+right_2_vec <- c('Den Mittelwert berechen, dann die quadratischen Abstände zum Mittelwert aufsummieren und durch die Fallzahl $(n-1)$ teilen, dann die Wurzel ziehen.',
+                 'Wir berechnen erst den Mittelwert und dann die quadratischen Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl $(n-1)$. Als letzten Schritt ziehen wir die quadratische Wurzel.',
+                 'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend teilen wir durch die Fallzahl $(n-1)$. Nicht zu vergessen, am Ende dann noch die Wurzel zu ziehen.') |> sample(1)
 
-wrong_vec <- c('Den Mittelwert berechen, dann die absoluten Abstände zum Mittelwert aufsummieren',
-              'Den Median berechen, dann die quadratischen Abstände zum Median aufsummieren, dann die Wurzel ziehen.',
-              'Den Mittelwert berechnen und die Abstände quadrieren. Die Summe mit der Fallzahl multiplizieren.',
-              'Wir berechnen erst den Mittelwert und dann die absoluten Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl.',
-              'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend subtrahieren wir die Fallzahl.') %>%
+wrong_vec <- c('Den Mittelwert berechen, dann die absoluten Abstände zum Mittelwert aufsummieren. Die Fallzahl $(n-1)$ entsprechend gewichten.',
+              'Den Median berechen, dann die quadratischen Abstände zum Median aufsummieren, dann die Wurzel ziehen. Am Ende durch die Fallzahl ($n-1$) teilen',
+              'Den Mittelwert berechnen und die Abstände quadrieren. Die Summe mit der Fallzahl $(n-1)$ multiplizieren.',
+              'Wir berechnen erst den Mittelwert und dann die absoluten Abstände zu dem Mittelwert. Diese quadratischen Abstände summieren wir auf und teilen am Ende durch die Fallzahl $(n-1)$.',
+              'Als erstes berechnen wir den Mittelwert. Dann bilden wir die Summe der quadratischen Abstände zu dem Mittelwert. Abschließend subtrahieren wir die Fallzahl $(n-1)$.') %>%
   sample(3)
 
 questions_vec <- c(right_1_vec, right_2_vec,
