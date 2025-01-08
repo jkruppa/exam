@@ -37,7 +37,7 @@ ggplot(data.frame(x = c(-3.25, 3.25)), aes(x)) +
   stat_function(fun = dnorm, linewidth = 1) + 
   scale_x_continuous(breaks = c(-2, -1, 0, 1, 2), 
                      labels = c(expression(-2*sigma), 
-                                expression(-1*sigma), 0, 
+                                expression(-1*sigma), expression(bar(y)), 
                                 expression(1*sigma), 
                                 expression(2*sigma))) +
   theme(axis.text = element_text(size = 12),

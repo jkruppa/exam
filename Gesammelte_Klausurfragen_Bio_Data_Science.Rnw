@@ -9,7 +9,7 @@ pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
-set.seed(20250101) ## savety seed 
+set.seed(20250108) ## savety seed 
 ##
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
@@ -535,7 +535,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(stat_test_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\part{Der Student t-Test, Welch t-Test \& gepaarter t-Test}
+\part{Der Student t-Test \& Welch t-Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(ttest_questions_vec[1])} 
 \clearpage
