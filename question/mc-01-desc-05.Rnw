@@ -17,13 +17,18 @@
 
 
 <<>>=
-type_vec <- c("unterscheiden sich", "unterscheiden sich nicht") %>% sample(1)
+type_vec <- c("\\underline{unterscheiden sich}", "\\underline{unterscheiden sich nicht}") %>% sample(1)
 plant <- c("Maiss", "Erbsen", "Kartoffel", "Lauch", "Erdbeeren",
            "Brokoli") %>% sample(1)
 
-ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von ', plant, ' durchgeführt haben, berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
-              str_c('In Ihrer Abschlussarbeit zu ', plant, ' finden Sie aufeinmal seltsame Daten. Jedenfalls kommt Ihnen das so vor. Daher berechnen Sie den Mittelwert und den Median. Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, '. Welche Aussage ist richtig?'),
-              str_c('Der Mittelwert $\\bar{y}$ und der Median $\\tilde{y}$ ', type_vec, ' in Ihren Feldexperiment zu Leistungssteigerung von ', plant, '.  Welche Aussage ist richtig?')) |>  sample(1)
+both_vec <- lst(c(12.1, 11.8),
+                c(9.7, 10.1),
+                c(13.8, 18.1),
+                c(21.2, 9.2)) |> sample(1) |> unlist() |> sample()
+
+ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung von ', plant, ' durchgeführt haben, berechnen Sie den Mittelwert und den Median. Der Mittelwert ist $\\bar{y}$ gleich ', both_vec[1],' t/ha und als Median ergibt sich $\\tilde{y}$ gleich ', both_vec[2],' t/ha. Welche Aussage ist richtig?'),
+              str_c('In Ihrer Abschlussarbeit zu ', plant, ' finden Sie aufeinmal seltsame Daten. Jedenfalls kommt Ihnen das so vor. Daher berechnen Sie den Mittelwert mit ', both_vec[1],' t/ha und den Median mit ', both_vec[2], ' t/ha. Der Mittelwert wird mit $\\bar{y}$ und der Median mit $\\tilde{y}$ abgekürzt. Welche Aussage ist richtig?'),
+              str_c('Sie bestimmen den Mittelwert $\\bar{y}$ mit ', both_vec[1],' t/ha und der Median $\\tilde{y}$ mit ', both_vec[2],' t/ha in Ihren Feldexperiment zu Leistungssteigerung von ', plant, '.  Welche Aussage ist richtig?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
@@ -32,20 +37,22 @@ ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung 
 
 
 
-right_1_vec <- c('Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
-                 'Wenn sich der Mittelwert und der Median unterscheiden, liegen vermutlich Outlier in den Daten vor.',
-                 'Der Mittelwert und der Median sollten gleich sein, wenn keine Outlier in den Daten vorliegen. ') |> sample(1)
-right_2_vec <- c('Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
-                 'Wenn sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
-                 'Der Mittelwert und der Median sollten sich unterscheiden sein, wenn Outlier in den Daten vorliegen. ') |> sample(1)
+right_1_vec <- c('Da sich der Mittelwert und der Median \\underline{unterscheiden}, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
+                 'Wenn sich der Mittelwert und der Median \\underline{unterscheiden}, liegen vermutlich Outlier in den Daten vor.',
+                 'Der  Mittelwert und der Median \\underline{unterscheiden} sich. Daher müssen Sie schauen, ob Sie einen Outlier in den Daten vorliegen haben.') |> sample(1)
+right_2_vec <- c('Da sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
+                 'Wenn sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich keine Outlier in den Daten vor.',
+                 'Nach der Betrachtung der Werte \\underline{unterscheiden} sich Mittelwert und Median \\underline{nicht}. Die Daten können so verwendet werden wie sie vorliegen. Es gibt keinen Outlier.') |> sample(1)
 
 
-wrong_vec <- c('Da sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
-               'Da sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
-               'Da sich der Mittelwert und der Median unterscheiden, ist der Datensatz nicht zu verwenden. Mittelwert und Median müssen gleich sein.',
-               'Wenn sich der Mittelwert und der Median unterscheiden, liegen vermutlich keine Outlier in den Daten vor.',
-               'Wenn sich der Mittelwert und der Median nicht unterscheiden, liegen vermutlich Outlier in den Daten vor.',
-               'Der Mittelwert und der Median sollten gleich sein, wenn Outlier in den Daten vorliegen. ') %>%
+wrong_vec <- c('Da sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
+               'Wenn sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich Outlier in den Daten vor.',
+               'Der  Mittelwert und der Median \\underline{unterscheiden} sich. Damit haben Sie ein schwerwiegendes Effektmaßproblem. Sie können die Annahme an die Daten nicht ablehnen.',
+               'Nach der Betrachtung der Werte \\underline{unterscheiden} sich Mittelwert und Median \\underline{nicht}. Sie haben Varianzhomogenität vorliegen. Sie können künstlich Outlier zufügen um die Daten auszuwerten.',
+               'Da sich der Mittelwert und der Median \\underline{unterscheiden}, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
+               'Da sich der Mittelwert und der Median \\underline{unterscheiden}, ist der Datensatz nicht zu verwenden. Mittelwert und Median müssen gleich sein.',
+               'Wenn sich der Mittelwert und der Median \\underline{unterscheiden}, liegen vermutlich keine Outlier in den Daten vor.',
+               'Nach Ihrer Betrachtung der Werte \\underline{unterscheiden} sich Mittelwert und Median \\underline{nicht}. Die Daten können also so nicht verwendet werden. Es gibt mindestens Outlier $n-1$ Ausreißer in den Daten.') %>%
   sample(3)
 
 questions_vec <- c(right_1_vec, right_2_vec,

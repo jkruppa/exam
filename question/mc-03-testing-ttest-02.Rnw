@@ -32,18 +32,26 @@ ques_vec <- c(str_c('Die folgende Abbildung enthält die Daten aus einer Studie 
 <<mc-testing-ttest-02, results='asis', echo = FALSE, fig.height = 2, fig.width = 3, fig.align = "center", message = FALSE>>=
 pacman::p_load(ggpattern)
 
-data_tbl <- tibble(mean = sample(c(10, 12, 15, 17, 18, 20), 2),
+mean_vec <- lst(c(10, 11),
+                c(8, 9),
+                c(13, 12),
+                c(9, 14),
+                c(6, 12),
+                c(11, 4)) |> sample(1) |> unlist()
+
+data_tbl <- tibble(mean = c(mean_vec[1], mean_vec[2]),
                    dose = c("Kontrolle", vit))
 
 mean_diff <- diff(data_tbl$mean)
 
 ggplot(data_tbl, aes(x = dose, y = mean, fill = dose)) +
-  geom_errorbar(aes(ymin = mean-round(sd(data_tbl$mean)), ymax = mean+round(sd(data_tbl$mean))),
+  geom_errorbar(aes(ymin = mean-sample(c(1, 2, 3), 1), 
+                    ymax = mean+sample(c(1, 2, 3), 1)),
                 width = 0.2, position = position_dodge(0.5)) +
   theme_minimal() +
   labs(y = "Ertrag [t/ha]", x = "Behandlung mit Mikronährstoff",
        color = "", shape = "", linetype = "") +
-  ylim(0, NA) +
+  scale_y_continuous(breaks = seq(0, 18, 2), limits = c(0, 18)) +
   geom_col_pattern(
     width = 0.5, 
     aes(pattern=dose,
