@@ -786,10 +786,10 @@ Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim statis
 
 \begin{enumerate}
 \item [\textbf{A} \msquare] Es gilt $T_D = (signal \cdot noise)^2$. Der Effekt $signal$ wird mit der Varianz $noise$ gewichtet.
-\item [\textbf{B} \msquare] Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \cfrac{signal}{noise^2}$ schreiben.
-\item [\textbf{C} \msquare] Es gilt $T_D = \cfrac{noise}{signal}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.
-\item [\textbf{D} \msquare] Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \cfrac{signal}{noise}$ schreiben.
-\item [\textbf{E} \msquare] Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $\cfrac{signal}{noise^2}$.
+\item [\textbf{B} \msquare] Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \sfrac{signal}{noise^2}$ schreiben.
+\item [\textbf{C} \msquare] Es gilt $T_D = \sfrac{noise}{signal}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.
+\item [\textbf{D} \msquare] Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \sfrac{signal}{noise}$ schreiben.
+\item [\textbf{E} \msquare] Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $\sfrac{signal}{noise^2}$.
 \end{enumerate}
 
 %% ------------------------------------------------------------
@@ -1212,6 +1212,36 @@ Welche Aussage über den t-Test im Allgmeinen ist richtig? Berücksichtigen Sie 
 \begin{flushright}
 \tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-1Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
+
+
+
+Welche Aussage über den gepaarten t-Test für verbundene Stichproben ist richtig?
+
+
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabhäängigkeit nicht mehr vorliegen haben.
+\item [\textbf{B} \msquare] Abhängige Beobachtungen müssen gesondert in einem gepaarten t-Test modelliert werden. Wenn wiederholt an dem gleichen Tier oder Pflanze gemessen wird, dann bilden wir den Quotienten zwischen den beiden Zeitpunkten. Auf den Quotienten rechnen wir den gepaarten t-Test.
+\item [\textbf{C} \msquare] Wenn die Beobachtungen unabhängig voneinander sind, rechnen wir einen gepaarten t-Test. Messen wir wiederholt an dem gleichen Tier oder Pflanze dann bilden wir das Produkt zwischen den zwei Messpunkten.
+\item [\textbf{D} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabhängig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu können.
+\item [\textbf{E} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abhängig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.
+\end{enumerate}
+
+\section{Aufgabe \hfill (2 Punkte)}
+
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-2Ex}
+\textbf{\examinhaltstart}
 \exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
 \exammodulestat $\;\bullet$
@@ -1226,7 +1256,7 @@ Welche Aussage über den t-Test im Allgmeinen ist richtig? Berücksichtigen Sie 
 
 
 
-Die folgende Abbildung enthält die Daten aus einer Studie zur Bewertung der Wirkung des Mikronährstoff Nitrat auf den Ertrag in t/ha von Weizen im Vergleich zu einer Kontrolle. Der Versuch wurde in 6 Parzellen pro Gruppe durchgeführt. Welche Aussage im Bezug auf eine statistische Auswertung ist richtig?
+In einer Studie zur Bewertung der Wirkung des Mikronährstoff Nitrat auf den Ertrag in t/ha  von Mais im Vergleich zu einer Kontrolle entstand folgende Abbildung. Der Versuch wurde in 12 Parzellen pro Gruppe durchgeführt. Welche Aussage ist im Bezug auf einen t-Test ist richtig?
 
 
 
@@ -1241,41 +1271,11 @@ Die folgende Abbildung enthält die Daten aus einer Studie zur Bewertung der Wir
 
 
 \begin{enumerate}
-\item [\textbf{A} \msquare] Der Test deutet auf einen signifikanten Unterschied hin. Der Effekt liegt vermutlich bei 1.
-\item [\textbf{B} \msquare] Es liegt ein signifikanter Unterschied vor. Der Effekt liegt bei 0.1.
-\item [\textbf{C} \msquare] Nach Betrachtung des Barplots liegt kein signifikanter Unterschied vor. Der Effekt kann nicht bei einem t-Test aus Barplots bestimmt werden.
-\item [\textbf{D} \msquare] Die Barplots deuten auf kein signifikanten Unterschied. Der Effekt liegt vermutlich bei 1.
-\item [\textbf{E} \msquare] Die Barplots deuten auf keinen signifikanten Unterschied. Der Effekt liegt vermutlich bei 1. Wir müssen aber einen Posthoc-Test rechnen um den Effekt wirklich bestimmen zu können.
-\end{enumerate}
-
-\section{Aufgabe \hfill (2 Punkte)}
-
-%% --------------------------------------------------------------------
-\ifcollection
-\begin{flushright}
-\tiny\vspace{-2Ex}
-\textbf{\examinhaltstart}
-\exammodulestatversuch $\;\bullet$
-\exammodulebiostat
-\vspace{-1Ex}
-\end{flushright}
-\fi
-%% --------------------------------------------------------------------
-
-
-
-
-
-In Ihrer Abschlussarbeit betrachten Sie die Effekte von einer Behandlung vor und nach der Gabe eines Vitamins. Sie müssen einen gepaarten t-Test rechnen. Welche Aussage ist richtig?
-
-
-
-\begin{enumerate}
-\item [\textbf{A} \msquare] Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet dafür eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.
-\item [\textbf{B} \msquare] Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabhängig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu können.
-\item [\textbf{C} \msquare] Abhängige Beobachtungen müssen gesondert in einem gepaarten t-Test modelliert werden. Wenn wiederholt an dem gleichen Tier oder Pflanze gemessen wird, dann bilden wir den Quotienten zwischen den beiden Zeitpunkten. Auf den Quotienten rechnen wir den gepaarten t-Test.
-\item [\textbf{D} \msquare] Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabhäängigkeit nicht mehr vorliegen haben.
-\item [\textbf{E} \msquare] Wenn die Beobachtungen unabhängig voneinander sind, rechnen wir einen gepaarten t-Test. Messen wir wiederholt an dem gleichen Tier oder Pflanze dann bilden wir das Produkt zwischen den zwei Messpunkten.
+\item [\textbf{A} \msquare] Der Effekt und die Signifikanz lassen sich nicht aus Barplots abschätzen. Höchtens der Effekt als relativer Unterschied zwischen der Höhe der Barplots. Standard ist der mediane Unterschied aus Boxplots.
+\item [\textbf{B} \msquare] Es liegt kein signifikanter Unterschied vor. Der Effekt liegt bei -7.
+\item [\textbf{C} \msquare] Die Barplots deuten auf einen signifikanten Unterschied. Der Effekt liegt vermutlich bei -7 unter einer groben Abschätzung. Wir müssen aber eine ANOVA rechnen um den Effekt wirklich bestimmen zu können.
+\item [\textbf{D} \msquare] Die Barplots deuten auf keinen signifikanten Unterschied. Der Effekt liegt vermutlich bei -7. Wir müssen aber einen Posthoc-Test rechnen um den Effekt wirklich bestimmen zu können.
+\item [\textbf{E} \msquare] Der Test deutet auf einen signifikanten Unterschied hin. Der Effekt liegt vermutlich bei -7.
 \end{enumerate}
 
 \section{Aufgabe \hfill (2 Punkte)}
@@ -5696,7 +5696,7 @@ Leider kennen sich die Vier nicht so gut mit der Berechnung aus! Daher brauchen 
 \clearpage
 % ----------------------------------------------------------------------- 
 
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  

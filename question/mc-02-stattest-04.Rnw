@@ -24,19 +24,19 @@ ques_vec <- c('Betrachten wir die Teststatistik aus einem abstrakteren Blickwink
 
 <<mc-statistisches-testen-05, results='asis', echo = FALSE>>=
 
-right_vec <- c('Es gilt $T_D = \\cfrac{signal}{noise}$. Der Effekt $signal$ wird mit der Varianz $noise$ gewichtet.',
-               'Wir gewichten den Effekt $signal$ mit der Varianz $noise$ und erhalten $T_D = \\cfrac{signal}{noise}$.',
-               'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \\cfrac{signal}{noise}$ schreiben.') |> sample(1)
+right_vec <- c('Es gilt $T_D = \\sfrac{signal}{noise}$. Der Effekt $signal$ wird mit der Varianz $noise$ gewichtet.',
+               'Wir gewichten den Effekt $signal$ mit der Varianz $noise$ und erhalten $T_D = \\sfrac{signal}{noise}$.',
+               'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \\sfrac{signal}{noise}$ schreiben.') |> sample(1)
 
 wrong_vec <- c('Es gilt $T_D = signal \\cdot noise$. Der Effekt $signal$ wird mit der Varianz $noise$ gewichtet.',
-               'Es gilt $T_D = \\cfrac{noise}{signal}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.',
-               'Es gilt $T_D = \\cfrac{signal}{noise^2}$. Der Effekt $signal$ wird mit der quadratischen Varianz $noise$ gewichtet.',
+               'Es gilt $T_D = \\sfrac{noise}{signal}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.',
+               'Es gilt $T_D = \\sfrac{signal}{noise^2}$. Der Effekt $signal$ wird mit der quadratischen Varianz $noise$ gewichtet.',
                'Es gilt $T_D = (signal \\cdot noise)^2$. Der Effekt $signal$ wird mit der Varianz $noise$ gewichtet.',
-               'Es gilt $T_D = \\cfrac{signal}{noise}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.',
-               'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $T_D = \\cfrac{signal}{noise}$.',
-               'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $\\cfrac{signal}{noise^2}$.',
+               'Es gilt $T_D = \\sfrac{signal}{noise}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.',
+               'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $T_D = \\sfrac{signal}{noise}$.',
+               'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $\\sfrac{signal}{noise^2}$.',
                'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = signal \\cdot noise$ schreiben.',
-               'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \\cfrac{signal}{noise^2}$ schreiben.') %>%
+               'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \\sfrac{signal}{noise^2}$ schreiben.') %>%
   sample(4)
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  8 JAN 2025 19:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.10.11)  8 JAN 2025 20:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,7 +809,49 @@ Package: fp-upn 1996/10/21
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
-)) (./defs.tex)
+))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xfrac/xfrac.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2021-02-18 L3 programming layer (loader) 
+
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count312
+\l__pdf_internal_box=\box70
+))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty
+Package: l3keys2e 2021-03-12 LaTeX2e option processing using LaTeX3 keys
+) (/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+)
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-2020-10-
+01.sty
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.
+tex)))
+(/usr/local/texlive/2021/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y
+Package: xtemplate 2021-03-12 L3 Experimental prototype document functions
+\l__xtemplate_tmp_dim=\dimen288
+\l__xtemplate_tmp_int=\count313
+\l__xtemplate_tmp_muskip=\muskip17
+\l__xtemplate_tmp_skip=\skip71
+)
+Package: xfrac 2021-03-12 L3 Experimental split-level fractions
+\l__xfrac_slash_box=\box71
+\l__xfrac_tmp_box=\box72
+\l__xfrac_denominator_bot_sep_dim=\dimen289
+\l__xfrac_numerator_bot_sep_dim=\dimen290
+\l__xfrac_numerator_top_sep_dim=\dimen291
+\l__xfrac_slash_left_sep_dim=\dimen292
+\l__xfrac_slash_right_sep_dim=\dimen293
+\l__xfrac_slash_left_muskip=\muskip18
+\l__xfrac_slash_right_muskip=\muskip19
+
+Package xtemplate Info: Declaring object type 'xfrac' taking 3 argument(s) on
+(xtemplate)             line 80.
+
+) (./defs.tex)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2020/10/09 version 4.42 text color boxes
 
@@ -827,19 +869,19 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count312
+\etb@tempcnta=\count314
 )
-\tcb@titlebox=\box70
-\tcb@upperbox=\box71
-\tcb@lowerbox=\box72
-\tcb@phantombox=\box73
-\c@tcbbreakpart=\count313
-\c@tcblayer=\count314
-\c@tcolorbox@number=\count315
-\tcb@temp=\box74
-\tcb@temp=\box75
-\tcb@temp=\box76
+\tcb@titlebox=\box73
+\tcb@upperbox=\box74
+\tcb@lowerbox=\box75
+\tcb@phantombox=\box76
+\c@tcbbreakpart=\count315
+\c@tcblayer=\count316
+\c@tcolorbox@number=\count317
 \tcb@temp=\box77
+\tcb@temp=\box78
+\tcb@temp=\box79
+\tcb@temp=\box80
 \tcb@out=\write4
 \tcb@record@out=\write5
 )
@@ -858,20 +900,20 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              `\addtokomafont' for the page style elements need
 (scrartcl)              explicite user intervention to work.
 (scrartcl)              Nevertheless, using requested
-(scrartcl)              package `fancyhdr' on input line 61.
+(scrartcl)              package `fancyhdr' on input line 62.
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
 rs
-\f@nch@headwidth=\skip71
-\f@nch@O@elh=\skip72
-\f@nch@O@erh=\skip73
-\f@nch@O@olh=\skip74
-\f@nch@O@orh=\skip75
-\f@nch@O@elf=\skip76
-\f@nch@O@erf=\skip77
-\f@nch@O@olf=\skip78
-\f@nch@O@orf=\skip79
+\f@nch@headwidth=\skip72
+\f@nch@O@elh=\skip73
+\f@nch@O@erh=\skip74
+\f@nch@O@olh=\skip75
+\f@nch@O@orh=\skip76
+\f@nch@O@elf=\skip77
+\f@nch@O@erf=\skip78
+\f@nch@O@olf=\skip79
+\f@nch@O@orf=\skip80
 )
 (/usr/local/texlive/2021/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2015/03/29 v1.2m Refers to last page's name (HMM; JPG)
@@ -905,9 +947,9 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 (/usr/local/texlive/2021/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-\@linkdim=\dimen288
-\Hy@linkcounter=\count316
-\Hy@pagecounter=\count317
+\@linkdim=\dimen294
+\Hy@linkcounter=\count318
+\Hy@pagecounter=\count319
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2021-02-27 v7.00k Hyperref: PDFDocEncoding definition (HO)
@@ -923,7 +965,7 @@ Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 (/usr/local/texlive/2021/texmf-dist/tex/generic/etexcmds/etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count318
+\Hy@SavedSpaceFactor=\count320
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2021-02-27 v7.00k Hyperref: PDF Unicode definition (HO)
@@ -937,14 +979,14 @@ Package hyperref Info: Plain pages OFF on input line 4207.
 Package hyperref Info: Backreferencing OFF on input line 4212.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4445.
-\c@Hy@tempcnt=\count319
+\c@Hy@tempcnt=\count321
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip17
+\Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4804.
-\XeTeXLinkMargin=\dimen289
+\XeTeXLinkMargin=\dimen295
 
 (/usr/local/texlive/2021/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -953,9 +995,9 @@ Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count320
-\Field@Width=\dimen290
-\Fld@charsize=\dimen291
+\Fld@menulength=\count322
+\Field@Width=\dimen296
+\Fld@charsize=\dimen297
 Package hyperref Info: Hyper figures OFF on input line 6075.
 Package hyperref Info: Link nesting OFF on input line 6080.
 Package hyperref Info: Hyper index ON on input line 6083.
@@ -971,9 +1013,9 @@ Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
 )
-\Hy@abspage=\count321
-\c@Item=\count322
-\c@Hfootnote=\count323
+\Hy@abspage=\count323
+\c@Item=\count324
+\c@Hfootnote=\count325
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
@@ -985,8 +1027,8 @@ Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
 )
-\Fld@listcount=\count324
-\c@bookmark@seq@number=\count325
+\Fld@listcount=\count326
+\c@bookmark@seq@number=\count327
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
@@ -997,9 +1039,9 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 86.
 )
-\Hy@SectionHShift=\skip80
+\Hy@SectionHShift=\skip81
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 67.
+Package hyperref Info: Option `colorlinks' set `true' on input line 68.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/arevtext.sty
 Package: arevtext 2005/09/01 0.1 Arev Sans Text package
 
@@ -1013,9 +1055,6 @@ File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 112.
-)
-(/usr/local/texlive/2021/texmf-dist/tex/latex/base/textcomp.sty
-Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 ))
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/arevmath.sty
 Package: arevmath 2006/02/19 0.1 Arev Sans Math package
@@ -1332,11 +1371,6 @@ LaTeX Font Info:    Trying to load font information for T1+fav on input line 61
 (/usr/local/texlive/2021/texmf-dist/tex/latex/arev/t1fav.fd
 File: t1fav.fd 2006/05/30 Fontinst v1.929 font definitions for T1/fav.
 )
-(/usr/local/texlive/2021/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count326
-\l__pdf_internal_box=\box78
-)
 (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
 \openout1 = `Gesammelte_Klausurfragen_Bio_Data_Science.aux'.
 
@@ -1369,16 +1403,16 @@ LaTeX Font Info:    ... okay on input line 61.
 
 (/usr/local/texlive/2021/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count327
-\scratchdimen=\dimen292
-\scratchbox=\box79
-\nofMPsegments=\count328
-\nofMParguments=\count329
+\scratchcounter=\count328
+\scratchdimen=\dimen298
+\scratchbox=\box81
+\nofMPsegments=\count329
+\nofMParguments=\count330
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count330
-\MPscratchDim=\dimen293
-\MPnumerator=\count331
-\makeMPintoPDFobject=\count332
+\MPscratchCnt=\count331
+\MPscratchDim=\dimen299
+\MPnumerator=\count332
+\makeMPintoPDFobject=\count333
 \everyMPtoPDFconversion=\toks42
 ) (/usr/local/texlive/2021/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1437,7 +1471,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count333
+\c@section@level=\count334
 )
 LaTeX Info: Redefining \ref on input line 61.
 LaTeX Info: Redefining \pageref on input line 61.
@@ -1461,7 +1495,7 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 
 (/usr/local/texlive/2021/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count334
+\BKM@id=\count335
 ))
 LaTeX Font Info:    Trying to load font information for OT1+zavm on input line 
 82.
@@ -1819,6 +1853,20 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 763.
 
+LaTeX Font Info:    Calculating math sizes for size <6.02908> on input line 789
+.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.78795pt on input line 789.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 4.3988pt on input line 789.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 3.4728pt on input line 789.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 5.78795pt on input line 789.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 4.3988pt on input line 789.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 3.4728pt on input line 789.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 797.
@@ -1849,11 +1897,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 988.
 
-[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1025.
 
+[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1056.
@@ -1862,11 +1910,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1087.
 
-[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1116.
 
+[12]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1149.
@@ -1875,30 +1923,30 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1178.
 
-[13]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1208.
 
-<img/mc-testing-ttest-02-1.pdf, id=135, 216.81pt x 144.54pt>
+[13]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\hfill' on input line 1238.
+
+<img/mc-testing-ttest-02-1.pdf, id=136, 216.81pt x 144.54pt>
 File: img/mc-testing-ttest-02-1.pdf Graphic file (type pdf)
 <use img/mc-testing-ttest-02-1.pdf>
-Package pdftex.def Info: img/mc-testing-ttest-02-1.pdf  used on input line 1233
+Package pdftex.def Info: img/mc-testing-ttest-02-1.pdf  used on input line 1263
 .
 (pdftex.def)             Requested size: 216.80946pt x 144.54623pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\hfill' on input line 1251.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1281.
 
-[14 <./img/mc-testing-ttest-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1312.
 
+[14 <./img/mc-testing-ttest-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1346.
@@ -1907,25 +1955,25 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1380.
 
-[15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1412.
 
+[15]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1446.
 
-<img/mc-anova-02-a-1.pdf, id=155, 216.81pt x 162.6075pt>
+<img/mc-anova-02-a-1.pdf, id=156, 216.81pt x 162.6075pt>
 File: img/mc-anova-02-a-1.pdf Graphic file (type pdf)
 <use img/mc-anova-02-a-1.pdf>
 Package pdftex.def Info: img/mc-anova-02-a-1.pdf  used on input line 1467.
 (pdftex.def)             Requested size: 216.80946pt x 162.61453pt.
-[16 <./img/mc-anova-02-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1486.
 
+[16 <./img/mc-anova-02-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1516.
@@ -1934,11 +1982,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1545.
 
-[17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1574.
 
+[17]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1603.
@@ -1952,7 +2000,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1662.
 
-<img/mc-regression-05-a-1.pdf, id=183, 216.81pt x 180.675pt>
+<img/mc-regression-05-a-1.pdf, id=185, 216.81pt x 180.675pt>
 File: img/mc-regression-05-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-05-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 1685.
@@ -1962,22 +2010,22 @@ Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 1685.
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1703.
 
-[19 <./img/mc-regression-05-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1735.
 
-<img/mc-regression-06-a-1.pdf, id=197, 216.81pt x 180.675pt>
+[19 <./img/mc-regression-05-a-1.pdf>]
+<img/mc-regression-06-a-1.pdf, id=198, 216.81pt x 180.675pt>
 File: img/mc-regression-06-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-06-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-06-a-1.pdf  used on input line 1756.
 
 (pdftex.def)             Requested size: 216.80946pt x 180.68282pt.
 
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1774.
 
-[20 <./img/mc-regression-06-a-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1803.
@@ -1992,6 +2040,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
 827.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
+[20 <./img/mc-regression-06-a-1.pdf>]
 File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/work/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
@@ -2002,6 +2051,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
 829.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1834.
@@ -2020,7 +2070,7 @@ Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 1
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1863.
 
-[21] [22]
+[21]
 part I.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
@@ -2029,7 +2079,7 @@ Package scrkbase Info: You've told me to use the font selection of the element
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1897.
 
-</Users/kruppajo/work/GitHub/exam/avatare/Yuki.png, id=221, 529.98pt x 562.1pt>
+</Users/kruppajo/work/GitHub/exam/avatare/Yuki.png, id=217, 529.98pt x 562.1pt>
 
 File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 
@@ -2037,7 +2087,7 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Yuki.png  use
 d on input line 1912.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-<img/youtube.png, id=223, 1952.29375pt x 1063.975pt>
+<img/youtube.png, id=219, 1952.29375pt x 1063.975pt>
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
 Package pdftex.def Info: img/youtube.png  used on input line 1916.
@@ -2134,14 +2184,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 1954--1956
 
  []
 
-[23
+[22
 
  </Users/kruppajo/work/GitHub/exam/avatare/Yuki.png> <./img/youtube.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1959.
 
-</Users/kruppajo/work/GitHub/exam/avatare/Jessica.png, id=235, 529.98pt x 562.1
+</Users/kruppajo/work/GitHub/exam/avatare/Jessica.png, id=231, 529.98pt x 562.1
 pt>
 File: /Users/kruppajo/work/GitHub/exam/avatare/Jessica.png Graphic file (type p
 ng)
@@ -2213,7 +2263,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2010--2012
 
  []
 
-[24
+[23
 
  </Users/kruppajo/work/GitHub/exam/avatare/Jessica.png>]
 part II.
@@ -2229,7 +2279,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2023--2024
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png, id=246, 529.98pt x 562.1
+</Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png, id=242, 529.98pt x 562.1
 pt>
 File: /Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png Graphic file (type p
 ng)
@@ -2251,7 +2301,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
 056.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-<img/barplot-02-1.pdf, id=248, 325.215pt x 289.08pt>
+<img/barplot-02-1.pdf, id=244, 325.215pt x 289.08pt>
 File: img/barplot-02-1.pdf Graphic file (type pdf)
 <use img/barplot-02-1.pdf>
 Package pdftex.def Info: img/barplot-02-1.pdf  used on input line 2060.
@@ -2266,7 +2316,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
 072.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[25
+[24
 
  </Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png> <./img/barplot-02-1.pdf
 >]
@@ -2279,7 +2329,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2080--2081
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Steffen.png, id=268, 529.98pt x 562.1
+</Users/kruppajo/work/GitHub/exam/avatare/Steffen.png, id=263, 529.98pt x 562.1
 pt>
 File: /Users/kruppajo/work/GitHub/exam/avatare/Steffen.png Graphic file (type p
 ng)
@@ -2296,7 +2346,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2094--2104
 [] []
  []
 
-[26
+[25
 
  </Users/kruppajo/work/GitHub/exam/avatare/Steffen.png>]
 
@@ -2308,7 +2358,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2156--2157
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Tina.png, id=282, 529.98pt x 562.1pt>
+</Users/kruppajo/work/GitHub/exam/avatare/Tina.png, id=278, 529.98pt x 562.1pt>
 
 File: /Users/kruppajo/work/GitHub/exam/avatare/Tina.png Graphic file (type png)
 
@@ -2330,7 +2380,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
 189.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-<img/boxplot-02-zer-1.pdf, id=284, 325.215pt x 289.08pt>
+<img/boxplot-02-zer-1.pdf, id=280, 325.215pt x 289.08pt>
 File: img/boxplot-02-zer-1.pdf Graphic file (type pdf)
 <use img/boxplot-02-zer-1.pdf>
 Package pdftex.def Info: img/boxplot-02-zer-1.pdf  used on input line 2193.
@@ -2345,7 +2395,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 2
 205.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[27
+[26
 
  </Users/kruppajo/work/GitHub/exam/avatare/Tina.png> <./img/boxplot-02-zer-1.pd
 f>]
@@ -2373,7 +2423,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2227--2237
 [] []
  []
 
-[28
+[27
 
 ]
 
@@ -2400,7 +2450,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2310--2320
 [] []
  []
 
-[29
+[28
 
 ]
 
@@ -2427,7 +2477,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2366--2376
 [] []
  []
 
-[30
+[29
 
 ]
 
@@ -2439,7 +2489,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2404--2405
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Jonas.png, id=340, 529.98pt x 562.1pt
+</Users/kruppajo/work/GitHub/exam/avatare/Jonas.png, id=336, 529.98pt x 562.1pt
 >
 File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
 )
@@ -2456,7 +2506,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2420--2430
 [] []
  []
 
-[31
+[30
 
  </Users/kruppajo/work/GitHub/exam/avatare/Jonas.png>]
 
@@ -2503,7 +2553,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2554--2555
 []|\T1/fav/m/n/9 Fettgehalt er-
  []
 
-[32
+[31
 
 ]
 
@@ -2536,12 +2586,12 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2609--2618
 [] [] 
  []
 
-<img/desc-stat-11-1.pdf, id=369, 722.7pt x 433.62pt>
+<img/desc-stat-11-1.pdf, id=365, 722.7pt x 433.62pt>
 File: img/desc-stat-11-1.pdf Graphic file (type pdf)
 <use img/desc-stat-11-1.pdf>
 Package pdftex.def Info: img/desc-stat-11-1.pdf  used on input line 2629.
 (pdftex.def)             Requested size: 512.14963pt x 307.2901pt.
-[33
+[32
 
  <./img/desc-stat-11-1.pdf>]
 part III.
@@ -2558,7 +2608,7 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png Graphic file (type png
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Jonas.png  us
 ed on input line 2665.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-</Users/kruppajo/work/GitHub/exam/avatare/Paula.png, id=385, 529.98pt x 562.1pt
+</Users/kruppajo/work/GitHub/exam/avatare/Paula.png, id=381, 529.98pt x 562.1pt
 >
 File: /Users/kruppajo/work/GitHub/exam/avatare/Paula.png Graphic file (type png
 )
@@ -2575,14 +2625,14 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2664--2673
 [] [] 
  []
 
-[34
+[33
 
  </Users/kruppajo/work/GitHub/exam/avatare/Paula.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 2695.
 
-</Users/kruppajo/work/GitHub/exam/avatare/Alex.png, id=399, 529.98pt x 562.1pt>
+</Users/kruppajo/work/GitHub/exam/avatare/Alex.png, id=395, 529.98pt x 562.1pt>
 
 File: /Users/kruppajo/work/GitHub/exam/avatare/Alex.png Graphic file (type png)
 
@@ -2605,7 +2655,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2710--2719
 [] [] 
  []
 
-[35
+[34
 
  </Users/kruppajo/work/GitHub/exam/avatare/Alex.png>]
 
@@ -2617,7 +2667,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 2759--2760
 
  []
 
-</Users/kruppajo/work/GitHub/exam/avatare/Mark.png, id=417, 529.98pt x 562.1pt>
+</Users/kruppajo/work/GitHub/exam/avatare/Mark.png, id=412, 529.98pt x 562.1pt>
 
 File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
 
@@ -2644,13 +2694,13 @@ LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 (Font)              scaled to size 8.64006pt on input line 2791.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 (Font)              scaled to size 6.72005pt on input line 2791.
-<img/statistisches-testen-3-1.pdf, id=419, 578.16pt x 361.35pt>
+<img/statistisches-testen-3-1.pdf, id=414, 578.16pt x 361.35pt>
 File: img/statistisches-testen-3-1.pdf Graphic file (type pdf)
 <use img/statistisches-testen-3-1.pdf>
 Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 2
 813.
 (pdftex.def)             Requested size: 512.14963pt x 320.11177pt.
-[36
+[35
 
  </Users/kruppajo/work/GitHub/exam/avatare/Mark.png> <./img/statistisches-teste
 n-3-1.pdf>]
@@ -2680,7 +2730,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2835--2844
  []
 
 </Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png, id=
-440, 25.59563pt x 206.27063pt>
+436, 25.59563pt x 206.27063pt>
 File: /Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png
  Graphic file (type png)
 <use /Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png>
@@ -2688,7 +2738,7 @@ File: /Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/question/img/statisti
 sches-testen-04.png  used on input line 2873.
 (pdftex.def)             Requested size: 35.30948pt x 284.52756pt.
-[37
+[36
 
  </Users/kruppajo/work/GitHub/exam/question/img/statistisches-testen-04.png>]
 
@@ -2721,7 +2771,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2896--2905
 [] [] 
  []
 
-[38
+[37
 
 ]
 part IV.
@@ -2752,7 +2802,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2970--2980
 [] []
  []
 
-[39
+[38
 
 ]
 
@@ -2779,7 +2829,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3036--3046
 [] []
  []
 
-[40
+[39
 
 ]
 
@@ -2806,7 +2856,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3118--3128
 [] []
  []
 
-[41
+[40
 
 ]
 
@@ -2855,7 +2905,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
 218.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[42
+[41
 
 ]
 
@@ -2909,7 +2959,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
 283.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[43
+[42
 
 ]
 
@@ -2968,7 +3018,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
 350.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[44
+[43
 
 ]
 part V.
@@ -3005,7 +3055,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3403--3412
 [] [] 
  []
 
-[45
+[44
 
 ]
 
@@ -3038,7 +3088,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3488--3497
 [] [] 
  []
 
-[46
+[45
 
 ]
 
@@ -3084,7 +3134,7 @@ LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 8.02559pt on input line 3620.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 6.3361pt on input line 3620.
-[47
+[46
 
 ]
 
@@ -3121,7 +3171,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
 678.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[48
+[47
 
 ]
 
@@ -3152,7 +3202,7 @@ LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 (Font)              scaled to size 10.51207pt on input line 3784.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 (Font)              scaled to size 7.68005pt on input line 3784.
-[49
+[48
 
 ]
 
@@ -3189,7 +3239,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
 834.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[50
+[49
 
 ]
 
@@ -3226,7 +3276,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 3
 913.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[51
+[50
 
 ]
 
@@ -3253,7 +3303,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3935--3945
 [] []
  []
 
-[52
+[51
 
 ]
 
@@ -3280,7 +3330,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3991--4001
 [] []
  []
 
-[53
+[52
 
 ]
 part VI.
@@ -3317,7 +3367,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4053--4062
 [] [] 
  []
 
-[54
+[53
 
 ]
 
@@ -3344,7 +3394,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4125--4135
 [] []
  []
 
-[55
+[54
 
 ]
 
@@ -3362,7 +3412,7 @@ File: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png Graphic file (type png)
 Package pdftex.def Info: /Users/kruppajo/work/GitHub/exam/avatare/Mark.png  use
 d on input line 4194.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
-<img/caution.png, id=715, 1927.2pt x 1084.05pt>
+<img/caution.png, id=710, 1927.2pt x 1084.05pt>
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
 Package pdftex.def Info: img/caution.png  used on input line 4198.
@@ -3372,7 +3422,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4193--4203
 [] []
  []
 
-[56
+[55
 
  <./img/caution.png>]
 
@@ -3404,7 +3454,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 4
 277.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[57
+[56
 
 ]
 part VII.
@@ -3439,7 +3489,7 @@ LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
 (Font)              scaled to size 13.82408pt on input line 4352.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 13.82408pt on input line 4352.
-[58
+[57
 
 ]
 
@@ -3466,7 +3516,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4395--4405
 [] []
  []
 
-[59
+[58
 
 ]
 
@@ -3493,7 +3543,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4463--4473
 [] []
  []
 
-[60
+[59
 
 ]
 
@@ -3520,7 +3570,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4530--4540
 [] []
  []
 
-[61
+[60
 
 ]
 part VIII.
@@ -3557,7 +3607,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4598--4607
 [] [] 
  []
 
-[62
+[61
 
 ]
 
@@ -3605,7 +3655,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 4
 705.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[63
+[62
 
 ]
 
@@ -3658,7 +3708,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 4
 778.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[64
+[63
 
 ]
 
@@ -3710,7 +3760,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 4
 848.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
- [65
+ [64
 
 ]
 
@@ -3737,12 +3787,12 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4879--4889
 [] []
  []
 
-<img/correlation-01-1.pdf, id=865, 505.89pt x 198.7425pt>
+<img/correlation-01-1.pdf, id=861, 505.89pt x 198.7425pt>
 File: img/correlation-01-1.pdf Graphic file (type pdf)
 <use img/correlation-01-1.pdf>
 Package pdftex.def Info: img/correlation-01-1.pdf  used on input line 4901.
 (pdftex.def)             Requested size: 505.88875pt x 198.74503pt.
-[66
+[65
 
  <./img/correlation-01-1.pdf>]
 
@@ -3769,12 +3819,12 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4940--4950
 [] []
  []
 
-<img/correlation-02-1.pdf, id=886, 505.89pt x 198.7425pt>
+<img/correlation-02-1.pdf, id=882, 505.89pt x 198.7425pt>
 File: img/correlation-02-1.pdf Graphic file (type pdf)
 <use img/correlation-02-1.pdf>
 Package pdftex.def Info: img/correlation-02-1.pdf  used on input line 4962.
 (pdftex.def)             Requested size: 505.88875pt x 198.74503pt.
-[67
+[66
 
  <./img/correlation-02-1.pdf>]
 
@@ -3812,7 +3862,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 023.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[68
+[67
 
 ]
 part IX.
@@ -3875,7 +3925,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 070.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[69
+[68
 
 ]
 
@@ -3934,7 +3984,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 119.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[70
+[69
 
 ]
 part X.
@@ -3946,7 +3996,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5130--5131
 
  []
 
-[71
+[70
 
 ]
 
@@ -3988,7 +4038,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 189.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[72
+[71
 
 ]
 
@@ -4020,7 +4070,7 @@ File: ~/work/GitHub/exam/img/Rlogo.png Graphic file (type png)
 Package pdftex.def Info: ~/work/GitHub/exam/img/Rlogo.png  used on input line 5
 271.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[73
+[72
 
 ]
 part XI.
@@ -4069,7 +4119,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 5297--5306
 [] [] 
  []
 
-[74
+[73
 
 ]
 
@@ -4118,7 +4168,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 5359--5368
 LaTeX Warning: Command \" invalid in math mode on input line 5387.
 
 Missing character: There is no ä in font zavmr7t!
-[75
+[74
 
 ]
 
@@ -4163,7 +4213,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 5412--5421
 [] [] 
  []
 
-[76
+[75
 
 ]
 
@@ -4200,7 +4250,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5493--5494
 
  []
 
-[77
+[76
 
 ]
 
@@ -4237,7 +4287,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5587--5588
 
  []
 
-[78
+[77
 
 ]
 
@@ -4282,7 +4332,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 5618--5627
 [] [] 
  []
 
-[79
+[78
 
 ]
 
@@ -4315,7 +4365,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 5713--5722
 [] [] 
  []
 
-[80
+[79
 
 ]
 
@@ -4348,7 +4398,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 5771--5780
 [] [] 
  []
 
-[81
+[80
 
 ]
 
@@ -4386,7 +4436,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5857--5858
 
  []
 
-[82
+[81
 
 ]
 
@@ -4418,7 +4468,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5905--5906
 
  []
 
-[83
+[82
 
 ]
 
@@ -4456,7 +4506,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5986--5987
 
  []
 
-[84
+[83
 
 ]
 
@@ -4483,12 +4533,12 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 6019--6028
 [] [] 
  []
 
-<img/math-10-1.pdf, id=1187, 216.81pt x 180.675pt>
+<img/math-10-1.pdf, id=1183, 216.81pt x 180.675pt>
 File: img/math-10-1.pdf Graphic file (type pdf)
 <use img/math-10-1.pdf>
 Package pdftex.def Info: img/math-10-1.pdf  used on input line 6046.
 (pdftex.def)             Requested size: 216.80946pt x 180.68282pt.
-[85
+[84
 
  <./img/math-10-1.pdf>]
 
@@ -4515,7 +4565,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 6123--6132
 [] [] 
  []
 
-[86
+[85
 
 ]
 
@@ -4547,7 +4597,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6228--6229
 
  []
 
-[87
+[86
 
 ]
 
@@ -4579,7 +4629,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6334--6335
 
  []
 
-[88
+[87
 
 ]
 
@@ -4629,7 +4679,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6381--6383
 
  []
 
-[89
+[88
 
 ]
 
@@ -4679,25 +4729,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 6439--6440
 
  []
 
-<img/math-14-a-1.pdf, id=1278, 578.16pt x 180.675pt>
+<img/math-14-a-1.pdf, id=1274, 578.16pt x 180.675pt>
 File: img/math-14-a-1.pdf Graphic file (type pdf)
 <use img/math-14-a-1.pdf>
 Package pdftex.def Info: img/math-14-a-1.pdf  used on input line 6446.
 (pdftex.def)             Requested size: 512.14963pt x 160.05588pt.
-<img/math-14-b-1.pdf, id=1279, 578.16pt x 158.5925pt>
+<img/math-14-b-1.pdf, id=1275, 578.16pt x 158.5925pt>
 File: img/math-14-b-1.pdf Graphic file (type pdf)
 <use img/math-14-b-1.pdf>
 Package pdftex.def Info: img/math-14-b-1.pdf  used on input line 6463.
 (pdftex.def)             Requested size: 512.14963pt x 140.49347pt.
-[90
+[89
 
  <./img/math-14-a-1.pdf> <./img/math-14-b-1.pdf>]
-<img/math-14-c-1.pdf, id=1302, 650.43pt x 650.43pt>
+<img/math-14-c-1.pdf, id=1298, 650.43pt x 650.43pt>
 File: img/math-14-c-1.pdf Graphic file (type pdf)
 <use img/math-14-c-1.pdf>
 Package pdftex.def Info: img/math-14-c-1.pdf  used on input line 6482.
 (pdftex.def)             Requested size: 512.14963pt x 512.18655pt.
- [91 <./img/math-14-c-1.pdf>]
+ [90 <./img/math-14-c-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 6511.
@@ -4733,7 +4783,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6548--6549
 
  []
 
-[92
+[91
 
 ]
 
@@ -4783,7 +4833,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6607--6608
 
  []
 
-[93
+[92
 
 ]
 
@@ -4833,7 +4883,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 6686--6687
 
  []
 
-[94
+[93
 
 ]
 
@@ -4872,7 +4922,7 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 6730--6739
 [] [] 
  []
 
-[95
+[94
 
 ]
 part XII.
@@ -4893,18 +4943,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 
 AED: lastpage setting LastPage
-[96
+[95
 
-]
-
-LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     6845.
-
-
-LaTeX3 Info: Redefining command \BeforeClosingMainAux with sig. 'm' on line
-(LaTeX3)     6845.
-
- (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
+] (./Gesammelte_Klausurfragen_Bio_Data_Science.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
@@ -4913,11 +4954,11 @@ t' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29477 strings out of 478994
- 542530 string characters out of 5858183
- 985133 words of memory out of 5000000
- 45477 multiletter control sequences out of 15000+600000
- 551000 words of font info for 284 fonts, out of 8000000 for 9000
+ 29997 strings out of 478994
+ 557228 string characters out of 5858183
+ 1005179 words of memory out of 5000000
+ 45973 multiletter control sequences out of 15000+600000
+ 593148 words of font info for 372 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  111i,19n,116p,10718b,651s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2021/texmf-dist/fonts/enc/dvips/arev/arevot1.enc}{/usr/lo
@@ -4937,11 +4978,11 @@ ist/fonts/type1/public/mathdesign/mdbch/md-chbma.pfb></usr/local/texlive/2021/t
 exmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb></usr/local/texlive/
 2021/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/20
 21/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (96 pages, 1449
-641 bytes).
+Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (95 pages, 1447
+063 bytes).
 PDF statistics:
- 2034 PDF objects out of 2073 (max. 8388607)
- 1830 compressed objects within 19 object streams
- 810 named destinations out of 1000 (max. 500000)
+ 2030 PDF objects out of 2073 (max. 8388607)
+ 1827 compressed objects within 19 object streams
+ 809 named destinations out of 1000 (max. 500000)
  1286 words of extra memory for PDF output out of 10000 (max. 10000000)
 

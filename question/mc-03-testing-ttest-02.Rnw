@@ -5,10 +5,6 @@
 \begin{flushright}
 \tiny\vspace{-2Ex}
 \textbf{\examinhaltstart}
-\exammodulemathstat $\;\bullet$
-\exammodulestat $\;\bullet$
-\exammodulestat $\;\bullet$
-\exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
 \vspace{-1Ex}
@@ -17,83 +13,33 @@
 %% --------------------------------------------------------------------
 
 
-<<>>=
-n_pig <- rpois(1, 10)
-vit <- c("Eisen", "Nitrat", "Sulfit") |> sample(1)
-animal <- c("Mais", "Weizen", "Mango", "Papaya") |> sample(1)
 
-ques_vec <- c(str_c('Die folgende Abbildung enthält die Daten aus einer Studie zur Bewertung der Wirkung des Mikronährstoff ', vit, ' auf den Ertrag in t/ha von ', animal, ' im Vergleich zu einer Kontrolle. Der Versuch wurde in ', n_pig, ' Parzellen pro Gruppe durchgeführt. Welche Aussage im Bezug auf eine statistische Auswertung ist richtig?'),
-              str_c('In einer Studie zur Bewertung der Wirkung des Mikronährstoff ', vit, ' auf den Ertrag in t/ha  von ', animal, ' im Vergleich zu einer Kontrolle entstand folgende Abbildung. Der Versuch wurde in ', n_pig, ' Parzellen pro Gruppe durchgeführt. Welche Aussage ist im Bezug auf einen t-Test ist richtig?'),
-              str_c('Ein Versuch wurde in ', n_pig, ' Parzellen pro Gruppe durchgeführt. Die folgende Abbildung enthält die Daten aus diesem Versuch zur Bewertung der Wirkung des Mikronährstoff ', vit, ' auf den Ertrag in t/ha von ', animal, ' im Vergleich zu einer Kontrolle.  Welche Aussage ist richtig, wenn Sie einen t-Test rechnen?')) |>  sample(1)
+<<>>=
+ques_vec <- c('Welche Aussage über den gepaarten t-Test für verbundene Stichproben ist richtig?',
+              'Sie rechnen einen gepaarten t-Test, da Ihre Beobachtungen verbunden sind. Welche der folgenden Aussagen ist richtig?',
+              'In Ihrer Abschlussarbeit betrachten Sie die Effekte von einer Behandlung vor und nach der Gabe eines Vitamins. Sie müssen einen gepaarten t-Test rechnen. Welche Aussage ist richtig?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
-<<mc-testing-ttest-02, results='asis', echo = FALSE, fig.height = 2, fig.width = 3, fig.align = "center", message = FALSE>>=
-pacman::p_load(ggpattern)
+<<mc-ttest-04, results='asis', echo = FALSE>>=
 
-mean_vec <- lst(c(10, 11),
-                c(8, 9),
-                c(13, 12),
-                c(9, 14),
-                c(6, 12),
-                c(11, 4)) |> sample(1) |> unlist()
+right_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen nicht unabhängig voneinander sind. Wir messen wiederholt an dem gleichen Probanden oder Tier oder Pflanze. Wir bilden die Differenzen um den gepaarten t-Test rechnen zu können.',
+               'Wenn die Beobachtungen nicht unabhängig voneinander sind, rechnen wir einen gepaarten t-Test. Messen wir wiederholt an dem gleichen Tier oder Pflanze dann bilden wir die Differenz zwischen den zwei Messpunkten.',
+               'Abhängige Beobachtungen müssen gesondert in einem gepaarten t-Test modelliert werden. Wenn wiederholt an dem gleichen Tier oder Pflanze gemessen wird, dann bilden wir die Differenz zwischen den beiden Zeitpunkten. Auf den Differenzen rechnen wir den gepaarten t-Test.') |> sample(1)
 
-data_tbl <- tibble(mean = c(mean_vec[1], mean_vec[2]),
-                   dose = c("Kontrolle", vit))
-
-mean_diff <- diff(data_tbl$mean)
-
-ggplot(data_tbl, aes(x = dose, y = mean, fill = dose)) +
-  geom_errorbar(aes(ymin = mean-sample(c(1, 2, 3), 1), 
-                    ymax = mean+sample(c(1, 2, 3), 1)),
-                width = 0.2, position = position_dodge(0.5)) +
-  theme_minimal() +
-  labs(y = "Ertrag [t/ha]", x = "Behandlung mit Mikronährstoff",
-       color = "", shape = "", linetype = "") +
-  scale_y_continuous(breaks = seq(0, 18, 2), limits = c(0, 18)) +
-  geom_col_pattern(
-    width = 0.5, 
-    aes(pattern=dose,
-        pattern_angle=dose,
-        pattern_spacing=dose
-        ), 
-    fill            = 'white',
-    colour          = 'black', 
-    pattern_density = 0.5, 
-    pattern_fill    = 'black',
-    pattern_colour  = 'darkgrey',
-    position = position_dodge(0.5)
-  ) +
-  theme(legend.position = "none")
-
-@
+wrong_vec <- c('Der gepaarte t-Test wird gerechnet, wenn die Beobachtungen abhängig voneinander sind. Wir messen jede Beobachtung nur einmal und berechnen dann die Differenz zu dem Mittel der anderen Beobachtungen.',
+               'Beim gepaarten t-Test kombinieren wir die Vorteile des Student t-Test für Varianzhomogenität mit den Vorteilen des Welch t-Test für Varianzheterogenität. Wir bilden dafür die Differenz der Einzelbeobachtungen.',
+               'Der gepaarte t-Test nutzt die Varianz der Beobachtungen jeweils paarweise und bildet dafür eine verbundene Stichprobe. Dieser Datensatz $d$ dient dann zur Differenzbildung.',
+               'Der gepaarte t-Test wird genutzt, wenn die Differenzen der Beobachtungen verbunden sind und wir dadurch die Unabhäängigkeit nicht mehr vorliegen haben.',
+               'Wenn die Beobachtungen unabhängig voneinander sind, rechnen wir einen gepaarten t-Test. Messen wir wiederholt an dem gleichen Tier oder Pflanze dann bilden wir das Produkt zwischen den zwei Messpunkten.',
+               'Abhängige Beobachtungen müssen gesondert in einem gepaarten t-Test modelliert werden. Wenn wiederholt an dem gleichen Tier oder Pflanze gemessen wird, dann bilden wir den Quotienten zwischen den beiden Zeitpunkten. Auf den Quotienten rechnen wir den gepaarten t-Test.') %>%
+  sample(4)
 
 
-<<mc-ttest-02, results='asis', echo = FALSE>>=
-
-switch_sig_vec <- c("ein", "kein") |> sample()
-
-right_1_vec <- c(str_c('Es liegt ', switch_sig_vec[1], ' signifikanter Unterschied vor. Der Effekt liegt bei ', mean_diff, '.'),
-                 str_c('Die Barplots deuten auf ', switch_sig_vec[1], ' signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, '.'),
-                 str_c('Der Test deutet auf ', switch_sig_vec[1], ' signifikanten Unterschied hin. Der Effekt liegt vermutlich bei ', mean_diff, '.')) |> sample(1)
-right_2_vec <- c(str_c('Nach Betrachtung des Barplots liegt ', switch_sig_vec[2], ' signifikanter Unterschied vor. Der Effekt liegt bei ', mean_diff, '.'),
-                 str_c('Die Barplots deuten auf ', switch_sig_vec[2], 'en signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, ' unter einer groben Abschätzung.'),
-                 str_c('Der Test deutet auf ', switch_sig_vec[2], 'en signifikanten Unterschied hin. Der Effekt liegt vermutlich bei ', mean_diff, '.')) |> sample(1)
-
-
-wrong_vec <- c(str_c('Es liegt ein signifikanter Unterschied vor. Der Effekt liegt bei ', mean_diff*0.1, '.'),
-               str_c('Nach Betrachtung des Barplots liegt kein signifikanter Unterschied vor. Der Effekt kann nicht bei einem t-Test aus Barplots bestimmt werden.'),
-               str_c('Die Barplots deuten auf ', switch_sig_vec[2], 'en signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, ' unter einer groben Abschätzung. Wir müssen aber eine ANOVA rechnen um den Effekt wirklich bestimmen zu können.'),
-               str_c('Die Barplots deuten auf ', switch_sig_vec[1], 'en signifikanten Unterschied. Der Effekt liegt vermutlich bei ', mean_diff, '. Wir müssen aber einen Posthoc-Test rechnen um den Effekt wirklich bestimmen zu können.'),
-               'Der Effekt und die Signifikanz lassen sich nicht aus Barplots abschätzen. Höchtens der Effekt als relativer Unterschied zwischen der Höhe der Barplots. Standard ist der mediane Unterschied aus Boxplots.') %>%
-  sample(3)
-
-questions_vec <- c(right_1_vec, right_2_vec,
+questions_vec <- c(right_vec,
                    wrong_vec) %>%
   sample
-
-
 @
 
 \begin{enumerate}
