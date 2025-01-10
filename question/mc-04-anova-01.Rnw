@@ -30,16 +30,22 @@ ques_vec <- c(str_c('Nach der Berechnung einer einfaktoriellen ANOVA ergibt sich
 
 <<mc-anova-01-ab, results='asis', echo = FALSE>>=
 
-right_vec <- c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{\"a}rt wird. Das $\\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen.',
-               'Das $\\eta^2$ ist damit mit dem $R^2$ aus der linearen Regression zu vergleichen und beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erkl{\"a}rt wird.',
+right_vec <- c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen erklärt wird.',
+               'Der Anteil der Varianz, der von den Behandlungsbedingungen erklärt wird, wird durch das $\\eta^2$ beschrieben.',
                'Das $\\eta^2$ wird genutzt um zu erfahren welchen Anteil der Varianz die Behandlungsbedingungen erklären.') |> sample(1)
 
+wrong_vec <- c('Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erklärt wird. Somit der Rest an nicht erklärbarer Varianz.',
+               'Das $\\eta^2$ ist ein Wert für die Güte der ANOVA. Je kleiner desto besser. Ein $\\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.',
+               'Das $\\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass $\\eta^2 = 0$ der beste Wert ist.',
+               'Die Berechnung von $\\eta^2$ ist ein Wert für die Interaktion in der einfaktoriellen ANOVA.',
+               'Der Anteil der Varianz, der von den Behandlungsbedingungen erklärt wird, wird durch das $1-\\eta^2$ beschrieben.',
+               'Das $\\eta^2$ beschreibt den Anteil der globalen Varianz, der von den Umweltbedingungen erklärt wird.') %>%
+  sample(4)
+
 questions_vec <- c(right_vec,
-                   'Das $\\eta^2$ beschreibt den Anteil der Varianz, der von den Behandlungsbedingungen nicht erkl{\"a}rt wird. Somit der Rest an nicht erkl{\"a}rbarer Varianz.',
-                   'Das $\\eta^2$ ist ein Wert f{\"u}r die G{\"u}te der ANOVA. Je kleiner desto besser. Ein $\\eta^2$ von 0 bedeutet ein perfektes Modell mit keiner Abweichung. Die Varianz ist null.',
-                   'Das $\\eta^2$ ist die Korrelation der ANOVA. Mit der Ausnahme, dass 0 der beste Wert ist.',
-                   'Die Berechnung von $\\eta^2$ ist ein Wert f{\"u}r die Interaktion.') %>%
+                   wrong_vec) %>%
   sample
+
 @
 
 \begin{enumerate}
