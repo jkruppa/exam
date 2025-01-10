@@ -79,7 +79,7 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
              tier = c("Schlachtgewicht [kg]", 
                       "Protein/Fettrate [\\%/kg]",
                       "Fettgehalt [\\%/kg]",
-                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+                      "Gewichtszuwachs in der 1LW [\\%/kg]"))[[names(obser)]] %>% 
   sample(1)
 
 groups_vec <- x_val %>% 
