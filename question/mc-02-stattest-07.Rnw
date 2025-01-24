@@ -33,12 +33,12 @@ ques_vec <- c(str_c('Sie wollen eine Aussage über ', var_vec, ' treffen. Dazu n
 <<mc-statistisches-testen-10, results='asis', echo = FALSE>>=
 
 right_1_vec <- c(str_c('Ja, ', var_vec, ' können wir mit einem statistischen Test auswerten. Wir erhalten dann eine Aussage ', names(var_vec), '.'),
-                 str_c('Ja, wir können ', var_vec, ' mit einer ANOVA auswerten. Wir erhalten eine Aussage ', names(var_vec), '.'),
-                 str_c('Ja, es ist möglich ', var_vec, ' mit einem t-Test auszuwerten. Wir erhalten dann eine Aussage ', names(var_vec), '.')) |> sample(1)
+                 str_c('Ja, wir können ', var_vec, ' mit einem statistischen Test auswerten. Wir erhalten eine Aussage ', names(var_vec), '.'),
+                 str_c('Ja, es ist möglich ', var_vec, ' mit einem statistischen Test wie einem t-Test auszuwerten. Wir erhalten dann eine Aussage ', names(var_vec), '.')) |> sample(1)
 
 right_2_vec <- c(str_c('Nein, ', var_vec, ' können wir mit einem statistischen Test nicht auswerten. Wir erhalten keine Aussage ', names(var_vec), '.'),
-                 str_c('Nein, wir können ', var_vec, ' nicht mit einer ANOVA auswerten. Wir erhalten keine Aussage ', names(var_vec), '.'),
-                 str_c('Nein, es ist nicht möglich ', var_vec, ' mit einem t-Test auszuwerten. Wir erhalten dann leider keine Aussage ', names(var_vec), '.')) |> sample(1)
+                 str_c('Nein, wir können ', var_vec, ' nicht mit einer statistischen Analyse auswerten. Wir erhalten keine Aussage ', names(var_vec), '.'),
+                 str_c('Nein, es ist nicht möglich ', var_vec, ' mit einem statistischen Test auszuwerten. Wir erhalten dann leider keine Aussage ', names(var_vec), '.')) |> sample(1)
 
 wrong_vec <- c(str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.'),
                str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten eine Aussage. Müssen aber das Individuum im Kontext der Population adjustieren.'),
