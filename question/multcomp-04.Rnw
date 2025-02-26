@@ -36,6 +36,7 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
              str_c(pronom[6], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -150,7 +151,7 @@ Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} ü
   \item Formulieren Sie die statistischen Hypothesen! \textbf{(1 Punkt)}
 \item Zeichnen Sie die sich anhand der Matrix der $p$-Werte ergebenden Barplots! \textbf{(2 Punkte)}
 \item Ergänzen Sie das \textit{Compact letter display (CLD)}! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
-\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name} und \Sexpr{name_sec[1]}! \textbf{(2 Punkte)} 
+\item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{names(name)}! \textbf{(2 Punkte)} 
 \end{enumerate}
 
 

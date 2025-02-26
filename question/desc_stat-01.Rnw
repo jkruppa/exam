@@ -53,7 +53,7 @@ type <- c("Düngestufen ($ctrl$, $low$ und $high$)",
           "Bewässerungstypen ($low$, $mid$ und $high$)",
           "Genotypen ($AA$, $AB$ und $BB$)") %>% sample(1)
 outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
-  set_names("freshmatter", "drymatter", "yield", "protein") |> 
+  set_names(c("freshmatter", "drymatter", "yield", "protein")) |> 
   sample(1)
 outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
 groups_vec <- type %>% 

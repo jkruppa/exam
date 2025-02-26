@@ -26,6 +26,8 @@ img_path <- file.path(question_path, "img")
 questions_vec <- list.files(question_path,
                             full.names = TRUE, pattern = "Rnw")
 
+## sort them
+text_questions_vec <- str_subset(questions_vec, "mc|math|tier|stat_test", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
 math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
 tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
@@ -40,23 +42,28 @@ experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate =
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
 program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
 
-text_question_vec <- c(desc_stat_questions_vec,
-                       stat_test_questions_vec, ttest_questions_vec,
-                       anova_questions_vec, multcomp_questions_vec,
-                       chisquare_questions_vec, 
-                       linreg_questions_vec, experimental_questions_vec,
-                       forsch_lern_questions_vec, program_questions_vec,
-                       math_questions_vec, tier_questions_vec)
+## glue them
+glue_questions_vec <- c(program_questions_vec,
+                        desc_stat_questions_vec,
+                        stat_test_questions_vec,
+                        ttest_questions_vec,
+                        anova_questions_vec,
+                        multcomp_questions_vec,
+                        chisquare_questions_vec,
+                        linreg_questions_vec,
+                        experimental_questions_vec,
+                        forsch_lern_questions_vec,
+                        math_questions_vec,
+                        tier_questions_vec)
 
 ## get the wanted questions for the exam
 source(file.path(exam_path, "probeklausur/questions_vec.R"))
 wanted_questions <- wanted_questions_lst %>% unlist()
 
-text_questions_vec <- text_question_vec %>% 
-  magrittr::extract((wanted_questions_lst$text - length(mc_questions_vec))) %>%
+text_questions_vec <- glue_questions_vec %>%
+  magrittr::extract(wanted_questions_lst$text - 50) %>%
   sample()
-
-mc_questions_vec <- mc_questions_vec %>% 
+mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)  %>%
   magrittr::extract(wanted_questions_lst$mc) %>%
   sample()
 

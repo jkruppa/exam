@@ -41,7 +41,7 @@ right_2_vec <- c(str_c('Nein, ', var_vec, ' können wir mit einem statistischen 
                  str_c('Nein, es ist nicht möglich ', var_vec, ' mit einem statistischen Test auszuwerten. Wir erhalten dann leider keine Aussage ', names(var_vec), '.')) |> sample(1)
 
 wrong_vec <- c(str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten nur eine Aussage zu zwei Individuen. Ein statistischer Test liefert Informationen zu einem Individuum im Vergleich zu einem anderen Individuum.'),
-               str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten eine Aussage. Müssen aber das Individuum im Kontext der Population adjustieren.'),
+               str_c(sample(c("Ja", "Nein"), 1), ', wir erhalten eine \\textit{einfache} Aussage. Wir müssen daher das Individuum im Kontext der Population adjustieren.'),
                str_c('Weder eine Ausssage über die Population noch über das Individuum ist mit einem statistischen Test möglich. Wir erhalten eine Aussage über ein Experiment.'),
                str_c(sample(c("Ja", "Nein"), 1), ', wir können ', var_vec, ' nicht mit einer ANOVA auswerten. Wir erhalten keine Aussage ', names(var_vec), '. Wir können aber den Test adjustieren und so die Auswertung ermöglichen.'),
                str_c(sample(c("Ja", "Nein"), 1), ', wir können ', var_vec, ' nicht mit einem t-Test auswerten. Wir erhalten keine Aussage ', names(var_vec), '. Wir können aber den Effekt als Quelle der Relevanz nutzen.')) %>%

@@ -37,6 +37,7 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
 project <- c(str_c(pronom[6], " Abschlussarbeit"), str_c(pronom[8], " Projektbericht"),
              str_c(pronom[6], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",

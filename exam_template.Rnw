@@ -50,7 +50,8 @@ forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALS
 program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
 
 ## glue them
-glue_questions_vec <- c(desc_stat_questions_vec,
+glue_questions_vec <- c(program_questions_vec,
+                        desc_stat_questions_vec,
                         stat_test_questions_vec,
                         ttest_questions_vec,
                         anova_questions_vec,
@@ -59,7 +60,6 @@ glue_questions_vec <- c(desc_stat_questions_vec,
                         linreg_questions_vec,
                         experimental_questions_vec,
                         forsch_lern_questions_vec,
-                        program_questions_vec,
                         math_questions_vec,
                         tier_questions_vec)
 
