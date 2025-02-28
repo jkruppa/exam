@@ -93,3 +93,11 @@ Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $\Sexpr{fittin
 \item Unter einer Dicke der Eichenwand von $\Sexpr{crit_width}cm$ bricht die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
 
+<<>>=
+herodot_solution_kbl <- tibble("1)" = "$h_D = 12$",
+                               "2)" = "12.3") |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+@
+

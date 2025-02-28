@@ -5,7 +5,7 @@
 <<init, echo = FALSE>>=
 pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
                gridExtra, broom, effectsize, gtsummary, glmmTMB, performance,
-               janitor, pander, lme4, corpcor, fs)
+               janitor, pander, lme4, corpcor, fs, tinytable)
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
@@ -738,6 +738,21 @@ Das forschende Lernen basiert zum einen auf den folgenden wissenschaftlichen Ver
 \Sexpr{knit_child(tier_questions_vec[1])}
 \Sexpr{knit_child(tier_questions_vec[2])}
 \Sexpr{knit_child(tier_questions_vec[3])} 
+\clearpage
+% -----------------------------------------------------------------------
+\part{Lösungen}
+% ----------------------------------------------------------------------- 
+\section*{Mathematik}
+% ----------------------------------------------------------------------- 
+\subsection*{Herodot – der Schimmel aus Ivenack}
+<<>>=
+herodot_solution_kbl
+@
+% ----------------------------------------------------------------------- 
+\subsection*{Herodot – der Schimmel aus Ivenack}
+<<>>=
+herodot_solution_kbl
+@
 \end{document}
 % -----------------------------------------------------------------------
 
