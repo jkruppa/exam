@@ -77,6 +77,34 @@ Helfen Sie der Projektgruppe \textit{\Sexpr{lerngruppe}} bei der Planung des Ver
 \item Berechnen Sie die Kosten in EUR für Ihre Torfbestellung! \textbf{(1 Punkt)}
 \end{enumerate}
 
+<<>>=
+## 1)
+r_2022 <- brust_umfang*100/(2*pi)
+delta_y <- 2022 - year_stolen
+growth <- delta_y * mm_wachstum/10
+r_napoleon <- r_2022 - growth
+u_napoleon <- round(r_napoleon * 2, 2)
+
+## 3)
+v_h <- round(horse_h * horse_b * horse_l / 2 / 1e6, 2)
+
+## 4)
+r_eiche <- r_napoleon
+r_horse <- horse_l / 2
+delta_r <- round(r_eiche - r_horse, 2)
+
+## 5)
+space <- delta_r - crit_width
+
+herodot_solution_kbl <- tibble("1)" = str_c("$d_{", year_stolen ,"} = ", u_napoleon,"cm$"),
+                               "3)" = str_c("$V_{eff} = ", v_h,"m^3$"),
+                               "4)" = str_c("$s_{Eiche} = ", delta_r,"cm$"),
+                               "5)" = str_c("$s_{Platz} = ", space,"cm$"),
+                               ) |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+@
 
 
 
