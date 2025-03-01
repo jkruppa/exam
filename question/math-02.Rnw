@@ -54,8 +54,8 @@ attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
 \fi
 
 <<>>=
-n_plant <- c(120, 180, 240, 160, 200) %>% sample(1)
-n_tisch <- c("zwei", "drei", "vier") %>% sample(1)
+n_plant <- c(120, 180, 240, 210, 150) %>% sample(1)
+n_tisch <- c("zwei", "drei", "vier") |> set_names(c(2, 3, 4)) %>% sample(1)
 type_plant <- c("Sonnenblumen", "Maispflanzen", "Stockrosen") %>% sample(1)
 topf_d <- (c(4, 4.5, 5, 4.25) * 2) %>% sample(1)
 topf_h <- c(7, 8, 9, 10) %>% sample(1)
@@ -78,12 +78,8 @@ Helfen Sie der Projektgruppe \textit{\Sexpr{lerngruppe}} bei der Planung des Ver
 \end{enumerate}
 
 <<>>=
-## 1)
-r_2022 <- brust_umfang*100/(2*pi)
-delta_y <- 2022 - year_stolen
-growth <- delta_y * mm_wachstum/10
-r_napoleon <- r_2022 - growth
-u_napoleon <- round(r_napoleon * 2, 2)
+## 2)
+n_plant/as.numeric(names(n_tisch))
 
 ## 3)
 v_h <- round(horse_h * horse_b * horse_l / 2 / 1e6, 2)
@@ -96,7 +92,7 @@ delta_r <- round(r_eiche - r_horse, 2)
 ## 5)
 space <- delta_r - crit_width
 
-herodot_solution_kbl <- tibble("1)" = str_c("$d_{", year_stolen ,"} = ", u_napoleon,"cm$"),
+tische_solution_kbl <- tibble("1)" = str_c("$d_{", year_stolen ,"} = ", u_napoleon,"cm$"),
                                "3)" = str_c("$V_{eff} = ", v_h,"m^3$"),
                                "4)" = str_c("$s_{Eiche} = ", delta_r,"cm$"),
                                "5)" = str_c("$s_{Platz} = ", space,"cm$"),
