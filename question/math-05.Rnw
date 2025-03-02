@@ -89,3 +89,21 @@ Die Distanz zwischen Sonne und Erde entspricht \Sexpr{sonne_erde_ae_dist} astron
 %\blfootnote{\tiny\textbf{Stichworte:} Kardaschow-Skala $\bullet$ Dyson-Sphäre $\bullet$ Hohlerde $\bullet$ Entropie}
 
 % https://de.wikipedia.org/wiki/Kardaschow-Skala
+
+<<>>=
+## 1)
+price_1 <- heidel_beere_kauf * heidel_beere_price
+
+
+aligator_solution_3_kbl <- tibble("4a)" = str_c("$V = ", blau_water, names(unit),"$"),
+                                "4b)" = str_c("$V = ", avo_water, names(unit),"$"),
+                                "5a)" = str_c(round(wasserverbrauch_chile/water_1, 2), "$\\times$"),
+                                "5b)" = str_c(round(wasserverbrauch_chile/water_2, 2), "$\\times$"),
+                                "6)" = "FAO Stat, Our World in Data"
+                               ) |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+
+
+@

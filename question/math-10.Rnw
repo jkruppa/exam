@@ -131,7 +131,7 @@ pyramid_solution_kbl <- tibble("1)" = str_c("$h = ", round(tan_d(m_grad), 2),"
                                "3)" = str_c("$n = ", times_karre,"$"),
                                "4)" = str_c("$r = ", r,"m$"),
                                "5)" = str_c("$b' = ", b_strich, "m$"),
-                               "6)" = str_c("$\\Delta = ", delta, "Ellen$")
+                               "6)" = str_c("$", delta, "Ellen$")
                                ) |> 
   kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
   row_spec(0, bold=TRUE) |> 

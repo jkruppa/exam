@@ -742,7 +742,7 @@ Das forschende Lernen basiert zum einen auf den folgenden wissenschaftlichen Ver
 % -----------------------------------------------------------------------
 \part{Lösungen}
 
-Die folgenden Lösungen sind absolut ein Entwurf und können Fehler enthalten. Daher immer mit Vorsicht genießen. Im Weiteren ist das Runden so eine Sache. Deshalb wird es vermutlich auch Abweichungen geben. Damit leben wir dann aber alle.
+Die folgenden Lösungen sind absolut ein Entwurf und können Fehler enthalten. Daher immer mit Vorsicht genießen. Im Weiteren ist das Runden so eine Sache. Deshalb wird es vermutlich auch Abweichungen zu deiner händischen Berechnung geben. Damit leben wir dann aber alle.
 
 % ----------------------------------------------------------------------- 
 \section*{Mathematik}
@@ -754,7 +754,24 @@ herodot_solution_kbl
 % ----------------------------------------------------------------------- 
 \subsection*{Von Töpfen auf Tischen}
 <<>>=
-herodot_solution_kbl
+tische_solution_kbl
+@
+% ----------------------------------------------------------------------- 
+\subsection*{Solar- \& Biogasanlagen}
+<<>>=
+solar_solution_kbl
+@
+% ----------------------------------------------------------------------- 
+\subsection*{Aligatorenbirnen und Blaubeere}
+<<>>=
+aligator_solution_1_kbl
+aligator_solution_2_kbl
+aligator_solution_3_kbl
+@
+% ----------------------------------------------------------------------- 
+\subsection*{Die Dampfnudelerde}
+<<>>=
+pyramid_solution_kbl
 @
 % ----------------------------------------------------------------------- 
 \subsection*{Pyramiden bauen}

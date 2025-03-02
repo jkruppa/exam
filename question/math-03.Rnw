@@ -90,4 +90,26 @@ Ebenfalls plant \Sexpr{name} eine neue Biogasanlage für \Sexpr{pronom[3]} Betri
 \item Berechnen Sie die maximale Höhe $h_{max}$ in $m$ für den gefüllten Methantank mit dem Radius $r$, bevor das Fundament wegbricht! \textbf{(2 Punkte)}
 \end{enumerate}
 
+<<>>=
+## 2)
+s <- sqrt(tiefe^2 + (h_hinten - h_vorne)^2)
+A_dach <- round(breite * s, 2)
 
+## 3)
+dichte <- round(dichte_l + (dichte_h - dichte_l)/20 * (grad - 80), 2)
+
+## 4)
+vol <- round((beton_m * (100-save_m)/100 * 1000)/dichte, 2)
+
+## 5)
+h <- round(vol/(radius^2 * pi), 2)
+
+solar_solution_kbl <- tibble("2)" = str_c("$A_{Dach} = ", A_dach, "m^2$"),
+                             "3)" = str_c("$\\rho = ", dichte,"kg/m^3$"),
+                             "4)" = str_c("$V = ", vol,"m^3$"),
+                             "5)" = str_c("$h = ", h, "m$")
+                               ) |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+@

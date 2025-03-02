@@ -80,7 +80,7 @@ wasserverbrauch_type <- c("10 - 15 Liter pro Minute Duschen",
                           "8 - 17 Liter pro Sp{\"u}lmaschinenlauf",
                           "3 - 12 Liter pro Minute H{\"a}ndewaschen") %>%
   sample(2)
-unit <- c("Tonnen", "Liter", "Kubikmeter") |> sample(1)
+unit <- c("Tonnen", "Hektoliter", "Kubikmeter") |> set_names(c("t", "hl", "m^3")) |> sample(1)
 water_perc <- c("ein", "zwei", "drei") |> sample(1)
 blau_switch <- c("reduzierte", "steigerte") |> sample(1)
 avo_switch <- c("stiegen", "fielen") |> sample(1)
@@ -109,7 +109,7 @@ Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch b
 \item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
 \end{enumerate}
 
-Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen. Die Menge \Sexpr{blau_switch} sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados \Sexpr{avo_switch} in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile}t.
+Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr \Sexpr{export_year} blieben die Erträge von Blaubeeren mit \Sexpr{export_blau_chile}t in dem prognostizierten Rahmen. Die Menge \underline{\Sexpr{blau_switch}} sich um \Sexpr{export_blau_chile_per}\%. Die Exporte für Avocados \underline{\Sexpr{avo_switch}} in dem gleichen Zeitraum um \Sexpr{export_avocado_chile_per}\% auf \Sexpr{export_avocado_chile}t.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -129,3 +129,82 @@ Das alles hätten Sie nicht von \Sexpr{name} erwartet. Ganz schön viele Informa
   \setcounter{enumi}{5}  
   \item Nennen Sie eine \textit{Daten}quelle im Internet, wo Sie mehr Informationen zu landwirtschaftlichen Daten oder klimatischen, wirtschaftlichen und gesellschaftlichen Daten erhalten! \textbf{(1 Punkt)}
 \end{enumerate}
+
+<<>>=
+## 1)
+price_1 <- heidel_beere_kauf * heidel_beere_price
+
+## 2)
+n_avo <- floor((100 - heidel_beere_kauf * heidel_beere_price)/aligator_price)
+
+## 4)
+if(blau_switch == "reduzierte"){
+  blau_t <- export_blau_chile * (1-export_blau_chile_per/100)
+} else {
+  blau_t <- export_blau_chile * (1+export_blau_chile_per/100)
+}
+blau_water <- switch(unit,
+                     "Tonnen" = blau_t * kilo_blaubeeren_water,
+                     "Hektoliter" = blau_t * 10 * kilo_blaubeeren_water,
+                     "Kubikmeter" = blau_t * kilo_blaubeeren_water)
+if(avo_switch == "fielen"){
+  avo_t <- export_avocado_chile * (1-export_avocado_chile_per/100)
+} else {
+  avo_t <- export_avocado_chile * (1+export_avocado_chile_per/100)
+}
+avo_water <- switch(unit,
+                     "Tonnen" = avo_t * kilo_avocado_water,
+                     "Hektoliter" = avo_t * 10 * kilo_avocado_water,
+                     "Kubikmeter" = avo_t * kilo_avocado_water)
+
+
+## 5)
+h <- round(vol/(radius^2 * pi), 2)
+
+aligator_solution_1_kbl <- tibble("1)" = str_c("$", price_1, "EUR$"),
+                                "2)" = str_c("$n = ", n_avo,"$")
+                               ) |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+
+avocado_mean <- str_split(avocado_g, " - ", simplify = TRUE) |> as.numeric() |> mean()
+salat_mean <- str_split(salat_g, " - ", simplify = TRUE) |> as.numeric() |> mean()
+tomate_mean <- str_split(tomate_g, " - ", simplify = TRUE) |> as.numeric() |> mean()
+blaubeeren_mean <- str_split(blaubeeren_g, " - ", simplify = TRUE) |> as.numeric() |> mean()
+
+aligator_solution_2_kbl <- tibble("3)" = c("Strauchtomate", "Salat", "Avocado", "Blaubeere"),
+                                Wasserverbrauch = c(str_c("$", kilo_tomate_water/1000, "l/g$"),
+                                                    str_c("$", kilo_salat_water/1000, "l/g$"),
+                                                    str_c("$", kilo_avocado_water/1000, "l/g$"),
+                                                    str_c("$", kilo_blaubeeren_water/1000, "l/g$")),
+                                "Mittleres Gewicht" = c(str_c("$", tomate_mean, "g$"),
+                                                        str_c("$", salat_mean, "g$"),
+                                                        str_c("$", avocado_mean,  "g$"),
+                                                        str_c("$", blaubeeren_mean, "g$")),
+                                "Liter pro Stück" = c(str_c("$", kilo_tomate_water/1000*tomate_mean, "l$"),
+                                                      str_c("$",kilo_salat_water/1000*salat_mean, "l$"),
+                                                      str_c("$",kilo_avocado_water/1000*avocado_mean, "l$"),
+                                                      str_c("$",kilo_blaubeeren_water/1000*blaubeeren_mean, "l$"))
+                               ) |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+
+water_1 <- str_split(wasserverbrauch_type, " ", simplify = TRUE)[1, c(1,3)] |> as.numeric() |> mean()
+water_2 <- str_split(wasserverbrauch_type, " ", simplify = TRUE)[2, c(1,3)] |> as.numeric() |> mean()
+
+aligator_solution_3_kbl <- tibble("4a)" = str_c("$V = ", blau_water, names(unit),"$"),
+                                "4b)" = str_c("$V = ", avo_water, names(unit),"$"),
+                                "5a)" = str_c(round(wasserverbrauch_chile/water_1, 2), "$\\times$"),
+                                "5b)" = str_c(round(wasserverbrauch_chile/water_2, 2), "$\\times$"),
+                                "6)" = "FAO Stat, Our World in Data"
+                               ) |> 
+  kable(booktabs = TRUE, align = "c", escape = FALSE) %>% 
+  row_spec(0, bold=TRUE) |> 
+  kable_styling(latex_options = "hold_position", font_size = 10)
+
+
+@
+
+
