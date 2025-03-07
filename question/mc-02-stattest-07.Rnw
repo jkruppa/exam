@@ -19,7 +19,7 @@
 <<>>=
 
 var_vec <- c("die untersuchte Population",
-             "ein untersuchtes Individuum") %>%
+             "\\underline{ein} untersuchtes Individuum") %>%
   set_names(c("zur Population", "zum Individuum")) %>% 
   sample(1)
 
