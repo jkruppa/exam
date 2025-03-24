@@ -114,6 +114,13 @@ grade_tbl <- pre_grade_tbl %>%
 exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |> 
   str_c(collapse = "\\!")
 
+## hausarbeit tabellen name
+if(any(str_detect(text_questions_vec, "hausarbeit"))){
+  seventeen <- "Hausarbeit"
+} else {
+  seventeen <- 17
+}
+
 ## global parameters
 naming_global <- c(rep(c("Jessica", "Paula", "Tina", "Nilufar"), each = 2), "Yuki",
                    rep(c("Mark", "Jonas", "Alex", "Steffen"), each = 2), "Yuki") |> 
@@ -340,7 +347,7 @@ sentence_func <- \(name, pronom, attr_vec){
     \large
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
-      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} \strut\\
+      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{\Sexpr{seventeen}} \strut\\
       \hline
       \textbf{Punkte} & 
       \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
