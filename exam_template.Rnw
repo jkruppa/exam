@@ -48,6 +48,7 @@ multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
 program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
+hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 
 ## glue them
 glue_questions_vec <- c(program_questions_vec,
@@ -61,11 +62,11 @@ glue_questions_vec <- c(program_questions_vec,
                         experimental_questions_vec,
                         forsch_lern_questions_vec,
                         math_questions_vec,
-                        tier_questions_vec)
+                        tier_questions_vec,
+                        hausarbeit_vec)
 
 text_questions_vec <- glue_questions_vec %>%
-  magrittr::extract(wanted_questions_lst$text - 50) %>%
-  sample()
+  magrittr::extract(wanted_questions_lst$text - 50)
 mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)  %>%
   magrittr::extract(wanted_questions_lst$mc) %>%
   sample()

@@ -42,6 +42,7 @@ multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
 program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
+hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 
 ## get the points per question
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
@@ -738,6 +739,10 @@ Das forschende Lernen basiert zum einen auf den folgenden wissenschaftlichen Ver
 \Sexpr{knit_child(tier_questions_vec[1])}
 \Sexpr{knit_child(tier_questions_vec[2])}
 \Sexpr{knit_child(tier_questions_vec[3])} 
+\clearpage
+% -----------------------------------------------------------------------
+\part{Platzhalter}
+\Sexpr{knit_child(hausarbeit_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Lösungen}
