@@ -16,6 +16,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \textbf{\examinhaltstart}
 \exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
+\exammodulelanddaten $\;\bullet$
 \exammodulestatbbv 
 \vspace{-4Ex}
 \end{flushright}
@@ -75,6 +76,7 @@ ques_vec <- c(str_c(sentence_name_vec$flaw, " Deshalb gilt anschauen, was andere
               str_c(name, " steht vor einem ersten Problem, denn wenn es nach ", betreuer, " geht, soll ", names(name), " in einem ", exp, " ", plant, " auswertet. Soweit eigentlich alles passend. Besser wäre was anderes gewesen. ", sentence_name_vec$hobby, " Die Behandlung waren verschiedene ", type, ". In ", pronom[2], " Exceldatei hat ", names(name), " den ", outcome_name, " \\textit{", outcome, "} als ", "\\textit{", names(outcome), "} aufgenommen. Nun soll ", name, " die Daten eimal als Barplots in einer Präsentation visualisieren, damit ", betreuer, " wieder klar wird, was ", names(name), " eigentlich nochmal gemacht hat und was für ein Ergbnis in einem statistischen Test zu erwarten wäre. Wäre da nicht noch etwas. ", sentence_name_vec$flaw, " Aber egal. ", sentence_name_vec$sport),
               str_c("Barplots sind bedeutend in der Darstellung von wissenschaftlichen Ergebnissen. Leider hat sich ", name, " nicht gemerkt, welche statistischen Maßzahlen für einen Barplot erhoben werden müssen. Besser wäre was anderes gewesen. ", sentence_name_vec$hobby, " Das ist in soweit doof, da nach ", betreuer, " nun Barplots aus ", pronom[3], " Daten gebaut werden sollen, bevor es mit dem statistischen Testen weitergeht. Na dann mal los. ", name, " schafft sich die nötige Stimmung. ", sentence_name_vec$animal_music, " Die Behandlung für ", plant, " waren verschiedene ", type, ". Erfasst wurde von ", name, " als ", outcome_name, " \\textit{", outcome, "}. ", name, " hat dann \\textit{", names(outcome), "} in ", pronom[2], " Exceldatei eintragen. Aber auch irgendwie egal. ", sentence_name_vec$sport)) |> sample(1)
 
+effect_switch <- c("einen", "keinen") |> sample(1)
 @ 
 
 \ifcollection
@@ -98,8 +100,8 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Barplots nicht aus. Deshal
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-\item Zeichnen Sie in \textit{einer} Abbildung die Barplots für die Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend!\textbf{(4 Punkte)}
+\item Zeichnen Sie in \textit{einer} Abbildung die Barplots für die Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend! \textbf{(4 Punkte)}
 \item Beschriften Sie \textit{einen} Barplot mit den gängigen statistischen Maßzahlen! \textbf{(2 Punkte)}
-\item Wenn \Sexpr{name} \textit{keinen Effekt} zwischen den Behandlungen von \Sexpr{plant} erwarten würde, wie sehen dann die Barplots aus? \textit{Antworten Sie mit einer Skizze der Barplots!}
+\item Wenn \Sexpr{name} \underline{\Sexpr{effect_switch}} Effekt zwischen den Behandlungen von \Sexpr{plant} erwarten würde, wie sehen dann die Barplots aus? \textit{Antworten Sie mit einer Skizze der Barplots!}
   \textbf{(1 Punkt)}
 \end{enumerate}
