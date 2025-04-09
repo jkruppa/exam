@@ -144,8 +144,8 @@ int_num <- (supp_num - 1)*(dose_num-1)
 Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+  \item Formulieren Sie die wissenschaftliche Fragestellung für beide Faktoren separat! \textbf{(2 Punkte)}
+  \item Formulieren Sie die statistischen Hypothesenpaare für beide Faktoren separat! \textbf{(2 Punkte)}
 \item Füllen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus! \textbf{(3 Punkte)}
 \end{enumerate}
 
@@ -169,8 +169,7 @@ Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA übe
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Schätzen Sie den p-Wert der Tabelle ab. Begründen Sie Ihre
-  Antwort! \textbf{(3 Punkte)}
+\item Schätzen Sie den p-Wert der Tabelle ab. Begründen Sie Ihre Antwort! \textbf{(3 Punkte)}
 \end{enumerate}
   
 \begin{center}
@@ -188,7 +187,6 @@ Leider kennen sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA übe
 
 \begin{enumerate}
   \setcounter{enumi}{4}
-\item Was bedeutet ein signifikantes Ergebnis in einer zweifaktoriellen ANOVA? \textbf{(2 Punkte)}
 \item Was sagt der Term \textit{\Sexpr{interterm}} aus? Interpretieren Sie das Ergebnis! \textbf{(2 Punkte)}
 \end{enumerate}
 
