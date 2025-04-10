@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -150,9 +150,9 @@ anova_mdl
 Leider kennt sich \Sexpr{name} mit Berechnung einer zweifaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
-  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-\item Interpretieren Sie das Ergebnis der einfaktoriellen ANOVA! \textbf{(3 Punkte)} 
+  \item Formulieren Sie die wissenschaftliche Fragestellung für beide Faktoren separat! \textbf{(2 Punkte)}
+  \item Formulieren Sie die statistischen Hypothesenpaare für beide Faktoren separat! \textbf{(2 Punkte)}
+\item Interpretieren Sie das Ergebnis der zweifaktoriellen ANOVA! \textbf{(3 Punkte)} 
 \item Zeichnen Sie eine Abbildung, der dem obigen Ergebnis der
   zweifaktoriellen ANOVA näherungsweise entspricht! \textbf{(5 Punkte)}
 \end{enumerate}
