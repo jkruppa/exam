@@ -37,9 +37,8 @@ betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |>
 paper <- c("in der Tabelle 1") 
 
 f2_num <- sample(3, 4, 5) |> sample(1)
-var_lst <- c("$\\boldsymbol{f_1}$, $\\boldsymbol{f_2}$ und $\\boldsymbol{y_2}$",
-             "$\\boldsymbol{x_1}$ und $\\boldsymbol{y_1}$",
-             "$\\boldsymbol{x_1}$ und $\\boldsymbol{y_2}$") |> sample(1) |> unlist()
+var_lst <- c("$\\boldsymbol{f_1}$, $\\boldsymbol{f_2}$ und $\\boldsymbol{y_1}$",
+             "$\\boldsymbol{x_1}$ und $\\boldsymbol{y_1}$") |> sample(1) |> unlist()
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
@@ -79,27 +78,27 @@ ques_vec <- c(str_c("Unter einem langen Schnaufen starrt ", name, " auf den wiss
 
 \Sexpr{name} füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe! Glücklicherweise kennen Sie den wissenschaftlichen Datensatz aus Ihren eigenen Analysen schon im Detail und können sofort helfen.
 
+\paragraph{Allgemeiner Aufgabenteil} 
+
+\begin{enumerate}
+  \setcounter{enumi}{0}
+  \item Ergänzen Sie die Eigenschaften der Spalten in der Form eines \texttt{tibbles}! \textbf{(2 Punkte)}
+  \item Skizzieren Sie zwei übergeordnete Analysebereiche der Statistik passend zur obigen Datentabelle! Beschriften Sie die Abbildungen! \textbf{(4 Punkte)}
+  \item Formulieren Sie zwei mögliche wissenschaftliche Fragestellungen in Form einer PowerPoint Folie aus der obigen Datentabelle! \textbf{(2 Punkte)}
+\end{enumerate}
+
 \begin{graybox}{}
 \begin{center}
 \textit{Beantworten Sie die folgenden Fragen anhand eines selbst gewählten Beispiels!}
 \end{center}
 \end{graybox}
 
-\paragraph{Allgemeiner Aufgabenteil} 
-
-\begin{enumerate}
-  \setcounter{enumi}{0}
-  \item Ergänzen Sie die Eigenschaften der Spalten in der Form eines \texttt{tibbles}! \textbf{(2 Punkte)}
-  \item Skizzieren Sie die übergeordneten Analysebereiche der Statistik passend zur obigen Datentabelle! Beschriften Sie die Abbildungen! \textbf{(4 Punkte)}
-  \item Formulieren Sie zwei mögliche wissenschaftliche Fragestellungen in Form einer PowerPoint Folie aus der obigen Datentablle! \textbf{(2 Punkte)}
-\end{enumerate}
-
 \paragraph{Spezieller Aufgabenteil für die Variablen \Sexpr{var_lst}}
 
 \begin{enumerate}
   \setcounter{enumi}{3}
   \item In welchen der übergeordneten Analysebereiche der Statistik gehört die Auswertung Ihres Endpunktes? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-  \item Skizzieren Sie eine ikonische Abbildung für Ihren Endpunkt im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
+  \item Skizzieren Sie eine beispielhafte Abbildung für Ihren Endpunkt im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
   \item Erstellen Sie das statistische Modell in der in \Rlogo üblichen Schreibweise! \textbf{(1 Punkt)}
   \item Skizzieren Sie die Datenanalyse für Ihren Endpunkt! \textbf{(4 Punkte)}
   \item Auf welche Eigenschaft der Daten müssen Sie für Ihre statistische Analyse im Besonderen achten? Erklären Sie eine mögliche Lösung in der Modellierung! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
