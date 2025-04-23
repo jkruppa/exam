@@ -78,22 +78,22 @@ ques_vec <- c(str_c("Unter einem langen Schnaufen starrt ", name, " auf den wiss
 
 \Sexpr{name} füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshalb braucht \Sexpr{names(name)} bei der Auswertung Ihre Hilfe! Glücklicherweise kennen Sie den wissenschaftlichen Datensatz aus Ihren eigenen Analysen schon im Detail und können sofort helfen.
 
-\paragraph{Allgemeiner Aufgabenteil} 
-
-\begin{enumerate}
-  \setcounter{enumi}{0}
-  \item Ergänzen Sie die Eigenschaften der Spalten in der Form eines \texttt{tibbles}! \textbf{(2 Punkte)}
-  \item Skizzieren Sie zwei übergeordnete Analysebereiche der Statistik passend zur obigen Datentabelle! Beschriften Sie die Abbildungen! \textbf{(4 Punkte)}
-  \item Formulieren Sie zwei mögliche wissenschaftliche Fragestellungen in Form einer PowerPoint Folie aus der obigen Datentabelle! \textbf{(2 Punkte)}
-\end{enumerate}
-
-\paragraph{Spezieller Aufgabenteil für die Variablen \Sexpr{var_lst}}
-
 \begin{graybox}{}
 \begin{center}
 \textit{Beantworten Sie die folgenden Fragen anhand eines selbst gewählten Beispiels!}
 \end{center}
 \end{graybox}
+
+\paragraph{Allgemeiner Aufgabenteil} 
+
+\begin{enumerate}
+  \setcounter{enumi}{0}
+  \item Ergänzen Sie die Eigenschaften der Spalten in der Form eines \texttt{tibbles}! \textbf{(2 Punkte)}
+  \item Skizzieren Sie zwei übergeordnete Analysebereiche der Statistik! \textit{Nutzen Sie hierfür die Variablennamen der obigen Datentabelle.} Beschriften Sie die Abbildungen! \textbf{(4 Punkte)}
+  \item Formulieren Sie zwei mögliche wissenschaftliche Fragestellungen in Form einer PowerPoint Folie aus der obigen Datentabelle! \textbf{(2 Punkte)}
+\end{enumerate}
+
+\paragraph{Spezieller Aufgabenteil für die Variablen \Sexpr{var_lst}}
 
 \begin{enumerate}
   \setcounter{enumi}{3}
