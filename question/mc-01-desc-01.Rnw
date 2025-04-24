@@ -15,7 +15,7 @@
 
 
 <<mc-desc-01a, results='markup', echo = FALSE>>=
-x <- round(rnorm(5, 10, 4))
+x <- round(rnorm(5, 15, 4))
 
 ques_vec <- c(str_c('Berechnen Sie den Mittelwert und Standardabweichung von $y$ mit ', pander::p(x, wrap = "", copula = " und "), '.'),
                str_c('Gegeben ist $y$ mit ', pander::p(x, wrap = "", copula = " und "), '. Berechnen Sie den Mittelwert und Standardabweichung.'),
