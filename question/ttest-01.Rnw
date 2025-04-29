@@ -144,7 +144,7 @@ kable(data_tbl, booktabs = TRUE, align = "c") %>%
   kable_styling(latex_options = "hold_position")
 @
 
-Leider kennt sich \Sexpr{name} mit der Berechnung eines t-Tests überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Berechnung Ihre Hilfe!
+Leider kennt sich \Sexpr{name} mit der Berechnung eines \Sexpr{type} überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Berechnung Ihre Hilfe!
 
 \begin{enumerate}
   \item \Sexpr{hypo} \textbf{(1 Punkt)}
