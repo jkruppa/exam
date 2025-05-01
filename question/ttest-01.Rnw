@@ -135,7 +135,8 @@ data_tbl <- rbind(tibble(ctrl = round(rnorm(n = 3,
                                          sd = sample(c(4, 5), 1)), 1)) %>%
                   gather) %>%
   set_names(c("treatment", "weight")) %>% 
-  sample_n(size = nrow(.)) |> 
+  mutate(treatment = factor(treatment, labels = groups_vec)) |> 
+  sample_frac(prop = 1) |> 
   set_names(c(x_val, y_val)) 
 
 t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
