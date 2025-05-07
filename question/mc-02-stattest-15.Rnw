@@ -40,8 +40,8 @@ right_2_vec <- c('Ist $T_{D}$ höher als der kritische Wert $T_{\\alpha = 5\\%}$
                  str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Ist der Wert größer als der kritische Wert $T_{\\alpha = 5\\%}$ dann kann die Nullhypothese abgelehnt werden.')) |> sample(1)
 
 right_3_vec <- c('Ist in dem 95\\%-Konfidenzintervall nicht die Null enthalten dann wird die Nullhypothese $H_0$ abgelehnt.',
-                 'Wir betrachten das Ganze Intervall des 95\\%-Konfidenzintervalls. Liegt die Null mit in dem Intervall, dann kann die Nullhypothese abgelehnt werden.',
-                 str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Ist die Null mit enthalten, dann kann die Nullhypothese abgelehnt werden.')) |> sample(1) 
+                 'Wir betrachten das ganze Intervall des 95\\%-Konfidenzintervalls. Liegt die Null mit in dem Intervall, dann kann die Nullhypothese nicht abgelehnt werden.',
+                 str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Ist die Null mit enthalten, dann kann die Nullhypothese nicht abgelehnt werden.')) |> sample(1) 
 
 wrong_vec <- c(str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Liegt der Wert über oder gleich dem Signifikanzniveau $\\alpha$ dann kann die Nullhypothese abgelehnt werden.'),
                str_c('Anhand ', type, ' lässt sich wie folgt eine Entscheidung treffen. Liegt der Wert in dem Signifikanzniveauintervall $\\alpha$ dann kann die Nullhypothese abgelehnt werden.'),

@@ -61,7 +61,7 @@ wrong_vec <- c('Die Fläche rechts von $2\\sigma$ ist der p-Wert mit $Pr(D|H_0)$
                'Die Fläche zwischen $-1\\sigma$ und $1\\sigma$ ist 0.95 und 95\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Verteilung.',
                'Die Fläche unter der Kurve entspricht dem Signifikanzniveau $\\alpha$ von 5\\%. Damit ist die Standardabweichung $\\sigma$ gleich 1 in der obigen Abbildung.',
                'Die Fläche unter der Kurve ist 1, wenn die Nullhypothese falsch ist. Wenn die Nullhypothese gilt, dann ist die Fläche $1-\\alpha$. Somit ergibt sich auch eine Standardabweichung $\\sigma$ mit $\\alpha$ gleich 0.05 in beiden Fällen.',
-               'Dargestellt ist eine Standardnormalverteilung.')  %>%
+               'Dargestellt ist keine Standardnormalverteilung.')  %>%
   sample(4)
 
 questions_vec <- c(right_vec,
