@@ -71,9 +71,9 @@ lst(p1, p2)[[sample(c("p1", "p2"), 1)]]
 
 <<mc-anova-02-b, results='asis', echo = FALSE>>=
 
-right_1_vec <- c('Keine Interaktion liegt vor $(p \\leq 0.05)$.',
-                 'Es liegt keine Interaktion vor $(p \\leq 0.05)$.',
-                 'Mit $(p \\leq 0.05)$ liegt keine Interaktion vor.') |> sample(1)
+right_1_vec <- c('Keine Interaktion liegt vor $(p > 0.05)$.',
+                 'Es liegt keine Interaktion vor $(p > 0.05)$.',
+                 'Mit $(p > 0.05)$ liegt keine Interaktion vor.') |> sample(1)
 right_2_vec <- c('Eine mittlere bis starke Interaktion liegt vor $(p \\leq 0.05)$',
                  'Mit $(p \\leq 0.05)$ liegt eine mittlere bis starke Interaktion vor.',
                  'Es liegt eine mittlere bis starke Interaktion vor $(p \\leq 0.05)$.') |> sample(1)
