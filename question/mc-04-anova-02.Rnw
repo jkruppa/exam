@@ -40,6 +40,7 @@ ques_vec <- c(str_c('Sie führen ein Feldexperiment durch um das Gewicht von ', 
               str_c('Nach einem Feldexperiment erhalten Sie ein $\\eta^2 = ', eta2_val, '$. aus Ihrer einfaktoriellen ANOVA. Sie haben sich den Chlorophyllgehalt in ', plant, ' angeschaut und wollen nun das Ergebnis anhand des $\\eta^2$ bewerten. Welche Aussage ist richtig?')) |>  sample(1)
 @
 
+\Sexpr{ques_vec}
 
 <<mc-anova-01-b, results='asis', echo = FALSE>>=
 

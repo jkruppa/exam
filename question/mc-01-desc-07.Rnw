@@ -34,7 +34,7 @@ right_2_vec <- c('2-5 Beobachtungen.',
                'Die untere Grenze liegt bei zwei bis fünf Beobachtungen.') |> sample(1)
 
 right_3_vec <- c('Mindestens 20 Beobachtungen.',
-               'Damit wir hier sauber eine Abbilung von einem ', var_vec, ' erhalten, sollten wir mindestens zwanzig Beobachtungen haben.',
+               str_c('Damit wir hier sauber eine Abbilung von einem ', var_vec, ' erhalten, sollten wir mindestens zwanzig Beobachtungen haben.'),
                'Die opimale Anzahl ist größer als zwanzig Beobachtungen, wobei es gerne sehr viel mehr sein können.') |> sample(1)
 
 wrong_vec <- c('1 Beobachtung.',
