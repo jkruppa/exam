@@ -1,16 +1,14 @@
-\section{Aufgabe \hfill (12 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
 <<>>=
 name <- par_lst$naming |> sample(1)
-name_sec <- str_subset(par_lst$naming, name, negate = TRUE) |> sample(1)
-avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE) |> 
-  str_subset(str_c(name, name_sec, sep = "|"))
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
 jahr <- par_lst$year
 obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
-avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[1], "}")
-avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 @
  
 %% --------------------------------------------------------------------
@@ -18,17 +16,19 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \begin{flushright}
 \tiny\vspace{-3Ex}
 \textbf{\examinhaltstart}
-\exammodulestatversuch $\;\bullet$
-\exammodulebiostat
+\exammodulemathstat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestatbbv
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\Sexpr{avatar1file}\hspace{-4mm}\Sexpr{avatar2file}
+\Sexpr{avatar1file}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/49hvImMwVyE}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
+\vspace{-3Ex}
 \fi
 %% --------------------------------------------------------------------
 
@@ -38,10 +38,6 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
-outcome <- c("Frischegewicht", "Trockengewicht", "Ertrag", "Proteingehalt") |> 
-  set_names(c("freshmatter", "drymatter", "yield", "protein")) |> 
-  sample(1)
-outcome_name <- c("Outcome ($Y$)", "Endpunkt ($Y$)", "Messwert ($Y$)") |> sample(1)
 
 exp <- lst(pflanze = c("ein Gewächshausexperiment",
                        "ein Freilandversuch",
@@ -54,9 +50,9 @@ exp <- lst(pflanze = c("ein Gewächshausexperiment",
 
 x_val <- lst(pflanze = c("Düngestufen ($ctrl$, $low$, $mid$ und $high$)",
                          "Lichtstufen ($none$, $200lm$, $400lm$ und $600lm$)",
-                         "Lüftungssystemen und Folientunneln ($ctrl$, $storm$, $thunder$ und $tornado$)",
+                         "Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$)",
                          "Substrattypen ($torf$, $40p60n$, $30p20n$ und $70p30n$)",
-                         "Bewässerungstypen ($ctrl$, $low$, $mid$ und $high$)",
+                         "Bewässerung ($ctrl$, $low$, $mid$ und $high$)",
                          "Genotypen ($AA$, $AB$ und $BB$)"),
            tier = c("Ernährungszusatz ($ctrl$, $fedX$ und $getIt$)", 
                     "Flüssignahrung ($ctrl$, $superIn$ und $flOw$)",
@@ -92,98 +88,53 @@ gen_data <- function(...){
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
-attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA. Und wie füllen wir jetzt \textit{genau} die Tabelle der ANOVA aus und schauen, ob da was signifikant ist?', ", name, " hebt die Augenbraue. 'Das ist eine sehr gute Frage. Ich glaube man kann alles in der Tabelle relativ einfach mit wenigen Informationen berechnen.', meint ", name_sec, " dazu und schmiß sich noch ein paar ", attr_name_sec1_vec$sweet, " in den Rachen. ", name, " hatte sich in ", exp, " verschiedene ", obser, " angeschaut. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Nun möchte erstmal ", betreuer, " eine ANOVA Tabelle sehen. Was immer da auch drin zu erkennen sein mag. Später wollen die beiden dann noch raus um ", attr_name_sec1_vec$sport, "."),
-               str_c("'Als erstes bauen wir uns aus unsere Daten die ANOVA Tabelle dann sehen wir schon, ob unser Gruppenvergleich in der ANOVA signifikant ist.', ", name, " schaut ", name_sec, " fragend an und hofft auf eine positive Regung im Gesicht. Wird aber enttäuscht. ", name_sec, " schmeißt sich noch ein paar ", attr_name_sec1_vec$sweet, " in den Rachen. Beide tuen sich sehr schwer mit der einfaktoriellen ANOVA. Nun möchte erstmal ihre Betreuung der Arbeit eine ANOVA Tabelle sehen. Was immer da auch drin zu erkennen sein mag. Beide waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Später wollen die beiden dann noch raus um ", attr_name_sec1_vec$sport, "."),
-               str_c(name, " und ", name_sec, " schauen sich etwas entnervt an. Gemeinsam schreiben die beiden ihre Abschlussarbeit und sollen nun als erstes einmal die Daten mit eine einfaktoriellen ANOVA auswerten damit abgeschätzt werden kann, ob überhaupt signifikante Ergebnisse in den multipen Gruppenvergleichen zu erwarten sind. Deshalb erstmal ", attr_name_sec1_vec$sweet, " mampfen, die ", name_sec, " mitgebracht hat. Nun möchte erstmal ihre Betreuung der Arbeit eine ANOVA Tabelle sehen. Was immer da auch drin zu erkennen sein mag. ", name, " schaut ", name_sec, " sehen erstmla gar nichts. Die beiden waren ", ort, " um ", exp, " mit ", obser, " durchzuführen. Dabei haben ", name, " und ", name_sec, " den Messwert ", y_val, " unter der Behandung ", x_val, " ermittelt. Später wollen die beiden dann noch raus um ", attr_name_sec1_vec$sport, ".")) |> 
+ques_vec <-  c(str_c("'Uff... die einfaktorielle ANOVA und \\Rlogo. Nicht so einfach... Was sagt mir jetzt die Ausgabe der ANOVA und wo sehe ich, ob da was signifikant ist?', denkt ", name, " und hebt die Augenbraue. ", name, " hatte sich ", exp, " mit ", obser, " angeschaut. Als wäre das nicht alles schon schwer genug. ", sentence_name_vec$flaw, " Dabei ging es beim Experiment herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Nun möchte ", betreuer, " ", project, " erstmal eine ANOVA sehen und die Ergebnisse präsentiert bekommen. Und eigentlich will ", names(name), " ja was anderes... ", sentence_name_vec$sweet_film),
+               str_c(name, " schaut sich fragend in der Bibliothek um. ", name, " hatte gehofft, dass jemand hier sein würde, den ", names(name), " kennt und sich mit \\Rlogo auskennt. Wird aber enttäuscht. ", name, " war ", ort, " um ", exp, " mit ", obser, " durchzuführen. Nun möchte ", betreuer, " ", project, " erstmal eine ANOVA sehen und die Ergebnisse präsentiert bekommen. Dabei ging es herauszufinden, ob es einen Zusammenhang zwischen der Behandlung ", x_val, " und dem Messwert ", y_val, " gibt. Und eigentlich wollte ", name, " doch noch zum Sport! ", sentence_name_vec$sport),
+               str_c(name, " schaut entnervt auf und klappt den Laptop zu. ", name, " dreht ", attr_name_vec$music, " auf, so dass sich die Nachbarn beschweren werden. Nun möchte ", betreuer, " ", project, " erstmal eine ANOVA sehen und \\textit{dann} die Ergebnisse präsentiert bekommen bevor es überhaupt mit der Abschlussarbeit weitergeht. Dabei war ", names(name), " extra ", ort, " um ", exp, " mit ", obser, " durchzuführen. Und dort was es wirklich nicht schön geschweige denn spannend wie bei ", pronom[3], " Kommilitonen, die in Almería waren. Hätte ", names(name), " es vorher gewusst, dann hätte ", names(name), " die Abschlussarbeit bei wem anders geschrieben. Aber gut, jetzt als die ANOVA in \\Rlogo.")) |> 
   sample(1)
 
 @ 
 
 \ifcollection
-\paragraph{Die einfaktoriellen ANOVA und der Student t-Test}
+\paragraph{Die einfaktorielle ANOVA in \Rlogo}
 \fi
 
 \Sexpr{ques_vec}
 
-<<anova-R-09-c,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
+<<anova-R-10-c,  echo = FALSE, fig.height = 6, fig.width = 8, fig.align = "center", message = FALSE>>=
 
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
   set_names(c("treatment", "freshmatter")) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
-x1_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+x_val_name <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
 
-anova_mdl <- lm(freshmatter ~ treatment, data = data_tbl) %>%
+
+lm_fit <- lm(freshmatter ~ treatment, data = data_tbl)
+anova_mdl <- lm_fit %>%
   anova
 
-total_df <- anova_mdl$Df %>% sum
-total_ss <- anova_mdl$"Sum Sq" %>% sum
+attr(anova_mdl, "heading")[2] <- str_c("Response: ", y_val)
+row.names(anova_mdl) <- c(x_val_name, "Residuals")
 
-ss_vec <- c(round(anova_mdl[[2]][1], 2),
-            round(anova_mdl[[2]][2], 2),
-            round(total_ss, 2))
-empty <- 1:3 %>% sample(1)
-ss_vec[empty] <- ""
 
+anova_mdl
 @
 
 \vspace{1ex}
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Berechnung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe! 
+Leider kennen sich \Sexpr{name} mit Berechnung einer einfaktoriellen ANOVA überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe! 
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-\item Füllen Sie die unterstehende einfaktorielle ANOVA Ergebnistabelle aus! \textbf{(3 Punkte)}
-\end{enumerate}
-
-\vspace{1Ex}
-
-\begin{center}
-  \Large
-  \begin{tabular}{lccccp{3cm}}
-\toprule
-     & \textbf{Df} & \textbf{Sum Sq} & \textbf{Mean Sq} & \textbf{F value} & \textbf{Pr(>F)} \strut\\
-    \midrule
-   \textbf{\Sexpr{x1_val_name}}  & \Sexpr{length(groups_vec)-1} & \Sexpr{round(anova_mdl[[2]][1], 2)} &  &  &  \strut\\
-   \textbf{Error}  & \Sexpr{round(anova_mdl[[1]][2], 2)} & \Sexpr{round(anova_mdl[[2]][2], 2)} &  &  &  \strut\\
-\bottomrule
-  \end{tabular}
-\end{center}
-
-\vspace{1Ex}
-
-\begin{enumerate}
-  \setcounter{enumi}{3}
-\item Schätzen Sie den p-Wert der Tabelle mit $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 = anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Was bedeutet ein signifikantes Ergebnis in einer einfaktoriellen ANOVA? \textbf{(1 Punkt)}
-\item Berechnen Sie \textit{einen} Student t-Test für den \textit{vermutlich} signifikantesten Gruppenvergleich anhand der untenstehenden Tabelle mit $T_{\alpha = 5\%} = 2.03$. Begründen Sie Ihre Auswahl! \textbf{(3 Punkte)}
-\end{enumerate}
-
-
-<<anova-R-01-b,  echo = FALSE>>=
-
-group_by(data_tbl, treatment) %>%
-  dplyr::summarise(
-           n = n(),
-    mean = round(mean(freshmatter, na.rm = TRUE), 2),
-    sd = round(sd(freshmatter, na.rm = TRUE), 2),
-    ) %>%
-  set_names(c(x1_val_name, "Fallzahl (n)", "Mittelwert", "Standardabweichung")) |> 
-  #mutate(group = trt_lvl) %>% 
-  kable(booktabs = TRUE, align = "c") %>% 
-    row_spec(0,bold=TRUE) |> 
-  kable_styling(latex_options = "hold_position", font_size = 11)
-
-@
-
-
-\begin{enumerate}
-  \setcounter{enumi}{6}
-\item Gegebenen der ANOVA Tabelle war das Ergebnis des Student t-Tests zu erwarten? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(2 Punkte)}
+\item Interpretieren Sie das Ergebnis der einfaktoriellen ANOVA! \textbf{(2 Punkte)} 
+\item Berechnen Sie den Effektschätzer $\eta^2$. Was sagt Ihnen der Wert von $\eta^2$ aus? \textbf{(2 Punkte)}
+\item Skizzieren Sie eine Abbildung, der dem obigen Ergebnis der
+  einfaktoriellen ANOVA näherungsweise entspricht! \textbf{(3 Punkte)}
 \end{enumerate}
 
 
