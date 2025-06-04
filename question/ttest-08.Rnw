@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -18,9 +18,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \begin{flushright}
 \tiny\vspace{-3Ex}
 \textbf{\examinhaltstart}
-\exammodulemathstat $\;\bullet$
 \exammodulestat $\;\bullet$
-\exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
 \vspace{-4Ex}
@@ -30,7 +28,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/QR90zyn0Iz8}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/kHmfEmU6lrk}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \fi
 %% --------------------------------------------------------------------
@@ -82,36 +80,34 @@ groups_vec <- x_val %>%
   str_subset("\\$") %>% 
   str_replace_all("\\$", "")
 gen_data <- function(...){
-  n_vec <- c(7:11) %>% sample(1)
   mean_vec <- c(25, 30, 35, 40, 45) %>% sample(1)
   sd_vec <- c(4, 6, 8, 10) %>% sample(1)
-  temp_tbl <- tibble(temp = rnorm(n = n_vec, mean = mean_vec, sd = sd_vec)) %>%
+  temp_tbl <- tibble(temp = rnorm(n = 9, mean = mean_vec, sd = sd_vec)) %>%
     mutate(temp = round(temp, 1)) %>% 
     set_names(stringi::stri_rand_strings(1, 7, '[A-Z]')) %>% 
     gather |> 
-    mutate(ID = 1:n_vec)
+    mutate(ID = 1:9)
   return(temp_tbl)
 }
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
-attr_name_sec_vec <- attr_lst[[name_sec]]
+attr_name_sec1_vec <- attr_lst[[name_sec[1]]]
 
-ques_vec <- c(str_c("Alles voll mit ", obser, ". Das haben ", name, " und ", name_sec, " gemeinsam in ", project, " gemacht! Worum ging es aber konkret? Beide haben als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten haben beide zusammen in ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, " eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden. ", name, " schaut nachdenklich zu ", name_sec, ". ", sentence_name_vec$flaw, ". Steffen denkt derweil angestrengt an ", attr_name_sec_vec$sweet, ". Im Hintergrund wummert ", attr_name_vec$music, "."),
-              str_c(name, " und ", name_sec, " haben sich dazu entschieden zusammenzuarbeiten. Das sollte alles etwas einfacher machen. Jeder hat zwar ein getrenntes Themenfeld aber den Hauptversuch machen beide gemeinsam. Das hat sich schonmal als gut Idee soweit herausgestellt. In ", project, " sollen beide herausfinden, ob es einen Zusammenhang zwischen ", x_val, " und ", y_val, " gibt. Die Besonderheit ist hierbei, dass die Messungen an der gleichen Beobachtung stattfinden. Beide messen also zweimal an den gleichen ", obser, ". Hier muss dann wohl auf ", outcome_name, " ein gepaarter t-Test gerechnet werden. ", name, " schaut etwas flehentlich zu ", name_sec, ". ", sentence_name_vec$flaw, ". Steffen denkt derweil angestrengt an ", attr_name_sec_vec$music, " und wippt leicht mit dem Fuß."),
-              str_c("Es gibt ja immer die Möglichkeit sich Hilfe zu holen. Das geht natürlich auch immer in ", project, ". Deshalb arbeiten ", name, " und ", name_sec, " gemeinsam an ", project, ". Das macht dann auch die Analyse ihres Hauptversuches einfacher. Zwar hat jeder von ihnen noch ein Subthema, aber auch da kann man sich ja helfen. In dem Hauptversuch wurde Folgendes von den beiden gemacht. ", name, " und ", name_sec, " haben sich ", obser, " angeschaut. Dabei geht um Zusammenhang zwischen ", x_val, " und ", y_val, ". Jetzt sollen beide einen gepaarten t-Test rechnen. Es würde auch besser funktionieren, wenn ", name, " nicht ", attr_name_vec$flaw, " im Weg stehen würde und ", name_sec, " nicht das Problem hätte ", attr_name_sec_vec$flaw, " zu händeln. Gott sei Dank haben beide genug ", attr_name_vec$sweet, " und ", attr_name_sec_vec$sweet, " auf dem Tisch aufgetürmt.")) |> 
+ques_vec <- c(str_c("Alles voll mit ", obser, ". Aber das haben ", name, " und ", name_sec, " eben gemeinsam in ", project, " gemacht! Worum ging es aber konkret? Beide haben als ", outcome_name, " ", y_val, " von ", obser, " bestimmt. Die Daten haben beide zusammen in ", exp, " erhoben. In dem Experiment ging es um eine vorher/nachher Untersuchung an den gleichen ", obser, ". Als Behandlung wurde ", x_val, " eingesetzt. Nach der Meinung ", betreuer, " muss hier ein gepaarter t-Test gerechnet werden. Leider kennen sich beide nicht sehr gut in \\Rlogo aus. ", name, " hat einiges an ", attr_name_vec$sweet, " geholt, so dass beide die Zeit gut durchbringen werden. Dann geht ", name, " nochmal zum Sport. ", sentence_name_vec$sport),
+              str_c(name, " und ", name_sec, " haben sich dazu entschieden zusammenzuarbeiten. Das sollte alles etwas einfacher machen. Jeder hat zwar ein getrenntes Themenfeld aber den Hauptversuch machen beide gemeinsam. Das hat sich schonmal als gut Idee soweit herausgestellt. ", sentence_name_vec$flaw, " In ", project, " sollen beide herausfinden, ob es einen Zusammenhang zwischen ", x_val, " und ", y_val, " gibt. Die Besonderheit ist hierbei, dass die Messungen an der gleichen Beobachtung stattfinden. Beide messen also zweimal an den gleichen ", obser, ". Hier muss dann wohl auf ", outcome_name, " ein gepaarter t-Test gerechnet werden. Leider kennen sich beide nicht sehr gut in \\Rlogo aus. Aber wenigtens haben beide eine Menge an ", attr_name_vec$sweet, "."),
+              str_c("Es gibt ja immer die Möglichkeit sich Hilfe zu holen. Das geht natürlich auch immer in ", project, ". Deshalb arbeiten ", name, " und ", name_sec, " gemeinsam an ", project, ". Das macht dann auch die Analyse ihres Hauptversuches einfacher. Zwar hat jeder von ihnen noch ein Subthema, aber auch da kann man sich ja helfen. Das hilft dann teilweise nur bedingt. ", sentence_name_vec$flaw, " In dem Hauptversuch wurde Folgendes von den beiden gemacht. ", name, " und ", name_sec, " haben sich ", obser, " angeschaut. Dabei geht um Zusammenhang zwischen ", x_val, " und ", y_val, ". Jetzt sollen beide einen gepaarten t-Test rechnen. Leider kennen sich beide nicht sehr gut in \\Rlogo aus. Aber wenigtens haben beide eine Menge an ", attr_name_vec$sweet, " und in der Wohnung wummert ", attr_name_vec$music, ".")) |> 
   sample(1)
 
 @
 
 \ifcollection
-\paragraph{Berechnung des gepaarten t-Test}
+\paragraph{Interpretation des gepaarten t-Tests in \Rlogo}
 \fi
 
 \Sexpr{ques_vec}
 
-<<ttest-02, results='asis', echo = FALSE>>=
-t_crit <- c(2.04, 1.96, 1.84, 1.64, 2.68) %>% sample(1)
+<<ttest-R-04-a,  echo = FALSE>>=
 
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>% 
   set_names(c("treatment", "freshmatter", "ID")) %>% 
@@ -119,21 +115,27 @@ data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.)) 
 
-data_tbl |> 
-  kable(booktabs = TRUE, align = "c") %>% 
-  kable_styling(latex_options = "hold_position")
+preprint <- t.test(filter(data_tbl, as.numeric(treatment) == 1)$freshmatter, 
+                   filter(data_tbl, as.numeric(treatment) == 2)$freshmatter, paired = TRUE)
+preprint$null.value <- "[condensed]"
+
+x_val <- x_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+preprint$data.name <- str_c(y_val, " by ", x_val)
+preprint
+
 @
 
-Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Berechnung eines gepaarten t-Tests überhaupt nicht aus. Deshalb brauchen sie beide bei der Berechnung Ihre Hilfe!
+Jetzt brauchen \Sexpr{name} und \Sexpr{name_sec} Ihre Hilfe bei der Berechnung eines gepaarten t-Tests in \Rlogo um ihre Arbeit dann in diesem Semester noch abschließen zu können.
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
-  \item Bestimmen Sie die Teststatistik $T_{D}$ eines gepaarten t-Tests! \textbf{(3 Punkte)}
-  \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Schätzen Sie den $p$-Wert des gepaarten t-Tests ab! Begründen Sie Ihre Antwort mit einer Skizze! \textbf{(2 Punkte)}
-\item Formulieren Sie eine Antwort an \Sexpr{name} über das Ergebnis Ihrer statistischen Analyse! \textbf{(2 Punkte)}
+\item Liegt ein signifikanter Unterschied zwischen den Gruppen vor?
+  Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Skizzieren Sie das sich ergebende 95\% Konfidenzintervall! \textbf{(2 Punkte)}
+\item Interpretieren Sie den Effekt des gepaarten t-Tests! \textbf{(2 Punkte)}
+\item Skizzieren Sie den sich ergebenden Boxplot der Differenzen! Welche Annahmen an die Daten haben Sie getroffen? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
-
-
 

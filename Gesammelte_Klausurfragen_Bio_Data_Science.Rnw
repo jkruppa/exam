@@ -556,6 +556,12 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(ttest_questions_vec[6])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(ttest_questions_vec[7])} 
+\clearpage
+% -----------------------------------------------------------------------
+\Sexpr{knit_child(ttest_questions_vec[8])} 
+\clearpage
+% -----------------------------------------------------------------------
 \part{Die einfaktorielle \& zweifaktorielle ANOVA}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(anova_questions_vec[1])} 
