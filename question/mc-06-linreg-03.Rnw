@@ -18,7 +18,7 @@
 <<mc-corr-01a, results='markup', echo = FALSE>>=
 
 ques_vec <- c('Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
-              'Sie berechnen in Ihgrer Abschlussarbeit den Korrelationskoeffizienten $\\rho$. Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
+              'Sie berechnen in Ihrer Abschlussarbeit den Korrelationskoeffizienten $\\rho$. Welche Aussage über den Korrelationskoeffizienten $\\rho$ ist richtig?',
               'In den Humanwissenschaften wird der Korrelationskoeffizienten $\\rho$ sehr häufig verwendet. Daher ist es auch wichtig für andere Forschende den Korrelationskoeffizienten $\\rho$ zu verstehen. Welche Aussazu zu dem Korrelationskoeffizienten $\\rho$ ist richtig?') |>  sample(1)
 @
 

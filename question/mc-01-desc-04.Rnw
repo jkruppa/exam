@@ -19,9 +19,9 @@
 <<>>=
 var_vec <- c("Boxplot", "Barplot") %>% sample(1)
 
-ques_vec <- c(str_c('Der ', var_vec, ' stellt folgende statistische Maßzahlen in einer Abbildung dar. Damit gehört der ', var_vec, ' zu einem der am meisten genutzten statistischen Verfahren zur Visualisierung von Daten.'),
-              str_c('In Ihrer Abschlußarbeit wolllen Sie Ihre Daten für den Ertrag in einem ', var_vec, ' darstellen. Sie nutzen den ', var_vec, ' auch, da der ', var_vec, ' zu den meist genutzten Visualiserungen von Daten gehört. Welche statistischen Maßzahlen stellt der ', var_vec, ' dar?'),
-              str_c('Nachdem Sie eine ANOVA und die paarweisen t-Tests über das \\Rlogo Paket \\{emmeans\\} durchgeführt haben, müssen Sie Ihre Daten nochmal zur Überprüfung visualisieren. Sie entscheiden sich für den ', var_vec, '. Welche statistischen Maßzahlen stellt der ', var_vec, ' dar?')) |>  sample(1)
+ques_vec <- c(str_c('Der \\uline{', var_vec, '} stellt folgende statistische Maßzahlen in einer Abbildung dar. Damit gehört der ', var_vec, ' zu einem der am meisten genutzten statistischen Verfahren zur Visualisierung von Daten.'),
+              str_c('In Ihrer Abschlußarbeit wolllen Sie Ihre Daten für den Ertrag in einem \\uline{', var_vec, '} darstellen. Sie nutzen den \\uline{', var_vec, '} auch, da der \\uline{', var_vec, '} zu den meist genutzten Visualiserungen von Daten gehört. Welche statistischen Maßzahlen stellt der \\uline{', var_vec, '} dar?'),
+              str_c('Nachdem Sie eine ANOVA und die paarweisen t-Tests über das \\Rlogo Paket \\{emmeans\\} durchgeführt haben, müssen Sie Ihre Daten nochmal zur Überprüfung visualisieren. Sie entscheiden sich für den ', var_vec, '. Welche statistischen Maßzahlen stellt der \\uline{', var_vec, '} dar?')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
