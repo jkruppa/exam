@@ -25,7 +25,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/RagTFFKFbFg}{\includegraphics[width = 2cm]{img/caution}}
+\href{https://youtu.be/951MNUXdqwA}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
 \fi
@@ -128,7 +128,7 @@ Leider kennen sich \Sexpr{name} mit dem \textit{Compact letter display (CLD)} ü
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie die statistischen Hypothesen! \textbf{(1 Punkt)}
 \item Zeichnen Sie die sich ergebenden Barplots! \textbf{(1 Punkt)}
-\item Berechnen Sie die Matrix der $p$-Werte anhand von Student t-Tests! \textit{Nutzen Sie hierfür ein globales $s_p$ sowie eine gemittelte Fallzahl $n$ für die Berechnung der Teststatistik!} \textbf{(4 Punkte)}
+\item Berechnen Sie die Matrix der $p$-Werte anhand von Student t-Tests! \textit{Nutzen Sie hierfür ein globales $s_p$ sowie eine gemittelte Fallzahl $n$ für die Berechnung der Teststatistik! Nehmen Sie einen kritischen Wert $T_{\alpha = 5\%}$ von 1.96 an!} \textbf{(4 Punkte)}
 \item Ergänzen Sie das \textit{Compact letter display (CLD)} zu den gezeichneten Barplots! Begründen Sie Ihre Antwort! \textbf{(4 Punkte)}
 \item Interpretieren Sie das \textit{Compact letter display (CLD)} für \Sexpr{name}! \textbf{(1 Punkt)} 
 \end{enumerate}

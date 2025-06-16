@@ -602,9 +602,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(multcomp_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(multcomp_questions_vec[4])} 
-\clearpage
-% -----------------------------------------------------------------------
 \part{Der Chi-Quadrat-Test \& Der diagnostische Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(chisquare_questions_vec[1])} 
