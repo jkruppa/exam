@@ -25,7 +25,7 @@ avatar2file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file[2], "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/CN_O4fYPbhs}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/6w_KH7t6bp0}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \fi
 %% --------------------------------------------------------------------
@@ -61,8 +61,8 @@ effect <- c("Trockengewicht nach Düngergabe",
   sample(1)
 
 ques_vec <-  c(str_c("'So, was haben wir gemacht? Wir haben einen t-test für den Vergleich der Mittelwerte gerechnet.', meint ", name, ". ", name_sec, " schaut fragend. 'Hatten wir nicht alles zu einer Kontrolle verglichen? Das war doch so!', ruft ", name_sec, " laut aus. 'Wir haben doch als Messwert \\textit{", effect, "} erhoben.', stellt ", name, " fest. Jetzt haben beide das Problem, die möglichen 95\\% Konfidenzintervalle zu interpretieren."),
-               str_c("'Okay, für was war jetzt nochmal das 95\\% Konfidenzintervall gut?', fragt ", name, " und schaut in das leere Gesicht von ", name_sec, ". 'Keine Ahnung. Irgendwas mit Relevanz und Effekt oder Signifikanz. Da kannst du irgendwie was verbinden. Keine Ahnung warum', entgegnet ", name_sec, ". 'Wir haben doch als Messwert \\textit{", effect, "} erhoben.', stellt ", name, " fest. Jetzt haben beide das Problem, die möglichen 95\\% Konfidenzintervalle zu interpretieren."),
-               str_c("'Jetzt haben wir als Messwert \\textit{", effect, "} erhoben und sind auch nicht weiter.', stellt ", name, " fest. ", name_sec, " schaut fragend in die Ferne. Die beiden haben ein Experiment für einen Mittelständler durchgeführt und überlegen jetzt, wie die Relevanz zusammen mit der Signifikanz in einem 95\\% Konfidenzintervall dargestellt werden kann. Jetzt haben beide das Problem, die möglichen 95\\% Konfidenzintervalle zu interpretieren.")) |> 
+               str_c("'Okay, für was war jetzt nochmal das 95\\% Konfidenzintervall gut?', fragt ", name, " und schaut in das leere Gesicht von ", name_sec, ". 'Keine Ahnung. Irgendwas mit Relevanz und Effekt oder Signifikanz. Da kannst du irgendwie was verbinden. Keine Ahnung warum', entgegnet ", name_sec, ". 'Wir haben doch als Messwert \\textit{", effect, "} erhoben. Wir haben dann alles zu einer Kontrolle verglichen.', stellt ", name, " fest. Jetzt haben beide das Problem, die möglichen 95\\% Konfidenzintervalle zu interpretieren."),
+               str_c("'Jetzt haben wir als Messwert \\textit{", effect, "} erhoben und sind auch nicht weiter. Gut, wir haben alles zu einer Kontrolle vergleichen.', stellt ", name, " fest. ", name_sec, " schaut fragend in die Ferne. Die beiden haben ein Experiment für einen Mittelständler durchgeführt und überlegen jetzt, wie die Relevanz zusammen mit der Signifikanz in einem 95\\% Konfidenzintervall dargestellt werden kann. Jetzt haben beide das Problem, die möglichen 95\\% Konfidenzintervalle zu interpretieren.")) |> 
   sample(1)
 
 
