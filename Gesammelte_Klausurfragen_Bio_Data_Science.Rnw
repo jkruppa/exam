@@ -585,12 +585,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(anova_questions_vec[7])} 
 \clearpage
 % -----------------------------------------------------------------------
-\Sexpr{knit_child(anova_questions_vec[8])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(anova_questions_vec[9])} 
-\clearpage
-% -----------------------------------------------------------------------
 \part{Multiple Gruppenvergleiche}
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(multcomp_questions_vec[1])} 
