@@ -145,7 +145,7 @@ Leider kennt sich \Sexpr{name} mit der Berechnung eines t-Tests überhaupt nicht
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
   \item Bestimmen Sie die Teststatistik $T_{D}$ eines  Welch t-Tests! \textbf{(3 Punkte)}
-  \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+  \item Treffen Sie mit $T_{\alpha = \Sexpr{alpha}\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Berechnen Sie das \Sexpr{conf_inter}\% Konfidenzintervall. Welche Annahmen haben Sie getroffen? \textbf{(2 Punkte)}
 \item Nennen Sie den statistischen Grund, warum Sie sich zwischen einem Student t-Test und einem Welch t-Test entscheiden müssen! \textbf{(1 Punkt)}
 \item Formulieren Sie eine Antwort an \Sexpr{name} über das Ergebnis Ihrer statistischen Analyse! \textbf{(2 Punkte)}
