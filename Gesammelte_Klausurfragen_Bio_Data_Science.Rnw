@@ -585,6 +585,9 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(anova_questions_vec[7])} 
 \clearpage
 % -----------------------------------------------------------------------
+\Sexpr{knit_child(anova_questions_vec[8])} 
+\clearpage
+% -----------------------------------------------------------------------
 \part{Multiple Gruppenvergleiche}
 % ----------------------------------------------------------------------- 
 \Sexpr{knit_child(multcomp_questions_vec[1])} 
@@ -728,6 +731,15 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \part{Lösungen}
 
 Die folgenden Lösungen sind absolut ein Entwurf und können Fehler enthalten. Daher immer mit Vorsicht genießen. Im Weiteren ist das Runden so eine Sache. Deshalb wird es vermutlich auch Abweichungen zu deiner händischen Berechnung geben. Damit leben wir dann aber alle.
+
+% ----------------------------------------------------------------------- 
+\section*{Statistik}
+% ----------------------------------------------------------------------- 
+
+\begin{verbatim}
+library(tidyverse)
+data_tbl <- read.table(file = pipe("pbpaste"), sep = " ", header = TRUE)
+\end{verbatim}
 
 % ----------------------------------------------------------------------- 
 \section*{Mathematik}
