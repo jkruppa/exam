@@ -25,7 +25,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/vXnLttRL_VI}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/UabXe73G-7w}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
 \fi
@@ -100,8 +100,8 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Barplots nicht aus. Deshal
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-\item Zeichnen Sie in \textit{einer} Abbildung die Barplots für die Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend! \textbf{(4 Punkte)}
-\item Beschriften Sie \textit{einen} Barplot mit den gängigen statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Zeichnen Sie in \underline{einer} Abbildung die Barplots für die Behandlung von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend! \textbf{(4 Punkte)}
+\item Beschriften Sie \underline{einen} Barplot mit den gängigen statistischen Maßzahlen! \textbf{(2 Punkte)}
 \item Wenn \Sexpr{name} \underline{\Sexpr{effect_switch}} Effekt zwischen den Behandlungen von \Sexpr{plant} erwarten würde, wie sehen dann die Barplots aus? \textit{Antworten Sie mit einer Skizze der Barplots!}
   \textbf{(1 Punkt)}
 \end{enumerate}
