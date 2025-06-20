@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.28)  19 JUN 2025 20:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.28)  20 JUN 2025 08:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4989,11 +4989,10 @@ Package scrkbase Info: You've told me to use the font selection of the element
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 6872.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 6887--6888
-
- []
-
+File: img/youtube.png Graphic file (type png)
+<use img/youtube.png>
+Package pdftex.def Info: img/youtube.png  used on input line 6884.
+(pdftex.def)             Requested size: 56.9055pt x 31.00871pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 6889--6890
 
@@ -5004,13 +5003,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 6891--6892
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 6893--6894
+
+ []
+
 [95
 
 ]
 part XIV.
 Package scrkbase Info: You've told me to use the font selection of the element
 (scrkbase)             `partprefix' that is an alias of element `partnumber'
-(scrkbase)              on input line 6898.
+(scrkbase)              on input line 6900.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -5055,10 +5059,10 @@ ch/md-chr7v.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super
 frm0900.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfr
 m1000.pfb>
 Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (97 pages, 1480
-153 bytes).
+228 bytes).
 PDF statistics:
- 2083 PDF objects out of 2487 (max. 8388607)
- 1859 compressed objects within 19 object streams
+ 2084 PDF objects out of 2487 (max. 8388607)
+ 1860 compressed objects within 19 object streams
  823 named destinations out of 1000 (max. 500000)
  1310 words of extra memory for PDF output out of 10000 (max. 10000000)
 
