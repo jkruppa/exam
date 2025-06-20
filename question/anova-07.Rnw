@@ -25,7 +25,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/2qG1Dws0MJo}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/-yJWhI3Uy5g}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
 \fi
@@ -110,7 +110,7 @@ ques_vec <-  c(str_c("In ", exp, " wurden ", obser, " mit der Behandlung ", x1_v
 Leider kennen sich \Sexpr{name} und \Sexpr{betreuer} mit der zweifaktoriellen ANOVA überhaupt nicht aus. Geschweige denn mit der Interpretation einer Interaktion. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe, sonst wird es heute Abend mit seinem Hobby \Sexpr{attr_name_vec$hobby} nichts mehr! 
 
 \begin{enumerate}
-\item Visualisieren Sie folgende mögliche Interaktionen zwischen den Behandlungen! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
+\item Visualisieren Sie folgende mögliche Interaktionen zwischen den Behandlungen! Heben Sie die Positionen der auftretenden Interaktion (farblich) hervor! Beschriften Sie die Abbildung! \textbf{(4 Punkte)}
 \begin{enumerate}
 \item \underline{Keine} Interaktion liegt vor.
 \item Eine \underline{schwache} Interaktion liegt vor. 
@@ -118,8 +118,9 @@ Leider kennen sich \Sexpr{name} und \Sexpr{betreuer} mit der zweifaktoriellen AN
 \end{enumerate}
 \item Erklären Sie den Unterschied zwischen den verschiedenen Interaktionen! \textbf{(2 Punkte)}
 \item Welche statistische Maßzahl betrachten Sie für die Bewertung der Interaktion? \textbf{(1 Punkt)}
-\item Skizzieren Sie die notwendigen Funktionen in \Rlogo für eine Post-hoc Analyse! \textbf{(2 Punkte)} 
-\item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist dann das weitere Vorgehen? Berücksichtigen Sie auch die Funktion \texttt{emmeans()}! \textbf{(2 Punkte)}
+\item Schreiben Sie das Modell mit Interaktionsterm in \Rlogo für eine zweifaktorielle ANOVA! \textbf{(1 Punkt)} 
+\item Skizzieren Sie die Funktion in \Rlogo für eine Post-hoc Analyse in \texttt{\{emmeans\}}! \textbf{(1 Punkt)} 
+\item Wenn eine signifikante Interaktion in den Daten vorliegt, wie ist dann das weitere Vorgehen? Berücksichtigen Sie dabei die Verwendung von \texttt{\{emmeans\}}! \textbf{(2 Punkte)}
 \end{enumerate}
 
 

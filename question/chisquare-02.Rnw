@@ -133,7 +133,7 @@ Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test auf
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
 \item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
-\item Berechnen Sie die Teststatistik $\mathcal{X}^2_{D}$ eines Chi-Quadrat-Test! \textit{Ignorieren Sie Zellbelegungen kleiner gleich fünf in der Berechnung von $\mathcal{X}^2_{D}$!} \textbf{(2 Punkte)}
+\item Berechnen Sie die Teststatistik $\mathcal{X}^2_{D}$ eines Chi-Quadrat-Test! \textit{Ignorieren Sie Zellbelegungen \underline{kleiner gleich} fünf in der Berechnung von $\mathcal{X}^2_{D}$ und Runden Sie den erwarteten Wert $E$ ganzzahlig!} \textbf{(2 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
   einem $\mathcal{X}^2_{\alpha = 5\%} = \Sexpr{chicrit}$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
