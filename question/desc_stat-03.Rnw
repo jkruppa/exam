@@ -27,7 +27,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/Xf0yE-o7bEU}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/MyrNZ46i3uY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
 \fi
@@ -105,7 +105,8 @@ ggplot(data_tbl, aes(x = treatment, y = freshmatter, fill = treatment)) +
 Leider kennt sich \Sexpr{name} mit der Erstellung von Boxplots in \Rlogo nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Visualisierung Ihre Hilfe!
 
 \begin{enumerate}
-\item Erstellen Sie eine Tabelle mit den statistischen Maßzahlen aus der obigen Abbildung der drei Boxplots! \textit{Beachten Sie die korrekte Darstellungsform der statistischen Maßzahlen!} \textbf{(3 Punkte)}
+\item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+\item Erstellen Sie eine Tabelle mit den statistischen Maßzahlen aus der obigen Abbildung der drei Boxplots! \textit{Beachten Sie die korrekte Darstellungsform der statistischen Maßzahlen!} \textbf{(2 Punkte)}
 \item Beschriften Sie \textit{einen} der Boxplots mit den gängigen statistischen Maßzahlen! \textbf{(2 Punkte)}
 \item Erstellen Sie einen beispielhaften Datensatz, aus dem die drei Boxplots \textit{möglicherweise} erstellt wurden, im \Rlogo üblichen Format! \textbf{(2 Punkte)}
 \item Kann \Sexpr{name} einen Unterschied zwischen den Behandlungen erwarten? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
