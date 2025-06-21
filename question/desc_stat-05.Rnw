@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -16,6 +16,9 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \begin{flushright}
 \tiny\vspace{-3Ex}
 \textbf{\examinhaltstart}
+\exammodulemathstat $\;\bullet$
+\exammodulestat $\;\bullet$
+\exammodulestatbbv $\;\bullet$
 \exammodulestatversuch $\;\bullet$
 \exammodulebiostat
 \vspace{-4Ex}
@@ -25,11 +28,12 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/aXvxGC4YLqk}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/VAqiUdV4WQ0}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
 \fi
 %% --------------------------------------------------------------------
+
 
 <<>>=
 pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", 
@@ -40,62 +44,74 @@ project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektber
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("einem Gewächshausexperiment",
-                       "einem Freilandversuch",
-                       "einem Versuch in einer Klimakammer",
-                       "einem Feldexperiment"),
-           tier = c("einem Stallexperiment", 
-                    "einem Kreuzungsexperiment",
-                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
-                       "die Mehltauspots",
-                       "die seltsamen Verdickungen",
-                       "die Knötchen"),
-           tier = c("die auffälligen Hautflecken", 
-                    "die dunklen Pigmentstörungen",
-                    "die Anzahl an weißen Blutkörperchen",
-                    "die Anzahl an gedrehten Haaren/Federn pro $cm^2$"))[[names(obser)]] %>% 
+x_val <- lst(pflanze = c("durschnittlichen Niederschlag [ml/w]",
+                         "durchschnittlicher Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlichen Anteil an Ton [\\%/l]",
+                         "durchschnittliche UV Einstrahlung [UV/d]"),
+             tier = c("durchschnittlichen Bewegungsscore [Movement/h]", 
+                      "durchschnittlicher Tagestemperatur [C/d]",
+                      "mittlerer Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlerer Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
   sample(1)
 
-count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(30, 33, 36), 1), 4), collapse = ", ")) |> 
-  str_replace("^die ", "Die ")
-limit <- c(4, 5, 6) %>% sample(1)
-lim_word <- c("gleich oder mehr", "mehr") %>% sample(1)
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Protein/Fettrate [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+effect <- c("ein", "kein") |> sample(1)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]]) 
 
-ques_vec <- c(str_c(sentence_name_vec$sweet_music, " ", name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ". Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music), 
-              str_c("In einem Gespräch mit ", betreuer, " wird ", name, " gebeten seine Daten aus ", exp, " mit ", obser, " in einem Histogramm darzustellen. ", sentence_name_vec$sweet_music, " In ", pronom[1], " Experiment hat er ",  cnt, " erst fotographiert und dann ausgezählt. Laut ", betreuer, " soll das Histogramm helfen, die Verteilung der ", cnt, " zu bestimmen. Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music),
-              str_c("In ", project, " möchte ", name, " gerne die Daten aus ", exp, " mit ", obser, " in einem Histogramm darstellen. Das Histogramm erlaubt ", pronom[4], " dabei Rückschlüsse auf die Verteilung über ", outcome_name, " zu treffen. ", sentence_name_vec$sweet_music, " In seinem Experiment hat ", name, " ",  cnt, " gezählt. Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music)) |> 
+ques_vec <- c(str_c(sentence_name_vec$sweet_music, " Jetzt heißt es aber erstmal auf was anderes konzentrieren. ", name, " möchte gerne den Zusammenhang zwischen ", x_val, " und ", y_val, " im Kontext von ", obser, " herausfinden. Hierfür hat ", name , " ", exp, " ", ort, " durchgeführt. Nach einigen unvorgesehenen Ereignissen hat ", names(name), " es geschafft folgende Datentabelle zu erstellen. ", sentence_name_vec$flaw, " Aber das steht auch nicht im Zentrum. Nun stellt sich die Frage für ", pronom[5], ", ob es überhaupt einen Zusammenhang zwischen den gemessenen Variablen gibt. Deshalb möchte ", name, " als erstes eine explorative Datenanalyse durchführen. Dann was anderes. ", sentence_name_vec$animal_film),
+              str_c(name, " liest laut: 'Wenn zwei kontinuierliche Variablen vorliegen, können diese in einer exploartiven Datenanalyse...'. ", name , " stoppt. ", sentence_name_vec$sweet_music, " Was waren noch gleich kontinuierliche Variablen? In ", project, " hatte ", names(name) , " ", exp, " ", ort, " durchgeführt. Dabei ging es um den Zusammenhang zwischen ", y_val, " und ", x_val, " im groben Kontext von ", obser, ". Nun stellt sich die Frage für ", pronom[5], ", ob es überhaupt einen Zusammenhang zwischen den gemessenen Variablen gibt. Dafür war eine explorative Datenanalyse gut! ", sentence_name_vec$flaw, " Dann was anderes. ", sentence_name_vec$animal_film),
+              str_c("Wenn es nach ", name , " ginge, wäre ", names(name) , " schon längst fertig mit ", project, ". Geht es aber nicht. ", sentence_name_vec$sweet_music, " In ", project, " hatte ", names(name) , " ", exp, " ", ort, " durchgeführt. Nach der Meinung ", betreuer, " sieht das jedoch etwas anders aus. Jetzt soll ", names(name) , " doch noch eine explorative Datenanalyse für den Zusammenhang zwischen ", x_val, " und ", y_val, " in ", obser, " durchführen. Wie nervig! ", sentence_name_vec$flaw, " Da zwei kontinuierliche Variablen vorliegen, geht die explorative Datenanalyse leider nicht mit Boxplots oder Barplots. Dann was anderes. ", sentence_name_vec$animal_film)) |> 
   sample(1)
+
+
 
 @
 
 \ifcollection
-\paragraph{Visualisierung des Histogramm für kategoriale Daten}
+\paragraph{Visualisierung des Scatterplots}
 \fi
 
 \Sexpr{ques_vec}
 
-\begin{center}
-\Sexpr{count_vec}
-\end{center}
+<<scatter-01, results='asis', echo = FALSE>>=
+x_val <- str_replace(x_val, "\\\\", "")
+y_val <- str_replace(y_val, "\\\\", "")
 
-Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+data_tbl <- tibble(x = round(rnorm(sample(9:12, 1), sample(c(15, 20, 25), 1), sample(c(2, 4, 6), 1)), 1),
+                   y = round(sample(c(2:10), 1) + sample(c(0.5, 0.75, 1, 1.15, 1.25), 1) * x + rnorm(length(x), 0, 2), 1)) |>   set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
+                     str_replace(y_val, "^\\w{1}", toupper))))
+
+kable(data_tbl, booktabs = TRUE, align = "c") %>% 
+  kable_styling(latex_options = "hold_position")
+@
+
+Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kontinuierliche Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
-\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
-\item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
-\item Ergänzen Sie die absoluten und relativen Häufigkeiten in der
-  Abbildung! \textbf{(1 Punkt)}
-\item Berechnen Sie aus den Daten die \textit{Wahrscheinlichkeit}
-  \Sexpr{lim_word} als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1
-    Punkt)}
-\item Berechnen Sie aus den Daten die \textit{Chance} \Sexpr{lim_word}
-  als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1 Punkt)}
+\item Erstellen Sie eine Visualisierung für die Datentabelle. Beschriften Sie
+  die Achsen entsprechend! \textbf{(4 Punkte)}
+\item Schätzen Sie eine Gerade durch die Punkte! \textbf{(1 Punkt)}
+\item Beschriften Sie die Gerade mit den gängigen statistischen Maßzahlen! Geben Sie die numerischen Zahlenwerte mit an! \textbf{(3 Punkte)}
+\item Wenn \textit{\Sexpr{effect}} Effekt von $x$ auf $y$ vorhanden wäre, wie würde die Gerade verlaufen und welche Werte würden die statistischen Maßzahlen annehmen? \textbf{(2 Punkt)}
 \end{enumerate}
-
-

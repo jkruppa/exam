@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (8 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -16,8 +16,8 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \begin{flushright}
 \tiny\vspace{-3Ex}
 \textbf{\examinhaltstart}
-\exammodulestat $\;\bullet$
-\exammodulestatbbv 
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
@@ -25,7 +25,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/t_1KL77mfmg}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/ORHSPTCdfeY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3ex}
 \fi
@@ -36,107 +36,59 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr",
                       "sie", "ihre", "ihr", "die", "Frau"),
               er = c("seinem", "seiner", "seinen", "ihm", 
                      "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
-project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[2], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
-betreuer <- c(str_c(pronom[6], " Betreuerin"), str_c(pronom[7], " Betreuer")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
 outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("ein Gewächshausexperiment",
-                       "ein Freilandversuch",
-                       "einen Versuch in einer Klimakammer",
-                       "ein Feldexperiment"),
-           tier = c("ein Stallexperiment", 
-                    "ein Kreuzungsexperiment",
-                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+exp <- lst(pflanze = c("einem Gewächshausexperiment",
+                       "einem Freilandversuch",
+                       "einem Versuch in einer Klimakammer",
+                       "einem Feldexperiment"),
+           tier = c("einem Stallexperiment", 
+                    "einem Kreuzungsexperiment",
+                    "einem Leistungssteigerungsversuch"))[[names(obser)]] %>% 
   sample(1)
 
-x_val <- lst(pflanze = c("Pestizideinsatz [ja/nein]",
-                         "Herbizideinsatz [ja/nein]",
-                         "Mechanische Bearbeitung [ja/nein]",
-                         "KI-gesteuert [ja/nein]"),
-             tier = c("Automatische Fütterung [ja/nein]", 
-                      "Klimakontrolle [ja/nein]",
-                      "Außenklimakontakt [ja/nein]",
-                      "Ökologisch [ja/nein]"))[[names(obser)]] %>% 
+cnt <- lst(pflanze = c("die mittleren Läsionen auf den Blättern",
+                       "die mittleren Mehltauspots",
+                       "die mittleren seltsamen Verdickungen",
+                       "die mittleren Knötchen"),
+           tier = c("die mittleren auffälligen Hautflecken", 
+                    "die mittleren dunklen Pigmentstörungen",
+                    "die mittlere Anzahl an weißen Blutkörperchen",
+                    "die mittlere Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
   sample(1)
 
-y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
-                         "Trockengewicht über Zielwert [ja/nein]",
-                         "Chlorophyllgehalt unter Zielwert [ja/nein]",
-                         "Proteingehalt im Zielbereich [ja/nein]"),
-             tier = c("Schlachtgewicht im Zielbereich [ja/nein]", 
-                      "Protein/Fettrate im Zielbereich [ja/nein]",
-                      "Fettgehalt erreicht [ja/nein]",
-                      "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
-  sample(1)
-
-effect <- c("ein", "kein") |> sample(1)
+count_vec <- str_c(cnt, ": ", str_c(round(rnorm(sample(c(25, 28, 22), 1), 10, 2), 1), collapse = ", ")) |> 
+  str_replace("^die ", "Die ")
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]]) 
 
-ques_vec <- c(str_c(sentence_name_vec$animal_film, " Aber Ablenkung hilft nur begrenzt. 'Uff!', denkt sich ", name, ". Jetzt hat ", names(name), " doch tatsächlich zwei kategoriale Variablen in ", project, " gemessen. Zum einen die Behandlung ", x_val, " und zum anderen die Messung ", y_val, " im Kontext von ", obser, ". Hierfür hat ", names(name) , " ", exp, " ", ort, " durchgeführt. Jetzt möchte ", name, " die Daten einmal in einer explorativen Datenanalyse darstellen. Danach kann ", names(name), " dann über den passenden statistischen Test nachdenken. Dabei unterstützt ", betreuer, " diesen Ansatz bevor es in der Datenanalyse weiter geht. So schön wie so gut. ", sentence_name_vec$flaw),
-              str_c("Zwei kategoriale Variablen darzustellen ist nicht so einfach. ", name, " hatte erst über einen Mittelwert nachgedacht, dann aber die Idee verworfen. Wäre da nicht noch was anderes. ", sentence_name_vec$flaw, " Dabei hatte ", names(name), " sich in ", exp, " ", ort, " zum einen die Behandlung ", x_val, " und zum anderen die Messung ", y_val, " im Kontext von ", obser, " angeschaut. Jetzt möchte ", betreuer, " erstmal die langen Tabellen mit ja/nein in einer explorativen Datenanalyse zusammengefasst bekommen. Sonst geht es bei ", project, " nicht weiter. Was super nervig ist. ", sentence_name_vec$sport),
-              str_c("In ", exp, " ", ort, " hatte ", name, " sich zum einen die Behandlung ", x_val, " und zum anderen die Messung ", y_val, " im Kontext von ", obser, " angeschaut. Nun steht ", name, " vor dem Problem, dass ", names(name), " zwei kategoriale Variablen in ", project, " gemessen hat. Dazu kommt dann noch was anderes. ", sentence_name_vec$flaw, " Da ", betreuer, " erstmal die langen Tabellen mit ja/nein in einer explorativen Datenanalyse zusammengefasst und präsentiert bekommen möchte bevor es überhaupt weitergeht, muss ", names(name), " jetzt eine Lösung finden. Was alles auch nicht einfacher macht. Am liebsten würde ", names(name), " ja was anderes machen. ", sentence_name_vec$hobby)) |> 
+ques_vec <- c(str_c(sentence_name_vec$sweet_music, " ", name, " betrachtet die folgenden Daten nach ", exp, " mit ", obser, ". In dem Experiment wurden ",  cnt, " gezählt. Nach der Meinung ", betreuer, " muss als erstes geschaut werden, wie diese verteilt sind. Also welcher statistischen Verteilung ", cnt, " folgen. Dazu soll ", name, " ein Histogramm verwenden. Dann hätte man auch einen guten Überblick über ", outcome_name, ". Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music), 
+              str_c("In einem Gespräch mit ", betreuer, " wird ", name, " gebeten seine Daten aus ", exp, " mit ", obser, " in einem Histogramm darzustellen. ", sentence_name_vec$sweet_music, " In ", pronom[1], " Experiment hat er ",  cnt, " erst fotographiert und dann ausgezählt. Laut ", betreuer, " soll das Histogramm helfen, die Verteilung der ", cnt, " zu bestimmen.  Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music),
+              str_c("In ", project, " möchte ", name, " gerne die Daten aus ", exp, " mit ", obser, " in einem Histogramm darstellen. Das Histogramm erlaubt ", pronom[4], " dabei Rückschlüsse auf die Verteilung über ", outcome_name, " zu treffen ", sentence_name_vec$sweet_music, " In seinem Experiment hat ", name, " ",  cnt, " gezählt. Es wäre einfacher, wenn da nicht noch was wäre. ", sentence_name_vec$flaw, " ", sentence_name_vec$animal_music)) |> 
   sample(1)
 
 @
 
 \ifcollection
-\paragraph{Visualisierung des Mosaicplots}
+\paragraph{Visualisierung des Histogramm für kontinuierliche Daten}
 \fi
 
 \Sexpr{ques_vec}
 
-<<mosaic-01, results='asis', echo = FALSE>>=
-x_val <- str_replace(x_val, "\\[ja/nein\\]$", "") |> str_trim()
-y_val <- str_replace(y_val, "\\[ja/nein\\]$", "") |> str_trim()
-data_tbl <- rbind(tibble(ja = round(rnorm(n = sample(c(14, 16, 18), 1),
-                                         mean = sample(c(18, 20, 22), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather,
-                  tibble(nein = round(rnorm(n = sample(c(14, 16, 18), 1),
-                                         mean = sample(c(18, 20, 22), 1),
-                                         sd = sample(c(2, 3, 4), 1)))) %>%
-                  gather) %>%
-  set_names(c("pesticide", "rsp")) %>%
-  mutate(infected = ifelse(rsp >= 20, "ja", "nein")) %>%
-  select(-rsp) %>% 
-  sample_n(size = nrow(.)) |> 
-  set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
-                     str_replace(y_val, "^\\w{1}", toupper))))
-
-@
-
-\vspace{1Ex}
-
 \begin{center}
-\begin{minipage}[t]{0.45\textwidth}
-%\small
-\begin{center}
-<<mosaic-01-tab-a, results='asis', echo = FALSE>>=
-kable(data_tbl[1:(nrow(data_tbl)/2),], booktabs = TRUE, align = "p{2.5cm}p{2.5cm}", format = "latex") 
-@
-\end{center}
-\end{minipage}
-\begin{minipage}[t]{0.45\textwidth}
-%\small
-\begin{center}
-<<mosaic-01-tab-b, results='asis', echo = FALSE>>=
-kable(data_tbl[(nrow(data_tbl)/2+1):(nrow(data_tbl)),], booktabs = TRUE, align = "p{2.5cm}p{2.5cm}", 
-      format = "latex") 
-@
-\end{center}
-\end{minipage}
+\Sexpr{count_vec}
 \end{center}
 
-\vspace{2Ex}
-
-Leider kennt sich \Sexpr{name} mit der Erstellung einer explorativen Datenanalyse für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
-\item Stellen Sie den Zusammenhang zwischen den beiden kategorialen Variablen in einer zusammenfassenden Tabelle dar! \textbf{(3 Punkte)}
-\item Berechnen Sie die Verhältnisse in der zusammenfassenden Tabelle! Welche Annahme haben Sie getroffen? \textbf{(2 Punkte)}
-\item Visualisieren Sie den Zusammenhang zwischen den beiden kategorialen Variablen! \textbf{(3 Punkte)}
-\item Wenn \textit{\Sexpr{effect}} Effekt von der Behandlung vorliegen würde, wie würde die Tabelle und die Visualisierung aussehen? \textbf{(2 Punkt)}
+\item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
+ \item Erläutern Sie Ihr Vorgehen um ein Histogramm für kontinuierliche Daten zu zeichnen!  (\textbf{2 Punkte})
+\item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
+\item Ergänzen Sie die relativen Häufigkeiten in der Abbildung! \textbf{(1 Punkt)}  
 \end{enumerate}
+
+
