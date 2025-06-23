@@ -536,7 +536,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(stat_test_questions_vec[5])} 
 \clearpage
 % -----------------------------------------------------------------------
-\part{Der Student t-Test \& Welch t-Test}
+\part{Der t-Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(ttest_questions_vec[1])} 
 \clearpage
@@ -599,7 +599,7 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(multcomp_questions_vec[3])} 
 \clearpage
 % -----------------------------------------------------------------------
-\part{Der Chi-Quadrat-Test \& Der diagnostische Test}
+\part{Der Chi-Quadrat-Test}
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(chisquare_questions_vec[1])} 
 \clearpage
