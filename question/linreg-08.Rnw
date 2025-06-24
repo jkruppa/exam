@@ -1,0 +1,129 @@
+\section{Aufgabe \hfill (10 Punkte)}
+
+\textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
+ 
+<<>>=
+name <- par_lst$naming |> sample(1)
+avatar_file <- list.files(file.path(exam_path, "avatare"), full.names = TRUE)|> 
+  str_subset(name)
+jahr <- par_lst$year
+obser <- par_lst$obser |> sample(1) |> magrittr::extract2(1) |> sample(1)
+avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
+@
+ 
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-3Ex}
+\textbf{\examinhaltstart}
+\exammodulebiostat
+\vspace{-4Ex}
+\end{flushright}
+\begin{minipage}[t]{0.5\textwidth}
+\Sexpr{avatar1file}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\hfill
+\href{https://youtu.be/C9skfFRTHhI}{\includegraphics[width = 2cm]{img/caution}}
+\end{minipage}
+\vspace{-3ex}
+\fi
+%% --------------------------------------------------------------------
+
+<<>>=
+pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "die", "Frau"),
+              er = c("seinem", "seiner", "seinen", "ihm", "ihn", "seine", "sein", "der", "Mann"))[[names(name)]]
+project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
+             str_c(pronom[2], " Hausarbeit")) |> sample(1)
+betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
+outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
+ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
+
+exp <- lst(pflanze = c("ein Gewächshausexperiment",
+                       "ein Freilandversuch",
+                       "einen Versuch in einer Klimakammer",
+                       "ein Feldexperiment"),
+           tier = c("ein Stallexperiment", 
+                    "ein Kreuzungsexperiment",
+                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+  sample(1)
+
+x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
+                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
+                         "durchschnittlicher Anteil an Ton [\\%/l]",
+                         "durchschnittliche UV-Einstrahlung [UV/d]"),
+             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
+                      "durchschnittliche Tagestemperatur [C/d]",
+                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
+                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+  sample(1)
+
+y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
+                         "Trockengewicht [kg/ha]",
+                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
+                         "Proteingehalt [g/kg]"),
+             tier = c("Schlachtgewicht [kg]", 
+                      "Proteianteil [\\%/kg]",
+                      "Fettgehalt [\\%/kg]",
+                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+  sample(1)
+
+n_obs <- rpois(1, 30)
+
+sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
+attr_name_vec <- attr_lst[[name]]
+
+ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wir als Aufgabe eine Korrelation zu berechnen? Wir bauen aus kontinuierlichen Daten eine Abbildung und interpretieren diese dann?', fragt sich ", name, " laut. 'Keine Ahnung... das ist jetzt jedenfalls keine Abbildung von irgendwas sondern eine \\Rlogo Ausgabe mit ganz wilden Bezeichnungen...', denkt ", names(name), ". Aber das hilft jetzt auch nicht. ", sentence_name_vec$animal_film, " ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt hat ", names(name), " eigentlich alles zusammen. \\textit{Eigentlich...}, denn mit der \\Rlogo Ausgabe hat ", name, " jetzt ein Problem. ", sentence_name_vec$flaw, " "),
+              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen...', denkt ", name, ". 'Ich sehe nur Kauderwelsch und keine Punkte. Ich glaube das war jetzt doch eine Korrelation, die ich rechnen sollte. Und warum überhaupt? War das unsere Fragestellung?', denkt sich ", name, ". ", name, " atmet schwer ein und starrt auf die \\Rlogo Ausgabe der Funktion \\texttt{cor.test()}. Das hilft alles nur begrenzt. ", sentence_name_vec$animal_film, " ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von ", pronom[4], " die Interpretierung der Daten in Form einer Korrelation berechnet bekommen. Das hat ", name, " in \\Rlogo gemacht, aber wie soll das jetzt gehen? Das mit der Interpretation?  ", sentence_name_vec$flaw, " "),
+              str_c("'Ich glaube ich bringe da was durcheinander. Ich möchte eine Gerade durch die Punkte zeichnen oder doch eine Korrelation berechnen?', merkt ", name, " laut an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \\Rlogo. Überhaupt, darum geht es doch gar nicht in meinem Versuch. Ich wollte doch keine Gerade zeichnen?.', antwortet ", name, " sich sichtlich übernächtigt selber. ", sentence_name_vec$animal_film, " Die Nacht war zu lang und überhaupt. ", sentence_name_vec$flaw, " ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will ", names(name), " erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \\Rlogo Ausgabe möglich sein.")) |> 
+  sample(1)
+
+@
+
+\ifcollection
+\paragraph{Interpretation der Ergebnisse eines gemischten Modells in \Rlogo}
+\fi
+
+\Sexpr{ques_vec}
+
+
+<<correlation-03,  echo = FALSE>>=
+
+x_val <- str_replace(x_val, "\\\\", "") |>  
+  str_replace("^\\w{1}", toupper)
+y_val <- str_replace(y_val, "\\\\", "") |> 
+  str_replace("^\\w{1}", toupper)
+
+x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
+  str_split(" ", simplify = TRUE) |> 
+  magrittr::extract(1, 1:2) |> 
+  str_c(collapse = " ")
+y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+
+
+cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
+
+data_tbl <- tibble(x = rnorm(10, 5, 2),
+                   y = cor_vec * x + rnorm(10, 0, 1))
+
+print_obj <- cor.test(~ y + x, data_tbl)
+
+print_obj$method  <- c("Pearson's correlation") %>% sample(1)
+
+print_obj$data.name  <- str_c(x_val, " and ", y_val)
+
+print_obj
+
+@
+
+Leider kennt sich \Sexpr{name} mit der Analyse eines gemischten Modells in \Rlogo überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Analyse Ihre Hilfe!
+
+\begin{enumerate}
+  \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+\item Erstellen Sie eine Visualisierung für den Korrelationskoeffizienten! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
+\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
+\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
+  Effekts und der Signifikanz! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Visualisieren Sie das 95\% Konfidenzintervall! Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
+\end{enumerate}
