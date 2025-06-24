@@ -16,6 +16,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \begin{flushright}
 \tiny\vspace{-3Ex}
 \textbf{\examinhaltstart}
+\exammodulelanddaten $\;\bullet$
 \exammodulebiostat
 \vspace{-4Ex}
 \end{flushright}
@@ -87,40 +88,44 @@ ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wi
 \Sexpr{ques_vec}
 
 
-<<correlation-03,  echo = FALSE>>=
+<<lmm-01,  echo = FALSE, message=FALSE, warning=FALSE>>=
+library(lme4)
 
-x_val <- str_replace(x_val, "\\\\", "") |>  
-  str_replace("^\\w{1}", toupper)
-y_val <- str_replace(y_val, "\\\\", "") |> 
-  str_replace("^\\w{1}", toupper)
+species <- c("Drachen", "Kobolde", "Gummibären") |> 
+  set_names(c("mountain", "cave", "forest")) |> 
+  sample(1)
 
-x_val <- str_replace(x_val, "^\\w{1}", toupper) |> 
-  str_split(" ", simplify = TRUE) |> 
-  magrittr::extract(1, 1:2) |> 
-  str_c(collapse = " ")
-y_val <- y_val |> str_split(" ", simplify = TRUE) |> magrittr::extract(1,1)
+outcome <- c("literary_score", "reading_score", "iq_score") |> sample(1)
+risk_factor <- c("body_height", "body_weight", "jump_height") |> sample(1)
 
+dragon_tbl <- read_csv2(file.path(data_path, "dragons.csv")) |> 
+  mutate(site = factor(site, labels = c("nearby", "midway", "far far away")))
 
-cor_vec <- c(-1, 0.5, 1, -0.5, 0.1)  %>% sample(1)
+mountian_vec <- dragon_tbl |> 
+  pull(mountain) |> 
+  unique() |> 
+  sample(sample(5:8, 1))
 
-data_tbl <- tibble(x = rnorm(10, 5, 2),
-                   y = cor_vec * x + rnorm(10, 0, 1))
+n_sample <- c(10:15) |> sample(1)
 
-print_obj <- cor.test(~ y + x, data_tbl)
+dragon_small_tbl <- dragon_tbl |>
+  filter(mountain %in% mountian_vec) |> 
+  group_by(mountain, site) |> 
+  sample_n(n_sample) |> 
+  set_names(c(outcome, risk_factor, names(species), "direction"))
 
-print_obj$method  <- c("Pearson's correlation") %>% sample(1)
+mixed_formula <- reformulate(response = outcome,
+                             termlabels = str_c(risk_factor, " + (1|", names(species), ") + (1|direction)"))
 
-print_obj$data.name  <- str_c(x_val, " and ", y_val)
-
-print_obj
-
+mixed_lmer <- lmer(mixed_formula, data = dragon_small_tbl)
+summary(mixed_lmer)
 @
 
 Leider kennt sich \Sexpr{name} mit der Analyse eines gemischten Modells in \Rlogo überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Analyse Ihre Hilfe!
 
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-  \item Formulieren Sie das statistische Hypothesenpaar! \textbf{(1 Punkt)}
+  \item Formulieren Sie das statistische Hypothesenpaar für den festen Effekt! \textbf{(1 Punkt)}
 \item Erstellen Sie eine Visualisierung für den Korrelationskoeffizienten! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
 \item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
 \item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
