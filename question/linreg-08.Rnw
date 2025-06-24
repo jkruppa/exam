@@ -37,46 +37,30 @@ pronom <- lst(sie = c("ihrem", "ihrer", "ihren", "ihr", "sie", "ihre", "ihr", "d
 project <- c(str_c(pronom[2], " Abschlussarbeit"), str_c(pronom[1], " Projektbericht"),
              str_c(pronom[2], " Hausarbeit")) |> sample(1)
 betreuer <- c(str_c(pronom[2], " Betreuerin"), str_c(pronom[1], " Betreuer")) |> sample(1)
-outcome_name <- c("das Outcome ($Y$)", "den Endpunkt ($Y$)", "den Messwert ($Y$)") |> sample(1)
-ort <- c("in der Uckermark", "im Oldenburger Land", "im Teuteburgerwald", "im Emsland", "im Wendland") |> sample(1)
 
-exp <- lst(pflanze = c("ein Gewächshausexperiment",
-                       "ein Freilandversuch",
-                       "einen Versuch in einer Klimakammer",
-                       "ein Feldexperiment"),
-           tier = c("ein Stallexperiment", 
-                    "ein Kreuzungsexperiment",
-                    "einen Leistungssteigerungsversuch"))[[names(obser)]] %>% 
+species <- c("Drachen", "Kobolde", "Gummibären") |> 
+  set_names(c("mountain", "cave", "forest")) |> 
   sample(1)
 
-x_val <- lst(pflanze = c("durchschnittlicher Niederschlag [ml/w]",
-                         "durchschnittliche Regenwurmdichte [Anzahl/l]",
-                         "durchschnittlicher Anteil an Ton [\\%/l]",
-                         "durchschnittliche UV-Einstrahlung [UV/d]"),
-             tier = c("durchschnittlicher Bewegungsscore [Movement/h]", 
-                      "durchschnittliche Tagestemperatur [C/d]",
-                      "mittlere Anzahl an weißen Blutkörperchen [LEU/ml]",
-                      "mittlere Eisenkonzentration [Fe/ml]"))[[names(obser)]] %>% 
+ort <- c(mountain = "Berg", cave = "Höhle", forest = "Wald")[names(species)]
+ort_lst <- lst(Berg = c("in den Bergen", "die Berge", "der Berge", "Berg"),
+               Höhle = c("in Höhlen", "Höhlen", "der Höhlen", "Höhle"),
+               Wald = c("in tiefen Wäldern", "Wälder", "der Wälder", "Wald"))[[ort]]
+
+outcome <- c("literary_score", "reading_score", "iq_score") |> 
+  set_names(c("die Schreibfähigkeit", "die Lesefähigkeit", "den IQ-Score")) |> 
   sample(1)
 
-y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
-                         "Trockengewicht [kg/ha]",
-                         "Chlorophyllgehalt (SPAD-502Plus) [SPAD]",
-                         "Proteingehalt [g/kg]"),
-             tier = c("Schlachtgewicht [kg]", 
-                      "Proteianteil [\\%/kg]",
-                      "Fettgehalt [\\%/kg]",
-                      "Gewichtszuwachs in der 1LW"))[[names(obser)]] %>% 
+risk_factor <- c("body_height", "body_weight", "jump_height") |> 
+  set_names(c("die Körpergröße", "das Körpergewicht", "die Sprunghöhe")) |> 
   sample(1)
-
-n_obs <- rpois(1, 30)
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
 
-ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wir als Aufgabe eine Korrelation zu berechnen? Wir bauen aus kontinuierlichen Daten eine Abbildung und interpretieren diese dann?', fragt sich ", name, " laut. 'Keine Ahnung... das ist jetzt jedenfalls keine Abbildung von irgendwas sondern eine \\Rlogo Ausgabe mit ganz wilden Bezeichnungen...', denkt ", names(name), ". Aber das hilft jetzt auch nicht. ", sentence_name_vec$animal_film, " ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt hat ", names(name), " eigentlich alles zusammen. \\textit{Eigentlich...}, denn mit der \\Rlogo Ausgabe hat ", name, " jetzt ein Problem. ", sentence_name_vec$flaw, " "),
-              str_c("'Wichtig ist es, dass wir jetzt eine Gerade durch die Punkte zeichnen...', denkt ", name, ". 'Ich sehe nur Kauderwelsch und keine Punkte. Ich glaube das war jetzt doch eine Korrelation, die ich rechnen sollte. Und warum überhaupt? War das unsere Fragestellung?', denkt sich ", name, ". ", name, " atmet schwer ein und starrt auf die \\Rlogo Ausgabe der Funktion \\texttt{cor.test()}. Das hilft alles nur begrenzt. ", sentence_name_vec$animal_film, " ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will die Betreuung von ", pronom[4], " die Interpretierung der Daten in Form einer Korrelation berechnet bekommen. Das hat ", name, " in \\Rlogo gemacht, aber wie soll das jetzt gehen? Das mit der Interpretation?  ", sentence_name_vec$flaw, " "),
-              str_c("'Ich glaube ich bringe da was durcheinander. Ich möchte eine Gerade durch die Punkte zeichnen oder doch eine Korrelation berechnen?', merkt ", name, " laut an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \\Rlogo. Überhaupt, darum geht es doch gar nicht in meinem Versuch. Ich wollte doch keine Gerade zeichnen?.', antwortet ", name, " sich sichtlich übernächtigt selber. ", sentence_name_vec$animal_film, " Die Nacht war zu lang und überhaupt. ", sentence_name_vec$flaw, " ", name, " hatte ", exp, " ", ort, " mit ", obser, " durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: ", x_val, " und ", y_val, ". Jetzt will ", names(name), " erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \\Rlogo Ausgabe möglich sein.")) |> 
+ques_vec <- c(str_c("'Hä? Was ist denn das? Seid wann verfolgen mich ", species, "? Das wird ja immer wilder!', ruft ", name, " laut. 'Keine Ahnung... was das jetzt wieder soll.', denkt ", names(name), ". Dabei war ", name, " ", ort_lst[1], " unterwegs um an ", species, " ", names(outcome), " zu testen. Dafür hatte ", names(name), " von der Hochschule extra einen Fragebogen mit den notwendigen Informationen erhalten. Als Einflussvariable hat ", name, " dann ", names(risk_factor), " bestimmt. Warum die ", species, " jetzt so aggressiv sind ist ", pronom[4], " auch nicht klar. Die Messungen wurden an drei Orten \\textit{nearby}, \\textit{midway} und \\textit{far far away} pro ", ort_lst[4], " durchgeführt. Vielleicht hätte ", names(name), " nicht so viel ", attr_name_vec$music, " laut hören sollen."),
+              str_c(name, " mag ", ort_lst[2], " sehr. Also hatte ", names(name), " sich sofort freiwillig gemeldet als es hieß, dass die Hochschule jemanden braucht um in den Bergen an ", species, " was zu untersuchen. ", species, " an sich sind ja recht friedfertig, aber ", names(outcome), " zu testen, ging den Wesen dann doch gehörig auf den Zeiger. Ein Schrei zerschneidet die Ruhe ", ort_lst[3], ". ", name, " hatte zusätzlich ", names(risk_factor), " bestimmt und wollte wissen, ob es hier einen Zusammenhang gibt. Die Messungen wurden an drei Orten \\textit{nearby}, \\textit{midway} und \\textit{far far away} pro ", ort_lst[4], " durchgeführt. Vielleicht hätte ", names(name), " nicht so offensiv viel ", attr_name_vec$sweet, " vor den Augen der ", species, " essen sollen."),
+              str_c("Jeweils drei Orte mit \\textit{nearby}, \\textit{midway} und \\textit{far far away} pro ", ort_lst[4], " ist dann doch eine Menge. Das hatte sich dann ", name, " etwas anders vorgestellt als ", names(name), " ", species, " beobachten sollte. Überhaupt von Beobachten kann keine Rede sein, wenn ", names(outcome), " und ", names(risk_factor), " bestimmt werden müssen. Da muss ", names(name), " ja ran ans Fabelwesen. Die Wesen sind ja überhaupt nicht kooperativ! Gut dabei laut ", attr_name_vec$music, " hören und ", attr_name_vec$sweet, " mampfen war jetzt nicht die beste Idee, aber was kann ", name, " dafür, dass Kobolde nicht einkaufen gehen können? Da helfen auch schöne ", ort_lst[2], " nicht weiter. Appropo, wie kommt ", name, " hier wieder nach Hause? 'Hallo?!', ruft ", names(name), " laut aus.")) |> 
   sample(1)
 
 @
@@ -90,13 +74,6 @@ ques_vec <- c(str_c("'Hä? Was ist denn das? Das wird ja immer wilder! Hatten wi
 
 <<lmm-01,  echo = FALSE, message=FALSE, warning=FALSE>>=
 library(lme4)
-
-species <- c("Drachen", "Kobolde", "Gummibären") |> 
-  set_names(c("mountain", "cave", "forest")) |> 
-  sample(1)
-
-outcome <- c("literary_score", "reading_score", "iq_score") |> sample(1)
-risk_factor <- c("body_height", "body_weight", "jump_height") |> sample(1)
 
 dragon_tbl <- read_csv2(file.path(data_path, "dragons.csv")) |> 
   mutate(site = factor(site, labels = c("nearby", "midway", "far far away")))
@@ -120,6 +97,7 @@ mixed_formula <- reformulate(response = outcome,
 
 mixed_lmer <- lmer(mixed_formula, data = dragon_small_tbl)
 summary(mixed_lmer)
+
 @
 
 Leider kennt sich \Sexpr{name} mit der Analyse eines gemischten Modells in \Rlogo überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Analyse Ihre Hilfe!
@@ -127,10 +105,12 @@ Leider kennt sich \Sexpr{name} mit der Analyse eines gemischten Modells in \Rlog
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar für den festen Effekt! \textbf{(1 Punkt)}
+  \item Erklären Sie den Begriff \underline{fester Effekt} im Kontext des gemischten Modells! \textbf{(1 Punkt)}
+  \item Erklären Sie den Begriff \underline{zufälliger Effekt} im Kontext des gemischten Modells! \textbf{(1 Punkt)}
   \item Skizzieren Sie das Versuchsdesign! \textit{Nutzen Sie eine reduzierte Auswahl an Faktorkombinationen!} \textbf{(1 Punkt)} 
   \item Visualisieren Sie die Ausgabe des linearen gemischten Modells! \textit{Nutzen Sie eine reduzierte Auswahl an Faktorkombinationen!} \textbf{(1 Punkt)} 
-  \item Folgt der Messwert $y$ einer annährenden Normalverteilung? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Treffen Sie eine Aussage mit $T_{\alpha = 5\%} = 2.04$ zu Ihrer aufgestellten Nullhypothese! \textbf{(2 Punkte)}
-\item Interpretieren Sie den Effekt des festen Effekts im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
-\item Wieviel Varianz erklärt der zufällige Haupteffekt? \textbf{(2 Punkte)}
+  \item Folgt der Messwert $y$ einer annährenden Normalverteilung? Begründen Sie Ihre Antwort! \textbf{(1 Punkte)}
+\item Treffen Sie eine Aussage mit $T_{\alpha = 5\%} = 2.04$ zu Ihrer aufgestellten Nullhypothese! Begründen Sie Ihre Antwort \textbf{(2 Punkte)}
+\item Interpretieren Sie den Effekt des festen Effekts im Kontext der wissenschaftlichen Fragestellung! \textbf{(1 Punkt)}
+\item Wieviel Varianz erklärt der zufällige Haupteffekt? \textbf{(1 Punkt)}
 \end{enumerate}

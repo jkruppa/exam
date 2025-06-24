@@ -5028,37 +5028,37 @@ Leider kennt sich Steffen mit dem Kontext der linearen Regression überhaupt nic
 \paragraph{Interpretation der Ergebnisse eines gemischten Modells in \Rlogo}
 \fi
 
-'Ich glaube ich bringe da was durcheinander. Ich möchte eine Gerade durch die Punkte zeichnen oder doch eine Korrelation berechnen?', merkt Alex laut an. 'Ich sehe keine Punkte... das ist doch eine Ausgabe in \Rlogo. Überhaupt, darum geht es doch gar nicht in meinem Versuch. Ich wollte doch keine Gerade zeichnen?.', antwortet Alex sich sichtlich übernächtigt selber. Das Verrückte ist, dass die Katze Alien wirklich liebt. Das ist Alex sehr recht, denn er braucht Entspannung. Die Nacht war zu lang und überhaupt. Wenn die Gefälligkeit nicht wäre, ja dann wäre wohl vieles möglich für Alex! Aber so.. Alex hatte einen Leistungssteigerungsversuch im Emsland mit Milchvieh durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: mittlere Anzahl an weißen Blutkörperchen [LEU/ml] und Fettgehalt [\%/kg]. Jetzt will er erstmal schauen, ob es einen Zusammenhang gibt und das soll mit der \Rlogo Ausgabe möglich sein.
+Alex mag Höhlen sehr. Also hatte er sich sofort freiwillig gemeldet als es hieß, dass die Hochschule jemanden braucht um in den Bergen an Kobolde was zu untersuchen. Kobolde an sich sind ja recht friedfertig, aber den IQ-Score zu testen, ging den Wesen dann doch gehörig auf den Zeiger. Ein Schrei zerschneidet die Ruhe der Höhlen. Alex hatte zusätzlich die Sprunghöhe bestimmt und wollte wissen, ob es hier einen Zusammenhang gibt. Die Messungen wurden an drei Orten \texttt{nearby}, \texttt{midway} und \texttt{far far away} pro Höhle durchgeführt. Vielleicht hätte er nicht so offensiv viel Gummibärchen vor den Augen der Kobolde essen sollen.
 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{verbatim}
 ## Linear mixed model fit by REML ['lmerMod']
-## Formula: iq_score ~ body_height + (1 | cave/direction)
+## Formula: iq_score ~ jump_height + (1 | cave/direction)
 ##    Data: dragon_small_tbl
 ## 
-## REML criterion at convergence: 2233.3
+## REML criterion at convergence: 1977.7
 ## 
 ## Scaled residuals: 
-##      Min       1Q   Median       3Q      Max 
-## -2.40723 -0.66869 -0.01582  0.73845  2.93382 
+##     Min      1Q  Median      3Q     Max 
+## -3.1976 -0.6373 -0.0069  0.6536  2.0964 
 ## 
 ## Random effects:
 ##  Groups         Name        Variance Std.Dev.
-##  direction:cave (Intercept)  26.63    5.16   
-##  cave           (Intercept) 244.70   15.64   
-##  Residual                   203.42   14.26   
-## Number of obs: 270, groups:  direction:cave, 18; cave, 6
+##  direction:cave (Intercept)  29.68    5.448  
+##  cave           (Intercept) 297.64   17.252  
+##  Residual                   186.92   13.672  
+## Number of obs: 240, groups:  direction:cave, 24; cave, 8
 ## 
 ## Fixed effects:
 ##             Estimate Std. Error t value
-## (Intercept)  27.5562    26.4694   1.041
-## body_height   0.0777     0.1271   0.611
+## (Intercept)  28.2996    27.6101   1.025
+## jump_height   0.1103     0.1337   0.825
 ## 
 ## Correlation of Fixed Effects:
 ##             (Intr)
-## body_height -0.969
+## jump_height -0.974
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
@@ -5068,12 +5068,14 @@ Leider kennt sich Alex mit der Analyse eines gemischten Modells in \Rlogo überh
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar für den festen Effekt! \textbf{(1 Punkt)}
+  \item Erklären Sie den Begriff \underline{fester Effekt} im Kontext des gemischten Modells! \textbf{(1 Punkt)}
+  \item Erklären Sie den Begriff \underline{zufälliger Effekt} im Kontext des gemischten Modells! \textbf{(1 Punkt)}
   \item Skizzieren Sie das Versuchsdesign! \textit{Nutzen Sie eine reduzierte Auswahl an Faktorkombinationen!} \textbf{(1 Punkt)} 
   \item Visualisieren Sie die Ausgabe des linearen gemischten Modells! \textit{Nutzen Sie eine reduzierte Auswahl an Faktorkombinationen!} \textbf{(1 Punkt)} 
-  \item Folgt der Messwert $y$ einer annährenden Normalverteilung? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Treffen Sie eine Aussage mit $T_{\alpha = 5\%} = 2.04$ zu Ihrer aufgestellten Nullhypothese! \textbf{(2 Punkte)}
-\item Interpretieren Sie den Effekt des festen Effekts im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
-\item Wieviel Varianz erklärt der zufällige Haupteffekt? \textbf{(2 Punkte)}
+  \item Folgt der Messwert $y$ einer annährenden Normalverteilung? Begründen Sie Ihre Antwort! \textbf{(1 Punkte)}
+\item Treffen Sie eine Aussage mit $T_{\alpha = 5\%} = 2.04$ zu Ihrer aufgestellten Nullhypothese! Begründen Sie Ihre Antwort \textbf{(2 Punkte)}
+\item Interpretieren Sie den Effekt des festen Effekts im Kontext der wissenschaftlichen Fragestellung! \textbf{(1 Punkt)}
+\item Wieviel Varianz erklärt der zufällige Haupteffekt? \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
 % -----------------------------------------------------------------------
@@ -5094,7 +5096,7 @@ Leider kennt sich Alex mit der Analyse eines gemischten Modells in \Rlogo überh
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5109,9 +5111,9 @@ Leider kennt sich Alex mit der Analyse eines gemischten Modells in \Rlogo überh
 \paragraph{Einfache experimentelle Designs}
 \fi
 
-Jessica und Alex sind bei Jonas um sich Hilfe für eine Versuchsplanung in \Rlogo zu holen. Im Hintergrund läuft viel zu laut Iron Maiden. Dabei geht es um den Zusammenhang zwischen der Behandlung Lüftungssysteme ($ctrl$, $storm$, $thunder$ und $tornado$) und dem Messwert Trockengewicht [kg/ha] in Kartoffeln. Der Versuch soll in einem Gewächshausexperiment in der Uckermark durchgeführt werden. Nach der Dozentin ist der Messwert Trockengewicht [kg/ha] normalverteilt. Die beiden entschieden sich für ein faktorielles Versuchsdesign. Im ersten Schritt überlegt Jonas ein einfaches experimentelles Design zu probieren. Daher entscheiden sich alle drei für ein \textit{Randomized complete block design (RCBD) mit zwei Blöcken}. Das sollte für den Anfang erstmal reichen. 'Und jetzt, was machen wir jetzt?', Alex schaut die anderen beiden mit großen Augen an. Die zucken mit der Schulter. Alle mampfen Snickers.\\
+Neuer Versuch neues Glück! Jonas und Tina sind bei Paula um sich Hilfe für eine Versuchsplanung in \Rlogo zu holen. Im Hintergrund läuft viel zu laut Jagd auf roter Oktober. Daher hat die Ratte schon lange reißaus genommen. In dem neuen Versuch geht es um den Zusammenhang zwischen der Behandlung Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$) und dem Messwert Schlachtgewicht [kg] in Schweinen. Der Versuch soll in einem Leistungssteigerungsversuch im Wendland durchgeführt werden. Immerhin ist der Messswert normalverteilt, was einges einfacher macht. Was es nicht so einfacher macht ist, dass Jonas noch als zusätzliche Herausforderung etwas anderes umtreibt: die Erschöpfung. Im ersten Schritt überlegt Paula ein einfaches experimentelles Design zu probieren. Daher entscheiden sich alle drei für ein \textit{Randomized complete block design (RCBD) mit zwei Blöcken}. Ob es das jetzt einfacher macht?\\
 
-Leider kennen sich Jonas, Jessica und Alex mit dem \textit{Randomized complete block design (RCBD) mit zwei Blöcken} überhaupt nicht aus. Deshalb brauchen die Drei bei der Erstellung Ihre Hilfe!
+Leider kennen sich Paula, Jonas und Tina mit dem \textit{Randomized complete block design (RCBD) mit zwei Blöcken} überhaupt nicht aus. Deshalb brauchen die Drei bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \setcounter{enumi}{0}
@@ -5143,7 +5145,7 @@ Leider kennen sich Jonas, Jessica und Alex mit dem \textit{Randomized complete b
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5158,9 +5160,9 @@ Leider kennen sich Jonas, Jessica und Alex mit dem \textit{Randomized complete b
 \paragraph{Fortgeschrittene experimentelle Designs}
 \fi
 
-Die Hündin macht mal wieder Randale in Jessicas Zimmer und rennt davon! Yuki und Paula sind bei Jessica in im Wendland wo der neue, bessere Versuch stattfinden soll. Dabei soll in einem Stallexperiment im Wendland mit Puten durchgeführt werden. Auf dem Tisch stapeln sich Schokobons aus Vollkorndinkelmehl. Eine Spezialtät der Komune hier. Yuki hasst Vollkorn wie Smarties geliebt werden. In dem neuen Versuch geht es um den Zusammenhang zwischen der Behandlung Lüftungssystem ($keins$, $storm$, $tornado$ und $thunder$) sowie Bestandsdichte ($standard$ und $kontakt$) sowie drei Blöcken und dem Messwert Schlachtgewicht [kg]. Immerhin ist der Messswert normalverteilt, was einges einfacher macht. Was es nicht so einfacher macht ist, dass Paula als zusätzliche Herausforderung noch der Perfektionismus mitgebracht hat. Daher entscheiden sich alle drei für ein \textit{Split plot design oder auch Spaltanlage}. 'Naja, so viel einfacher ist es dann doch nicht...', merkt Paula an und sucht die Hündin.\\
+Die Ratte macht mal wieder Randale in Paulas Zimmer und rennt davon! Tina und Jessica sind bei Paula in im Teuteburgerwald wo der neue, bessere Versuch stattfinden soll. Dabei soll in einem Freilandversuch im Teuteburgerwald mit Maiss durchgeführt werden. Auf dem Tisch stapeln sich Smarties aus Vollkorndinkelmehl. Eine Spezialtät der Komune hier. Tina hasst Vollkorn wie Schokobons geliebt werden. In dem neuen Versuch geht es um den Zusammenhang zwischen der Behandlung Düngestufen ($ctrl$, $low$, $mid$ und $high$) sowie Bewässerungstypen ($ctrl$, und $high$) sowie drei Blöcken und dem Messwert Proteingehalt [g/kg]. Immerhin ist der Messswert normalverteilt, was einges einfacher macht. Was es nicht so einfacher macht ist, dass Jessica als zusätzliche Herausforderung noch der Mangel mitgebracht hat. Daher entscheiden sich alle drei für ein \textit{Strip plot design oder auch Streifenanlage}. 'Naja, so viel einfacher ist es dann doch nicht...', merkt Jessica an und sucht die Ratte.\\
 
-Leider kennen sich Jessica, Yuki und Paula mit dem \textit{Split plot design oder auch Spaltanlage} überhaupt nicht aus. Deshalb brauchen die Drei bei der Erstellung Ihre Hilfe!
+Leider kennen sich Paula, Tina und Jessica mit dem \textit{Strip plot design oder auch Streifenanlage} überhaupt nicht aus. Deshalb brauchen die Drei bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
   \setcounter{enumi}{0}
@@ -5193,7 +5195,7 @@ Leider kennen sich Jessica, Yuki und Paula mit dem \textit{Split plot design ode
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5221,9 +5223,9 @@ In der Prüfung erhalten Sie \underline{keinen Auszug} der wissenschaftlichen Ve
 \paragraph{Zerforschen einer wissenschaftlichen Veröffentlichung}
 \fi
 
-Vor dem Start der eigenen Arbeit möchte seine Betreuerin, dass Mark einmal die wissenschaftliche Veröffentlichung \textit{Wu, G., et al. (2004). Arginine nutrition in neonatal pigs} sinnvoll zusammenfasst. Dann würde die eigene Arbeit auch leichter von der Hand gehen und Mark hätte dann schon eine Vorlage. 'Das ist jetzt aber umfangreicher als gedacht!', schnauft er und runzelt die Stirn. Im Hintergrund spielt viel zu leise Andrea Berg. Das wird dann vermutlich heute Abend nichts mehr mit seinem Hobby Geocaching. Der Hamster schaut mitleidig.\\
+'Uff', denkt Alex. Das ist jetzt doch etwas umfangreicher. Alex soll die wissenschaftliche Veröffentlichung \textit{Sánchez, M., et al. (2022). Hoverfly pollination enhances yield and fruit quality in mango under protected cultivation} einmal zusammenfassen. Die Arbeit soll als eine Vorlage für seine eigene Arbeit dienen. Daher möchte seine Betreuerin, dass er einmal die Veröffentlichung in einer PowerPoint Präsentation zusammenfasst. 'Das ist jetzt aber doch umfangreicher als gedacht.', mault Alex in sich hinein. Schnell nochmal ein paar Gummibärchen zur Stärkung gegessen. Das wird dann vermutlich heute Abend nichts mehr mit seinem Hobby Starcraft. Die Katze schaut mitleidig.\\
 
-Leider kennt sich Mark mit dem Lesen einer wissenschaftlichen Veröffentlichung mit Fokus auf die Statistik überhaupt nicht aus. Deshalb braucht er bei der Erstellung Ihre Hilfe! Glücklicherweise kennen Sie die wissenschaftliche Veröffentlichung schon im Detail und können sofort helfen.
+Leider kennt sich Alex mit dem Lesen einer wissenschaftlichen Veröffentlichung mit Fokus auf die Statistik überhaupt nicht aus. Deshalb braucht er bei der Erstellung Ihre Hilfe! Glücklicherweise kennen Sie die wissenschaftliche Veröffentlichung schon im Detail und können sofort helfen.
 
 \begin{enumerate}
   \setcounter{enumi}{0}
@@ -5256,7 +5258,7 @@ Leider kennt sich Mark mit dem Lesen einer wissenschaftlichen Veröffentlichung 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5271,7 +5273,7 @@ Leider kennt sich Mark mit dem Lesen einer wissenschaftlichen Veröffentlichung 
 \paragraph{Zerforschen eines wissenschaftlichen Datensatzes}
 \fi
 
-Unter einem langen Schnaufen starrt Yuki auf den wissenschaftlichen Datensatz \textit{in der Tabelle 1} in ihrem Laptop. Insgesamt wurden $n$ Beobachtungen erhoben. 'Worum geht es denn eigentlich in diesem Datensatz?', fragt sie sich kopfschüttelnd und mampft noch ein paar Reese's Peanut Butter Cups. Yuki soll die Datentabelle nutzen um das eigene Experiment zu planen und eine Blaupause zu haben. Als eine Vorlage sozusagen, die sie nur noch ausfüllen muss. Daher möchte ihre Betreuerin, dass sie einmal die Daten sinnvoll zusammenfasst. Das sollte dann doch etwas aufwendiger werden. Das wird dann vermutlich heute Abend nichts mehr mit Matrix.
+'Uff', denkt Jonas Das ist jetzt doch etwas umfangreicher. Jonas soll die wissenschaftlichen Daten \textit{in der Tabelle 1} einmal sinnvoll analysieren und zusammenfassen. Die Daten sollen als eine Vorlage für seine eigene Arbeit und Experiment dienen. Insgesamt wurden $n$ Beobachtungen erhoben. Daher möchte sein Betreuer, dass er einmal die Daten in einer PowerPoint Präsentation zusammenfasst. 'Das ist jetzt aber doch umfangreicher als gedacht.', mault Jonas in sich hinein und mampft noch ein paar Snickers. Dann starrt er eine Weile in seinen Laptop. Das wird dann vermutlich heute Abend nichts mehr mit Mission Impossible.
 
 \begin{table}[h]
 \centering
@@ -5288,12 +5290,12 @@ Unter einem langen Schnaufen starrt Yuki auf den wissenschaftlichen Datensatz \t
   1  & 2 & 2.8 & 12.1 & 1 \\
   1  & 2 & 6.1 & 13.4 & 1 \\
   $\vdots$  & $\vdots$ & $\vdots$ & $\vdots$ & $\vdots$\\
-  5 & 2  & 1.9 & 9.6 &  0\\
+  3 & 2  & 1.9 & 9.6 &  0\\
   \bottomrule
   \end{tabular}
 \end{table}
 
-Yuki füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshalb braucht sie bei der Auswertung Ihre Hilfe! Glücklicherweise kennen Sie den wissenschaftlichen Datensatz aus Ihren eigenen Analysen schon im Detail und können sofort helfen.
+Jonas füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshalb braucht er bei der Auswertung Ihre Hilfe! Glücklicherweise kennen Sie den wissenschaftlichen Datensatz aus Ihren eigenen Analysen schon im Detail und können sofort helfen.
 
 \begin{graybox}{}
 \textit{Beantworten Sie die folgenden Fragen anhand eines selbst gewählten Beispiels!}
@@ -5308,7 +5310,7 @@ Yuki füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshal
   \item Formulieren Sie zwei mögliche wissenschaftliche Fragestellungen in Form einer PowerPoint Folie aus der obigen Datentabelle! \textbf{(2 Punkte)}
 \end{enumerate}
 
-\paragraph{Spezieller Aufgabenteil für die Variablen $\boldsymbol{x_1}$ und $\boldsymbol{y_1}$}
+\paragraph{Spezieller Aufgabenteil für die Variablen $\boldsymbol{f_1}$, $\boldsymbol{f_2}$ und $\boldsymbol{y_1}$}
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -5341,7 +5343,7 @@ Yuki füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshal
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5356,33 +5358,33 @@ Yuki füllt sich mit der Analyse der Daten in der Tabelle 1 überfordert. Deshal
 \paragraph{Herodot – der Schimmel aus Ivenack}
 \fi
 
-Die Lerngruppe \textit{Die Pantoffeltieren} bestehend aus Alex, Jessica, Mark und Jonas waren auf Exkursion in Brandenburg und haben dort Folgendes erarbeitet. Während der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die Geschichten des berühmten Apfelschimmels Herodot aus Ivenack zu Gehör. Herodot lief zwar niemals Rennen, war aber eines der berühmtesten Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-jährigen Eiche aus Ivenack vor den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch lautes Wiehern, woraufhin die französische Armee den Schimmel beschlagnahmte und nach Frankreich führte\footnote{Die Quelle der Inspiration  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
+Die Lerngruppe \textit{Sinnlos im Studium} bestehend aus Jonas, Yuki, Steffen und Paula waren auf Exkursion in Brandenburg und haben dort Folgendes erarbeitet. Während der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die Geschichten des berühmten Apfelschimmels Herodot aus Ivenack zu Gehör. Herodot lief zwar niemals Rennen, war aber eines der berühmtesten Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-jährigen Eiche aus Ivenack vor den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch lautes Wiehern, woraufhin die französische Armee den Schimmel beschlagnahmte und nach Frankreich führte\footnote{Die Quelle der Inspiration  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
   \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. Jetzt wollen die vier herausfinden: \textit{"Konnten die Ivenacker den Apfelschimmel Herodot vor dem Zugriff von Napoleon in der 1000-jährigen Eiche verstecken?"} 
 
 
 
 \vspace{1Ex}
 
-Helfen Sie der Lerngruppe \textit{Die Pantoffeltieren} bei der Beantwortung der Forschungsfrage! Gehen Sie von einem radialen Wachstum der 1000-jährigen Eiche von $1mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im Jahr 2022 einen Umfang von $12.5m$ in Brusthöhe hatte.
+Helfen Sie der Lerngruppe \textit{Sinnlos im Studium} bei der Beantwortung der Forschungsfrage! Gehen Sie von einem radialen Wachstum der 1000-jährigen Eiche von $0.8mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im Jahr 2022 einen Umfang von $12m$ in Brusthöhe hatte.
 
 \begin{enumerate}
-\item Wie groß war der Durchmesser in $m$ der Eiche im Jahr $1820$ als Herodot in der Eiche versteckt werden sollte? \textbf{(2 Punkte)}
+\item Wie groß war der Durchmesser in $m$ der Eiche im Jahr $1815$ als Herodot in der Eiche versteckt werden sollte? \textbf{(2 Punkte)}
 \item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen exponentiellen Zusammenhang für das Wachstum der 1000-jährigen Eiche. Erklären Sie die Auswirkungen der Entscheidung für linear oder exponentiell auf Ihre Berechnungen! \textbf{(2 Punkte)}
 \end{enumerate}
  
-Herodot hatte eine Schulterhöhe von $195$cm, eine Breite von $85$cm sowie eine Länge von  $220$cm.
+Herodot hatte eine Schulterhöhe von $185$cm, eine Breite von $75$cm sowie eine Länge von  $240$cm.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches Herodot in der 1000-jährigen Eiche einnehmen würde! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $sehr bequem mit Abstand$ um die eigene Achse drehen konnte.
+Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $mit blutiger Nase$ um die eigene Achse drehen konnte.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
 \item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre Berechnungen an einer aussagekräftigen Skizze für Pferd und Eiche! \textbf{(2 Punkte)} 
-\item Unter einer Dicke der Eichenwand von $30cm$ bricht die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
+\item Unter einer Dicke der Eichenwand von $15cm$ bricht die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
 
 
@@ -5405,7 +5407,7 @@ Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $sehr bequem m
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5422,15 +5424,15 @@ Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $sehr bequem m
 
 
 
-Die Projektgruppe \textit{D} bestehend aus Alex, Jonas, Nilufar und Mark hat sich zusammengefunden um den ersten Versuch zu planen. In einem Experiment wollen sie die Wuchshöhe von 210 Maispflanzen bestimmen. Bevor die Vier überhaupt mit dem Experiment beginnen können, gibt es aber ein paar Abschätzungen über die Kosten und den Aufwand zu treffen. Zum einen müssen sie die Maispflanzen einpflanzen und müssen dafür Substrat bestellen. Zum anderen muss die Projektgruppe die Maispflanzen auch bewegen und in ein Gewächshaus auf rechteckigen Tischen platzieren. Die schmale Tischseite fast ohne Randpflanzen 5 Pflanzen. Die Töpfe für die Keimung haben
-einen Durchmesser von 10cm und eine Höhe von 9cm. Der Kubikmeterpreis für Torf liegt bei 270 EUR. 
+Die Projektgruppe \textit{C} bestehend aus Nilufar, Steffen, Tina und Paula hat sich zusammengefunden um den ersten Versuch zu planen. In einem Experiment wollen sie die Wuchshöhe von 192 Maispflanzen bestimmen. Bevor die Vier überhaupt mit dem Experiment beginnen können, gibt es aber ein paar Abschätzungen über die Kosten und den Aufwand zu treffen. Zum einen müssen sie die Maispflanzen einpflanzen und müssen dafür Substrat bestellen. Zum anderen muss die Projektgruppe die Maispflanzen auch bewegen und in ein Gewächshaus auf rechteckigen Tischen platzieren. Die schmale Tischseite fast ohne Randpflanzen 8 Pflanzen. Die Töpfe für die Keimung haben
+einen Durchmesser von 8cm und eine Höhe von 8cm. Der Kubikmeterpreis für Torf liegt bei 310 EUR. 
 
 \vspace{1Ex}
 
-Helfen Sie der Projektgruppe \textit{D} bei der Planung des Versuches! 
+Helfen Sie der Projektgruppe \textit{C} bei der Planung des Versuches! 
 
 \begin{enumerate}
-\item Skizzieren Sie den Versuchsplan auf \textit{drei} Tischen im Gewächshaus! \textbf{(2 Punkte)}
+\item Skizzieren Sie den Versuchsplan auf \textit{zwei} Tischen im Gewächshaus! \textbf{(2 Punkte)}
 \item Berechnen Sie die benötigte Anzahl an Pflanztöpfen, wenn Sie Randpflanzen mit berücksichtigen wollen! \textbf{(1 Punkt)}
 \item Berechnen Sie die benötigte \textbf{(a)} \underline{Pflanztopf}fläche in $m^2$ sowie die \textbf{(b)} \underline{Tisch}fläche in $m^2$ gegeben der Anzahl an Pflanztöpfen inklusive Randpflanzen am Anfang der Keimungsphase! \textbf{(4 Punkte)}
 \item Berechnen Sie die benötigte Menge an Torf in Liter $l$, die Sie für das Befüllen der Pflanztöpfe benötigen! Gehen Sie von \textit{einem Zylinder} für die Pflanztöpfe aus!  \textbf{(2 Punkte)}
@@ -5459,7 +5461,7 @@ Helfen Sie der Projektgruppe \textit{D} bei der Planung des Versuches!
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5477,18 +5479,18 @@ Helfen Sie der Projektgruppe \textit{D} bei der Planung des Versuches!
 
 
 
-Nilufar bringt ein neues, tolles Projekt mit in die Lerngruppe \textit{Die Pantoffeltieren} bestehend aus ihr, Alex, Jessica sowie Tina. Um die Energiekosten ihres Betriebes zu senken, will sie eine Solaranlage auf den Schweinestall montieren lassen. Dafür hat sie ihren Stall ausgemessen und findet folgende Maße wieder. Die vordere Seite des Schweinestall hat eine Höhe $h_v$ von $6.5m$. Die hintere Seite des Schweinestall hat eine Höhe $h_b$ von $11m$. Der Schweinestall hat eine Tiefe $t$ von $13m$ und eine Breite $b$ von $50m$. 'Sag mal Nilufar, ist das eine Matheaufgabe oder rechnen wir hier gerade für dich kostenlos als menschliche Computer Sachen für deinen Betrieb?', fragt Jessica mit erhobenenen Augenbrauen. Tina und Alex nicken zustimmend.
+Yuki bringt ein neues, tolles Projekt mit in die Lerngruppe \textit{Die Pantoffeltieren} bestehend aus ihr, Paula, Steffen sowie Nilufar. Um die Energiekosten ihres Betriebes zu senken, will sie eine Solaranlage auf den Rinderstall montieren lassen. Dafür hat sie ihren Stall ausgemessen und findet folgende Maße wieder. Die vordere Seite des Rinderstall hat eine Höhe $h_v$ von $6.5m$. Die hintere Seite des Rinderstall hat eine Höhe $h_b$ von $10m$. Der Rinderstall hat eine Tiefe $t$ von $12m$ und eine Breite $b$ von $60m$. 'Sag mal Yuki, ist das eine Matheaufgabe oder rechnen wir hier gerade für dich kostenlos als menschliche Computer Sachen für deinen Betrieb?', fragt Steffen mit erhobenenen Augenbrauen. Nilufar und Paula nicken zustimmend.
 
 \vspace{1Ex}
 
 Wenn die Lerngruppe nicht will, dann müssen Sie bei der Planung helfen!
 
 \begin{enumerate}
-\item Skizzieren Sie den Schweinestall auf dem die Solaranlage montiert werden soll! Ergänzen Sie die Angaben für die Höhen $h_v$, $h_b$, die Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
-\item Berechnen Sie die Fläche der schrägen, neuen Solaranlage auf dem Schweinestall! \textbf{(3 Punkte)}
+\item Skizzieren Sie den Rinderstall auf dem die Solaranlage montiert werden soll! Ergänzen Sie die Angaben für die Höhen $h_v$, $h_b$, die Tiefe $t$ und die Breite $b$ des Stalls!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Fläche der schrägen, neuen Solaranlage auf dem Rinderstall! \textbf{(3 Punkte)}
 \end{enumerate}
 
-Ebenfalls plant Nilufar eine neue Biogasanlage für ihren Betrieb. Der neue Methantank hat einen Radius $r$ von $1.2m$. Leider gibt es ein paar bauliche Beschränkungen auf dem Grundstück. Das Fundament des zylindrischen Methantanks kann nur ein Gewicht von maximal $14t$ aushalten bevor der Tank wegbricht. Nilufar rechnen eine Sicherheitstoleranz von $20\%$ ein beinhaltend das Gewicht des Methantanks. In flüssiger Form hat Methan bei $-80^\circ\text{C}$ eine Dichte von $240kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte von $300kg/m^3$. Nilufar betreibt ihre Anlage bei $-92^\circ\text{C}$.
+Ebenfalls plant Yuki eine neue Biogasanlage für ihren Betrieb. Der neue Methantank hat einen Radius $r$ von $1m$. Leider gibt es ein paar bauliche Beschränkungen auf dem Grundstück. Das Fundament des zylindrischen Methantanks kann nur ein Gewicht von maximal $12t$ aushalten bevor der Tank wegbricht. Yuki rechnen eine Sicherheitstoleranz von $25\%$ ein beinhaltend das Gewicht des Methantanks. In flüssiger Form hat Methan bei $-80^\circ\text{C}$ eine Dichte von $235kg/m^3$. Bei $-100^\circ\text{C}$ hat Methan eine Dichte von $270kg/m^3$. Yuki betreibt ihre Anlage bei $-90^\circ\text{C}$.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
@@ -5516,7 +5518,7 @@ Ebenfalls plant Nilufar eine neue Biogasanlage für ihren Betrieb. Der neue Meth
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5537,22 +5539,22 @@ Ebenfalls plant Nilufar eine neue Biogasanlage für ihren Betrieb. Der neue Meth
 
 
 
-"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um und blicken in das puderrote Gesicht von Yuki. "'Wieso?"', entfährt es Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem Whiteboard voller roter Schnüre geschliffen und müssen folgenden mathematischen untermauerten Argumenten im Lidl über sich ergehen lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration für die Aufgabe waren folgende Reportagen: \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August 2021} und \href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
+"'Sind Sie ein Riesenfautier oder warum kaufen Sie so viele Aligatorenbirnen?"', spricht es hinter Ihnen. Irritiert drehen Sie sich um und blicken in das puderrote Gesicht von Alex. "'Wieso?"', entfährt es Ihnen und Sie bereuen sogleich die Frage. Sofort werden Sie zu einem Whiteboard voller roter Schnüre geschliffen und müssen folgenden mathematischen untermauerten Argumenten im Lidl über sich ergehen lassen. Da kommen Sie nicht mehr raus, also können Sie auch gleich mitmachen. Das Problem liegt in Chile\footnote{Die Quelle der Inspiration für die Aufgabe waren folgende Reportagen: \href{https://www.amnesty.ch/de/ueber-amnesty/publikationen/magazin-amnesty/2021-3/bis-zum-letzten-tropfen}{"`Bis zum letzten Tropfen"' in AMNESTY – Magazin der Menschenrechte vom August 2021} und \href{https://www.welthungerhilfe.de/welternaehrung/rubriken/klima-ressourcen/wassernot-in-chile-eine-folge-der-privatisierung}{"`Wasserknappheit in Chile: Eine Folge der Privatisierung?"' in Die Welternährung dem Fachjournal der Welthungerhilfe vom April 2022.}}. Tja, die Deutschen und Südamerika.\\
 
-Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von Yuki?\\
+Zuerst werden Ihre Fähigkeiten getestet, der Mathematik folgen zu können. Oder berechnen Sie gerade den Einkauf von Alex?\\
 
 \begin{enumerate}
-\item Wenn 3 Blaubeerschalen 4.77 Euro kosten,  wie viel kosten 8 Schalen? \textbf{(2 Punkte)}
-\item Wenn Sie die 8 Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je 0.99 EUR können Sie sich dann noch für 100 EUR leisten? \textbf{(1 Punkt)}
+\item Wenn 7 Blaubeerschalen 12.53 Euro kosten,  wie viel kosten 12 Schalen? \textbf{(2 Punkte)}
+\item Wenn Sie die 12 Blaubeerschalen gekauft haben, wie viele Aligatorbirnen zu je 2.89 EUR können Sie sich dann noch für 200 EUR leisten? \textbf{(1 Punkt)}
 \end{enumerate}
 
 Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch bei der Produktion von Gemüse aus Chile. Seltsam, was man so alles in einem Lidl über Gemüse erfährt.
   
 \begin{itemize}[noitemsep]
-\item Ein Kilo Strauchtomaten benötigt 190l Wasser. Eine Strauchtomate wiegt 90 - 130g.
-\item Ein Kilo Salat benötigt 100l Wasser. Ein Salatkopf wiegt 280 - 530g.
-\item Ein Kilo Avocado benötigt 1050l Wasser. Eine Avocado wiegt 130 - 380g.
-\item Ein Kilo Blaubeeren benötigt 830l Wasser. Eine Blaubeere wiegt 3.2 - 3.7g.
+\item Ein Kilo Strauchtomaten benötigt 170l Wasser. Eine Strauchtomate wiegt 110 - 130g.
+\item Ein Kilo Salat benötigt 100l Wasser. Ein Salatkopf wiegt 300 - 520g.
+\item Ein Kilo Avocado benötigt 1050l Wasser. Eine Avocado wiegt 140 - 400g.
+\item Ein Kilo Blaubeeren benötigt 880l Wasser. Eine Blaubeere wiegt 3.2 - 3.8g.
 \end{itemize}
 
 \begin{enumerate}
@@ -5560,21 +5562,21 @@ Das Whiteboard beinhaltet folgende Liste mit Informationen zum Wasserverbrauch b
 \item Berechnen Sie den Wasserverbrauch für die Produktion für jeweils eine Strauchtomate, einem Salat, einer Avocado und einer Blaubeeren. Stellen Sie das Ergebnis als Tabelle dar! \textbf{(3 Punkte)}
 \end{enumerate}
 
-Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr 2022 blieben die Erträge von Blaubeeren mit \ensuremath{7.9\times 10^{4}}t in dem prognostizierten Rahmen. Die Menge \underline{steigerte} sich um 7.2\%. Die Exporte für Avocados \underline{fielen} in dem gleichen Zeitraum um 18.1\% auf \ensuremath{2.3\times 10^{5}}t.
+Chile exportiert im großem Ausmaß Blaubeeren und Avocados. In dem Exportjahr 2022 blieben die Erträge von Blaubeeren mit \ensuremath{8\times 10^{4}}t in dem prognostizierten Rahmen. Die Menge \underline{steigerte} sich um 7.2\%. Die Exporte für Avocados \underline{fielen} in dem gleichen Zeitraum um 21.2\% auf \ensuremath{1.9\times 10^{5}}t.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie viele Tonnen Wasser hat Chile in dem Exportjahr 2021 exportiert? \textbf{(2 Punkte)}
+\item Wie viele Hektoliter Wasser hat Chile in dem Exportjahr 2021 exportiert? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa 48 Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei 35 - 115 Liter pro Waschgang einer Waschmaschine und 8 - 17 Liter pro Sp{"u}lmaschinenlauf.
+Chile ist eines der wenigen Länder der Welt, die ihr Wasser komplett privatisiert haben. Derzeit sind nur zwei Prozent des Wassers des Landes für den häuslichen Verbrauch vorgesehen. In den Dörfern der Anbauregionen versorgen Tankwagen die Bevölkerung jede Woche mit Wasser, es gibt etwa 61 Liter Wasser pro Kopf für den täglichen Bedarf. In \textit{Deutschland} liegt der Verbrauch bei 10 - 15 Liter pro Minute Duschen und 9 - 14 Liter pro Sp{"u}lgang.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Mit der rationierten Wassermenge aus Chiles Anbaugebieten können Sie in \textit{Deutschland} wie oft Ihren Bedarf stillen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das alles hätten Sie nicht von Yuki erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
+Das alles hätten Sie nicht von Alex erwartet. Ganz schön viele Informationen wurden da zusammengetragen.
 
 \begin{enumerate}
   \setcounter{enumi}{5}  
@@ -5602,7 +5604,7 @@ Das alles hätten Sie nicht von Yuki erwartet. Ganz schön viele Informationen w
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5621,23 +5623,23 @@ Das alles hätten Sie nicht von Yuki erwartet. Ganz schön viele Informationen w
 
 
 
-"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie auf Empfehlung von von Alex kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum vor 69 Millionen Jahren die Dinosaurier - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde von Edmond Halley aus dem 17.–18. Jahrhundert? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen\footnote{Die Quelle der Inspiration
+"'Was für einen Unsinn!"', rufen Sie. Jetzt haben Sie auf Empfehlung von von Tina kostbaren Schlaf prokrastiniert um einem Ernährungswissenschaftler auf YouTube über die Erde als Dampfnudel zu lauschen. Irgendwie passt es dann doch mit der Analogie. Übermüdet müssen Sie darüber nachdenken, warum vor 66 Millionen Jahren die Dinosaurier - so groß sie auch waren - nicht von der Schwerkraft zu Boden gerissen wurden. Hat der Dampfplauderer etwa recht und war die Schwerkraft vor Millionen von Jahren eine andere?  Sind deshalb alle Lebewesen auf der Erde \textit{heutzutage} so viel kleiner, weil die Schwerkraft größer ist als damals? War die Erde kleiner und hatte weniger Masse? Oder ist es nur ein Rechenfehler wie bei der Theorie der Hohlerde von Edmond Halley aus dem 17.–18. Jahrhundert? Müde reiben Sie sich die Augen. So wird es nichts mehr mit dem Schlafen, dann können Sie auch mal etwas rechnen\footnote{Die Quelle der Inspiration
   für die Aufgabe war folgender Artikel:
   \href{https://hpd.de/artikel/erde-dampfnudel-22236}{"Skeptische Anmerkungen --- Die Erde als Dampfnudel" in Der Humanistische Pressedienst}}.  \\
 
-Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und heute gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung $g$ der Erde \textit{heutzutage} einen Wert von 9.81m/s$^2$ an. Im Weiteren hat die Erde einen ungefähren Durchmesser von \ensuremath{1.2742\times 10^{4}}km und eine mittlere Dichte $\rho$ von 5.51g/cm$^3$. Das Gewicht von einem heute lebenden Waldelefanten mit 2.7t liegt bei 6t und das Gewicht von einem Tyrannosaurus rex (T. rex) bei 4.5t bis 8t.
+Betrachten wir die Schwerkraft oder Gewichtskraft, die auf Lebewesen damals und heute gewirkt haben soll. Nehmen Sie für die Fallbeschleunigung $g$ der Erde \textit{heutzutage} einen Wert von 9.78m/s$^2$ an. Im Weiteren hat die Erde einen ungefähren Durchmesser von \ensuremath{1.2742\times 10^{4}}km und eine mittlere Dichte $\rho$ von 5.86g/cm$^3$. Das Gewicht von einem heute lebenden asiatischen Elefanten liegt bei 3t bis 5t und das Gewicht von einem Tyrannosaurus rex (T. rex) bei 4.5t bis 8t.
 
 \begin{enumerate}
-\item Welchen Durchmesser müsste die Erde vor 69 Millionen Jahren gehabt haben, wenn Dinosaurier und Elefanten die gleiche Gewichtskraft $\overrightarrow{F_G}$ damals und heute erfahren hätten? \textit{Beantworten Sie die Frage anhand der folgenden Teilaufgaben!}
+\item Welchen Durchmesser müsste die Erde vor 66 Millionen Jahren gehabt haben, wenn Dinosaurier und Elefanten die gleiche Gewichtskraft $\overrightarrow{F_G}$ damals und heute erfahren hätten? \textit{Beantworten Sie die Frage anhand der folgenden Teilaufgaben!}
 \begin{enumerate}
-\item Berechnen Sie die Fallbeschleunigung von vor 69 Millionen Jahren unter der obigen Annahme gleich wirkender Gewichtskraft $\overrightarrow{F_G}$ auf Elefant und Dinosaurier! \textbf{(1 Punkt)}
+\item Berechnen Sie die Fallbeschleunigung von vor 66 Millionen Jahren unter der obigen Annahme gleich wirkender Gewichtskraft $\overrightarrow{F_G}$ auf Elefant und Dinosaurier! \textbf{(1 Punkt)}
 \item Berechnen Sie Masse der heutigen Erde! \textbf{(2 Punkte)}
-\item Schließen Sie über die Masse auf den Durchmesser der Erde vor 69 Millionen Jahren! \textbf{(2 Punkte)}
+\item Schließen Sie über die Masse auf den Durchmesser der Erde vor 66 Millionen Jahren! \textbf{(2 Punkte)}
 \end{enumerate}
 \item Beantworten Sie die Eingangsfrage mit 1-2 Antwortsätzen! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Die Distanz zwischen Sonne und Erde entspricht 0.99 astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \ensuremath{1.55\times 10^{8}}km angegeben. Der \textit{massebehaftete} Sonnenwind besteht aus 84\% Wasserstoffkernen mit einer molaren Masse von 1.05g/mol, 10\% Heliumkernen mit 4.01g/mol sowie 6\% weiteren Atomkernen mit  69.18g/mol. Die Teilchendichte bei Eintritt in die Erdatmosphäre liegt zwischen 0.4 bis 100 Teilchen cm$^{-3}$ pro Sekunde mit einer mittleren Teilchendichte von 7cm$^{-3}$ pro Sekunde. \\
+Die Distanz zwischen Sonne und Erde entspricht 1.03 astronomische Einheiten ($AE$). Die Einheit 1 AE wird mit \ensuremath{1.52\times 10^{8}}km angegeben. Der \textit{massebehaftete} Sonnenwind besteht aus 85\% Wasserstoffkernen mit einer molaren Masse von 1.02g/mol, 8\% Heliumkernen mit 4.32g/mol sowie 7\% weiteren Atomkernen mit  69.18g/mol. Die Teilchendichte bei Eintritt in die Erdatmosphäre liegt zwischen 0.4 bis 100 Teilchen cm$^{-3}$ pro Sekunde mit einer mittleren Teilchendichte von 6cm$^{-3}$ pro Sekunde. \\
 
 \textit{Lösen Sie den folgenden Aufgabenteil mit einer aussagekräftigen Skizze!}
 
@@ -5671,7 +5673,7 @@ Die Distanz zwischen Sonne und Erde entspricht 0.99 astronomische Einheiten ($AE
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5688,7 +5690,7 @@ Die Distanz zwischen Sonne und Erde entspricht 0.99 astronomische Einheiten ($AE
 
 
 
-Man hört schon häufig vieles Geschnatter von höflichen Gänse in Mastställen. Enge ist natürlich etwas ungünstig, den dann kommt es zu Picken und Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Maßnahmen gegriffen werden. Kennt jeder aus einer mittelmäßigen Wohngemeinschaft. Das wollen Mark, Nilufar, Jonas und Steffen aber als vorsorgliche Gänse-Halter:innen nicht\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftliche Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers on farm. EFSA Journal 21.2}.}. Gemeinsam sind die Vier in einer Projektgruppe gelandet. Betrachten wir also gemeinsam einmal das Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der Gänse für vier Tätigkeiten und versuchen die notwendige Fläche zu optimieren. Wie immer gibt es dafür eine mathematische Formel:
+Man hört schon häufig vieles Geschnatter von höflichen Gänse in Mastställen. Enge ist natürlich etwas ungünstig, den dann kommt es zu Picken und Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Maßnahmen gegriffen werden. Kennt jeder aus einer mittelmäßigen Wohngemeinschaft. Das wollen Tina, Steffen, Nilufar und Yuki aber als vorsorgliche Gänse-Halter:innen nicht\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftliche Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers on farm. EFSA Journal 21.2}.}. Gemeinsam sind die Vier in einer Projektgruppe gelandet. Betrachten wir also gemeinsam einmal das Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der Gänse für vier Tätigkeiten und versuchen die notwendige Fläche zu optimieren. Wie immer gibt es dafür eine mathematische Formel:
 
 \begin{center}
   \begin{tabular}{cc}
@@ -5706,8 +5708,8 @@ mit
 \item $PB_i$ dem Anteil des Auftretens eines Verhaltens $i$.
 \item $r_i$ dem Radius Gans plus dem benötigten Radius für das Verhalten $i$.
 \item $R_i$ dem notwendigen Abstand zu den Nachbarn für das Verhalten $i$.    
-\item $i$ dem Verhalten: (1) wing/leg stretching, (2) dustbathing, (3)
-  wingflapping und (4) sitting.
+\item $i$ dem Verhalten: (1) sitting, (2) preening, (3)
+  wing/leg stretching und (4) standing.
 \end{itemize}
 
 In der folgenden Tabelle 1 sind die Werte für $r_i$, $R_i$ und $PB_i$ für ein spezifisches Verhalten $i$ aus drei wissenschaftlichen Veröffentlichungen dargestellt.
@@ -5722,10 +5724,10 @@ In der folgenden Tabelle 1 sind die Werte für $r_i$, $R_i$ und $PB_i$ für ein 
 \toprule
   & Aldridge et al. (2021) & Baxter et al. (2022) & Jabcobs et al. (2019)\\
 \midrule
-wing/leg stretching & 18cm; 26cm; 52.2\% & 27cm; 43cm; 54.1\% & 34cm; 21cm; 50.1\%\\
-dustbathing & 37cm; 52cm; 8.1\% & 26cm; 34cm; 2.4\% & 29cm; -8cm; 0.5\%\\
-wingflapping & 9cm; 16cm; 6.2\% & 27cm; 16cm; 5.1\% & 39cm; 38cm; 5.1\%\\
-sitting & 5cm; 48cm; 0.8\% & 25cm; 37cm; 0.8\% & 47cm; 34cm; 0.8\%\\
+sitting & 10cm; 56cm; 8.9\% & 52cm; 36cm; 12.1\% & 14cm; 16cm; 3.5\%\\
+preening & 49cm; 18cm; 64.1\% & 28cm; 9cm; 64.1\% & 36cm; 30cm; 64.1\%\\
+wing/leg stretching & 31cm; 18cm; 6.3\% & 31cm; 30cm; 8.1\% & 13cm; 34cm; 8.1\%\\
+standing & 38cm; 53cm; 1.2\% & 43cm; 7cm; 3.2\% & 21cm; 36cm; 6.9\%\\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -5766,7 +5768,7 @@ Leider kennen sich die Vier nicht so gut mit der Berechnung aus! Daher brauchen 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5783,25 +5785,25 @@ Leider kennen sich die Vier nicht so gut mit der Berechnung aus! Daher brauchen 
 
 
 
-Tina und Nilufar waren gemeinsam in Berlin und sitzen nun im IC nach Amsterdam um zurück nach Osnabrück zu fahren. 'Weißt du was ich mich frage?', entfährt es Tina ziemlich plötzlich, so dass Nilufar die Takis Blue Heat aus dem Mund fallen. 'Nein, und ehrlich gesagt bin ich auch ziemlich müde...'. Das ist jetzt aber Tina egal, denn sie möchte folgende Sachlage diskutieren. Und Tina hat jetzt 3 Stunden Zeit. Plus Verspätung. In der Ausstellung \textit{Europa und das Meer} im Deutschen Historischen Museum in Berlin gab es folgendes Zitat über die Probleme der frühen Hochseeschifffahrt.
+Yuki und Alex waren gemeinsam in Berlin und sitzen nun im IC nach Amsterdam um zurück nach Osnabrück zu fahren. 'Weißt du was ich mich frage?', entfährt es Yuki ziemlich plötzlich, so dass Alex die Gummibärchen aus dem Mund fallen. 'Nein, und ehrlich gesagt bin ich auch ziemlich müde...'. Das ist jetzt aber Yuki egal, denn sie möchte folgende Sachlage diskutieren. Und Yuki hat jetzt 3 Stunden Zeit. Plus Verspätung. In der Ausstellung \textit{Europa und das Meer} im Deutschen Historischen Museum in Berlin gab es folgendes Zitat über die Probleme der frühen Hochseeschifffahrt.
 
 \begin{quote}
-  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach 40 Tagen die ersten Symptome ein; die ersten Toten sind nach 72 Tagen zu beklagen; nach 110 Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
+  >>Ohne ausreichende Zufuhr von Vitamin C stellen sich nach 40 Tagen die ersten Symptome ein; die ersten Toten sind nach 65 Tagen zu beklagen; nach 110 Tagen rafft die Skorbut eine ganze Schiffsbesatzung dahin<<
 \end{quote}
 
-Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den südamerikanischen Kontinent zu finden. Zu seiner Flotte gehörten fünf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die Concepciön und die Santiago - mit einer Besatzung von insgesamt 237 Mann. 
+Ferdinand Magellan stach im Jahre 1519 in See um eine Passage durch den südamerikanischen Kontinent zu finden. Zu seiner Flotte gehörten fünf Schiffe - das Flaggschiff Trinidad, die San Antonio, die Victoria, die Concepciön und die Santiago - mit einer Besatzung von insgesamt 245 Mann. 
 
 \begin{enumerate}
 \item Stellen Sie den Verlauf der Anzahl an Matrosen auf einem Schiff der Flotte in der Form einer Überlebenszeitkurve dar! Beschriften Sie die Achsen entsprechend! \textbf{(2 Punkte)} 
 \item Was ist die Besonderheit der Überlebenszeitkurve? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
-\item Schätzen Sie die Überlebenswahrscheinlichkeit nach 100 Tagen aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
+\item Schätzen Sie die Überlebenswahrscheinlichkeit nach 90 Tagen aus Ihrer Abbildung ab! \textbf{(1 Punkt)} 
 \end{enumerate}
 
-Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht '[...] Um nicht Hungers zu sterben, aßen wir das Leder, mit dem die große Rahe zum Schutz der Taue umwunden war.' Insbesondere die Mannschaft der Concepciön erlitt große Verluste durch die Skrobut bei der Überquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um wilden Sellerie aufzunehmen. Wilder Sellerie enthält $5000\mu g/10g$ Vitamin C. Der Bedarf liegt bei $105mg$ pro Tag für Männer.
+Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht '[...] Um nicht Hungers zu sterben, aßen wir das Leder, mit dem die große Rahe zum Schutz der Taue umwunden war.' Insbesondere die Mannschaft der Concepciön erlitt große Verluste durch die Skrobut bei der Überquerung des Pazifiks, da durch Erkundungsfahrten weniger Zeit blieb, um wilden Sellerie aufzunehmen. Wilder Sellerie enthält $8000\mu g/50g$ Vitamin C. Der Bedarf liegt bei $120mg$ pro Tag für Männer.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie die notwendige Menge in $kg$ an aufzunehmenden wilden Sellerie auf die Concepciön für die ununterbrochene Fahrt von drei Monate und 24 Tage über den Pazifik! \textbf{(3 Punkte)}
+\item Berechnen Sie die notwendige Menge in $t$ an aufzunehmenden wilden Sellerie auf die Concepciön für die ununterbrochene Fahrt von drei Monate und 22 Tage über den Pazifik! \textbf{(3 Punkte)}
 \item Skizzieren Sie die Überlebenszeitkurve für die Concepciön im Vergleich zu der Überlebenszeitkurve der Trinidad! Beschriften Sie die Achsen! \textbf{(2 Punkte)}
 \end{enumerate}
 
@@ -5824,7 +5826,7 @@ Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5841,7 +5843,7 @@ Der Chronist an Bord der Trinidad, Antonio Pigafetta, schrieb in seinem Bericht 
 
 
 
-Nilufar ist bei Yuki um gemeinsam \textit{Event Horizon -- Am Rande des Universums} zu streamen. Das war jetzt nicht die beste Idee. Denn Nilufar kann Horror überhaupt nicht ab. Deshalb flüchtet sie sich in Logik um ihre Emotionen zu bändigen. Yuki mampft ungerührt Reese's Peanut Butter Cups. Folgenden Gedankengang nutzt Nilufar um dem Film zu entkommen. Die Sonne hat eine aktuelle, angenommene Masse von $\ensuremath{2\times 10^{27}}$kg. Wenn die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem Radius von $4000$m kollabiert, wird die Sonne $35$\% der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$ und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen. An folgende Formeln erinnert sich Nilufar für die kinetische Energie des Lichtteilchens $E_{kin}$ und der Graviationsenergie des schwarzen Lochs $E_{grav}$\footnote{Die Quelle der Inspiration für die Aufgabe war ein Montagnachtfilm: \href{https://de.wikipedia.org/wiki/Event_Horizon_–_Am_Rande_des_Universums}{Event Horizon – Am Rande des Universums}}.
+Nilufar ist bei Alex um gemeinsam \textit{Event Horizon -- Am Rande des Universums} zu streamen. Das war jetzt nicht die beste Idee. Denn Nilufar kann Horror überhaupt nicht ab. Deshalb flüchtet sie sich in Logik um ihre Emotionen zu bändigen. Alex mampft ungerührt Gummibärchen. Folgenden Gedankengang nutzt Nilufar um dem Film zu entkommen. Die Sonne hat eine aktuelle, angenommene Masse von $\ensuremath{2\times 10^{30}}$kg. Wenn die Sonne nun am Ende ihrer Lebenszeit zu einem schwarzen Loch mit dem Radius von $3000$m kollabiert, wird die Sonne $30$\% der aktuellen Masse verloren haben. Ein Lichtteilchen mit der Masse $m_f$ und der Fluchtgeschwindigkeit $v_f$ will dem schwarzen Loch entkommen. An folgende Formeln erinnert sich Nilufar für die kinetische Energie des Lichtteilchens $E_{kin}$ und der Graviationsenergie des schwarzen Lochs $E_{grav}$\footnote{Die Quelle der Inspiration für die Aufgabe war ein Montagnachtfilm: \href{https://de.wikipedia.org/wiki/Event_Horizon_–_Am_Rande_des_Universums}{Event Horizon – Am Rande des Universums}}.
 
 \begin{center}
   \begin{tabular}{cc}
@@ -5855,7 +5857,7 @@ mit
 \item $m_f$, gleich der Masse [kg] des fliehenden Objektes
 \item $m_s$, gleich der Masse [kg] des stationären Objekts
 \item $r_s$, gleich dem Radius [m] des stationären Objekts  
-\item $G$, gleich der Gravitationskonstante mit $5.974 \cdot 10^{-11} m^3(kg \cdot s^2)^{-1}$ 
+\item $G$, gleich der Gravitationskonstante mit $6.674 \cdot 10^{-11} m^3(kg \cdot s^2)^{-1}$ 
 \end{itemize}
 
 Im Folgenden wollen wir Nilufar bei der Ablenkung helfen und uns mit der Frage beschäftigen, ob das Lichtteilchen der Gravitation des schwarzen Lochs entkommen kann.
@@ -5887,7 +5889,7 @@ Im Folgenden wollen wir Nilufar bei der Ablenkung helfen und uns mit der Frage b
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -5909,15 +5911,15 @@ Im Folgenden wollen wir Nilufar bei der Ablenkung helfen und uns mit der Frage b
 
 
 
-Alex und Paula wandern durch den Teuteburgerwald um mal vom Studium runterzukommen. 'Kennst du eigentlich Enrico Fermi?', fragt Alex und fährt ohne die Antwort abzuwarten fort, 'Er war ein berümter Kernphysiker! Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen im Los Alamos National Laboratory mit seinen Kollegen angebliche UFO-Sichtungen und fragte schließlich: >>Where is everybody?<<. Warum seien weder Raumschiffe anderer Weltraumbewohner noch andere Spuren extraterrestrischer Technik zu beobachten?'. Paula schaut ihn irritiert und interessiert an. Die beiden hat das Problem gepackt. Deshalb wollen Alex und Paula das Paradoxon mal mathematisch untersuchen! Wie lange würde eine außerirdische Zivilisation benötigen um die gesamte Milchstraße zu besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde wäre?\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Wikipediaeintrag: \href{https://de.wikipedia.org/wiki/Fermi-Paradoxon}{Fermi-Paradoxon}}\\[-1ex]
+Tina und Nilufar wandern durch den Teuteburgerwald um mal vom Studium runterzukommen. 'Kennst du eigentlich Enrico Fermi?', fragt Tina und fährt ohne die Antwort abzuwarten fort, 'Er war ein berümter Kernphysiker! Enrico Fermi diskutierte 1950 auf dem Weg zum Mittagessen im Los Alamos National Laboratory mit seinen Kollegen angebliche UFO-Sichtungen und fragte schließlich: >>Where is everybody?<<. Warum seien weder Raumschiffe anderer Weltraumbewohner noch andere Spuren extraterrestrischer Technik zu beobachten?'. Nilufar schaut sie irritiert und interessiert an. Die beiden hat das Problem gepackt. Deshalb wollen Tina und Nilufar das Paradoxon mal mathematisch untersuchen! Wie lange würde eine außerirdische Zivilisation benötigen um die gesamte Milchstraße zu besuchen, wenn das maximale Reisetempo die Geschwindigkeit der Voyager 1 Sonde wäre?\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Wikipediaeintrag: \href{https://de.wikipedia.org/wiki/Fermi-Paradoxon}{Fermi-Paradoxon}}\\[-1ex]
 
-Die beiden treffen folgende Annahmen. Eine außerirdische Zivilisation schickt $drei$ Voyager 1 ähnliche Sonden mit der Geschwindigkeit von $\ensuremath{6.3587\times 10^{4}}km/h$ los um sich auf den erreichten Planeten selbst zu replizieren. Nach $1000$ Jahren ist die Replikation abgeschlossen und wiederum $drei$ Sonden werden ausgesendet. Gehen Sie von $3.57$ Lichtjahren als mittlerer Abstand der Sterne in der Milchstraße aus. Es gibt $\ensuremath{2\times 10^{11}}$ Sterne in der Milchstraße. Nehmen Sie eine Lichtgeschwindigkeit von $\ensuremath{2.7\times 10^{8}}m/s$ an.
+Die beiden treffen folgende Annahmen. Eine außerirdische Zivilisation schickt $drei$ Voyager 1 ähnliche Sonden mit der Geschwindigkeit von $\ensuremath{6.3587\times 10^{4}}km/h$ los um sich auf den erreichten Planeten selbst zu replizieren. Nach $750$ Jahren ist die Replikation abgeschlossen und wiederum $drei$ Sonden werden ausgesendet. Gehen Sie von $4.24$ Lichtjahren als mittlerer Abstand der Sterne in der Milchstraße aus. Es gibt $\ensuremath{2\times 10^{11}}$ Sterne in der Milchstraße. Nehmen Sie eine Lichtgeschwindigkeit von $\ensuremath{2.8\times 10^{8}}m/s$ an.
 
 \begin{enumerate}
-\item Skizzieren Sie in einer Abbildung die ersten vier Schritte der Vervielfältigung der Sonden in der Galaxie! Beschriften Sie die Abbildung mit der Dauer und der Anzahl an Sonden für jeden Schritt der Vervielfältigung! \textbf{(4 Punkte)}
+\item Skizzieren Sie in einer Abbildung die ersten drei Schritte der Vervielfältigung der Sonden in der Galaxie! Beschriften Sie die Abbildung mit der Dauer und der Anzahl an Sonden für jeden Schritt der Vervielfältigung! \textbf{(4 Punkte)}
 \item Berechnen Sie die theoretische Anzahl an Vervielfältigungsschritten die benötigt werden um mit \textit{einem einzigen Vervielfältigungsschritt} die gesamten Sterne der Milchstraße mit Sonden zu besuchen! \textbf{(2 Punkte)}
 \item Berechnen Sie die Dauer, die eine außerirdische Zivilisation annährungsweise benötigt um die gesamten Sterne der Milchstraße mit Sonden zu besuchen! \textbf{(2 Punkte)}
-\item Bei einem vermutetet Alter der Erde von $\ensuremath{4.5\times 10^{9}}$ Jahren, wie oft war dann eine Sonde einer außerirdischen Zivilisation schon zu Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die Kontinentalplatten einmal alle $\ensuremath{8\times 10^{7}}$ Jahre vollständig im Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
+\item Bei einem vermutetet Alter der Erde von $\ensuremath{4.3\times 10^{9}}$ Jahren, wie oft war dann eine Sonde einer außerirdischen Zivilisation schon zu Besuch? Korrigieren Sie Ihre Antwort mit dem Wissen, dass sich die Kontinentalplatten einmal alle $\ensuremath{10^{8}}$ Jahre vollständig im Erdinneren umgewandelt haben! \textbf{(2 Punkte)}
 \end{enumerate}
 
 
@@ -5957,25 +5959,25 @@ Die beiden treffen folgende Annahmen. Eine außerirdische Zivilisation schickt $
 
 
 
-Es stehen die oldenburgischen Pyramidentage an! Sie und Jessica sind auf abenteuerlichen Wegen für den Bau der Pyramiden zuständig. Zu allem Überfluss handelt es sich auch noch eine \textit{Reenactment} Veranstaltung. Thema der diesjährigen Pyramidentage sind die Pyramiden von Meroe, die den Königen und Königinnen des historischen Reiches von Kusch in Nubien, dem heutigen Sudan, als Grabstätten dienten. Die Pyramiden in Meroe fallen durch ihren steilen Winkel von 70 Grad im Vergleich zu den ägyptischen Pyramiden mit 51 Grad auf. Die durchschnittliche Seitenlänge der Grundfläche einer Pyramide beträgt 32 Königsellen. Eine Königselle misst 52.4cm.\\
+Es stehen die niedersächsichen Pyramidentage an! Sie und Jessica sind auf abenteuerlichen Wegen für den Bau der Pyramiden zuständig. Zu allem Überfluss handelt es sich auch noch eine \textit{Reenactment} Veranstaltung. Thema der diesjährigen Pyramidentage sind die Pyramiden von Meroe, die den Königen und Königinnen des historischen Reiches von Kusch in Nubien, dem heutigen Sudan, als Grabstätten dienten. Die Pyramiden in Meroe fallen durch ihren steilen Winkel von 72 Grad im Vergleich zu den ägyptischen Pyramiden mit 51 Grad auf. Die durchschnittliche Seitenlänge der Grundfläche einer Pyramide beträgt 44 Königsellen. Eine Königselle misst 52.2cm.\\
 
 \textit{Lösen Sie diese Aufgabe mit Hilfe einer Skizze der Pyramide. Bezeichnen Sie Seiten und die Winkel der Pyramide entsprechend!}
 
 \begin{enumerate}
-\item Bei der Königspyramide von Meroe soll eine Seitenlänge der Grundfläche 32 Königsellen lang sein. Einer der Skla'angestellten hat eine Höhe der Königspyramide von 21.98$m$ berechnet. Dem müssen Sie auf jeden Fall nachgehen. Überprüfen Sie die Berechnung! \textbf{(1 Punkt)}
-\item Die Außenflächen der Königspyramide soll begrünt werden. Für die Bepflanzung muss eine 3cm dicke Torfschicht auf die Königspyramide aufgebracht werden. Berechnen Sie die ungefähre Menge an benötigten Torf in $m^3$! \textbf{(2 Punkte)}
+\item Bei der Königspyramide von Meroe soll eine Seitenlänge der Grundfläche 44 Königsellen lang sein. Einer der Skla'angestellten hat eine Höhe der Königspyramide von 33.85$m$ berechnet. Dem müssen Sie auf jeden Fall nachgehen. Überprüfen Sie die Berechnung! \textbf{(1 Punkt)}
+\item Die Außenflächen der Königspyramide soll begrünt werden. Für die Bepflanzung muss eine 4cm dicke Torfschicht auf die Königspyramide aufgebracht werden. Berechnen Sie die ungefähre Menge an benötigten Torf in $m^3$! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur 3 Sklaven, die Ihnen und Jessica bei dem Befüllen der Königspyramide mit Schutt zu Seite stehen. Leider haben Ihre Sklaven zu allem Überfluss auch noch chronische Schulterschmerzen entwickelt, als die Sklaven von der anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der Sklaven von 80\% aus. In eine Schubkarre passen 90 Liter.
+Wie in jedem guten \textit{Reenactment} gibt es viel Oberschicht, aber nur 2 Sklaven, die Ihnen und Jessica bei dem Befüllen der Königspyramide mit Schutt zu Seite stehen. Leider haben Ihre Sklaven zu allem Überfluss auch noch chronische Schulterschmerzen entwickelt, als die Sklaven von der anstehenden Aufgabe erfahren haben. Gehen Sie daher von einer Effizienz der Sklaven von 90\% aus. In eine Schubkarre passen 100 Liter.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
 \item Wie oft müssen Ihre maladen Sklaven die Rampe mit der Schubkarre zur Spitze der Königspyramide hochfahren um die Pyramide mit Schutt zu füllen? \textbf{(1 Punkt)}
 \item Berechnen Sie die Länge der Rampe zur Spitze der Königspyramide mit einem Anstellwinkel von $11^\circ$! \textbf{(2 Punkte)}
-\item Wie weit reicht Ihre Rampe vom Fuß der Königspyramide in die oldenburgische Landschaft?  \textbf{(2 Punkte)}
+\item Wie weit reicht Ihre Rampe vom Fuß der Königspyramide in die niedersächsiche Landschaft?  \textbf{(2 Punkte)}
 \end{enumerate}
 
-Bei der Besichtigung der Königspyramide teilt Ihnen der leicht übergewichtige Pharao (Nebenberuf \textit{Mittelständler}) mit, das die Pyramide \underline{zu steil sei} und somit nicht in die oldenburgische Landschaft passen würde. Sie müssen nochmal ran.
+Bei der Besichtigung der Königspyramide teilt Ihnen der leicht übergewichtige Pharao (Nebenberuf \textit{Finanzbeamter}) mit, das die Pyramide \underline{zu steil sei} und somit nicht in die niedersächsiche Landschaft passen würde. Sie müssen nochmal ran.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
@@ -6005,7 +6007,7 @@ Bei der Besichtigung der Königspyramide teilt Ihnen der leicht übergewichtige 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6022,34 +6024,34 @@ Bei der Besichtigung der Königspyramide teilt Ihnen der leicht übergewichtige 
 
 
 
-Es ist Wochenende und das Wetter ist \textit{sweet}. Nilufar und Jonas schwingen sich auf ihre Cachermobile um mit 19km/h, geleitet von modernster Satellietentechnologie und einem Supercompter aus dem Jahr 2000 in den Händen, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Nilufar und Jonas wollen diesmal endlich die abwärts Terrainchallenge durchführen. Die Reihenfolge der Caches nach Terrainwertung gibt daher die von den beiden abzufahrenden Orte vor. Die Terrain- und Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5 (schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den Orten und den entsprechenden Caches stehen Nilufar und Jonas für die Planung der Route zu Verfügung\footnote{Die Quelle der Inspiration für die Aufgabe war folgende Tätigkeit: \href{https://www.geocaching.com/play}{Geocaching -- Mach mit bei der weltweit größten Schatzsuche.}}.
+Es ist Wochenende und das Wetter ist \textit{sweet}. Mark und Steffen schwingen sich auf ihre Cachermobile um mit 19km/h, geleitet von modernster Satellietentechnologie und einem Supercompter aus dem Jahr 2000 in den Händen, Plastikdosen in der Natur und an sehenswerten Orten zu finden. Mark und Steffen wollen diesmal endlich die abwärts Schwierigkeitschallenge durchführen. Die Reihenfolge der Caches nach Schwierigkeitswertung gibt daher die von den beiden abzufahrenden Orte vor. Die Terrain- und Schwierigkeitswertungen laufen von 1 (leichteste Wertung) bis 5 (schwierigste Wertung) in 0.5 Schritten. Folgende Informationen zu den Orten und den entsprechenden Caches stehen Mark und Steffen für die Planung der Route zu Verfügung\footnote{Die Quelle der Inspiration für die Aufgabe war folgende Tätigkeit: \href{https://www.geocaching.com/play}{Geocaching -- Mach mit bei der weltweit größten Schatzsuche.}}.
 
 \begin{center}
   \begin{tabular}{ ccc }
     \toprule
     Ort & Cache & Wertung (S|T|G) \\
     \midrule
-    A & GCYZR3I & 5.0 | 4.0 | Klein \\
-    B & GCN2XYL & 4.0 | 1.0 | Klein \\ 
-    C & GCA3EQX & 3.0 | 1.5 | Normal \\ 
-    D & GC6CMR0 & 4.5 | 3.5 | Normal \\ 
-    E & GCNV7X9 & 2.5 | 2.5 | Mikro \\     
+    A & GCCMLGE & 1.0 | 1.5 | Mikro \\
+    B & GC3O5QU & 2.0 | 2.5 | Mikro \\ 
+    C & GCOCZDF & 1.5 | 1.0 | Klein \\ 
+    D & GC5YSWG & 4.5 | 4.0 | Klein \\ 
+    E & GCKMHRM & 3.5 | 3.0 | Mikro \\     
  \bottomrule
 \end{tabular}
 \end{center}
 
-Im Weiteren sind den beiden folgende Informationen zu den Entfernungen der Orte zugänglich. Der Entfernungsvektor $\overrightarrow{AB}$ ist $3$km. Im Weiteren ist Ihnen der Entfernungsvektor $\overrightarrow{CB}$ mit $4.5$km bekannt. Der Entfernungsvektor $\overrightarrow{BE}$ ist das $1.3$-fache des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort C anpeilen, so liegt der Ort B ungefähr $25^\circ$ südlich. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt der Ort D ungefähr $55^\circ$ östlich. Vom Ort B betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E südlich von B. Die Strecke zwischen A und E ist nicht passierbar. Sie starten an dem Ort D Ihre Cachertour. \\
+Im Weiteren sind den beiden folgende Informationen zu den Entfernungen der Orte zugänglich. Der Entfernungsvektor $\overrightarrow{AB}$ ist $4$km. Im Weiteren ist Ihnen der Entfernungsvektor $\overrightarrow{CB}$ mit $4.5$km bekannt. Der Entfernungsvektor $\overrightarrow{BE}$ ist das $2.1$-fache des Entfernungsvektor $\overrightarrow{CB}$. Wenn Sie von dem Ort A den Ort C anpeilen, so liegt der Ort B ungefähr $20^\circ$ nördlich. Wenn Sie von dem Ort C den Ort B anpeilen, so liegt der Ort D ungefähr $45^\circ$ östlich. Vom Ort B betrachtet, bilden die Orte C und D einen rechten Winkel am Ort B. Der Ort B liegt auf gerader Linie zwischen den Orten C und E. Somit liegt der Ort E nördlich von B. Die Strecke zwischen A und E ist nicht passierbar. Sie starten an dem Ort B Ihre Cachertour. \\
 
 Leider sind die beiden sehr schlecht im Navigieren und Entfernungen ausrechnen. Die beiden brauchen Ihre Hilfe!
   
 \begin{enumerate}
 \item Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Orte und Caches. Bezeichnen Sie die Strecken und die Winkel Ihrer Skizze entsprechend! \textbf{(5 Punkte)}
-\item Welche Strecke in $km$ legen Sie bei der Bewältigung der abwärts Terrainchallenge zurück? \textbf{(2 Punkte)}
+\item Welche Strecke in $km$ legen Sie bei der Bewältigung der abwärts Schwierigkeitschallenge zurück? \textbf{(2 Punkte)}
 \item Gehen Sie von einer zusätzlichen Suchzeit in Stunden für die Caches an den jeweiligen Orten zur reinen Reisezeit mit Ihrem Cachermobil aus. Die Suchzeit in Stunden für \textit{jeden einzelnen} Cache wird durch die Funktion  
   \begin{equation*}
-    Suchzeit = 0.1 + 0.15 \cdot Schwierigkeit
+    Suchzeit = 0.1 + 0.18 \cdot Schwierigkeit
   \end{equation*}  
-  beschreiben.  Wie lange in Stunden benötigen Sie um die abwärts Terrainchallenge zu erfüllen? \textbf{(3 Punkte)}
+  beschreiben.  Wie lange in Stunden benötigen Sie um die abwärts Schwierigkeitschallenge zu erfüllen? \textbf{(3 Punkte)}
 %\item An der höchsten Schwierigkeit müssen Sie angeln. Ihre Angel ist ausgefahren l_angelm lang. Erreichen Sie einen Cache in der Höhe von h_angelm?  Berechnen Sie dazu Ihre maximale mögliche Angelhöhe! Welche Annahmen mussten Sie treffen um die Aufgabe zu lösen? \textbf{(2 Punkte)} 
 \end{enumerate}
 
@@ -6072,7 +6074,7 @@ Leider sind die beiden sehr schlecht im Navigieren und Entfernungen ausrechnen. 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6093,7 +6095,7 @@ Leider sind die beiden sehr schlecht im Navigieren und Entfernungen ausrechnen. 
 
 
 
-Als Kellerkind\footnote{\href{https://www.youtube.com/watch?v=54H0HAJexVI}{Tocotronic - Electric Guitar} als passende Untermalung für diese Aufgabe.} vom Dorf will Jonas das Ausmaß der Radonbelastung in seinem Kellerzimmer bestimmen und lüften daher nicht. Passt schon. Spart dann auch Energie und lüften wird sowieso überschätzt. Während einer Messperiode von 7:00 Uhr bis 19:00 bestimmt er dreimal automatisch die Radonbelastung in seinem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Artikel: \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}}. Leider helfen die Messwerte Jonas überhaupt nicht weiter. Sie müssen also helfen! 
+Als Kellerkind\footnote{\href{https://www.youtube.com/watch?v=54H0HAJexVI}{Tocotronic - Electric Guitar} als passende Untermalung für diese Aufgabe.} vom Dorf will Jessica das Ausmaß der Radonbelastung in ihrem Kellerzimmer bestimmen und lüften daher nicht. Passt schon. Spart dann auch Energie und lüften wird sowieso überschätzt. Während einer Messperiode von 7:00 Uhr bis 15:00 bestimmt sie dreimal automatisch die Radonbelastung in ihrem Kellerraum in $Bq/m^3$. Es ergibt sich folgende Abbildung\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Artikel: \href{https://de.wikipedia.org/wiki/Atmende_Wand}{Atmende Wand}}. Leider helfen die Messwerte Jessica überhaupt nicht weiter. Sie müssen also helfen! 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -6111,12 +6113,12 @@ Als Kellerkind\footnote{\href{https://www.youtube.com/watch?v=54H0HAJexVI}{Tocot
 \item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von 300$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben? \textbf{(2 Punkte)}
 \end{enumerate}
 
-Radon zerfällt mit einer Halbwertszeit von 2.8d zu Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von 143d zu Blei. Nur Radon und Polonium tragen zur radioaktiven Strahlenbelastung bei.
+Radon zerfällt mit einer Halbwertszeit von 4.1d zu Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von 160d zu Blei. Nur Radon und Polonium tragen zur radioaktiven Strahlenbelastung bei.
 
 \begin{enumerate}
   \setcounter{enumi}{1}
 \item Wie lange dauert es in Stunden bis Ihre kritische Radonbelastung von
-  300$Bq/m^3$ auf unter 110$Bq/m^3$ gefallen ist?
+  300$Bq/m^3$ auf unter 120$Bq/m^3$ gefallen ist?
   \textbf{(4 Punkte)}
 \end{enumerate}
 
@@ -6126,13 +6128,13 @@ Folgende Tabelle enthält die Informationen zur Zusammensetzung der normalen Umg
   \begin{tabular}{ c|c|c|c }
      & Vol-\% & M [g/mol] & ppm \\
     \hline
-    Stickstoff & 77.1 & 28.1 &
+    Stickstoff & 79.7 & 28.1 &
                                                     \phantom{1000000000000}\strut\\
         \hline
-    Sauerstoff & 21.3 & 16.2 &
+    Sauerstoff & 19.5 & 16.2 &
                                                     \phantom{10000000}\strut\\
         \hline
-    Kohlenstoffdioxid & 0.045 & 12.1 & \phantom{10000000}\strut\\     
+    Kohlenstoffdioxid & 0.045 & 12.5 & \phantom{10000000}\strut\\     
      \hline
 \end{tabular}
 \end{center}
@@ -6142,7 +6144,7 @@ Folgende Tabelle enthält die Informationen zur Zusammensetzung der normalen Umg
 \item Rechnen Sie die Volumenprozente (Vol-\%) der Umgebungsluft in die entsprechenden ppm-Werte um und ergänzen Sie die berechneten ppm-Werte in die Tabelle!  \textbf{(1 Punkt)}
 \end{enumerate}
 
-Während Jonas sein etwas pappiges Toastbrot mampfen kommt Jonas die Dokumentation über Brot aus Luft in den Sinn. Jonas denkt darüber ein wenig nach. Für die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak $NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Artikel: \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}:
+Während Jessica ihr etwas pappiges Toastbrot mampfen kommt Jessica die Dokumentation über Brot aus Luft in den Sinn. Jessica denkt darüber ein wenig nach. Für die Umwandlung von Stickstoff $N_2$ mit Wasserstoff $H_2$ zu Ammoniak $NH_3$ gilt folgende Reaktionsgleichung\footnote{Die Quelle der Inspiration für die Aufgabe war folgender Artikel: \href{https://www.gdch.de/netzwerk-strukturen/fachstrukturen/ag-chemie-und-gesellschaft/projekte-und-veranstaltungen/cartoons/haber-bosch-verfahren-brot-aus-luft.html}{Haber-Bosch-Verfahren – Brot aus Luft}}:
 
 \begin{equation*}
   N_2 + 3H_2 \rightarrow 2NH_3
@@ -6176,7 +6178,7 @@ Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein Volumen vo
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6193,8 +6195,8 @@ Ein Mol eines beliebigen Gases hat bei normalen Umweltbedingungen ein Volumen vo
 
 
 
-Der Studentenjob von Steffen war nach Ladenschluss bei IKEA die Regale einzuräumen. Dabei ist Steffen in der Auslage der Sonderangebote das Necronomicon\footnote{Ein wirklich gefährliches Buch ist: \textit{Du bist genug: Vom Mut, glücklich zu sein} von Fumitake Koga und Ichiro Kishimi} in die Hände gefallen. Nun ist er eine Magierin der Zeichen geworden! Also eigentlich kann Steffen nur Mathe und das dämliche Necronomicon hat ihn in die Vergangenheit geschleudert... aber gut, was tut man nicht alles im Jahr 1054 n. Chr. für den neuen Lehnsherren Fürsten Arthur. Steffen baut natürlich einen Schrottkugelturm um sich den
-Horden der Finsternis mit genug Schrott erwehren zu können! Steffen stehen zwei mächtige magische Formeln zur Unterstützung zu Verfügung. Leider wird das nicht reichen, deshalb müssen Sie hier auch noch durch Zeit und Raum helfen!
+Der Studentenjob von Alex war nach Ladenschluss bei Penny die Regale einzuräumen. Dabei ist Alex in der Auslage der Sonderangebote das Necronomicon\footnote{Ein wirklich gefährliches Buch ist: \textit{Du bist genug: Vom Mut, glücklich zu sein} von Fumitake Koga und Ichiro Kishimi} in die Hände gefallen. Nun ist er ein Magier der Zeichen geworden! Also eigentlich kann Alex nur Mathe und das dämliche Necronomicon hat ihn in die Vergangenheit geschleudert... aber gut, was tut man nicht alles im Jahr 348 n. Chr. für den neuen Lehnsherren Fürsten Arthur. Alex baut natürlich einen Schrottkugelturm um sich den
+Horden der Finsternis mit genug Schrott erwehren zu können! Alex stehen zwei mächtige magische Formeln zur Unterstützung zu Verfügung. Leider wird das nicht reichen, deshalb müssen Sie hier auch noch durch Zeit und Raum helfen!
 
 \begin{center}
   \begin{tabular}{cc}
@@ -6211,10 +6213,10 @@ mit
 \item $g$, gleich der Erdbeschleunigung mit $9.81 \tfrac{m}{s^2}$ 
 \end{itemize}
 
-Als erstes müssen Sie die Höhe des zu bauenden Schrottkugelturmes bestimmen. Hierfür ist wichtig zu wissen, dass sich die Blei\textit{tropfen} mit einem Gewicht von $10mg$ zu gleichförmigen Blei\textit{kugeln} bei einer Geschwindigkeit von $14m/s$ bilden.
+Als erstes müssen Sie die Höhe des zu bauenden Schrottkugelturmes bestimmen. Hierfür ist wichtig zu wissen, dass sich die Blei\textit{tropfen} mit einem Gewicht von $20mg$ zu gleichförmigen Blei\textit{kugeln} bei einer Geschwindigkeit von $12m/s$ bilden.
 
 \begin{enumerate}
-\item Wie hoch müssen Sie den Schrottkugelturm bauen lassen, damit sich runde Bleikugeln durch die Fallgeschwindigkeit von $14m/s$ bilden? \textbf{(3 Punkte)}
+\item Wie hoch müssen Sie den Schrottkugelturm bauen lassen, damit sich runde Bleikugeln durch die Fallgeschwindigkeit von $12m/s$ bilden? \textbf{(3 Punkte)}
 \end{enumerate}
 
 Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige Schrottkugeln in einer Ladung. Damit können Sie die Armee der Finsternis nicht aufhalten. Die Sachlage müssen Sie einmal mathematisch untersuchen.
@@ -6222,15 +6224,15 @@ Ihre erstellten Schrottkugeln sind leider zu gro{\ss} und somit sind zu wenige S
 \begin{enumerate}
   \setcounter{enumi}{1}
 \item Nennen Sie die beiden geometrischen Formen aus denen sich näherungsweise ein Tropfen zusammensetzt! Erstellen Sie eine beschriftete Skizze des Tropfens! \textbf{(2 Punkte)}
-\item Sie messen eine Länge des Tropfens von 3.2mm. Die Löcher im Sieb erlauben ein Tropfendurchmesser von 1.8mm. Welchen Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
+\item Sie messen eine Länge des Tropfens von 4.1mm. Die Löcher im Sieb erlauben ein Tropfendurchmesser von 2.1mm. Welchen Durchmesser in mm haben Ihre produzierten Blei\textit{kugeln}?  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Sie haben jetzt die \ensuremath{6.1\times 10^{4}} Bleikugeln zusammen. Blei hat eine Dichte
-von $11.34g/cm^3$.
+Sie haben jetzt die \ensuremath{1.2\times 10^{6}} Bleikugeln zusammen. Blei hat eine Dichte
+von $12.63g/cm^3$.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
-\item Wie schwer in Kilogramm $kg$ sind die \ensuremath{6.1\times 10^{4}} produzierten
+\item Wie schwer in Kilogramm $kg$ sind die \ensuremath{1.2\times 10^{6}} produzierten
   Bleikugeln, die Sie jetzt auf die Burgmauer transportieren müssen?
   \textbf{(1 Punkt)}
 \end{enumerate}
@@ -6240,7 +6242,7 @@ Am Ende müssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Wie gro{\ss} in $cm^2$ ist Ihr quadratisches Sieb am oberen Ende des Turms,
-  wenn Sie pro Fall ca. 1200 Bleikugeln produzieren wollen und
+  wenn Sie pro Fall ca. 1100 Bleikugeln produzieren wollen und
   die Bleikugel im Fall 0.5cm Abstand haben müssen?  \textbf{(1
     Punkt)}
 \end{enumerate}
@@ -6263,7 +6265,7 @@ Am Ende müssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6280,20 +6282,20 @@ Am Ende müssen Sie noch die Produktion von dem Bleischrott im Turm optimieren.
 
 
 
-Leider hat es bei Mark mit der Surfschule in Down Under nicht geklappt. War vielleicht auch nicht \textit{so} die beste Idee... aber dafür hat Mark eine neue Eingebung! Oder wie es Mike Tyson zugeschrieben wird: >>Ich wurde nie niedergeschlagen, ich war immer am Aufstehen!<<. Daher macht Mark jetzt einen Großhandel mit Kaninchenfleisch und damit dem teuersten Fleisch in Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr 1860 ungefähr 26 Kaninchen entlassen hat, Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? Mark wird stutzig und frag Sie, dem mal mathematisch nachzugehen!\footnote{Die Quelle der Inspiration für die Aufgabe war der folgendes YouTube Video: \href{https://youtu.be/38fuOr3tdgc?si=Li7NL_FoByML8JtT}{ Incredible Stories -- Why don't they eat wild rabbits in Australia? They have    millions of them! The reason is surprising...}} \\
+Leider hat es bei Alex mit dem Krokodilreservat in Down Under nicht geklappt. War vielleicht auch nicht \textit{so} die beste Idee... aber dafür hat Alex eine neue Eingebung! Oder wie es Mike Tyson zugeschrieben wird: >>Ich wurde nie niedergeschlagen, ich war immer am Aufstehen!<<. Daher macht Alex jetzt einen Großhandel mit Kaninchenfleisch und damit dem teuersten Fleisch in Australien auf. Moment, hopsen hier nicht, seit Thomas Austin im Jahr 1860 ungefähr 30 Kaninchen entlassen hat, Millionen von Kaninchen rum? Wieso ist das Kaninchenfleisch dann so exklusiv? Alex wird stutzig und frag Sie, dem mal mathematisch nachzugehen!\footnote{Die Quelle der Inspiration für die Aufgabe war der folgendes YouTube Video: \href{https://youtu.be/38fuOr3tdgc?si=Li7NL_FoByML8JtT}{ Incredible Stories -- Why don't they eat wild rabbits in Australia? They have    millions of them! The reason is surprising...}} \\
 
 Forscherinnen fand folgende Sättigungsfunktion für das jährliche Wachstum der gesamten Kaninchenpopulation im westlichen Australien.
 \begin{equation*}
-  f(t) = \ensuremath{8\times 10^{9}} - \ensuremath{1.4\times 10^{9}} \cdot 2^{-0.2 \cdot t + 4.1}
+  f(t) = \ensuremath{9\times 10^{9}} - \ensuremath{1.4\times 10^{9}} \cdot 2.1^{-0.1 \cdot t + 3.2}
 \end{equation*}
 
 \begin{enumerate}
 \item Skizzieren Sie die Sättigungsfunktion \textit{annäherungsweise} in einer Abbildung! \textbf{(1 Punkt)}
 \item Wie viele Kaninchen können nach der Sättigungsfunktion maximal im westlichen Australien leben? Ergänzen Sie den Wert in Ihrer Abbildung! \textbf{(2 Punkte)}
-\item Wie viele Millionen Kaninchen leben nach der Sättigungsfunktion nach 15 Jahren auf dem australischen Kontinent? \textbf{(1 Punkt)}
+\item Wie viele Millionen Kaninchen leben nach der Sättigungsfunktion nach 18 Jahren auf dem australischen Kontinent? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV) in 16 Kaninchen ausgebracht. Da die Kaninchen keine Maßnahmen gegen die Ausbreitung vornehmen können, verläuft die Ausbreitung mit einem wöchentlichen Wachstumsfakor von 1.8 nach folgender Formel.
+Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV) in 16 Kaninchen ausgebracht. Da die Kaninchen keine Maßnahmen gegen die Ausbreitung vornehmen können, verläuft die Ausbreitung mit einem wöchentlichen Wachstumsfakor von 1.4 nach folgender Formel.
 
 \begin{equation*}
   N(t) = N(0) \cdot a^t
@@ -6301,28 +6303,28 @@ Um den Kaninchen Einhalt zu gebieten wurde das Myxoma Virus und das Rabbit Haemo
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Wie viele Wochen benötigen die Viren um theoretisch die gesamte Kaninchenpopulation nach 13 Jahren Wachstum zu durchseuchen? \textbf{(1 Punkt)}
+\item Wie viele Wochen benötigen die Viren um theoretisch die gesamte Kaninchenpopulation nach 16 Jahren Wachstum zu durchseuchen? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das Myxoma Virus und das RHDV töten 99.7\% der Kaninchenpopulation innerhalb weniger Wochen.
+Das Myxoma Virus und das RHDV töten 99.9\% der Kaninchenpopulation innerhalb weniger Wochen.
 
 \begin{enumerate}
   \setcounter{enumi}{3}  
-\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer Viruspandemie wieder auf 70\% der gesättigten Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
+\item Wie lange in Jahren dauert es bis eine Kaninchenpopulation nach einer Viruspandemie wieder auf 40\% der gesättigten Kaninchenpopulation angewachsen ist?  \textbf{(2 Punkte)}
 \end{enumerate}
 
-Thomas Austin entließ die Kaninchen im äußersten Norden von Australien. Australien hat eine West-Ost-Ausdehnung von 4000km und eine Nord-Süd-Ausdehnung von knapp 3500km. Die Kaninchen breiten sich radial mit einer Geschwindigkeit von 7.3km pro Jahr aus.
+Thomas Austin entließ die Kaninchen im äußersten Osten von Australien. Australien hat eine West-Ost-Ausdehnung von 4200km und eine Nord-Süd-Ausdehnung von knapp 3400km. Die Kaninchen breiten sich radial mit einer Geschwindigkeit von 9.8km pro Jahr aus.
 
 \begin{enumerate}
   \setcounter{enumi}{4}
 \item Wie lange dauert es in Jahren bis die Kaninchen jeden Ort in Australien erreicht haben? \textit{Lösen Sie die Aufgabe unter der Verwendung einer schematischen Skizze!} \textbf{(2 Punkte)}
 \end{enumerate}
 
-Eine jährliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV) kosten 13\$ pro Tier und der durchführende Arzt verlangt ca. 45\$ pro Tier.
+Eine jährliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic Disease Virus (RHDV) kosten 11\$ pro Tier und der durchführende Arzt verlangt ca. 35\$ pro Tier.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
-\item In Ihrem Stall leben 1000 Mastkaninchen. Mit welchen jährlichen Zusatzkosten für die Impfungen der Kaninchen müssen Sie daher kalkulieren? \textbf{(1 Punkt)}
+\item In Ihrem Stall leben 900 Mastkaninchen. Mit welchen jährlichen Zusatzkosten für die Impfungen der Kaninchen müssen Sie daher kalkulieren? \textbf{(1 Punkt)}
 \end{enumerate}
  
 \clearpage
@@ -6343,7 +6345,7 @@ Eine jährliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic Disea
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6358,13 +6360,13 @@ Eine jährliche Impfung gegen das Myxoma Virus und das Rabbit Haemorrhagic Disea
 
 
 \ifcollection
-\paragraph{Ostfriesland. Unendliche Weiten.}
+\paragraph{Lüneburger Heide. Unendliche Weiten.}
 \fi
 
 
 
-Wir schreiben das Jahr 2025. Dies sind die Abenteuer der Kuh Frida und Nilufar. Grünes Gras unter Nilufars Füßen und ein strammer Wind im Gesicht, egal wohin sie schaut. Ein schmatzendes Geräusch ertönt unter Nilufar. Nilufar sinniert, sollte sie ihre weiten Graslandschaften jetzt schon düngen? Dafür benötigt Nilufar die \textit{Grünlandtemperatur}! Die Grünlandtemperatur (GLT) ist die Summe aller positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von 200$^\circ$ kann mit der Stickstoffdüngung begonnen werden. Nilufar sieht nicht ein, Geld für einen Agrarmetrologen zu bezahlen, wenn auch Sie mitrechnen können. Also rechnen Sie beide mit folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit $0.4\times$, Februar mit $0.75\times$ und März mit
-$1.05\times$. Sie haben noch im letzten Jahr folgende Temperaturen gemessen.
+Wir schreiben das Jahr 2025. Dies sind die Abenteuer  des Schafs Frida und Jonas. Grünes Gras unter Jonass Füßen und ein strammer Wind im Gesicht, egal wohin er schaut. Ein schmatzendes Geräusch ertönt unter Jonas. Jonas sinniert, sollte er seine weiten Graslandschaften jetzt schon düngen? Dafür benötigt Jonas die \textit{Grünlandtemperatur}! Die Grünlandtemperatur (GLT) ist die Summe aller positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von 200$^\circ$ kann mit der Stickstoffdüngung begonnen werden. Jonas sieht nicht ein, Geld für einen Agrarmetrologen zu bezahlen, wenn auch Sie mitrechnen können. Also rechnen Sie beide mit folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit $0.6\times$, Februar mit $0.8\times$ und März mit
+$1.2\times$. Sie haben noch im letzten Jahr folgende Temperaturen gemessen.
 
 \begin{center}
 \begin{tabular}{cc}
@@ -6373,8 +6375,8 @@ $1.05\times$. Sie haben noch im letzten Jahr folgende Temperaturen gemessen.
   \midrule
   01. Jan 2024 & 0.3\\
   01. Feb 2024 & 1.2\\
-  01. Mrz 2024 & 3.1\\
-  01. Apr 2024 & 6.1\\
+  01. Mrz 2024 & 3.5\\
+  01. Apr 2024 & 5.8\\
   \bottomrule
 \end{tabular}
 \end{center}
@@ -6386,14 +6388,14 @@ $1.05\times$. Sie haben noch im letzten Jahr folgende Temperaturen gemessen.
 \item Osterglocken beginnen ab einer GLT von 200$^\circ C$ zu blühen. An welchem Tag im 1. Quartal des Jahres 2024 war dies der Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(4 Punkte)}
 \end{enumerate}
 
-Auf dem Weg zu Nilufars Jonagoldplantage werden Sie beide auf dem Trecker von einer Gruppe elektrifizierter Renter abgedrängt. Der Trecker muss wieder aus dem Graben! Frida und die elektrifizierten Rentner ziehen an zwei, separaten Seilen. Dabei zieht Frida mit $180N$. Die elektrifizierter Renter  bringen eine Kraft von $210N$ auf.\\
+Auf dem Weg zu Jonass Jonagoldplantage werden Sie beide auf dem Trecker von einer Gruppe elektrifizierter Renter abgedrängt. Der Trecker muss wieder aus dem Graben! Frida und die elektrifizierten Rentner ziehen an zwei, separaten Seilen. Dabei zieht Frida mit $120N$. Die elektrifizierter Renter  bringen eine Kraft von $140N$ auf.\\
 
 \textit{Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer Skizze entsprechend!}
 
 \begin{enumerate}
   \setcounter{enumi}{4}  
 \item Im ersten Versuch legen Sie das Seil für Frida lotrecht über einen Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie über die Böschung hinweg am anderen Seil. Welche Kraft wird aufgebracht?  \textbf{(2 Punkte)}
-\item Im zweiten Versuch ziehen Frida und die Rentner mit einem $40^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft wird aufgebracht? \textbf{(2 Punkte)}
+\item Im zweiten Versuch ziehen Frida und die Rentner mit einem $30^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft wird aufgebracht? \textbf{(2 Punkte)}
 \item Mit welcher Beschleunigung ziehen Sie den $1.5t$ schweren Trecker \textit{jeweils} aus dem Graben, wenn $F = m \cdot a$ gilt? \textbf{(1 Punkt)}
 \end{enumerate}
 
@@ -6416,7 +6418,7 @@ Auf dem Weg zu Nilufars Jonagoldplantage werden Sie beide auf dem Trecker von ei
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6433,7 +6435,7 @@ Auf dem Weg zu Nilufars Jonagoldplantage werden Sie beide auf dem Trecker von ei
 
 
 
-Mark, Alex, Jonas und Steffen sitzen im Bus. Wenn man sich zu spät anmeldet, dann ist die Exkursion nicht so toll. Mark hatte den Anderen in der Lerngruppe zu spät Bescheid gesagt. 'Was denn, bin ich eure Nanny oder was?!', entfährt es Mark nachdem die vorwurfsvollen Blicke schon eine Weile auf ihm lasten. Also geht es eben mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren die Vier, dass die Kartons zum Versand von Nägeln nicht hier zusammengebautwerden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter anderem wird dort der berühmte \textit{Doppelt gewellte, 4-mal-gefaltete, 0.6mm, 30-cm-Karton} durch
+Nilufar, Alex, Mark und Tina sitzen im Bus. Wenn man sich zu spät anmeldet, dann ist die Exkursion nicht so toll. Nilufar hatte den Anderen in der Lerngruppe zu spät Bescheid gesagt. 'Was denn, bin ich eure Nanny oder was?!', entfährt es Nilufar nachdem die vorwurfsvollen Blicke schon eine Weile auf ihr lasten. Also geht es eben mit Rektor Skinner und Mrs. Krabappel in die Kartonagenfabrik. Wie schon im vorherigen Semester... In der Kartonagenfabrik angekommen erfahren die Vier, dass die Kartons zum Versand von Nägeln nicht hier zusammengebautwerden sondern das sich die Endfertigung in Flint, Michigan befindet. Unter anderem wird dort der berühmte \textit{Doppelt gewellte, 5-mal-gefaltete, 0.6mm, 30-cm-Karton} durch
 Falzung hergestellt. Beim letzten Mal war Rektor Skinner die Stimmung zu schlecht und deshalb geht es erst nach Hause, wenn ein paar Aufgaben gelöst sind. Martin gefällt das. An dem Vorrat an Zigaretten von Mrs. Krabappel meinen alle wenig Zuversicht zu erkennen.\\
 
 Jetzt heißt es Kartons optimieren, wenn Sie auch nochmal nach Hause wollen. Warum jetzt \textit{Sie} mit dabei sind, lassen wir mal weg. Der nun zu optimierende, flache Karton hat eine Länge von 30cm und eine Breite von 22cm. Die Kartonagenmaschine in Flint soll dann einen quadratischen Eckenausschnitt der Länge $x$ falzen.
@@ -6472,7 +6474,7 @@ Rektor Skinner möchte sich gerne wieder in seinem Vorgarten aufhalten und nicht
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6491,9 +6493,9 @@ Rektor Skinner möchte sich gerne wieder in seinem Vorgarten aufhalten und nicht
 \paragraph{Ein Pfund Insekten, bitte!} 
 \fi
 
-'Das wird wohl häufiger gehört werden, wenn wir die Menschheit mit Proteinen ausreichend ernähren wollen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen auf der Erde?}}.', merkt Nilufar an. Die Lerngruppe um Paula, Alex und Yuki sind bei Nilufar um mal was außergewöhnliches zu essen. Um den Sinn der Nahrungsumstellung zu verdeutlichen, vergleicht Nilufar einmal Deutschland mit Nigeria. Nigeria hat eine der am schnellsten wachsenden Bevölkerungen der Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bevölkerungsreichsten Länder zählen. Im Jahr 2023 leben ca. \ensuremath{8.2\times 10^{7}} Menschen in Deutschland und ca. \ensuremath{1.8\times 10^{8}} Menschen in Nigeria. Mit den Informationen wollen Sie und Nilufar mit der Überzeugungsarbeit anfangen und dann eine Prognose für den Fleischkonsum im Jahr 2050 zu treffen. \\ 
+'Das wird wohl häufiger gehört werden, wenn wir die Menschheit mit Proteinen ausreichend ernähren wollen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende Artikel aus dem Spiegel: \href{https://www.spiegel.de/ausland/ueberbevoelkerung-acht-milliarden-sind-wir-bald-zu-viele-menschen-auf-der-erde-a-3f20c7bc-3d60-4440-9f52-eb338db207f5}{Acht Milliarden - sind wir bald zu viele Menschen auf der Erde?}}.', merkt Nilufar an. Die Lerngruppe um Alex, Mark und Steffen sind bei Nilufar um mal was außergewöhnliches zu essen. Um den Sinn der Nahrungsumstellung zu verdeutlichen, vergleicht Nilufar einmal Deutschland mit Nigeria. Nigeria hat eine der am schnellsten wachsenden Bevölkerungen der Welt und wird vermutlich im Jahr 2100 zu den Top 5 der bevölkerungsreichsten Länder zählen. Im Jahr 2021 leben ca. \ensuremath{8\times 10^{7}} Menschen in Deutschland und ca. \ensuremath{1.84\times 10^{8}} Menschen in Nigeria. Mit den Informationen wollen Sie und Nilufar mit der Überzeugungsarbeit anfangen und dann eine Prognose für den Fleischkonsum im Jahr 2050 zu treffen. \\ 
 
-Im Folgenden ist Abbildung des Fleischkonsums im Jahr 2023 in Deutschland und Nigeria in [kg] einmal dargestellt. 
+Im Folgenden ist Abbildung des Fleischkonsums im Jahr 2021 in Deutschland und Nigeria in [kg] einmal dargestellt. 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
@@ -6506,7 +6508,7 @@ Im Folgenden ist Abbildung des Fleischkonsums im Jahr 2023 in Deutschland und Ni
 \end{knitrout}
   
 \begin{enumerate}
-\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr 2023 \textit{pro Kopf} in einer aussagekräftigen Tabelle dar! \textbf{(2 Punkte)}
+\item Stellen Sie den Fleischkonsum in Deutschland und Nigeria im Jahr 2021 \textit{pro Kopf} in einer aussagekräftigen Tabelle dar! \textbf{(2 Punkte)}
 \item Ergänzen Sie in der Tabelle eine Spalte in der Sie für den Fleischkonsum in Nigeria auf Deutschland normieren, daher ins Verhältnis Nigeria/Deutschland, setzen! \textbf{(1 Punkt)}
 \end{enumerate}
 
@@ -6524,7 +6526,7 @@ In der nächsten Abbildung finden Sie die CO$_2$-Emission in [kg] nach Lebensmit
 
 \begin{enumerate}
   \setcounter{enumi}{2}  
-\item Stellen Sie in einer Tabelle die Treibhausgasemissionen an $CO_2$ pro Kopf, die durch den Fleischkonsum in Deutschland und Nigeria im Jahr 2023 entstehen, dar! Ergänzen Sie auch hier das Verhältnis Nigeria zu Deutschland! \textbf{(2 Punkte)}
+\item Stellen Sie in einer Tabelle die Treibhausgasemissionen an $CO_2$ pro Kopf, die durch den Fleischkonsum in Deutschland und Nigeria im Jahr 2021 entstehen, dar! Ergänzen Sie auch hier das Verhältnis Nigeria zu Deutschland! \textbf{(2 Punkte)}
 \end{enumerate}
 
 \newpage
@@ -6548,8 +6550,8 @@ In der folgenden Abbildung sehen Sie die Bevölkerungsentwicklung [Millionen] in
 \item Ohne Berücksichtigung der Covid-19-Pandemie! \textbf{(1 Punkt)}
 \item Unter Berücksichtigung der Covid-19-Pandemie! \textbf{(1 Punkt)}
 \end{enumerate}
-\item Berechnen Sie den geschätzten Fleischkonsum von Nigeria im Jahr 2050 unter der Annahme 60\%-iger Angleichung der Lebensbedingungen zu Deutschland im Jahr 2023! \textbf{(1 Punkt)}
-\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr 2023, der sich durch den angeglichenen Fleischkonsum ergibt! \textbf{(1 Punkt)}
+\item Berechnen Sie den geschätzten Fleischkonsum von Nigeria im Jahr 2050 unter der Annahme 70\%-iger Angleichung der Lebensbedingungen zu Deutschland im Jahr 2021! \textbf{(1 Punkt)}
+\item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen an $CO_2$ in Nigeria im Jahr 2050 im Vergleich zum Jahr 2021, der sich durch den angeglichenen Fleischkonsum ergibt! \textbf{(1 Punkt)}
 \item Berechnen Sie die prozentuale Steigerung der Treibhausgasemissionen an $CO_2$ in Nigeria, wenn die gesamte Proteinaufnahme durch Insekten ersetzt würde! \textbf{(1 Punkt)}
 \end{enumerate}
 
@@ -6578,7 +6580,7 @@ In der folgenden Abbildung sehen Sie die Bevölkerungsentwicklung [Millionen] in
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6600,9 +6602,9 @@ In der folgenden Abbildung sehen Sie die Bevölkerungsentwicklung [Millionen] in
 
 
 
-Irritiert legt Paula die historische Ausgabe des Spiegels aus den 80zigern beiseite. Paula und Jonas sind bei ihrem Hausarzt und wollen einen AIDS-Test machen lassen. Woanders leider keinen Termin gekriegt... Immerhin denken die beiden über Nachwuchs nach und da geht es eben nur durch ungeschützten Sex. Was wissen Paula und Jonas nun aber über AIDS und dem diagnostischen AIDS-Test, den die beiden nun machen werden? Leider zu wenig. Da brauchen dann Paula und Jonas mal wieder Ihre Hilfe bei der Interpretation eines diagnostischen Tests!\\
+Irritiert legt Nilufar die historische Ausgabe des Spiegels aus den 80zigern beiseite. Nilufar und Mark sind bei ihrem Hautarzt und wollen einen AIDS-Test machen lassen. Woanders leider keinen Termin gekriegt... Immerhin denken die beiden über Nachwuchs nach und da geht es eben nur durch ungeschützten Sex. Was wissen Nilufar und Mark nun aber über AIDS und dem diagnostischen AIDS-Test, den die beiden nun machen werden? Leider zu wenig. Da brauchen dann Nilufar und Mark mal wieder Ihre Hilfe bei der Interpretation eines diagnostischen Tests!\\
 
-Die Prävalenz von AIDS bei einem Menschen in Europa wird mit 0.8\% angenommen. In 96\% der Fälle ist ein HIV-Test positiv, wenn der Patient erkrankt ist. In 3\% der Fälle ist ein HIV-Test positiv, wenn der Patient \textit{nicht} erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven AIDS-Test vorliegen haben $(T^+)$? Gehen Sie für die folgenden Berechnungen von $n = \ensuremath{3\times 10^{4}}$ Patienten mit einem diagnostischen Test für AIDS aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et al. (2022) Von Baumdiagrammen über Doppelbäume zu Häufigkeitsnetzen -- kognitive überlastung oder didaktische Unterstützung? Journal für Mathematik-Didaktik, 1-33}}.
+Die Prävalenz von AIDS bei einem Menschen in Europa wird mit 0.01\% angenommen. In 92\% der Fälle ist ein HIV-Test positiv, wenn der Patient erkrankt ist. In 3\% der Fälle ist ein HIV-Test positiv, wenn der Patient \textit{nicht} erkrankt ist und somit gesund ist. Sie stutzen. Wie wahrscheinlich ist es denn eigentlich an AIDS erkrankt zu sein $(K^+)$, wenn Sie einen positiven AIDS-Test vorliegen haben $(T^+)$? Gehen Sie für die folgenden Berechnungen von $n = \ensuremath{2\times 10^{4}}$ Patienten mit einem diagnostischen Test für AIDS aus. Sie nehmen sich also einen Kuli und fangen an auf der historischen Ausgabe des Spiegels zu rechnen\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftlicher Artikel: \textit{Binder et al. (2022) Von Baumdiagrammen über Doppelbäume zu Häufigkeitsnetzen -- kognitive überlastung oder didaktische Unterstützung? Journal für Mathematik-Didaktik, 1-33}}.
 
 
 \begin{enumerate}
@@ -6612,7 +6614,7 @@ Die Prävalenz von AIDS bei einem Menschen in Europa wird mit 0.8\% angenommen. 
 \item Berechnen Sie die gesuchte Wahrscheinlichkeit $Pr$! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Bei dem folgenden Arztgespräch erfahren Paula und Jonas, dass beim diagnostischen Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten. Das verstehen beiden so noch nicht und deshalb stellen Sie für Paula und Jonas den Zusammenhang in einer 2x2 Kreuztabelle dar.
+Bei dem folgenden Arztgespräch erfahren Nilufar und Mark, dass beim diagnostischen Testen \textit{True Positives (TP)}, \textit{True Negatives (TN)}, \textit{False Positives (FP)} und \textit{False Negatives (FN)} auftreten. Das verstehen beiden so noch nicht und deshalb stellen Sie für Nilufar und Mark den Zusammenhang in einer 2x2 Kreuztabelle dar.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
@@ -6642,7 +6644,7 @@ Bei dem folgenden Arztgespräch erfahren Paula und Jonas, dass beim diagnostisch
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6659,17 +6661,17 @@ Bei dem folgenden Arztgespräch erfahren Paula und Jonas, dass beim diagnostisch
 
 
 
-Mark, Nilufar und Paula sitzen bei Alex und hören sich etwas über Network-Marketing an. Alex ist jetzt im Network-Marketing tätig. 'Jetzt reicht es. Wir sind eine Lerngruppe und du versuchst uns hier abzuziehen!', poltert Mark und fährt fort, 'Ich erklär dir mal, wie falsch du liegst!'. Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne viel Aufwand und ortsunabhängig. Schnell ein YouTube-Werbevideo gedreht und auf geht es mit unserem Network-Marketing. Aber Moment, wie funktioniert Network-Marketing eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Mark und Sie wollen hier einmal in die Untiefen des >>passiven Einkommens<< abtauchen und die Lerngruppe vor Schlimmeren bewahren\footnote{Die Quellen der Inspiration für die Aufgabe waren folgendes YouTube Video: \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus -- Die meistgesuchte Betrügerin der Welt} und der Artikel: \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}!\\
+Steffen, Jessica und Tina sitzen bei Yuki und hören sich etwas über Network-Marketing an. Yuki ist jetzt im Network-Marketing tätig. 'Jetzt reicht es. Wir sind eine Lerngruppe und du versuchst uns hier abzuziehen!', poltert Steffen und fährt fort, 'Ich erklär dir mal, wie falsch du liegst!'. Eine Möglichkeit, leicht Geld zu verdienen, ist es anderen Menschen für Geld zu versprechen, wie man leicht reich werden kann. Am besten natürlich ohne viel Aufwand und ortsunabhängig. Schnell ein YouTube-Werbevideo gedreht und auf geht es mit unserem Network-Marketing. Aber Moment, wie funktioniert Network-Marketing eigentlich und was hat das alles mit einer Schneeballschlacht zu tun? Steffen und Sie wollen hier einmal in die Untiefen des >>passiven Einkommens<< abtauchen und die Lerngruppe vor Schlimmeren bewahren\footnote{Die Quellen der Inspiration für die Aufgabe waren folgendes YouTube Video: \href{https://youtu.be/UOKkZF_qK9M?si=uf4foJVFKfeQMwSw}{Simplicissimus -- Die meistgesuchte Betrügerin der Welt} und der Artikel: \href{https://www.deutschlandfunkkultur.de/netzwerk-marketing-die-illusion-schnell-reich-zu-werden-100.html}{Deutschlandfunk Kultur -- Die Illusion, schnell reich zu werden}}!\\
 
-Das Jahr 2023 war das erfolgreichste Jahr in der Geschichte von Healthy Herbs Manufacture International (HeHeMan). Das Unternehmen steigerte den Umsatz um rund 15 Prozent von 260 Millionen Euro im Jahr 2022. Doch wie viel kommt bei den Partnern an? Laut HeHeMan habe das Unternehmen \ensuremath{3.8\times 10^{5}} aktive Partner.
+Das Jahr 2023 war das erfolgreichste Jahr in der Geschichte von KH Gesund und Schön Components (KH-GSC). Das Unternehmen steigerte den Umsatz um rund 18 Prozent von 275 Millionen Euro im Jahr 2022. Doch wie viel kommt bei den Partnern an? Laut KH-GSC habe das Unternehmen \ensuremath{3.8\times 10^{5}} aktive Partner.
 
 \begin{enumerate}
-\item Berechnen Sie zuerst den Umsatz der Firma HeHeMan im Jahr 2023! \textbf{(1 Punkt)}
+\item Berechnen Sie zuerst den Umsatz der Firma KH-GSC im Jahr 2023! \textbf{(1 Punkt)}
 \item Wie viel von dem Umsatz im Jahr 2023 wird im Durchschnitt von jedem aktiven Partner erwirtschaftet? \textbf{(1 Punkt)}
-\item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im Durchschnitt für jeden aktiven Partner bei einer direkten Provision von 40\%? \textbf{(1 Punkt)}
+\item Welche \textit{monatlicher} Umsatz ergibt sich dadurch im Durchschnitt für jeden aktiven Partner bei einer direkten Provision von 35\%? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Das von Alex zu vermarkende Produkt, hinter dem Alex voll steht, kostet 200EUR pro Einheit im Direktverkauf. Die direkte Provision für die erste Stufe beträgt 25\%. Für die zweite, dritte und vierte Stufe betragen die indirekten Provisionen jeweils 3.25\%, 2.25\% und 1.75\%. Jeder von Alex angeworbener >>Partner<< wirbt wiederum vier Partner für sich selbst an. Pro Monat werden im Schnitt zwei Einheiten vom Produkt verkauft. Alex will nun 2500EUR im Monat \textit{passiv} -- also durch indirekte Provisionen -- erwirtschaften. Kann das klappen? Sie sind zusammen mit Mark skeptisch.
+Das von Yuki zu vermarkende Produkt, hinter dem Yuki voll steht, kostet 150EUR pro Einheit im Direktverkauf. Die direkte Provision für die erste Stufe beträgt 35\%. Für die zweite, dritte und vierte Stufe betragen die indirekten Provisionen jeweils 2.5\%, 1.5\% und 1\%. Jeder von Yuki angeworbener >>Partner<< wirbt wiederum vier Partner für sich selbst an. Pro Monat werden im Schnitt fünf Einheiten vom Produkt verkauft. Yuki will nun 3200EUR im Monat \textit{passiv} -- also durch indirekte Provisionen -- erwirtschaften. Kann das klappen? Sie sind zusammen mit Steffen skeptisch.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -6694,7 +6696,7 @@ Das von Alex zu vermarkende Produkt, hinter dem Alex voll steht, kostet 200EUR p
 \item Wie viele Partner müssen Sie auf der 2 Stufe anwerben um Ihr passives Einkommen durch indirekte Provision zu erreichen? Wie viele Menschen arbeiten am Ende indirekt für Sie? Stellen Sie den Zusammenhang graphisch dar!  \textbf{(3 Punkte)}
 \end{enumerate}
 
-Alex musste zum Einstieg bei HeHeMan Einheiten des Produkts für 6000EUR kaufen. Diese Einheiten kann Alex nur direkt verkaufen. Das ganze Wohnzimmer ist voll davon. Leider musste Alex den Kauf über einen Kredit über 5.1\% p.a. über 36 Monate finanzieren. Sie schütteln den Kopf und klären Alex über Zinsen auf.
+Yuki musste zum Einstieg bei KH-GSC Einheiten des Produkts für 6000EUR kaufen. Diese Einheiten kann Yuki nur direkt verkaufen. Das ganze Wohnzimmer ist voll davon. Leider musste Yuki den Kauf über einen Kredit über 4.7\% p.a. über 72 Monate finanzieren. Sie schütteln den Kopf und klären Yuki über Zinsen auf.
 
 \begin{enumerate}
   \setcounter{enumi}{5}
@@ -6720,7 +6722,7 @@ Alex musste zum Einstieg bei HeHeMan Einheiten des Produkts für 6000EUR kaufen.
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Yuki.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6738,23 +6740,23 @@ Alex musste zum Einstieg bei HeHeMan Einheiten des Produkts für 6000EUR kaufen.
 
 
 
-Alex, Jessica und Jonas sitzen bei Nilufar nachdem sich alle begeistert in der Serie \textit{Stranger Thinks} verloren haben. Alle drei wollen jetzt einmal bei Nilufar \textit{Höhlen \& Drachen} ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den Regeln gebastelt. Schnell stellen die Drei fest, dass hier ganz schön viele unterschiedliche Würfel durch die Gegend fliegen. Daher müssen Sie sich jetzt einiges an Fragen klären damit Nilufar nicht so alleine ist. \\%[-1ex]
+Jessica, Jonas und Nilufar sitzen bei Yuki nachdem sich alle begeistert in der Serie \textit{Stranger Thinks} verloren haben. Alle drei wollen jetzt einmal bei Yuki \textit{Höhlen \& Drachen} ausprobieren. Um Geld zu sparen, das Zeug kostet echt, wurde etwas an den Regeln gebastelt. Schnell stellen die Drei fest, dass hier ganz schön viele unterschiedliche Würfel durch die Gegend fliegen. Daher müssen Sie sich jetzt einiges an Fragen klären damit Yuki nicht so alleine ist. \\%[-1ex]
 
-In dem Spiel hat Alex nun auf einmal 5 sechseitige Würfel (5d6) zum würfeln in der Hand. Wenn Alex eine 6 würfelt, hat Alex einen Erfolg.
+In dem Spiel hat Jessica nun auf einmal 4 achtseitige Würfel (4d8) zum würfeln in der Hand. Wenn Jessica eine 8 würfelt, hat Jessica einen Erfolg.
 
 \begin{enumerate}
-\item Berechnen Sie die Wahrscheinlichkeit \textit{genau} 3 Erfolge zu erzielen!  \textbf{(2 Punkte)}
+\item Berechnen Sie die Wahrscheinlichkeit \textit{genau} 2 Erfolge zu erzielen!  \textbf{(2 Punkte)}
 \item Berechnen Sie die Wahrscheinlichkeit keinen Erfolg zu erzielen! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Jessica betrachtet nun aufmerksam die ausufernden Ausrüstungstabellen. Jessica wird aber geholfen und muss sich jetzt nur zwischen der Axt oder dem Schwert entscheiden.
+Jonas betrachtet nun aufmerksam die ausufernden Ausrüstungstabellen. Jonas wird aber geholfen und muss sich jetzt nur zwischen der Axt oder dem Schwert entscheiden.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Würden Sie die Axt mit zwei zwölfseitigen Würfeln (2d12) als Schaden oder das Schwert mit einem achtseitigen Würfel plus 7 (1d8+7) als Schaden bevorzugen? Begründen Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
+\item Würden Sie die Axt mit zwei zwölfseitigen Würfeln (2d12) als Schaden oder das Schwert mit einem sechseitigen Würfel plus 2 (1d6+2) als Schaden bevorzugen? Begründen Sie Ihre Antwort mathematisch! \textbf{(1 Punkt)}
 \end{enumerate}
 
-Jetzt wird es immer wilder, da Jessica und Jonas sich jetzt überlegen müssen, wie wahrscheinlich es ist, dass der Rettungswurf gegen den zaubernden Hexer funktioniert. Jessica und Jonas haben folgende Wahrscheinlichkeiten gegeben. Die Wahrscheinlichkeit für das Ereignis $A$, der Rettungswurf ist erfolgreich, ist $Pr(A) = 0.65$, die Wahrscheinlichkeit für das Ereignis $B$, der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = 0.75$. Sie haben aber mitgezählt und festgestellt, dass in $40$ von 100 Fällen der Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
+Jetzt wird es immer wilder, da Jonas und Nilufar sich jetzt überlegen müssen, wie wahrscheinlich es ist, dass der Rettungswurf gegen den zaubernden Hexer funktioniert. Jonas und Nilufar haben folgende Wahrscheinlichkeiten gegeben. Die Wahrscheinlichkeit für das Ereignis $A$, der Rettungswurf ist erfolgreich, ist $Pr(A) = 0.65$, die Wahrscheinlichkeit für das Ereignis $B$, der Zauberwurf des Hexers ist erfolgreich, ist $Pr(B) = 0.9$. Sie haben aber mitgezählt und festgestellt, dass in $50$ von 100 Fällen der Rettungswurf bei einem erfolgeichen Zauber funktioniert hat.  
 
 \begin{enumerate}
   \setcounter{enumi}{3}
@@ -6783,7 +6785,7 @@ Jetzt wird es immer wilder, da Jessica und Jonas sich jetzt überlegen müssen, 
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Mark.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Nilufar.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Steffen.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -6801,25 +6803,25 @@ Jetzt wird es immer wilder, da Jessica und Jonas sich jetzt überlegen müssen, 
 
 
 
-Das war zu viel für Alex gestern. Die Lerngruppe mit Jessica und Tina ging viel zu lang. Während er wegdämmert, kommen in ihm seltsame Bilder hoch. 'Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit dabei, wenn es wieder heißt: Der Preis ist heiß!', ertönt es und Alex fragt sich, ob er nicht doch lieber bezahlter Gast bei Barbara Salesch hätten sein sollten. Aber Alex braucht das Geld und jetzt heißt es Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden Jessica und Tina das Team der drei Kandidaten. Alex braucht dringend Ihre Hilfe in seinen Wahnträumen. Sie gehen wie in \textit{Interception} rein!\footnote{\href{https://www.youtube.com/watch?v=3RhxyHMs-w8}{South Park Inception Spoof} -- Wunderbare South Park Folge}
+Das war zu viel für Mark gestern. Die Lerngruppe mit Steffen und Nilufar ging viel zu lang. Während er wegdämmert, kommen in ihm seltsame Bilder hoch. 'Und hier ist sie wieder, die Show der fantastischen Preise. Seien Sie mit dabei, wenn es wieder heißt: Der Preis ist heiß!', ertönt es und Mark fragt sich, ob er nicht doch lieber bezahlter Gast bei Barbara Salesch hätten sein sollten. Aber Mark braucht das Geld und jetzt heißt es Spielschows farmen! Erstmal eine Kaffemaschine von Mitropa gewinnen. Ein Kandidat gewinnt die Kaffeemaschine von Mitropa, wenn nicht alle Kandidaten überbieten (eng. \textit{outbid}). Mit Ihnen bilden Steffen und Nilufar das Team der drei Kandidaten. Mark braucht dringend Ihre Hilfe in seinen Wahnträumen. Sie gehen wie in \textit{Interception} rein!\footnote{\href{https://www.youtube.com/watch?v=3RhxyHMs-w8}{South Park Inception Spoof} -- Wunderbare South Park Folge}
 
 \begin{center}
 \begin{tabular}{ccc}
   \toprule
   Name & $P(win)$ & $P(outbid)$\\
   \midrule
-  Jessica & 0.2 & 0.043\\
-  Tina & 0.4 & 0.08 \\
+  Steffen & 0.1 & 0.08\\
+  Nilufar & 0.4 & 0.043 \\
   \bottomrule
 \end{tabular}
 \end{center}
 
 \begin{enumerate}
 \item Mit welcher Wahrscheinlichkeit gewinnen Sie die Kaffeemaschine von Mitropa, wenn keiner der Kandidaten überbietet? \textbf{(1 Punkt)}
-\item Wenn Ihre überbietungswahrscheinlichkeit $P(outbid)$ bei 0.02 liegt, mit welcher Wahrscheinlichkeit gewinnt \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
+\item Wenn Ihre überbietungswahrscheinlichkeit $P(outbid)$ bei 0.05 liegt, mit welcher Wahrscheinlichkeit gewinnt \textit{keiner} die Kaffeemaschine von Mitropa? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gereicht. Deshalb sind Sie jetzt mit Alex auf der Kirmes und spielen mit einem Typen in einem Tentakelkostüm um das große Geld. Das Glücksrad hat 22 Felder. Sie beide drehen das Glücksrad zweimal. Auf 10 Feldern gewinnen Alex und Sie 5000EUR sonst 1000EUR. Ganz schön viel Geld und ganz schön zwielichtig hier...
+Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gereicht. Deshalb sind Sie jetzt mit Mark auf der Kirmes und spielen mit einem einäugen Piraten um das große Geld. Das Glücksrad hat 24 Felder. Sie beide drehen das Glücksrad zweimal. Auf 10 Feldern gewinnen Mark und Sie 4000EUR sonst 2000EUR. Ganz schön viel Geld und ganz schön zwielichtig hier...
 
 \begin{enumerate}
   \setcounter{enumi}{2}  
@@ -6828,7 +6830,7 @@ Glücksrad für Arme auf der Kirmes! Leider hat es für Maren Gilzer nicht gerei
 \item Mir welcher Wahrscheinlichkeit gewinnen Sie 6000EUR? \textbf{(1 Punkt)}
 \end{enumerate}
 
-Im Fiebertraum von Alex reisen sie beide im Zug nach Köln um bei >>Geh aufs Ganze!<< mitzuspielen. Alex und Sie schaffen es tatsächlich ins Finale und können als Hauptgewinn ein Auto hinter einer der drei Türen gewinnen. Und was braucht man mehr als ein Auto in einem Fiebertraum? 
+Im Fiebertraum von Mark reisen sie beide im Zug nach Köln um bei >>Geh aufs Ganze!<< mitzuspielen. Mark und Sie schaffen es tatsächlich ins Finale und können als Hauptgewinn ein Auto hinter einer der drei Türen gewinnen. Und was braucht man mehr als ein Auto in einem Fiebertraum? 
 
 \begin{enumerate}
   \setcounter{enumi}{5}  
@@ -6954,7 +6956,7 @@ data_tbl <- read.table(file = pipe("pbpaste"), sep = " ", header = TRUE)
 \toprule
 \textbf{1)} & \textbf{3)} & \textbf{4)} & \textbf{5)}\\
 \midrule
-$d_{1820} = 357.49cm$ & $V_{eff} = 1.82m^3$ & $s_{Eiche} = 68.74cm$ & $s_{Platz} = 38.74cm$\\
+$d_{1815} = 348.85cm$ & $V_{eff} = 1.67m^3$ & $s_{Eiche} = 54.43cm$ & $s_{Platz} = 39.43cm$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -6971,7 +6973,7 @@ $d_{1820} = 357.49cm$ & $V_{eff} = 1.82m^3$ & $s_{Eiche} = 68.74cm$ & $s_{Platz}
 \toprule
 \textbf{2)} & \textbf{3a)} & \textbf{3b)} & \textbf{4)} & \textbf{5)}\\
 \midrule
-$n = 336$ & $A_{Tisch} = 1.36m^2$ & $A_{Topf} = 0.88m^2$ & $V_{Topf} = 237.5cm^3$ & $64.12EUR$\\
+$n = 280$ & $A_{Tisch} = 1.13m^2$ & $A_{Topf} = 0.7m^2$ & $V_{Topf} = 112.59cm^3$ & $34.9EUR$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -6988,7 +6990,7 @@ $n = 336$ & $A_{Tisch} = 1.36m^2$ & $A_{Topf} = 0.88m^2$ & $V_{Topf} = 237.5cm^3
 \toprule
 \textbf{2)} & \textbf{3)} & \textbf{4)} & \textbf{5)}\\
 \midrule
-$A_{Dach} = 687.84m^2$ & $\rho = 276kg/m^3$ & $V = 40.58m^3$ & $h = 8.97m$\\
+$A_{Dach} = 750m^2$ & $\rho = 252.5kg/m^3$ & $V = 35.64m^3$ & $h = 11.34m$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -7005,7 +7007,7 @@ $A_{Dach} = 687.84m^2$ & $\rho = 276kg/m^3$ & $V = 40.58m^3$ & $h = 8.97m$\\
 \toprule
 \textbf{1)} & \textbf{2)}\\
 \midrule
-$12.72EUR$ & $n = 88$\\
+$21.48EUR$ & $n = 27$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -7018,10 +7020,10 @@ $12.72EUR$ & $n = 88$\\
 \toprule
 \textbf{3)} & \textbf{Wasserverbrauch} & \textbf{Mittleres Gewicht} & \textbf{Liter pro Stück}\\
 \midrule
-Strauchtomate & $0.19l/g$ & $110g$ & $20.9l$\\
-Salat & $0.1l/g$ & $405g$ & $40.5l$\\
-Avocado & $1.05l/g$ & $255g$ & $267.75l$\\
-Blaubeere & $0.83l/g$ & $3.45g$ & $2.8635l$\\
+Strauchtomate & $0.17l/g$ & $120g$ & $20.4l$\\
+Salat & $0.1l/g$ & $410g$ & $41l$\\
+Avocado & $1.05l/g$ & $270g$ & $283.5l$\\
+Blaubeere & $0.88l/g$ & $3.5g$ & $3.08l$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -7034,7 +7036,7 @@ Blaubeere & $0.83l/g$ & $3.45g$ & $2.8635l$\\
 \toprule
 \textbf{4a)} & \textbf{4b)} & \textbf{5a)} & \textbf{5b)} & \textbf{6)}\\
 \midrule
-$V = 70291040t$ & $V = 197788500t$ & 0.64$\times$ & 3.84$\times$ & FAO Stat, Our World in Data\\
+$V = 754688000hl$ & $V = 1572060000hl$ & 4.88$\times$ & 5.3$\times$ & FAO Stat, Our World in Data\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -7051,8 +7053,8 @@ $V = 70291040t$ & $V = 197788500t$ & 0.64$\times$ & 3.84$\times$ & FAO Stat, Our
 \toprule
 \textbf{1)} & \textbf{2)} & \textbf{3)} & \textbf{4)} & \textbf{5)} & \textbf{6)}\\
 \midrule
-$h = 2.75 
-                                            \cdot 8 = 21.98m$ & $V_{T} = 11.23m^3$ & $n = 694$ & $r = 115.19m$ & $b' = 105.08m$ & $15.04Ellen$\\
+$h = 3.08 
+                                            \cdot 11 = 33.85m$ & $V_{T} = 23.49m^3$ & $n = 1596$ & $r = 177.4m$ & $b' = 163.14m$ & $26.44Ellen$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
@@ -7069,8 +7071,8 @@ $h = 2.75
 \toprule
 \textbf{1)} & \textbf{2)} & \textbf{3)} & \textbf{4)} & \textbf{5)} & \textbf{6)}\\
 \midrule
-$h = 2.75 
-                                            \cdot 8 = 21.98m$ & $V_{T} = 11.23m^3$ & $n = 694$ & $r = 115.19m$ & $b' = 105.08m$ & $15.04Ellen$\\
+$h = 3.08 
+                                            \cdot 11 = 33.85m$ & $V_{T} = 23.49m^3$ & $n = 1596$ & $r = 177.4m$ & $b' = 163.14m$ & $26.44Ellen$\\
 \bottomrule
 \end{tabular}
 \endgroup{}
