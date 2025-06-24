@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -115,7 +115,8 @@ dragon_small_tbl <- dragon_tbl |>
   set_names(c(outcome, risk_factor, names(species), "direction"))
 
 mixed_formula <- reformulate(response = outcome,
-                             termlabels = str_c(risk_factor, " + (1|", names(species), ") + (1|direction)"))
+                             termlabels = str_c(risk_factor, " + (1|", names(species), "/direction)"))
+
 
 mixed_lmer <- lmer(mixed_formula, data = dragon_small_tbl)
 summary(mixed_lmer)
@@ -126,9 +127,10 @@ Leider kennt sich \Sexpr{name} mit der Analyse eines gemischten Modells in \Rlog
 \begin{enumerate}
   \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
   \item Formulieren Sie das statistische Hypothesenpaar für den festen Effekt! \textbf{(1 Punkt)}
-\item Erstellen Sie eine Visualisierung für den Korrelationskoeffizienten! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
-\item Nennen Sie die zwei Eigenschaften des Korrelationskoeffizienten! \textbf{(2 Punkte)}
-\item Interpretieren Sie den Korrelationskoefizienten hinsichtlich des
-  Effekts und der Signifikanz! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Visualisieren Sie das 95\% Konfidenzintervall! Beschriften Sie die Abbildung! \textbf{(2 Punkte)} 
+  \item Skizzieren Sie das Versuchsdesign! \textit{Nutzen Sie eine reduzierte Auswahl an Faktorkombinationen!} \textbf{(1 Punkt)} 
+  \item Visualisieren Sie die Ausgabe des linearen gemischten Modells! \textit{Nutzen Sie eine reduzierte Auswahl an Faktorkombinationen!} \textbf{(1 Punkt)} 
+  \item Folgt der Messwert $y$ einer annährenden Normalverteilung? Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+\item Treffen Sie eine Aussage mit $T_{\alpha = 5\%} = 2.04$ zu Ihrer aufgestellten Nullhypothese! \textbf{(2 Punkte)}
+\item Interpretieren Sie den Effekt des festen Effekts im Kontext der wissenschaftlichen Fragestellung! \textbf{(2 Punkte)}
+\item Wieviel Varianz erklärt der zufällige Haupteffekt? \textbf{(2 Punkte)}
 \end{enumerate}
