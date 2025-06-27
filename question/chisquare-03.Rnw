@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -25,7 +25,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/IcjUIoEo0rY}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/LzAAdJPH4ZU}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
 \fi
@@ -69,27 +69,43 @@ y_val <- lst(pflanze = c("Frischegewicht über Zielwert [ja/nein]",
                       "Gewichtszuwachs erreicht [ja/nein]"))[[names(obser)]] %>% 
   sample(1)
 
-a <- c(24, 38, 56) %>% sample(1)
-b <- c(11, 19, 21, 51, 41) %>% sample(1)
-c <- c(13, 23, 27, 43, 61) %>% sample(1)
-d <- c(38, 44, 52) %>% sample(1)
+survey_qes <- c(f3verband = "Halten Sie die Verbandsarbeit für die Verbreitung von Großkatzen im ländlichen Raum für sinnvoll?",
+                f4verband = "Sehen Sie die Haltung von Großkatzen als eine kulturelle Bereicherung?", 
+                f5verband = "Sehen Sie die Notwendigkeit von genetisch veränderten Großkatzen zur Steigerung der Attraktivität des Erlebnishofes?") |> sample(1)
+
+## upper
+upp <- lst(c(14, 23, 11, 8, 4),
+         c(11, 25, 8, 4, 3),
+         c(15, 28, 12, 9, 2),
+         c(0, 12, 23, 9, 5),
+         c(2, 8, 25, 13, 6),
+         c(4, 12, 32, 19, 9),
+         c(3, 8, 12, 21, 11),
+         c(5, 10, 18, 31, 16),
+         c(4, 9, 11, 29, 17)) |> sample(1) |> unlist()
+## lower
+low <- lst(c(9, 21, 11, 9, 5),
+         c(13, 27, 8, 5, 4),
+         c(12, 29, 13, 10, 1),
+         c(1, 11, 25, 9, 4),
+         c(3, 9, 31, 14, 7),
+         c(2, 11, 29, 21, 11),
+         c(5, 7, 13, 25, 9),
+         c(2, 13, 19, 34, 14),
+         c(3, 7, 12, 26, 19)) |> sample(1) |> unlist()
+
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]])
 attr_name_vec <- attr_lst[[name]]
-chicrit <- c(4.56, 5.61, 6.21, 3.83) |> sample(1)
+chicrit <- c(11.56, 15.61, 18.21, 23.83) |> sample(1)
 
-ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten Endpunkt in ", project, " nehmen sollen. Vor ", pronom[4], " liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \\Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft ", names(name), " das was bei den Daten rausgekommen ist. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. Gezählt hat ", name, " einiges mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, ". Zum einen hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Eigentlich wollte ", name, " nachher noch einen Film schauen. ", sentence_name_vec$animal_film),
-                  str_c("'Der $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet.', liest ", name, " in ", pronom[2], " Mitschrift. So richtig helfen tut ", pronom[4], " das jetzt eherlichweise dann doch nicht. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat er als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Am Ende möchte dann ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Eigentlich wollte ", name, " nachher noch zum Sport. ", sentence_name_vec$sport),
-                  str_c("Am Ende war es für ", name, " in ", project, " dann doch kein normalverteiltes Outcome. Das was jetzt etwas doof, da er sich auf eine ANOVA gefreut hatte. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. Prinzipiell ginge das auch irgendwie, aber nun möchte ", betreuer, " gerne einen $\\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. ", name, " hatte sich in ", exp, " $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " angeschaut. Dabei hat ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt. Jetzt muss ", name, " mal schauen, wie ", names(name), " das jetzt rechnet. Eigentlich wollte ", name, " nachher noch zum Sport. ", sentence_name_vec$sport),
-              str_c(name, " hat sich ein Herz gefasst und war für ", project, " in die Niederlande gegangen. Das war eine super Zeit in der ", names(name), " viel gelernt hat. Klar gab es auch die ein oder andere Besonderheit, aber das gehört hier eher nicht hin. Dann noch schnell ", attr_name_vec$music, " auf das Ohr und los gehts. ", name, " ist schon eine ganze Zeit im Büro, da ", betreuer, " möchte, dass ", names(name), " jetzt auf ", pronom[3], " Daten mit $n = ", a+b+c+d, "$ Beobachtungen von ", obser, " einen $\\mathcal{X}^2$-Test rechnet. Das ginge, da ", names(name), " als Behandlung \\textit{", x_val, "} bestimmt und zum anderen die Variable \\textit{", y_val, "} ermittelt hat. Wie genau, das ist jetzt eine andere Frage. Eigentlich wollte ", name, " nachher noch einen Film schauen. ", sentence_name_vec$animal_film)) |> 
+ques_vec <- c(str_c(name, " hatte sich gleich von Beginn an in ", project, " für eine Umfrage im Marketing interessiert. Jetzt geht es um den Haupt- und Nebenerwerb von Erlebnishöfen in Norddeutschland. Viele Höfe haben angefangen auch Großkatzen zu halten, damit mehr Kunden auf die Höfe kommen. Für den Verband der Großkatzenbesitzer e.V. möchte ", names(name), " nun einen Fragebogen zur Zukunftsfähigkeit Schritt für Schritt auswerten. Dabei teilt ", names(name), " zuerst die Antwortenden in die beiden Gruppen 'Höfe mit Großkatzen [ja]' und 'Höfe mit Großkatzen [nein]' ein. Daraufhin möchte ", names(name), " für folgende Frage \\textit{", names(survey_qes), "} einmal auswerten, ob es einen Unterschied zwischen den beiden Höfen mit oder ohne Großkatzen gibt. \\begin{center}\\textit{", survey_qes,"}\\end{center}", "", name, " krazt sich an ", pronom[1], " Kopf. Wie soll man eine Tabelle mit so vielen Zahlen sinnvoll auswerten? Schnell noch ein paar ", attr_name_vec$sweet, " einwerfen und los gehts!")) |> 
   sample(1)
-
-
 
 @
 
 \ifcollection
-\paragraph{Den Chi-Quadrat-Test mit Effektmaß berechnen}
+\paragraph{Den Chi-Quadrat-Test in einem Fragebogen berechnen}
 \fi
 
 \Sexpr{ques_vec}
@@ -97,30 +113,31 @@ ques_vec <- c(str_c("Am Ende hätte ", name, " dann doch einen normalverteilten 
 \vspace{5Ex}
 
 \begin{center}
-  \huge
-  \begin{tabular}{c|l|l|c}
-     & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
+  \Large
+  \begin{tabular}{c|l|l|l|l|l|c}
+\textit{\Sexpr{names(survey_qes)}}     & \textbf{trifft gar} & \textbf{trifft} & \textbf{weder} & \textbf{trifft} & \textbf{trifft} & \\
+ \phantom{\textbf{Pestizid}}    & \textbf{nicht zu} & \textbf{nicht zu} & \textbf{noch} & \textbf{zu} & \textbf{voll zu} & \\
     \hline
-    \phantom{\textbf{Pestizid (ja)}} & \Sexpr{a}  & \Sexpr{b}  &     \strut\\
+   \textbf{ja}  & \Sexpr{upp[1]}  & \Sexpr{upp[2]}  &  \Sexpr{upp[3]}  & \Sexpr{upp[4]}  & \Sexpr{upp[5]}  &   \strut\\[4Ex]
     \hline
-    \phantom{\textbf{Pestizid (ja)}} & \Sexpr{c}  & \Sexpr{d}  &      \strut\\
+    \textbf{nein} & \Sexpr{low[1]}  & \Sexpr{low[2]}  & \Sexpr{low[3]}  & \Sexpr{low[4]}  & \Sexpr{low[5]}  &      \strut\\[4Ex]
     \hline
-     \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
+     \phantom{\textbf{Pestizid}} & \phantom{\textbf{trifft gar}}  & \phantom{\textbf{trifft gar}}  &  \phantom{\textbf{trifft gar}} &  \phantom{\textbf{trifft gar}} &  \phantom{\textbf{trifft gar}} &  \phantom{100} \strut\\
   \end{tabular}
 \end{center}
 
 \vspace{5Ex}
 
-Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
+Leider kennt sich \Sexpr{name} mit der Berechnung eines $\mathcal{X}^2$-Test auf einer Frage in einem Fragebogen überhaupt nicht aus. Deshalb braucht \Sexpr{names(name)} bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
 \item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
-\item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test! \textbf{(3 Punkte)}
+\item Berechnen Sie die Teststatistik $\mathcal{X}^2_{D}$ eines Chi-Quadrat-Test! \textit{Ignorieren Sie Zellbelegungen \underline{kleiner gleich} fünf in der Berechnung von $\mathcal{X}^2_{D}$ und Runden Sie den erwarteten Wert $E$ ganzzahlig!} \textbf{(2 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
   einem $\mathcal{X}^2_{\alpha = 5\%} = \Sexpr{chicrit}$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
-\item Berechnen Sie den Effektschätzer $Cramers\; V$ auf der 2x2 Kreuztabelle! \textbf{(1 Punkt)}
-\item Welchen Wertebereich kann der Effektschätzer $Cramers\; V$ annehmen? Wann liegt kein Effekt und wann ein starker Effekt vor? \textbf{(2 Punkte)}
+\item Visualisieren Sie die 2x5 Kreuztabelle \textit{ohne} die Berücksichtigung der Antwortkategorie 'weder noch'! \textbf{(2 Punkte)}
+\item Berechnen Sie den Effektschätzer $Cramers\; V$ auf der 2x5 Kreuztabelle! \textbf{(1 Punkt)}
 \item Interpretieren Sie den berechneten Effektschätzer $Cramers\; V$ unter Berücksichtigung der Fragestellung! \textbf{(1 Punkt)}
 \end{enumerate}

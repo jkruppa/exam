@@ -4095,7 +4095,7 @@ Leider kennen sich Alex und seine Betreuerin mit der zweifaktoriellen ANOVA übe
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/M9Uhm67ndxM}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/X0-2he7ByMA}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
 \fi
@@ -4414,7 +4414,7 @@ Leider kennt sich Yuki mit der Berechnung eines $\mathcal{X}^2$-Test für katego
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -4434,7 +4434,7 @@ Leider kennt sich Yuki mit der Berechnung eines $\mathcal{X}^2$-Test für katego
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/-Kva5wc5Elw}{\includegraphics[width = 2cm]{img/caution}}
+\href{https://youtu.be/IcjUIoEo0rY}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
 \fi
@@ -4443,46 +4443,45 @@ Leider kennt sich Yuki mit der Berechnung eines $\mathcal{X}^2$-Test für katego
 
 
 \ifcollection
-\paragraph{Den Chi-Quadrat-Test in einem Fragebogen berechnen}
+\paragraph{Den Chi-Quadrat-Test mit Effektmaß berechnen}
 \fi
 
-Jessica hatte sich gleich von Beginn an in ihrer Hausarbeit für eine Umfrage im Marketing interessiert. Jetzt geht es um den Haupt- und Nebenerwerb von Erlebnishöfen in Norddeutschland. Viele Höfe haben angefangen auch Großkatzen zu halten, damit mehr Kunden auf die Höfe kommen. Für den Verband der Großkatzenbesitzer e.V. möchte sie nun einen Fragebogen zur Zukunftsfähigkeit Schritt für Schritt auswerten. Dabei teilt sie zuerst die Antwortenden in die beiden Gruppen 'Höfe mit Großkatzen [ja]' und 'Höfe mit Großkatzen [nein]' ein. Daraufhin möchte sie für folgende Frage \textit{f4verband} einmal auswerten, ob es einen Unterschied zwischen den beiden Höfen mit oder ohne Großkatzen gibt. \begin{center}\textit{Sehen Sie die Haltung von Großkatzen als eine kulturelle Bereicherung?}\end{center}Jessica krazt sich an ihrem Kopf. Wie soll man eine Tabelle mit so vielen Zahlen sinnvoll auswerten? Schnell noch ein paar Schokobons einwerfen und los gehts!
+Am Ende war es für Jessica in ihrer Hausarbeit dann doch kein normalverteiltes Outcome. Das was jetzt etwas doof, da er sich auf eine ANOVA gefreut hatte. Dann noch schnell David Bowie auf das Ohr und los gehts. Prinzipiell ginge das auch irgendwie, aber nun möchte ihre Betreuerin gerne einen $\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Jessica hatte sich in einen Leistungssteigerungsversuch $n = 140$ Beobachtungen von Fleischrindern angeschaut. Dabei hat sie als Behandlung \textit{Automatische Fütterung [ja/nein]} bestimmt und zum anderen die Variable \textit{Schlachtgewicht im Zielbereich [ja/nein]} ermittelt. Jetzt muss Jessica mal schauen, wie sie das jetzt rechnet. Eigentlich wollte Jessica nachher noch zum Sport. Um Rad zu fahren geht Jessica dann später nochmal raus. Echte Entspannung.
 
 \vspace{5Ex}
 
 \begin{center}
-  \Large
-  \begin{tabular}{c|l|l|l|l|l|c}
-\textit{f4verband}     & \textbf{trifft gar} & \textbf{trifft} & \textbf{weder} & \textbf{trifft} & \textbf{trifft} & \\
- \phantom{\textbf{Pestizid}}    & \textbf{nicht zu} & \textbf{nicht zu} & \textbf{noch} & \textbf{zu} & \textbf{voll zu} & \\
+  \huge
+  \begin{tabular}{c|l|l|c}
+     & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
     \hline
-   \textbf{ja}  & 3  & 8  &  12  & 21  & 11  &   \strut\\[4Ex]
+    \phantom{\textbf{Pestizid (ja)}} & 38  & 21  &     \strut\\
     \hline
-    \textbf{nein} & 5  & 7  & 13  & 25  & 9  &      \strut\\[4Ex]
+    \phantom{\textbf{Pestizid (ja)}} & 43  & 38  &      \strut\\
     \hline
-     \phantom{\textbf{Pestizid}} & \phantom{\textbf{trifft gar}}  & \phantom{\textbf{trifft gar}}  &  \phantom{\textbf{trifft gar}} &  \phantom{\textbf{trifft gar}} &  \phantom{\textbf{trifft gar}} &  \phantom{100} \strut\\
+     \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
   \end{tabular}
 \end{center}
 
 \vspace{5Ex}
 
-Leider kennt sich Jessica mit der Berechnung eines $\mathcal{X}^2$-Test auf einer Frage in einem Fragebogen überhaupt nicht aus. Deshalb braucht sie bei der Erstellung Ihre Hilfe!
+Leider kennt sich Jessica mit der Berechnung eines $\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht sie bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
 \item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
-\item Berechnen Sie die Teststatistik $\mathcal{X}^2_{D}$ eines Chi-Quadrat-Test! \textit{Ignorieren Sie Zellbelegungen \underline{kleiner gleich} fünf in der Berechnung von $\mathcal{X}^2_{D}$ und Runden Sie den erwarteten Wert $E$ ganzzahlig!} \textbf{(2 Punkte)}
+\item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test! \textbf{(3 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $\mathcal{X}^2_{\alpha = 5\%} = 11.56$! Begründen Sie Ihre Antwort!
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 5.61$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
-\item Visualisieren Sie die 2x5 Kreuztabelle \textit{ohne} die Berücksichtigung der Antwortkategorie 'weder noch'! \textbf{(2 Punkte)}
-\item Berechnen Sie den Effektschätzer $Cramers\; V$ auf der 2x5 Kreuztabelle! \textbf{(1 Punkt)}
+\item Berechnen Sie den Effektschätzer $Cramers\; V$ auf der 2x2 Kreuztabelle! \textbf{(1 Punkt)}
+\item Welchen Wertebereich kann der Effektschätzer $Cramers\; V$ annehmen? Wann liegt kein Effekt und wann ein starker Effekt vor? \textbf{(2 Punkte)}
 \item Interpretieren Sie den berechneten Effektschätzer $Cramers\; V$ unter Berücksichtigung der Fragestellung! \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
 % -----------------------------------------------------------------------
 
-\section{Aufgabe \hfill (11 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -4498,11 +4497,11 @@ Leider kennt sich Jessica mit der Berechnung eines $\mathcal{X}^2$-Test auf eine
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Alex.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/IcjUIoEo0rY}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/LzAAdJPH4ZU}{\includegraphics[width = 2cm]{img/youtube}}
 \end{minipage}
 \vspace{-3Ex}
 \fi
@@ -4511,39 +4510,40 @@ Leider kennt sich Jessica mit der Berechnung eines $\mathcal{X}^2$-Test auf eine
 
 
 \ifcollection
-\paragraph{Den Chi-Quadrat-Test mit Effektmaß berechnen}
+\paragraph{Den Chi-Quadrat-Test in einem Fragebogen berechnen}
 \fi
 
-Am Ende hätte Tina dann doch einen normalverteilten Endpunkt in ihrer Hausarbeit nehmen sollen. Vor ihr liegen jetzt die Daten von zwei Variablen als Kategorien oder wie es in \Rlogo so schön heißt, als Faktoren. Aber immerhin, hofft sie das was bei den Daten rausgekommen ist. Dann noch schnell Tocotronic auf das Ohr und los gehts. Gezählt hat Tina einiges mit $n = 110$ Beobachtungen von Milchvieh. Zum einen hat sie als Behandlung \textit{Klimakontrolle [ja/nein]} bestimmt und zum anderen die Variable \textit{Gewichtszuwachs erreicht [ja/nein]} ermittelt. Nun möchte ihr Betreuer gerne einen $\mathcal{X}^2$-Test auf einer $2x2$-Kreuztabelle berechnet bekommen. Eigentlich wollte Tina nachher noch einen Film schauen. Das Verrückte ist, dass die Spinne Indiana Jones wirklich liebt. Das ist Tina sehr recht, denn sie braucht Entspannung.
+Alex hatte sich gleich von Beginn an in seinem Projektbericht für eine Umfrage im Marketing interessiert. Jetzt geht es um den Haupt- und Nebenerwerb von Erlebnishöfen in Norddeutschland. Viele Höfe haben angefangen auch Großkatzen zu halten, damit mehr Kunden auf die Höfe kommen. Für den Verband der Großkatzenbesitzer e.V. möchte er nun einen Fragebogen zur Zukunftsfähigkeit Schritt für Schritt auswerten. Dabei teilt er zuerst die Antwortenden in die beiden Gruppen 'Höfe mit Großkatzen [ja]' und 'Höfe mit Großkatzen [nein]' ein. Daraufhin möchte er für folgende Frage \textit{f4verband} einmal auswerten, ob es einen Unterschied zwischen den beiden Höfen mit oder ohne Großkatzen gibt. \begin{center}\textit{Sehen Sie die Haltung von Großkatzen als eine kulturelle Bereicherung?}\end{center}Alex krazt sich an seinem Kopf. Wie soll man eine Tabelle mit so vielen Zahlen sinnvoll auswerten? Schnell noch ein paar Gummibärchen einwerfen und los gehts!
 
 \vspace{5Ex}
 
 \begin{center}
-  \huge
-  \begin{tabular}{c|l|l|c}
-     & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} & \phantom{\textbf{Erkrankt (ja)}} \strut\\
+  \Large
+  \begin{tabular}{c|l|l|l|l|l|c}
+\textit{f4verband}     & \textbf{trifft gar} & \textbf{trifft} & \textbf{weder} & \textbf{trifft} & \textbf{trifft} & \\
+ \phantom{\textbf{Pestizid}}    & \textbf{nicht zu} & \textbf{nicht zu} & \textbf{noch} & \textbf{zu} & \textbf{voll zu} & \\
     \hline
-    \phantom{\textbf{Pestizid (ja)}} & 24  & 11  &     \strut\\
+   \textbf{ja}  & 11  & 25  &  8  & 4  & 3  &   \strut\\[4Ex]
     \hline
-    \phantom{\textbf{Pestizid (ja)}} & 23  & 52  &      \strut\\
+    \textbf{nein} & 1  & 11  & 25  & 9  & 4  &      \strut\\[4Ex]
     \hline
-     \phantom{100} & \phantom{100}  & \phantom{100}  &  \phantom{100}  \strut\\
+     \phantom{\textbf{Pestizid}} & \phantom{\textbf{trifft gar}}  & \phantom{\textbf{trifft gar}}  &  \phantom{\textbf{trifft gar}} &  \phantom{\textbf{trifft gar}} &  \phantom{\textbf{trifft gar}} &  \phantom{100} \strut\\
   \end{tabular}
 \end{center}
 
 \vspace{5Ex}
 
-Leider kennt sich Tina mit der Berechnung eines $\mathcal{X}^2$-Test für kategoriale Daten überhaupt nicht aus. Deshalb braucht sie bei der Erstellung Ihre Hilfe!
+Leider kennt sich Alex mit der Berechnung eines $\mathcal{X}^2$-Test auf einer Frage in einem Fragebogen überhaupt nicht aus. Deshalb braucht er bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
 \item Ergänzen Sie die Tabelle um die fehlenden Informationen! \textbf{(1 Punkt)} 
-\item Berechnen Sie die Teststatistik eines Chi-Quadrat-Test! \textbf{(3 Punkte)}
+\item Berechnen Sie die Teststatistik $\mathcal{X}^2_{D}$ eines Chi-Quadrat-Test! \textit{Ignorieren Sie Zellbelegungen \underline{kleiner gleich} fünf in der Berechnung von $\mathcal{X}^2_{D}$ und Runden Sie den erwarteten Wert $E$ ganzzahlig!} \textbf{(2 Punkte)}
 \item Treffen Sie eine Entscheidung im Bezug zu der Nullhypothese gegeben
-  einem $\mathcal{X}^2_{\alpha = 5\%} = 6.21$! Begründen Sie Ihre Antwort!
+  einem $\mathcal{X}^2_{\alpha = 5\%} = 15.61$! Begründen Sie Ihre Antwort!
   \textbf{(2 Punkte)}
-\item Berechnen Sie den Effektschätzer $Cramers\; V$ auf der 2x2 Kreuztabelle! \textbf{(1 Punkt)}
-\item Welchen Wertebereich kann der Effektschätzer $Cramers\; V$ annehmen? Wann liegt kein Effekt und wann ein starker Effekt vor? \textbf{(2 Punkte)}
+\item Visualisieren Sie die 2x5 Kreuztabelle \textit{ohne} die Berücksichtigung der Antwortkategorie 'weder noch'! \textbf{(2 Punkte)}
+\item Berechnen Sie den Effektschätzer $Cramers\; V$ auf der 2x5 Kreuztabelle! \textbf{(1 Punkt)}
 \item Interpretieren Sie den berechneten Effektschätzer $Cramers\; V$ unter Berücksichtigung der Fragestellung! \textbf{(1 Punkt)}
 \end{enumerate} 
 \clearpage
@@ -4568,7 +4568,7 @@ Leider kennt sich Tina mit der Berechnung eines $\mathcal{X}^2$-Test für katego
 \vspace{-4Ex}
 \end{flushright}
 \begin{minipage}[t]{0.5\textwidth}
-\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jessica.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Jonas.png}
+\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Paula.png}\hspace{-4mm}\includegraphics[width = 1.3cm]{/Users/kruppajo/work/GitHub/exam/avatare/Tina.png}
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
@@ -4583,32 +4583,31 @@ Leider kennt sich Tina mit der Berechnung eines $\mathcal{X}^2$-Test für katego
 \paragraph{Visualisierung der linearen Regression}
 \fi
 
-'Ich glaube du bringst da was durcheinander. Wir nutzen zwar auch für die ANOVA die Funktion \texttt{lm()} aber hier wollen wir, glaube ich, eine Gerade durch die Punkte zeichnen.', merkt Jessica an. 'Ich sehe keine Punkte...', antwortet Jonas sichtlich übernächtigt. 'Wir müssen die Daten ja auch erst visualisieren!', spricht Jessica sehr deutlich und langsam. Die beiden hatten ein Freilandversuch im Emsland mit Lauch durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: durchschnittliche UV Einstrahlung [UV/d] und Trockengewicht [kg/ha]. Jetzt wollen sie erstmal schauen, ob es einen Zusammenhang gibt.
+'Hä? Hatten wir das als Aufgabe nicht schon mal, das wir aus kontinuierlichen Daten eine Abbildung bauen sollten?', fragt Paula. Tina schaut fragend zurück. 'Kann mich wie immer an nichts erinnern. Können wir trotzdem jetzt erstmal die Daten auswerten? Columbo?', antwortet Tina leicht angespannt. Die beiden hatten einen Leistungssteigerungsversuch im Oldenburger Land mit Schweinen durchgeführt. Dabei wurden die beiden folgenden Variablen gemessen: durchschnittlicher Tagestemperatur [C/d] und Gewichtszuwachs in der 1LW. Jetzt haben die beiden eigentlich alles zusammen. \textit{Eigentlich...}
 
 \begin{table}[!h]
 \centering
 \begin{tabular}{cc}
 \toprule
-Durchschnittliche UV Einstrahlung [UV/d] & Trockengewicht [kg/ha]\\
+Durchschnittlicher Tagestemperatur [C/d] & Gewichtszuwachs in der 1LW\\
 \midrule
-14.9 & 24.9\\
-16.3 & 26.2\\
-13.4 & 21.3\\
-11.3 & 18.3\\
-12.1 & 21.8\\
+19.9 & 29.7\\
+25.8 & 35.2\\
+20.7 & 29.0\\
+24.1 & 35.4\\
+22.3 & 32.1\\
 \addlinespace
-14.9 & 24.0\\
-10.8 & 17.3\\
-16.2 & 23.8\\
-12.8 & 19.5\\
-14.7 & 18.1\\
+29.6 & 38.9\\
+23.1 & 31.1\\
+19.2 & 26.6\\
+19.4 & 23.1\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 
 
-Leider kennen sich Jessica und Jonas mit der linearen Regression für kontinuierliche Daten überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe!
+Leider kennen sich Paula und Tina mit der linearen Regression für kontinuierliche Daten überhaupt nicht aus. Deshalb brauchen beide bei der Erstellung Ihre Hilfe!
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
@@ -5121,7 +5120,7 @@ Leider kennen sich Yuki, Nilufar und Jonas mit dem \textit{Complete randomized d
   \item Skizzieren Sie das faktorielle Versuchsdesign! \textbf{(3 Punkte)}
   \item Skizzieren Sie eine Datentabelle für das faktorielle Versuchsdesign in \Rlogo! \textbf{(2 Punkte)}
   \item Erstellen Sie das statistische Modell in der in \Rlogo üblichen Schreibweise für eine ANOVA! Skizzieren Sie die notwendige Funktionen in \Rlogo! \textbf{(3 Punkte)}
-  \item Skizzieren Sie die weitere Datenanalyse hinsichtlich eines multiplen Gruppenvergleiches! \textbf{(2 Punkte)}
+  \item Skizzieren Sie die weitere Datenanalyse hinsichtlich eines multiplen Gruppenvergleiches in \texttt{\{emmeans\}}! \textbf{(2 Punkte)}
   \item Skizzieren Sie eine mögliche Abbildung im Kontext der wissenschaftlichen Fragestellung! Beschriften Sie die Abbildung! \textbf{(2 Punkte)}
   \item Ergänzen Sie zu der Abbildung ein mögliches Ergebnis des multiplen Gruppenvergleichs! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \end{enumerate}
