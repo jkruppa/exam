@@ -94,7 +94,7 @@ y_val <- lst(pflanze = c("Frischegewicht [kg/ha]",
 
 block <- c("zwei Blöcken", "drei Blöcken") |>  sample(1)
 
-simple <- c("Complete randomized design (CRD)",
+simple <- c("Complete randomized design (CRD) mit drei Wiederholungen",
             "Latin square design",
             str_c("Randomized complete block design (RCBD) mit ", block))  %>% sample(1)
 
