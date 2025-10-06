@@ -58,15 +58,18 @@ Die Lerngruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{na
   \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. Jetzt wollen die vier herausfinden: \textit{"Konnten die Ivenacker den Apfelschimmel Herodot vor dem Zugriff von Napoleon in der 1000-jährigen Eiche verstecken?"} 
 
 <<>>=
-mm_wachstum <- c(0.8, 0.9, 1.0, 1.1, 1.2) %>% sample(1)
-brust_umfang <- c(10.5, 11, 12, 12.5, 13, 14) %>% sample(1)
+today <- as.Date(Sys.Date(), format='%d/%m/%y')
+birth <- c(1022, 1112, 1076, 1098, 1201) |> sample(1)
+age <- lubridate::year(today) - birth
+mm_wachstum <- (c(0.8, 0.9, 1.0, 1.1, 1.2)*2.5) |>  sample(1)
+today_r_cm <- 0 + mm_wachstum/10 * age
+brust_umfang <- round(2*today_r_cm*pi/100)
 year_stolen <- c(1805, 1810, 1815, 1820, 1840) %>% sample(1)
 horse_h <- c(180, 185, 190, 195) %>% sample(1)
 horse_b <- c(85, 90, 95, 75, 80) %>% sample(1)
 horse_l <- c(230, 240, 250, 220) %>% sample(1)
 crit_width <- c(10, 15, 20, 30, 25) %>% sample(1)
 fitting <- c("mit blutiger Nase", "sehr bequem mit Abstand") %>% sample(1)
-
 @
 
 \vspace{1Ex}
@@ -114,7 +117,7 @@ delta_r <- round(r_eiche - r_horse, 2)
 space <- delta_r - crit_width
 
 herodot_solution_kbl <- tibble("1)" = str_c("$d_{", year_stolen ,"} = ", u_napoleon,"cm$"),
-                               "2)" = str_c("r = ", "0 + ", mm_wachstum, " * Baumalter"),
+                               "2)" = str_c("r = ", "0 + ", mm_wachstum, "mm * Baumalter"),
                                "3)" = str_c("$V_{eff} = ", v_h,"m^3$"),
                                "4)" = str_c("$s_{Eiche} = ", delta_r,"cm$"),
                                "5)" = str_c("$s_{Platz} = ", space,"cm$"),
