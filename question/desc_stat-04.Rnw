@@ -87,7 +87,7 @@ effect_switch <- c("einen", "keinen") |> sample(1)
 
 <<boxplot-01, results='asis', echo = FALSE>>=
 data_tbl <- map_dfr(1:length(groups_vec), gen_data) %>%  
-  set_names(c("treatment", "drymatter")) %>%
+  set_names(c("Behandlung", "Messwert")) %>%
   mutate(treatment = factor(treatment, labels = groups_vec)) %>% 
   sample_n(size = nrow(.))
 
@@ -99,7 +99,7 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Boxplots nicht aus. Deshal
 
 \begin{enumerate}
 \item Formulieren Sie die wissenschaftliche Fragestellung! \textbf{(1 Punkt)}
-\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots für die zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen entsprechend! \textbf{(4 Punkte)} 
+\item Zeichnen Sie in \textit{einer} Abbildung die beiden Boxplots für die zwei Behandlungen von \Sexpr{plant}! Beschriften Sie die Achsen der wissenschaftlichen Fragestellung entsprechend! \textbf{(4 Punkte)} 
 \item Wie ist Ihr Vorgehen, wenn Sie eine \textit{gerade} Anzahl an
   Beobachtungen pro Gruppe haben? \textbf{(1 Punkt)}
 \item Beschriften Sie \textit{einen} der beiden Boxplots mit den gängigen

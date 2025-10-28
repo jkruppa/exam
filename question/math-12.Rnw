@@ -86,14 +86,14 @@ ggplot(plot_tbl, aes(time, rsp)) +
 \vspace{-0.75cm}
 
 \begin{enumerate}
-\item Wie lange dauert es in Stunden bis Sie eine kritische Belastung von \Sexpr{crit_ra}$Bq/m^3$ in Ihrem ungelüfteten Kellerraum erreicht haben? \textbf{(2 Punkte)}
+\item Wie lange dauert es in Stunden bis \Sexpr{name} eine kritische Belastung von \Sexpr{crit_ra}$Bq/m^3$ in dem ungelüfteten Kellerraum erreicht hat? \textbf{(2 Punkte)}
 \end{enumerate}
 
 Radon zerfällt mit einer Halbwertszeit von \Sexpr{radon_t}d zu Polonium. Polonium wiederum zerfällt mit einer Halbwertszeit von \Sexpr{polo_t}d zu Blei. Nur Radon und Polonium tragen zur radioaktiven Strahlenbelastung bei.
 
 \begin{enumerate}
   \setcounter{enumi}{1}
-\item Wie lange dauert es in Stunden bis Ihre kritische Radonbelastung von
+\item Wie lange dauert es in Stunden bis die kritische Radonbelastung von
   \Sexpr{crit_ra}$Bq/m^3$ auf unter \Sexpr{low_ra}$Bq/m^3$ gefallen ist?
   \textbf{(4 Punkte)}
 \end{enumerate}
