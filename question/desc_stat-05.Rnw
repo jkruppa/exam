@@ -98,8 +98,8 @@ ques_vec <- c(str_c(sentence_name_vec$sweet_music, " Jetzt heißt es aber erstma
 x_val <- str_replace(x_val, "\\\\", "")
 y_val <- str_replace(y_val, "\\\\", "")
 
-data_tbl <- tibble(x = round(rnorm(sample(9:12, 1), sample(c(15, 20, 25), 1), sample(c(2, 4, 6), 1)), 1),
-                   y = round(sample(c(2:10), 1) + sample(c(0.5, 0.75, 1, 1.15, 1.25), 1) * x + rnorm(length(x), 0, 2), 1)) |>   set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
+data_tbl <- tibble(x = sample(seq(0, 12, by = 0.5), 8),
+                   y = round(sample(seq(1, 4, 0.5), 1) + sample(c(0.5, 0.75, 1, 1.15, 1.25), 1) * x + rnorm(length(x), 0, 2), 1)) |>   set_names(sample(c(str_replace(x_val, "^\\w{1}", toupper), 
                      str_replace(y_val, "^\\w{1}", toupper))))
 
 kable(data_tbl, booktabs = TRUE, align = "c") %>% 
