@@ -24,7 +24,7 @@ avatar1file <- str_c("\\includegraphics[width = 1.3cm]{", avatar_file, "}")
 \end{minipage}
 \begin{minipage}[t]{0.5\textwidth}
 \hfill
-\href{https://youtu.be/fiWGgCX-cE4}{\includegraphics[width = 2cm]{img/youtube}}
+\href{https://youtu.be/fiWGgCX-cE4}{\includegraphics[width = 2cm]{img/caution}}
 \end{minipage}
 \fi
 %% --------------------------------------------------------------------
@@ -55,21 +55,29 @@ today_year <- lubridate::year(Sys.Date())
 name_animal <- c("Frida", "Fridolin") %>% sample(1)
 animal <- c("des Esels", " des Schafs", "des Hängebauchschweins", "der Kuh") %>% sample(1)
 apfel <- c("Jonagoldp", "Boskoopp", "Pink Lady P") %>% sample(1)
-jan <- c(0.4, 0.5, 0.6) %>% sample(1)
+jan <- c(0.7, 0.65, 0.6) %>% sample(1)
 feb <- c(0.75, 0.7, 0.8) %>% sample(1)
 mrz <- c(1.1, 1.2, 1.05) %>% sample(1)
 gamma <- c(30, 40, 50) %>% sample(1)
 n_frid  <- c(120, 230, 180) %>% sample(1)
 n_rent  <- c(140, 210, 190) %>% sample(1)
-jan_temp <- c(0.1, 0.4, 0.3) %>% sample(1)
-feb_temp <- c(1.1, 1.5, 1.2) %>% sample(1)
-mrz_temp <- c(3.1, 2.7, 3.5) %>% sample(1)
-apr_temp <- c(6.1, 5.8, 4.3) %>% sample(1)
+jan_temp <- (c(0.5, 0.4, 0.6)+1) %>% sample(1)
+feb_temp <- (c(1.4, 1.5, 1.6)+1) %>% sample(1)
+mrz_temp <- (c(4.1, 4.2, 4.5)+1) %>% sample(1)
+apr_temp <- (c(6.1, 5.8, 5.9)+1) %>% sample(1)
 weight <- c(1.2, 1.3, 1.5) %>% sample(1)
-glt <- c(190, 200, 210) %>% sample(1)
+glt_day <- str_c(c("10. März ", "15. März ", "20. März ") |> sample(1), today_year)
+
+f_1 <- \(x) jan_temp + ((feb_temp - jan_temp)/31) * x 
+f_2 <- \(x) (mrz_temp - 59 * (mrz_temp - feb_temp)/28) + ((mrz_temp - feb_temp)/28) * x 
+f_3 <- \(x) (apr_temp - 90 * (apr_temp - mrz_temp)/31) + ((apr_temp - mrz_temp)/31) * x 
+
+glt <- (jan * integrate(f_1, 0, 31)$value + feb * 0.4 * integrate(f_2, 31, 59)$value) |> 
+  floor()
+
 @
 
-Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer \Sexpr{animal} \Sexpr{name_animal} und \Sexpr{name}. Grünes Gras unter \Sexpr{name}s Füßen und ein strammer Wind im Gesicht, egal wohin \Sexpr{names(name)} schaut. Ein schmatzendes Geräusch ertönt unter \Sexpr{name}. \Sexpr{name} sinniert, sollte \Sexpr{names(name)} \Sexpr{pronom[6]} weiten Graslandschaften jetzt schon düngen? Dafür benötigt \Sexpr{name} die \textit{Grünlandtemperatur}! Die Grünlandtemperatur (GLT) ist die Summe aller positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von 200$^\circ$ kann mit der Stickstoffdüngung begonnen werden. \Sexpr{name} sieht nicht ein, Geld für einen Agrarmetrologen zu bezahlen, wenn auch Sie mitrechnen können. Also rechnen Sie beide mit folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit $\Sexpr{jan}\times$, Februar mit $\Sexpr{feb}\times$ und März mit
+Wir schreiben das Jahr \Sexpr{today_year}. Dies sind die Abenteuer \Sexpr{animal} \Sexpr{name_animal} und \Sexpr{name}. Grünes Gras unter \Sexpr{name}s Füßen und ein strammer Wind im Gesicht, egal wohin \Sexpr{names(name)} schaut. Ein schmatzendes Geräusch ertönt unter \Sexpr{name}. \Sexpr{name} sinniert, sollte \Sexpr{names(name)} \Sexpr{pronom[6]} weiten Graslandschaften jetzt schon düngen? Dafür benötigt \Sexpr{name} die \textit{Grünlandtemperatur}! Die Grünlandtemperatur (GLT) ist die Summe aller positiven Tagesmitteltemperaturen seit Jahresbeginn. Ab einer GLT von 200$^\circ C$ kann mit der Stickstoffdüngung begonnen werden. \Sexpr{name} sieht nicht ein, Geld für einen Agrarmetrologen zu bezahlen, wenn auch Sie mitrechnen können. Also rechnen Sie beide mit folgenden Informationen zu Monatsmultiplikatoren des GLT-Wertes: Januar mit $\Sexpr{jan}\times$, Februar mit $\Sexpr{feb}\times$ und März mit
 $\Sexpr{mrz}\times$. Sie haben noch im letzten Jahr folgende Temperaturen an den entsprechenden Tagen gemessen.
 
 \begin{center}
@@ -85,21 +93,30 @@ $\Sexpr{mrz}\times$. Sie haben noch im letzten Jahr folgende Temperaturen an den
 \end{tabular}
 \end{center}
 
-\begin{enumerate}
-\item Erstellen Sie eine Skizze aus den Informationen aus der Temperaturtabelle! \textit{Gehen Sie von einem linearen Zusammenhang aus.} \textbf{(1 Punkt)}
-\item Stellen Sie die linearen Funktionen $f_1(t)$, $f_2(t)$ und $f_3(t)$ aus der obigen Temperaturtabelle auf! \textit{Nehmen Sie zur Vereinfachung den 01. Jan als y-Achsenabschnitt für $f_1(t)$ an.}  \textbf{(2 Punkte)}
-\item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ für Ihre linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(2 Punkte)}
-\item Osterglocken beginnen ab einer GLT von \Sexpr{glt}$^\circ C$ zu blühen. An welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der Fall? \textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.} \textbf{(3 Punkte)}
-\end{enumerate}
-
-Auf dem Weg zu \Sexpr{name}s \Sexpr{apfel}lantage werden Sie beide auf dem Trecker von einer Gruppe elektrifizierter Rentner abgedrängt. Der Trecker muss wieder aus dem Graben! \Sexpr{name_animal} und die elektrifizierten Rentner ziehen an zwei, separaten Seilen. Dabei zieht \Sexpr{name_animal} mit $\Sexpr{n_frid}N$. Die elektrifizierter Rentner bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
-
-\textit{Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer Skizze entsprechend!}
+\textit{Ignorieren Sie ein eventuelles Schaltjahr in Ihrer Berechnung.}
 
 \begin{enumerate}
-  \setcounter{enumi}{4}  
-\item Im ersten Versuch legen Sie das Seil für \Sexpr{name_animal} lotrecht über einen Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie über die Böschung hinweg am anderen Seil. Welche Kraft wird aufgebracht?  \textbf{(2 Punkte)}
-\item Im zweiten Versuch ziehen \Sexpr{name_animal} und die Rentner mit einem $\Sexpr{gamma}^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft wird aufgebracht? \textbf{(2 Punkte)}
+\item Erstellen Sie eine Skizze aus den Informationen aus der Temperaturtabelle! Beschriften Sie die Achsen entsprechend! \textit{Gehen Sie von einem linearen Zusammenhang innerhalb der Monate aus.} \textbf{(1 Punkt)}
+\item Stellen Sie die linearen Funktionen $f_1(t)$, $f_2(t)$ und $f_3(t)$ aus der obigen Temperaturtabelle auf! \textit{Nehmen Sie zur Vereinfachung den 01. Januar \Sexpr{today_year -1} als y-Achsenabschnitt für $f_1(t)$ an.}  \textbf{(3 Punkte)}
+\item Bestimmen Sie die Stammfunktionen $F_1(t)$, $F_2(t)$ und $F_3(t)$ für die linearen Funktionen aus der obigen Temperaturtabelle!  \textbf{(2 Punkte)}
 \end{enumerate}
+
+Nachdem \Sexpr{name} die Stammfunktionen vorliegen hat, kann jetzt mit den GLT-Werten als Fläche unter der Kurve gerechnet werden. 
+
+\begin{enumerate}
+  \setcounter{enumi}{3} 
+\item Am \Sexpr{glt_day} hat \Sexpr{name} Geburtstag. Welchen GLT-Wert wird \Sexpr{name} am \Sexpr{glt_day} vermutlich erreicht haben? \textbf{(3 Punkte)}
+\item \Sexpr{name} liebt Osterglocken.  Osterglocken beginnen ab einer GLT von \Sexpr{glt}$^\circ C$ zu blühen. An welchem Tag im 1. Quartal des Jahres \Sexpr{today_year -1} war dies der Fall?  \textbf{(3 Punkte)}
+\end{enumerate}
+
+%Auf dem Weg zu \Sexpr{name}s \Sexpr{apfel}lantage werden Sie beide auf dem Trecker von einer Gruppe elektrifizierter Rentner abgedrängt. Der Trecker muss wieder aus dem Graben! \Sexpr{name_animal} und die elektrifizierten Rentner ziehen an zwei, separaten Seilen. Dabei zieht \Sexpr{name_animal} mit $\Sexpr{n_frid}N$. Die elektrifizierter Rentner bringen eine Kraft von $\Sexpr{n_rent}N$ auf.\\
+
+%\textit{Lösen Sie diese Aufgabe mit Hilfe einer aussagekräftigen Skizze der Kraftvektoren. Bezeichnen Sie die Kraftvektoren und die Winkel Ihrer Skizze entsprechend!}
+
+%\begin{enumerate}
+%  \setcounter{enumi}{4}  
+%\item Im ersten Versuch legen Sie das Seil für \Sexpr{name_animal} lotrecht über einen Ast oberhalb des Treckers. Die Rentner ziehen in einer geraden Linie über die Böschung hinweg am anderen Seil. Welche Kraft wird aufgebracht?  \textbf{(2 Punkte)}
+%\item Im zweiten Versuch ziehen \Sexpr{name_animal} und die Rentner mit einem $\Sexpr{gamma}^\circ$ Winkel mit ihrem Seil an dem Trecker. Welche Kraft wird aufgebracht? \textbf{(2 Punkte)}
+%\end{enumerate}
 
 
