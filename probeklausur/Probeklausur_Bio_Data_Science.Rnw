@@ -41,6 +41,7 @@ multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
 program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
+hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 
 ## glue them
 glue_questions_vec <- c(program_questions_vec,
@@ -54,15 +55,15 @@ glue_questions_vec <- c(program_questions_vec,
                         experimental_questions_vec,
                         forsch_lern_questions_vec,
                         math_questions_vec,
-                        tier_questions_vec)
+                        tier_questions_vec,
+                        hausarbeit_vec)
 
 ## get the wanted questions for the exam
 source(file.path(exam_path, "probeklausur/questions_vec.R"))
 wanted_questions <- wanted_questions_lst %>% unlist()
 
 text_questions_vec <- glue_questions_vec %>%
-  magrittr::extract(wanted_questions_lst$text - 50) %>%
-  sample()
+  magrittr::extract(wanted_questions_lst$text - 50) 
 mc_questions_vec <- str_subset(questions_vec, "mc", negate = FALSE)  %>%
   magrittr::extract(wanted_questions_lst$mc) %>%
   sample()
@@ -110,6 +111,13 @@ grade_tbl <- pre_grade_tbl %>%
 ## random ID
 exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |> 
   str_c(collapse = "\\!")
+
+## hausarbeit tabellen name
+if(any(str_detect(text_questions_vec, "hausarbeit"))){
+  seventeen <- "Hausarbeit"
+} else {
+  seventeen <- 17
+}
 
 ## global parameters
 naming_global <- c(rep(c("Jessica", "Paula", "Tina", "Nilufar"), each = 2), "Yuki",
@@ -335,7 +343,7 @@ sentence_func <- \(name, pronom, attr_vec){
     \large
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
-      \textbf{Aufgabe} & 11 & 12 & 13 & 14 & 15 & 16 & 17 \strut\\
+      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{\Sexpr{seventeen}} \strut\\
       \hline
       \textbf{Punkte} & 
       \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
