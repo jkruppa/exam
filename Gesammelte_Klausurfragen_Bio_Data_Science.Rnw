@@ -9,7 +9,7 @@ pacman::p_load(tidyverse, simstudy, knitr, xtable, kableExtra, readxl, plyr,
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
-set.seed(20250901) ## savety seed 
+set.seed(20260202) ## savety seed 
 ##
 opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
@@ -318,7 +318,7 @@ sentence_func <- \(name, pronom, attr_vec){
   \item schreiben Sie bitte groß genug und leserlich mit einem dokumentenechten Stift (kein Bleistift).
   \item erstellen Sie Abbildungen in angemessener Größe und achten Sie auf eine klare Erkennbarkeit. Nutzen Sie bei Platzmangel bitte ein separates Blatt.
   \end{itemize}
-  \item Verstöße können mit einem Punktabzug geahndet werden:  \hfill \msquare\; \textbf{-2 Punkte}
+  \item Verstöße können mit einem Punktabzug geahndet werden:  \hfill \msquare\; \textbf{(-2 Punkte)}
   \end{itemize}
 \end{graybox}
 \vfill
