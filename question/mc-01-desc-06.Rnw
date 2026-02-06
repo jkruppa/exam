@@ -49,7 +49,7 @@ ggplot(data.frame(x = c(-3.25, 3.25)), aes(x)) +
 
 <<mc-distribution-02-b, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die Fläche zwischen $-2\\sigma$ und $2\\sigma$ ist 0.95 und 95\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Verteilung.',
+right_vec <- c('Die Fläche zwischen $-2\\sigma$ und $2\\sigma$ ist 0.95 und 95\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm 2 \\sigma$ in der obigen Verteilung.',
                 'Die Fläche zwischen $-1\\sigma$ und $1\\sigma$ ist 0.68 und 68\\% der Beobachtungen liegen somit zwischen $\\bar{y}\\pm\\sigma$ in der obigen Abbildung.',
                'Es liegen 95\\% der Beobachtungen zwischen $\\bar{y}\\pm 2 \\sigma$. Angezeigt durch die Fläche zwischen $-2\\sigma$ und $2\\sigma$ in der obigen Verteilung.',
                'Es liegen 68\\% der Beobachtungen zwischen $\\bar{y}\\pm 1 \\sigma$. Angezeigt durch die Fläche zwischen $-1\\sigma$ und $1\\sigma$ in der obigen Abbildung.') |> sample(1)
