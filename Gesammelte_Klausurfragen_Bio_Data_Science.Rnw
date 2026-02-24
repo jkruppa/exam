@@ -371,11 +371,13 @@ sentence_func <- \(name, pronom, attr_vec){
       dieser Seite.}
   \end{itemize}
 
+\vspace{2Ex}
+
 \begin{center}
-  \large
+  \huge
   \begin{tabular}{|l|c|c|c|c|c?c|}
     \hline
-    & \textbf{A} & \textbf{B} & \textbf{C} & \textbf{D} & \textbf{E} & $\boldsymbol{\checkmark}$\strut\\
+    & \textbf{\;A\;} & \textbf{\;B\;} & \textbf{\;C\;} & \textbf{\;D\;} & \textbf{\;E\;} & $\boldsymbol{\;\checkmark\;}$\strut\\
     \hline
     \textbf{Aufgabe 1} &   &   &   &   &   & \strut\\
     \hline
@@ -400,6 +402,8 @@ sentence_func <- \(name, pronom, attr_vec){
   \end{tabular}
 \end{center}
 
+\vspace{2Ex}
+
 \begin{itemize}
 \item Es sind \rule[0ex]{2em}{.4pt}\, von 20 Punkten erreicht worden.
 \end{itemize}
@@ -408,23 +412,25 @@ sentence_func <- \(name, pronom, attr_vec){
 \vfill
 
 \begin{graybox}{Rechen- und Textaufgaben}
+\vspace{2Ex}
   \begin{center}
-    \large
+    \huge
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
       \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} \strut\\
       \hline
       \textbf{Punkte} & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[2]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[3]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[4]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[5]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\Large\textcolor{gray!70}{\Sexpr{points_vec[7]}}\hspace{1Ex} \strut\\
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[2]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[3]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[4]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[5]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  & 
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[7]}}\hspace{1Ex} \strut\\
       \hline
   \end{tabular}
 \end{center}
+\vspace{2Ex}
 \begin{itemize}
 \item Es sind \rule[0ex]{2em}{.4pt}\, von \Sexpr{textpoints} Punkten erreicht worden.
 \end{itemize}
