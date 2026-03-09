@@ -77,12 +77,15 @@ fitting <- c("mit blutiger Nase", "sehr bequem mit Abstand") %>% sample(1)
 
 \vspace{1Ex}
 
-Helfen Sie der Lerngruppe \textit{\Sexpr{lerngruppe}} bei der Beantwortung der Forschungsfrage! Gehen Sie von einem radialen Wachstum der 1000-jährigen Eiche von $\Sexpr{mm_wachstum}mm$ pro Jahr aus. Es ist bekannt, dass die Eiche im Jahr 2022 einen Umfang von $\Sexpr{brust_umfang}m$ in Brusthöhe hatte.
+Helfen Sie der Lerngruppe \textit{\Sexpr{lerngruppe}} bei der Beantwortung der Forschungsfrage! Es ist bekannt, dass die Eiche im Jahr 2022 einen Umfang von $\Sexpr{brust_umfang}m$ in Brusthöhe hatte.
 
 \begin{enumerate}
-\item Wie groß war der Durchmesser in $m$ der Eiche im Jahr $\Sexpr{year_stolen}$ als Herodot in der Eiche versteckt werden sollte? \textbf{(2 Punkte)}
-\item Erstellen Sie die lineare Gradengleichung für das radiale Wachstum! \textbf{(1 Punkt)}
 \item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen exponentiellen Zusammenhang für das Wachstum der 1000-jährigen Eiche! \textbf{(1 Punkt)}
+\item Wie groß war der \uline{Durchmesser in $m$} der Eiche im Jahr $\Sexpr{year_stolen}$ als Herodot in der Eiche versteckt werden sollte? \textbf{(1 Punkt)}
+\begin{enumerate}
+\item Visualisieren Sie in einem Koordinatenkreuz den zeitlichen Zusammenhang vom Wachstum des Umfangs! \textbf{(1 Punkt)}
+\item Erstellen Sie für die Lösung der Frage die lineare Gradengleichung für das Wachstum des Umfangs! \textbf{(1 Punkt)}
+\begin{enumerate}
 \end{enumerate}
  
 Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexpr{horse_b}$cm sowie eine Länge von  $\Sexpr{horse_l}$cm.
@@ -92,7 +95,7 @@ Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexp
 \item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches Herodot in der 1000-jährigen Eiche einnehmen würde! \textbf{(2 Punkte)}
 \end{enumerate}
 
-Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche $\Sexpr{fitting}$ um die eigene Achse drehen konnte.
+Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche um die eigene Achse drehen konnte.
 
 \begin{enumerate}
   \setcounter{enumi}{3}
