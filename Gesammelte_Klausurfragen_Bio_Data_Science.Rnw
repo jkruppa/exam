@@ -18,7 +18,7 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
 if(str_detect(path_home(), "^C:")){
   exam_path <- file.path(path_home(), "Documents/GitHub/exam")
 } else {
-  exam_path <- file.path(path_home(), "work/GitHub/exam")  
+  exam_path <- file.path(path_home(), "GitHub/exam")  
 }
 init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
