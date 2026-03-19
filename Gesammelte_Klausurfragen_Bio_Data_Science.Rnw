@@ -32,7 +32,7 @@ questions_vec <- list.files(question_path,
 text_questions_vec <- str_subset(questions_vec, "mc|math|tier|stat_test", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
 math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
-tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
+## tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
 stat_test_questions_vec <- str_subset(questions_vec, "stat_test-", negate = FALSE)
 desc_stat_questions_vec <- str_subset(questions_vec, "desc_stat-", negate = FALSE)
 ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
@@ -42,7 +42,7 @@ linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
-program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
+## program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
 hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 
 ## get the points per question
@@ -503,13 +503,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 % -----------------------------------------------------------------------
 \clearpage
 % -----------------------------------------------------------------------
-\part{Programmieren in R}
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(program_questions_vec[1])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(program_questions_vec[2])} 
-\clearpage
 % -----------------------------------------------------------------------
 \part{Deskriptive Statistik \& Explorative Datenanalyse}
 % -----------------------------------------------------------------------
@@ -738,14 +731,8 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \Sexpr{knit_child(math_questions_vec[21])} 
 \clearpage
 % -----------------------------------------------------------------------
-\part{Angewandte Nutztier- und Pflanzenwissenschaften (M.Sc.)}
-% -----------------------------------------------------------------------  
-\Sexpr{knit_child(tier_questions_vec[1])}
-\Sexpr{knit_child(tier_questions_vec[2])}
-\Sexpr{knit_child(tier_questions_vec[3])} 
-\clearpage
-% -----------------------------------------------------------------------
 \part{Platzhalter}
+% -----------------------------------------------------------------------
 \Sexpr{knit_child(hausarbeit_vec[1])} 
 \clearpage
 % -----------------------------------------------------------------------
