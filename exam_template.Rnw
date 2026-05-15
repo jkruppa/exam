@@ -20,7 +20,7 @@ opts_chunk$set(fig.width=7, fig.height=7, fig.path='img/',
                echo=FALSE, warning=FALSE, message=FALSE, 
                cache.path='cache/', fig.pos='H')
 ## get the paths
-exam_path <- file.path(path_home(), "work/GitHub/exam")
+exam_path <- file.path(path_home(), "GitHub/exam")
 init_path <- file.path(exam_path, "init")
 question_path <- file.path(exam_path, "question")
 img_path <- file.path(question_path, "img")
@@ -37,7 +37,7 @@ questions_vec <- list.files(question_path,
 text_questions_vec <- str_subset(questions_vec, "mc|math|tier|stat_test", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
 math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
-tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
+##tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
 stat_test_questions_vec <- str_subset(questions_vec, "stat_test-", negate = FALSE)
 desc_stat_questions_vec <- str_subset(questions_vec, "desc_stat-", negate = FALSE)
 ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
@@ -47,11 +47,11 @@ linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
-program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
+##program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
 hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 
 ## glue them
-glue_questions_vec <- c(program_questions_vec,
+glue_questions_vec <- c(##program_questions_vec,
                         desc_stat_questions_vec,
                         stat_test_questions_vec,
                         ttest_questions_vec,
@@ -62,7 +62,7 @@ glue_questions_vec <- c(program_questions_vec,
                         experimental_questions_vec,
                         forsch_lern_questions_vec,
                         math_questions_vec,
-                        tier_questions_vec,
+                        ##tier_questions_vec,
                         hausarbeit_vec)
 
 text_questions_vec <- glue_questions_vec %>%
@@ -321,10 +321,10 @@ sentence_func <- \(name, pronom, attr_vec){
 \vspace{2Ex}
 
 \begin{center}
-  \huge
+  \Large
   \begin{tabular}{|l|c|c|c|c|c?c|}
     \hline
-    & \textbf{\;A\;} & \textbf{\;B\; & \textbf{\;C\;} & \textbf{\;D\;} & \textbf{\;E\;} & $\boldsymbol{\;\checkmark\;}$\strut\\
+    & \textbf{\;A\;} & \textbf{\;B\;} & \textbf{\;C\;} & \textbf{\;D\;} & \textbf{\;E\;} & $\boldsymbol{\;\checkmark\;}$\strut\\
     \hline
     \textbf{Aufgabe 1} &   &   &   &   &   & \strut\\
     \hline
@@ -364,7 +364,7 @@ sentence_func <- \(name, pronom, attr_vec){
   \item Die Tabelle wird vom Dozenten ausgefüllt.
   \end{itemize}
   \begin{center}
-    \huge
+    \Large
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
       \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{\Sexpr{seventeen}} \strut\\

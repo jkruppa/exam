@@ -30,7 +30,7 @@ questions_vec <- list.files(question_path,
 text_questions_vec <- str_subset(questions_vec, "mc|math|tier|stat_test", negate = TRUE)
 mc_questions_vec <- str_subset(questions_vec, "mc-", negate = FALSE)
 math_questions_vec <- str_subset(questions_vec, "math-", negate = FALSE)
-tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
+##tier_questions_vec <- str_subset(questions_vec, "tier-", negate = FALSE)
 stat_test_questions_vec <- str_subset(questions_vec, "stat_test-", negate = FALSE)
 desc_stat_questions_vec <- str_subset(questions_vec, "desc_stat-", negate = FALSE)
 ttest_questions_vec <- str_subset(questions_vec, "/ttest-", negate = FALSE)
@@ -40,11 +40,11 @@ linreg_questions_vec <- str_subset(questions_vec, "/linreg-", negate = FALSE)
 multcomp_questions_vec <- str_subset(questions_vec, "/multcomp-", negate = FALSE)
 experimental_questions_vec <- str_subset(questions_vec, "/experiment-", negate = FALSE)
 forsch_lern_questions_vec <- str_subset(questions_vec, "/forsch-", negate = FALSE)
-program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
+##program_questions_vec <- str_subset(questions_vec, "/program-", negate = FALSE)
 hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 
 ## glue them
-glue_questions_vec <- c(program_questions_vec,
+glue_questions_vec <- c(##program_questions_vec,
                         desc_stat_questions_vec,
                         stat_test_questions_vec,
                         ttest_questions_vec,
@@ -55,7 +55,7 @@ glue_questions_vec <- c(program_questions_vec,
                         experimental_questions_vec,
                         forsch_lern_questions_vec,
                         math_questions_vec,
-                        tier_questions_vec,
+                        ##tier_questions_vec,
                         hausarbeit_vec)
 
 ## get the wanted questions for the exam
@@ -238,14 +238,29 @@ sentence_func <- \(name, pronom, attr_vec){
 \clearpage
 % -----------------------------------------------------------------------
 
-\begin{graybox}{Erlaubte Hilfsmittel f{\"u}r die Klausur}
+\begin{graybox}{Erlaubte Hilfsmittel}
   \vspace{1Ex}
   \begin{itemize}
-  \item Normaler Taschenrechner ohne M{\"o}glichkeit der Kommunikation mit anderen
-    Ger{\"a}ten - also ausdr{\"u}cklich kein Handy!
+  \item Normaler Taschenrechner ohne Möglichkeit der Kommunikation mit anderen
+    Geräten! Ausdrücklich kein Handy!
   \item Eine DIN A4-Seite als beidseitig, selbstgeschriebene,
-    handschriftliche Formelsammlung - keine digitalen Ausdrucke. 
-  \item \textbf{You can answer the questions in English without any consequences.}  
+    handschriftliche Formelsammlung. Keine digitalen Ausdrucke! 
+  \item \textit{You can answer the questions in English without any consequences.}  
+  \end{itemize}
+\end{graybox}
+\vfill
+
+\begin{graybox}{Formalia}
+  \vspace{1Ex}
+  \begin{itemize}
+  \item Um eine faire Korrektur zu gewährleisten,
+  \begin{itemize}
+  \item \textcolor{red}{ist die Verwendung eines roten Farbstiftes ist nicht gestattet. Es ist die Korrekturfarbe.}
+  \item schreiben Sie bitte groß genug und leserlich mit einem dokumentenechten Stift (kein Bleistift).
+  \item nicht zwischen die Fragezeilen schreiben! Die Nutzung des Aufgabentextes für Antworten führt zu Punktabzug.
+  \item erstellen Sie Abbildungen in angemessener Größe und achten Sie auf eine klare Erkennbarkeit. Nutzen Sie bei Platzmangel bitte ein separates Blatt.
+  \end{itemize}
+  \item Verstöße können mit einem Punktabzug geahndet werden:  \hfill \msquare\; \textbf{(-2 Punkte)}
   \end{itemize}
 \end{graybox}
 \vfill
@@ -365,6 +380,7 @@ sentence_func <- \(name, pronom, attr_vec){
 \clearpage
 % -----------------------------------------------------------------------
 
+{\small
 \Sexpr{knit_child(mc_questions_vec[1])} 
 \Sexpr{knit_child(mc_questions_vec[2])} 
 \Sexpr{knit_child(mc_questions_vec[3])} 
@@ -375,6 +391,7 @@ sentence_func <- \(name, pronom, attr_vec){
 \Sexpr{knit_child(mc_questions_vec[8])}
 \Sexpr{knit_child(mc_questions_vec[9])} 
 \Sexpr{knit_child(mc_questions_vec[10])}
+}
 
 % -----------------------------------------------------------------------
 \clearpage
