@@ -1,30 +1,41 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.3.9)  19 MAR 2026 20:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.5.16)  16 MAY 2026 20:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**/Users/jokruppa/GitHub/exam/Gesammelte_Klausurfragen_Bio_Data_Science.tex
-(/Users/jokruppa/GitHub/exam/Gesammelte_Klausurfragen_Bio_Data_Science.tex
+**Gesammelte_Klausurfragen_Bio_Data_Science.tex
+(./Gesammelte_Klausurfragen_Bio_Data_Science.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrartcl.cls
-Document Class: scrartcl 2026/02/02 v3.49.2 KOMA-Script document class (article)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrartcl.cls
+Document Class: scrartcl 2026/02/02 v3.49.2 KOMA-Script document class (article
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrkbase.sty
+Package: scrkbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-dependent
+ basics and keyval usage)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2026/02/02 v3.49.2 KOMA-Script package (KOMA-Script-independen
+t basics and keyval usage)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2026/02/02 v3.49.2 KOMA-Script package (file load hooks)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
-Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hooks)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/scrlogo.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty
+Package: scrlfile-hook 2026/02/02 v3.49.2 KOMA-Script package (using LaTeX hook
+s)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/scrlogo.sty
 Package: scrlogo 2026/02/02 v3.49.2 KOMA-Script package (logo)
-))) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
+)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks17
 )
 Applying: [2021/05/01] Usage of raw or classic option list on input line 254.
-Already applied: [0000/00/00] Usage of raw or classic option list on input line 370.
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/tocbasic.sty
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 370.
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2026/02/02 v3.49.2 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip49
 \scr@dte@tocline@numbox=\box53
@@ -32,6 +43,7 @@ Package: tocbasic 2026/02/02 v3.49.2 KOMA-Script package (handling toc-files)
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 141.
+
 
 Package scrartcl Warning: You've used deprecated option `9pt'.
 (scrartcl)                Usage of this option indicates an old document
@@ -66,10 +78,12 @@ Class scrartcl Warning: deprecated option `enabledeprecatedfontcommands'.
 (scrartcl)              longer. Therefore usage of this class option also
 (scrartcl)              is not recommended.
 
-Class scrartcl Info: File `size9.clo' used to setup font sizes on input line 2489.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/extsizes/size9.clo
+Class scrartcl Info: File `size9.clo' used to setup font sizes on input line 24
+89.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/extsizes/size9.clo
 File: size9.clo 1999/11/11 v1.4a NON-Standard LaTeX file (size option)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/koma-script/typearea.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2026/02/02 v3.49.2 KOMA-Script package (type area)
 \ta@bcor=\skip50
 \ta@div=\count275
@@ -84,12 +98,14 @@ Package typearea Info: You've used standard option `a4paper'.
 \ta@temp=\skip53
 \footheight=\skip54
 
+
 Package typearea Warning: DIV for 9.0pt and used papersize
 (typearea)                not defined!
 (typearea)                Using DIV=calc.
 
 
-Package typearea Info: DIV calculation for classic typearea. on input line 1810.
+Package typearea Info: DIV calculation for classic typearea. on input line 1810
+.
 
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 6
@@ -160,28 +176,35 @@ Class scrartcl Info: Using old \@makefntext due to compatibility level
 (scrartcl)           less than 3.22 on input line 6456.
 Class scrartcl Info: Redefining `\numberline' on input line 6469.
 \bibindent=\dimen148
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics/trig.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -191,42 +214,61 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip65
 \fb@frw=\dimen151
 \fb@frh=\dimen152
 \FrameRule=\dimen153
 \FrameSep=\dimen154
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/base/alltt.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 2024/07/07 v2.0g defines alltt environment
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2026/03/08 v26.4 The multilingual framework for LuaLaTeX, pdfLaT
+eX and XeLaTeX
 \babel@savecnt=\count284
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input line 2080.
-LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input line 2082.
-LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input line 2083.
-LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) on input line 2084.
-LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) on input line 2086.
-LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input li
+ne 2078.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding OT1) on input li
+ne 2080.
+LaTeX Encoding Info:    Redeclaring text command \ij (encoding T1) on input lin
+e 2082.
+LaTeX Encoding Info:    Redeclaring text command \IJ (encoding T1) on input lin
+e 2083.
+LaTeX Encoding Info:    Ignoring declaration for text command \ij (encoding ?) 
+on input line 2084.
+LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) 
+on input line 2086.
+LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) 
+on input line 2111.
 \U@D=\dimen155
-\l@unhyphenated=\language9
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
+\l@unhyphenated=\language91
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count285
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/invalid/babel-ngerman.tex)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel/locale/invalid/babel-nger
+man.tex)
 Package babel Info: Importing font and identification data for ngerman
 (babel)             from babel-de.ini. Reported on input line 4330.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/babel-german/ngerman.ldf
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel-german/ngerman.ldf
 Language: ngerman 
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/babel-german/babel-german.def
-Package babel Info: Making " an active character on input line 476.
-))) (/Users/jokruppa/GitHub/exam/init.tex (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/babel-german/babel-german.def
+Package babel Info: Making " an active character on input line 496.
+))) (/Users/jokruppa/GitHub/exam/init.tex
+(/usr/local/texlive/2026/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2026/03/07 v6.0 Page Geometry
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count286
@@ -241,7 +283,8 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen162
 \Gm@layoutvoffset=\dimen163
 \Gm@dimlist=\toks18
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/booktabs/booktabs.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen164
 \lightrulewidth=\dimen165
@@ -260,20 +303,25 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count291
 \@lastruleclass=\count292
 \@thisrulewidth=\dimen176
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip66
+
 For additional information on amsmath, use the `?' option.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen177
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen178
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count293
@@ -323,18 +371,22 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/setspace/setspace.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/ulem/ulem.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ulem/ulem.sty
 \UL@box=\box57
 \UL@hyphenbox=\box58
 \UL@skip=\skip69
@@ -345,7 +397,8 @@ Package: setspace 2022/12/04 v6.7b set line spacing
 \ULC@box=\box59
 Package: ulem 2019/11/18
 \ULdepth=\dimen188
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/tools/array.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen189
 \ar@mcellbox=\box60
@@ -354,43 +407,63 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \extratabsurround=\skip70
 \backup@length=\skip71
 \ar@cellbox=\box61
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count306
 \float@exts=\toks26
 \float@box=\box62
 \@float@everytoks=\toks27
 \@floatcapt=\box63
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/currfile/currfile.sty
-Package: currfile 2024/03/14 v1.0 Provides the file path elements of the current input file
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/currfile/currfile.sty
+Package: currfile 2024/03/14 v1.0 Provides the file path elements of the curren
+t input file
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvoptions/kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/ltxcmds/ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/filehook/filehook.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/filehook/filehook.sty
 Package: filehook 2022/10/25 v0.8b Hooks for input files
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/filehook/filehook-2020.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/filehook/filehook-2020.sty
 Package: filehook-2020 2022/10/25 v0.8b Hooks for input files
 ))
 \c@currfiledepth=\count307
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
 \pgfutil@everybye=\toks28
 \pgfutil@tempdima=\dimen191
 \pgfutil@tempdimb=\dimen192
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box64
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/pgf.revision.tex)
 Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
 ))
 Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
 \pgfkeys@pathtoks=\toks29
 \pgfkeys@temptoks=\toks30
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfiltered.code.tex
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeyslibraryfil
+tered.code.tex
 \pgfkeys@tmptoks=\toks31
 ))
 \pgf@x=\dimen193
@@ -413,32 +486,66 @@ Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
 \t@pgf@tokb=\toks33
 \t@pgf@tokc=\toks34
 \pgf@sys@id@count=\count312
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
 Driver file for pgf: pgfsys-pdftex.def
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
 File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
 File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
-))) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
+)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
 File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfsyssoftpath@smallbuffer@items=\count313
 \pgfsyssoftpath@bigbuffer@items=\count314
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
 File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen259
 \pgfmath@count=\count315
 \pgfmath@box=\box65
 \pgfmath@toks=\toks35
 \pgfmath@stack@operand=\toks36
 \pgfmath@stack@operation=\toks37
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
 \c@pgfmathroundto@lastzeros=\count316
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
+)) (/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfint.code.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
 File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@picminx=\dimen260
 \pgf@picmaxx=\dimen261
@@ -454,75 +561,125 @@ File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@yy=\dimen271
 \pgf@zx=\dimen272
 \pgf@zy=\dimen273
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
 File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@path@lastx=\dimen274
 \pgf@path@lasty=\dimen275
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
 File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@shorten@end@additional=\dimen276
 \pgf@shorten@start@additional=\dimen277
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
 File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfpic=\box66
 \pgf@hbox=\box67
 \pgf@layerbox@main=\box68
 \pgf@picture@serial@count=\count317
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
 File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgflinewidth=\dimen278
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
 File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@pt@x=\dimen279
 \pgf@pt@y=\dimen280
 \pgf@pt@temp=\dimen281
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
 File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
 File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
 File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
 File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfarrowsep=\dimen282
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
 File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@max=\dimen283
 \pgf@sys@shading@range@num=\count318
 \pgf@shadingcount=\count319
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
 File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
 File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfexternal@startupbox=\box69
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
 File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
 File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
 File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
 File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+)))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
 File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfnodeparttextbox=\box70
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
 File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
 Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@nodesepstart=\dimen284
 \pgf@nodesepend=\dimen285
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
 Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
 \pgffor@iter=\dimen286
 \pgffor@skip=\dimen287
 \pgffor@stack=\toks38
 \pgffor@toks=\toks39
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+))
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
 Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
 File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgf@plot@mark@count=\count320
 \pgfplotmarksize=\dimen288
@@ -543,16 +700,21 @@ File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \tikznumberofchildren=\count322
 \tikznumberofcurrentchild=\count323
 \tikz@fig@count=\count324
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
 File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
 \pgfmatrixcurrentrow=\count325
 \pgfmatrixcurrentcolumn=\count326
 \pgf@matrix@numberofcolumns=\count327
 )
 \tikz@expandcount=\count328
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
-))) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty
+)))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip72
 \enit@outerparindent=\dimen297
@@ -560,12 +722,16 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@inbox=\box75
 \enit@count@id=\count329
 \enitdp@description=\count330
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp.sty
 Package: fp 1995/04/02
-`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/defpattern.sty
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/defpattern.sty
 Package: defpattern 1994/10/12
 \actioncount=\count331
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-basic.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-basic.sty
 Package: fp-basic 1996/05/13
 \FP@xs=\count332
 \FP@xia=\count333
@@ -576,26 +742,36 @@ Package: fp-basic 1996/05/13
 \FP@regb=\count338
 \FP@regs=\count339
 \FP@times=\count340
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-addons.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-addons.sty
 Package: fp-addons 1995/03/15
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-snap.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-snap.sty
 Package: fp-snap 1995/04/05
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-exp.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-exp.sty
 Package: fp-exp 1995/04/03
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-trigo.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-trigo.sty
 Package: fp-trigo 1995/04/14
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-pas.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-pas.sty
 Package: fp-pas 1994/08/29
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-random.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-random.sty
 Package: fp-random 1995/02/23
 \FPseed=\count341
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-eqn.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-eqn.sty
 Package: fp-eqn 1995/04/03
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-upn.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-upn.sty
 Package: fp-upn 1996/10/21
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fp/fp-eval.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fp/fp-eval.sty
 Package: fp-eval 1995/04/03
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/xfrac/xfrac.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/xfrac/xfrac.sty
 Package: xfrac 2024-06-04 Split-level fractions
 \l__xfrac_slash_box=\box76
 \l__xfrac_tmp_box=\box77
@@ -619,13 +795,18 @@ LaTeX template Info: Declaring instance 'cmss' of type xfrac on line 392.
 
 LaTeX template Info: Declaring instance 'cmtt' of type xfrac on line 392.
 
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/tabularray/tabularray.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tabularray/tabularray.sty
 Package: tabularray 2025-11-27 v2025C Typeset tabulars and arrays with LaTeX3
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/ninecolors/ninecolors.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/ninecolors/ninecolors.sty
 Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2026-01-19 L3 programming layer (loader) 
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count342
 ))
@@ -756,18 +937,23 @@ Package: xparse 2025-10-09 L3 Experimental document command parser
 \l__tblr_last_cell_table_dp_dim=\dimen359
 \l__tblr_last_vline_wd_dim=\dimen360
 \l__tblr_tikz_node_box=\box105
-) (./defs.tex) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+) (./defs.tex)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2025/11/28 version 6.9.0 text color boxes
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/tools/verbatim.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2024-01-22 v1.5x LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks41
 \verbatim@line=\toks42
 \verbatim@in@stream=\read4
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count382
 )
@@ -784,7 +970,8 @@ Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \tcb@temp=\box112
 \tcb@temp=\box113
 \tcb@temp=\box114
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/psnfss/helvet.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/helvet.sty
 Package: helvet 2020/03/25 PSNFSS-v9.3 (WaS) 
 )
 
@@ -801,8 +988,9 @@ Class scrartcl Warning: Usage of package `fancyhdr' together
 (scrartcl)              Nevertheless, using requested
 (scrartcl)              package `fancyhdr' on input line 63.
 
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+(/usr/local/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
+
 \f@nch@headwidth=\skip73
 \f@nch@offset@elh=\skip74
 \f@nch@offset@erh=\skip75
@@ -818,53 +1006,71 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@widthC=\skip85
 \f@nch@widthR=\skip86
 \@temptokenb=\toks43
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/lastpage/lastpage.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/lastpage/lastpage2e.sty
-Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (HMM)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage2e.sty
+Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (H
+MM)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
 Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
 \c@lastpagecount=\count386
 ) 
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
+)) (/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2026-01-29 v7.01p Hypertext links for LaTeX
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pdfescape/pdfescape.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdfescape/pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
-Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/infwarerr/infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/hycolor/hycolor.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hycolor/hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2026-01-29 v2.58 Cross-referencing by name of section
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/gettitlestring/gettitlestring.s
+ty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count387
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/stringenc/stringenc.sty
-Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO)
+) (/usr/local/texlive/2026/texmf-dist/tex/generic/stringenc/stringenc.sty
+Package: stringenc 2019/11/29 v1.12 Convert strings between diff. encodings (HO
+)
 )
 \@linkdim=\dimen362
 \Hy@linkcounter=\count388
 \Hy@pagecounter=\count389
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2026-01-29 v7.01p Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count390
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/puenc.def
 File: puenc.def 2026-01-29 v7.01p Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -877,16 +1083,20 @@ Package hyperref Info: Backreferencing OFF on input line 4221.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4468.
 \c@Hy@tempcnt=\count391
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip20
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4807.
 \XeTeXLinkMargin=\dimen363
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
-Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
 ))
 \Fld@menulength=\count392
 \Field@Width=\dimen364
@@ -903,42 +1113,54 @@ Package hyperref Info: PDF/A mode OFF on input line 6114.
 \c@Hfootnote=\count395
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2026-01-29 v7.01p Hyperref driver for pdfTeX
 \Fld@listcount=\count396
 \c@bookmark@seq@number=\count397
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
-Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+84.
 )
 \Hy@SectionHShift=\skip87
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 69.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/arevtext.sty
+ (/usr/local/texlive/2026/texmf-dist/tex/latex/arev/arevtext.sty
 Package: arevtext 2005/09/01 0.1 Arev Sans Text package
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/base/fontenc.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-LaTeX Font Info:    Trying to load font information for T1+phv on input line 116.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/psnfss/t1phv.fd
+LaTeX Font Info:    Trying to load font information for T1+phv on input line 11
+6.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2020/03/25 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 116.
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/arevmath.sty
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/arevmath.sty
 Package: arevmath 2006/02/19 0.1 Arev Sans Math package
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/ams-mdbch.sty
-Package: ams-mdbch 2005/05/08 v1.4 Bold mdbch (Math Design Project) to replace AMS fonts
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/ams-mdbch.sty
+Package: ams-mdbch 2005/05/08 v1.4 Bold mdbch (Math Design Project) to replace 
+AMS fonts
 Now handling font encoding MDA ...
 ... no UTF-8 mapping file for font encoding MDA
 \symmathdesignA=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
 (Font)                  MDA/mdbch/b/n --> MDA/mdbch/b/n on input line 47.
 LaTeX Font Info:    Overwriting encoding scheme math defaults on input line 52.
+
 LaTeX Info: Redefining \bold on input line 64.
 LaTeX Font Info:    Redeclaring math delimiter \ulcorner on input line 82.
 LaTeX Font Info:    Redeclaring math delimiter \urcorner on input line 83.
@@ -999,8 +1221,10 @@ LaTeX Font Info:    Redeclaring math symbol \nvdash on input line 144.
 LaTeX Font Info:    Redeclaring math symbol \nVdash on input line 145.
 LaTeX Font Info:    Redeclaring math symbol \nvDash on input line 146.
 LaTeX Font Info:    Redeclaring math symbol \nVDash on input line 147.
-LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 148.
+LaTeX Font Info:    Redeclaring math symbol \ntrianglerighteq on input line 148
+.
 LaTeX Font Info:    Redeclaring math symbol \ntrianglelefteq on input line 149.
+
 LaTeX Font Info:    Redeclaring math symbol \ntriangleleft on input line 150.
 LaTeX Font Info:    Redeclaring math symbol \ntriangleright on input line 151.
 LaTeX Font Info:    Redeclaring math symbol \nleftarrow on input line 152.
@@ -1008,7 +1232,9 @@ LaTeX Font Info:    Redeclaring math symbol \nrightarrow on input line 153.
 LaTeX Font Info:    Redeclaring math symbol \nLeftarrow on input line 154.
 LaTeX Font Info:    Redeclaring math symbol \nRightarrow on input line 155.
 LaTeX Font Info:    Redeclaring math symbol \nLeftrightarrow on input line 156.
+
 LaTeX Font Info:    Redeclaring math symbol \nleftrightarrow on input line 157.
+
 LaTeX Font Info:    Redeclaring math symbol \divideontimes on input line 158.
 LaTeX Font Info:    Redeclaring math symbol \varnothing on input line 159.
 LaTeX Font Info:    Redeclaring math symbol \nexists on input line 160.
@@ -1033,6 +1259,7 @@ LaTeX Font Info:    Redeclaring math symbol \succapprox on input line 181.
 LaTeX Font Info:    Redeclaring math symbol \precapprox on input line 182.
 LaTeX Font Info:    Redeclaring math symbol \curvearrowleft on input line 183.
 LaTeX Font Info:    Redeclaring math symbol \curvearrowright on input line 184.
+
 LaTeX Font Info:    Redeclaring math symbol \Bbbk on input line 189.
 LaTeX Font Info:    Redeclaring math symbol \backepsilon on input line 190.
 LaTeX Font Info:    Redeclaring math symbol \boxdot on input line 192.
@@ -1043,32 +1270,45 @@ LaTeX Font Info:    Redeclaring math symbol \blacksquare on input line 196.
 LaTeX Font Info:    Redeclaring math symbol \centerdot on input line 197.
 LaTeX Font Info:    Redeclaring math symbol \lozenge on input line 198.
 LaTeX Font Info:    Redeclaring math symbol \blacklozenge on input line 199.
-LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 200.
+LaTeX Font Info:    Redeclaring math symbol \circlearrowright on input line 200
+.
 LaTeX Font Info:    Redeclaring math symbol \circlearrowleft on input line 201.
-LaTeX Font Info:    Redeclaring math symbol \rightleftharpoons on input line 203.
-LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 204.
+
+LaTeX Font Info:    Redeclaring math symbol \rightleftharpoons on input line 20
+3.
+LaTeX Font Info:    Redeclaring math symbol \leftrightharpoons on input line 20
+4.
 LaTeX Font Info:    Redeclaring math symbol \boxminus on input line 205.
 LaTeX Font Info:    Redeclaring math symbol \Vdash on input line 206.
 LaTeX Font Info:    Redeclaring math symbol \Vvdash on input line 207.
 LaTeX Font Info:    Redeclaring math symbol \vDash on input line 208.
-LaTeX Font Info:    Redeclaring math symbol \twoheadrightarrow on input line 209.
-LaTeX Font Info:    Redeclaring math symbol \twoheadleftarrow on input line 210.
+LaTeX Font Info:    Redeclaring math symbol \twoheadrightarrow on input line 20
+9.
+LaTeX Font Info:    Redeclaring math symbol \twoheadleftarrow on input line 210
+.
 LaTeX Font Info:    Redeclaring math symbol \leftleftarrows on input line 211.
-LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 212.
+LaTeX Font Info:    Redeclaring math symbol \rightrightarrows on input line 212
+.
 LaTeX Font Info:    Redeclaring math symbol \upuparrows on input line 213.
 LaTeX Font Info:    Redeclaring math symbol \downdownarrows on input line 214.
 LaTeX Font Info:    Redeclaring math symbol \upharpoonright on input line 215.
-LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 217.
+LaTeX Font Info:    Redeclaring math symbol \downharpoonright on input line 217
+.
 LaTeX Font Info:    Redeclaring math symbol \upharpoonleft on input line 218.
 LaTeX Font Info:    Redeclaring math symbol \downharpoonleft on input line 219.
+
 LaTeX Font Info:    Redeclaring math symbol \rightarrowtail on input line 220.
 LaTeX Font Info:    Redeclaring math symbol \leftarrowtail on input line 221.
 LaTeX Font Info:    Redeclaring math symbol \leftrightarrows on input line 222.
+
 LaTeX Font Info:    Redeclaring math symbol \rightleftarrows on input line 223.
+
 LaTeX Font Info:    Redeclaring math symbol \Lsh on input line 224.
 LaTeX Font Info:    Redeclaring math symbol \Rsh on input line 225.
 LaTeX Font Info:    Redeclaring math symbol \rightsquigarrow on input line 226.
-LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 227.
+
+LaTeX Font Info:    Redeclaring math symbol \leftrightsquigarrow on input line 
+227.
 LaTeX Font Info:    Redeclaring math symbol \looparrowleft on input line 228.
 LaTeX Font Info:    Redeclaring math symbol \looparrowright on input line 229.
 LaTeX Font Info:    Redeclaring math symbol \circeq on input line 230.
@@ -1100,15 +1340,21 @@ LaTeX Font Info:    Redeclaring math symbol \geqslant on input line 256.
 LaTeX Font Info:    Redeclaring math symbol \gtrless on input line 257.
 LaTeX Font Info:    Redeclaring math symbol \sqsubset on input line 258.
 LaTeX Font Info:    Redeclaring math symbol \sqsupset on input line 259.
-LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 260.
+LaTeX Font Info:    Redeclaring math symbol \vartriangleright on input line 260
+.
 LaTeX Font Info:    Redeclaring math symbol \vartriangleleft on input line 261.
+
 LaTeX Font Info:    Redeclaring math symbol \trianglerighteq on input line 262.
+
 LaTeX Font Info:    Redeclaring math symbol \trianglelefteq on input line 263.
 LaTeX Font Info:    Redeclaring math symbol \bigstar on input line 264.
 LaTeX Font Info:    Redeclaring math symbol \between on input line 265.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 266.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 267.
-LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 268.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangledown on input line 26
+6.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleright on input line 2
+67.
+LaTeX Font Info:    Redeclaring math symbol \blacktriangleleft on input line 26
+8.
 LaTeX Font Info:    Redeclaring math symbol \vartriangle on input line 269.
 LaTeX Font Info:    Redeclaring math symbol \blacktriangle on input line 270.
 LaTeX Font Info:    Redeclaring math symbol \triangledown on input line 271.
@@ -1136,6 +1382,7 @@ LaTeX Font Info:    Redeclaring math symbol \curlywedge on input line 294.
 LaTeX Font Info:    Redeclaring math symbol \curlyvee on input line 295.
 LaTeX Font Info:    Redeclaring math symbol \leftthreetimes on input line 296.
 LaTeX Font Info:    Redeclaring math symbol \rightthreetimes on input line 297.
+
 LaTeX Font Info:    Redeclaring math symbol \subseteqq on input line 298.
 LaTeX Font Info:    Redeclaring math symbol \supseteqq on input line 299.
 LaTeX Font Info:    Redeclaring math symbol \bumpeq on input line 300.
@@ -1152,7 +1399,8 @@ LaTeX Font Info:    Redeclaring math symbol \intercal on input line 312.
 LaTeX Font Info:    Redeclaring math symbol \circledcirc on input line 313.
 LaTeX Font Info:    Redeclaring math symbol \circledast on input line 314.
 LaTeX Font Info:    Redeclaring math symbol \circleddash on input line 315.
-) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+)
+(/usr/local/texlive/2026/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
 )
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
@@ -1187,7 +1435,8 @@ LaTeX Font Info:    Redeclaring math accent \widetilde on input line 123.
 LaTeX Font Info:    Redeclaring math accent \widehat on input line 124.
 \symextraup=\mathgroup7
 \symextraitalic=\mathgroup8
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/arevsymbols.tex
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/arevsymbols.tex
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 22.
 LaTeX Font Info:    Redeclaring math symbol \hslash on input line 23.
 LaTeX Font Info:    Redeclaring math symbol \digamma on input line 25.
@@ -1203,8 +1452,10 @@ LaTeX Font Info:    Redeclaring math symbol \varPi on input line 183.
 LaTeX Font Info:    Redeclaring math symbol \varSigma on input line 184.
 LaTeX Font Info:    Redeclaring math symbol \varPhi on input line 185.
 LaTeX Font Info:    Redeclaring math symbol \varnothing on input line 204.
-)) (/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
-Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
+))
+(/usr/local/texlive/2026/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
 )
 Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           Using `bookmark' together with `hyperref' is recommended,
@@ -1214,16 +1465,22 @@ Class scrartcl Info: loading recommended package `bookmark'.
 (scrartcl)           you can avoid this message adding:
 (scrartcl)             \usepackage{bookmark}
 (scrartcl)           before \begin{document} on input line 61.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
-File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO
+)
 \BKM@id=\count398
 ))
-LaTeX Font Info:    Trying to load font information for T1+fav on input line 61.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/t1fav.fd
+LaTeX Font Info:    Trying to load font information for T1+fav on input line 61
+.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/t1fav.fd
 File: t1fav.fd 2006/05/30 Fontinst v1.929 font definitions for T1/fav.
-) (./Gesammelte_Klausurfragen_Bio_Data_Science.aux
+)
+(./Gesammelte_Klausurfragen_Bio_Data_Science.aux
 Package babel Info: 'ngerman' activates 'german' shorthands.
 (babel)             Reported on input line 10.
 )
@@ -1248,16 +1505,35 @@ LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 61.
 LaTeX Font Info:    ... okay on input line 61.
 LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 61.
-LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 61.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/mathdesign/mdacmr.fd
+LaTeX Font Info:    Trying to load font information for MDA+cmr on input line 6
+1.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathdesign/mdacmr.fd
 File: mdacmr.fd 
 )
 LaTeX Font Info:    ... okay on input line 61.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+
+(/usr/local/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count399
+\scratchdimen=\dimen366
+\scratchbox=\box115
+\nofMPsegments=\count400
+\nofMParguments=\count401
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count402
+\MPscratchDim=\dimen367
+\MPnumerator=\count403
+\makeMPintoPDFobject=\count404
+\everyMPtoPDFconversion=\toks45
+) (/usr/local/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
 ))
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1294,20 +1570,27 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 61.
-LaTeX Font Info:    Trying to load font information for OT1+zavm on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/ot1zavm.fd
+LaTeX Font Info:    Trying to load font information for OT1+zavm on input line 
+82.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/ot1zavm.fd
 File: ot1zavm.fd 2006/05/30 Fontinst v1.929 font definitions for OT1/zavm.
 )
-LaTeX Font Info:    Trying to load font information for OML+zavm on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/omlzavm.fd
+LaTeX Font Info:    Trying to load font information for OML+zavm on input line 
+82.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/omlzavm.fd
 File: omlzavm.fd 2006/05/30 Fontinst v1.929 font definitions for OML/zavm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+zavm on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/omszavm.fd
+LaTeX Font Info:    Trying to load font information for OMS+zavm on input line 
+82.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/omszavm.fd
 File: omszavm.fd 2006/05/30 Fontinst v1.929 font definitions for OMS/zavm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
+LaTeX Font Info:    Trying to load font information for OMX+mdbch on input line
+ 82.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathdesign/mdbch/omxmdbch.fd
 File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
 )
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
@@ -1317,15 +1600,21 @@ LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
 (Font)              scaled to size 5.76004pt on input line 82.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
 LaTeX Font Info:    Trying to load font information for U+msb on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
+LaTeX Font Info:    Trying to load font information for MDA+mdbch on input line
+ 82.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/mathdesign/mdbch/mdamdbch.fd
 File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
 )
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
@@ -1334,8 +1623,10 @@ LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 7.68005pt on input line 82.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 5.76004pt on input line 82.
-LaTeX Font Info:    Trying to load font information for U+zavm on input line 82.
-(/Users/jokruppa/Library/TinyTeX/texmf-dist/tex/latex/arev/uzavm.fd
+LaTeX Font Info:    Trying to load font information for U+zavm on input line 82
+.
+
+(/usr/local/texlive/2026/texmf-dist/tex/latex/arev/uzavm.fd
 File: uzavm.fd 2006/05/30 Fontinst v1.929 font definitions for U/zavm.
 )
 <avatare/Alex.png, id=7, 529.98pt x 562.1pt>
@@ -1387,10 +1678,14 @@ LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
 (Font)              scaled to size 4.80003pt on input line 86.
 LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 4.80003pt on input line 86.
-[1
+ [1
 
 
-{/Users/jokruppa/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/enc/dvips/base/8r.enc} <./avatare/Alex.png> <./avatare/Jessica.png> <./avatare/Jonas.png> <./avatare/Mark.png> <./avatare/Nilufar.png> <./avatare/Paula.png> <./avatare/Steffen.png> <./avatare/Tina.png> <./avatare/Yuki.png>]
+{/usr/local/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/loc
+al/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc} <./avatare/Alex.png> <.
+/avatare/Jessica.png> <./avatare/Jonas.png> <./avatare/Mark.png> <./avatare/Nil
+ufar.png> <./avatare/Paula.png> <./avatare/Steffen.png> <./avatare/Tina.png> <.
+/avatare/Yuki.png>]
 File: avatare/Alex.png Graphic file (type png)
 <use avatare/Alex.png>
 Package pdftex.def Info: avatare/Alex.png  used on input line 89.
@@ -1483,8 +1778,10 @@ Overfull \hbox (2.16899pt too wide) in paragraph at lines 88--150
 [2
 
 ]
-LaTeX Font Info:    Trying to load font information for TS1+fav on input line 157.
+LaTeX Font Info:    Trying to load font information for TS1+fav on input line 1
+57.
 LaTeX Font Info:    No file TS1fav.fd. on input line 157.
+
 
 LaTeX Font Warning: Font shape `TS1/fav/m/n' undefined
 (Font)              using `TS1/cmr/m/n' instead
@@ -1500,21 +1797,18 @@ LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
 (Font)              scaled to size 7.29605pt on input line 193.
 [3
 
-]
-LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
-(Font)              scaled to size 13.82408pt on input line 232.
-LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
-(Font)              scaled to size 13.82408pt on input line 232.
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
+
 
 LaTeX Font Warning: Font shape `OMS/zavm/b/n' undefined
 (Font)              using `OMS/zavm/m/n' instead on input line 234.
 
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 13.82408pt on input line 234.
-LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 9.60007pt on input line 234.
+(Font)              scaled to size 10.51207pt on input line 234.
 LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 (Font)              scaled to size 7.68005pt on input line 234.
+LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
+(Font)              scaled to size 5.76004pt on input line 234.
 [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1557,23 +1851,24 @@ File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 381.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 386.
-LaTeX Font Info:    No file T1fvm.fd. on input line 386.
-
-LaTeX Font Warning: Font shape `T1/fvm/m/n' undefined
-(Font)              using `T1/cmr/m/n' instead on input line 386.
-
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 38
+6.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bera/t1fvm.fd
+File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
+)
 File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 388.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 394.
 
 [5
 
-{/Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/enc/dvips/arev/arevoml.enc} </Users/jokruppa/GitHub/exam/img/Rlogo.png>]
+{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/arev/arevoml.enc} </Users/j
+okruppa/GitHub/exam/img/Rlogo.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 424.
@@ -1590,7 +1885,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 519.
 
-[6{/Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/enc/dvips/arev/arevot1.enc}]
+[6{/usr/local/texlive/2026/texmf-dist/fonts/enc/dvips/arev/arevot1.enc}]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 551.
@@ -1598,7 +1893,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <img/mc-distribution-02-a-1.pdf, id=72, 361.35pt x 108.405pt>
 File: img/mc-distribution-02-a-1.pdf Graphic file (type pdf)
 <use img/mc-distribution-02-a-1.pdf>
-Package pdftex.def Info: img/mc-distribution-02-a-1.pdf  used on input line 574.
+Package pdftex.def Info: img/mc-distribution-02-a-1.pdf  used on input line 574
+.
 (pdftex.def)             Requested size: 361.34912pt x 108.40472pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1630,7 +1926,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 779.
 
-LaTeX Font Info:    Calculating math sizes for size <6.02908> on input line 804.
+LaTeX Font Info:    Calculating math sizes for size <6.02908> on input line 804
+.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
 (Font)              scaled to size 5.78795pt on input line 804.
 LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
@@ -1711,7 +2008,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 <img/mc-testing-ttest-02-1.pdf, id=131, 216.81pt x 144.54pt>
 File: img/mc-testing-ttest-02-1.pdf Graphic file (type pdf)
 <use img/mc-testing-ttest-02-1.pdf>
-Package pdftex.def Info: img/mc-testing-ttest-02-1.pdf  used on input line 1278.
+Package pdftex.def Info: img/mc-testing-ttest-02-1.pdf  used on input line 1278
+.
 (pdftex.def)             Requested size: 216.80946pt x 144.54623pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1736,7 +2034,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 [15]
 Overfull \hbox (12.93939pt too wide) in paragraph at lines 1456--1457
-[]\T1/fav/m/n/9 ... den Un-ter-schied zwi-schen zwei paar-wei-sen Mit-tel-wer-ten aus ver-schie-de-nen Be-hand-lungs-gup-pen $\OML/zavm/m/it/9 MS[]$\T1/fav/m/n/9 .
+[]\T1/fav/m/n/9 ... den Un-ter-schied zwi-schen zwei paar-wei-sen Mit-tel-wer-t
+en aus ver-schie-de-nen Be-hand-lungs-gup-pen $\OML/zavm/m/it/9 MS[]$\T1/fav/m/
+n/9 .
  []
 
 
@@ -1787,6 +2087,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: img/mc-regression-05-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-05-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-05-a-1.pdf  used on input line 1701.
+
 (pdftex.def)             Requested size: 216.80946pt x 180.68282pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1801,7 +2102,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: img/mc-regression-06-a-1.pdf Graphic file (type pdf)
 <use img/mc-regression-06-a-1.pdf>
 Package pdftex.def Info: img/mc-regression-06-a-1.pdf  used on input line 1772.
+
 (pdftex.def)             Requested size: 216.80946pt x 180.68282pt.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1790.
@@ -1823,6 +2126,7 @@ File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 1847.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1850.
@@ -1848,7 +2152,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1917--1918
 </Users/jokruppa/GitHub/exam/avatare/Nilufar.png, id=210, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 1935.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 1935.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 <img/youtube.png, id=212, 1952.29375pt x 1063.975pt>
 File: img/youtube.png Graphic file (type png)
@@ -1879,7 +2184,8 @@ Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 1967.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
 [22
 
- </Users/jokruppa/GitHub/exam/avatare/Nilufar.png> <./img/youtube.png> <./img/barplot-02-1.pdf>]
+ </Users/jokruppa/GitHub/exam/avatare/Nilufar.png> <./img/youtube.png> <./img/b
+arplot-02-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 1973.
@@ -1892,7 +2198,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 1975--1976
 </Users/jokruppa/GitHub/exam/avatare/Tina.png, id=232, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 1991.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 1991.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -1917,7 +2224,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2048--2049
 
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 2066.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 2066.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -1960,7 +2268,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2107--2108
 </Users/jokruppa/GitHub/exam/avatare/Yuki.png, id=263, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 2123.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 2123.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -1986,7 +2295,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2188--2189
 </Users/jokruppa/GitHub/exam/avatare/Paula.png, id=278, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 2205.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 2205.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2012,7 +2322,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2259--2260
 </Users/jokruppa/GitHub/exam/avatare/Steffen.png, id=291, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 2273.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 2273.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2057,7 +2368,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2383--2384
 
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 2397.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 2397.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2083,7 +2395,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2439--2440
 </Users/jokruppa/GitHub/exam/avatare/Mark.png, id=317, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 2453.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 2453.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2109,11 +2422,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 2490--2491
 </Users/jokruppa/GitHub/exam/avatare/Jonas.png, id=330, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 2504.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 2504.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 2504.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 2504.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2143,11 +2458,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 </Users/jokruppa/GitHub/exam/avatare/Jessica.png, id=349, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 2560.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 2560.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 2560.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 2560.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2167,11 +2484,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 2611.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 2611.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 2611.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 2611.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2196,11 +2515,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 2659--2660
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 2676.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 2676.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 2676.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 2676.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2218,7 +2539,8 @@ LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
 <img/statistisches-testen-3-1.pdf, id=380, 578.16pt x 361.35pt>
 File: img/statistisches-testen-3-1.pdf Graphic file (type pdf)
 <use img/statistisches-testen-3-1.pdf>
-Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 2713.
+Package pdftex.def Info: img/statistisches-testen-3-1.pdf  used on input line 2
+713.
 (pdftex.def)             Requested size: 512.14963pt x 320.11177pt.
 [33
 
@@ -2229,11 +2551,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 2736.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 2736.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 2736.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 2736.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2244,10 +2568,13 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 2735--2744
 [] [] 
  []
 
-</Users/jokruppa/GitHub/exam/question/img/statistisches-testen-04.png, id=399, 25.59563pt x 206.27063pt>
-File: /Users/jokruppa/GitHub/exam/question/img/statistisches-testen-04.png Graphic file (type png)
+</Users/jokruppa/GitHub/exam/question/img/statistisches-testen-04.png, id=399, 
+25.59563pt x 206.27063pt>
+File: /Users/jokruppa/GitHub/exam/question/img/statistisches-testen-04.png Grap
+hic file (type png)
 <use /Users/jokruppa/GitHub/exam/question/img/statistisches-testen-04.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/question/img/statistisches-testen-04.png  used on input line 2773.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/question/img/statistisches
+-testen-04.png  used on input line 2773.
 (pdftex.def)             Requested size: 35.30948pt x 284.52756pt.
 [34
 
@@ -2263,11 +2590,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 2783--2784
 
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 2797.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 2797.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 2797.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 2797.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2296,7 +2625,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2856--2857
 
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 2871.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 2871.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2321,7 +2651,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2922--2923
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 2937.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 2937.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2346,7 +2677,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 2992--2993
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 3007.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 3007.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2371,15 +2703,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 3065--3066
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 3082.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 3082.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 3082.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 3082.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 3082.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 3082.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2417,15 +2752,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 3132--3133
 </Users/jokruppa/GitHub/exam/avatare/Alex.png, id=476, 529.98pt x 562.1pt>
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 3146.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 3146.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 3146.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 3146.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 3146.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 3146.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2462,15 +2800,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 3197--3198
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 3214.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 3214.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 3214.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 3214.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 3214.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 3214.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2503,11 +2844,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 3265--3266
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 3280.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 3280.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 3280.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 3280.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2532,11 +2875,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 3344--3345
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 3359.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 3359.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 3359.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 3359.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2577,11 +2922,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 3413--3414
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 3428.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 3428.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 3428.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 3428.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2606,11 +2953,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 3498--3499
 
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 3513.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 3513.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 3513.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 3513.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2635,7 +2984,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3573--3574
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 3588.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 3588.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2668,11 +3018,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 3638--3639
 
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 3652.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 3652.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 3652.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 3652.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2710,7 +3062,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3736--3737
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 3750.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 3750.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2721,8 +3074,6 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 3749--3759
 [] []
  []
 
-LaTeX Font Info:    Font shape `OMX/mdbch/b/n' will be
-(Font)              scaled to size 10.51207pt on input line 3807.
 [48
 
 ]
@@ -2737,7 +3088,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3826--3827
 
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 3840.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 3840.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2766,7 +3118,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3890--3891
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 3904.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 3904.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2803,7 +3156,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 3946--3947
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 3959.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 3959.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2832,11 +3186,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4006--4007
 
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 4020.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 4020.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 4020.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 4020.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2861,7 +3217,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4076--4077
 
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 4092.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 4092.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2886,7 +3243,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4146--4147
 
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 4160.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 4160.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2915,7 +3273,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4216--4217
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 4230.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 4230.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2930,6 +3289,10 @@ File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 4246.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 13.82408pt on input line 4252.
+LaTeX Font Info:    Font shape `MDA/mdbch/b/n' will be
+(Font)              scaled to size 13.82408pt on input line 4252.
 [55
 
 ]
@@ -2944,7 +3307,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4282--4283
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 4296.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 4296.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -2973,7 +3337,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4349--4350
 
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 4363.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 4363.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3002,11 +3367,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4419--4420
 
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 4434.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 4434.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 4434.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 4434.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3031,11 +3398,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4488--4489
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 4503.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 4503.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 4503.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 4503.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3072,11 +3441,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4553--4554
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 4569.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 4569.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 4569.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 4569.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3117,7 +3488,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4626--4627
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 4642.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 4642.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3140,18 +3512,16 @@ File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 4658.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 4665.
-LaTeX Font Info:    No file TS1fvm.fd. on input line 4665.
-
-LaTeX Font Warning: Font shape `TS1/fvm/m/n' undefined
-(Font)              using `TS1/cmr/m/n' instead
-(Font)              for symbol `textquotesingle' on input line 4665.
-
+LaTeX Font Info:    Trying to load font information for TS1+fvm on input line 4
+665.
+(/usr/local/texlive/2026/texmf-dist/tex/latex/bera/ts1fvm.fd
+File: ts1fvm.fd 2004/09/07 scalable font definitions for TS1/fvm.
+)
 File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
 <use ~/GitHub/exam/img/Rlogo.png>
 Package pdftex.def Info: ~/GitHub/exam/img/Rlogo.png  used on input line 4679.
 (pdftex.def)             Requested size: 11.38092pt x 8.8122pt.
-[61
+ [61
 
 ]
 
@@ -3165,7 +3535,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4695--4696
 
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 4711.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 4711.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3195,7 +3566,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4756--4757
 
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 4772.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 4772.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3225,11 +3597,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 4815--4816
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 4828.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 4828.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 4828.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 4828.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3242,7 +3616,8 @@ Overfull \hbox (2.169pt too wide) in paragraph at lines 4827--4836
 
 
 Overfull \hbox (1.4438pt too wide) in paragraph at lines 4843--4844
-[] \T1/fav/b/n/9 Vi-sua-li-sie-rung des Re-gres-si-ons-kreu-zes[][] \T1/fav/m/n/9 Ge-lang-weilt schaut das Kän-gu-ruh auf und schmeiÿt sich ei-ne Schnap-
+[] \T1/fav/b/n/9 Vi-sua-li-sie-rung des Re-gres-si-ons-kreu-zes[][] \T1/fav/m/n
+/9 Ge-lang-weilt schaut das Kän-gu-ruh auf und schmeiÿt sich ei-ne Schnap-
  []
 
 File: ~/GitHub/exam/img/Rlogo.png Graphic file (type png)
@@ -3263,7 +3638,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 4862--4863
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 4876.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 4876.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 <img/caution.png, id=834, 1927.2pt x 1084.05pt>
 File: img/caution.png Graphic file (type png)
@@ -3296,15 +3672,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 4960.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 4960.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 4960.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 4960.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 4960.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 4960.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
@@ -3341,15 +3720,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 5009.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 5009.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 5009.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 5009.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5009.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5009.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
@@ -3395,7 +3777,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5046--5047
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 5059.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 5059.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
@@ -3433,7 +3816,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5109--5110
 
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5122.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5122.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3466,19 +3850,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 5194--5195
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 5207.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 5207.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 5207.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 5207.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 5207.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 5207.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5207.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5207.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3503,19 +3891,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 5265--5266
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 5278.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 5278.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 5278.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 5278.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 5278.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 5278.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5278.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5278.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3540,19 +3932,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 5319--5320
 
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 5332.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 5332.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 5332.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 5332.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 5332.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 5332.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 5332.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 5332.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3577,7 +3973,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5376--5377
 
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5389.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5389.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3612,7 +4009,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5459--5460
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 5472.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 5472.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3647,19 +4045,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 5528--5529
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 5541.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 5541.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 5541.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 5541.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 5541.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 5541.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 5541.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 5541.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3684,11 +4086,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 5623--5624
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 5636.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 5636.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5636.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5636.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3713,11 +4117,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 5681--5682
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 5694.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 5694.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 5694.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 5694.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3742,11 +4148,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 5744--5745
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 5757.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 5757.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 5757.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 5757.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3776,7 +4184,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5797--5798
 
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 5810.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 5810.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3806,11 +4215,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 5862--5863
 
 File: /Users/jokruppa/GitHub/exam/avatare/Alex.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Alex.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on input line 5875.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Alex.png  used on 
+input line 5875.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 5875.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 5875.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3840,7 +4251,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 5929--5930
 
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 5942.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 5942.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3870,7 +4282,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 6032--6033
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 6045.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 6045.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3895,7 +4308,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 6119--6120
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 6132.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 6132.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3925,7 +4339,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 6199--6200
 
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 6212.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 6212.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/caution.png Graphic file (type png)
 <use img/caution.png>
@@ -3950,19 +4365,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 6280--6281
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jessica.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jessica.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used on input line 6293.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jessica.png  used 
+on input line 6293.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 6293.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 6293.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 6293.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 6293.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 6293.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 6293.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -3992,19 +4411,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 6336--6337
 
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 6349.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 6349.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Nilufar.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used on input line 6349.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Nilufar.png  used 
+on input line 6349.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 6349.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 6349.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 6349.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 6349.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -4038,7 +4461,7 @@ File: img/math-14-c-1.pdf Graphic file (type pdf)
 <use img/math-14-c-1.pdf>
 Package pdftex.def Info: img/math-14-c-1.pdf  used on input line 6411.
 (pdftex.def)             Requested size: 512.14963pt x 512.18655pt.
-[87 <./img/math-14-c-1.pdf>]
+ [87 <./img/math-14-c-1.pdf>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\hfill' on input line 6440.
@@ -4050,11 +4473,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 6442--6443
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 6455.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 6455.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 6455.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 6455.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -4084,19 +4509,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 6506--6507
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 6519.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 6519.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 6519.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 6519.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 6519.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 6519.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 6519.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 6519.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -4126,19 +4555,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 6584--6585
 
 File: /Users/jokruppa/GitHub/exam/avatare/Jonas.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Jonas.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on input line 6597.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Jonas.png  used on
+ input line 6597.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Mark.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Mark.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on input line 6597.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Mark.png  used on 
+input line 6597.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 6597.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 6597.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Yuki.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Yuki.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on input line 6597.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Yuki.png  used on 
+input line 6597.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -4168,15 +4601,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 6647--6648
 
 File: /Users/jokruppa/GitHub/exam/avatare/Paula.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Paula.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on input line 6660.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Paula.png  used on
+ input line 6660.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Steffen.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Steffen.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used on input line 6660.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Steffen.png  used 
+on input line 6660.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: /Users/jokruppa/GitHub/exam/avatare/Tina.png Graphic file (type png)
 <use /Users/jokruppa/GitHub/exam/avatare/Tina.png>
-Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on input line 6660.
+Package pdftex.def Info: /Users/jokruppa/GitHub/exam/avatare/Tina.png  used on 
+input line 6660.
 (pdftex.def)             Requested size: 36.98866pt x 39.22237pt.
 File: img/youtube.png Graphic file (type png)
 <use img/youtube.png>
@@ -4242,22 +4678,37 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
  ***********
 
+
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 34259 strings out of 469430
- 687099 string characters out of 5465425
- 1218915 words of memory out of 5000000
- 61571 multiletter control sequences out of 15000+600000
- 803616 words of font info for 365 fonts, out of 8000000 for 9000
- 36 hyphenation exceptions out of 8191
- 108i,19n,107p,11354b,773s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </Users/jokruppa/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0800.600pk> </Users/jokruppa/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm0900.600pk> </Users/jokruppa/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </Users/jokruppa/Library/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1000.600pk></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/arev/ArevSans-Bold.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/arev/ArevSans-BoldOblique.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/arev/ArevSans-Oblique.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/arev/ArevSans-Roman.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7t.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7y.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chbma.pfb></Users/jokruppa/Library/TinyTeX/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chr7v.pfb>
-Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (94 pages, 1443072 bytes).
+ 34579 strings out of 467525
+ 688001 string characters out of 5418982
+ 1223838 words of memory out of 5000000
+ 62117 multiletter control sequences out of 15000+600000
+ 800775 words of font info for 357 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 108i,19n,107p,11326b,773s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2026/texmf-dist/fonts/type1/public/arev/ArevSans-Bold.pfb
+></usr/local/texlive/2026/texmf-dist/fonts/type1/public/arev/ArevSans-BoldObliq
+ue.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/arev/ArevSans-Obl
+ique.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/arev/ArevSans-R
+oman.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y9.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb><
+/usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathdesign/mdbch/md-chb7t
+.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathdesign/mdbch/md
+-chb7y.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathdesign/md
+bch/md-chbma.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/mathdes
+ign/mdbch/md-chr7v.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/c
+m-super/sfrm0800.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-
+super/sfrm0900.pfb></usr/local/texlive/2026/texmf-dist/fonts/type1/public/cm-su
+per/sfrm1000.pfb>
+Output written on Gesammelte_Klausurfragen_Bio_Data_Science.pdf (94 pages, 1453
+610 bytes).
 PDF statistics:
- 2014 PDF objects out of 2073 (max. 8388607)
- 1719 compressed objects within 18 object streams
+ 1933 PDF objects out of 2073 (max. 8388607)
+ 1716 compressed objects within 18 object streams
  729 named destinations out of 1000 (max. 500000)
  1254 words of extra memory for PDF output out of 10000 (max. 10000000)
 

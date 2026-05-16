@@ -12,6 +12,7 @@ conflict_prefer("extract", "magrittr")
 conflict_prefer("set_names", "magrittr")
 conflicts_prefer(plyr::mutate)
 conflicts_prefer(dplyr::arrange)
+conflicts_prefer(dplyr::summarize)
 ##
 options(show.signif.stars = FALSE)
 options(scipen = 0, digits = 7)
