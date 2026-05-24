@@ -385,6 +385,12 @@ sentence_func <- \(name, pronom, attr_vec){
 \begin{itemize}
 \item Es sind \rule[0ex]{2em}{.4pt}\, von \Sexpr{textpoints} Punkten erreicht worden.
 \end{itemize}
+\vspace{2Ex}
+\textit{Bitte ankreuzen, wenn zutreffend:}
+\begin{itemize}
+\item [\msquare] \textbf{Ich habe eine Hausarbeit abgegeben.} Bitte die Punkte entsprechend berücksichtigen.
+\item [\msquare] \textbf{Ich habe eine Präsentation gehalten.} Bitte die Punkte entsprechend berücksichtigen.
+\end{itemize}
 \end{graybox}
 
 % -----------------------------------------------------------------------
