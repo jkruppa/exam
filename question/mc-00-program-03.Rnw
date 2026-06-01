@@ -24,16 +24,16 @@ ques_vec <- c('In der Wissenschaft unterscheiden wir zwischen den strukturierend
 
 <<mc-programming-02, results='asis', echo = FALSE>>=
 
-right_vec <- c('Die formalen Wissenschaften sind unter anderem Statistik, Logik und Matehmatik.',
-               'Statistik, Logik und Matehmatik gehören zu den formalen Wissenschaften.',
-               'Wenn wir von den formalen Wissenschaften sprechen, meinen wir unter anderem Statistik, Logik und Matehmatik.') |> sample(1)
+right_vec <- c('Die formalen Wissenschaften sind unter anderem Statistik, Logik und Mathematik. Wir haben hier Werkzeuge der Wissenschaften vorliegen, die wir in analoge (händische Berechnungen) und digitale (Programmieren mit R) Werkzeuge aufteilen können.',
+               'Statistik, Logik und Mathematik gehören zu den formalen Wissenschaften. Hierbei handelt es sich um analoge und digitale Werkzeuge der Wissenschaft. Wir berechnen händisch mathematische Formeln oder führen digitlae Berechungen in R durch.',
+               'Wenn wir von den formalen Wissenschaften sprechen, meinen wir unter anderem Statistik, Logik und Mathematik. Dabei unterscheiden wir zwischen digitalen Werkzeugen wie dem Prgrammieren in R und den analogen Werkzeugen wie die händische Berechnung.') |> sample(1)
 
-wrong_vec <- c('',
-               '',
-               '',
-               '',
-               '',
-               '') %>%
+wrong_vec <- c('Die formalen Wissenschaften sind unter anderem Physik, Chemie und Matehmatik. Wir haben hier Werkzeuge der Nicht-Wissenschaften vorliegen, die wir in Werkzeuge des Schaffens aufteilen können.',
+               'Statistik, Logik und Mathematik gehören zu den formalen Wissenschaften. Hierbei handelt es sich um Werkzeuge der Wissenschaft, die mittlerweile veraltet sind und durch generative KI ersetzt werden.',
+               'Wenn wir von den formalen Wissenschaften sprechen, meinen wir unter anderem Statik, Logistik und Mathematik. Dabei unterscheiden wir zwischen praktischer und theoretischer Berechnung. Es handelt sich hier um die Säulen der Wissenschaft.',
+               'Statistik, Logik und Mathematik, die wir nutzen können oder aber auch nicht. Alle sind sehr schwer zu verstehen und anzuwenden.',
+               'Die formalen Wissenschaften sind unter anderem Statistik, Logik und Mathematik. Dabei haben alle drei keinen praktischen Anwendungsbezug und machen Angst bei der Nutzung. ',
+               'Statistik, Logik und Mathematik sind Werkzeuge der Wissenschaft. Die Anwendung ist aber grundsätzlich nur analog möglich. Es gibt keine digitalen Möglichkeiten.') %>%
   sample(4)
 
 questions_vec <- c(right_vec,
