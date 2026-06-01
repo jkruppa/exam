@@ -15,9 +15,9 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-ques_vec <- c('In der Wissenschaft unterscheiden wir zwischen den strukturierenden oder formalen Wissenschaften (eng. formal science) sowie den Wirklichkeitswissenschaften (eng. natural science). Was sind die formalen Wissenschaften und was zeichnet diese aus?',
-              'Was sind die strukturierenden oder formalen Wissenschaften (eng. formal science) und was zeichnet diese aus?',
-              'Eigentlich gehören die strukturierenden oder formalen Wissenschaften (eng. formal science) nicht zu den Wissenschaften, da ihnen die Eigenschaften der Wissenschaft fehlt. Was zeichnet die formalen Wissenschaften dennoch aus?') |>  sample(1)
+ques_vec <- c('In der Wissenschaft unterscheiden wir zwischen den strukturierenden oder formalen Wissenschaften (eng. \\textit{formal science}) sowie den Wirklichkeitswissenschaften (eng. \\textit{natural science}). Was sind die formalen Wissenschaften und was zeichnet diese aus?',
+              'Was sind die strukturierenden oder formalen Wissenschaften (eng. \\textit{formal science}) und was zeichnet diese aus?',
+              'Eigentlich gehören die strukturierenden oder formalen Wissenschaften (eng. \\textit{formal science}) nicht zu den Wissenschaften, da ihnen die Eigenschaften der Wissenschaft fehlt. Was zeichnet die formalen Wissenschaften dennoch aus?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}

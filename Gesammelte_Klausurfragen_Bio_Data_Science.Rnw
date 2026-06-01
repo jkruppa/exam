@@ -437,8 +437,8 @@ sentence_func <- \(name, pronom, attr_vec){
 \vspace{2Ex}
 \textit{Bitte ankreuzen, wenn zutreffend:}
 \begin{itemize}
-\item [\msquare] \textbf{Ich habe eine Hausarbeit abgegeben.} Bitte die Punkte entsprechend berücksichtigen.
-\item [\msquare] \textbf{Ich habe eine Präsentation gehalten.} Bitte die Punkte entsprechend berücksichtigen.
+\item [\msquare] \textbf{Ich habe eine \uline{Hausarbeit} abgegeben.} Bitte die Punkte entsprechend berücksichtigen.
+\item [\msquare] \textbf{Ich habe eine \uline{Präsentation} gehalten.} Bitte die Punkte entsprechend berücksichtigen.
 \end{itemize}
 \end{graybox}
 
