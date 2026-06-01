@@ -15,18 +15,18 @@
 %% --------------------------------------------------------------------
 
 <<>>=
-ques_vec <- c('',
-              '',
-              '') |>  sample(1)
+ques_vec <- c('In der Wissenschaft unterscheiden wir zwischen den strukturierenden oder formalen Wissenschaften (eng. formal science) sowie den Wirklichkeitswissenschaften (eng. natural science). Was sind die formalen Wissenschaften und was zeichnet diese aus?',
+              'Was sind die strukturierenden oder formalen Wissenschaften (eng. formal science) und was zeichnet diese aus?',
+              'Eigentlich gehören die strukturierenden oder formalen Wissenschaften (eng. formal science) nicht zu den Wissenschaften, da ihnen die Eigenschaften der Wissenschaft fehlt. Was zeichnet die formalen Wissenschaften dennoch aus?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
 
 <<mc-programming-02, results='asis', echo = FALSE>>=
 
-right_vec <- c('',
-               '',
-               '') |> sample(1)
+right_vec <- c('Die formalen Wissenschaften sind unter anderem Statistik, Logik und Matehmatik.',
+               'Statistik, Logik und Matehmatik gehören zu den formalen Wissenschaften.',
+               'Wenn wir von den formalen Wissenschaften sprechen, meinen wir unter anderem Statistik, Logik und Matehmatik.') |> sample(1)
 
 wrong_vec <- c('',
                '',
