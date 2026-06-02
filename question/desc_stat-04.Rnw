@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -105,5 +105,7 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Boxplots nicht aus. Deshal
   Beobachtungen pro Gruppe haben? \textbf{(1 Punkt)}
 \item Beschriften Sie \textit{einen} der beiden Boxplots mit den gängigen
   statistischen Maßzahlen! \textbf{(2 Punkte)}
+\item Berechnen Sie die Effekte zwischen den Behandlungen! \textbf{(1 Punkt)}
+\item Treffen Sie eine Aussage zu der Varianz zwischen den beiden Behandlungen! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
 \item Wenn Sie \underline{\Sexpr{effect_switch}} Effekt zwischen den Behandlungen von \Sexpr{plant} erwarten würden, wie sehen dann die beiden Boxplots aus? \textit{Antworten Sie mit einer Skizze der Boxplots!} \textbf{(1 Punkt)}
 \end{enumerate}
