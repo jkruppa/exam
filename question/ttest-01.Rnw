@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -151,6 +151,7 @@ Leider kennt sich \Sexpr{name} mit der Berechnung eines \Sexpr{type} überhaupt 
   \item \Sexpr{hypo} \textbf{(1 Punkt)}
   \item Bestimmen Sie die Teststatistik $T_{D}$ eines \Sexpr{type}! \textbf{(3 Punkte)}
   \item Treffen Sie mit $T_{\alpha = 5\%} = \Sexpr{t_crit}$ eine Aussage zur Nullhypothese! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
+  \item Schätzen Sie den p-Wert aus der Teststatistik $T_{D}$ und $T_{\alpha = 5\%} = \Sexpr{t_crit}$ ab! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
   \item Berechnen Sie den Effekt des \Sexpr{type}! \textbf{(1 Punkt)}
   \item Formulieren Sie eine Antwort an \Sexpr{name} über das Ergebnis Ihrer statistischen Analyse! \textbf{(2 Punkte)}
 \end{enumerate}

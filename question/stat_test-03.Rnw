@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
 
@@ -74,12 +74,14 @@ Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit der Visualisierung der 
 
 \begin{enumerate}
 \item Ergänzen Sie eine beschriftete $x$-Achse! \textbf{(1 Punkt)}
+\item Ergänzen Sie eine beschriftete $y$-Achse! \textbf{(1 Punkt)}
 \item Ergänzen Sie "`$\bar{y}_1 = \bar{y}_2$"'! \textbf{(1 Punkt)} 
 \item Ergänzen Sie "`$\Sexpr{a_vec}$"'! \textbf{(1 Punkt)}
 \item Zeichnen Sie $T_{\alpha=5\%}$ in die Abbildung! \textbf{(1 Punkt)} 
 \item Zeichnen Sie das Signifikanzniveau $\alpha$ in die Abbildung! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \item Zeichnen Sie $\Sexpr{sign_vec}T_{D}$ in die Abbildung! \textbf{(1 Punkt)}
-\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}   
+\item Zeichnen Sie einen \Sexpr{sig_vec} p-Wert in die Abbildung! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}  
+\item Wie lautet die Entscheidungregel zur Bestimmung der Signifikanz mit dem p-Wert? \textbf{(2 Punkte)}  
 \end{enumerate}
 
 <<statistisches-testen-3, results='asis', echo = FALSE, fig.height = 5, fig.width = 8, fig.align = "center", message = FALSE>>=

@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (9 Punkte)}
+\section{Aufgabe \hfill (10 Punkte)}
 
 <<>>=
 name <- par_lst$naming |> sample(1)
@@ -69,7 +69,7 @@ ques_vec <-  c(str_c("'", str_replace(attr_name_vec$sport, "zu ", ""), " ist der
 Leider kennen sich \Sexpr{name} und \Sexpr{name_sec} mit statistischen Testtheorie, auch Null-Ritual genannt, überhaupt nicht aus. Geschweige denn mit der Visualisierung als Kreuztabelle.  
 
 \begin{enumerate}
-\item Tragen Sie folgende statistische Fachbegriffe zur statistischen Testtheorie korrekt eine selbst erstellte Kreuztabelle ein! \textbf{(3 Punkte)}
+\item Tragen Sie folgende statistische Fachbegriffe zur statistischen Testtheorie korrekt eine selbst erstellte Kreuztabelle ein! \textbf{(4 Punkte)}
   \begin{center}
   \begin{tabular}{cccc}
   \Sexpr{words[1]} & \Sexpr{words[2]} & \Sexpr{words[3]} & \Sexpr{words[4]} \\
