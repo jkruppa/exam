@@ -446,7 +446,7 @@ sentence_func <- \(name, pronom, attr_vec){
 \clearpage
 % -----------------------------------------------------------------------
 \begin{graybox}{Multiple Choice Aufgaben}
-Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihenfolge der Antworten ist zufällig. Die Fragen und Antworten sind semantisch zufällig und haben somit \textcolor{red}{verschiedene Textvarianten}. Insbesondere die reinen Textaufgaben haben verschiedene Textvarianten. Die Semeantik mag sich unterscheiden, die Inhalte sind aber gleich.
+Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihenfolge der Antworten ist zufällig. Die Fragen und Antworten sind semantisch zufällig und haben somit \textcolor{red}{verschiedene Textvarianten}. Insbesondere die reinen Textaufgaben haben verschiedene Textvarianten. Die Semantik mag sich unterscheiden, die Inhalte sind aber gleich.
 \end{graybox}
 \section*{Wissenschaft \& Daten} 
 \Sexpr{knit_child(mc_questions_vec[1])} 
