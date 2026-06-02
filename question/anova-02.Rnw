@@ -162,7 +162,7 @@ Leider kennen sich \Sexpr{name} und \Sexpr{name_sec[1]} mit Berechnung einer ein
 \begin{enumerate}
   \setcounter{enumi}{3}
 \item Schätzen Sie den p-Wert der Tabelle mit $F_{\alpha = 5\%} = \Sexpr{round(qf(0.95, df1 = anova_mdl[[1]][1], df2 = anova_mdl[[1]][2], lower.tail = TRUE), 2)}$ ab. Begründen Sie Ihre Antwort! \textbf{(2 Punkte)}
-\item Berechen Sie den Effektschätzer $\eta^2$. Was sagt Ihnen der Wert von $\eta^2$ aus? \textbf{(2 Punkte)}
+\item Berechnen Sie den Effektschätzer $\eta^2$! Was sagt Ihnen der Wert von $\eta^2$ aus? \textbf{(2 Punkte)}
 \end{enumerate}
 
 
