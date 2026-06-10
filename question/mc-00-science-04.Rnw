@@ -26,15 +26,15 @@ ques_vec <- c('Gerne werden Wissenschaft und Mythen getrennt voneinander gedacht
 <<mc-regression-06-b, results='asis', echo = FALSE>>=
 
 right_vec <- c('Wissenschaft wird immer von kulturellen Mythen geleitet. Abstrakte wissenschaftliche Konzepte können wir \\textit{nur} als Wortbilder oder eben Metaphern begreifen.',
-               'Wenn wir abstrakte wissenschaftliche Konzepte verstehen wollen, dann nutzen wir Metaphern in unseren Gedanken als physische Erfahrung. Wir erschaffen uns ein Wortbild. Die kulturellen Mythen formen die Bühen auf der die Wissenschaft stattfindet. Mythen sind der kulturelle Kontext der Wissenschaft.',
-               '') |> sample(1)
+               'Wenn wir abstrakte wissenschaftliche Konzepte verstehen wollen, dann nutzen wir Metaphern in unseren Gedanken als physische Erfahrung. Wir erschaffen uns ein Wortbild. Die kulturellen Mythen formen die Bühnen auf der die Wissenschaft stattfindet. Mythen sind der kulturelle Kontext der Wissenschaft.',
+               'Wir können Mythen als die kulturelle Bühne verstehen auf der die Wissenschaft stattfindet. Methaphern strukturieren das menschliche Denken und Handeln und sind somit Werkzeuge des Denkens. Wissenschaft findet also in einem kulturellen Kontext mit dem Denken in Wortbildern statt.') |> sample(1)
 
-wrong_vec <- c('',
-               '',
-               '',
-               '',
-               '',
-               '') %>%
+wrong_vec <- c('Wissenschaft wird von kulturellen Mythen hintergangen. Abstrakte wissenschaftliche Konzepte können wir als Wortbilder oder eben Metaphern verstehen und dann ablehnen. Wissenschaft ist rein rational.',
+               'Wenn wir wissenschaftliche Konzepte verstehen wollen, dann nutzen wir Mythen in unseren Gedanken als physische Erfahrung. Wir erschaffen uns Gesichten. Die kulturellen Mythen formen die Abgründe in der die Wissenschaft stattfindet. Wissenschaften sind der kulturelle Kontext der Mythen.',
+               'Wir können Mythen als die wissenschaftliche Bühne verstehen auf der die Stücke stattfinden. Methaphern strukturieren das menschliche Fantasieren und sind somit Werkzeuge des schöpferischen Handels. Wissenschaft findet also in einem Kontext mit dem kulturellen Denken in Bildern statt.',
+               'Wissenschaft, Mythen und Metaphern haben nichts miteinander zu tun. Wissenschaft ist rational.',
+               'Mythen sind eine Religion udn verfolgen als Memes aktiv wissenschaftliche Gedabnken in einer Gesellschaft. Methaphern sind dabei Bilder der Mythen.',
+               'Wissenschaft findet auf der Bühen der Metaphern statt. Mythen sind religöse Zerrbilder einer Metahpher. Wissenschaft ist das Licht der Aufklärung (eng. \\textit{enlightment}).') %>%
   sample(4)
 
 questions_vec <- c(right_vec,
