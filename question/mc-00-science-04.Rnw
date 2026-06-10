@@ -1,0 +1,53 @@
+\section{Aufgabe \hfill (2 Punkte)}
+
+%% --------------------------------------------------------------------
+\ifcollection
+\begin{flushright}
+\tiny\vspace{-2Ex}
+\textbf{\examinhaltstart}
+\exammodulestatversuch $\;\bullet$
+\exammodulebiostat
+\vspace{-1Ex}
+\end{flushright}
+\fi
+%% --------------------------------------------------------------------
+
+
+<<>>=
+
+ques_vec <- c('Gerne werden Wissenschaft und Mythen getrennt voneinander gedacht. Hinzu kommt häufig noch die Metapher als sprachliches Sinnbild für abstrakte Gedanken. Wie lassen sich diese drei doch recht gegensätzlichen Aspekte im wissenschaftlichen Denken verbinden?',
+              'Das wissenschaftliche Denken ist am Ende auch nur ein Modell. Gerne sehen wir die Wissenschaft als rein rational und trennen die Wissenschaft von den Mythen und Wortbildern der Metaphern. Wie lassen sich diese drei doch unterschiedlichen Aspekte verbinden?',
+              'Metaphern sind Wortbilder, die komplexe abstrakte Gedanken darstellen sollen. Mythen sind Geschichten von zweifelhaften Wahrheitsgehalt. Wie kann jetzt die rationale Wissenschaft sich in Mythen und Methaphern einfügen?') |>  sample(1)
+@
+
+\Sexpr{ques_vec}
+
+
+<<mc-regression-06-b, results='asis', echo = FALSE>>=
+
+right_vec <- c('Wissenschaft wird immer von kulturellen Mythen geleitet. Abstrakte wissenschaftliche Konzepte können wir \\textit{nur} als Wortbilder oder eben Metaphern begreifen.',
+               'Wenn wir abstrakte wissenschaftliche Konzepte verstehen wollen, dann nutzen wir Metaphern in unseren Gedanken als physische Erfahrung. Wir erschaffen uns ein Wortbild. Die kulturellen Mythen formen die Bühen auf der die Wissenschaft stattfindet. Mythen sind der kulturelle Kontext der Wissenschaft.',
+               '') |> sample(1)
+
+wrong_vec <- c('',
+               '',
+               '',
+               '',
+               '',
+               '') %>%
+  sample(4)
+
+questions_vec <- c(right_vec,
+                   wrong_vec) %>%
+  sample
+
+
+@
+
+\begin{enumerate}
+\item [\textbf{A} \msquare] \Sexpr{questions_vec[1]}
+\item [\textbf{B} \msquare] \Sexpr{questions_vec[2]}
+\item [\textbf{C} \msquare] \Sexpr{questions_vec[3]}
+\item [\textbf{D} \msquare] \Sexpr{questions_vec[4]}
+\item [\textbf{E} \msquare] \Sexpr{questions_vec[5]}
+\end{enumerate}
