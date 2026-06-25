@@ -40,9 +40,9 @@ ques_vec <- c(str_c('Nachdem Sie in einem Feldexperiment zu Leistungssteigerung 
 right_1_vec <- c('Da sich der Mittelwert und der Median \\underline{unterscheiden}, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
                  'Wenn sich der Mittelwert und der Median \\underline{unterscheiden}, liegen vermutlich Outlier in den Daten vor.',
                  'Der  Mittelwert und der Median \\underline{unterscheiden} sich. Daher müssen Sie schauen, ob Sie einen Outlier in den Daten vorliegen haben.') |> sample(1)
-right_2_vec <- c('Da sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
-                 'Wenn sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich keine Outlier in den Daten vor.',
-                 'Nach der Betrachtung der Werte \\underline{unterscheiden} sich Mittelwert und Median \\underline{nicht}. Die Daten können so verwendet werden wie sie vorliegen. Es gibt keinen Outlier.') |> sample(1)
+right_2_vec <- c('Da sich der Mittelwert und der Median \\underline{kaum unterscheiden}, liegen vermutlich keine Outlier in den Daten vor. Wir verweden den Datensatz so wie er ist.',
+                 'Wenn sich der Mittelwert und der Median \\underline{kaum unterscheiden}, liegen vermutlich keine Outlier in den Daten vor.',
+                 'Nach der Betrachtung der Werte \\underline{unterscheiden} sich Mittelwert und Median \\underline{kaum}. Die Daten können so verwendet werden wie sie vorliegen. Es gibt keinen Outlier.') |> sample(1)
 
 
 wrong_vec <- c('Da sich der Mittelwert und der Median \\underline{nicht unterscheiden}, liegen vermutlich Outlier in den Daten vor. Wir untersuchen den Datensatz nach auffälligen Beobachtungen.',
