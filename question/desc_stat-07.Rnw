@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -60,7 +60,7 @@ cnt <- lst(pflanze = c("die Läsionen auf den Blättern",
                     "die Anzahl an gedrehten Haaren/Federn pro $cm^2$"))[[names(obser)]] %>% 
   sample(1)
 
-count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(30, 33, 36), 1), 4), collapse = ", ")) |> 
+count_vec <- str_c(cnt, ": ", str_c(rpois(sample(c(39, 42, 45), 1), 4), collapse = ", ")) |> 
   str_replace("^die ", "Die ")
 limit <- c(4, 5, 6) %>% sample(1)
 lim_word <- c("gleich oder mehr", "mehr") %>% sample(1)
@@ -89,13 +89,12 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt ni
 \begin{enumerate}
 \item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
 \item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
-\item Ergänzen Sie die absoluten und relativen Häufigkeiten in der
-  Abbildung! \textbf{(1 Punkt)}
-\item Berechnen Sie aus den Daten die \textit{Wahrscheinlichkeit}
-  \Sexpr{lim_word} als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1
-    Punkt)}
-\item Berechnen Sie aus den Daten die \textit{Chance} \Sexpr{lim_word}
-  als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1 Punkt)}
+\item Ergänzen Sie die absoluten und relativen Häufigkeiten in der Abbildung! \textbf{(1 Punkt)}
+\item Skizzieren Sie unter dem Histogramm einen entsprechenden Boxplot! \textbf{(1 Punkt)}
+\item Berechnen Sie aus den Daten die \textit{Wahrscheinlichkeit} \Sexpr{lim_word} als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1 Punkt)}
+\item Berechnen Sie aus den Daten die \textit{Chance} \Sexpr{lim_word} als die Anzahl \Sexpr{limit} zu beobachten! \textbf{(1 Punkt)}
+\item Wozu nutzen wir Histogramme in der Datenanalyse? \textbf{(1 Punkt)} 
+\item Warum werden Histogramme in den Agrarwissenschaften eher selten verwendet? \textbf{(1 Punkt)}
 \end{enumerate}
 
 

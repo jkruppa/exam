@@ -49,7 +49,7 @@ hausarbeit_vec <- str_subset(questions_vec, "/hausarbeit-", negate = FALSE)
 points_tbl <- read_excel(file.path(exam_path, "questions_points.xlsx"))
 
 ## dummy select function
-wanted_questions <- c(text_questions_vec, math_questions_vec) %>% sample(7)
+wanted_questions <- c(text_questions_vec, math_questions_vec) %>% sample(6) ## 20260625 gehen auf 6 runter
 
 ## get the points done
 ques_points_tbl <- points_tbl %>% 
@@ -417,7 +417,7 @@ sentence_func <- \(name, pronom, attr_vec){
     \Large
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
-      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} \strut\\
+      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} \strut\\
       \hline
       \textbf{Punkte} & 
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
@@ -425,8 +425,7 @@ sentence_func <- \(name, pronom, attr_vec){
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[3]}}\hspace{1Ex}  & 
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[4]}}\hspace{1Ex}  & 
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[5]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[7]}}\hspace{1Ex} \strut\\
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  \strut\\
       \hline
   \end{tabular}
 \end{center}
@@ -534,9 +533,6 @@ Die Multiple Choice Aufgaben \textcolor{red}{unterliegen dem Zufall}. Die Reihen
 \clearpage
 % -----------------------------------------------------------------------
 \Sexpr{knit_child(desc_stat_questions_vec[8])} 
-\clearpage
-% -----------------------------------------------------------------------
-\Sexpr{knit_child(desc_stat_questions_vec[9])} 
 \clearpage
 % -----------------------------------------------------------------------
 \part{Statistisches Testen \& statistische Testtheorie}

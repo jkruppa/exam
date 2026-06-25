@@ -117,9 +117,9 @@ exam_id <- sample(c("\\square", "\\blacksquare"), 20, replace = TRUE) |>
 
 ## hausarbeit tabellen name
 if(any(str_detect(text_questions_vec, "hausarbeit"))){
-  seventeen <- "Hausarbeit"
+  sixteen <- "Hausarbeit"
 } else {
-  seventeen <- 17
+  sixteen <- 16
 }
 
 ## global parameters
@@ -368,7 +368,7 @@ sentence_func <- \(name, pronom, attr_vec){
     \Large
     \begin{tabular}{|l|c|c|c|c|c|c|c|}
       \hline
-      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{\Sexpr{seventeen}} \strut\\
+      \textbf{Aufgabe} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} &  \textbf{\Sexpr{sixteen}} \strut\\
       \hline
       \textbf{Punkte} & 
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[1]}}\hspace{1Ex}  & 
@@ -376,8 +376,7 @@ sentence_func <- \(name, pronom, attr_vec){
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[3]}}\hspace{1Ex}  & 
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[4]}}\hspace{1Ex}  & 
       \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[5]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  & 
-      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[7]}}\hspace{1Ex} \strut\\
+      \hspace{1Ex}\huge\textcolor{gray!70}{\Sexpr{points_vec[6]}}\hspace{1Ex}  \strut\\
       \hline
   \end{tabular}
 \end{center}

@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (8 Punkte)}
+\section{Aufgabe \hfill (11 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -60,7 +60,7 @@ cnt <- lst(pflanze = c("die mittleren Läsionen auf den Blättern",
                     "die mittlere Anzahl an gedrehten Haaren pro $cm^2$"))[[names(obser)]] %>% 
   sample(1)
 
-count_vec <- str_c(cnt, ": ", str_c(round(rnorm(sample(c(25, 28, 22), 1), 10, 2), 1), collapse = ", ")) |> 
+count_vec <- str_c(cnt, ": ", str_c(round(rnorm(sample(c(28, 31, 25), 1), 10, 2), 1), collapse = ", ")) |> 
   str_replace("^die ", "Die ")
 
 sentence_name_vec <- sentence_func(name, pronom, attr_lst[[name]]) 
@@ -86,9 +86,12 @@ Leider kennt sich \Sexpr{name} mit der Erstellung von Histogrammen überhaupt ni
 
 \begin{enumerate}
 \item Zeichen Sie ein Histogramm um die Verteilung der Daten zu visualisieren! (\textbf{3 Punkte})
- \item Erläutern Sie Ihr Vorgehen um ein Histogramm für kontinuierliche Daten zu zeichnen!  (\textbf{2 Punkte})
 \item Beschriften Sie die Achsen der Abbildung! (\textbf{2 Punkte})
-\item Ergänzen Sie die relativen Häufigkeiten in der Abbildung! \textbf{(1 Punkt)}  
+\item Ergänzen Sie die absoluten und relativen Häufigkeiten in der Abbildung! \textbf{(1 Punkt)}
+\item Skizzieren Sie unter dem Histogramm einen entsprechenden Boxplot! \textbf{(1 Punkt)}
+\item Erläutern Sie Ihr Vorgehen um ein Histogramm für kontinuierliche Daten zu zeichnen! (\textbf{2 Punkte})
+\item Wozu nutzen wir Histogramme in der Datenanalyse? \textbf{(1 Punkt)} 
+\item Warum werden Histogramme in den Agrarwissenschaften eher selten verwendet? \textbf{(1 Punkt)}
 \end{enumerate}
 
 
