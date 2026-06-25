@@ -20,9 +20,9 @@ type <- c("des p-Wertes", "der berechneten Teststatistik", "des 95\\%-Konfidenzi
 @ 
 
 <<>>=
-ques_vec <- c(str_c('Welche Aussage über die Entscheidung anhand ', type, ' gegen die Nullhypothese ist richtig?'),
-              str_c('Sie rechnen einen statistischen Test und wollen anhand ', type, ' eine Entscheidung gegen die Nullhypothese treffen. Welche Aussage ist richtig?'),
-              str_c('Nachdem Sie einen t-Test gerechnet haben stehen Ihnen verschiedene statistische Maßzahlen zu Verfügung um eine Entscheidung gegen die Nullhypothese zu treffen. Sie entscheiden sich anhand ', type, ' eine Entscheidung zu treffen.')) |>  sample(1)
+ques_vec <- c(str_c('Welche Aussage über die Entscheidung anhand \\underline{', type, '} gegen die Nullhypothese ist richtig?'),
+              str_c('Sie rechnen einen statistischen Test und wollen anhand \\underline{', type, '} eine Entscheidung gegen die Nullhypothese treffen. Welche Aussage ist richtig?'),
+              str_c('Nachdem Sie einen t-Test gerechnet haben stehen Ihnen verschiedene statistische Maßzahlen zu Verfügung um eine Entscheidung gegen die Nullhypothese zu treffen. Sie entscheiden sich anhand \\underline{', type, '} eine Entscheidung zu treffen.')) |>  sample(1)
 @
 
 \Sexpr{ques_vec}
