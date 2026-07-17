@@ -17,7 +17,9 @@
 
 
 <<>>=
-ques_vec <- c('Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim statistischen Testen wird das \textit{signal} mit dem \textit{noise} aus den Daten $D$ zu einer Teststatistik $T_D$ verrechnet. Welche der Formel berechnet korrekt die Teststatistik $T_D$?') |>  sample(1)
+ques_vec <- c('Betrachten wir die Teststatistik aus einem abstrakteren Blickwinkel. Beim statistischen Testen wird das \\textit{signal} mit dem \\textit{noise} aus den Daten $D$ zu einer Teststatistik $T_D$ verrechnet. Welche der Formel berechnet korrekt die Teststatistik $T_D$?',
+              'Beim statistischen Testen wird der Effekt \\textit{signal} mit der Varianz \\textit{noise} aus den Daten $D$ zu einer Teststatistik $T_D$ verrechnet. Welche abstrakte Formel können wir nutzen um die beiden Parameter miteinander zu verrechnen?',
+              'Das statistische Testen kann auch aus einem abstrakten Winkel betrachtet werden. Hierbei verrechnen wir dann \\textit{signal} mit \\textit{noise} um zu einer Teststatistik $T_D$ zu kommen. Welche abstrakte Formel gibt diesen Zusammenhang wieder?') |>  sample(1)
 @
 
 \Sexpr{ques_vec}
