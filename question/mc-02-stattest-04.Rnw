@@ -35,7 +35,7 @@ wrong_vec <- c('Es gilt $T_D = signal \\cdot noise$. Der Effekt $signal$ wird mi
                'Es gilt $T_D = \\sfrac{signal}{noise^2}$. Der Effekt $signal$ wird mit der quadratischen Varianz $noise$ gewichtet.',
                'Es gilt $T_D = (signal \\cdot noise)^2$. Der Effekt $signal$ wird mit der Varianz $noise$ gewichtet.',
                'Es gilt $T_D = \\sfrac{signal}{noise}$. Der Effekt $noise$ wird mit der Varianz $signal$ gewichtet.',
-               'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $T_D = \\sfrac{signal}{noise}$.',
+               'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $T_D = \\sfrac{noise}{signal}$.',
                'Wir gewichten den Effekt $noise$ mit der Varianz $signal$ und erhalten $\\sfrac{signal}{noise^2}$.',
                'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = signal \\cdot noise$ schreiben.',
                'Bei der Berechnung der Teststatistik $T_D$ gewichten wir den Effekt $signal$ mit der Varianz $noise$. Wir können verallgemeinert $T_D = \\sfrac{signal}{noise^2}$ schreiben.') %>%
