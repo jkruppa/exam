@@ -1,4 +1,4 @@
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -57,7 +57,7 @@ attr_name_sec3_vec <- attr_lst[[name_sec[3]]]
 \paragraph{Herodot – der Schimmel aus Ivenack}
 \fi
 
-Die Lerngruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} waren auf Exkursion in Brandenburg und haben dort Folgendes erarbeitet. Während der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die Geschichten des berühmten Apfelschimmels Herodot aus Ivenack zu Gehör. Herodot lief zwar niemals Rennen, war aber eines der berühmtesten Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-jährigen Eiche aus Ivenack vor den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch lautes Wiehern, woraufhin die französische Armee den Schimmel beschlagnahmte und nach Frankreich führte\footnote{Die Quelle der Inspiration  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
+Die Lerngruppe \textit{\Sexpr{lerngruppe}} bestehend aus \Sexpr{name}, \Sexpr{name_sec[1]}, \Sexpr{name_sec[2]} und \Sexpr{name_sec[3]} waren auf Exkursion in Brandenburg und haben dort Folgendes erarbeitet. Während der Besetzung Mecklenburgs durch die Franzosen kamen Napoleon die Geschichten des berühmten Apfelschimmels Herodot, ein Englisches Vollblut, aus Ivenack zu Gehör. Herodot lief zwar niemals Rennen, war aber eines der berühmtesten Pferde dieser Zeit. Napoleon selbst gab den Auftrag, diesen Schimmel durch die Armee nach Frankreich zu bringen. Der Legende nach sollen Arbeiter den Schimmel im hohlen Stamm einer 1000-jährigen Eiche aus Ivenack vor den Franzosen versteckt haben. Doch Herodot verriet sein Versteck durch lautes Wiehern, woraufhin die französische Armee den Schimmel beschlagnahmte und nach Frankreich führte\footnote{Die Quelle der Inspiration  für die Aufgabe war eine Fahrt an die Ostsee und folgender Artikel:
   \href{https://www.wald-mv.de/landingpage/ivenacker-eichen/}{Entdecke das erste Nationale Naturmonument Deutschlands - Ivenacker Eichen und Hutewald}}. Jetzt wollen die vier herausfinden: \textit{"Konnten die Ivenacker den Apfelschimmel Herodot vor dem Zugriff von Napoleon in der 1000-jährigen Eiche verstecken?"} 
 
 <<>>=
@@ -72,7 +72,15 @@ horse_h <- c(180, 185, 190, 195) %>% sample(1)
 horse_b <- c(85, 90, 95, 75, 80) %>% sample(1)
 horse_l <- c(230, 240, 250, 220) %>% sample(1)
 crit_width <- c(10, 15, 20, 30, 25) %>% sample(1)
+hero_min <- c(152, 154, 156, 158) |> sample(1)
+hero_max <- c(173, 172, 175, 171) |> sample(1)
 fitting <- c("mit blutiger Nase", "sehr bequem mit Abstand") %>% sample(1)
+## napoleon
+nap_h <- c(166, 168, 170, 172) |> sample(1)
+nap_w <- c(80, 86, 91, 83) |> sample(1)
+nap_bmi <- (nap_w/(nap_h/100)^2) |> round(1)
+nap_min <- c(24, 25, 26, 27, 28) |> sample(1)
+nap_max <- c(31, 32, 33, 34, 35) |> sample(1)
 @
 
 \vspace{1Ex}
@@ -81,27 +89,39 @@ Helfen Sie der Lerngruppe \textit{\Sexpr{lerngruppe}} bei der Beantwortung der F
 
 \begin{enumerate}
 \item Skizzieren Sie in einer Abbildung einen linearen Zusammenhang und einen exponentiellen Zusammenhang für das Wachstum der 1000-jährigen Eiche! \textbf{(1 Punkt)}
-\item Wie groß war der \uline{Durchmesser in $m$} der Eiche im Jahr $\Sexpr{year_stolen}$ als Herodot in der Eiche versteckt werden sollte? \textbf{(1 Punkt)}
+\item Wie groß war der Durchmesser in $m$ der Eiche im Jahr $\Sexpr{year_stolen}$ als Herodot in der Eiche versteckt werden sollte? \textbf{(1 Punkt)}
 \begin{enumerate}
 \item Visualisieren Sie in einem Koordinatenkreuz den zeitlichen Zusammenhang $t$ vom Wachstum des Umfangs $U$! \textbf{(1 Punkt)}
 \item Erstellen Sie für die Lösung der Frage die lineare Gradengleichung für das Wachstum des Umfangs! \textbf{(1 Punkt)}
 \end{enumerate}
 \end{enumerate}
- 
-Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexpr{horse_b}$cm sowie eine Länge von  $\Sexpr{horse_l}$cm.
-
-\begin{enumerate}
-  \setcounter{enumi}{2}
-\item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches Herodot in der 1000-jährigen Eiche einnehmen würde! \textbf{(2 Punkte)}
-\end{enumerate}
 
 Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche um die eigene Achse drehen konnte.
 
 \begin{enumerate}
-  \setcounter{enumi}{3}
+  \setcounter{enumi}{2}
 \item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre Berechnungen an einer aussagekräftigen Skizze für Pferd und Eiche! \textbf{(2 Punkte)} 
 \item Unter einer Dicke der Eichenwand von $\Sexpr{crit_width}cm$ bricht die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
+ 
+%Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexpr{horse_b}$cm sowie eine Länge von  %$\Sexpr{horse_l}$cm.
+
+%\begin{enumerate}
+%  \setcounter{enumi}{2}
+%\item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches Herodot in der 1000-jährigen Eiche %einnehmen würde! \textbf{(2 Punkte)}
+%\end{enumerate}
+
+Napoleon hatte eine Körpergröße von $\Sexpr{nap_h}$cm und einen BMI von $\Sexpr{nap_bmi}$kg/m$^2$ kurz bevor er auf Herodot vor der Schlacht von Waterloo (1815) aufsaß. Ein Reiter in der Schlacht trug inklusive Kleidung, Waffen und persönlichem Gepäck etwa $\Sexpr{nap_min}$ bis $\Sexpr{nap_max}$ Kilogramm am eigenen Körper. Die mittlere Widerristhöhe (das Stockmaß) eines Englischen Vollbluts reicht im ausgewachsenen Zustand meist von $\Sexpr{hero_min}$cm bis  $\Sexpr{hero_max}$cm.
+
+\begin{enumerate}
+  \setcounter{enumi}{4}
+\item War das Aufsitzen von Napoleon auf Herodot unter Tierschutzgesichtspunkten zulässig? Lösen Sie die Aufgabe graphisch sowie numerisch unter der Nutzung der Funktion\footnote{Zusammenhang zwischen der Widerristhöhe sowie der Gewichtsbelastung: \href{https://www.tierschutz-tvt.de/alle-merkblaetter-und-stellungnahmen/}{Merkblatt Nr. 185 - "Reitergewicht": Beurteilung der Gewichtsbelastung von Pferden (Stand: 01.09.2019)}} Gewichtsbelastung $\sim$ Widerristhöhe! \textbf{(2 Punkte)}
+\begin{enumerate}
+\item Stellen Sie die Funktion des Zusammenhangs zwischen der Widerristhöhe in cm sowie der maximalen Gewichtsbelastung in kg \uline{graphisch} dar! \textbf{(1 Punkt)}
+\item Bestimmen Sie die maximale Gewichtsbelastung von Herodot! \textbf{(1 Punkt)}
+\end{enumerate}
+\end{enumerate}
+
 
 <<>>=
 ## 1)
