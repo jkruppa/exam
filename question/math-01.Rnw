@@ -96,20 +96,13 @@ Helfen Sie der Lerngruppe \textit{\Sexpr{lerngruppe}} bei der Beantwortung der F
 \end{enumerate}
 \end{enumerate}
 
-Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche um die eigene Achse drehen konnte.
+Es wurde berichtet, dass sich Herodot in der 1000-jährigen Eiche um die eigene Achse drehen konnte. Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexpr{horse_b}$cm sowie eine Länge von $\Sexpr{horse_l}$cm.
 
 \begin{enumerate}
   \setcounter{enumi}{2}
-\item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre Berechnungen an einer aussagekräftigen Skizze für Pferd und Eiche! \textbf{(2 Punkte)} 
+\item Berechnen Sie die Dicke der Eichenwand in $cm$! Verdeutlichen Sie Ihre Berechnungen an einer aussagekräftigen Skizze für Herodot in der Eiche! \textbf{(2 Punkte)} 
 \item Unter einer Dicke der Eichenwand von $\Sexpr{crit_width}cm$ bricht die Eiche zusammen. Beantworten Sie die Forschungsfrage! Begründen Sie Ihre Antwort! \textbf{(2 Punkte)} 
 \end{enumerate}
- 
-%Herodot hatte eine Schulterhöhe von $\Sexpr{horse_h}$cm, eine Breite von $\Sexpr{horse_b}$cm sowie eine Länge von  %$\Sexpr{horse_l}$cm.
-
-%\begin{enumerate}
-%  \setcounter{enumi}{2}
-%\item Berechnen Sie das effektive Volumen von Herodot in $m^3$, welches Herodot in der 1000-jährigen Eiche %einnehmen würde! \textbf{(2 Punkte)}
-%\end{enumerate}
 
 Napoleon hatte eine Körpergröße von $\Sexpr{nap_h}$cm und einen BMI von $\Sexpr{nap_bmi}$kg/m$^2$ kurz bevor er auf Herodot vor der Schlacht von Waterloo (1815) aufsaß. Ein Reiter in der Schlacht trug inklusive Kleidung, Waffen und persönlichem Gepäck etwa $\Sexpr{nap_min}$ bis $\Sexpr{nap_max}$ Kilogramm am eigenen Körper. Die mittlere Widerristhöhe (das Stockmaß) eines Englischen Vollbluts reicht im ausgewachsenen Zustand meist von $\Sexpr{hero_min}$cm bis  $\Sexpr{hero_max}$cm.
 
