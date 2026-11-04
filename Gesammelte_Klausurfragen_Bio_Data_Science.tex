@@ -5445,7 +5445,7 @@ Die Distanz zwischen Sonne und Erde entspricht 1.03 astronomische Einheiten ($AE
 \clearpage
 % ----------------------------------------------------------------------- 
 
-\section{Aufgabe \hfill (10 Punkte)}
+\section{Aufgabe \hfill (12 Punkte)}
 
 \textit{Geben Sie grundsätzlich Formeln und Rechenweg zur Lösung der Teilaufgaben mit an!} \\[1Ex]
  
@@ -5477,7 +5477,7 @@ Die Distanz zwischen Sonne und Erde entspricht 1.03 astronomische Einheiten ($AE
 
 
 
-Man hört schon häufig vieles Geschnatter von höflichen Puten in Mastställen. Enge ist natürlich etwas ungünstig, den dann kommt es zu Picken und Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Maßnahmen gegriffen werden. Kennt jeder aus einer mittelmäßigen Wohngemeinschaft. Das wollen Tina, Steffen, Nilufar und Yuki aber als vorsorgliche Puten-Halter:innen nicht\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftliche Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers on farm. EFSA Journal 21.2}.}. Gemeinsam sind die Vier in einer Projektgruppe gelandet. Betrachten wir also gemeinsam einmal das Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der Puten für vier Tätigkeiten und versuchen die notwendige Fläche zu optimieren. Wie immer gibt es dafür eine mathematische Formel:
+Man hört schon häufig vieles Geschnatter von höflichen Puten in Mastställen. Enge ist natürlich etwas ungünstig, den dann kommt es zu Picken und Kannibalismus. Denn wenn der Nachbar nervt, dann muss zu Maßnahmen gegriffen werden. Kennt jeder aus einer mittelmäßigen Wohngemeinschaft. Das wollen Tina, Steffen, Nilufar und Yuki aber als vorsorgliche Puten-Halter:innen nicht\footnote{Die Quelle der Inspiration für die Aufgabe war der folgende wissenschaftliche Artikel: \href{https://www.efsa.europa.eu/en/efsajournal/pub/7788}{EFSA Panel on Animal Health and Welfare, et al. (2023) Welfare of broilers on farm. EFSA Journal 21.2}.}. Gemeinsam sind die Vier in einer Projektgruppe gelandet. \uline{Die Erfassung der Tiere und dem Verhalten erfolgte über Kamerasysteme}, die je nach Verhalten der Tiere unterschiedliche Werte wiedergeben haben. Betrachten wir also gemeinsam einmal das Platzangebot (eng. \textit{space allowance}, abk. \textit{SA}) der Puten für vier Tätigkeiten und versuchen die notwendige Fläche zu optimieren. Wie immer gibt es dafür eine mathematische Formel:
 
 \begin{center}
   \begin{tabular}{cc}
@@ -5493,13 +5493,13 @@ mit
 \item $SA$ dem benötigten Platzangebot aller aufsummierten Verhalten $i$.
 \item $A_i$ dem benötigten Platz für ein Verhalten $i$. 
 \item $PB_i$ dem Anteil des Auftretens eines Verhaltens $i$.
-\item $r_i$ dem Radius Pute plus dem benötigten Radius für das Verhalten $i$.
-\item $R_i$ dem notwendigen Abstand zu den Nachbarn für das Verhalten $i$.    
+\item $r_i$ dem geschätzten Radius Pute für das Verhalten $i$ aus den Aufnahmen.
+\item $R_i$ dem geschätzten Abstand zu den Nachbarn für das Verhalten $i$ aus den Aufnahmen.    
 \item $i$ dem Verhalten: (1) preening, (2) foraging incl. scratching, (3)
   standing und (4) walking.
 \end{itemize}
 
-In der folgenden Tabelle 1 sind die Werte für $r_i$, $R_i$ und $PB_i$ für ein spezifisches Verhalten $i$ aus drei wissenschaftlichen Veröffentlichungen dargestellt.
+In der folgenden Tabelle sind die Werte für $r_i$, $R_i$ und $PB_i$ für ein spezifisches Verhalten $i$ aus drei wissenschaftlichen Veröffentlichungen dargestellt, die alle mit Kamerasystemen zur Erfassung gearbeitet haben. Hierbei handelt es sich um die mittleren Werte über alle gemessenen Puten in den Studien.
 
 \vspace{-1Ex}
 
@@ -5525,13 +5525,15 @@ walking & 15cm; 15cm; 3.6\% & 23cm; 44cm; 8.1\% & 33cm; 37cm; 3.6\%\\
 Leider kennen sich die Vier nicht so gut mit der Berechnung aus! Daher brauchen die Vier Ihre Hilfe!
 
 \begin{enumerate}
+\item Skizzieren Sie einen möglichen Versuchsaufbau der Messungen der Puten und dem Verhalten! \textbf{(1 Punkt)} 
+\item Nennen Sie \uline{zwei} mögliche Ursachen für die unterschiedlichen gemessen Radien $r_i$ der Puten bei einem Verhalten $i$ in den obigen Studien! \textbf{(2 Punkte)}
 \item Skizzieren Sie die Werte $r_i$, $R_i$ und $A_i$ für zwei nebeneinander agierende Puten für ein Verhalten $i$. Nutzen Sie hierfür vereinfachte geometrische Formen! \textbf{(2 Punkte)}
 \item Erstellen Sie eine zusammenfassende Tabelle mit den mittleren Werten für $r$, $R$ und $PB$ aus der obigen Tabelle 1 für die jeweiligen Verhalten! \textbf{(3 Punkte)}
 \item Ergänzen Sie eine Spalte mit dem benötigten Platz $A$ für das jeweilige Verhalten, welches sich aus den mittleren Werten ergibt! \textbf{(1 Punkt)}
 \item Berechnen Sie das benötigte Platzangebot $SA$ für alle betrachteten Verhalten! \textbf{(1 Punkt)}
 \item Sie entnehmen der Literatur folgende Aussage zur Verteilung der Puten in der Fläche $A$: \textit{"`Assuming, that the animals will optimally and equally distribute in an area $A$, we observe a
     small part, which is not covered. This area is called $\omega$ and is calculated with $\omega = \tfrac{A}{0.9069}$."'} Veranschaulichen Sie die Fläche $\omega$ in einer aussagekräftigen Abbildung!  \textbf{(1 Punkt)}
-\item Ein Tier braucht Platz für sich selbst. Berechnen Sie nun die Körperfläche $a$, die ein Tier einnimmt! Welchen Annahme an den Wert von $r$ haben Sie für die Berechnung der Körperfläche getroffen? \textbf{(2 Punkte)}
+\item Ein Tier braucht Platz für sich selbst. Berechnen Sie nun die Körperfläche $a$, die ein Tier einnimmt! Welchen Annahme an den Wert von $r$ haben Sie für die Berechnung der Körperfläche getroffen? \textbf{(1 Punkt)}
 \end{enumerate}
 
 
